@@ -7,31 +7,31 @@ export default function Duration(props) {
 	const h = parseInt(fullSeconds / (60 * 60)) % 24;
 	const d = parseInt(fullSeconds / (60 * 60 * 24));
 
-	let duration = '.' + ((props.seconds - fullSeconds) * 100).toFixed(0);
+	const durationParts = ['.' + ((props.seconds - fullSeconds) * 100).toFixed(0)];
 
 	if (s < 10) {
-		duration = ':0' + s + duration;
+		durationParts.unshift(':0' + s);
 	} else {
-		duration = ':' + s + duration;
+		durationParts.unshift(':' + s);
 	}
 
 	if (m < 10) {
-		duration = ':0' + m + duration;
+		durationParts.unshift(':0' + m);
 	} else {
-		duration = ':' + m + duration;
+		durationParts.unshift(':' + m);
 	}
 
 	if (h < 10) {
-		duration = '0' + h + duration;
+		durationParts.unshift('0' + h);
 	} else {
-		duration = '' + h + duration;
+		durationParts.unshift('' + h);
 	}
 
 	if (d !== 0) {
-		duration = d + ':' + duration;
+		durationParts.unshift(d + ':');
 	}
 
-	return <React.Fragment>{duration}</React.Fragment>;
+	return <React.Fragment>{durationParts.join('')}</React.Fragment>;
 }
 
 Duration.defaultProps = {

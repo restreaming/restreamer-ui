@@ -56,7 +56,7 @@ export default function UploadButton(props) {
 				return;
 			}
 
-			let reader = new FileReader();
+			const reader = new FileReader();
 			reader.readAsArrayBuffer(file);
 			reader.onloadend = async () => {
 				if (reader.result === null) {

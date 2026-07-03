@@ -81,7 +81,7 @@ export default function Component(props) {
 	};
 
 	const handleDownload = () => {
-		var element = document.createElement('a');
+		const element = document.createElement('a');
 		element.setAttribute(
 			'href',
 			'data:text/plain;charset=utf-8,' + encodeURIComponent(props.value),
@@ -96,24 +96,21 @@ export default function Component(props) {
 		document.body.removeChild(element);
 	};
 
-	let allowCopy = props.allowCopy;
-	if (props.value.length === 0 || props.disabled === true) {
-		allowCopy = false;
-	}
+	const allowCopy =
+		props.allowCopy &&
+		props.value.length !== 0 &&
+		props.disabled !== true;
 
-	let allowModal = props.allowModal;
-	if (props.value.length === 0 || props.disabled === true) {
-		allowModal = false;
-	}
+	const allowModal =
+		props.allowModal &&
+		props.value.length !== 0 &&
+		props.disabled !== true;
 
-	let allowDownload = props.allowDownload;
-	if (
-		props.value.length === 0 ||
-		props.disabled === true ||
-		props.downloadName.length === 0
-	) {
-		allowDownload = false;
-	}
+	const allowDownload =
+		props.allowDownload &&
+		props.value.length !== 0 &&
+		props.disabled !== true &&
+		props.downloadName.length !== 0;
 
 	let textAreaDivStyle = {
 		width: '100%',

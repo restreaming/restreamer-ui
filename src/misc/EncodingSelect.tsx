@@ -16,15 +16,12 @@ export default function EncodingSelect(props) {
 	const { i18n } = useLingui();
 
 	const profile = props.profile;
-	let availableEncoders = [];
-	let availableDecoders = [];
-
-	if (props.type === 'video') {
-		availableEncoders = props.skills.encoders.video;
-		availableDecoders = props.skills.decoders.video;
-	} else if (props.type === 'audio') {
-		availableEncoders = props.skills.encoders.audio;
-	}
+	const availableEncoders =
+		props.type === 'video'
+			? props.skills.encoders.video
+			: props.skills.encoders.audio;
+	const availableDecoders =
+		props.type === 'video' ? props.skills.decoders.video : [];
 
 	const handleDecoderChange = (event) => {
 		const decoder = profile.decoder;
@@ -32,12 +29,10 @@ export default function EncodingSelect(props) {
 		decoder.coder = event.target.value;
 
 		// If the coder changes, use the coder's default settings
-		let c = null;
-		if (props.type === 'audio') {
-			c = Decoders.Audio.Get(decoder.coder);
-		} else if (props.type === 'video') {
-			c = Decoders.Video.Get(decoder.coder);
-		}
+		const c =
+			props.type === 'audio'
+				? Decoders.Audio.Get(decoder.coder)
+				: Decoders.Video.Get(decoder.coder);
 
 		if (c !== null) {
 			const defaults = c.defaults(stream, props.skills);
@@ -63,12 +58,10 @@ export default function EncodingSelect(props) {
 		encoder.coder = event.target.value;
 
 		// If the coder changes, use the coder's default settings
-		let c = null;
-		if (props.type === 'audio') {
-			c = Encoders.Audio.Get(encoder.coder);
-		} else if (props.type === 'video') {
-			c = Encoders.Video.Get(encoder.coder);
-		}
+		const c =
+			props.type === 'audio'
+				? Encoders.Audio.Get(encoder.coder)
+				: Encoders.Video.Get(encoder.coder);
 
 		if (c !== null) {
 			const defaults = c.defaults(stream, props.skills);
@@ -93,13 +86,10 @@ export default function EncodingSelect(props) {
 		H('encoder-' + topic);
 	};
 
-	let stream = null;
-
-	if (profile.stream >= 0) {
-		if (profile.stream < props.streams.length) {
-			stream = props.streams[profile.stream];
-		}
-	}
+	const stream =
+		profile.stream >= 0 && profile.stream < props.streams.length
+			? props.streams[profile.stream]
+			: null;
 
 	if (stream === null) {
 		return null;
@@ -109,45 +99,37 @@ export default function EncodingSelect(props) {
 		return null;
 	}
 
-	let allowCopy = props.codecs.includes(stream.codec);
-	let encoderRegistry = null;
-	let decoderRegistry = null;
-
-	if (props.type === 'video') {
-		encoderRegistry = Encoders.Video;
-		decoderRegistry = Decoders.Video;
-	} else if (props.type === 'audio') {
-		encoderRegistry = Encoders.Audio;
-		decoderRegistry = Decoders.Audio;
-	} else {
+	const allowCopy = props.codecs.includes(stream.codec);
+	const encoderRegistry =
+		props.type === 'video' ? Encoders.Video : Encoders.Audio;
+	const decoderRegistry =
+		props.type === 'video' ? Decoders.Video : Decoders.Audio;
+	if (props.type !== 'video' && props.type !== 'audio') {
 		return null;
 	}
 
-	let encoderSettings = null;
-	let encoderSettingsHelp = null;
+	const coder = encoderRegistry.Get(profile.encoder.coder);
+	const EncoderSettings =
+		coder !== null && availableEncoders.includes(coder.coder)
+			? coder.component
+			: null;
+	const encoderSettings = EncoderSettings ? (
+		<EncoderSettings
+			stream={stream}
+			settings={profile.encoder.settings}
+			skills={props.skills}
+			onChange={handleEncoderSettingsChange}
+		/>
+	) : null;
+	const encoderSettingsHelp =
+		coder !== null &&
+		availableEncoders.includes(coder.coder) &&
+		props.type === 'video' &&
+		!['copy', 'none', 'rawvideo'].includes(coder.coder)
+			? handleEncoderHelp(coder.coder)
+			: null;
 
-	let coder = encoderRegistry.Get(profile.encoder.coder);
-	if (coder !== null && availableEncoders.includes(coder.coder)) {
-		const Settings = coder.component;
-
-		encoderSettings = (
-			<Settings
-				stream={stream}
-				settings={profile.encoder.settings}
-				skills={props.skills}
-				onChange={handleEncoderSettingsChange}
-			/>
-		);
-
-		if (
-			props.type === 'video' &&
-			!['copy', 'none', 'rawvideo'].includes(coder.coder)
-		) {
-			encoderSettingsHelp = handleEncoderHelp(coder.coder);
-		}
-	}
-
-	let encoderList = [];
+	const encoderList = [];
 
 	for (let c of encoderRegistry.List()) {
 		// Does ffmpeg support the coder?
@@ -189,26 +171,30 @@ export default function EncodingSelect(props) {
 		);
 	}
 
-	let decoderSettings = null;
-	let decoderList = [];
+	const decoderSettings = (() => {
+		if (coder.coder !== 'copy' && coder.coder !== 'none') {
+			const c = decoderRegistry.Get(profile.decoder.coder);
+			if (c !== null && availableDecoders.includes(c.coder)) {
+				const Settings = c.component;
 
-	if (coder.coder !== 'copy' && coder.coder !== 'none') {
-		let c = decoderRegistry.Get(profile.decoder.coder);
-		if (c !== null && availableDecoders.includes(c.coder)) {
-			const Settings = c.component;
-
-			decoderSettings = (
-				<Settings
-					stream={stream}
-					settings={profile.decoder.settings}
-					skills={props.skills}
-					onChange={handleDecoderSettingsChange}
-				/>
-			);
+				return (
+					<Settings
+						stream={stream}
+						settings={profile.decoder.settings}
+						skills={props.skills}
+						onChange={handleDecoderSettingsChange}
+					/>
+				);
+			}
 		}
 
+		return null;
+	})();
+	const decoderList = [];
+
+	if (coder.coder !== 'copy' && coder.coder !== 'none') {
 		// List all decoders for the codec of the stream
-		for (let c of decoderRegistry.GetCodersForCodec(
+		for (const c of decoderRegistry.GetCodersForCodec(
 			stream.codec,
 			availableDecoders,
 			'any',

@@ -11,15 +11,11 @@ import Env from './Env';
 
 export default function Component(props) {
 	const id = props.id === null ? uuidv4() : props.id;
-	let adornment = null;
-
-	if (props.env) {
-		adornment = (
-			<InputAdornment position="end">
-				<Env />
-			</InputAdornment>
-		);
-	}
+	const adornment = props.env ? (
+		<InputAdornment position="end">
+			<Env />
+		</InputAdornment>
+	) : null;
 
 	return (
 		<FormControl variant="outlined" disabled={props.disabled} fullWidth>

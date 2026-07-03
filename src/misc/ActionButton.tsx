@@ -4,48 +4,54 @@ import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 
 export default function ActionButton(props) {
-	let button = null;
+	const button = (() => {
+		if (props.state === 'connecting') {
+			return (
+				<Button variant="outlined" fullWidth disabled>
+					<Trans>Connecting ...</Trans>
+				</Button>
+			);
+		}
 
-	if (props.state === 'connecting') {
-		button = (
-			<Button variant="outlined" fullWidth disabled>
-				<Trans>Connecting ...</Trans>
-			</Button>
-		);
-	} else if (props.state === 'disconnecting') {
-		button = (
-			<Button variant="outlined" fullWidth disabled>
-				<Trans>Disconnecting ...</Trans>
-			</Button>
-		);
-	} else if (props.state === 'connected') {
-		button = (
-			<Button
-				variant="outlined"
-				fullWidth
-				color="secondary"
-				disabled={props.disabled}
-				onClick={props.onDisconnect}
-			>
-				<Trans>Disconnect</Trans>
-			</Button>
-		);
-	} else if (props.state === 'disconnected') {
-		if (props.reconnect < 0) {
-			if (props.order === 'start') {
-				button = (
-					<Button
-						variant="outlined"
-						fullWidth
-						color="primary"
-						disabled={props.disabled}
-						onClick={props.onReconnect}
-					>
-						<Trans>Reconnect</Trans>
-					</Button>
-				);
-			} else {
-				button = (
+		if (props.state === 'disconnecting') {
+			return (
+				<Button variant="outlined" fullWidth disabled>
+					<Trans>Disconnecting ...</Trans>
+				</Button>
+			);
+		}
+
+		if (props.state === 'connected') {
+			return (
+				<Button
+					variant="outlined"
+					fullWidth
+					color="secondary"
+					disabled={props.disabled}
+					onClick={props.onDisconnect}
+				>
+					<Trans>Disconnect</Trans>
+				</Button>
+			);
+		}
+
+		if (props.state === 'disconnected') {
+			if (props.reconnect < 0) {
+				if (props.order === 'start') {
+					return (
+						<Button
+							variant="outlined"
+							fullWidth
+							color="primary"
+							disabled={props.disabled}
+							onClick={props.onReconnect}
+						>
+							<Trans>Reconnect</Trans>
+						</Button>
+					);
+				}
+
+				return (
 					<Button
 						variant="outlined"
 						fullWidth
@@ -57,8 +63,8 @@ export default function ActionButton(props) {
 					</Button>
 				);
 			}
-		} else {
-			button = (
+
+			return (
 				<Button
 					variant="outlined"
 					fullWidth
@@ -70,21 +76,23 @@ export default function ActionButton(props) {
 				</Button>
 			);
 		}
-	} else if (props.state === 'error') {
-		if (props.reconnect < 0) {
-			button = (
-				<Button
-					variant="outlined"
-					fullWidth
-					color="primary"
-					disabled={props.disabled}
-					onClick={props.onReconnect}
-				>
-					<Trans>Reconnect</Trans>
-				</Button>
-			);
-		} else {
-			button = (
+
+		if (props.state === 'error') {
+			if (props.reconnect < 0) {
+				return (
+					<Button
+						variant="outlined"
+						fullWidth
+						color="primary"
+						disabled={props.disabled}
+						onClick={props.onReconnect}
+					>
+						<Trans>Reconnect</Trans>
+					</Button>
+				);
+			}
+
+			return (
 				<Button
 					variant="outlined"
 					fullWidth
@@ -96,7 +104,9 @@ export default function ActionButton(props) {
 				</Button>
 			);
 		}
-	}
+
+		return null;
+	})();
 
 	return button;
 }

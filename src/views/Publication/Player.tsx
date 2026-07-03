@@ -223,39 +223,35 @@ export default function Edit(props) {
 	};
 
 	const handleUploadError = (title) => (err) => {
-		let message = null;
-
-		switch (err.type) {
-			case 'nofiles':
-				message = <Trans>Please select a file to upload.</Trans>;
-				break;
-			case 'mimetype':
-				message = (
-					<Trans>
-						The selected file type ({err.actual}) is not allowed.
-						Allowed file types are {err.allowed.join(', ')}
-					</Trans>
-				);
-				break;
-			case 'size':
-				message = (
-					<Trans>
-						The selected file is too big (
-						<Filesize bytes={err.actual} />
-						). Only <Filesize bytes={err.allowed} /> are allowed.
-					</Trans>
-				);
-				break;
-			case 'read':
-				message = (
-					<Trans>
-						There was an error during upload: {err.message}
-					</Trans>
-				);
-				break;
-			default:
-				message = <Trans>Unknown upload error</Trans>;
-		}
+		const message = (() => {
+			switch (err.type) {
+				case 'nofiles':
+					return <Trans>Please select a file to upload.</Trans>;
+				case 'mimetype':
+					return (
+						<Trans>
+							The selected file type ({err.actual}) is not allowed.
+							Allowed file types are {err.allowed.join(', ')}
+						</Trans>
+					);
+				case 'size':
+					return (
+						<Trans>
+							The selected file is too big (
+							<Filesize bytes={err.actual} />
+							). Only <Filesize bytes={err.allowed} /> are allowed.
+						</Trans>
+					);
+				case 'read':
+					return (
+						<Trans>
+							There was an error during upload: {err.message}
+						</Trans>
+					);
+				default:
+					return <Trans>Unknown upload error</Trans>;
+			}
+		})();
 
 		setSaving(false);
 
@@ -367,7 +363,7 @@ export default function Edit(props) {
 		}
 
 		try {
-			let u = new URL(url);
+			const u = new URL(url);
 			u.searchParams.set('_rscache', Math.random());
 			return u.href;
 		} catch (e) {

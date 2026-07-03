@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import company_logo from './images/rs-logo.svg';
 
 export default function Logo(props) {
-	let link = 'https://github.com/datarhei/restreamer';
+	const link = 'https://github.com/datarhei/restreamer';
 
 	// eslint-disable-next-line no-useless-escape
 	return (

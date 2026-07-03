@@ -52,7 +52,8 @@ const getAlias = (lang) => {
 };
 
 const getLanguage = (defaultLanguage, supportedLanguages) => {
-	let lang = getAlias(Storage.Get('language'));
+	const initialLang = getAlias(Storage.Get('language'));
+	let lang = initialLang;
 	if (supportedLanguages.indexOf(lang) === -1) {
 		lang = getAlias(getBrowserLanguage(defaultLanguage));
 
@@ -67,7 +68,7 @@ const getLanguage = (defaultLanguage, supportedLanguages) => {
 };
 
 const getBrowserLanguage = (defaultLanguage) => {
-	let lang = window.navigator.language;
+	const lang = window.navigator.language;
 
 	const match = lang.match(/^[a-z]+(-[a-z]+)?/i);
 	if (!match) {

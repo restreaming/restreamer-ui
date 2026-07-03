@@ -33,9 +33,9 @@ export default function Player(props) {
 				options={config}
 				onReady={(player) => {
 					if (props.logo.image.length !== 0) {
-						var overlay = null;
+						let overlay = null;
 
-						var imgTag = new Image();
+						const imgTag = new Image();
 						imgTag.onLoad = function () {
 							imgTag.setAttribute('width', this.width);
 							imgTag.setAttribute('height'.this.height);
@@ -43,7 +43,7 @@ export default function Player(props) {
 						imgTag.src = props.logo.image + '?' + Math.random();
 
 						if (props.logo.link.length !== 0) {
-							var aTag = document.createElement('a');
+							const aTag = document.createElement('a');
 							aTag.setAttribute('href', props.logo.link);
 							aTag.setAttribute('target', '_blank');
 							aTag.appendChild(imgTag);

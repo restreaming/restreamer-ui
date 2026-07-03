@@ -247,39 +247,35 @@ export default function Playersite(props) {
 	};
 
 	const handleUploadError = (title) => (err) => {
-		let message = null;
-
-		switch (err.type) {
-			case 'nofiles':
-				message = <Trans>Please select a file to upload.</Trans>;
-				break;
-			case 'mimetype':
-				message = (
-					<Trans>
-						The selected file type ({err.actual}) is not allowed.
-						Allowed file types are {err.allowed.join(', ')}
-					</Trans>
-				);
-				break;
-			case 'size':
-				message = (
-					<Trans>
-						The selected file is too big (
-						<Filesize bytes={err.actual} />
-						). Only <Filesize bytes={err.allowed} /> are allowed.
-					</Trans>
-				);
-				break;
-			case 'read':
-				message = (
-					<Trans>
-						There was an error during upload: {err.message}
-					</Trans>
-				);
-				break;
-			default:
-				message = <Trans>Unknown upload error</Trans>;
-		}
+		const message = (() => {
+			switch (err.type) {
+				case 'nofiles':
+					return <Trans>Please select a file to upload.</Trans>;
+				case 'mimetype':
+					return (
+						<Trans>
+							The selected file type ({err.actual}) is not allowed.
+							Allowed file types are {err.allowed.join(', ')}
+						</Trans>
+					);
+				case 'size':
+					return (
+						<Trans>
+							The selected file is too big (
+							<Filesize bytes={err.actual} />
+							). Only <Filesize bytes={err.allowed} /> are allowed.
+						</Trans>
+					);
+				case 'read':
+					return (
+						<Trans>
+							There was an error during upload: {err.message}
+						</Trans>
+					);
+				default:
+					return <Trans>Unknown upload error</Trans>;
+			}
+		})();
 
 		setSaving(false);
 
@@ -310,7 +306,7 @@ export default function Playersite(props) {
 			playersite: $settings,
 		};
 
-		let res = await props.restreamer.SetMetadata(data);
+		const res = await props.restreamer.SetMetadata(data);
 		if (res === false) {
 			notify.Dispatch(
 				'error',
@@ -321,8 +317,8 @@ export default function Playersite(props) {
 			return;
 		}
 
-		res = await props.restreamer.UpdatePlayersite();
-		if (res === false) {
+		const resUpdate = await props.restreamer.UpdatePlayersite();
+		if (resUpdate === false) {
 			notify.Dispatch(
 				'error',
 				'save:playersite',
@@ -364,11 +360,9 @@ export default function Playersite(props) {
 		return null;
 	}
 
-	let main_channelid = props.restreamer.GetCurrentChannelID();
-	let channel = props.restreamer.GetChannel($settings.channelid);
-	if (channel !== null) {
-		main_channelid = channel.channelid;
-	}
+	const channel = props.restreamer.GetChannel($settings.channelid);
+	const main_channelid =
+		channel !== null ? channel.channelid : props.restreamer.GetCurrentChannelID();
 
 	return (
 		<Root>
@@ -510,7 +504,7 @@ export default function Playersite(props) {
 										renderValue={(selected) => {
 											return selected
 												.map((id) => {
-													let channel =
+													const channel =
 														props.restreamer.GetChannel(
 															id,
 														);

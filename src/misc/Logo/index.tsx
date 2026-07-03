@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import company_logo from './images/logo.svg';
 
 export default function Logo(props) {
-	let link = 'https://datarhei.com';
+	const link = 'https://datarhei.com';
 
 	// eslint-disable-next-line no-useless-escape
 	return (

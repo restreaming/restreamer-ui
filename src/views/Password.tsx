@@ -61,15 +61,8 @@ export default function ResetPassword(props) {
 		// store that password to the config file. By setting them as empty string, the currently stored
 		// values won't be changed.
 
-		let username = $login.username;
-		if (props.usernameOverride) {
-			username = '';
-		}
-
-		let password = $login.password;
-		if (props.passwordOverride) {
-			password = '';
-		}
+		const username = props.usernameOverride ? '' : $login.username;
+		const password = props.passwordOverride ? '' : $login.password;
 
 		const res = await props.onReset(
 			username,
@@ -96,7 +89,7 @@ export default function ResetPassword(props) {
 	};
 
 	const handleChange = (what) => (event) => {
-		let value = event.target.value;
+		const value = event.target.value;
 
 		setLogin({
 			...$login,

@@ -28,12 +28,10 @@ export default function FilterSelect(props) {
 			};
 
 			// Get the order of the filters
-			let filterOrder = [];
-			if (props.type === 'video') {
-				filterOrder = Filters.Video.Filters();
-			} else {
-				filterOrder = Filters.Audio.Filters();
-			}
+			const filterOrder =
+				props.type === 'video'
+					? Filters.Video.Filters()
+					: Filters.Audio.Filters();
 
 			// Create the filter graph in the order as the filters are registered
 			const graphs = [];
@@ -53,32 +51,29 @@ export default function FilterSelect(props) {
 		};
 
 	// Set filterRegistry by type
-	let filterRegistry = null;
-	if (props.type === 'video') {
-		filterRegistry = Filters.Video;
-	} else if (props.type === 'audio') {
-		filterRegistry = Filters.Audio;
-	} else {
+	const filterRegistry =
+		props.type === 'video'
+			? Filters.Video
+			: props.type === 'audio'
+				? Filters.Audio
+				: null;
+	if (filterRegistry === null) {
 		return null;
 	}
 
 	// Checks the state of hwaccel (gpu encoding)
-	let encoderRegistry = null;
-	let hwaccel = false;
-	if (props.type === 'video') {
-		encoderRegistry = Encoders.Video;
-		for (let encoder of encoderRegistry.List()) {
-			if (
+	const encoderRegistry =
+		props.type === 'video' ? Encoders.Video : null;
+	const hwaccel =
+		props.type === 'video' &&
+		encoderRegistry.List().some(
+			(encoder) =>
 				encoder.codec === props.profile.encoder.coder &&
-				encoder.hwaccel
-			) {
-				hwaccel = true;
-			}
-		}
-	}
+				encoder.hwaccel,
+		);
 
 	// Creates filter components
-	let filterSettings = [];
+	const filterSettings = [];
 	if (!hwaccel) {
 		for (let c of filterRegistry.List()) {
 			// Checks FFmpeg skills (filter is available)
