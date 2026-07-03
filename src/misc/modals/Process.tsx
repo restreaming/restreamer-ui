@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
@@ -10,28 +9,6 @@ import Typography from '@mui/material/Typography';
 import ModalContent from '../ModalContent';
 import Progress from '../Progress';
 import Textarea from '../Textarea';
-
-const useStyles = makeStyles((theme) => ({
-	title: {
-		marginBottom: '-.3em',
-		marginTop: '0em',
-		fontWeight: 'bold',
-	},
-	textarea: {
-		marginBottom: '-1em',
-	},
-	box: {
-		backgroundColor: theme.palette.background.modalbox,
-		borderRadius: 4,
-		padding: '1em',
-	},
-	banner: {
-		marginBottom: '-1em',
-	},
-	logging: {
-		marginTop: '.15em',
-	},
-}));
 
 const initLogdata = (logdata) => {
 	if (!logdata) {
@@ -114,7 +91,6 @@ const formatLogline = (entry) => {
 };
 
 const Component = function (props) {
-	const classes = useStyles();
 	const logdata = initLogdata({
 		...props.logdata,
 		command: props.progress?.command,
@@ -131,16 +107,27 @@ const Component = function (props) {
 					<Grid item xs={12} md={8} lg={10}>
 						<Grid container spacing={3}>
 							<Grid item xs={12}>
-								<div className={classes.box}>
+								<div
+									style={{
+										backgroundColor:
+											'var(--mui-palette-background-modalbox)',
+										borderRadius: 4,
+										padding: '1em',
+									}}
+								>
 									<Grid container spacing={1}>
 										<Grid
 											item
 											xs={12}
-											className={classes.banner}
+											sx={{ marginBottom: '-1em' }}
 										>
 											<Typography
 												variant="body1"
-												className={classes.title}
+												sx={{
+													marginBottom: '-.3em',
+													marginTop: '0em',
+													fontWeight: 'bold',
+												}}
 											>
 												<Trans>Command</Trans>
 											</Typography>
@@ -160,11 +147,15 @@ const Component = function (props) {
 										<Grid
 											item
 											xs={12}
-											className={classes.logging}
+											sx={{ marginTop: '.15em' }}
 										>
 											<Typography
 												variant="body1"
-												className={classes.title}
+												sx={{
+													marginBottom: '-.3em',
+													marginTop: '0em',
+													fontWeight: 'bold',
+												}}
 											>
 												<Trans>Banner</Trans>
 											</Typography>
@@ -185,11 +176,15 @@ const Component = function (props) {
 										<Grid
 											item
 											xs={12}
-											className={classes.logging}
+											sx={{ marginTop: '.15em' }}
 										>
 											<Typography
 												variant="body1"
-												className={classes.title}
+												sx={{
+													marginBottom: '-.3em',
+													marginTop: '0em',
+													fontWeight: 'bold',
+												}}
 											>
 												<Trans>Logging</Trans>
 											</Typography>

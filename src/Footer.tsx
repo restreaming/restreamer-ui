@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { isMobile } from 'react-device-detect';
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 //import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
@@ -19,8 +20,16 @@ import Duration from './misc/Duration';
 import Logo from './misc/Logo';
 import Number from './misc/Number';
 
-const useStyles = makeStyles((theme) => ({
-	footer: {
+const PREFIX = 'Footer';
+
+const classes = {
+	footer: `${PREFIX}-footer`,
+	warningIcon: `${PREFIX}-warningIcon`,
+	subheader: `${PREFIX}-subheader`,
+};
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+	[`&.${classes.footer}`]: {
 		zIndex: '2',
 		position: 'fixed',
 		bottom: 0,
@@ -55,12 +64,14 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
-	warningIcon: {
+
+	[`& .${classes.warningIcon}`]: {
 		fontSize: '1.1rem',
 		marginTop: -1,
 		marginRight: 5,
 	},
-	subheader: {
+
+	[`& .${classes.subheader}`]: {
 		color: `${theme.palette.service.main}`,
 		textTransform: 'uppercase',
 		fontWeight: 'bold',
@@ -68,7 +79,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Resources(props) {
-	const classes = useStyles();
 	const [$popover, setPopover] = React.useState(null);
 	const [$resources, setResources] = React.useState(null);
 
@@ -475,12 +485,11 @@ const initVersion = (initialVersion) => {
 };
 
 export default function Footer(props) {
-	const classes = useStyles();
 	const version = initVersion(props.version);
 
 	if (props.expand === true) {
 		return (
-			<Grid
+			<StyledGrid
 				container
 				className={classes.footer}
 				spacing={0}
@@ -509,7 +518,7 @@ export default function Footer(props) {
 						<Resources resources={props.resources} />
 					</Stack>
 				</Grid>
-			</Grid>
+			</StyledGrid>
 		);
 	} else {
 		return (

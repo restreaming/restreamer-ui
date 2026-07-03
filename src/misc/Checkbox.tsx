@@ -2,31 +2,21 @@ import React from 'react';
 
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles((theme) => ({
-	root: {
-		color: theme.palette.text.pirmary,
-		'&.Mui-checked': {
-			color: theme.palette.text.primary,
-		},
-		'&.Mui-disabled': {
-			color: theme.palette.text.disabled,
-		},
-	},
-	checked: {},
-	disabled: {},
-}));
 
 export default function Component(props) {
-	const classes = useStyles();
-
 	return (
 		<FormControlLabel
-			className={classes.root}
 			control={
 				<Checkbox
-					className={classes.root}
+					sx={{
+						color: 'text.pirmary',
+						'&.Mui-checked': {
+							color: 'text.primary',
+						},
+						'&.Mui-disabled': {
+							color: 'text.disabled',
+						},
+					}}
 					checked={props.checked}
 					onChange={props.onChange}
 				/>

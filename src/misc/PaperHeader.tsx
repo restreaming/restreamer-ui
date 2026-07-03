@@ -1,6 +1,5 @@
 import React from 'react';
 
-import makeStyles from '@mui/styles/makeStyles';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
@@ -9,22 +8,20 @@ import HelpIcon from '@mui/icons-material/HelpOutline';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		marginBottom: '.3em',
-		'& button': {
-			float: 'right',
-			marginLeft: '.5em',
-		},
-	},
-}));
-
 const Component = function (props) {
-	const classes = useStyles();
-
 	return (
 		<Grid container spacing={props.spacing} padding={props.padding}>
-			<Grid item xs={12} className={classes.root}>
+			<Grid
+				item
+				xs={12}
+				sx={{
+					marginBottom: '.3em',
+					'& button': {
+						float: 'right',
+						marginLeft: '.5em',
+					},
+				}}
+			>
 				{typeof props.onAbort === 'function' && (
 					<IconButton
 						color="inherit"

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import urlparser from 'url-parse';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -27,12 +26,6 @@ import MultiSelectOption from '../../../misc/MultiSelectOption';
 import Password from '../../../misc/Password';
 import Select from '../../../misc/Select';
 import Textarea from '../../../misc/Textarea';
-
-const useStyles = makeStyles((theme) => ({
-	gridContainer: {
-		marginTop: '0.5em',
-	},
-}));
 
 const initSettings = (initialSettings, config) => {
 	if (!initialSettings) {
@@ -1403,7 +1396,6 @@ PushSRT.defaultProps = {
 };
 
 function Source(props) {
-	const classes = useStyles();
 	const { i18n } = useLingui();
 	const config = initConfig(props.config);
 	const settings = initSettings(props.settings, config);
@@ -1464,7 +1456,7 @@ function Source(props) {
 				container
 				alignItems="flex-start"
 				spacing={2}
-				className={classes.gridContainer}
+				sx={{ mt: 0.5 }}
 			>
 				<Grid item xs={12}>
 					<Select

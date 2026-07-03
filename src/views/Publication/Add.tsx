@@ -1,11 +1,11 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useLingui } from '@lingui/react';
 import { useTheme } from '@mui/material/styles';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
@@ -37,14 +37,25 @@ import TabContent from './TabContent';
 import TabPanel from '../../misc/TabPanel';
 import TabsVerticalGrid from '../../misc/TabsVerticalGrid';
 
-const useStyles = makeStyles((theme) => ({
-	buttonAbort: {
+const PREFIX = 'Add';
+
+const classes = {
+	buttonAbort: `${PREFIX}-buttonAbort`,
+	gridContainer: `${PREFIX}-gridContainer`,
+	buttonGroup: `${PREFIX}-buttonGroup`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.buttonAbort}`]: {
 		marginBottom: '0.3em',
 	},
-	gridContainer: {
+
+	[`& .${classes.gridContainer}`]: {
 		marginTop: '0.5em',
 	},
-	buttonGroup: {
+
+	[`& .${classes.buttonGroup}`]: {
 		marginTop: '0.5em',
 		marginBottom: '-0.5em',
 	},
@@ -53,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Add(props) {
 	const theme = useTheme();
 	const breakpointUpSm = useMediaQuery(theme.breakpoints.up('sm'));
-	const classes = useStyles();
+
 	const { i18n } = useLingui();
 	const navigate = useNavigate();
 	const [$ready, setReady] = React.useState(false);
@@ -359,14 +370,14 @@ export default function Add(props) {
 					<Grid item xs={12} sm={6} md={3} align="center" key={s.id}>
 						<Tooltip
 							title={
-								<React.Fragment>
+								<Root>
 									<Typography variant="subtitle2">
 										<Trans>Incompatible</Trans>
 									</Typography>
 									<Typography>
 										<Trans>Check the requirements</Trans>
 									</Typography>
-								</React.Fragment>
+								</Root>
 							}
 							placement="left"
 							arrow

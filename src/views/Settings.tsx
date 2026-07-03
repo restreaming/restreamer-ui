@@ -1,10 +1,10 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -40,8 +40,15 @@ import Textarea from '../misc/Textarea';
 import TextField from '../misc/TextField';
 import useInterval from '../hooks/useInterval';
 
-const useStyles = makeStyles((theme) => ({
-	inlineEnv: {
+const PREFIX = 'Settings';
+
+const classes = {
+	inlineEnv: `${PREFIX}-inlineEnv`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.inlineEnv}`]: {
 		float: 'right',
 	},
 }));
@@ -696,7 +703,6 @@ const toInt = (val) => {
 };
 
 export default function Settings(props) {
-	const classes = useStyles();
 	const { i18n } = useLingui();
 	const navigate = useNavigate();
 	const { tab: _tab } = useParams();
@@ -1300,7 +1306,7 @@ export default function Settings(props) {
 	}
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={title}
@@ -3181,7 +3187,7 @@ export default function Settings(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-		</React.Fragment>
+		</Root>
 	);
 }
 

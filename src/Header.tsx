@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { styled } from '@mui/material/styles';
+
+import { styled } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import Divider from '@mui/material/Divider';
 import Fab from '@mui/material/Fab';
@@ -32,8 +33,17 @@ import Logo from './misc/Logo/rsLogo';
 import ModalContent from './misc/ModalContent';
 import PaperThumb from './misc/PaperThumb';
 
-const useStyles = makeStyles((theme) => ({
-	header: {
+const PREFIX = 'Header';
+
+const classes = {
+	header: `${PREFIX}-header`,
+	modalPaper: `${PREFIX}-modalPaper`,
+	aboutImage: `${PREFIX}-aboutImage`,
+	colorHighlight: `${PREFIX}-colorHighlight`,
+};
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+	[`& .${classes.header}`]: {
 		width: '100%',
 		height: 132,
 		lineHeight: '132px',
@@ -103,7 +113,8 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
-	modalPaper: {
+
+	[`& .${classes.modalPaper}`]: {
 		padding: '1em 1.5em 1.3em 1.5em',
 		width: '95%',
 		maxWidth: 350,
@@ -112,10 +123,12 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.background.modal,
 		color: theme.palette.text.primary,
 	},
-	aboutImage: {
+
+	[`& .${classes.aboutImage}`]: {
 		paddingLeft: '1em',
 	},
-	colorHighlight: {
+
+	[`& .${classes.colorHighlight}`]: {
 		color: `${theme.palette.secondary.main}!important`,
 	},
 }));
@@ -161,8 +174,6 @@ const StyledMenu = styled((props) => (
 }));
 
 function AboutModal(props) {
-	const classes = useStyles();
-
 	return (
 		<Modal open={props.open} onClose={props.onClose} className="modal">
 			<ModalContent
@@ -170,7 +181,7 @@ function AboutModal(props) {
 				onClose={props.onClose}
 				className={classes.modalPaper}
 			>
-				<Grid container spacing={1}>
+				<StyledGrid container spacing={1}>
 					<Grid item xs={12} className={classes.aboutImage}>
 						<PaperThumb
 							image={welcomeImage}
@@ -239,7 +250,7 @@ function AboutModal(props) {
 							</Link>
 						</Typography>
 					</Grid>
-				</Grid>
+				</StyledGrid>
 			</ModalContent>
 		</Modal>
 	);
@@ -251,8 +262,6 @@ AboutModal.defaultProps = {
 };
 
 function HeaderMenu(props) {
-	const classes = useStyles();
-
 	const [$anchorEl, setAnchorEl] = React.useState(null);
 	const [$about, setAbout] = React.useState(false);
 
@@ -443,8 +452,6 @@ HeaderMenu.defaultProps = {
 };
 
 export default function Header(props) {
-	const classes = useStyles();
-
 	return (
 		<Grid
 			container

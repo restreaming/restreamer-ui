@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import { styled } from '@mui/material/styles';
-import { useTheme } from '@mui/styles';
-import makeStyles from '@mui/styles/makeStyles';
+import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
@@ -24,47 +23,7 @@ import Typography from '@mui/material/Typography';
 
 import Dialog from './modals/Dialog';
 
-const useStyles = makeStyles((theme) => ({
-	drawerPaper: {
-		marginBottom: '60px',
-		boxShadow:
-			'0px -20px 10px -14px rgb(0 0 0 / 25%), 0px -20px 10px -10px rgb(0 0 0 / 10%)',
-		paddingLeft: 50,
-		paddingRight: 50,
-	},
-	drawerButtons: {
-		marginRight: '-15px!important',
-	},
-	channel: {
-		marginBottom: '1em',
-	},
-	channelBar: {
-		maxWidth: '1200px',
-	},
-	channelItems: {
-		width: '100%',
-		maxWidth: '980px',
-	},
-	iconButton: {
-		'& .MuiSvgIcon-root': {
-			fontSize: '2.5em',
-		},
-	},
-	iconButtonLeft: {
-		marginLeft: '-1.5em!important',
-		paddingBottom: '1em',
-	},
-	iconButtonRight: {
-		marginRight: '-1.5em!important',
-		paddingBottom: '1em',
-	},
-	imageTitle: {
-		textAlign: 'initial',
-		padding: '.5em 0em 0em .1em',
-	},
-}));
-
-const ImageButton = styled(ButtonBase)(({ theme }) => ({
+const ImageButton = styled(ButtonBase)(() => ({
 	'&:hover, &.Mui-focusVisible': {
 		zIndex: 1,
 		'& .MuiImageBackdrop-root': {
@@ -81,7 +40,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
 	},
 }));
 
-const Image = styled('span')(({ theme }) => ({
+const Image = styled('span')(() => ({
 	position: 'relative',
 }));
 
@@ -123,7 +82,6 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
 }));
 
 function ChannelButton(props, largeChannelList) {
-	const classes = useStyles();
 	const theme = useTheme();
 
 	let color = theme.palette.primary.main;
@@ -163,17 +121,17 @@ function ChannelButton(props, largeChannelList) {
 			sm={6}
 			md={4}
 			lg={3}
-			style={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
+			sx={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
 		>
 			<ImageButton
 				focusRipple
 				disabled={props.disabled}
 				onClick={props.onClick}
-				style={{ width: props.width }}
+				sx={{ width: props.width }}
 			>
 				<Stack direction="column" spacing={0.5}>
 					<Image
-						style={{
+						sx={{
 							width: props.width,
 							height: parseInt((props.width / 16) * 9),
 						}}
@@ -182,21 +140,24 @@ function ChannelButton(props, largeChannelList) {
 							<DoNotDisturbAltIcon fontSize="large" />
 						</ImageAlt>
 						<ImageSrc
-							style={{
+							sx={{
 								backgroundImage: `url(${props.url})`,
 								borderColor: color_active,
 							}}
 						/>
 						<ImageBackdrop
 							className="MuiImageBackdrop-root"
-							style={{ borderColor: color_active }}
+							sx={{ borderColor: color_active }}
 						/>
 					</Image>
 					<Stack
 						direction="row"
 						alignItems="flex-start"
 						justifyContent="space-between"
-						className={classes.imageTitle}
+						sx={{
+							textAlign: 'initial',
+							padding: '.5em 0em 0em .1em',
+						}}
 					>
 						<Typography variant="body2" color="inherit">
 							{props.title}
@@ -243,7 +204,6 @@ const calculateRowsToFit = (windowHeight, thumbnailHeight, otherUIHeight) => {
 };
 
 export default function ChannelList(props) {
-	const classes = useStyles();
 	const theme = useTheme();
 	const breakpointSmall = useMediaQuery(theme.breakpoints.up('sm'));
 	const breakpointMedium = useMediaQuery(theme.breakpoints.up('md'));
@@ -405,8 +365,12 @@ export default function ChannelList(props) {
 				onOpen={() => {}}
 				onClose={props.onClose}
 				sx={{
-					marginButtom: 60,
 					'& .MuiDrawer-paper': {
+						marginBottom: '60px',
+						boxShadow:
+							'0px -20px 10px -14px rgb(0 0 0 / 25%), 0px -20px 10px -10px rgb(0 0 0 / 10%)',
+						paddingLeft: '50px',
+						paddingRight: '50px',
 						top: $largeChannelList
 							? '0px!important'
 							: 'auto!important',
@@ -414,9 +378,6 @@ export default function ChannelList(props) {
 					},
 				}}
 				BackdropProps={{ invisible: true }}
-				classes={{
-					paper: classes.drawerPaper,
-				}}
 				disableScrollLock
 			>
 				<React.Fragment>
@@ -424,7 +385,7 @@ export default function ChannelList(props) {
 						container
 						spacing={2}
 						justifyContent="center"
-						className={classes.channel}
+						sx={{ marginBottom: '1em' }}
 					>
 						<Grid item xs={12}>
 							<Stack
@@ -445,7 +406,7 @@ export default function ChannelList(props) {
 									direction="row"
 									spacing={1}
 									justifyContent="flex-end"
-									className={classes.drawerButtons}
+									sx={{ mr: '-15px' }}
 								>
 									<IconButton
 										color="inherit"
@@ -485,14 +446,18 @@ export default function ChannelList(props) {
 									direction="row"
 									spacing={0}
 									alignItems="center"
-									className={classes.iconButtonLeft}
+									sx={{ ml: '-1.5em', pb: '1em' }}
 								>
 									<IconButton
 										onClick={() => {
 											setPos($pos - 1);
 										}}
 										disabled={$pos === 0}
-										className={classes.iconButton}
+										sx={{
+											'& .MuiSvgIcon-root': {
+												fontSize: '2.5em',
+											},
+										}}
 									>
 										<NavigateBeforeIcon />
 									</IconButton>
@@ -500,7 +465,7 @@ export default function ChannelList(props) {
 								<Stack
 									direction="row"
 									spacing={0}
-									className={classes.channelItems}
+									sx={{ width: '100%', maxWidth: '980px' }}
 								>
 									<Grid
 										container
@@ -518,7 +483,7 @@ export default function ChannelList(props) {
 									direction="row"
 									spacing={0}
 									alignItems="center"
-									className={classes.iconButtonRight}
+									sx={{ mr: '-1.5em', pb: '1em' }}
 								>
 									<IconButton
 										onClick={() => {
@@ -528,7 +493,11 @@ export default function ChannelList(props) {
 											$pos + $nChannels >=
 											allChannels.length
 										}
-										className={classes.iconButton}
+										sx={{
+											'& .MuiSvgIcon-root': {
+												fontSize: '2.5em',
+											},
+										}}
 									>
 										<NavigateNextIcon />
 									</IconButton>

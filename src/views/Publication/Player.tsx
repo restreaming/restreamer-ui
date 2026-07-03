@@ -1,9 +1,9 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -28,19 +28,32 @@ import TabPanel from '../../misc/TabPanel';
 import TabsHorizontal from '../../misc/TabsHorizontal';
 import TextFieldCopy from '../../misc/TextFieldCopy';
 
-const useStyles = makeStyles((theme) => ({
-	gridContainer: {
+const PREFIX = 'Player';
+
+const classes = {
+	gridContainer: `${PREFIX}-gridContainer`,
+	playerL1: `${PREFIX}-playerL1`,
+	playerL2: `${PREFIX}-playerL2`,
+	playerL3: `${PREFIX}-playerL3`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.gridContainer}`]: {
 		paddingTop: '1em',
 	},
-	playerL1: {
+
+	[`& .${classes.playerL1}`]: {
 		padding: '4px 1px 4px 9px',
 	},
-	playerL2: {
+
+	[`& .${classes.playerL2}`]: {
 		position: 'relative',
 		width: '100%',
 		paddingTop: '56.25%',
 	},
-	playerL3: {
+
+	[`& .${classes.playerL3}`]: {
 		position: 'absolute',
 		top: 0,
 		left: 0,
@@ -64,7 +77,6 @@ const posterImageTypes = [
 ];
 
 export default function Edit(props) {
-	const classes = useStyles();
 	const navigate = useNavigate();
 	const { channelid: _channelid } = useParams();
 	const { i18n } = useLingui();
@@ -383,7 +395,7 @@ export default function Edit(props) {
 	const logo = { ...$settings.logo, image: prepareUrl($settings.logo.image) };
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Player</Trans>}
@@ -719,7 +731,7 @@ export default function Edit(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-		</React.Fragment>
+		</Root>
 	);
 }
 

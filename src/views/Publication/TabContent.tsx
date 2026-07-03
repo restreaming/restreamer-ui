@@ -1,31 +1,37 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
 import { Trans } from '@lingui/macro';
 
-import makeStyles from '@mui/styles/makeStyles';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
-	serviceIcon: {
+const PREFIX = 'TabContent';
+
+const classes = {
+	serviceIcon: `${PREFIX}-serviceIcon`,
+	serviceName: `${PREFIX}-serviceName`,
+};
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+	[`& .${classes.serviceIcon}`]: {
 		fontSize: '4rem!important',
 		maxHeight: 64,
 		marginTop: '-0.065em',
 	},
-	serviceName: {
+
+	[`& .${classes.serviceName}`]: {
 		marginTop: '-.2rem',
 	},
 }));
 
 export default function TabContent(props) {
-	const classes = useStyles();
-
 	return (
-		<Grid container spacing={2}>
+		<StyledGrid container spacing={2}>
 			<Grid item xs={12}>
 				<Stack
 					direction="row"
@@ -69,7 +75,7 @@ export default function TabContent(props) {
 					</Link>
 				</Typography>
 			</Grid>
-		</Grid>
+		</StyledGrid>
 	);
 }
 

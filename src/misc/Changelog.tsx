@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 import ReactMarkdown from 'react-markdown';
 import SemverGt from 'semver/functions/gt';
 import SemverLte from 'semver/functions/lte';
@@ -13,45 +13,46 @@ import SemverValid from 'semver/functions/valid';
 import BoxText from './BoxText';
 import Dialog from './modals/Dialog';
 
-const useStyles = makeStyles((theme) => ({
-	h1: {
-		fontFamily: theme.typography.h1.fontFamily,
-		fontSize: theme.typography.h1.fontSize,
-		marginTop: '.5rem',
-		marginBottom: '-1rem',
+const H1 = styled('h1')(({ theme }) => ({
+	fontFamily: theme.typography.h1.fontFamily,
+	fontSize: theme.typography.h1.fontSize,
+	marginTop: '.5rem',
+	marginBottom: '-1rem',
+}));
+
+const H2 = styled('h2')(({ theme }) => ({
+	fontFamily: theme.typography.h2.fontFamily,
+	fontSize: theme.typography.h2.fontSize,
+	paddingTop: '1.5rem',
+	marginBottom: theme.typography.h2.marginBottom,
+	'&::after': {
+		content: '""',
+		display: 'block',
+		height: 1,
+		backgroundColor: theme.palette.primary.contrastText,
 	},
-	h2: {
-		fontFamily: theme.typography.h2.fontFamily,
-		fontSize: theme.typography.h2.fontSize,
-		paddingTop: '1.5rem',
-		marginBottom: theme.typography.h2.marginBottom,
-		'&::after': {
-			content: '"     "',
-			display: 'block',
-			height: 1,
-			backgroundColor: theme.palette.primary.contrastText,
-		},
-	},
-	h3: {
-		fontFamily: theme.typography.h3.fontFamily,
-		fontSize: theme.typography.h3.fontSize,
-		paddingTop: '.5rem',
-		marginBottom: theme.typography.h3.marginBottom,
-	},
-	h4: {
-		fontFamily: theme.typography.h4.fontFamily,
-		fontSize: theme.typography.h4.fontSize,
-		marginBottom: theme.typography.h4.marginBottom,
-	},
-	a: {
-		fontWeight: 'bold',
-		color: theme.palette.secondary.main,
-	},
+}));
+
+const H3 = styled('h3')(({ theme }) => ({
+	fontFamily: theme.typography.h3.fontFamily,
+	fontSize: theme.typography.h3.fontSize,
+	paddingTop: '.5rem',
+	marginBottom: theme.typography.h3.marginBottom,
+}));
+
+const H4 = styled('h4')(({ theme }) => ({
+	fontFamily: theme.typography.h4.fontFamily,
+	fontSize: theme.typography.h4.fontSize,
+	marginBottom: theme.typography.h4.marginBottom,
+}));
+
+const A = styled('a')(({ theme }) => ({
+	fontWeight: 'bold',
+	color: theme.palette.secondary.main,
 }));
 
 export default function Changelog(props) {
 	const [$data, setData] = React.useState('');
-	const classes = useStyles();
 
 	React.useEffect(() => {
 		(async () => {
@@ -142,30 +143,14 @@ export default function Changelog(props) {
 	}
 
 	const renderers = {
-		h1: (props) => (
-			<h1 className={classes.h1} {...props}>
-				{props.children}
-			</h1>
-		),
-		h2: (props) => (
-			<h2 className={classes.h2} {...props}>
-				{props.children}
-			</h2>
-		),
-		h3: (props) => (
-			<h3 className={classes.h3} {...props}>
-				{props.children}
-			</h3>
-		),
-		h4: (props) => (
-			<h4 className={classes.h4} {...props}>
-				{props.children}
-			</h4>
-		),
+		h1: (props) => <H1 {...props}>{props.children}</H1>,
+		h2: (props) => <H2 {...props}>{props.children}</H2>,
+		h3: (props) => <H3 {...props}>{props.children}</H3>,
+		h4: (props) => <H4 {...props}>{props.children}</H4>,
 		a: (props) => (
-			<a className={classes.a} target="_blank" {...props}>
+			<A target="_blank" {...props}>
 				{props.children}
-			</a>
+			</A>
 		),
 	};
 

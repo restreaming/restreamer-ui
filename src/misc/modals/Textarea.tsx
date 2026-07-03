@@ -1,6 +1,5 @@
 import React from 'react';
 
-import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
@@ -8,17 +7,7 @@ import Stack from '@mui/material/Stack';
 import ModalContent from '../ModalContent';
 import Textarea from '../Textarea';
 
-const useStyles = makeStyles((theme) => ({
-	box: {
-		backgroundColor: theme.palette.background.modalbox,
-		borderRadius: 4,
-		padding: '0em 1em 1em 1em',
-	},
-}));
-
 const Component = function (props) {
-	const classes = useStyles();
-
 	const { open, title, onClose, onHelp, ...other } = props;
 
 	return (
@@ -36,7 +25,11 @@ const Component = function (props) {
 							justifyContent="center"
 							alignItems="center"
 							spacing={1}
-							className={classes.box}
+							sx={{
+								backgroundColor: 'background.modalbox',
+								borderRadius: 1,
+								p: '0em 1em 1em 1em',
+							}}
 						>
 							<Textarea {...other} />
 						</Stack>

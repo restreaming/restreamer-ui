@@ -1,10 +1,10 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
@@ -38,25 +38,37 @@ import SRTControl from '../../misc/controls/SRT';
 import TabPanel from '../../misc/TabPanel';
 import TabsVerticalGrid from '../../misc/TabsVerticalGrid';
 
-const useStyles = makeStyles((theme) => ({
-	wizardButtonElement: {
+const PREFIX = 'index';
+
+const classes = {
+	wizardButtonElement: `${PREFIX}-wizardButtonElement`,
+	wizardButton: `${PREFIX}-wizardButton`,
+	link: `${PREFIX}-link`,
+	inlineIcon: `${PREFIX}-inlineIcon`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.wizardButtonElement}`]: {
 		display: 'flex',
 		alignItems: 'left',
 	},
-	wizardButton: {
+
+	[`& .${classes.wizardButton}`]: {
 		marginLeft: '1em',
 		padding: ' 0em 2em 0em 2em',
 	},
-	link: {
+
+	[`& .${classes.link}`]: {
 		color: theme.palette.common.white,
 	},
-	inlineIcon: {
+
+	[`& .${classes.inlineIcon}`]: {
 		marginBottom: '-.2rem',
 	},
 }));
 
 export default function Edit(props) {
-	const classes = useStyles();
 	const { i18n } = useLingui();
 	const navigate = useNavigate();
 	const { channelid: _channelid, tab: _tab } = useParams();
@@ -464,7 +476,7 @@ export default function Edit(props) {
 	}
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={
@@ -893,7 +905,7 @@ export default function Edit(props) {
 			<Backdrop open={$state.saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</React.Fragment>
+		</Root>
 	);
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
@@ -17,20 +16,7 @@ import cc_by_nd from './images/by-nd.svg';
 import cc_by_nc_nd from './images/by-nc-nd.svg';
 import Select from '../../Select';
 
-const useStyles = makeStyles((theme) => ({
-	boxGray: {
-		marginBottom: '.5em',
-		marginTop: '.5em',
-	},
-	link: {
-		marginTop: '.5em',
-		wordBreak: 'break-word',
-	},
-}));
-
 export default function License(props) {
-	const classes = useStyles();
-
 	const { i18n } = useLingui();
 
 	const handleLicenseChange = (event) => {
@@ -126,9 +112,11 @@ export default function License(props) {
 			</Grid>
 			{description.length !== 0 && (
 				<Grid item xs={12}>
-					<div className="boxGray {classes.root}">
+					<div style={{ marginBottom: '.5em', marginTop: '.5em' }}>
 						<Typography>{description}</Typography>
-						<Typography className={classes.link}>
+						<Typography
+							sx={{ mt: '.5em', wordBreak: 'break-word' }}
+						>
 							<Link
 								color="secondary"
 								href={link}

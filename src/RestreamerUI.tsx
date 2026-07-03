@@ -1,6 +1,6 @@
 import React from 'react';
 
-import makeStyles from '@mui/styles/makeStyles';
+import { styled } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -24,12 +24,20 @@ import Changelog from './misc/Changelog';
 import SemverGt from 'semver/functions/gt';
 import SemverValid from 'semver/functions/valid';
 
-const useStyles = makeStyles((theme) => ({
-	MainHeader: {
+const PREFIX = 'RestreamerUI';
+
+const classes = {
+	MainHeader: `${PREFIX}-MainHeader`,
+	MainContent: `${PREFIX}-MainContent`,
+};
+
+const StyledI18n = styled(I18n)(({ theme }) => ({
+	[`& .${classes.MainHeader}`]: {
 		height: '132px',
 	},
+
 	// todo: one layer
-	MainContent: {
+	[`& .${classes.MainContent}`]: {
 		height: '100%',
 		'& .MainContent-container': {
 			minHeight: 'calc(100vh - 230px)',
@@ -41,8 +49,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RestreamerUI(props) {
-	const classes = useStyles();
-
 	const [$state, setState] = React.useState({
 		initialized: false,
 		valid: false,
@@ -538,7 +544,7 @@ export default function RestreamerUI(props) {
 		$state.connected && $state.compatibility.compatible && !$state.password;
 
 	return (
-		<I18n>
+		<StyledI18n>
 			<NotifyProvider value={{ Dispatch: notify }}>
 				<Grid
 					container
@@ -626,7 +632,7 @@ export default function RestreamerUI(props) {
 					/>
 				)}
 			</NotifyProvider>
-		</I18n>
+		</StyledI18n>
 	);
 }
 

@@ -1,8 +1,8 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
@@ -17,36 +17,53 @@ import Paper from '../../misc/Paper';
 import PaperHeader from '../../misc/PaperHeader';
 import Services from '../Publication/Services';
 
-const useStyles = makeStyles((theme) => ({
-	viewerCount: {
+const PREFIX = 'Publication';
+
+const classes = {
+	viewerCount: `${PREFIX}-viewerCount`,
+	vierwerDescription: `${PREFIX}-vierwerDescription`,
+	vierwerTypo: `${PREFIX}-vierwerTypo`,
+	bandwidth: `${PREFIX}-bandwidth`,
+	bandwidthCount: `${PREFIX}-bandwidthCount`,
+	bandwidthDescription: `${PREFIX}-bandwidthDescription`,
+	bandwidthIcon: `${PREFIX}-bandwidthIcon`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.viewerCount}`]: {
 		fontSize: '3.5rem',
 		fontWeight: 600,
 	},
-	vierwerDescription: {
+
+	[`& .${classes.vierwerDescription}`]: {
 		marginTop: '-1em',
 	},
-	vierwerTypo: {
+
+	[`& .${classes.vierwerTypo}`]: {
 		fontSize: '1.1rem',
 	},
-	bandwidth: {
+
+	[`& .${classes.bandwidth}`]: {
 		marginBottom: '.3em',
 	},
-	bandwidthCount: {
+
+	[`& .${classes.bandwidthCount}`]: {
 		fontSize: '2.5rem',
 		fontWeight: 600,
 	},
-	bandwidthDescription: {
+
+	[`& .${classes.bandwidthDescription}`]: {
 		marginTop: '-.5em',
 	},
-	bandwidthIcon: {
+
+	[`& .${classes.bandwidthIcon}`]: {
 		fontSize: '1.7rem',
 		paddingRight: 7,
 	},
 }));
 
 export default function Publication(props) {
-	const classes = useStyles();
-
 	const navigate = useNavigate();
 	const services = Services.IDs();
 	const [$egresses, setEgresses] = React.useState([]);
@@ -146,7 +163,7 @@ export default function Publication(props) {
 
 	for (let e of $egresses.values()) {
 		egresses.push(
-			<React.Fragment key={e.id}>
+			<Root key={e.id}>
 				<Grid item xs={12}>
 					<Divider />
 				</Grid>
@@ -161,7 +178,7 @@ export default function Publication(props) {
 						onOrder={handleOrderChange(e.id)}
 					/>
 				</Grid>
-			</React.Fragment>,
+			</Root>,
 		);
 	}
 

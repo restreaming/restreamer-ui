@@ -1,8 +1,8 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import CircularProgress from '@mui/material/CircularProgress';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
@@ -25,27 +25,45 @@ import Publication from './Publication';
 import ProcessModal from '../../misc/modals/Process';
 import Welcome from '../Welcome';
 
-const useStyles = makeStyles((theme) => ({
-	gridContainerL1: {
+const PREFIX = 'index';
+
+const classes = {
+	gridContainerL1: `${PREFIX}-gridContainerL1`,
+	gridContainerL2: `${PREFIX}-gridContainerL2`,
+	link: `${PREFIX}-link`,
+	playerL1: `${PREFIX}-playerL1`,
+	playerL2: `${PREFIX}-playerL2`,
+	playerL3: `${PREFIX}-playerL3`,
+	playerWarningIcon: `${PREFIX}-playerWarningIcon`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.gridContainerL1}`]: {
 		marginBottom: '6em',
 	},
-	gridContainerL2: {
+
+	[`& .${classes.gridContainerL2}`]: {
 		paddingTop: '.6em',
 	},
-	link: {
+
+	[`& .${classes.link}`]: {
 		marginLeft: 10,
 	},
-	playerL1: {
+
+	[`& .${classes.playerL1}`]: {
 		//padding: '4px 1px 4px 8px',
 		paddingTop: 10,
 		paddingLeft: 18,
 	},
-	playerL2: {
+
+	[`& .${classes.playerL2}`]: {
 		position: 'relative',
 		width: '100%',
 		paddingTop: '56.25%',
 	},
-	playerL3: {
+
+	[`& .${classes.playerL3}`]: {
 		position: 'absolute',
 		top: 0,
 		left: 0,
@@ -53,14 +71,14 @@ const useStyles = makeStyles((theme) => ({
 		right: 0,
 		backgroundColor: theme.palette.common.black,
 	},
-	playerWarningIcon: {
+
+	[`& .${classes.playerWarningIcon}`]: {
 		color: theme.palette.warning.main,
 		fontSize: 'xxx-large',
 	},
 }));
 
 export default function Main(props) {
-	const classes = useStyles();
 	const navigate = useNavigate();
 	const { channelid: _channelid } = useParams();
 	const [$state, setState] = React.useState({
@@ -313,7 +331,7 @@ export default function Main(props) {
 	}
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Grid
 				container
 				justifyContent="center"
@@ -592,7 +610,7 @@ export default function Main(props) {
 				data={$processDebug.data}
 				onHelp={handleHelp('process-report')}
 			/>
-		</React.Fragment>
+		</Root>
 	);
 }
 

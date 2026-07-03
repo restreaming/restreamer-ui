@@ -1,21 +1,12 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 
 import TabPanel from '../TabPanel';
 import TabsHorizontal from '../TabsHorizontal';
-
-const useStyles = makeStyles((theme) => ({
-	root: {
-		'& .MuiOutlinedInput-input': {
-			whiteSpace: 'pre-line',
-		},
-	},
-}));
 
 function init(settings) {
 	const initSettings = {
@@ -35,7 +26,6 @@ function init(settings) {
 }
 
 export default function Control(props) {
-	const classes = useStyles();
 	const [$tab, setTab] = React.useState('content');
 	const settings = init(props.settings);
 
@@ -91,11 +81,15 @@ export default function Control(props) {
 						</Grid>
 						<Grid item xs={12}>
 							<TextField
-								className={classes.root}
 								variant="outlined"
 								fullWidth
 								multiline
 								rows={10}
+								sx={{
+									'& .MuiOutlinedInput-input': {
+										whiteSpace: 'pre-line',
+									},
+								}}
 								label={<Trans>Description</Trans>}
 								value={settings.description}
 								onChange={handleChange('description')}
@@ -116,11 +110,15 @@ export default function Control(props) {
 						</Grid>
 						<Grid item xs={12}>
 							<TextField
-								className={classes.root}
 								variant="outlined"
 								fullWidth
 								multiline
 								rows={10}
+								sx={{
+									'& .MuiOutlinedInput-input': {
+										whiteSpace: 'pre-line',
+									},
+								}}
 								label={<Trans>Description</Trans>}
 								value={settings.author.description}
 								onChange={handleChange('author.description')}

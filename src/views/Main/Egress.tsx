@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
 import EditIcon from '@mui/icons-material/Edit';
 import Grid from '@mui/material/Grid';
@@ -12,8 +13,14 @@ import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import Services from '../Publication/Services';
 
-const useStyles = makeStyles((theme) => ({
-	egressBar: {
+const PREFIX = 'Egress';
+
+const classes = {
+	egressBar: `${PREFIX}-egressBar`,
+};
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+	[`&.${classes.egressBar}`]: {
 		marginTop: '-.4em',
 		marginBottom: '-.2em',
 		'& .svg-inline--fa': {
@@ -60,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Egress(props) {
-	const classes = useStyles();
 	const [$order, setOrder] = React.useState('stop');
 
 	React.useEffect(() => {
@@ -136,7 +142,7 @@ export default function Egress(props) {
 	}
 
 	return (
-		<Grid container className={classes.egressBar}>
+		<StyledGrid container className={classes.egressBar}>
 			<Grid item xs={12}>
 				<Stack
 					direction="row"
@@ -176,7 +182,7 @@ export default function Egress(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-		</Grid>
+		</StyledGrid>
 	);
 }
 

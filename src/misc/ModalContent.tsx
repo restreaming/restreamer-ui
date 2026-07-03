@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
@@ -11,54 +10,39 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
-	modalHeader: {
-		marginBottom: '.7em',
-		'& button': {
-			float: 'right',
-			marginLeft: '.5em',
-			paddingTop: '.25em',
-			marginRight: '-.7em',
-		},
-	},
-	modalFooter: {
-		marginTop: '1.2em',
-		minHeight: '38px',
-		'& button': {
-			marginRight: '.5em',
-		},
-		'& .right': {
-			float: 'right',
-			marginRight: '0',
-			marginLeft: '.5em',
-		},
-	},
-	modalPaper: {
-		padding: '1em 1.5em 1.3em 1.5em',
-		width: '95%',
-		maxWidth: 980,
-		maxHeight: '95%',
-		overflow: 'scroll',
-		backgroundColor: theme.palette.background.modal,
-		color: theme.palette.text.primary,
-	},
-}));
-
 const Component = React.forwardRef((props, ref) => {
-	const classes = useStyles();
-
 	const { title, onClose, onHelp, ...other } = props;
 
 	return (
 		<Paper
-			className={classes.modalPaper}
+			sx={{
+				p: '1em 1.5em 1.3em 1.5em',
+				width: '95%',
+				maxWidth: 980,
+				maxHeight: '95%',
+				overflow: 'scroll',
+				bgcolor: 'background.modal',
+				color: 'text.primary',
+			}}
 			elevation={0}
 			tabIndex={-1}
 			ref={ref}
 			{...other}
 		>
 			<Grid container spacing={0}>
-				<Grid item xs={12} className={classes.modalHeader}>
+				<Grid
+					item
+					xs={12}
+					sx={{
+						marginBottom: '.7em',
+						'& button': {
+							float: 'right',
+							marginLeft: '.5em',
+							paddingTop: '.25em',
+							marginRight: '-.7em',
+						},
+					}}
+				>
 					<Stack
 						direction="row"
 						justifyContent="space-between"
@@ -96,7 +80,22 @@ const Component = React.forwardRef((props, ref) => {
 			</Grid>
 			{props.children}
 			<Grid container spacing={0}>
-				<Grid item xs={12} className={classes.modalFooter}>
+				<Grid
+					item
+					xs={12}
+					sx={{
+						marginTop: '1.2em',
+						minHeight: '38px',
+						'& button': {
+							marginRight: '.5em',
+						},
+						'& .right': {
+							float: 'right',
+							marginRight: '0',
+							marginLeft: '.5em',
+						},
+					}}
+				>
 					<Button
 						variant="outlined"
 						color="default"

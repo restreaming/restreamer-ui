@@ -1,22 +1,12 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import Duration from './Duration';
 import Number from './Number';
-
-const useStyles = makeStyles((theme) => ({
-	box: {
-		backgroundColor: theme.palette.background.modalbox,
-		borderRadius: 4,
-		padding: '1em',
-		height: '100%',
-	},
-}));
 
 function init(props) {
 	const initProps = {
@@ -37,12 +27,18 @@ function init(props) {
 }
 
 export default function Progress(props) {
-	const classes = useStyles();
-
 	const progress = init(props);
 
 	return (
-		<Grid container className={classes.box}>
+		<Grid
+			container
+			sx={{
+				backgroundColor: 'background.modalbox',
+				borderRadius: 1,
+				p: '1em',
+				height: '100%',
+			}}
+		>
 			<Grid item xs={12}>
 				<Typography variant="h4">
 					<strong>

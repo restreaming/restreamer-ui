@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/Usb';
@@ -13,12 +12,6 @@ import Typography from '@mui/material/Typography';
 import Audio from '../../../misc/coders/settings/Audio';
 import FormInlineButton from '../../../misc/FormInlineButton';
 import SelectCustom from '../../../misc/SelectCustom';
-
-const useStyles = makeStyles((theme) => ({
-	gridContainer: {
-		marginTop: '0.5em',
-	},
-}));
 
 const initSettings = (initialSettings) => {
 	if (!initialSettings) {
@@ -58,7 +51,6 @@ const createInputs = (settings) => {
 };
 
 function Source(props) {
-	const classes = useStyles();
 	const { i18n } = useLingui();
 	const settings = initSettings(props.settings);
 
@@ -108,12 +100,7 @@ function Source(props) {
 	});
 
 	return (
-		<Grid
-			container
-			alignItems="flex-start"
-			spacing={2}
-			className={classes.gridContainer}
-		>
+		<Grid container alignItems="flex-start" spacing={2} sx={{ mt: 0.5 }}>
 			<Grid item xs={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>

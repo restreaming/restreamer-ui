@@ -1,10 +1,10 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -39,19 +39,27 @@ import TabContent from './TabContent';
 import TabPanel from '../../misc/TabPanel';
 import TabsVerticalGrid from '../../misc/TabsVerticalGrid';
 
-const useStyles = makeStyles((theme) => ({
-	gridContainer: {
+const PREFIX = 'Edit';
+
+const classes = {
+	gridContainer: `${PREFIX}-gridContainer`,
+	link: `${PREFIX}-link`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.gridContainer}`]: {
 		marginTop: '0.5em',
 		marginBottom: '1em',
 	},
-	link: {
+
+	[`& .${classes.link}`]: {
 		marginLeft: 10,
 		wordWrap: 'anywhere',
 	},
 }));
 
 export default function Edit(props) {
-	const classes = useStyles();
 	const { i18n } = useLingui();
 	const {
 		channelid: _channelid,
@@ -486,7 +494,7 @@ export default function Edit(props) {
 	const title = $settings.name.length === 0 ? $service.name : $settings.name;
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={
@@ -849,7 +857,7 @@ export default function Edit(props) {
 			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</React.Fragment>
+		</Root>
 	);
 }
 

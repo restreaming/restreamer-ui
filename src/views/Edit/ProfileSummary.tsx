@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -20,19 +19,7 @@ function IconEdit(props) {
 	return <EditIcon {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
-	title: {
-		float: 'left',
-	},
-	edit: {
-		float: 'right',
-		marginTop: '.5em',
-	},
-}));
-
 export default function ProfileSummary(props) {
-	const classes = useStyles();
-
 	const profile = M.initProfile(props.profile);
 
 	const handleEdit = (what) => () => {
@@ -106,7 +93,7 @@ export default function ProfileSummary(props) {
 				>
 					<IconWizard />
 				</IconButton>
-				<Typography variant="h3" className={classes.title}>
+				<Typography variant="h3" sx={{ float: 'left' }}>
 					<Trans>Audio settings</Trans>
 				</Typography>
 			</Grid>

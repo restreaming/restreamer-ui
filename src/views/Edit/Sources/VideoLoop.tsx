@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -19,12 +18,6 @@ const imageTypes = [
 	{ mimetype: 'image/*', extension: 'image', maxSize: 2 * 1024 * 1024 },
 	{ mimetype: 'video/*', extension: 'video', maxSize: 25 * 1024 * 1024 },
 ];
-
-const useStyles = makeStyles((theme) => ({
-	gridContainer: {
-		marginTop: '0.5em',
-	},
-}));
 
 const initSettings = (initialSettings) => {
 	if (!initialSettings) {
@@ -59,7 +52,6 @@ const createInputs = (settings) => {
 };
 
 function Source(props) {
-	const classes = useStyles();
 	const settings = initSettings(props.settings);
 	const [$saving, setSaving] = React.useState(false);
 	const [$error, setError] = React.useState({
@@ -150,7 +142,7 @@ function Source(props) {
 				container
 				alignItems="flex-start"
 				spacing={2}
-				className={classes.gridContainer}
+				sx={{ mt: 0.5 }}
 			>
 				<Grid item xs={12}>
 					<Typography variant="caption">

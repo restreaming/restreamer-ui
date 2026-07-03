@@ -1,6 +1,5 @@
 import React from 'react';
 
-import makeStyles from '@mui/styles/makeStyles';
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
 import HelpIcon from '@mui/icons-material/HelpOutline';
@@ -9,42 +8,9 @@ import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-const useStyles = makeStyles((theme) => ({
-	modalHeader: {
-		marginBottom: '.7em',
-		'& button': {
-			float: 'right',
-			marginLeft: '.5em',
-		},
-	},
-	modalFooter: {
-		marginTop: '1.2em',
-		minHeight: '38px',
-		'& button': {
-			marginRight: '.5em',
-		},
-		'& div button': {
-			float: 'right',
-			marginRight: '0',
-			marginLeft: '.5em',
-		},
-	},
-	modalPaper: {
-		padding: '1em 1.5em 1.3em 1.5em',
-		width: '95%',
-		maxWidth: 540,
-		maxHeight: '95%',
-		overflow: 'scroll',
-		backgroundColor: theme.palette.background.modal,
-		color: theme.palette.text.primary,
-	},
-}));
-
 // todo: use MuiDialog
 
 const Component = React.forwardRef((props, ref) => {
-	const classes = useStyles();
-
 	const paperStyle = {};
 
 	if (props.maxWidth > 0) {
@@ -59,14 +25,32 @@ const Component = React.forwardRef((props, ref) => {
 			disableScrollLock
 		>
 			<Paper
-				className={classes.modalPaper}
+				sx={{
+					p: '1em 1.5em 1.3em 1.5em',
+					width: '95%',
+					maxWidth: 540,
+					maxHeight: '95%',
+					overflow: 'scroll',
+					bgcolor: 'background.modal',
+					color: 'text.primary',
+				}}
 				elevation={0}
 				ref={ref}
 				tabIndex={-1}
 				style={paperStyle}
 			>
 				<Grid container spacing={0}>
-					<Grid item xs={12} className={classes.modalHeader}>
+					<Grid
+						item
+						xs={12}
+						sx={{
+							marginBottom: '.7em',
+							'& button': {
+								float: 'right',
+								marginLeft: '.5em',
+							},
+						}}
+					>
 						<Typography variant="button">{props.title}</Typography>
 						{typeof props.onClose === 'function' && (
 							<IconButton
@@ -92,7 +76,22 @@ const Component = React.forwardRef((props, ref) => {
 					{props.children}
 				</Grid>
 				<Grid container spacing={0}>
-					<Grid item xs={12} className={classes.modalFooter}>
+					<Grid
+						item
+						xs={12}
+						sx={{
+							marginTop: '1.2em',
+							minHeight: '38px',
+							'& button': {
+								marginRight: '.5em',
+							},
+							'& div button': {
+								float: 'right',
+								marginRight: '0',
+								marginLeft: '.5em',
+							},
+						}}
+					>
 						<div>{props.buttonsRight}</div>
 						{props.buttonsLeft}
 					</Grid>

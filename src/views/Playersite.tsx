@@ -1,9 +1,9 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import makeStyles from '@mui/styles/makeStyles';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -40,8 +40,15 @@ import TabPanel from '../misc/TabPanel';
 import TabsVerticalGrid from '../misc/TabsVerticalGrid';
 import UploadButton from '../misc/UploadButton';
 
-const useStyles = makeStyles((theme) => ({
-	buttonOpen: {
+const PREFIX = 'Playersite';
+
+const classes = {
+	buttonOpen: `${PREFIX}-buttonOpen`,
+};
+
+// TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
+const Root = styled('div')(({ theme }) => ({
+	[`& .${classes.buttonOpen}`]: {
 		float: 'right',
 		marginLeft: '.5em',
 	},
@@ -125,7 +132,6 @@ CheckboxList.defaultProps = {
 };
 
 export default function Playersite(props) {
-	const classes = useStyles();
 	const navigate = useNavigate();
 	const { i18n } = useLingui();
 	const address = props.restreamer.Address() + '/';
@@ -365,7 +371,7 @@ export default function Playersite(props) {
 	}
 
 	return (
-		<React.Fragment>
+		<Root>
 			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Publication Website</Trans>}
@@ -1059,7 +1065,7 @@ export default function Playersite(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-		</React.Fragment>
+		</Root>
 	);
 }
 
