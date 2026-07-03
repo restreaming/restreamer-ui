@@ -8,14 +8,17 @@
 		"start": "react-scripts start",
 		"build": "react-scripts --optimize-for-size build",
 		"start-build": "serve -s build",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"test": "react-scripts test",
 		"test-ci": "react-scripts test --watchAll=false --testTimeout 50000",
 		"test-coverage": "react-scripts test --watchAll=false --testTimeout 50000 --coverage",
 		"eject": "react-scripts eject",
 		"i18n-extract": "lingui extract",
 		"i18n-extract:clean": "lingui extract --clean",
-		"i18n-compile": "lingui compile",
-		"format": "prettier --write ."
+		"i18n-compile": "lingui compile"
 	},
 	"dependencies": {
 		"@auth0/auth0-spa-js": "^2.22.0",
@@ -60,16 +63,6 @@
 		"uuid": "^10.0.0",
 		"video.js": "^8.23.9",
 		"videojs-overlay": "^3.1.0"
-	},
-	"browserslist": {
-		"production": [
-			"> 0.5%, last 2 versions, Firefox ESR, not dead, not IE 11"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
 	},
 	"devDependencies": {
 		"@babel/core": "^7.29.7",
