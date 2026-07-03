@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import HelpIcon from '@mui/icons-material/HelpOutline';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';

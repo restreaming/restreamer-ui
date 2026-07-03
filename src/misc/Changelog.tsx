@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import { styled } from '@mui/material/styles';
 import ReactMarkdown from 'react-markdown';
 import SemverGt from 'semver/functions/gt';

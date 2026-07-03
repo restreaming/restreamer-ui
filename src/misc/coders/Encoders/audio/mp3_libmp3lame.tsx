@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 
 import Audio from '../../settings/Audio';
 import Helper from '../../helper';

@@ -1,7 +1,7 @@
 import React from 'react';
 import SemverSatisfies from 'semver/functions/satisfies';
 
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 

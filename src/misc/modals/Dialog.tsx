@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import HelpIcon from '@mui/icons-material/HelpOutline';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';

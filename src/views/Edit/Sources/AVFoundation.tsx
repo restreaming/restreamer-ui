@@ -3,7 +3,7 @@ import React from 'react';
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Icon from '@mui/icons-material/Apple';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Typography from '@mui/material/Typography';

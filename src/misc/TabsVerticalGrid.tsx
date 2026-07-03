@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 
 export default function Component(props) {
 	return (

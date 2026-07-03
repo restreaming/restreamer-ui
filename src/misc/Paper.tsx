@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Paper from '@mui/material/Paper';
 
 const Component = React.forwardRef((props, ref) => {

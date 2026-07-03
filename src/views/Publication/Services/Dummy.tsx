@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Trans } from '@lingui/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import TextField from '@mui/material/TextField';
 
 import Checkbox from '../../../misc/Checkbox';

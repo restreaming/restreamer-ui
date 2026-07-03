@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 
 import BoxText from '../BoxText';

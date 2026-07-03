@@ -3,7 +3,7 @@ import React from 'react';
 import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import TextField from '@mui/material/TextField';
 
 const id = 'vimeo';

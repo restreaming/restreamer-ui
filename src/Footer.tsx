@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { isMobile } from 'react-device-detect';
 import { Trans } from '@lingui/macro';
 //import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';

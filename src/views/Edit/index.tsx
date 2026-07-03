@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
 import EditIcon from '@mui/icons-material/Edit';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';

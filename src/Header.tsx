@@ -7,7 +7,7 @@ import { Trans } from '@lingui/macro';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import Divider from '@mui/material/Divider';
 import Fab from '@mui/material/Fab';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LayersIcon from '@mui/icons-material/Layers';
 import Link from '@mui/material/Link';

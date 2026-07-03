@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
 import EditIcon from '@mui/icons-material/Edit';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import IconButton from '@mui/material/IconButton';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import Stack from '@mui/material/Stack';

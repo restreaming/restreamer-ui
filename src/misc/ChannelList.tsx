@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DoNotDisturbAltIcon from '@mui/icons-material/DoNotDisturbAlt';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import IconButton from '@mui/material/IconButton';
 import LensIcon from '@mui/icons-material/Lens';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';

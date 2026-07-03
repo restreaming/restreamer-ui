@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 import { useLingui } from '@lingui/react';
 import FormControlLabel from '@mui/material/FormControlLabel';

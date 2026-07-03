@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Icon from '@mui/icons-material/DeviceHub';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';

@@ -4,7 +4,7 @@ import { faImages } from '@fortawesome/free-solid-svg-icons';
 import { useLingui } from '@lingui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Typography from '@mui/material/Typography';
 
 import FormInlineButton from '../../../misc/FormInlineButton';

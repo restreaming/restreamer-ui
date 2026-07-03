@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Icon from '@mui/icons-material/SettingsEthernet';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';

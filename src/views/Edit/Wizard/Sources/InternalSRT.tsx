@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/GridLegacy';
 import Icon from '@mui/icons-material/KeyboardTab';
 import MenuItem from '@mui/material/MenuItem';
 import RefreshIcon from '@mui/icons-material/Refresh';
