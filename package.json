@@ -60,12 +60,12 @@
 		"typescript": "^5.9.3",
 		"url-parse": "^1.5.10",
 		"util": "^0.12.5",
-		"uuid": "^10.0.0",
+		"uuid": "^14.0.0",
 		"video.js": "^8.23.9",
 		"videojs-overlay": "^3.1.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.29.7",
+		"@babel/core": "^8.0.1",
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@eslint/js": "^10.0.1",
 		"@lingui/cli": "^4.14.1",
