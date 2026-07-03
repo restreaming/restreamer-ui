@@ -12,7 +12,7 @@ The user interface of the Restreamer for the connection to the [datarhei Core](h
 ```
 $ git clone github.com/datarhei/restreamer-ui
 $ cd restreamer-ui
-$ yarn install
+$ pnpm install
 $ npm run start
 ```
 

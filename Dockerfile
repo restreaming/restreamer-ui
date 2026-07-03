@@ -10,8 +10,8 @@ COPY . /ui
 WORKDIR /ui
 
 RUN cd /ui && \
-	yarn install && \
-	yarn build
+	pnpm install && \
+	pnpm build
 
 FROM $CADDY_IMAGE
 

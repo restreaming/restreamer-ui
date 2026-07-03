@@ -25,8 +25,8 @@ jobs:
 
             - name: Build React App
               run: |
-                  yarn install
-                  yarn build
+                  pnpm install
+                  pnpm build
               env:
                   PUBLIC_URL: './'
 
