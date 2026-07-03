@@ -97,7 +97,7 @@ export default function Router(props) {
 						/>
 					}
 				/>
-				<Route path="*" render={() => <Navigate to="/" replace />} />
+				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>
 		</DOMRouter>
 	);

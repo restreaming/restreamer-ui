@@ -5,14 +5,6 @@ import { vitePages } from '@kingironman2011/vite-pages';
 export default defineConfig({
 	base: '/',
 	plugins: [react(), vitePages()],
-	test: {
-		environment: 'jsdom',
-		globals: true,
-		setupFiles: ['./src/setupTests.tsx'],
-		coverage: {
-			provider: 'v8',
-		},
-	},
 	server: {
 		host: true,
 		port: 3000,
