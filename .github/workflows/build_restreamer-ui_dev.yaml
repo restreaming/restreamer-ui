@@ -21,7 +21,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: '21'
+                  node-version: '24'
 
             - name: Build React App
               run: |
@@ -34,7 +34,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: restreamerui-dev-build
-                  path: build/
+                  path: dist/
 
     build-docker:
         needs: build-frontend
@@ -47,7 +47,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: restreamerui-dev-build
-                  path: build
+                  path: dist
 
             - name: Docker meta
               id: meta
