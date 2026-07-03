@@ -37,7 +37,7 @@ jobs:
 
     build-docker:
         needs: build-frontend
-        runs-on: [self-hosted]
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -53,7 +53,7 @@ jobs:
               uses: docker/metadata-action@v5
               with:
                   images: |
-                      datarhei/restreamer-ui
+                      kingjulian2011/restreamer-ui
                   tags: |
                       type=raw,value=latest
                       type=raw,value=${{ needs.build-frontend.outputs.version }}
