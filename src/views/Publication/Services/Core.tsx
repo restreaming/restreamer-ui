@@ -243,8 +243,8 @@ function Service(props) {
 					onChange={handleChange('v2_address')}
 				/>
 			</Grid>
-		<Grid item xs={12} sx={{ textAlign: 'left' }}>
-			<BoxText alignItems="flex-start" justifyContent="flex-start">
+			<Grid item xs={12} sx={{ textAlign: 'left' }}>
+				<BoxText alignItems="flex-start" justifyContent="flex-start">
 					{!settings.v2_address && (
 						<Typography>
 							<strong>

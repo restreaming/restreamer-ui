@@ -955,7 +955,7 @@ function Pull(props) {
 			{validURL === true && (
 				<React.Fragment>
 					{!supportedProtocol ? (
-					<Grid item xs={12} sx={{ textAlign: 'center' }}>
+						<Grid item xs={12} sx={{ textAlign: 'center' }}>
 							<BoxText color="dark">
 								<WarningIcon fontSize="large" color="error" />
 								<Typography>
@@ -1038,15 +1038,15 @@ function Push(props) {
 		props.skills.protocols.input,
 	);
 
-		if (!supportsRTMP && !supportsSRT) {
-			return (
-				<Grid
-					container
-					spacing={2}
-					className={classes.gridContainer}
-					sx={{ alignItems: 'flex-start' }}
-				>
-					<Grid item xs={12} sx={{ textAlign: 'center' }}>
+	if (!supportsRTMP && !supportsSRT) {
+		return (
+			<Grid
+				container
+				spacing={2}
+				className={classes.gridContainer}
+				sx={{ alignItems: 'flex-start' }}
+			>
+				<Grid item xs={12} sx={{ textAlign: 'center' }}>
 					<BoxText color="dark">
 						<WarningIcon fontSize="large" color="error" />
 						<Typography>
@@ -1061,14 +1061,14 @@ function Push(props) {
 		);
 	}
 
-		return (
-			<React.Fragment>
-				<Grid
-					container
-					spacing={2}
-					className={classes.gridContainer}
-					sx={{ alignItems: 'flex-start' }}
-				>
+	return (
+		<React.Fragment>
+			<Grid
+				container
+				spacing={2}
+				className={classes.gridContainer}
+				sx={{ alignItems: 'flex-start' }}
+			>
 				<Grid item xs={12}>
 					<Select
 						type="select"
@@ -1108,13 +1108,13 @@ function PushHLS(props) {
 
 	const HLS = getHLS(config);
 
-		return (
-			<Grid
-				container
-				spacing={2}
-				className={classes.gridContainer}
-				sx={{ alignItems: 'flex-start' }}
-			>
+	return (
+		<Grid
+			container
+			spacing={2}
+			className={classes.gridContainer}
+			sx={{ alignItems: 'flex-start' }}
+		>
 			<Grid item xs={12}>
 				<Typography>
 					<Trans>Send stream to this address:</Trans>
@@ -1143,14 +1143,14 @@ function PushRTMP(props) {
 
 	let form = null;
 
-		if (config.rtmp.enabled === false) {
-			form = (
-				<Grid
-					container
-					spacing={2}
-					className={classes.gridContainer}
-					sx={{ alignItems: 'flex-start' }}
-				>
+	if (config.rtmp.enabled === false) {
+		form = (
+			<Grid
+				container
+				spacing={2}
+				className={classes.gridContainer}
+				sx={{ alignItems: 'flex-start' }}
+			>
 				<Grid item xs={12}>
 					<Typography>
 						<Trans>RTMP server is not enabled</Trans>
@@ -1273,14 +1273,14 @@ function PushSRT(props) {
 
 	let form = null;
 
-		if (config.srt.enabled === false) {
-			form = (
-				<Grid
-					container
-					spacing={2}
-					className={classes.gridContainer}
-					sx={{ alignItems: 'flex-start' }}
-				>
+	if (config.srt.enabled === false) {
+		form = (
+			<Grid
+				container
+				spacing={2}
+				className={classes.gridContainer}
+				sx={{ alignItems: 'flex-start' }}
+			>
 				<Grid item xs={12}>
 					<Typography>
 						<Trans>SRT server is not enabled</Trans>
@@ -1450,13 +1450,13 @@ function Source(props) {
 		props.onRefresh();
 	};
 
-		return (
-			<React.Fragment>
-				<Grid
-					container
-					spacing={2}
-					sx={{ mt: 0.5, alignItems: 'flex-start' }}
-				>
+	return (
+		<React.Fragment>
+			<Grid
+				container
+				spacing={2}
+				sx={{ mt: 0.5, alignItems: 'flex-start' }}
+			>
 				<Grid item xs={12}>
 					<Select
 						type="select"

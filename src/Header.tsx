@@ -461,11 +461,14 @@ export default function Header(props) {
 			sx={{ alignItems: 'center' }}
 		>
 			<Grid item xs={12}>
-					<Stack
-						direction="row"
-						sx={{ alignItems: 'center', justifyContent: 'space-between' }}
-						spacing={0}
-					>
+				<Stack
+					direction="row"
+					sx={{
+						alignItems: 'center',
+						justifyContent: 'space-between',
+					}}
+					spacing={0}
+				>
 					<Stack
 						direction="row"
 						sx={{ alignItems: 'center' }}

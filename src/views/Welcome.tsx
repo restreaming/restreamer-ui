@@ -15,8 +15,8 @@ export default function Welcome(props) {
 	const navigate = useNavigate();
 	const { channelid: _channelid } = useParams();
 
-		return (
-			<Paper xs={12} md={6} className="PaperM">
+	return (
+		<Paper xs={12} md={6} className="PaperM">
 			<Grid container spacing={2} sx={{ justifyContent: 'center' }}>
 				<Grid item xs={12}>
 					<PaperThumb

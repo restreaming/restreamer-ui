@@ -146,7 +146,10 @@ export default function Egress(props) {
 			<Grid item xs={12}>
 				<Stack
 					direction="row"
-					sx={{ alignItems: 'center', justifyContent: 'space-between' }}
+					sx={{
+						alignItems: 'center',
+						justifyContent: 'space-between',
+					}}
 					spacing={0}
 				>
 					<Stack
@@ -160,7 +163,11 @@ export default function Egress(props) {
 						</IconButton>
 						<Typography className="egress-name">{name}</Typography>
 					</Stack>
-					<Stack direction="row" spacing={0} sx={{ alignItems: 'center' }}>
+					<Stack
+						direction="row"
+						spacing={0}
+						sx={{ alignItems: 'center' }}
+					>
 						{props.service !== 'player' && (
 							<Switch
 								checked={checked}

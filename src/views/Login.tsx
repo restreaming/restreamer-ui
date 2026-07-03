@@ -383,7 +383,11 @@ export default function Login(props) {
 								</Grid>
 								{$canUseAuth0 === false ? (
 									<React.Fragment>
-										<Grid item xs={12} sx={{ textAlign: 'center' }}>
+										<Grid
+											item
+											xs={12}
+											sx={{ textAlign: 'center' }}
+										>
 											<Typography>
 												<Trans>
 													Auth0 is currently not

@@ -411,16 +411,16 @@ export default function Edit(props) {
 						>
 							<Grid item xs={12} className={classes.playerL2}>
 								{$state !== 'connected' ? (
-										<Grid
-											container
-											direction="column"
-											className={classes.playerL3}
-											sx={{
-												justifyContent: 'center',
-												alignItems: 'center',
-											}}
-											spacing={1}
-										>
+									<Grid
+										container
+										direction="column"
+										className={classes.playerL3}
+										sx={{
+											justifyContent: 'center',
+											alignItems: 'center',
+										}}
+										spacing={1}
+									>
 										<Grid item>
 											<Typography variant="h2">
 												<Trans>No video</Trans>

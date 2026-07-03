@@ -78,11 +78,7 @@ function Source(props) {
 	};
 
 	return (
-		<Grid
-			container
-			spacing={2}
-			sx={{ mt: 0.5, alignItems: 'flex-start' }}
-		>
+		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
 			<Grid item xs={12}>
 				<Typography>
 					<Trans>Select audio source:</Trans>

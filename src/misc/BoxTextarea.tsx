@@ -11,10 +11,10 @@ export default function Component(props) {
 			spacing={1}
 			sx={[
 				{
-				backgroundColor: 'background.modalbox',
-				borderRadius: 1,
-				p: '0em 1em',
-				width: '100%',
+					backgroundColor: 'background.modalbox',
+					borderRadius: 1,
+					p: '0em 1em',
+					width: '100%',
 				},
 				{ justifyContent: 'center', alignItems: 'center' },
 				sx,

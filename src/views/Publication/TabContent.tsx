@@ -41,7 +41,10 @@ export default function TabContent(props) {
 					<props.service.icon className={classes.serviceIcon} />
 					<Stack
 						direction="column"
-						sx={{ alignItems: 'flex-start', justifyContent: 'center' }}
+						sx={{
+							alignItems: 'flex-start',
+							justifyContent: 'center',
+						}}
 						spacing={0}
 					>
 						<Typography

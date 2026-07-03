@@ -29,7 +29,10 @@ const Component = function (props) {
 									borderRadius: 1,
 									p: '0em 1em 1em 1em',
 								},
-								{ justifyContent: 'center', alignItems: 'center' },
+								{
+									justifyContent: 'center',
+									alignItems: 'center',
+								},
 								sx,
 							]}
 						>

@@ -291,13 +291,13 @@ export default function Main(props) {
 	};
 
 	if ($state.ready === false) {
-			return (
-				<Paper xs={8} sm={6} md={4} className="PaperM">
-					<Grid
-						container
-						spacing={2}
-						sx={{ justifyContent: 'center', alignItems: 'center' }}
-					>
+		return (
+			<Paper xs={8} sm={6} md={4} className="PaperM">
+				<Grid
+					container
+					spacing={2}
+					sx={{ justifyContent: 'center', alignItems: 'center' }}
+				>
 					<Grid item xs={12}>
 						<CircularProgress color="primary" />
 					</Grid>
@@ -330,13 +330,13 @@ export default function Main(props) {
 	}
 
 	return (
-			<Root>
-				<Grid
-					container
-					spacing={1}
-					sx={{ justifyContent: 'center' }}
-					className={classes.gridContainerL1}
-				>
+		<Root>
+			<Grid
+				container
+				spacing={1}
+				sx={{ justifyContent: 'center' }}
+				className={classes.gridContainerL1}
+			>
 				<Grid item xs={12} sm={12} md={8}>
 					<Paper marginBottom="0">
 						<PaperHeader
@@ -363,16 +363,16 @@ export default function Main(props) {
 										{($state.state === 'disconnected' ||
 											$state.state ===
 												'disconnecting') && (
-										<Grid
-											container
-											direction="column"
-											className={classes.playerL3}
-											spacing={1}
-											sx={{
-												justifyContent: 'center',
-												alignItems: 'center',
-											}}
-										>
+											<Grid
+												container
+												direction="column"
+												className={classes.playerL3}
+												spacing={1}
+												sx={{
+													justifyContent: 'center',
+													alignItems: 'center',
+												}}
+											>
 												<Grid item>
 													<Typography variant="h2">
 														<Trans>No video</Trans>
@@ -381,16 +381,16 @@ export default function Main(props) {
 											</Grid>
 										)}
 										{$state.state === 'connecting' && (
-										<Grid
-											container
-											direction="column"
-											className={classes.playerL3}
-											spacing={1}
-											sx={{
-												justifyContent: 'center',
-												alignItems: 'center',
-											}}
-										>
+											<Grid
+												container
+												direction="column"
+												className={classes.playerL3}
+												spacing={1}
+												sx={{
+													justifyContent: 'center',
+													alignItems: 'center',
+												}}
+											>
 												<Grid item>
 													<CircularProgress color="inherit" />
 												</Grid>
@@ -404,16 +404,16 @@ export default function Main(props) {
 											</Grid>
 										)}
 										{$state.state === 'error' && (
-										<Grid
-											container
-											direction="column"
-											className={classes.playerL3}
-											spacing={1}
-											sx={{
-												justifyContent: 'center',
-												alignItems: 'center',
-											}}
-										>
+											<Grid
+												container
+												direction="column"
+												className={classes.playerL3}
+												spacing={1}
+												sx={{
+													justifyContent: 'center',
+													alignItems: 'center',
+												}}
+											>
 												<Grid item>
 													<WarningIcon
 														className={

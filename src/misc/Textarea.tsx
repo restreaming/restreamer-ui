@@ -176,7 +176,10 @@ export default function Component(props) {
 					direction="column"
 					spacing={0}
 					width="100%"
-					sx={{ justifyContent: 'flex-start', alignItems: 'flex-end' }}
+					sx={{
+						justifyContent: 'flex-start',
+						alignItems: 'flex-end',
+					}}
 				>
 					{allowCopy && (
 						<IconButton

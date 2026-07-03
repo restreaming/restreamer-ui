@@ -130,13 +130,13 @@ function Source(props) {
 		props.onProbe(settings, createInputs(settings));
 	};
 
-		return (
-			<React.Fragment>
-				<Grid
-					container
-					spacing={2}
-					sx={{ mt: 0.5, alignItems: 'flex-start' }}
-				>
+	return (
+		<React.Fragment>
+			<Grid
+				container
+				spacing={2}
+				sx={{ mt: 0.5, alignItems: 'flex-start' }}
+			>
 				<Grid item xs={12}>
 					<Typography variant="caption">
 						<Trans>

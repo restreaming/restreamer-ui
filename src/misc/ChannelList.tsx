@@ -381,31 +381,34 @@ export default function ChannelList(props) {
 				disableScrollLock
 			>
 				<React.Fragment>
-						<Grid
-							container
-							spacing={2}
-							sx={{ marginBottom: '1em', justifyContent: 'center' }}
-						>
+					<Grid
+						container
+						spacing={2}
+						sx={{ marginBottom: '1em', justifyContent: 'center' }}
+					>
 						<Grid item xs={12}>
+							<Stack
+								direction="row"
+								spacing={1}
+								sx={{ justifyContent: 'space-between' }}
+							>
 								<Stack
 									direction="row"
 									spacing={1}
-									sx={{ justifyContent: 'space-between' }}
+									sx={{ justifyContent: 'flex-start' }}
 								>
-									<Stack
-										direction="row"
-										spacing={1}
-										sx={{ justifyContent: 'flex-start' }}
-									>
 									<Typography variant="h2">
 										Channels
 									</Typography>
 								</Stack>
-									<Stack
-										direction="row"
-										spacing={1}
-										sx={{ justifyContent: 'flex-end', mr: '-15px' }}
-									>
+								<Stack
+									direction="row"
+									spacing={1}
+									sx={{
+										justifyContent: 'flex-end',
+										mr: '-15px',
+									}}
+								>
 									<IconButton
 										color="inherit"
 										size="large"
@@ -434,21 +437,21 @@ export default function ChannelList(props) {
 								</Stack>
 							</Stack>
 						</Grid>
-							<Grid item xs={12} sx={{ textAlign: 'center' }}>
+						<Grid item xs={12} sx={{ textAlign: 'center' }}>
+							<Stack
+								direction="row"
+								spacing={0}
+								sx={{ justifyContent: 'space-between' }}
+							>
 								<Stack
 									direction="row"
 									spacing={0}
-									sx={{ justifyContent: 'space-between' }}
+									sx={{
+										alignItems: 'center',
+										ml: '-1.5em',
+										pb: '1em',
+									}}
 								>
-									<Stack
-										direction="row"
-										spacing={0}
-										sx={{
-											alignItems: 'center',
-											ml: '-1.5em',
-											pb: '1em',
-										}}
-									>
 									<IconButton
 										onClick={() => {
 											setPos($pos - 1);
@@ -468,27 +471,27 @@ export default function ChannelList(props) {
 									spacing={0}
 									sx={{ width: '100%', maxWidth: '980px' }}
 								>
-										<Grid
-											container
-											spacing={0}
-											sx={{
-												justifyContent: $largeChannelList
-													? 'flex-start'
-													: 'center',
-											}}
-										>
+									<Grid
+										container
+										spacing={0}
+										sx={{
+											justifyContent: $largeChannelList
+												? 'flex-start'
+												: 'center',
+										}}
+									>
 										{$channels}
 									</Grid>
 								</Stack>
-									<Stack
-										direction="row"
-										spacing={0}
-										sx={{
-											alignItems: 'center',
-											mr: '-1.5em',
-											pb: '1em',
-										}}
-									>
+								<Stack
+									direction="row"
+									spacing={0}
+									sx={{
+										alignItems: 'center',
+										mr: '-1.5em',
+										pb: '1em',
+									}}
+								>
 									<IconButton
 										onClick={() => {
 											setPos($pos + 1);

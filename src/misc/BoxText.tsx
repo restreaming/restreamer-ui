@@ -34,8 +34,8 @@ export default function Component(props) {
 						wordBreak: 'break-word',
 						overflowWrap: 'break-word',
 					}
-					: color === 'danger'
-						? {
+				: color === 'danger'
+					? {
 							backgroundColor: 'error.main',
 							textAlign: 'center',
 							borderRadius: 1,
