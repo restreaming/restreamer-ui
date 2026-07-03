@@ -3,8 +3,6 @@ ARG CADDY_IMAGE=caddy:2.8.4-alpine
 
 FROM $NODE_IMAGE AS builder
 
-ENV PUBLIC_URL="./"
-
 COPY . /ui
 
 WORKDIR /ui
@@ -15,7 +13,7 @@ RUN cd /ui && \
 
 FROM $CADDY_IMAGE
 
-COPY --from=builder /ui/build /ui/build
+COPY --from=builder /ui/dist /ui/dist
 COPY --from=builder /ui/Caddyfile /ui/Caddyfile
 
 WORKDIR /ui

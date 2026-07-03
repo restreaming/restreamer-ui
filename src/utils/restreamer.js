@@ -3243,7 +3243,8 @@ class Restreamer {
 			let response = null;
 
 			try {
-				response = await fetch(process.env.PUBLIC_URL + localPath, {
+				const assetPath = `${import.meta.env.BASE_URL}${localPath.replace(/^\//, '')}`;
+				response = await fetch(assetPath, {
 					method: 'GET',
 				});
 			} catch (err) {

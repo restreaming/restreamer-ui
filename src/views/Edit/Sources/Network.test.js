@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '../../../utils/testing';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 
 import * as Network from './Network';
 

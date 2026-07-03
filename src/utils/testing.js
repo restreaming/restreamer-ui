@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import theme from '../theme';

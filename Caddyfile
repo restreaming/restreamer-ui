@@ -2,5 +2,5 @@
 
 encode zstd gzip
 file_server {
-	root ./build
+	root ./dist
 }
