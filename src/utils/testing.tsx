@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from '@mui/material';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import theme from '../theme';
 import I18n from '../I18n';

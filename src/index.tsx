@@ -1,7 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from '@mui/material';
 import '@fontsource/dosis';
 import '@fontsource/roboto';
 import CssBaseline from '@mui/material/CssBaseline';
