@@ -7,6 +7,7 @@ updating documentation, submitting pull requests or patches, and other
 activities.
 
 Examples of unacceptable behavior by participants include:
+
 - Sexual language or imagery.
 - Derogatory comments or personal attacks.
 - Trolling, public or private harassment.
@@ -17,7 +18,7 @@ Examples of unacceptable behavior by participants include sexual
 language or imagery, derogatory comments or personal attacks, trolling, public
 or private harassment, insults, or other unprofessional conduct.
 
-Project maintainers have the right and responsibility to remove, edit, or reject 
+Project maintainers have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions that are not
 aligned with this Code of Conduct. In addition, project maintainers who do not
 follow the Code of Conduct may be removed from the project team.

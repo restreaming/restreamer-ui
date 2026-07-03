@@ -68,13 +68,13 @@ function Source(props) {
 		options.push(
 			<MenuItem key="none" value="none" disabled={true}>
 				{i18n._(t`No input device available`)}
-			</MenuItem>
+			</MenuItem>,
 		);
 	} else {
 		options.unshift(
 			<MenuItem key="default" value="default">
 				{i18n._(t`Default`)}
-			</MenuItem>
+			</MenuItem>,
 		);
 	}
 
@@ -96,14 +96,14 @@ function Source(props) {
 	options.unshift(
 		<MenuItem key="none" value="none">
 			{i18n._(t`None`)}
-		</MenuItem>
+		</MenuItem>,
 	);
 
 	if (options.length > 1) {
 		options.unshift(
 			<MenuItem key="default" value="default">
 				{i18n._(t`Default`)}
-			</MenuItem>
+			</MenuItem>,
 		);
 	}
 

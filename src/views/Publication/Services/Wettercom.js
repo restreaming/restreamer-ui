@@ -14,7 +14,7 @@ const version = '1.0';
 const stream_key_link = 'https://www.wetter.com/hd-live-webcams/informationen/';
 const description = (
 	<Trans>
-		Transmit your Livestream to wetter.com. Contact the publisher {' '}
+		Transmit your Livestream to wetter.com. Contact the publisher{' '}
 		<Link color="secondary" target="_blank" href="https://www.wetter.com/hd-live-webcams/informationen/">
 			here{' '}
 		</Link>

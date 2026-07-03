@@ -153,7 +153,7 @@ export default function Publication(props) {
 						onOrder={handleOrderChange(e.id)}
 					/>
 				</Grid>
-			</React.Fragment>
+			</React.Fragment>,
 		);
 	}
 

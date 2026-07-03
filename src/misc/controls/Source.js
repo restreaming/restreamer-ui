@@ -47,25 +47,25 @@ export default function Control(props) {
 	items.push(
 		<MenuItem key="hls+memfs" value="hls+memfs" disabled={!props.sources.includes('hls+memfs')}>
 			HLS (memfs)
-		</MenuItem>
+		</MenuItem>,
 	);
 
 	items.push(
 		<MenuItem key="hls+diskfs" value="hls+diskfs" disabled={!props.sources.includes('hls+diskfs')}>
 			HLS (diskfs)
-		</MenuItem>
+		</MenuItem>,
 	);
 
 	items.push(
 		<MenuItem key="rtmp" value="rtmp" disabled={!props.sources.includes('rtmp')}>
 			RTMP
-		</MenuItem>
+		</MenuItem>,
 	);
 
 	items.push(
 		<MenuItem key="srt" value="srt" disabled={!props.sources.includes('srt')}>
 			SRT
-		</MenuItem>
+		</MenuItem>,
 	);
 
 	return (
