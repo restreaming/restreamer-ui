@@ -3,15 +3,16 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 
 const Component = function (props) {
+	const { children, spacing, textAlign } = props;
+
 	return (
 		<Grid
 			container
-			justifyContent="center"
-			spacing={props.spacing}
-			align={props.textAlign}
+			spacing={spacing}
+			sx={{ justifyContent: 'center', textAlign }}
 		>
 			<Grid item xs={12}>
-				{props.children}
+				{children}
 			</Grid>
 		</Grid>
 	);

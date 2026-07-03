@@ -154,13 +154,13 @@ function Resources(props) {
 	const system = $resources.system;
 	const core = $resources.core;
 
-	return (
-		<Stack
-			className="footerRight"
-			direction="row"
-			alignItems="center"
-			spacing={0}
-		>
+		return (
+			<Stack
+				className="footerRight"
+				direction="row"
+				sx={{ alignItems: 'center' }}
+				spacing={0}
+			>
 			{(system.cpu_used >= 75 ||
 				system.mem_used >= 75 ||
 				core.memfs_used >= 75 ||
@@ -488,25 +488,24 @@ export default function Footer(props) {
 	const version = initVersion(props.version);
 
 	if (props.expand === true) {
-		return (
-			<StyledGrid
-				container
-				className={classes.footer}
-				spacing={0}
-				direction="row"
-				alignItems="center"
-			>
+			return (
+				<StyledGrid
+					container
+					className={classes.footer}
+					spacing={0}
+					direction="row"
+					sx={{ alignItems: 'center' }}
+				>
 				<Grid item xs={12}>
 					<Stack
 						direction="row"
-						justifyContent="space-between"
-						alignItems="center"
+						sx={{ alignItems: 'center', justifyContent: 'space-between' }}
 						spacing={0}
 					>
 						<Stack
 							className="footerLeft"
 							direction="row"
-							alignItems="center"
+							sx={{ alignItems: 'center' }}
 							spacing={0}
 						>
 							<Logo className={classes.logo} />
@@ -521,25 +520,24 @@ export default function Footer(props) {
 			</StyledGrid>
 		);
 	} else {
-		return (
-			<Grid
-				container
-				className={classes.footer}
-				spacing={0}
-				direction="row"
-				alignItems="center"
-			>
+			return (
+				<Grid
+					container
+					className={classes.footer}
+					spacing={0}
+					direction="row"
+					sx={{ alignItems: 'center' }}
+				>
 				<Grid item xs={12}>
 					<Stack
 						direction="row"
-						justifyContent="space-between"
-						alignItems="center"
+						sx={{ alignItems: 'center', justifyContent: 'space-between' }}
 						spacing={0}
 					>
 						<Stack
 							className="footerLeft"
 							direction="row"
-							alignItems="center"
+							sx={{ alignItems: 'center' }}
 							spacing={0}
 						>
 							<Logo className={classes.logo} />

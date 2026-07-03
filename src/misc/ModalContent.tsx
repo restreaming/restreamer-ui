@@ -45,16 +45,20 @@ const Component = React.forwardRef((props, ref) => {
 				>
 					<Stack
 						direction="row"
-						justifyContent="space-between"
-						alignItems="center"
 						spacing={2}
+						sx={{
+							justifyContent: 'space-between',
+							alignItems: 'center',
+						}}
 					>
 						<Typography variant="button">{props.title}</Typography>
 						<Stack
 							direction="row"
-							justifyContent="flex-end"
-							alignItems="center"
 							spacing={2}
+							sx={{
+								justifyContent: 'flex-end',
+								alignItems: 'center',
+							}}
 						>
 							{typeof props.onHelp === 'function' && (
 								<IconButton

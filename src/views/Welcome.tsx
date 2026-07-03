@@ -15,9 +15,9 @@ export default function Welcome(props) {
 	const navigate = useNavigate();
 	const { channelid: _channelid } = useParams();
 
-	return (
-		<Paper xs={12} md={6} className="PaperM">
-			<Grid container justifyContent="center" spacing={2}>
+		return (
+			<Paper xs={12} md={6} className="PaperM">
+			<Grid container spacing={2} sx={{ justifyContent: 'center' }}>
 				<Grid item xs={12}>
 					<PaperThumb
 						image={welcomeImage}
@@ -27,7 +27,7 @@ export default function Welcome(props) {
 				</Grid>
 				<Grid item xs={12}></Grid>
 				<Grid item xs={12}>
-					<Typography align="center">
+					<Typography sx={{ textAlign: 'center' }}>
 						<Trans>
 							Welcome to Restreamer v2, the solution for fast and
 							easy video publishing. Free for private and

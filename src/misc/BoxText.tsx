@@ -3,8 +3,18 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 
 export default function Component(props) {
+	const {
+		children,
+		color = 'light',
+		justifyContent = 'center',
+		alignItems = 'center',
+		textAlign = 'left',
+		sx,
+		...other
+	} = props;
+
 	const boxSx =
-		props.color === 'dark'
+		color === 'dark'
 			? {
 					backgroundColor: 'background.dark2',
 					borderRadius: 1,
@@ -13,7 +23,7 @@ export default function Component(props) {
 					wordBreak: 'break-word',
 					overflowWrap: 'break-word',
 				}
-			: props.color === 'success'
+			: color === 'success'
 				? {
 						color: 'background.paper',
 						fontWeight: 500,
@@ -24,8 +34,8 @@ export default function Component(props) {
 						wordBreak: 'break-word',
 						overflowWrap: 'break-word',
 					}
-				: props.color === 'danger'
-					? {
+					: color === 'danger'
+						? {
 							backgroundColor: 'error.main',
 							textAlign: 'center',
 							borderRadius: 1,
@@ -46,14 +56,11 @@ export default function Component(props) {
 	return (
 		<Stack
 			direction="column"
-			justifyContent={props.justifyContent}
-			alignItems={props.alignItems}
-			textAlign={props.textAlign}
 			spacing={1}
-			sx={boxSx}
-			{...props}
+			sx={[boxSx, { justifyContent, alignItems, textAlign }, sx]}
+			{...other}
 		>
-			{props.children}
+			{children}
 		</Stack>
 	);
 }

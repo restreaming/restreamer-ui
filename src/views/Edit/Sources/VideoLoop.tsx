@@ -140,9 +140,8 @@ function Source(props) {
 		<React.Fragment>
 			<Grid
 				container
-				alignItems="flex-start"
 				spacing={2}
-				sx={{ mt: 0.5 }}
+				sx={{ mt: 0.5, alignItems: 'flex-start' }}
 			>
 				<Grid item xs={12}>
 					<Typography variant="caption">

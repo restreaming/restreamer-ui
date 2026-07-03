@@ -146,14 +146,13 @@ export default function Egress(props) {
 			<Grid item xs={12}>
 				<Stack
 					direction="row"
-					justifyContent="space-between"
-					alignItems="center"
+					sx={{ alignItems: 'center', justifyContent: 'space-between' }}
 					spacing={0}
 				>
 					<Stack
 						className="egress-left"
 						direction="row"
-						alignItems="center"
+						sx={{ alignItems: 'center' }}
 						spacing={0}
 					>
 						<IconButton size="small" className="egress-left">
@@ -161,7 +160,7 @@ export default function Egress(props) {
 						</IconButton>
 						<Typography className="egress-name">{name}</Typography>
 					</Stack>
-					<Stack direction="row" alignItems="center" spacing={0}>
+					<Stack direction="row" spacing={0} sx={{ alignItems: 'center' }}>
 						{props.service !== 'player' && (
 							<Switch
 								checked={checked}

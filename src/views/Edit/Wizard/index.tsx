@@ -301,7 +301,7 @@ export default function Wizard(props) {
 			const Icon = s.icon;
 
 			availableSources.push(
-				<Grid item xs={6} align="center" key={s.id}>
+				<Grid item xs={6} sx={{ textAlign: 'center' }} key={s.id}>
 					<Button variant="big" onClick={handleNext(s.id)}>
 						<div>
 							<Icon fontSize="large" />

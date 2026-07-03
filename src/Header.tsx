@@ -458,18 +458,17 @@ export default function Header(props) {
 			className={classes.header}
 			spacing={0}
 			direction="row"
-			alignItems="center"
+			sx={{ alignItems: 'center' }}
 		>
 			<Grid item xs={12}>
-				<Stack
-					direction="row"
-					justifyContent="space-between"
-					alignItems="center"
-					spacing={0}
-				>
 					<Stack
 						direction="row"
-						alignItems="center"
+						sx={{ alignItems: 'center', justifyContent: 'space-between' }}
+						spacing={0}
+					>
+					<Stack
+						direction="row"
+						sx={{ alignItems: 'center' }}
 						spacing={0}
 						className="headerLeft"
 					>
@@ -481,7 +480,7 @@ export default function Header(props) {
 					<Stack
 						className="headerRight"
 						direction="row"
-						alignItems="center"
+						sx={{ alignItems: 'center' }}
 						spacing={0}
 					>
 						<HeaderMenu {...props}></HeaderMenu>

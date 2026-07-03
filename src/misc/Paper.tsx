@@ -30,8 +30,8 @@ const Component = React.forwardRef((props, ref) => {
 	return (
 		<Grid
 			container
-			justifyContent="center"
 			spacing={1}
+			sx={{ justifyContent: 'center' }}
 			style={{ marginBottom: props.marginBottom }}
 		>
 			<Grid item xs={props.xs} sm={props.sm} md={props.md} lg={props.lg}>

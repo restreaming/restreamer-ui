@@ -80,9 +80,8 @@ function Source(props) {
 	return (
 		<Grid
 			container
-			alignItems="flex-start"
 			spacing={2}
-			style={{ marginTop: '0.5em' }}
+			sx={{ mt: 0.5, alignItems: 'flex-start' }}
 		>
 			<Grid item xs={12}>
 				<Typography>

@@ -168,17 +168,15 @@ export default function Component(props) {
 		<React.Fragment>
 			<Stack
 				direction="column"
-				justifyContent="center"
-				alignItems="flex-start"
 				spacing={1}
 				style={textAreaDivStyle}
+				sx={{ justifyContent: 'center', alignItems: 'flex-start' }}
 			>
 				<Stack
 					direction="column"
-					justifyContent="flex-start"
-					alignItems="flex-end"
 					spacing={0}
 					width="100%"
+					sx={{ justifyContent: 'flex-start', alignItems: 'flex-end' }}
 				>
 					{allowCopy && (
 						<IconButton

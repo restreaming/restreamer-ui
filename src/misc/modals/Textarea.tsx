@@ -8,7 +8,7 @@ import ModalContent from '../ModalContent';
 import Textarea from '../Textarea';
 
 const Component = function (props) {
-	const { open, title, onClose, onHelp, ...other } = props;
+	const { open, title, onClose, onHelp, children, sx, ...other } = props;
 
 	return (
 		<Modal open={props.open} onClose={props.onClose} className="modal">
@@ -22,16 +22,18 @@ const Component = function (props) {
 					<Grid item xs={12}>
 						<Stack
 							direction="column"
-							justifyContent="center"
-							alignItems="center"
 							spacing={1}
-							sx={{
-								backgroundColor: 'background.modalbox',
-								borderRadius: 1,
-								p: '0em 1em 1em 1em',
-							}}
+							sx={[
+								{
+									backgroundColor: 'background.modalbox',
+									borderRadius: 1,
+									p: '0em 1em 1em 1em',
+								},
+								{ justifyContent: 'center', alignItems: 'center' },
+								sx,
+							]}
 						>
-							<Textarea {...other} />
+							<Textarea {...other}>{children}</Textarea>
 						</Stack>
 					</Grid>
 				</Grid>

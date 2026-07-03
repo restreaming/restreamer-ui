@@ -172,7 +172,7 @@ export default function Changelog(props) {
 		>
 			<Grid container spacing={2}>
 				<Grid item xs={12}>
-					<BoxText alignItems="left">
+					<BoxText alignItems="flex-start">
 						<ReactMarkdown components={renderers}>
 							{$data}
 						</ReactMarkdown>

@@ -632,11 +632,11 @@ export default function Edit(props) {
 														progress={$progress}
 													/>
 												</Grid>
-												<Grid
-													item
-													xs={12}
-													align="right"
-												>
+													<Grid
+														item
+														xs={12}
+														sx={{ textAlign: 'right' }}
+													>
 													<Link
 														color="textSecondary"
 														href="#!"

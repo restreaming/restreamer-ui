@@ -165,7 +165,7 @@ function Select(props) {
 		const Icon = s.icon;
 
 		availableSources.push(
-			<Grid item xs={6} md={4} align="center" key={s.id}>
+			<Grid item xs={6} md={4} sx={{ textAlign: 'center' }} key={s.id}>
 				<Button variant={variant} onClick={handleSource(s.id)}>
 					<div>
 						<Icon />

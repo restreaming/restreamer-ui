@@ -101,8 +101,12 @@ function Source(props) {
 		/>
 	);
 
-	return (
-		<Grid container alignItems="flex-start" spacing={2} sx={{ mt: 0.5 }}>
+		return (
+			<Grid
+				container
+				spacing={2}
+				sx={{ mt: 0.5, alignItems: 'flex-start' }}
+			>
 			<Grid item xs={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>

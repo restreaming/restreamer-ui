@@ -37,7 +37,7 @@ export default function Audio(props) {
 					{props.status === 'error' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								<Trans>
 									Failed to verify the source. Please check
 									the address.
@@ -48,7 +48,7 @@ export default function Audio(props) {
 					{props.status === 'nostream' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								<Trans>
 									The source doesn't provide any audio
 									streams.
@@ -59,7 +59,7 @@ export default function Audio(props) {
 					{props.status === 'nocoder' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								<Trans>
 									The source doesn't provide any compatible
 									audio streams.

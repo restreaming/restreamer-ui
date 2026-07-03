@@ -232,7 +232,7 @@ export default function Login(props) {
 		<Paper xs={11} sm={10} md={6}>
 			<Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
 				{$loginTarget !== 'none' && (
-					<Grid item xs={12} align="center">
+					<Grid item xs={12} sx={{ textAlign: 'center' }}>
 						{$auths.length > 1 && (
 							<ToggleButtonGroup
 								value={$loginTarget}
@@ -261,7 +261,7 @@ export default function Login(props) {
 				)}
 				{$loginTarget === 'none' && (
 					<React.Fragment>
-						<Grid item xs={12} align="center">
+						<Grid item xs={12} sx={{ textAlign: 'center' }}>
 							<Typography>
 								<Trans>
 									There's no login method available.
@@ -317,7 +317,7 @@ export default function Login(props) {
 					$loginTarget === 'service' &&
 					!hasAuthType($auths, 'auth0') && (
 						<React.Fragment>
-							<Grid item xs={12} align="center">
+							<Grid item xs={12} sx={{ textAlign: 'center' }}>
 								<Grid container spacing={0}>
 									<Grid item xs={12}>
 										<Typography
@@ -365,7 +365,7 @@ export default function Login(props) {
 					<React.Fragment>
 						<Grid item xs={12}>
 							<Grid container spacing={3}>
-								<Grid item xs={12} align="center">
+								<Grid item xs={12} sx={{ textAlign: 'center' }}>
 									<Typography>
 										<Trans>
 											Use Auth0 for your running
@@ -383,7 +383,7 @@ export default function Login(props) {
 								</Grid>
 								{$canUseAuth0 === false ? (
 									<React.Fragment>
-										<Grid item xs={12} align="center">
+										<Grid item xs={12} sx={{ textAlign: 'center' }}>
 											<Typography>
 												<Trans>
 													Auth0 is currently not

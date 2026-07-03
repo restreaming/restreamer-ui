@@ -60,9 +60,8 @@ export default function VideoJS(props) {
 		<Grid
 			container
 			direction="column"
-			justifyContent="center"
-			alignItems="center"
 			spacing={2}
+			sx={{ justifyContent: 'center', alignItems: 'center' }}
 			style={{
 				position: 'absolute',
 				top: 0,

@@ -190,9 +190,9 @@ export default function Publication(props) {
 					onAdd={handleServiceAdd}
 					onHelp={handleHelp}
 				/>
-				<Grid container spacing={1}>
-					<Grid item xs={12} align="center">
-						<Divider />
+					<Grid container spacing={1}>
+						<Grid item xs={12} sx={{ textAlign: 'center' }}>
+							<Divider />
 						<Typography
 							component="div"
 							className={classes.viewerCount}
@@ -202,8 +202,10 @@ export default function Publication(props) {
 						<Grid
 							container
 							direction="row"
-							justifyContent="center"
-							alignItems="center"
+							sx={{
+								alignItems: 'center',
+								justifyContent: 'center',
+							}}
 							className={classes.vierwerDescription}
 						>
 							<PersonIcon fontSize="small" />
@@ -212,12 +214,12 @@ export default function Publication(props) {
 							</Typography>
 						</Grid>
 					</Grid>
-					<Grid
-						item
-						xs={12}
-						align="center"
-						className={classes.bandwidth}
-					>
+						<Grid
+							item
+							xs={12}
+							className={classes.bandwidth}
+							sx={{ textAlign: 'center' }}
+						>
 						<Typography
 							component="div"
 							className={classes.bandwidthCount}
@@ -227,8 +229,10 @@ export default function Publication(props) {
 						<Grid
 							container
 							direction="row"
-							justifyContent="center"
-							alignItems="center"
+							sx={{
+								alignItems: 'center',
+								justifyContent: 'center',
+							}}
 							className={classes.bandwidthDescription}
 						>
 							<CloudUploadIcon

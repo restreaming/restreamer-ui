@@ -649,7 +649,7 @@ function ErrorTab(props) {
 
 	if (errors === true) {
 		label = (
-			<Stack direction="row" spacing={1} alignItems="center">
+			<Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
 				<WarningIcon color="error" />
 				<Typography>{label}</Typography>
 			</Stack>

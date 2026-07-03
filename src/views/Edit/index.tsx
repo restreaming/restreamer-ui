@@ -51,7 +51,7 @@ const classes = {
 const Root = styled('div')(({ theme }) => ({
 	[`& .${classes.wizardButtonElement}`]: {
 		display: 'flex',
-		alignItems: 'left',
+		alignItems: 'flex-start',
 	},
 
 	[`& .${classes.wizardButton}`]: {

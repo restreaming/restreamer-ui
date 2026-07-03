@@ -112,7 +112,7 @@ export default function ResetPassword(props) {
 	return (
 		<Paper xs={12} sm={10} md={6} className="PaperL">
 			<Grid container spacing={3}>
-				<Grid item xs={12} align="center">
+				<Grid item xs={12} sx={{ textAlign: 'center' }}>
 					<Typography variant="h1">
 						<Trans>User registration</Trans>
 					</Typography>

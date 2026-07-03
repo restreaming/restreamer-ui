@@ -518,7 +518,7 @@ export default function Profile(props) {
 						{$videoProbe.status !== 'none' && (
 							<React.Fragment>
 								{$videoProbe.status === 'error' && (
-									<Grid item xs={12} align="center">
+									<Grid item xs={12} sx={{ textAlign: 'center' }}>
 										<BoxText color="dark">
 											<WarningIcon
 												fontSize="large"
@@ -561,7 +561,7 @@ export default function Profile(props) {
 									</Grid>
 								)}
 								{$videoProbe.status === 'nostream' && (
-									<Grid item xs={12} align="center">
+									<Grid item xs={12} sx={{ textAlign: 'center' }}>
 										<BoxText color="dark">
 											<WarningIcon
 												fontSize="large"
@@ -598,7 +598,7 @@ export default function Profile(props) {
 												)}
 											/>
 										</Grid>
-										<Grid item xs={12} align="right">
+										<Grid item xs={12} sx={{ textAlign: 'right' }}>
 											<Typography>
 												<Trans>
 													<Link
@@ -741,7 +741,7 @@ export default function Profile(props) {
 								{$audioProbe.status !== 'none' && (
 									<React.Fragment>
 										{$audioProbe.status === 'error' && (
-											<Grid item xs={12} align="center">
+											<Grid item xs={12} sx={{ textAlign: 'center' }}>
 												<BoxText color="dark">
 													<WarningIcon
 														fontSize="large"
@@ -786,7 +786,7 @@ export default function Profile(props) {
 											</Grid>
 										)}
 										{$audioProbe.status === 'nostream' && (
-											<Grid item xs={12} align="center">
+											<Grid item xs={12} sx={{ textAlign: 'center' }}>
 												<BoxText color="dark">
 													<WarningIcon
 														fontSize="large"
@@ -833,7 +833,7 @@ export default function Profile(props) {
 												<Grid
 													item
 													xs={12}
-													align="right"
+													sx={{ textAlign: 'right' }}
 												>
 													<Typography>
 														<Trans>

@@ -546,13 +546,12 @@ export default function RestreamerUI(props) {
 	return (
 		<StyledI18n>
 			<NotifyProvider value={{ Dispatch: notify }}>
-				<Grid
-					container
-					direction="column"
-					justifyContent="flex-start"
-					alignItems="stretch"
-					spacing={0}
-				>
+					<Grid
+						container
+						direction="column"
+						sx={{ alignItems: 'stretch', justifyContent: 'flex-start' }}
+						spacing={0}
+					>
 					<Grid className={classes.MainHeader}>
 						<Header
 							expand={expand}
@@ -567,13 +566,12 @@ export default function RestreamerUI(props) {
 						/>
 					</Grid>
 					<Grid item className={classes.MainContent}>
-						<Grid
-							container
-							className="MainContent-container"
-							justifyContent="center"
-							alignItems="center"
-							spacing={0}
-						>
+							<Grid
+								container
+								className="MainContent-container"
+								sx={{ alignItems: 'center', justifyContent: 'center' }}
+								spacing={0}
+							>
 							<Grid item sm={1}></Grid>
 							<Grid
 								item

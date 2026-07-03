@@ -11,13 +11,12 @@ import PaperContent from '../misc/PaperContent';
 export default function Invalid(props) {
 	return (
 		<Paper xs={8} sm={5} className="PaperM">
-			<PaperContent>
-				<Grid
-					container
-					justifyContent="center"
-					spacing={2}
-					align="center"
-				>
+				<PaperContent>
+					<Grid
+						container
+						spacing={2}
+						sx={{ justifyContent: 'center', alignItems: 'center' }}
+					>
 					<Grid item xs={12}>
 						<CircularProgress color="inherit" />
 					</Grid>

@@ -35,15 +35,13 @@ export default function TabContent(props) {
 			<Grid item xs={12}>
 				<Stack
 					direction="row"
-					justifyContent="flex-start"
-					alignItems="center"
+					sx={{ alignItems: 'center', justifyContent: 'flex-start' }}
 					spacing={2}
 				>
 					<props.service.icon className={classes.serviceIcon} />
 					<Stack
 						direction="column"
-						justifyContent="center"
-						alignItems="flex-start"
+						sx={{ alignItems: 'flex-start', justifyContent: 'center' }}
 						spacing={0}
 					>
 						<Typography

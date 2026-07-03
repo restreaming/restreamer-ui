@@ -366,8 +366,15 @@ export default function Add(props) {
 			if (
 				helper.checkServiceRequirements(s.requires, $skills) === false
 			) {
-				serviceList.push(
-					<Grid item xs={12} sm={6} md={3} align="center" key={s.id}>
+					serviceList.push(
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={3}
+							sx={{ textAlign: 'center' }}
+							key={s.id}
+						>
 						<Tooltip
 							title={
 								<Root>
@@ -394,8 +401,15 @@ export default function Add(props) {
 					</Grid>,
 				);
 			} else {
-				serviceList.push(
-					<Grid item xs={12} sm={6} md={3} align="center" key={s.id}>
+					serviceList.push(
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={3}
+							sx={{ textAlign: 'center' }}
+							key={s.id}
+						>
 						<Button
 							variant="big"
 							onClick={handleServiceSelect(s.id)}
@@ -439,7 +453,7 @@ export default function Add(props) {
 				{$service === '' ? (
 					<React.Fragment>
 						<Grid container spacing={2}>
-							<Grid item xs={12} align="center">
+								<Grid item xs={12} sx={{ textAlign: 'center' }}>
 								<ToggleButtonGroup
 									className={classes.buttonGroup}
 									size={breakpointUpSm ? 'medium' : 'small'}

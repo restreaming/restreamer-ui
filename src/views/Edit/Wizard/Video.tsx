@@ -32,7 +32,7 @@ export default function Video(props) {
 					{props.status === 'error' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								{props.sourceid === 'rtmp' ||
 								props.sourceid === 'hls' ? (
 									<Trans>
@@ -52,7 +52,7 @@ export default function Video(props) {
 					{props.status === 'nostream' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								<Trans>
 									The source doesn't provide any video
 									streams. Please check the device.
@@ -63,7 +63,7 @@ export default function Video(props) {
 					{props.status === 'nocoder' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
-							<Typography textAlign="center">
+							<Typography sx={{ textAlign: 'center' }}>
 								<Trans>
 									The source doesn't provide any compatible
 									video streams. Please check the{' '}
