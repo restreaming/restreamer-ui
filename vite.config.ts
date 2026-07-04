@@ -18,4 +18,7 @@ export default defineConfig({
 			usePolling: true,
 		},
 	},
+	build: {
+		chunkSizeWarningLimit: 4000,
+	}
 });
