@@ -21,49 +21,47 @@
 			title="{{name}}"
 		/>
 		<script src="channels/{{channelid}}/config.js"></script>
-		<link href="player/videojs/dist/video-js.min.css" rel="stylesheet" />
-		<link
-			href="player/videojs/dist/video-js-skin.min.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="player/videojs/dist/videojs-overlay.min.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="player/videojs/dist/videojs-license.min.css"
-			rel="stylesheet"
-		/>
-		{{#if airplay}}
-		<link
-			href="player/videojs/dist/videojs-airplay.min.css"
-			rel="stylesheet"
-		/>
-		{{/if}} {{#if chromecast}}
-		<link
-			href="player/videojs/dist/videojs-chromecast.min.css"
-			rel="stylesheet"
-		/>
-		{{/if}}
+		<!-- Video.js v10 via CDN -->
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video/skin.css" />
+		<style>
+			* { margin: 0; padding: 0; box-sizing: border-box; }
+			html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+			video-player {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			video-skin {
+				--media-brand-color: #eaea05;
+				--media-color-primary: #eaea05;
+			}
+			/* Logo overlay */
+			.vjs-logo-overlay {
+				position: absolute;
+				z-index: 10;
+				max-width: 20%;
+				max-height: 20%;
+				pointer-events: none;
+			}
+			.vjs-logo-overlay a { display: inline-block; pointer-events: all; }
+			.vjs-logo-overlay img { max-width: 100%; max-height: 100%; display: block; }
+			.vjs-logo-overlay.top-left     { top: 8px; left: 8px; }
+			.vjs-logo-overlay.top-right    { top: 8px; right: 8px; }
+			.vjs-logo-overlay.bottom-left  { bottom: 8px; left: 8px; }
+			.vjs-logo-overlay.bottom-right { bottom: 8px; right: 8px; }
+		</style>
 	</head>
 	<body>
-		<div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0">
-			<video
-				id="player"
-				class="vjs-public video-js"
-				controls
-				playsinline
-			></video>
-		</div>
-		<script src="player/videojs/dist/video.min.js"></script>
-		<script src="player/videojs/dist/videojs-overlay.min.js"></script>
-		<script src="player/videojs/dist/videojs-license.min.js"></script>
-		{{#if airplay}}
-		<script src="player/videojs/dist/videojs-airplay.min.js"></script>
-		{{/if}} {{#if chromecast}}
-		<script src="player/videojs/dist/videojs-chromecast.min.js"></script>
-		<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-		{{/if}}
+		<video-player id="player">
+			<video-skin>
+				<video
+					src=""
+					playsinline
+				></video>
+			</video-skin>
+		</video-player>
+
 		<script>
 			function getQueryParam(key, defaultValue) {
 				var query = window.location.search.substring(1);
@@ -91,11 +89,8 @@
 			function convertColorParam(parameter, defaultColor) {
 				var re = new RegExp('^#([0-9a-f]{3}|[0-9a-f]{6})$');
 				var c = getQueryParam(parameter, defaultColor);
-				// decode color as # has to be represented by %23
 				var c = decodeURIComponent(c);
-				// if color was given without leading #, prepend it
 				if (!String(c).startsWith('#')) c = '#' + c;
-
 				if (re.test(c)) {
 					return c;
 				} else {
@@ -105,79 +100,57 @@
 
 			var autoplay = convertBoolParam('autoplay', playerConfig.autoplay);
 			var mute = convertBoolParam('mute', playerConfig.mute);
-			var statistics = convertBoolParam('stats', playerConfig.statistics);
 			var color = convertColorParam('color', playerConfig.color.buttons);
 
-			var config = {
-				controls: true,
-				poster:
-					playerConfig.poster + '?t=' + String(new Date().getTime()),
-				autoplay: autoplay ? 'muted' : false,
-				muted: mute,
-				liveui: true,
-				responsive: true,
-				fluid: true,
-				sources: [
-					{
-						src: window.location.origin + '/' + playerConfig.source,
-						type: 'application/x-mpegURL',
-					},
-				],
-			};
-
-			if (playerConfig.chromecast) {
-				config.techOrder = ['chromecast', 'html5'];
-				config.plugins.chromecast = {
-					receiverApplicationId: 'CC1AD845',
-				};
+			// Apply brand color from config/query param
+			var skin = document.querySelector('video-skin');
+			if (skin && color) {
+				skin.style.setProperty('--media-brand-color', color);
+				skin.style.setProperty('--media-color-primary', color);
 			}
 
-			if (playerConfig.airplay) {
-				config.plugins.airPlay = {};
+			// Set up the video source (HLS)
+			var videoEl = document.querySelector('video-player video');
+			if (videoEl) {
+				// Append origin for cast device compatibility
+				videoEl.src = window.location.origin + '/' + playerConfig.source;
+				if (playerConfig.poster && playerConfig.poster.length > 0) {
+					videoEl.poster = playerConfig.poster + '?t=' + String(new Date().getTime());
+				}
+				if (mute) {
+					videoEl.muted = true;
+				}
+				if (autoplay) {
+					videoEl.muted = true;
+					videoEl.autoplay = true;
+				}
 			}
 
-			var player = videojs('player', config);
-			player.ready(function () {
-				if (playerConfig.logo.image.length != 0) {
-					var overlay = null;
+			// Logo overlay
+			if (playerConfig.logo && playerConfig.logo.image && playerConfig.logo.image.length > 0) {
+				var player = document.getElementById('player');
+				var logoDiv = document.createElement('div');
+				logoDiv.className = 'vjs-logo-overlay ' + (playerConfig.logo.position || 'top-left');
 
-					var imgTag = new Image();
-					imgTag.onLoad = function () {
-						imgTag.setAttribute('width', this.width);
-						imgTag.setAttribute('height'.this.height);
-					};
-					imgTag.src = playerConfig.logo.image + '?' + Math.random();
+				var img = document.createElement('img');
+				img.src = playerConfig.logo.image + '?' + Math.random();
+				img.alt = '';
 
-					if (playerConfig.logo.link.length !== 0) {
-						var aTag = document.createElement('a');
-						aTag.setAttribute('href', playerConfig.logo.link);
-						aTag.setAttribute('target', '_blank');
-						aTag.appendChild(imgTag);
-						overlay = aTag.outerHTML;
-					} else {
-						overlay = imgTag.outerHTML;
-					}
-
-					player.overlay({
-						align: playerConfig.logo.position,
-						overlays: [
-							{
-								showBackground: false,
-								content: overlay,
-								start: 'playing',
-								end: 'pause',
-							},
-						],
-					});
-
-					player.license(playerConfig.license);
+				if (playerConfig.logo.link && playerConfig.logo.link.length > 0) {
+					var a = document.createElement('a');
+					a.href = playerConfig.logo.link;
+					a.target = '_blank';
+					a.rel = 'noopener noreferrer';
+					a.appendChild(img);
+					logoDiv.appendChild(a);
+				} else {
+					logoDiv.appendChild(img);
 				}
 
-				if (autoplay === true) {
-					// https://videojs.com/blog/autoplay-best-practices-with-video-js/
-					player.play();
-				}
-			});
+				// video-player uses position:relative internally; overlay on top
+				player.style.position = 'relative';
+				player.appendChild(logoDiv);
+			}
 		</script>
 	</body>
 </html>

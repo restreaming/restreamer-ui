@@ -7,7 +7,9 @@ export default function Duration(props) {
 	const h = parseInt(fullSeconds / (60 * 60)) % 24;
 	const d = parseInt(fullSeconds / (60 * 60 * 24));
 
-	const durationParts = ['.' + ((props.seconds - fullSeconds) * 100).toFixed(0)];
+	const durationParts = [
+		'.' + ((props.seconds - fullSeconds) * 100).toFixed(0),
+	];
 
 	if (s < 10) {
 		durationParts.unshift(':0' + s);

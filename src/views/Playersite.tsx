@@ -254,8 +254,9 @@ export default function Playersite(props) {
 				case 'mimetype':
 					return (
 						<Trans>
-							The selected file type ({err.actual}) is not allowed.
-							Allowed file types are {err.allowed.join(', ')}
+							The selected file type ({err.actual}) is not
+							allowed. Allowed file types are{' '}
+							{err.allowed.join(', ')}
 						</Trans>
 					);
 				case 'size':
@@ -263,7 +264,8 @@ export default function Playersite(props) {
 						<Trans>
 							The selected file is too big (
 							<Filesize bytes={err.actual} />
-							). Only <Filesize bytes={err.allowed} /> are allowed.
+							). Only <Filesize bytes={err.allowed} /> are
+							allowed.
 						</Trans>
 					);
 				case 'read':
@@ -362,7 +364,9 @@ export default function Playersite(props) {
 
 	const channel = props.restreamer.GetChannel($settings.channelid);
 	const main_channelid =
-		channel !== null ? channel.channelid : props.restreamer.GetCurrentChannelID();
+		channel !== null
+			? channel.channelid
+			: props.restreamer.GetCurrentChannelID();
 
 	return (
 		<Root>

@@ -62,15 +62,16 @@ export default function FilterSelect(props) {
 	}
 
 	// Checks the state of hwaccel (gpu encoding)
-	const encoderRegistry =
-		props.type === 'video' ? Encoders.Video : null;
+	const encoderRegistry = props.type === 'video' ? Encoders.Video : null;
 	const hwaccel =
 		props.type === 'video' &&
-		encoderRegistry.List().some(
-			(encoder) =>
-				encoder.codec === props.profile.encoder.coder &&
-				encoder.hwaccel,
-		);
+		encoderRegistry
+			.List()
+			.some(
+				(encoder) =>
+					encoder.codec === props.profile.encoder.coder &&
+					encoder.hwaccel,
+			);
 
 	// Creates filter components
 	const filterSettings = [];

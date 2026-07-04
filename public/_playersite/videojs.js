@@ -1,72 +1,56 @@
-var config = {
-	controls: true,
-	poster: playerConfig.poster + '?t=' + String(new Date().getTime()),
-	autoplay: autoplay ? 'muted' : false,
-	muted: true,
-	liveui: true,
-	responsive: true,
-	fluid: true,
-	// Needed to append the url origin in order for the source to properly pass to the cast device
-	sources: [{ src: window.location.origin + '/' + playerConfig.source, type: 'application/x-mpegURL' }],
-	plugins: {},
-};
+// Video.js v10 playersite init
+// playerConfig and helper vars (autoplay, mute, color, chromecast, airplay)
+// are defined in the inline script block above this file.
 
-if (chromecast) {
-	config.techOrder = ['chromecast', 'html5'];
-	// Provide a default reciever application ID
-	config.plugins.chromecast = {
-		receiverApplicationId: 'CC1AD845',
-	};
-}
-
-var player = videojs('player', config);
-
-player.ready(function () {
-	if (chromecast) {
-		player.chromecast();
+(function () {
+	// Apply brand color from config/query param
+	var skin = document.querySelector('video-skin');
+	if (skin && color) {
+		skin.style.setProperty('--media-brand-color', color);
+		skin.style.setProperty('--media-color-primary', color);
 	}
 
-	if (airplay) {
-		player.airPlay();
-	}
-
-	player.license(playerConfig.license);
-
-	if (playerConfig.logo.image.length != 0) {
-		var overlay = null;
-
-		var imgTag = new Image();
-		imgTag.onLoad = function () {
-			imgTag.setAttribute('width', this.width);
-			imgTag.setAttribute('height'.this.height);
-		};
-		imgTag.src = playerConfig.logo.image + '?' + Math.random();
-
-		if (playerConfig.logo.link.length !== 0) {
-			var aTag = document.createElement('a');
-			aTag.setAttribute('href', playerConfig.logo.link);
-			aTag.setAttribute('target', '_blank');
-			aTag.appendChild(imgTag);
-			overlay = aTag.outerHTML;
-		} else {
-			overlay = imgTag.outerHTML;
+	// Set up the video source (HLS)
+	var videoEl = document.querySelector('video-player video');
+	if (videoEl) {
+		// Append origin for cast device compatibility
+		videoEl.src = window.location.origin + '/' + playerConfig.source;
+		if (playerConfig.poster && playerConfig.poster.length > 0) {
+			videoEl.poster = playerConfig.poster + '?t=' + String(new Date().getTime());
 		}
-
-		player.overlay({
-			align: playerConfig.logo.position,
-			overlays: [
-				{
-					showBackground: false,
-					content: overlay,
-					start: 'playing',
-					end: 'pause',
-				},
-			],
-		});
+		if (mute) {
+			videoEl.muted = true;
+		}
+		if (autoplay) {
+			videoEl.muted = true;
+			videoEl.autoplay = true;
+		}
 	}
 
-	if (autoplay === true) {
-		// https://videojs.com/blog/autoplay-best-practices-with-video-js/
-		player.play();
+	// Logo overlay
+	if (playerConfig.logo && playerConfig.logo.image && playerConfig.logo.image.length > 0) {
+		var playerEl = document.getElementById('player');
+		if (playerEl) {
+			var logoDiv = document.createElement('div');
+			logoDiv.className = 'vjs-logo-overlay ' + (playerConfig.logo.position || 'top-left');
+
+			var img = document.createElement('img');
+			img.src = playerConfig.logo.image + '?' + Math.random();
+			img.alt = '';
+
+			if (playerConfig.logo.link && playerConfig.logo.link.length > 0) {
+				var a = document.createElement('a');
+				a.href = playerConfig.logo.link;
+				a.target = '_blank';
+				a.rel = 'noopener noreferrer';
+				a.appendChild(img);
+				logoDiv.appendChild(a);
+			} else {
+				logoDiv.appendChild(img);
+			}
+
+			playerEl.style.position = 'relative';
+			playerEl.appendChild(logoDiv);
+		}
 	}
-});
+})();

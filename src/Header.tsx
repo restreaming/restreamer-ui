@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { styled } from '@mui/material/styles';
-
-import { styled } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import Divider from '@mui/material/Divider';

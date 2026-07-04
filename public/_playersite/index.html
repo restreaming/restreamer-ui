@@ -55,31 +55,25 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/icon?family=Material+Icons&amp;display=block"
 		/>
-		{{#ifEquals player "videojs"}}
-		<link href="player/videojs/dist/video-js.min.css" rel="stylesheet" />
-		<link
-			href="player/videojs/dist/video-js-skin.min.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="player/videojs/dist/videojs-overlay.min.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="player/videojs/dist/videojs-license.min.css"
-			rel="stylesheet"
-		/>
-		{{#if airplay}}
-		<link
-			href="player/videojs/dist/videojs-airplay.min.css"
-			rel="stylesheet"
-		/>
-		{{/if}} {{#if chromecast}}
-		<link
-			href="player/videojs/dist/videojs-chromecast.min.css"
-			rel="stylesheet"
-		/>
-		{{/if}} {{/ifEquals}}
+		<!-- Video.js v10 via CDN -->
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video/skin.css" />
+		<style>
+			/* Logo overlay */
+			.vjs-logo-overlay {
+				position: absolute;
+				z-index: 10;
+				max-width: 20%;
+				max-height: 20%;
+				pointer-events: none;
+			}
+			.vjs-logo-overlay a { display: inline-block; pointer-events: all; }
+			.vjs-logo-overlay img { max-width: 100%; max-height: 100%; display: block; }
+			.vjs-logo-overlay.top-left     { top: 8px; left: 8px; }
+			.vjs-logo-overlay.top-right    { top: 8px; right: 8px; }
+			.vjs-logo-overlay.bottom-left  { bottom: 8px; left: 8px; }
+			.vjs-logo-overlay.bottom-right { bottom: 8px; right: 8px; }
+		</style>
 		<style>
 			/**	flexboxgrid 6.3.1 **/
 			.container,
@@ -1262,15 +1256,11 @@
 				<div class="row player-l1">
 					<div class="col-xs-12 player-l2">
 						<div class="player-l3">
-							{{#ifEquals player "videojs"}}
-							<video
-								id="player"
-								class="vjs-public video-js vjs-16-9 player-l4"
-								playsinline
-							></video>
-							{{else}}
-							<div id="player" class="player-l4"></div>
-							{{/ifEquals}}
+							<video-player id="player" class="player-l4" style="display:block;width:100%;height:100%;">
+								<video-skin>
+									<video playsinline></video>
+								</video-skin>
+							</video-player>
 						</div>
 					</div>
 				</div>
@@ -1853,20 +1843,6 @@
 		</script>
 
 		<script src="channels/{{channel_id}}/config.js"></script>
-		{{#ifEquals player "videojs"}}
-		<script src="player/videojs/dist/video.min.js"></script>
-		<script src="player/videojs/dist/videojs-overlay.min.js"></script>
-		<script src="player/videojs/dist/videojs-license.min.js"></script>
-		{{#if airplay}}
-		<script src="player/videojs/dist/videojs-airplay.min.js"></script>
-		{{/if}} {{#if chromecast}}
-		<script src="player/videojs/dist/videojs-chromecast.min.js"></script>
-		<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-		{{/if}} {{else}}
-		<script src="player/clappr/clappr.min.js"></script>
-		<script src="player/clappr/clappr-stats.min.js"></script>
-		<script src="player/clappr/clappr-nerd-stats.min.js"></script>
-		{{/ifEquals}}
 		<script>
 			function getQueryParam(key, defaultValue) {
 				var query = window.location.search.substring(1);

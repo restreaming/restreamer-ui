@@ -97,14 +97,10 @@ export default function Component(props) {
 	};
 
 	const allowCopy =
-		props.allowCopy &&
-		props.value.length !== 0 &&
-		props.disabled !== true;
+		props.allowCopy && props.value.length !== 0 && props.disabled !== true;
 
 	const allowModal =
-		props.allowModal &&
-		props.value.length !== 0 &&
-		props.disabled !== true;
+		props.allowModal && props.value.length !== 0 && props.disabled !== true;
 
 	const allowDownload =
 		props.allowDownload &&
