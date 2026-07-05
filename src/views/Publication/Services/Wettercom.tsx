@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 
@@ -99,8 +99,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={12}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 12
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -110,7 +114,11 @@ function Service(props) {
 					onChange={handleChange('stream_id')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -120,7 +128,11 @@ function Service(props) {
 					onChange={handleChange('stream_key')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={3}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<FormInlineButton
 					target="blank"
 					href={stream_key_link}
@@ -129,8 +141,8 @@ function Service(props) {
 					<Trans>GET</Trans>
 				</FormInlineButton>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

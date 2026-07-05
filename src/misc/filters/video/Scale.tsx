@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 
 import Select from '../../Select';
@@ -94,12 +94,12 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={settings.mode === 'none' ? 12 : 4}>
+        <React.Fragment>
+            <Grid size={settings.mode === 'none' ? 12 : 4}>
 				<Mode value={settings.mode} onChange={update('mode')}></Mode>
 			</Grid>
-			{settings.mode === 'fix' && (
-				<Grid item xs={8}>
+            {settings.mode === 'fix' && (
+				<Grid size={8}>
 					<Video.Size
 						allowCustom
 						label={<Trans>Scale size</Trans>}
@@ -108,8 +108,8 @@ function Filter(props) {
 					></Video.Size>
 				</Grid>
 			)}
-			{settings.mode === 'width' && (
-				<Grid item xs={8}>
+            {settings.mode === 'width' && (
+				<Grid size={8}>
 					<Video.Width
 						allowCustom
 						label={<Trans>Scale size</Trans>}
@@ -118,8 +118,8 @@ function Filter(props) {
 					></Video.Width>
 				</Grid>
 			)}
-			{settings.mode === 'height' && (
-				<Grid item xs={8}>
+            {settings.mode === 'height' && (
+				<Grid size={8}>
 					<Video.Height
 						allowCustom
 						label={<Trans>Scale size</Trans>}
@@ -128,8 +128,8 @@ function Filter(props) {
 					></Video.Height>
 				</Grid>
 			)}
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Filter.defaultProps = {

@@ -4,7 +4,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import { v4 as uuidv4 } from 'uuid';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -209,8 +209,8 @@ function Service(props) {
 		props.skills.formats.includes('hls');
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Delivering mode</Trans>}
 					value={settings.mode}
@@ -222,7 +222,11 @@ function Service(props) {
 					{allowHLS === true && <MenuItem value="hls">HLS</MenuItem>}
 				</Select>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -231,7 +235,11 @@ function Service(props) {
 					onChange={handleChange('stream_key')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={3}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<FormInlineButton
 					target="blank"
 					href={stream_key_link}
@@ -240,7 +248,7 @@ function Service(props) {
 					<Trans>GET</Trans>
 				</FormInlineButton>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Primary stream</Trans>}
 					checked={settings.primary}
@@ -252,8 +260,8 @@ function Service(props) {
 					onChange={handleChange('backup')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

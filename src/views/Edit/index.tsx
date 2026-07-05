@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
 import EditIcon from '@mui/icons-material/Edit';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
@@ -476,8 +476,8 @@ export default function Edit(props) {
 	}
 
 	return (
-		<Root>
-			<Paper xs={12} md={10}>
+        <Root>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -522,18 +522,18 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<PaperThumb
 										image={sourceThumb}
 										title="General"
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>General</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											Edit the audio and video sources for
@@ -544,7 +544,7 @@ export default function Edit(props) {
 									</Typography>
 								</Grid>
 								{$state.editing === false && (
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<div
 											className={
 												classes.wizardButtonElement
@@ -572,7 +572,7 @@ export default function Edit(props) {
 										</div>
 									</Grid>
 								)}
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
 							</Grid>
@@ -604,40 +604,44 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Processing &amp; Control</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>HLS output</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<HLSControl
 										settings={$data.control.hls}
 										onChange={handleControlChange('hls')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Grid container spacing={2}>
-										<Grid item xs={12} md={6}>
+										<Grid
+                                            size={{
+                                                xs: 12,
+                                                md: 6
+                                            }}>
 											<Grid container spacing={2}>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<Typography variant="h3">
 														<Trans>
 															RTMP output
 														</Trans>
 													</Typography>
 												</Grid>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<RTMPControl
 														settings={
 															$data.control.rtmp
@@ -655,25 +659,27 @@ export default function Edit(props) {
 											</Grid>
 										</Grid>
 										<Grid
-											item
-											xs={12}
-											display={{
+                                            display={{
 												xs: 'block',
 												md: 'none',
 											}}
-										>
+                                            size={12}>
 											<Divider />
 										</Grid>
-										<Grid item xs={12} md={6}>
+										<Grid
+                                            size={{
+                                                xs: 12,
+                                                md: 6
+                                            }}>
 											<Grid container spacing={2}>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<Typography variant="h3">
 														<Trans>
 															SRT output
 														</Trans>
 													</Typography>
 												</Grid>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<SRTControl
 														settings={
 															$data.control.srt
@@ -692,15 +698,15 @@ export default function Edit(props) {
 										</Grid>
 									</Grid>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Snapshot</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<SnapshotControl
 										settings={$data.control.snapshot}
 										onChange={handleControlChange(
@@ -708,15 +714,15 @@ export default function Edit(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Process</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ProcessControl
 										settings={$data.control.process}
 										onChange={handleControlChange(
@@ -724,15 +730,15 @@ export default function Edit(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Limits</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<LimitsControl
 										settings={$data.control.limits}
 										onChange={handleControlChange('limits')}
@@ -742,12 +748,12 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="meta" className="panel">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Metadata</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography>
 										<Trans>
 											Briefly describe what the audience
@@ -755,10 +761,10 @@ export default function Edit(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<MetadataControl
 										settings={$data.meta}
 										onChange={handleMetadataChange}
@@ -772,12 +778,12 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>License</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography>
 										<Trans>
 											Use your copyright and choose the
@@ -788,10 +794,10 @@ export default function Edit(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<LicenseControl
 										license={$data.license}
 										onChange={handleLicenseChange}
@@ -836,7 +842,7 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-			<Dialog
+            <Dialog
 				open={$editDialog.open}
 				onClose={handleSourceEditDialogAbort}
 				title={
@@ -870,7 +876,7 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-			<Dialog
+            <Dialog
 				open={$deleteDialog}
 				onClose={handleChannelDeleteDialog}
 				title={
@@ -902,11 +908,11 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-			<Backdrop open={$state.saving}>
+            <Backdrop open={$state.saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Edit.defaultProps = {

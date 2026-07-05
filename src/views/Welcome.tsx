@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
@@ -16,17 +16,17 @@ export default function Welcome(props) {
 	const { channelid: _channelid } = useParams();
 
 	return (
-		<Paper xs={12} md={6} className="PaperM">
-			<Grid container spacing={2} sx={{ justifyContent: 'center' }}>
-				<Grid item xs={12}>
+        <Paper xs={12} md={6} className="PaperM">
+            <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
+				<Grid size={12}>
 					<PaperThumb
 						image={welcomeImage}
 						title="Welcome to Restreamer v2"
 						height="200px"
 					/>
 				</Grid>
-				<Grid item xs={12}></Grid>
-				<Grid item xs={12}>
+				<Grid size={12}></Grid>
+				<Grid size={12}>
 					<Typography sx={{ textAlign: 'center' }}>
 						<Trans>
 							Welcome to Restreamer v2, the solution for fast and
@@ -43,8 +43,8 @@ export default function Welcome(props) {
 						</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}></Grid>
-				<Grid item xs={12}>
+				<Grid size={12}></Grid>
+				<Grid size={12}>
 					<Button
 						fullWidth
 						variant="outlined"
@@ -55,6 +55,6 @@ export default function Welcome(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Trans } from '@lingui/macro';
 import ExtensionIcon from '@mui/icons-material/Extension';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 import Checkbox from '../../../misc/Checkbox';
@@ -291,8 +291,8 @@ function Service(props) {
 	}
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -301,7 +301,7 @@ function Service(props) {
 					onChange={handleChange('stream_key')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Enable primary stream</Trans>}
 					checked={settings.rtmp_primary}
@@ -313,8 +313,8 @@ function Service(props) {
 					onChange={handleChange('rtmp_backup')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

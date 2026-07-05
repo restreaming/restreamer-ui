@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
@@ -98,16 +98,16 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Pan
 					value={settings.value}
 					onChange={update('value')}
 					allowCustom
 				/>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Filter.defaultProps = {

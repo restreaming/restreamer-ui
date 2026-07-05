@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/Cached';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -131,13 +131,13 @@ function Source(props) {
 	};
 
 	return (
-		<React.Fragment>
-			<Grid
+        <React.Fragment>
+            <Grid
 				container
 				spacing={2}
 				sx={{ mt: 0.5, alignItems: 'flex-start' }}
 			>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Typography variant="caption">
 						<Trans>
 							Upload an audio file (
@@ -146,7 +146,11 @@ function Source(props) {
 						</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12} md={9}>
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 9
+                    }}>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -155,7 +159,11 @@ function Source(props) {
 						readOnly
 					/>
 				</Grid>
-				<Grid item xs={12} md={3}>
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 3
+                    }}>
 					<UploadButton
 						label={<Trans>Upload</Trans>}
 						acceptTypes={imageTypes}
@@ -166,7 +174,7 @@ function Source(props) {
 						onUpload={handleFileUpload}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<FormInlineButton
 						onClick={handleProbe}
 						disabled={!settings.address.length}
@@ -175,10 +183,10 @@ function Source(props) {
 					</FormInlineButton>
 				</Grid>
 			</Grid>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-			<Dialog
+            <Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -194,8 +202,8 @@ function Source(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

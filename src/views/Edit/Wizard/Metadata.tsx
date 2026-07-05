@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import MetadataControl from '../../../misc/controls/Metadata';
@@ -13,19 +13,19 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function Metadata(props) {
 	return (
-		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-			<PaperHeader
+        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+            <PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Metadata</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>
 							Briefly describe what the audience will see during
@@ -33,16 +33,16 @@ export default function Metadata(props) {
 						</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<MetadataControl
 						settings={props.metadata}
 						onChange={props.onChange}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid size={3}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -52,7 +52,7 @@ export default function Metadata(props) {
 						<Trans>Back</Trans>
 					</Button>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid size={9}>
 					<Button
 						variant="outlined"
 						fullWidth
@@ -63,8 +63,8 @@ export default function Metadata(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 Metadata.defaultProps = {

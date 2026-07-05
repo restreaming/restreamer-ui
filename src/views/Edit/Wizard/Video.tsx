@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import WarningIcon from '@mui/icons-material/Warning';
@@ -15,20 +15,20 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function Video(props) {
 	return (
-		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-			<PaperHeader
+        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+            <PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Video setup</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
 				{props.children}
-				<Grid item xs={12}>
+				<Grid size={12}>
 					{props.status === 'error' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
@@ -80,10 +80,10 @@ export default function Video(props) {
 						</BoxText>
 					)}
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid size={3}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -93,7 +93,7 @@ export default function Video(props) {
 						<Trans>Back</Trans>
 					</Button>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid size={9}>
 					<Button
 						variant="outlined"
 						fullWidth
@@ -105,8 +105,8 @@ export default function Video(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 Video.defaultProps = {

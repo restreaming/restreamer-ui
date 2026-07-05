@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormControl from '@mui/material/FormControl';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -75,12 +75,12 @@ export default function Component(props) {
 	}
 
 	return (
-		<Grid container spacing={2}>
-			{props.allowCustom === true ? (
+        <Grid container spacing={2}>
+            {props.allowCustom === true ? (
 				<React.Fragment>
 					{$value.isCustom === true ? (
 						<React.Fragment>
-							<Grid item xs={6}>
+							<Grid size={6}>
 								<FormControl variant={props.variant} fullWidth>
 									<InputLabel>{props.label}</InputLabel>
 									<Select
@@ -97,7 +97,7 @@ export default function Component(props) {
 									</Select>
 								</FormControl>
 							</Grid>
-							<Grid item xs={6}>
+							<Grid size={6}>
 								<TextField
 									variant={props.variant}
 									fullWidth
@@ -116,7 +116,7 @@ export default function Component(props) {
 							</Grid>
 						</React.Fragment>
 					) : (
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<FormControl variant={props.variant} fullWidth>
 								<InputLabel>{props.label}</InputLabel>
 								<Select
@@ -136,7 +136,7 @@ export default function Component(props) {
 					)}
 				</React.Fragment>
 			) : (
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<FormControl variant={props.variant} fullWidth>
 						<InputLabel>{props.label}</InputLabel>
 						<Select
@@ -150,8 +150,8 @@ export default function Component(props) {
 					</FormControl>
 				</Grid>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Component.defaultProps = {

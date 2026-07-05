@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -31,8 +31,8 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 
 export default function TabContent(props) {
 	return (
-		<StyledGrid container spacing={2}>
-			<Grid item xs={12}>
+        <StyledGrid container spacing={2}>
+            <Grid size={12}>
 				<Stack
 					direction="row"
 					sx={{ alignItems: 'center', justifyContent: 'flex-start' }}
@@ -57,14 +57,14 @@ export default function TabContent(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Divider />
 			</Grid>
-			{props.children}
-			<Grid item xs={12}>
+            {props.children}
+            <Grid size={12}>
 				<Divider />
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Maintainer:</Trans>{' '}
 					<Link
@@ -76,8 +76,8 @@ export default function TabContent(props) {
 					</Link>
 				</Typography>
 			</Grid>
-		</StyledGrid>
-	);
+        </StyledGrid>
+    );
 }
 
 TabContent.defaultProps = {

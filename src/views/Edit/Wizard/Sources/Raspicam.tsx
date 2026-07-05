@@ -4,7 +4,7 @@ import { faRaspberryPi } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
 import MenuItem from '@mui/material/MenuItem';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import * as S from '../../Sources/Raspicam';
@@ -102,17 +102,17 @@ function Source(props) {
 	);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{videoDevices}
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

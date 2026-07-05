@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 
 import Select from '../../misc/Select';
@@ -78,8 +78,8 @@ export default function StreamSelect(props) {
 	}
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Stream</Trans>}
 					value={selected}
@@ -89,8 +89,8 @@ export default function StreamSelect(props) {
 					{streamList}
 				</Select>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 StreamSelect.defaultProps = {

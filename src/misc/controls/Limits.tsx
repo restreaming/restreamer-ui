@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
@@ -34,16 +34,22 @@ export default function Control(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={4}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 4
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
 					type="number"
-					inputProps={{ min: 0, max: 100 }}
 					label={<Trans>CPU Limit (percent)</Trans>}
 					value={settings.cpu_usage}
 					onChange={handleChange('cpu_usage')}
+					slotProps={{
+                        htmlInput: { min: 0, max: 100 }
+                    }}
 				/>
 				<Typography variant="caption">
 					<Trans>
@@ -51,15 +57,21 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12} md={4}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 4
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
 					type="number"
-					inputProps={{ min: 0 }}
 					label={<Trans>Memory Limit (megabytes)</Trans>}
 					value={settings.memory_mbytes}
 					onChange={handleChange('memory_mbytes')}
+					slotProps={{
+                        htmlInput: { min: 0 }
+                    }}
 				/>
 				<Typography variant="caption">
 					<Trans>
@@ -67,15 +79,21 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12} md={4}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 4
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
 					type="number"
-					inputProps={{ min: 0 }}
 					label={<Trans>Threshold (seconds)</Trans>}
 					value={settings.waitfor_seconds}
 					onChange={handleChange('waitfor_seconds')}
+					slotProps={{
+                        htmlInput: { min: 0 }
+                    }}
 				/>
 				<Typography variant="caption">
 					<Trans>
@@ -83,8 +101,8 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Control.defaulProps = {

@@ -6,7 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -174,8 +174,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -185,7 +189,11 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -195,7 +203,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
@@ -208,12 +216,16 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>General</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									type="text"
@@ -224,7 +236,11 @@ function Service(props) {
 									disabled
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									type="text"
@@ -234,7 +250,7 @@ function Service(props) {
 									onChange={handleChange('ice_genre')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									multiline
 									variant="outlined"
@@ -246,7 +262,7 @@ function Service(props) {
 									disabled
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									type="text"
@@ -256,7 +272,7 @@ function Service(props) {
 									onChange={handleChange('ice_url')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									type="text"
@@ -266,10 +282,10 @@ function Service(props) {
 									onChange={handleChange('user_agent')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -285,8 +301,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

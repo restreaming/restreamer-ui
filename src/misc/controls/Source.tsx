@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
@@ -85,8 +85,8 @@ export default function Control(props) {
 	);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -100,8 +100,8 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Control.defaulProps = {

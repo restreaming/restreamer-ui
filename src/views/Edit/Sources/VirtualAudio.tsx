@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/DeviceHub';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -78,13 +78,13 @@ function Source(props) {
 	};
 
 	return (
-		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-			<Grid item xs={12}>
+        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select audio source:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -95,16 +95,16 @@ function Source(props) {
 					<MenuItem value="sine">{i18n._(t`Sine`)}</MenuItem>
 				</Select>
 			</Grid>
-			{settings.source === 'silence' && (
+            {settings.source === 'silence' && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Sampling
 							value={settings.sampling}
 							onChange={handleChange('sampling')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Layout
 							value={settings.layout}
 							onChange={handleChange('layout')}
@@ -112,16 +112,16 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-			{settings.source === 'noise' && (
+            {settings.source === 'noise' && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Sampling
 							value={settings.sampling}
 							onChange={handleChange('sampling')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid size={6}>
 						<Select
 							label={<Trans>Color</Trans>}
 							value={settings.color}
@@ -146,7 +146,7 @@ function Source(props) {
 							<Trans>The noise color</Trans>
 						</Typography>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid size={6}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -163,16 +163,16 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-			{settings.source === 'sine' && (
+            {settings.source === 'sine' && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Sampling
 							value={settings.sampling}
 							onChange={handleChange('sampling')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid size={6}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -184,7 +184,7 @@ function Source(props) {
 							<Trans>The carrier frequency</Trans>
 						</Typography>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid size={6}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -201,13 +201,13 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<FormInlineButton onClick={handleProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Source.defaultProps = {

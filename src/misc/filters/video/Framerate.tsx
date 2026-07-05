@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import Checkbox from '../../Checkbox';
 import SelectCustom from '../../SelectCustom';
@@ -102,8 +102,8 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Checkbox
 					label={
 						<Trans>
@@ -114,9 +114,9 @@ function Filter(props) {
 					onChange={update('enabled')}
 				/>
 			</Grid>
-			{settings.enabled && (
+            {settings.enabled && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Framerate
 							value={settings.fps}
 							onChange={update('fps')}
@@ -124,8 +124,8 @@ function Filter(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Filter.defaultProps = {

@@ -3,7 +3,7 @@ import React from 'react';
 import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 const id = 'vimeo';
@@ -74,8 +74,8 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -84,8 +84,8 @@ function Service(props) {
 					onChange={handleChange('key')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

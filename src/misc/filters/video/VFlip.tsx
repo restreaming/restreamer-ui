@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import Checkbox from '../../Checkbox';
 
@@ -61,14 +61,14 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<Grid item>
-			<Checkbox
+        <Grid>
+            <Checkbox
 				label={<Trans>Vertical Flip</Trans>}
 				checked={settings.enabled}
 				onChange={update('enabled')}
 			/>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Filter.defaultProps = {

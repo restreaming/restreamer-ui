@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 
@@ -98,8 +98,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={6}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -108,7 +112,11 @@ function Service(props) {
 					onChange={handleChange('vpu_id')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -117,7 +125,11 @@ function Service(props) {
 					onChange={handleChange('livesource_id')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={12}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 12
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -126,8 +138,8 @@ function Service(props) {
 					onChange={handleChange('rtmp_token')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

@@ -5,7 +5,7 @@ import { faUsb } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Typography from '@mui/material/Typography';
@@ -121,13 +121,13 @@ function Source(props) {
 	);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{videoDevices}
 				<Button
 					size="small"
@@ -138,8 +138,8 @@ function Source(props) {
 					<Trans>Refresh</Trans>
 				</Button>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

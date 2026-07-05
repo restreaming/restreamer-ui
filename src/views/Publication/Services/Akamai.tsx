@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 
@@ -126,8 +126,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={6}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -137,7 +141,11 @@ function Service(props) {
 					onChange={handleChange('pubUser')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -147,7 +155,11 @@ function Service(props) {
 					onChange={handleChange('pubPasswd')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={3}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -159,7 +171,11 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -170,7 +186,11 @@ function Service(props) {
 					onChange={handleChange('stream_url')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={12}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 12
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -181,15 +201,19 @@ function Service(props) {
 					onChange={handleChange('playpath')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label="Enable backup URL"
 					checked={settings.enable_backup_stream}
 					onChange={handleChange('enable_backup_stream')}
 				/>
 			</Grid>
-			{settings.enable_backup_stream && (
-				<Grid item xs={12} md={3}>
+            {settings.enable_backup_stream && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 3
+                    }}>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -202,8 +226,12 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-			{settings.enable_backup_stream && (
-				<Grid item xs={12} md={9}>
+            {settings.enable_backup_stream && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 9
+                    }}>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -215,8 +243,8 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

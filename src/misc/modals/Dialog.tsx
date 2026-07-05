@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import HelpIcon from '@mui/icons-material/HelpOutline';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
@@ -18,13 +18,13 @@ const Component = React.forwardRef((props, ref) => {
 	}
 
 	return (
-		<Modal
+        <Modal
 			open={props.open}
 			onClose={props.onClose}
 			className="modal"
 			disableScrollLock
 		>
-			<Paper
+            <Paper
 				sx={{
 					p: '1em 1.5em 1.3em 1.5em',
 					width: '95%',
@@ -41,16 +41,14 @@ const Component = React.forwardRef((props, ref) => {
 			>
 				<Grid container spacing={0}>
 					<Grid
-						item
-						xs={12}
-						sx={{
+                        sx={{
 							marginBottom: '.7em',
 							'& button': {
 								float: 'right',
 								marginLeft: '.5em',
 							},
 						}}
-					>
+                        size={12}>
 						<Typography variant="button">{props.title}</Typography>
 						{typeof props.onClose === 'function' && (
 							<IconButton
@@ -72,14 +70,12 @@ const Component = React.forwardRef((props, ref) => {
 						)}
 					</Grid>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					{props.children}
 				</Grid>
 				<Grid container spacing={0}>
 					<Grid
-						item
-						xs={12}
-						sx={{
+                        sx={{
 							marginTop: '1.2em',
 							minHeight: '38px',
 							'& button': {
@@ -91,14 +87,14 @@ const Component = React.forwardRef((props, ref) => {
 								marginLeft: '.5em',
 							},
 						}}
-					>
+                        size={12}>
 						<div>{props.buttonsRight}</div>
 						{props.buttonsLeft}
 					</Grid>
 				</Grid>
 			</Paper>
-		</Modal>
-	);
+        </Modal>
+    );
 });
 
 export default Component;

@@ -3,7 +3,7 @@ import React from 'react';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 import Checkbox from '../../../misc/Checkbox';
@@ -108,9 +108,13 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			{settings.rtmp_primary === true && (
-				<Grid item xs={12} md={9}>
+        <Grid container spacing={2}>
+            {settings.rtmp_primary === true && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 9
+                    }}>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -120,8 +124,12 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-			{settings.rtmp_primary === true && (
-				<Grid item xs={12} md={3}>
+            {settings.rtmp_primary === true && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 3
+                    }}>
 					<FormInlineButton
 						target="blank"
 						href={stream_key_link}
@@ -131,8 +139,12 @@ function Service(props) {
 					</FormInlineButton>
 				</Grid>
 			)}
-			{settings.rtmp_backup === true && (
-				<Grid item xs={12} md={9}>
+            {settings.rtmp_backup === true && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 9
+                    }}>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -142,8 +154,12 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-			{settings.rtmp_backup === true && (
-				<Grid item xs={12} md={3}>
+            {settings.rtmp_backup === true && (
+				<Grid
+                    size={{
+                        xs: 12,
+                        md: 3
+                    }}>
 					<FormInlineButton
 						target="blank"
 						href={stream_key_link}
@@ -153,7 +169,7 @@ function Service(props) {
 					</FormInlineButton>
 				</Grid>
 			)}
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Enable primary stream</Trans>}
 					checked={settings.rtmp_primary}
@@ -165,8 +181,8 @@ function Service(props) {
 					onChange={handleChange('rtmp_backup')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

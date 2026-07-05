@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { useLingui } from '@lingui/react';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -21,19 +21,19 @@ export default function Audio(props) {
 	const { i18n } = useLingui();
 
 	return (
-		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-			<PaperHeader
+        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+            <PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Audio setup</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					{props.status === 'error' && (
 						<BoxText color="dark">
 							<WarningIcon fontSize="large" color="error" />
@@ -68,7 +68,7 @@ export default function Audio(props) {
 						</BoxText>
 					)}
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<RadioGroup
 						row
 						value={props.source}
@@ -76,7 +76,7 @@ export default function Audio(props) {
 					>
 						<Grid container spacing={2}>
 							{props.streamList.length === 0 && (
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography>
 										<Trans>
 											The video source doesn't provide any
@@ -91,14 +91,14 @@ export default function Audio(props) {
 							)}
 							{props.streamList.length !== 0 && (
 								<React.Fragment>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<FormControlLabel
 											value="video"
 											control={<Radio />}
 											label={i18n._(t`Audio from device`)}
 										/>
 									</Grid>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Select
 											label={<Trans>Stream</Trans>}
 											value={props.stream}
@@ -111,14 +111,14 @@ export default function Audio(props) {
 							)}
 							{props.deviceList.length !== 0 && (
 								<React.Fragment>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<FormControlLabel
 											value="alsa"
 											control={<Radio />}
 											label={i18n._(t`Audio from device`)}
 										/>
 									</Grid>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Select
 											label={<Trans>Device</Trans>}
 											value={props.address}
@@ -129,7 +129,7 @@ export default function Audio(props) {
 									</Grid>
 								</React.Fragment>
 							)}
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<div>
 									<FormControlLabel
 										value="silence"
@@ -148,10 +148,10 @@ export default function Audio(props) {
 						</Grid>
 					</RadioGroup>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid size={3}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -161,7 +161,7 @@ export default function Audio(props) {
 						<Trans>Back</Trans>
 					</Button>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid size={9}>
 					<Button
 						variant="outlined"
 						fullWidth
@@ -172,8 +172,8 @@ export default function Audio(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 Audio.defaultProps = {

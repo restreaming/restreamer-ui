@@ -8,7 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -135,8 +135,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -146,7 +150,11 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					type="url"
@@ -156,7 +164,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						expandIcon={<ArrowDropDownIcon />}
@@ -168,7 +176,11 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -180,7 +192,11 @@ function Service(props) {
 									onChange={handleChange('buffer_size')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -192,7 +208,11 @@ function Service(props) {
 									onChange={handleChange('bitrate')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -204,7 +224,11 @@ function Service(props) {
 									onChange={handleChange('burst_bits')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={8}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 8
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -214,7 +238,11 @@ function Service(props) {
 									onChange={handleChange('localaddr')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -226,7 +254,11 @@ function Service(props) {
 									onChange={handleChange('localport')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -238,7 +270,11 @@ function Service(props) {
 									onChange={handleChange('pkt_size')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -250,7 +286,11 @@ function Service(props) {
 									onChange={handleChange('ttl')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -262,7 +302,7 @@ function Service(props) {
 									onChange={handleChange('fifo_size')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="overrun_nonfatal"
 									checked={settings.params.overrun_nonfatal}
@@ -274,10 +314,10 @@ function Service(props) {
 									onChange={handleChange('broadcast')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -293,8 +333,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

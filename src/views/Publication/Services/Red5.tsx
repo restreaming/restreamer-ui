@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -120,8 +120,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<Select
 					type="select"
 					label={<Trans>Protocol</Trans>}
@@ -132,7 +136,11 @@ function Service(props) {
 					<MenuItem value="rtmp://">rtmp://</MenuItem>
 				</Select>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -143,7 +151,11 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -153,7 +165,11 @@ function Service(props) {
 					onChange={handleChange('application')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -163,7 +179,11 @@ function Service(props) {
 					onChange={handleChange('stream_name')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -174,7 +194,11 @@ function Service(props) {
 					onChange={handleChange('username')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -185,8 +209,8 @@ function Service(props) {
 					onChange={handleChange('password')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

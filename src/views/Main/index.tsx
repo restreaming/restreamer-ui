@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -292,21 +292,21 @@ export default function Main(props) {
 
 	if ($state.ready === false) {
 		return (
-			<Paper xs={8} sm={6} md={4} className="PaperM">
-				<Grid
+            <Paper xs={8} sm={6} md={4} className="PaperM">
+                <Grid
 					container
 					spacing={2}
 					sx={{ justifyContent: 'center', alignItems: 'center' }}
 				>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<CircularProgress color="primary" />
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Trans>Retrieving stream data ...</Trans>
 					</Grid>
 				</Grid>
-			</Paper>
-		);
+            </Paper>
+        );
 	}
 
 	if ($state.valid === false) {
@@ -330,14 +330,19 @@ export default function Main(props) {
 	}
 
 	return (
-		<Root>
-			<Grid
+        <Root>
+            <Grid
 				container
 				spacing={1}
 				sx={{ justifyContent: 'center' }}
 				className={classes.gridContainerL1}
 			>
-				<Grid item xs={12} sm={12} md={8}>
+				<Grid
+                    size={{
+                        xs: 12,
+                        sm: 12,
+                        md: 8
+                    }}>
 					<Paper marginBottom="0">
 						<PaperHeader
 							title={title}
@@ -349,17 +354,13 @@ export default function Main(props) {
 							spacing={1}
 							className={classes.gridContainerL2}
 						>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Grid
 									container
 									spacing={0}
 									className={classes.playerL1}
 								>
-									<Grid
-										item
-										xs={12}
-										className={classes.playerL2}
-									>
+									<Grid className={classes.playerL2} size={12}>
 										{($state.state === 'disconnected' ||
 											$state.state ===
 												'disconnecting') && (
@@ -373,7 +374,7 @@ export default function Main(props) {
 													alignItems: 'center',
 												}}
 											>
-												<Grid item>
+												<Grid>
 													<Typography variant="h2">
 														<Trans>No video</Trans>
 													</Typography>
@@ -391,10 +392,10 @@ export default function Main(props) {
 													alignItems: 'center',
 												}}
 											>
-												<Grid item>
+												<Grid>
 													<CircularProgress color="inherit" />
 												</Grid>
-												<Grid item>
+												<Grid>
 													<Typography>
 														<Trans>
 															Connecting ...
@@ -414,14 +415,14 @@ export default function Main(props) {
 													alignItems: 'center',
 												}}
 											>
-												<Grid item>
+												<Grid>
 													<WarningIcon
 														className={
 															classes.playerWarningIcon
 														}
 													/>
 												</Grid>
-												<Grid item>
+												<Grid>
 													<Typography>
 														<Trans>
 															Error:{' '}
@@ -432,7 +433,7 @@ export default function Main(props) {
 														</Trans>
 													</Typography>
 												</Grid>
-												<Grid item>
+												<Grid>
 													<Typography>
 														<Trans>
 															Please check the{' '}
@@ -449,7 +450,7 @@ export default function Main(props) {
 												</Grid>
 												{$state.progress.reconnect !==
 													-1 && (
-													<Grid item>
+													<Grid>
 														<Typography>
 															<Trans>
 																Reconnecting in{' '}
@@ -465,7 +466,7 @@ export default function Main(props) {
 												)}
 												{$state.progress.reconnect ===
 													-1 && (
-													<Grid item>
+													<Grid>
 														<Typography>
 															<Trans>
 																You have to
@@ -490,10 +491,10 @@ export default function Main(props) {
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item xs={12} sx={{ mt: '-.3em' }}>
+							<Grid sx={{ mt: '-.3em' }} size={12}>
 								<Progress progress={$state.progress} />
 							</Grid>
-							<Grid item xs={12} sx={{ mt: '-.2em' }}>
+							<Grid sx={{ mt: '-.2em' }} size={12}>
 								<Stack
 									direction="row"
 									sx={{
@@ -564,7 +565,7 @@ export default function Main(props) {
 									</Stack>
 								</Stack>
 							</Grid>
-							<Grid item xs={12} sx={{ mt: 0 }}>
+							<Grid sx={{ mt: 0 }} size={12}>
 								<ActionButton
 									order={$state.order}
 									state={$state.state}
@@ -574,7 +575,7 @@ export default function Main(props) {
 									onReconnect={reconnect}
 								/>
 							</Grid>
-							<Grid item xs={12} sx={{ textAlign: 'right' }}>
+							<Grid sx={{ textAlign: 'right' }} size={12}>
 								<Link
 									variant="body2"
 									color="textSecondary"
@@ -597,14 +598,19 @@ export default function Main(props) {
 						</Grid>
 					</Paper>
 				</Grid>
-				<Grid item xs={12} sm={12} md={4}>
+				<Grid
+                    size={{
+                        xs: 12,
+                        sm: 12,
+                        md: 4
+                    }}>
 					<Publication
 						restreamer={props.restreamer}
 						channelid={_channelid}
 					/>
 				</Grid>
 			</Grid>
-			<ProcessModal
+            <ProcessModal
 				open={$processDetails.open}
 				onClose={handleProcessDetails}
 				title={<Trans>Process details</Trans>}
@@ -612,15 +618,15 @@ export default function Main(props) {
 				logdata={$processDetails.data}
 				onHelp={handleHelp('process-details')}
 			/>
-			<DebugModal
+            <DebugModal
 				open={$processDebug.open}
 				onClose={handleProcessDebug}
 				title={<Trans>Process report</Trans>}
 				data={$processDebug.data}
 				onHelp={handleHelp('process-report')}
 			/>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Main.defaultProps = {

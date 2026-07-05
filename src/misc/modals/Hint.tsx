@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
@@ -55,16 +55,16 @@ const Stream = function (props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			{/* <Grid item xs={6}>
+        <Grid container spacing={2}>
+            {/* <Grid item xs={6}>
 				<Select label={<Trans>Type</Trans>} value={props.stream.type} onChange={handleChange('type')}>
 					<MenuItem value="audio">Audio</MenuItem>
 					<MenuItem value="video">Video</MenuItem>
 				</Select>
 			</Grid> */}
-			{props.stream.type === 'audio' ? (
+            {props.stream.type === 'audio' ? (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Select
 							label={<Trans>Codec</Trans>}
 							value={props.stream.codec}
@@ -74,14 +74,14 @@ const Stream = function (props) {
 							<MenuItem value="mp3">MP3</MenuItem>
 						</Select>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Sampling
 							value={props.stream.sampling_hz}
 							onChange={handleChange('sampling_hz')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Audio.Layout
 							value={props.stream.layout}
 							onChange={handleChange('layout')}
@@ -91,7 +91,7 @@ const Stream = function (props) {
 				</React.Fragment>
 			) : (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Select
 							label={<Trans>Codec</Trans>}
 							value={props.stream.codec}
@@ -104,7 +104,7 @@ const Stream = function (props) {
 							<MenuItem value="vp8">VP8</MenuItem>
 						</Select>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Size
 							value={
 								props.stream.width + 'x' + props.stream.height
@@ -113,7 +113,7 @@ const Stream = function (props) {
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.PixFormat
 							value={props.stream.pix_fmt}
 							onChange={handleChange('pix_fmt')}
@@ -122,8 +122,8 @@ const Stream = function (props) {
 					</Grid>
 				</React.Fragment>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 };
 
 Stream.defaultProps = {
@@ -165,9 +165,9 @@ const Streams = function (props) {
 	};
 
 	return (
-		<Grid container spacing={1}>
-			{props.streams.map((stream, index) => (
-				<Grid key={stream.index + ':' + stream.stream} item xs={12}>
+        <Grid container spacing={1}>
+            {props.streams.map((stream, index) => (
+				<Grid key={stream.index + ':' + stream.stream} size={12}>
 					<Stack>
 						<Typography
 							sx={{ textTransform: 'UPPERCASE', marginBottom: 2 }}
@@ -181,7 +181,7 @@ const Streams = function (props) {
 					</Stack>
 				</Grid>
 			))}
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{props.streams.length < 2 && (
 					<Button
 						variant="outlined"
@@ -201,8 +201,8 @@ const Streams = function (props) {
 					</Button>
 				)}
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 };
 
 Streams.defaultProps = {

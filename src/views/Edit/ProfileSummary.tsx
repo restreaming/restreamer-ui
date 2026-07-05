@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
@@ -31,18 +31,16 @@ export default function ProfileSummary(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid
-				item
-				xs={12}
-				sx={{
+        <Grid container spacing={2}>
+            <Grid
+                sx={{
 					'& button': {
 						marginTop: '1em',
 						float: 'right',
 						marginLeft: '1em',
 					},
 				}}
-			>
+                size={12}>
 				<IconButton
 					size="small"
 					color="inherit"
@@ -61,24 +59,22 @@ export default function ProfileSummary(props) {
 					<Trans>Video settings</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Summary
 					type="video"
 					sources={props.sources}
 					profile={profile.video}
 				/>
 			</Grid>
-			<Grid
-				item
-				xs={12}
-				sx={{
+            <Grid
+                sx={{
 					'& button': {
 						marginTop: '1em',
 						float: 'right',
 						marginLeft: '1em',
 					},
 				}}
-			>
+                size={12}>
 				<IconButton
 					size="small"
 					color="inherit"
@@ -97,15 +93,15 @@ export default function ProfileSummary(props) {
 					<Trans>Audio settings</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Summary
 					type="audio"
 					sources={props.sources}
 					profile={profile.audio}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 ProfileSummary.defaultProps = {

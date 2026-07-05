@@ -9,7 +9,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -150,8 +150,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -161,7 +165,11 @@ function Service(props) {
 					onChange={handleChange('protocol')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -171,7 +179,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -180,7 +188,7 @@ function Service(props) {
 					onChange={handleChange('username')}
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<Password
 					variant="outlined"
 					fullWidth
@@ -189,7 +197,7 @@ function Service(props) {
 					onChange={handleChange('password')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
@@ -202,12 +210,12 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>General</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Select
 									type="select"
 									label="rtsp_transport"
@@ -223,7 +231,7 @@ function Service(props) {
 									<MenuItem value="http">http</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Select
 									type="select"
 									label="rtsp_flags"
@@ -236,7 +244,7 @@ function Service(props) {
 									</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<MultiSelect
 									type="select"
 									label="allowed_media_types"
@@ -263,7 +271,7 @@ function Service(props) {
 									/>
 								</MultiSelect>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -275,7 +283,11 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -285,7 +297,11 @@ function Service(props) {
 									onChange={handleChange('user_agent')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -295,10 +311,10 @@ function Service(props) {
 									onChange={handleChange('max_delay')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -314,8 +330,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

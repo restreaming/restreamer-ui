@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import Audio from '../../settings/Audio';
 import Helper from '../../helper';
@@ -71,16 +71,16 @@ function Coder(props) {
 	}, []);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Audio.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Coder.defaultProps = {

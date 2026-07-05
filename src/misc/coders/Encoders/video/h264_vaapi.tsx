@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 
@@ -144,28 +144,40 @@ function Coder(props) {
 	}, []);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<RateControl
 					value={settings.rc_mode}
 					onChange={update('rc_mode')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<Video.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<Video.Framerate
 					value={settings.fps}
 					onChange={update('fps')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<Video.GOP
 					value={settings.gop}
 					onChange={update('gop')}
@@ -173,7 +185,7 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -183,14 +195,14 @@ function Coder(props) {
 					onChange={update('quality')}
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<Profile
 					value={settings.profile}
 					onChange={update('profile')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Coder.defaultProps = {

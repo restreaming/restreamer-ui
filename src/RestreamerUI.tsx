@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
 
 import { NotifyProvider } from './contexts/Notify';
@@ -544,8 +544,8 @@ export default function RestreamerUI(props) {
 		$state.connected && $state.compatibility.compatible && !$state.password;
 
 	return (
-		<StyledI18n>
-			<NotifyProvider value={{ Dispatch: notify }}>
+        <StyledI18n>
+            <NotifyProvider value={{ Dispatch: notify }}>
 				<Grid
 					container
 					direction="column"
@@ -565,7 +565,7 @@ export default function RestreamerUI(props) {
 							onLogout={handleLogout}
 						/>
 					</Grid>
-					<Grid item className={classes.MainContent}>
+					<Grid className={classes.MainContent}>
 						<Grid
 							container
 							className="MainContent-container"
@@ -575,16 +575,22 @@ export default function RestreamerUI(props) {
 							}}
 							spacing={0}
 						>
-							<Grid item sm={1}></Grid>
 							<Grid
-								item
-								xs={12}
-								sm={10}
-								className="MainContent-item"
-							>
+                                size={{
+                                    sm: 1
+                                }}></Grid>
+							<Grid
+                                className="MainContent-item"
+                                size={{
+                                    xs: 12,
+                                    sm: 10
+                                }}>
 								{view}
 							</Grid>
-							<Grid item sm={1}></Grid>
+							<Grid
+                                size={{
+                                    sm: 1
+                                }}></Grid>
 						</Grid>
 					</Grid>
 				</Grid>
@@ -633,8 +639,8 @@ export default function RestreamerUI(props) {
 					/>
 				)}
 			</NotifyProvider>
-		</StyledI18n>
-	);
+        </StyledI18n>
+    );
 }
 
 RestreamerUI.defaultProps = {

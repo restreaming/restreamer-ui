@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import { useLingui } from '@lingui/react';
@@ -137,15 +137,15 @@ function Coder(props) {
 	}, []);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Audio.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Delay
 					value={settings.delay}
 					onChange={update('delay')}
@@ -153,8 +153,8 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Coder.defaultProps = {

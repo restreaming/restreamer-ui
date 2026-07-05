@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import ReactMarkdown from 'react-markdown';
 import SemverGt from 'semver/functions/gt';
@@ -155,7 +155,7 @@ export default function Changelog(props) {
 	};
 
 	return (
-		<Dialog
+        <Dialog
 			open={props.open}
 			onClose={props.onClose}
 			title={<Trans>Update details (Changelog)</Trans>}
@@ -170,8 +170,8 @@ export default function Changelog(props) {
 				</Button>
 			}
 		>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<BoxText alignItems="flex-start">
 						<ReactMarkdown components={renderers}>
 							{$data}
@@ -179,8 +179,8 @@ export default function Changelog(props) {
 					</BoxText>
 				</Grid>
 			</Grid>
-		</Dialog>
-	);
+        </Dialog>
+    );
 }
 
 Changelog.defaultProps = {

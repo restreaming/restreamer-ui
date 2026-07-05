@@ -3,7 +3,7 @@ import React from 'react';
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/Apple';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Typography from '@mui/material/Typography';
@@ -162,16 +162,16 @@ function Source(props) {
 	);
 
 	return (
-		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-			<Grid item xs={12}>
+        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{videoDevices}
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{audioDevices}
 				<Button
 					size="small"
@@ -182,21 +182,21 @@ function Source(props) {
 					<Trans>Refresh</Trans>
 				</Button>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Format
 					value={settings.format}
 					onChange={handleChange('format')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Framerate
 					value={settings.framerate}
 					onChange={handleChange('framerate')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Size
 					value={settings.size}
 					onChange={handleChange('size')}
@@ -204,27 +204,27 @@ function Source(props) {
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Capture cursor</Trans>}
 					checked={settings.cursor}
 					onChange={handleChange('cursor')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Capture clicks</Trans>}
 					checked={settings.clicks}
 					onChange={handleChange('clicks')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<FormInlineButton onClick={handleProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Source.defaultProps = {

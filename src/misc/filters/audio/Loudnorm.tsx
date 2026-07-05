@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import Checkbox from '../../Checkbox';
 
@@ -61,16 +61,16 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<React.Fragment>
-			<Grid item>
+        <React.Fragment>
+            <Grid>
 				<Checkbox
 					label={<Trans>Loudness Normalization</Trans>}
 					checked={settings.enabled}
 					onChange={update('enabled')}
 				/>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Filter.defaultProps = {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import urlparser from 'url-parse';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -233,8 +233,8 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -243,7 +243,7 @@ function Service(props) {
 					onChange={handleChange('v2_address')}
 				/>
 			</Grid>
-			<Grid item xs={12} sx={{ textAlign: 'left' }}>
+            <Grid sx={{ textAlign: 'left' }} size={12}>
 				<BoxText alignItems="flex-start" justifyContent="flex-start">
 					{!settings.v2_address && (
 						<Typography>
@@ -298,8 +298,8 @@ function Service(props) {
 					)}
 				</BoxText>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

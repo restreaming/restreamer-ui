@@ -3,7 +3,7 @@ import React from 'react';
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import * as Coders from '../../misc/coders/Encoders';
 import * as Filters from '../../misc/filters';
@@ -89,15 +89,15 @@ export default function Summary(props) {
 	}
 
 	return (
-		<BoxText>
-			<Grid container spacing={1}>
-				<Grid item xs={12}>
+        <BoxText>
+            <Grid container spacing={1}>
+				<Grid size={12}>
 					<Typography variant="subtitle2">{name}</Typography>
 					<Typography variant="body1">{address}</Typography>
 				</Grid>
 				{showEncoding === true && (
 					<React.Fragment>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<Typography variant="subtitle2">
 								<Trans>Encoding</Trans>
 							</Typography>
@@ -105,7 +105,7 @@ export default function Summary(props) {
 								{encodingSummary}
 							</Typography>
 						</Grid>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<Typography variant="subtitle2">
 								<Trans>Filter</Trans>
 							</Typography>
@@ -122,8 +122,8 @@ export default function Summary(props) {
 					</React.Fragment>
 				)}
 			</Grid>
-		</BoxText>
-	);
+        </BoxText>
+    );
 }
 
 Summary.defaultProps = {

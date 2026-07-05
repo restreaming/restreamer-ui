@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -229,10 +229,10 @@ export default function Login(props) {
 	};
 
 	return (
-		<Paper xs={11} sm={10} md={6}>
-			<Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
+        <Paper xs={11} sm={10} md={6}>
+            <Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
 				{$loginTarget !== 'none' && (
-					<Grid item xs={12} sx={{ textAlign: 'center' }}>
+					<Grid sx={{ textAlign: 'center' }} size={12}>
 						{$auths.length > 1 && (
 							<ToggleButtonGroup
 								value={$loginTarget}
@@ -261,7 +261,7 @@ export default function Login(props) {
 				)}
 				{$loginTarget === 'none' && (
 					<React.Fragment>
-						<Grid item xs={12} sx={{ textAlign: 'center' }}>
+						<Grid sx={{ textAlign: 'center' }} size={12}>
 							<Typography>
 								<Trans>
 									There's no login method available.
@@ -272,10 +272,10 @@ export default function Login(props) {
 				)}
 				{$loginTarget === 'local' && hasAuthType($auths, 'local') && (
 					<React.Fragment>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<form noValidate>
 								<Grid container spacing={3}>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<TextField
 											variant="outlined"
 											fullWidth
@@ -286,7 +286,7 @@ export default function Login(props) {
 											autoComplete="username"
 										/>
 									</Grid>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Password
 											value={$login.password}
 											id="password"
@@ -295,7 +295,7 @@ export default function Login(props) {
 											autoComplete="current-password"
 										/>
 									</Grid>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Button
 											variant="outlined"
 											color="primary"
@@ -317,9 +317,9 @@ export default function Login(props) {
 					$loginTarget === 'service' &&
 					!hasAuthType($auths, 'auth0') && (
 						<React.Fragment>
-							<Grid item xs={12} sx={{ textAlign: 'center' }}>
+							<Grid sx={{ textAlign: 'center' }} size={12}>
 								<Grid container spacing={0}>
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Typography
 											variant="h3"
 											style={{ marginBottom: 10 }}
@@ -347,7 +347,7 @@ export default function Login(props) {
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Button
 									variant="service"
 									color="primary"
@@ -363,9 +363,9 @@ export default function Login(props) {
 					)}
 				{$loginTarget === 'auth0' && hasAuthType($auths, 'auth0') && (
 					<React.Fragment>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<Grid container spacing={3}>
-								<Grid item xs={12} sx={{ textAlign: 'center' }}>
+								<Grid sx={{ textAlign: 'center' }} size={12}>
 									<Typography>
 										<Trans>
 											Use Auth0 for your running
@@ -383,11 +383,7 @@ export default function Login(props) {
 								</Grid>
 								{$canUseAuth0 === false ? (
 									<React.Fragment>
-										<Grid
-											item
-											xs={12}
-											sx={{ textAlign: 'center' }}
-										>
+										<Grid sx={{ textAlign: 'center' }} size={12}>
 											<Typography>
 												<Trans>
 													Auth0 is currently not
@@ -402,7 +398,7 @@ export default function Login(props) {
 									<React.Fragment>
 										{$isAuthenticated === false ? (
 											<React.Fragment>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<Select
 														label={
 															<Trans>
@@ -447,7 +443,7 @@ export default function Login(props) {
 															})}
 													</Select>
 												</Grid>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<Button
 														variant="outlined"
 														color="primary"
@@ -467,7 +463,7 @@ export default function Login(props) {
 												</Grid>
 											</React.Fragment>
 										) : (
-											<Grid item xs={12}>
+											<Grid size={12}>
 												<Button
 													variant="outlined"
 													color="primary"
@@ -488,11 +484,11 @@ export default function Login(props) {
 					</React.Fragment>
 				)}
 			</Grid>
-			<Backdrop open={$loginCheck}>
+            <Backdrop open={$loginCheck}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 Login.defaultProps = {

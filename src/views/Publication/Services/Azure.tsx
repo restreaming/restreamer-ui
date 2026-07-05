@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '../../../misc/Select';
@@ -88,8 +88,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<Select
 					type="select"
 					label={<Trans>Protocol</Trans>}
@@ -100,7 +104,11 @@ function Service(props) {
 					<MenuItem value="rtmps://">rtmps://</MenuItem>
 				</Select>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -110,8 +118,8 @@ function Service(props) {
 					placeholder="myAccount.channel.mediaservices.windows.net:1935/live/123456789..."
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

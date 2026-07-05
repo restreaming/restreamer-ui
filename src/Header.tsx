@@ -5,7 +5,7 @@ import { Trans } from '@lingui/macro';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import Divider from '@mui/material/Divider';
 import Fab from '@mui/material/Fab';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LayersIcon from '@mui/icons-material/Layers';
 import Link from '@mui/material/Link';
@@ -173,21 +173,21 @@ const StyledMenu = styled((props) => (
 
 function AboutModal(props) {
 	return (
-		<Modal open={props.open} onClose={props.onClose} className="modal">
-			<ModalContent
+        <Modal open={props.open} onClose={props.onClose} className="modal">
+            <ModalContent
 				title="About datarhei Restreamer"
 				onClose={props.onClose}
 				className={classes.modalPaper}
 			>
 				<StyledGrid container spacing={1}>
-					<Grid item xs={12} className={classes.aboutImage}>
+					<Grid className={classes.aboutImage} size={12}>
 						<PaperThumb
 							image={welcomeImage}
 							title="Welcome to Restreamer v2"
 							height="200px"
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Typography variant="body1">
 							This is the frontend and a part of a free open
 							source livestreaming solution for video data. The
@@ -202,8 +202,8 @@ function AboutModal(props) {
 							which can be operated separately.
 						</Typography>
 					</Grid>
-					<Grid item xs={12}></Grid>
-					<Grid item xs={12}>
+					<Grid size={12}></Grid>
+					<Grid size={12}>
 						<Typography>
 							<strong>Release</strong>: {Version.UI}
 						</Typography>
@@ -250,8 +250,8 @@ function AboutModal(props) {
 					</Grid>
 				</StyledGrid>
 			</ModalContent>
-		</Modal>
-	);
+        </Modal>
+    );
 }
 
 AboutModal.defaultProps = {
@@ -451,14 +451,14 @@ HeaderMenu.defaultProps = {
 
 export default function Header(props) {
 	return (
-		<Grid
+        <Grid
 			container
 			className={classes.header}
 			spacing={0}
 			direction="row"
 			sx={{ alignItems: 'center' }}
 		>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Stack
 					direction="row"
 					sx={{
@@ -488,8 +488,8 @@ export default function Header(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Header.defaultProps = {

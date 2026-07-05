@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
@@ -93,8 +93,8 @@ export default function License(props) {
 	}
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Creative Commons</Trans>}
 					value={props.license}
@@ -110,8 +110,8 @@ export default function License(props) {
 					<MenuItem value="CC BY-NC-ND 4.0">CC BY-NC-ND 4.0</MenuItem>
 				</Select>
 			</Grid>
-			{description.length !== 0 && (
-				<Grid item xs={12}>
+            {description.length !== 0 && (
+				<Grid size={12}>
 					<div style={{ marginBottom: '.5em', marginTop: '.5em' }}>
 						<Typography>{description}</Typography>
 						<Typography
@@ -129,15 +129,15 @@ export default function License(props) {
 					</div>
 				</Grid>
 			)}
-			{image !== null && (
-				<Grid item xs={12}>
+            {image !== null && (
+				<Grid size={12}>
 					<Link href={link} target="_blank" rel="noopener noreferrer">
 						<img src={image} alt={props.license} />
 					</Link>
 				</Grid>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 License.defaultProps = {

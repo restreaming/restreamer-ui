@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import Paper from '../../../misc/Paper';
@@ -12,19 +12,19 @@ import Select from '../../../misc/Select';
 
 export default function VideoProfile(props) {
 	return (
-		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-			<PaperHeader
+        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+            <PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Video setup</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>
 							The video source is compatible. Select the desired
@@ -32,7 +32,7 @@ export default function VideoProfile(props) {
 						</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Select
 						label={<Trans>Profile</Trans>}
 						value={props.stream}
@@ -44,7 +44,7 @@ export default function VideoProfile(props) {
 				{props.compatible === false && (
 					<React.Fragment>
 						{props.encodersList.length === 0 ? (
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>
 										Your stream needs to be encoded, but
@@ -54,7 +54,7 @@ export default function VideoProfile(props) {
 							</Grid>
 						) : (
 							<React.Fragment>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography>
 										<Trans>
 											Your stream needs to be encoded.
@@ -63,7 +63,7 @@ export default function VideoProfile(props) {
 									</Typography>
 								</Grid>
 								{props.decodersList.length >= 2 && (
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<Select
 											label={<Trans>Decoder</Trans>}
 											value={props.decoder}
@@ -73,7 +73,7 @@ export default function VideoProfile(props) {
 										</Select>
 									</Grid>
 								)}
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Select
 										label={<Trans>Encoder</Trans>}
 										value={props.encoder}
@@ -86,10 +86,10 @@ export default function VideoProfile(props) {
 						)}
 					</React.Fragment>
 				)}
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid size={3}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -99,7 +99,7 @@ export default function VideoProfile(props) {
 						<Trans>Back</Trans>
 					</Button>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid size={9}>
 					<Button
 						variant="outlined"
 						fullWidth
@@ -114,8 +114,8 @@ export default function VideoProfile(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 VideoProfile.defaultProps = {

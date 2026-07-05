@@ -6,7 +6,7 @@ import { t } from '@lingui/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
@@ -301,7 +301,7 @@ export default function Wizard(props) {
 			const Icon = s.icon;
 
 			availableSources.push(
-				<Grid item xs={6} sx={{ textAlign: 'center' }} key={s.id}>
+				<Grid sx={{ textAlign: 'center' }} key={s.id} size={6}>
 					<Button variant="big" onClick={handleNext(s.id)}>
 						<div>
 							<Icon fontSize="large" />

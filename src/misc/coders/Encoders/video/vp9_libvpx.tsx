@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 import Video from '../../settings/Video';
 import Helper from '../../helper';
@@ -94,22 +94,30 @@ function Coder(props) {
 	}, []);
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12}>
+        <Grid container spacing={2}>
+            <Grid size={12}>
 				<Video.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<Video.Framerate
 					value={settings.fps}
 					onChange={update('fps')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<Video.GOP
 					value={settings.gop}
 					onChange={update('gop')}
@@ -117,16 +125,16 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-			{skills.ffmpeg.version_major >= 5 && (
-				<Grid item xs={12}>
+            {skills.ffmpeg.version_major >= 5 && (
+				<Grid size={12}>
 					<Video.FpsMode
 						value={settings.fps_mode}
 						onChange={update('fps_mode')}
 					/>
 				</Grid>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Coder.defaultProps = {

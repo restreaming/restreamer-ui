@@ -9,7 +9,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
 import Link from '@mui/material/Link';
@@ -1306,8 +1306,8 @@ export default function Settings(props) {
 	}
 
 	return (
-		<Root>
-			<Paper xs={12} md={10}>
+        <Root>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={title}
 					onAbort={handleAbort}
@@ -1390,8 +1390,8 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
-									<Grid item xs={12}>
+								<Grid size={12}>
+									<Grid size={12}>
 										<PaperThumb
 											image={settingsImage}
 											title="Welcome to Restreamer v2"
@@ -1399,12 +1399,12 @@ export default function Settings(props) {
 										/>
 									</Grid>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>General</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											All important system settings.
@@ -1412,13 +1412,13 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								{$tabs.general.errors && (
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<ErrorBox
 											messages={$tabs.general.messages}
 										/>
 									</Grid>
 								)}
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Check for updates</Trans>}
 										checked={$updates.want}
@@ -1453,7 +1453,7 @@ export default function Settings(props) {
 										</BoxText>
 									)}
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -1471,17 +1471,17 @@ export default function Settings(props) {
 										messages={$tabs.general.messages}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Expert mode</Trans>}
 										checked={$expert}
 										onChange={handleExpertMode}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Button
 										variant="outlined"
 										color="secondary"
@@ -1506,12 +1506,12 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Service</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											Setting for connection to the
@@ -1529,7 +1529,7 @@ export default function Settings(props) {
 										.
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>Restreamer Service</Trans>
@@ -1546,7 +1546,7 @@ export default function Settings(props) {
 										messages={$tabs.service.messages}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										label={<Trans>Node ID</Trans>}
 										env={env('id')}
@@ -1560,7 +1560,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										label={<Trans>Name</Trans>}
 										env={env('name')}
@@ -1581,7 +1581,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										label={<Trans>Token</Trans>}
 										env={env('service.token')}
@@ -1602,7 +1602,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -1633,17 +1633,17 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Network</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Address</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										label={<Trans>Public domain/s</Trans>}
 										env={env('host.name')}
@@ -1664,7 +1664,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>HTTP port</Trans>}
@@ -1684,7 +1688,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>HTTPS port</Trans>}
@@ -1707,15 +1715,15 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>HTTPS (SSL/TLS)</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -1742,7 +1750,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										label={<Trans>Email</Trans>}
 										env={env('tls.email')}
@@ -1765,15 +1773,19 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Bandwidth control</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={12}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 12
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>Maximum viewers</Trans>}
@@ -1798,7 +1810,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={12}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 12
+                                    }}>
 									<TextField
 										type="number"
 										label={
@@ -1836,17 +1852,17 @@ export default function Settings(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="auth" className="panel">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Authorization</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Basic</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -1874,7 +1890,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										env={env('api.auth.username')}
 										disabled={
@@ -1897,7 +1913,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Password
 										env={env('api.auth.password')}
 										disabled={
@@ -1928,17 +1944,17 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Playback</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Security</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>Allow all referrer</Trans>
@@ -1951,7 +1967,7 @@ export default function Settings(props) {
 									/>{' '}
 									{env('storage.cors.allow_all') && <Env />}
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										multiline
 										rows={5}
@@ -1977,15 +1993,15 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Statistics</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -2011,7 +2027,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										multiline
 										rows={5}
@@ -2040,7 +2056,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										type="number"
 										label={
@@ -2075,7 +2091,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -2111,12 +2127,12 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Storage</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>In-memory</Trans>
 									</Typography>
@@ -2124,7 +2140,7 @@ export default function Settings(props) {
 										<Trans>Settings for /memfs path.</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Write protection</Trans>}
 										checked={
@@ -2150,7 +2166,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										label={<Trans>Username</Trans>}
 										env={env(
@@ -2179,7 +2199,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<Password
 										label={<Trans>Password</Trans>}
 										env={env(
@@ -2208,7 +2232,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										type="number"
 										label={
@@ -2241,7 +2265,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -2267,10 +2291,10 @@ export default function Settings(props) {
 										messages={$tabs.storage.messages}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Disk</Trans>
 									</Typography>
@@ -2291,7 +2315,7 @@ export default function Settings(props) {
 										.
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										type="number"
 										label={
@@ -2323,10 +2347,10 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Disk cache</Trans>
 									</Typography>
@@ -2334,7 +2358,7 @@ export default function Settings(props) {
 										<Trans>Cache for files on /data.</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Disk cache</Trans>}
 										checked={
@@ -2355,7 +2379,7 @@ export default function Settings(props) {
 										messages={$tabs.storage.messages}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										type="number"
 										label={
@@ -2426,7 +2450,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										type="number"
 										label={
@@ -2459,7 +2487,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										type="number"
 										label={
@@ -2529,7 +2561,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										multiline
 										rows={5}
@@ -2563,7 +2595,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										multiline
 										rows={5}
@@ -2601,12 +2633,12 @@ export default function Settings(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="rtmp" className="panel">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>RTMP</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>RTMP server</Trans>}
 										checked={config.rtmp.enable}
@@ -2655,10 +2687,14 @@ export default function Settings(props) {
 											</Typography>
 										)}
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={6} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 6,
+                                        md: 3
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>RTMP Port</Trans>}
@@ -2681,7 +2717,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 6,
+                                        md: 3
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>RTMPS Port</Trans>}
@@ -2706,7 +2746,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										label={<Trans>App</Trans>}
 										env={env('rtmp.app')}
@@ -2725,7 +2769,7 @@ export default function Settings(props) {
 										<Trans>RTMP app for publishing.</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Password
 										label={<Trans>Token</Trans>}
 										env={env('rtmp.token')}
@@ -2752,12 +2796,12 @@ export default function Settings(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="srt" className="panel">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>SRT</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>SRT server</Trans>}
 										checked={config.srt.enable}
@@ -2772,10 +2816,14 @@ export default function Settings(props) {
 										messages={$tabs.srt.messages}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={6} md={4}>
+								<Grid
+                                    size={{
+                                        xs: 6,
+                                        md: 4
+                                    }}>
 									<TextField
 										type="number"
 										label={<Trans>Port</Trans>}
@@ -2797,7 +2845,11 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6} md={8}>
+								<Grid
+                                    size={{
+                                        xs: 6,
+                                        md: 8
+                                    }}>
 									<Password
 										label={<Trans>Token</Trans>}
 										env={env('srt.token')}
@@ -2820,7 +2872,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Password
 										label={<Trans>Passphrase</Trans>}
 										env={env('srt.passphrase')}
@@ -2868,17 +2920,17 @@ export default function Settings(props) {
 							className="panel"
 						>
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Logging</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>System</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<BoxTextarea
 										style={{
 											paddingTop: '.2em',
@@ -2897,7 +2949,7 @@ export default function Settings(props) {
 										/>
 									</BoxTextarea>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<Select
 										label={<Trans>Log level</Trans>}
 										value={config.log.level}
@@ -2973,7 +3025,7 @@ export default function Settings(props) {
 										<Trans>Level of system protocol.</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										type="number"
 										label={<Trans>Maximum log lines</Trans>}
@@ -2992,12 +3044,12 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>FFmpeg</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										type="number"
 										label={<Trans>Maximum log lines</Trans>}
@@ -3018,7 +3070,7 @@ export default function Settings(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										type="number"
 										label={
@@ -3068,10 +3120,10 @@ export default function Settings(props) {
 					}
 				/>
 			</Paper>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-			<Backdrop open={$restart.restarting}>
+            <Backdrop open={$restart.restarting}>
 				<Paper xs={4} sm={4} md={4}>
 					<PaperHeader title={<Trans>Restarting</Trans>} />
 					<PaperContent>
@@ -3127,7 +3179,7 @@ export default function Settings(props) {
 					/>
 				</Paper>
 			</Backdrop>
-			<Dialog
+            <Dialog
 				open={$dialogs.saved}
 				title={<Trans>Restart required</Trans>}
 				onClose={handleSavedDialog}
@@ -3158,7 +3210,7 @@ export default function Settings(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-			<Dialog
+            <Dialog
 				open={$dialogs.restart}
 				title={<Trans>Restart</Trans>}
 				onClose={handleReloadDialog}
@@ -3187,8 +3239,8 @@ export default function Settings(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Settings.defaultProps = {

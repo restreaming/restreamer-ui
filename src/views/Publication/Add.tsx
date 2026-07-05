@@ -11,7 +11,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TextField from '@mui/material/TextField';
@@ -368,13 +368,13 @@ export default function Add(props) {
 			) {
 				serviceList.push(
 					<Grid
-						item
-						xs={12}
-						sm={6}
-						md={3}
-						sx={{ textAlign: 'center' }}
-						key={s.id}
-					>
+                        sx={{ textAlign: 'center' }}
+                        key={s.id}
+                        size={{
+                            xs: 12,
+                            sm: 6,
+                            md: 3
+                        }}>
 						<Tooltip
 							title={
 								<Root>
@@ -403,13 +403,13 @@ export default function Add(props) {
 			} else {
 				serviceList.push(
 					<Grid
-						item
-						xs={12}
-						sm={6}
-						md={3}
-						sx={{ textAlign: 'center' }}
-						key={s.id}
-					>
+                        sx={{ textAlign: 'center' }}
+                        key={s.id}
+                        size={{
+                            xs: 12,
+                            sm: 6,
+                            md: 3
+                        }}>
 						<Button
 							variant="big"
 							onClick={handleServiceSelect(s.id)}
@@ -434,8 +434,8 @@ export default function Add(props) {
 	}
 
 	return (
-		<React.Fragment>
-			<Paper xs={12} md={10}>
+        <React.Fragment>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -453,7 +453,7 @@ export default function Add(props) {
 				{$service === '' ? (
 					<React.Fragment>
 						<Grid container spacing={2}>
-							<Grid item xs={12} sx={{ textAlign: 'center' }}>
+							<Grid sx={{ textAlign: 'center' }} size={12}>
 								<ToggleButtonGroup
 									className={classes.buttonGroup}
 									size={breakpointUpSm ? 'medium' : 'small'}
@@ -482,7 +482,7 @@ export default function Add(props) {
 							className={classes.gridContainer}
 						>
 							{serviceList}
-							<Grid item xs={12} className={classes.buttonAbort}>
+							<Grid className={classes.buttonAbort} size={12}>
 								<Button
 									variant="outlined"
 									color="default"
@@ -528,16 +528,12 @@ export default function Add(props) {
 									className="panel"
 								>
 									<TabContent service={service}>
-										<Grid
-											item
-											xs={12}
-											sx={{ margin: '1em 0em 1em 0em' }}
-										>
+										<Grid sx={{ margin: '1em 0em 1em 0em' }} size={12}>
 											<Typography>
 												{service.description}
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<TextField
 												variant="outlined"
 												fullWidth
@@ -548,7 +544,7 @@ export default function Add(props) {
 												onChange={handleServiceName}
 											/>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<ServiceControl
 												settings={$settings.settings}
 												skills={serviceSkills}
@@ -565,12 +561,12 @@ export default function Add(props) {
 									className="panel"
 								>
 									<TabContent service={service}>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h2">
 												<Trans>Process</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<ProcessControl
 												settings={
 													$settings.control.process
@@ -580,15 +576,15 @@ export default function Add(props) {
 												)}
 											/>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Divider />
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h2">
 												<Trans>Limits</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<LimitsControl
 												settings={
 													$settings.control.limits
@@ -606,19 +602,19 @@ export default function Add(props) {
 									className="panel"
 								>
 									<TabContent service={service}>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h2">
 												<Trans>
 													Source &amp; Encoding
 												</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h3">
 												<Trans>Source</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="subheading">
 												<Trans>
 													Select RTMP or SRT (if
@@ -626,7 +622,7 @@ export default function Add(props) {
 												</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<SourceControl
 												settings={
 													$settings.control.source
@@ -637,12 +633,12 @@ export default function Add(props) {
 												)}
 											/>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h3">
 												<Trans>Encoding</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="subheading">
 												<Trans>
 													Please use "Passthrough
@@ -652,12 +648,12 @@ export default function Add(props) {
 												</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h4">
 												<Trans>Video</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<EncodingSelect
 												type="video"
 												streams={$sources[0].streams}
@@ -675,7 +671,7 @@ export default function Add(props) {
 										</Grid>
 										{$settings.profiles[0].video.encoder
 											.coder !== 'copy' && (
-											<Grid item xs={12}>
+											<Grid size={12}>
 												<FilterSelect
 													type="video"
 													profile={
@@ -691,12 +687,12 @@ export default function Add(props) {
 												/>
 											</Grid>
 										)}
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<Typography variant="h4">
 												<Trans>Audio</Trans>
 											</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid size={12}>
 											<EncodingSelect
 												type="audio"
 												streams={$sources[0].streams}
@@ -714,7 +710,7 @@ export default function Add(props) {
 										</Grid>
 										{$settings.profiles[0].audio.encoder
 											.coder !== 'copy' && (
-											<Grid item xs={12}>
+											<Grid size={12}>
 												<FilterSelect
 													type="audio"
 													profile={
@@ -770,11 +766,11 @@ export default function Add(props) {
 					</React.Fragment>
 				)}
 			</Paper>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Add.defaultProps = {

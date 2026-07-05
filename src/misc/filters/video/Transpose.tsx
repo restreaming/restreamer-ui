@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 
 import Select from '../../Select';
@@ -92,14 +92,14 @@ function Filter(props) {
 	}, []);
 
 	return (
-		<Grid item xs={12}>
-			<Rotate
+        <Grid size={12}>
+            <Rotate
 				value={settings.value}
 				onChange={update('value')}
 				allowCustom
 			/>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Filter.defaultProps = {

@@ -8,7 +8,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -369,8 +369,8 @@ export default function Playersite(props) {
 			: props.restreamer.GetCurrentChannelID();
 
 	return (
-		<Root>
-			<Paper xs={12} md={10}>
+        <Root>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Publication Website</Trans>}
 					onAbort={handleAbort}
@@ -417,18 +417,18 @@ export default function Playersite(props) {
 						</Tabs>
 						<TabPanel value={$tab} index="general">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<PaperThumb
 										image={playerSiteThumb}
 										title="Playersite"
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h1">
 										<Trans>General</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											In addition to the player, the
@@ -439,14 +439,14 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Playersite</Trans>}
 										checked={$settings.playersite}
 										onChange={handleChange('playersite')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -456,7 +456,7 @@ export default function Playersite(props) {
 										onChange={handleChange('title')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Select
 										label={<Trans>Main channel</Trans>}
 										value={$settings.channelid}
@@ -495,7 +495,7 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<MultiSelect
 										disabled={!$settings.playersite}
 										type="select"
@@ -562,7 +562,7 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Share button</Trans>}
 										checked={$settings.share}
@@ -570,7 +570,7 @@ export default function Playersite(props) {
 										onChange={handleChange('share')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Chromecast</Trans>}
 										checked={$settings.chromecast}
@@ -578,7 +578,7 @@ export default function Playersite(props) {
 										onChange={handleChange('chromecast')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>AirPlay</Trans>}
 										checked={$settings.airplay}
@@ -586,7 +586,7 @@ export default function Playersite(props) {
 										onChange={handleChange('airplay')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -607,17 +607,21 @@ export default function Playersite(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="template">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h1">
 										<Trans>Template</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>Available</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={9}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 9
+                                    }}>
 									<Select
 										label={<Trans>Selection</Trans>}
 										value={$settings.template}
@@ -643,7 +647,11 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 3
+                                    }}>
 									<FormInlineButton
 										variant="outlined"
 										color="secondary"
@@ -655,15 +663,19 @@ export default function Playersite(props) {
 										<Trans>Delete</Trans>
 									</FormInlineButton>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>Upload</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={9}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 9
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -679,7 +691,11 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 3
+                                    }}>
 									<UploadButton
 										variant="outlined"
 										color="primary"
@@ -701,12 +717,12 @@ export default function Playersite(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="design">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h1">
 										<Trans>Design</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											Adjust publication site colors and
@@ -714,12 +730,12 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Text colors</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -730,7 +746,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -741,7 +757,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -752,7 +768,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -763,15 +779,15 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Background colors</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -782,7 +798,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -793,7 +809,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -804,7 +820,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -815,7 +831,7 @@ export default function Playersite(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ColorPicker
 										variant="outlined"
 										fullWidth
@@ -824,16 +840,20 @@ export default function Playersite(props) {
 										onChange={handleChange('hrcolor')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Background image</Trans>
 									</Typography>
 								</Grid>
 
-								<Grid item xs={12} md={8}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 8
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -847,7 +867,11 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12} md={4}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 4
+                                    }}>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={imageTypes}
@@ -864,17 +888,17 @@ export default function Playersite(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="notes">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Notes</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Imprint</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -886,12 +910,12 @@ export default function Playersite(props) {
 										onChange={handleChange('imprint')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Terms</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -907,12 +931,12 @@ export default function Playersite(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="code_injection">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Custom code injection</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="body1">
 										<Trans>
 											Add external widgets and styles to
@@ -921,12 +945,12 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Extend header</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -941,12 +965,12 @@ export default function Playersite(props) {
 										<Trans>For Stylesheets.</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Extend channel list</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -964,12 +988,12 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Extend content</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -987,12 +1011,12 @@ export default function Playersite(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Extend footer</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										className={classes.root}
 										variant="outlined"
@@ -1044,10 +1068,10 @@ export default function Playersite(props) {
 					}
 				/>
 			</Paper>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-			<Dialog
+            <Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -1063,8 +1087,8 @@ export default function Playersite(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Playersite.defaultProps = {

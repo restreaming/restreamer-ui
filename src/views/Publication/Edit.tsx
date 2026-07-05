@@ -9,7 +9,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -494,8 +494,8 @@ export default function Edit(props) {
 	const title = $settings.name.length === 0 ? $service.name : $settings.name;
 
 	return (
-		<Root>
-			<Paper xs={12} md={10}>
+        <Root>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -536,16 +536,12 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<TabContent service={$service}>
-								<Grid
-									item
-									xs={12}
-									sx={{ margin: '1em 0em 1em 0em' }}
-								>
+								<Grid sx={{ margin: '1em 0em 1em 0em' }} size={12}>
 									<Typography>
 										{$service.description}
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -554,7 +550,7 @@ export default function Edit(props) {
 										onChange={handleServiceName}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ServiceControl
 										settings={$settings.settings}
 										skills={$serviceSkills}
@@ -571,12 +567,12 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<TabContent service={$service}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Process</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<ProcessControl
 										settings={$settings.control.process}
 										onChange={handleControlChange(
@@ -584,28 +580,28 @@ export default function Edit(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Divider />
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Limits</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<LimitsControl
 										settings={$settings.control.limits}
 										onChange={handleControlChange('limits')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Grid
 										container
 										spacing={1}
 										className={classes.gridContainer}
 									>
 										{$unsavedChanges === true && (
-											<Grid item xs={12}>
+											<Grid size={12}>
 												<BoxText>
 													<Typography
 														variant="body2"
@@ -624,7 +620,7 @@ export default function Edit(props) {
 										)}
 										{$unsavedChanges === false && (
 											<React.Fragment>
-												<Grid item xs={12}>
+												<Grid size={12}>
 													<Process
 														onAction={
 															handleServiceAction
@@ -632,11 +628,7 @@ export default function Edit(props) {
 														progress={$progress}
 													/>
 												</Grid>
-												<Grid
-													item
-													xs={12}
-													sx={{ textAlign: 'right' }}
-												>
+												<Grid sx={{ textAlign: 'right' }} size={12}>
 													<Link
 														color="textSecondary"
 														href="#!"
@@ -674,17 +666,17 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<TabContent service={$service}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h2">
 										<Trans>Source &amp; Encoding</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Source</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="subheading">
 										<Trans>
 											Select RTMP or SRT (if enabled) for
@@ -692,19 +684,19 @@ export default function Edit(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<SourceControl
 										settings={$settings.control.source}
 										sources={$localSources}
 										onChange={handleControlChange('source')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h3">
 										<Trans>Encoding</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="subheading">
 										<Trans>
 											Passthrough (copy) should only be
@@ -714,12 +706,12 @@ export default function Edit(props) {
 										</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h4">
 										<Trans>Video settings</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<EncodingSelect
 										type="video"
 										streams={$sources[0].streams}
@@ -731,7 +723,7 @@ export default function Edit(props) {
 								</Grid>
 								{$settings.profiles[0].video.encoder.coder !==
 									'copy' && (
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<FilterSelect
 											type="video"
 											profile={
@@ -742,12 +734,12 @@ export default function Edit(props) {
 										/>
 									</Grid>
 								)}
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Typography variant="h4">
 										<Trans>Audio settings</Trans>
 									</Typography>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<EncodingSelect
 										type="audio"
 										streams={$sources[0].streams}
@@ -759,7 +751,7 @@ export default function Edit(props) {
 								</Grid>
 								{$settings.profiles[0].audio.encoder.coder !==
 									'copy' && (
-									<Grid item xs={12}>
+									<Grid size={12}>
 										<FilterSelect
 											type="audio"
 											profile={
@@ -809,7 +801,7 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-			<ProcessModal
+            <ProcessModal
 				open={$processDetails.open}
 				onClose={handleProcessDetails}
 				title={<Trans>Process details</Trans>}
@@ -817,14 +809,14 @@ export default function Edit(props) {
 				logdata={$processDetails.data}
 				onHelp={handleHelp('process-details')}
 			/>
-			<DebugModal
+            <DebugModal
 				open={$processDebug.open}
 				onClose={handleProcessDebug}
 				title={<Trans>Process report</Trans>}
 				data={$processDebug.data}
 				onHelp={handleHelp('process-report')}
 			/>
-			<Dialog
+            <Dialog
 				open={$deleteDialog}
 				onClose={handleServiceDeleteDialog}
 				title={<Trans>Do you want to delete {title}?</Trans>}
@@ -854,11 +846,11 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Edit.defaultProps = {

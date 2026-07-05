@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -46,8 +46,8 @@ export default function Control(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			{/*
+        <Grid container spacing={2}>
+            {/*
 				lhls problems:
 				- naming of the manifests and media files does not work
 				- segmentation of audio and video creates a playback error
@@ -61,7 +61,7 @@ export default function Control(props) {
 					</Typography>
 				</Grid>
 			*/}
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Storage</Trans>}
 					value={settings.storage}
@@ -81,7 +81,7 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>EXT-X-VERSION</Trans>}
 					value={settings.version}
@@ -104,7 +104,11 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -119,7 +123,11 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12} md={6}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 6
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -134,7 +142,7 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={
 						<Trans>
@@ -146,15 +154,15 @@ export default function Control(props) {
 					onChange={handleChange('master_playlist')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Checkbox
 					label={<Trans>Automatic cleanup of all media data</Trans>}
 					checked={settings.cleanup}
 					onChange={handleChange('cleanup')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Control.defaulProps = {

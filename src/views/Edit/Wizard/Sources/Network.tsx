@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/SettingsEthernet';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
@@ -58,13 +58,13 @@ function Source(props) {
 	const protocol = S.func.getProtocolClass(settings.address);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Enter the address of your network source:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -80,8 +80,8 @@ function Source(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-			{protocol === 'rtsp' && (
-				<Grid item xs={12}>
+            {protocol === 'rtsp' && (
+				<Grid size={12}>
 					<Checkbox
 						label={<Trans>UDP transport</Trans>}
 						checked={settings.rtsp.udp}
@@ -89,7 +89,11 @@ function Source(props) {
 					/>
 				</Grid>
 			)}
-			<Grid item md={6} xs={12}>
+            <Grid
+                size={{
+                    md: 6,
+                    xs: 12
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -102,7 +106,11 @@ function Source(props) {
 					<Trans>Username for the device.</Trans>
 				</Typography>
 			</Grid>
-			<Grid item md={6} xs={12}>
+            <Grid
+                size={{
+                    md: 6,
+                    xs: 12
+                }}>
 				<Password
 					variant="outlined"
 					fullWidth
@@ -115,8 +123,8 @@ function Source(props) {
 					<Trans>Password for the device.</Trans>
 				</Typography>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

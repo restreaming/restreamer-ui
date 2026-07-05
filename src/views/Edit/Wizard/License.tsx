@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import LicenseControl from '../../../misc/controls/License';
@@ -13,19 +13,19 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function License(props) {
 	return (
-		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-			<PaperHeader
+        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+            <PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>License</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-			<Grid container spacing={2}>
-				<Grid item xs={12}>
+            <Grid container spacing={2}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>
 							Use your copyright and choose the correct image
@@ -35,16 +35,16 @@ export default function License(props) {
 						</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<LicenseControl
 						license={props.license}
 						onChange={props.onChange}
 					/>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid size={3}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -54,7 +54,7 @@ export default function License(props) {
 						<Trans>Back</Trans>
 					</Button>
 				</Grid>
-				<Grid item xs={9}>
+				<Grid size={9}>
 					<Button
 						variant="outlined"
 						color="primary"
@@ -65,8 +65,8 @@ export default function License(props) {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 License.defaultProps = {

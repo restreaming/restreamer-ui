@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import BoxText from '../BoxText';
@@ -41,9 +41,9 @@ export default function Control(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			{props.enabled && (
-				<Grid item xs={12}>
+        <Grid container spacing={2}>
+            {props.enabled && (
+				<Grid size={12}>
 					<Checkbox
 						label={<Trans>Enable</Trans>}
 						checked={settings.enable}
@@ -58,8 +58,8 @@ export default function Control(props) {
 					</Typography>
 				</Grid>
 			)}
-			{!props.enabled && (
-				<Grid item xs={12}>
+            {!props.enabled && (
+				<Grid size={12}>
 					<BoxText textAlign="center">
 						<Trans>The SRT output requires the SRT Server.</Trans>
 						<Button
@@ -75,8 +75,8 @@ export default function Control(props) {
 					</BoxText>
 				</Grid>
 			)}
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Control.defaulProps = {

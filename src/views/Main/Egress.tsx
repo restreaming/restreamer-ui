@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
 import DeviceUnknownIcon from '@mui/icons-material/DeviceUnknown';
 import EditIcon from '@mui/icons-material/Edit';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import Stack from '@mui/material/Stack';
@@ -142,8 +142,8 @@ export default function Egress(props) {
 	}
 
 	return (
-		<StyledGrid container className={classes.egressBar}>
-			<Grid item xs={12}>
+        <StyledGrid container className={classes.egressBar}>
+            <Grid size={12}>
 				<Stack
 					direction="row"
 					sx={{
@@ -188,8 +188,8 @@ export default function Egress(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-		</StyledGrid>
-	);
+        </StyledGrid>
+    );
 }
 
 Egress.defaultProps = {

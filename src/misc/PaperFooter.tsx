@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 
 const Component = function (props) {
 	return (
-		<Grid container spacing={3}>
-			<Grid
-				item
-				xs={12}
-				sx={{
+        <Grid container spacing={3}>
+            <Grid
+                sx={{
 					marginBottom: '.3em',
 					marginTop: '1.2em',
 					minHeight: '38px',
@@ -21,12 +19,12 @@ const Component = function (props) {
 						marginLeft: '.5em',
 					},
 				}}
-			>
+                size={12}>
 				<div>{props.buttonsRight}</div>
 				{props.buttonsLeft}
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 };
 
 export default Component;

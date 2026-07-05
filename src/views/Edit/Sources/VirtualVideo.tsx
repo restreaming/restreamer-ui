@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/DeviceHub';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -102,13 +102,13 @@ function Source(props) {
 	};
 
 	return (
-		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-			<Grid item xs={12}>
+        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select video source:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -136,7 +136,7 @@ function Source(props) {
 					<MenuItem value="life">Game Of Life</MenuItem>
 				</Select>
 			</Grid>
-			{[
+            {[
 				'testsrc',
 				'testsrc2',
 				'pal75bars',
@@ -147,14 +147,14 @@ function Source(props) {
 				'yuvtestsrc',
 			].includes(settings.source) && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Framerate
 							value={settings.fps}
 							onChange={handleChange('fps')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Size
 							value={settings.size}
 							onChange={handleChange('size')}
@@ -163,23 +163,23 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-			{settings.source === 'life' && (
+            {settings.source === 'life' && (
 				<React.Fragment>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Framerate
 							value={settings.fps}
 							onChange={handleChange('fps')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Size
 							value={settings.size}
 							onChange={handleChange('size')}
 							allowCustom
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Video.Size
 							value={settings.scale}
 							label={<Trans>Scale</Trans>}
@@ -188,7 +188,7 @@ function Source(props) {
 							allowCustom={true}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -197,7 +197,7 @@ function Source(props) {
 							onChange={handleChange('rule')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -206,7 +206,7 @@ function Source(props) {
 							onChange={handleChange('mold')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -215,7 +215,7 @@ function Source(props) {
 							onChange={handleChange('ratio')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -224,7 +224,7 @@ function Source(props) {
 							onChange={handleChange('death_color')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -233,7 +233,7 @@ function Source(props) {
 							onChange={handleChange('life_color')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -244,7 +244,7 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<FormInlineButton
 					disabled={settings.source === 'none'}
 					onClick={handleProbe}
@@ -252,8 +252,8 @@ function Source(props) {
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Source.defaultProps = {

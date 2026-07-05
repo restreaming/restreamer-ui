@@ -5,7 +5,7 @@ import { useLingui } from '@lingui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import Typography from '@mui/material/Typography';
 
@@ -102,13 +102,13 @@ function Source(props) {
 	);
 
 	return (
-		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-			<Grid item xs={12}>
+        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{videoDevices}
 				<Button
 					size="small"
@@ -119,34 +119,34 @@ function Source(props) {
 					<Trans>Refresh</Trans>
 				</Button>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Format
 					value={settings.format}
 					onChange={handleChange('format')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Framerate
 					value={settings.framerate}
 					onChange={handleChange('framerate')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Video.Size
 					value={settings.size}
 					onChange={handleChange('size')}
 					allowCustom
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<FormInlineButton onClick={handleProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Source.defaultProps = {

@@ -3,7 +3,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import HelpIcon from '@mui/icons-material/HelpOutline';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
@@ -14,7 +14,7 @@ const Component = React.forwardRef((props, ref) => {
 	const { title, onClose, onHelp, ...other } = props;
 
 	return (
-		<Paper
+        <Paper
 			sx={{
 				p: '1em 1.5em 1.3em 1.5em',
 				width: '95%',
@@ -29,11 +29,9 @@ const Component = React.forwardRef((props, ref) => {
 			ref={ref}
 			{...other}
 		>
-			<Grid container spacing={0}>
+            <Grid container spacing={0}>
 				<Grid
-					item
-					xs={12}
-					sx={{
+                    sx={{
 						marginBottom: '.7em',
 						'& button': {
 							float: 'right',
@@ -42,7 +40,7 @@ const Component = React.forwardRef((props, ref) => {
 							marginRight: '-.7em',
 						},
 					}}
-				>
+                    size={12}>
 					<Stack
 						direction="row"
 						spacing={2}
@@ -82,12 +80,10 @@ const Component = React.forwardRef((props, ref) => {
 					</Stack>
 				</Grid>
 			</Grid>
-			{props.children}
-			<Grid container spacing={0}>
+            {props.children}
+            <Grid container spacing={0}>
 				<Grid
-					item
-					xs={12}
-					sx={{
+                    sx={{
 						marginTop: '1.2em',
 						minHeight: '38px',
 						'& button': {
@@ -99,7 +95,7 @@ const Component = React.forwardRef((props, ref) => {
 							marginLeft: '.5em',
 						},
 					}}
-				>
+                    size={12}>
 					<Button
 						variant="outlined"
 						color="default"
@@ -109,8 +105,8 @@ const Component = React.forwardRef((props, ref) => {
 					</Button>
 				</Grid>
 			</Grid>
-		</Paper>
-	);
+        </Paper>
+    );
 });
 
 export default Component;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/KeyboardTab';
 import Typography from '@mui/material/Typography';
 
@@ -47,19 +47,19 @@ function Source(props) {
 	const HLS = S.func.getHLS(config, settings.push.name);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Send stream to this address:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<BoxTextarea>
 					<Textarea rows={1} value={HLS} readOnly allowCopy />
 				</BoxTextarea>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

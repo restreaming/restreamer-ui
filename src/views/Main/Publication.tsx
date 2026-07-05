@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Trans } from '@lingui/macro';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
 
@@ -164,10 +164,10 @@ export default function Publication(props) {
 	for (let e of $egresses.values()) {
 		egresses.push(
 			<Root key={e.id}>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Divider />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Egress
 						service={e.service}
 						name={e.name}
@@ -183,15 +183,15 @@ export default function Publication(props) {
 	}
 
 	return (
-		<React.Fragment>
-			<Paper marginBottom="0">
+        <React.Fragment>
+            <Paper marginBottom="0">
 				<PaperHeader
 					title={<Trans>Publications</Trans>}
 					onAdd={handleServiceAdd}
 					onHelp={handleHelp}
 				/>
 				<Grid container spacing={1}>
-					<Grid item xs={12} sx={{ textAlign: 'center' }}>
+					<Grid sx={{ textAlign: 'center' }} size={12}>
 						<Divider />
 						<Typography
 							component="div"
@@ -214,12 +214,7 @@ export default function Publication(props) {
 							</Typography>
 						</Grid>
 					</Grid>
-					<Grid
-						item
-						xs={12}
-						className={classes.bandwidth}
-						sx={{ textAlign: 'center' }}
-					>
+					<Grid className={classes.bandwidth} sx={{ textAlign: 'center' }} size={12}>
 						<Typography
 							component="div"
 							className={classes.bandwidthCount}
@@ -246,8 +241,8 @@ export default function Publication(props) {
 					{egresses}
 				</Grid>
 			</Paper>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Publication.defaultProps = {

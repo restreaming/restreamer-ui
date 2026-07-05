@@ -7,7 +7,7 @@ import { Trans, t } from '@lingui/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
@@ -393,21 +393,21 @@ export default function Edit(props) {
 	const logo = { ...$settings.logo, image: prepareUrl($settings.logo.image) };
 
 	return (
-		<Root>
-			<Paper xs={12} md={10}>
+        <Root>
+            <Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Player</Trans>}
 					onAbort={handleAbort}
 					onHelp={handleHelp}
 				/>
 				<Grid container spacing={1} className={classes.gridContainer}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Grid
 							container
 							spacing={0}
 							className={classes.playerL1}
 						>
-							<Grid item xs={12} className={classes.playerL2}>
+							<Grid className={classes.playerL2} size={12}>
 								{$state !== 'connected' ? (
 									<Grid
 										container
@@ -419,7 +419,7 @@ export default function Edit(props) {
 										}}
 										spacing={1}
 									>
-										<Grid item>
+										<Grid>
 											<Typography variant="h2">
 												<Trans>No video</Trans>
 											</Typography>
@@ -444,7 +444,7 @@ export default function Edit(props) {
 					</Grid>
 				</Grid>
 				<Grid container spacing={0}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TabsHorizontal value={$tab} onChange={handleChangeTab}>
 							<Tab
 								className="tab"
@@ -469,13 +469,13 @@ export default function Edit(props) {
 						</TabsHorizontal>
 						<TabPanel value={$tab} index="embed">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextFieldCopy
 										label={<Trans>Player URL</Trans>}
 										value={playerAddress}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextFieldCopy
 										label={<Trans>iframe code</Trans>}
 										value={iframeCode}
@@ -485,7 +485,7 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="colors">
 							<Grid container spacing={2}>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -498,7 +498,7 @@ export default function Edit(props) {
 										)}
 									/>
 								</Grid>
-								<Grid item xs={6}>
+								<Grid size={6}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -515,7 +515,11 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="logo">
 							<Grid container spacing={2}>
-								<Grid item xs={12} md={9}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 9
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -525,7 +529,11 @@ export default function Edit(props) {
 										onChange={handleChange('image', 'logo')}
 									/>
 								</Grid>
-								<Grid item xs={12} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 3
+                                    }}>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={logoImageTypes}
@@ -538,7 +546,11 @@ export default function Edit(props) {
 										onUpload={handleLogoUpload}
 									/>
 								</Grid>
-								<Grid item xs={12} md={4}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 4
+                                    }}>
 									<Select
 										variant="outlined"
 										fullWidth
@@ -563,7 +575,11 @@ export default function Edit(props) {
 										</MenuItem>
 									</Select>
 								</Grid>
-								<Grid item xs={12} md={8}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 8
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -577,7 +593,11 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="poster">
 							<Grid container spacing={2}>
-								<Grid item xs={12} md={9}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 9
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -587,7 +607,11 @@ export default function Edit(props) {
 										onChange={handleChange('poster')}
 									/>
 								</Grid>
-								<Grid item xs={12} md={3}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 3
+                                    }}>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={posterImageTypes}
@@ -604,7 +628,11 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="statistic">
 							<Grid container spacing={2}>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -616,7 +644,11 @@ export default function Edit(props) {
 										onChange={handleChange('account', 'ga')}
 									/>
 								</Grid>
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -630,7 +662,7 @@ export default function Edit(props) {
 										onChange={handleChange('name', 'ga')}
 									/>
 								</Grid>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={
 											<Trans>
@@ -645,7 +677,7 @@ export default function Edit(props) {
 						</TabPanel>
 						<TabPanel value={$tab} index="playback">
 							<Grid container spacing={2}>
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<Checkbox
 										label={<Trans>Autoplay</Trans>}
 										checked={$settings.autoplay}
@@ -712,10 +744,10 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-			<Backdrop open={$saving}>
+            <Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-			<Dialog
+            <Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -731,8 +763,8 @@ export default function Edit(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-		</Root>
-	);
+        </Root>
+    );
 }
 
 Edit.defaultProps = {

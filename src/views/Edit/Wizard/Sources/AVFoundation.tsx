@@ -3,7 +3,7 @@ import React from 'react';
 import { useLingui } from '@lingui/react';
 import { Trans, t } from '@lingui/macro';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/Apple';
 import MenuItem from '@mui/material/MenuItem';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -133,22 +133,22 @@ function Source(props) {
 	);
 
 	return (
-		<React.Fragment>
-			<Grid item xs={12}>
+        <React.Fragment>
+            <Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						{videoDevices}
 					</Grid>
 				</Grid>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						{audioDevices}
 						<Button
 							size="small"
@@ -161,8 +161,8 @@ function Source(props) {
 					</Grid>
 				</Grid>
 			</Grid>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 Source.defaultProps = {

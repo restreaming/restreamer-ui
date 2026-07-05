@@ -8,7 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -171,8 +171,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -182,7 +186,11 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -191,7 +199,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -200,7 +208,7 @@ function Service(props) {
 					onChange={handleChange('streamid')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						expandIcon={<ArrowDropDownIcon />}
@@ -212,12 +220,16 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>General</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -229,7 +241,11 @@ function Service(props) {
 									onChange={handleChange('connect_timeout')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -241,7 +257,11 @@ function Service(props) {
 									onChange={handleChange('ffs')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -253,7 +273,11 @@ function Service(props) {
 									onChange={handleChange('inputbw')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -263,7 +287,11 @@ function Service(props) {
 									onChange={handleChange('iptos')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -275,7 +303,11 @@ function Service(props) {
 									onChange={handleChange('ipttl')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -287,7 +319,11 @@ function Service(props) {
 									onChange={handleChange('latency')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -299,7 +335,11 @@ function Service(props) {
 									onChange={handleChange('maxbw')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<Select
 									label="mode"
 									value={settings.params.mode}
@@ -314,7 +354,11 @@ function Service(props) {
 									</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -326,7 +370,11 @@ function Service(props) {
 									onChange={handleChange('mss')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -339,7 +387,11 @@ function Service(props) {
 									onChange={handleChange('oheadbw')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -351,7 +403,11 @@ function Service(props) {
 									onChange={handleChange('payload_size')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -363,7 +419,11 @@ function Service(props) {
 									onChange={handleChange('send_buffer_size')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -375,7 +435,11 @@ function Service(props) {
 									onChange={handleChange('sndbuf')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -387,7 +451,11 @@ function Service(props) {
 									onChange={handleChange('rcvbuf')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -399,7 +467,11 @@ function Service(props) {
 									onChange={handleChange('lossmaxttl')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<Select
 									label="smoother"
 									value={settings.params.smoother}
@@ -409,7 +481,11 @@ function Service(props) {
 									<MenuItem value="file">file</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<Select
 									label="transtype"
 									value={settings.params.transtype}
@@ -419,7 +495,7 @@ function Service(props) {
 									<MenuItem value="file">file</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="nakreport"
 									checked={settings.params.nakreport}
@@ -431,12 +507,12 @@ function Service(props) {
 									onChange={handleChange('tlpktdrop')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>Encryption</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -446,7 +522,11 @@ function Service(props) {
 									onChange={handleChange('passphrase')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -458,7 +538,11 @@ function Service(props) {
 									onChange={handleChange('kmrefreshrate')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -470,7 +554,11 @@ function Service(props) {
 									onChange={handleChange('kmpreannounce')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 4
+                                }}>
 								<Select
 									label="pbkeylen"
 									value={settings.params.pbkeylen}
@@ -481,7 +569,7 @@ function Service(props) {
 									<MenuItem value="32">32</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="enforced_encryption"
 									checked={
@@ -492,10 +580,10 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -511,8 +599,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

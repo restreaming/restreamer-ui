@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
@@ -103,17 +103,17 @@ export default function ResetPassword(props) {
 		$login.password !== $login.passwordConfirm;
 
 	return (
-		<Paper xs={12} sm={10} md={6} className="PaperL">
-			<Grid container spacing={3}>
-				<Grid item xs={12} sx={{ textAlign: 'center' }}>
+        <Paper xs={12} sm={10} md={6} className="PaperL">
+            <Grid container spacing={3}>
+				<Grid sx={{ textAlign: 'center' }} size={12}>
 					<Typography variant="h1">
 						<Trans>User registration</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<form noValidate>
 						<Grid container spacing={3}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -126,7 +126,7 @@ export default function ResetPassword(props) {
 									env={props.usernameOverride}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Password
 									value={$login.password}
 									id="password"
@@ -138,7 +138,7 @@ export default function ResetPassword(props) {
 									env={props.passwordOverride}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Password
 									value={$login.passwordConfirm}
 									id="password_confirm"
@@ -149,10 +149,10 @@ export default function ResetPassword(props) {
 									env={props.passwordOverride}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Button
 									variant="outlined"
 									color="primary"
@@ -169,7 +169,7 @@ export default function ResetPassword(props) {
 					</form>
 				</Grid>
 			</Grid>
-			<Backdrop open={$restart.restarting}>
+            <Backdrop open={$restart.restarting}>
 				<Paper xs={12} sm={4} md={3}>
 					<PaperHeader title={<Trans>Restarting</Trans>} />
 					<PaperContent>
@@ -213,8 +213,8 @@ export default function ResetPassword(props) {
 					/>
 				</Paper>
 			</Backdrop>
-		</Paper>
-	);
+        </Paper>
+    );
 }
 
 ResetPassword.defaultProps = {

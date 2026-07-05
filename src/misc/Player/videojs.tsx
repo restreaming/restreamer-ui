@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import { createPlayer, videoFeatures, Poster } from '@videojs/react';
 import { VideoSkin } from '@videojs/react/video';
 import { HlsVideo } from '@videojs/react/media/hls-video';

@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DoNotDisturbAltIcon from '@mui/icons-material/DoNotDisturbAlt';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import LensIcon from '@mui/icons-material/Lens';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -115,15 +115,15 @@ function ChannelButton(props, largeChannelList) {
 	}
 
 	return (
-		<Grid
-			item
-			xs={12}
-			sm={6}
-			md={4}
-			lg={3}
-			sx={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
-		>
-			<ImageButton
+        <Grid
+            sx={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
+            size={{
+                xs: 12,
+                sm: 6,
+                md: 4,
+                lg: 3
+            }}>
+            <ImageButton
 				focusRipple
 				disabled={props.disabled}
 				onClick={props.onClick}
@@ -171,8 +171,8 @@ function ChannelButton(props, largeChannelList) {
 					</Stack>
 				</Stack>
 			</ImageButton>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 ChannelButton.defaultProps = {
@@ -358,8 +358,8 @@ export default function ChannelList(props) {
 	};
 
 	return (
-		<React.Fragment>
-			<SwipeableDrawer
+        <React.Fragment>
+            <SwipeableDrawer
 				anchor="bottom"
 				open={props.open}
 				onOpen={() => {}}
@@ -377,8 +377,10 @@ export default function ChannelList(props) {
 						height: $largeChannelList ? '100vh' : 'auto',
 					},
 				}}
-				BackdropProps={{ invisible: true }}
 				disableScrollLock
+				slotProps={{
+                    backdrop: { invisible: true }
+                }}
 			>
 				<React.Fragment>
 					<Grid
@@ -386,7 +388,7 @@ export default function ChannelList(props) {
 						spacing={2}
 						sx={{ marginBottom: '1em', justifyContent: 'center' }}
 					>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<Stack
 								direction="row"
 								spacing={1}
@@ -437,7 +439,7 @@ export default function ChannelList(props) {
 								</Stack>
 							</Stack>
 						</Grid>
-						<Grid item xs={12} sx={{ textAlign: 'center' }}>
+						<Grid sx={{ textAlign: 'center' }} size={12}>
 							<Stack
 								direction="row"
 								spacing={0}
@@ -514,7 +516,7 @@ export default function ChannelList(props) {
 					</Grid>
 				</React.Fragment>
 			</SwipeableDrawer>
-			<Dialog
+            <Dialog
 				open={$addChannel.open}
 				onClose={handleAddChannelDialog}
 				title={<Trans>Add new channel</Trans>}
@@ -542,12 +544,12 @@ export default function ChannelList(props) {
 				}
 			>
 				<Grid container spacing={2}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Typography>
 							<Trans>Enter a name for the new channel.</Trans>
 						</Typography>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<TextField
 							variant="outlined"
 							fullWidth
@@ -558,8 +560,8 @@ export default function ChannelList(props) {
 					</Grid>
 				</Grid>
 			</Dialog>
-		</React.Fragment>
-	);
+        </React.Fragment>
+    );
 }
 
 ChannelList.defaultProps = {

@@ -9,7 +9,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -196,8 +196,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<Select
 					type="select"
 					label={<Trans>Protocol</Trans>}
@@ -208,7 +212,11 @@ function Service(props) {
 					<MenuItem value="https://">https://</MenuItem>
 				</Select>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -217,7 +225,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -226,7 +234,7 @@ function Service(props) {
 					onChange={handleChange('username')}
 				/>
 			</Grid>
-			<Grid item xs={6}>
+            <Grid size={6}>
 				<Password
 					variant="outlined"
 					fullWidth
@@ -235,7 +243,7 @@ function Service(props) {
 					onChange={handleChange('password')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
@@ -248,12 +256,12 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>General</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -263,7 +271,7 @@ function Service(props) {
 									onChange={handleChange('http_user_agent')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Select
 									type="select"
 									label="method"
@@ -274,7 +282,7 @@ function Service(props) {
 									<MenuItem value="POST">POST</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -284,7 +292,11 @@ function Service(props) {
 									onChange={handleChange('http_opts')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -296,7 +308,11 @@ function Service(props) {
 									onChange={handleChange('timeout')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -308,7 +324,11 @@ function Service(props) {
 									onChange={handleChange('target_latency')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -320,7 +340,11 @@ function Service(props) {
 									onChange={handleChange('min_playback_rate')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -332,7 +356,11 @@ function Service(props) {
 									onChange={handleChange('max_playback_rate')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -344,7 +372,7 @@ function Service(props) {
 									onChange={handleChange('update_period')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="http_persistent"
 									checked={settings.options.http_persistent}
@@ -371,12 +399,16 @@ function Service(props) {
 									onChange={handleChange('ldash')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>Chunk</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -388,7 +420,11 @@ function Service(props) {
 									onChange={handleChange('seg_duration')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -400,7 +436,11 @@ function Service(props) {
 									onChange={handleChange('frag_duration')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -410,12 +450,16 @@ function Service(props) {
 									onChange={handleChange('frag_type')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>Playlist</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -427,7 +471,11 @@ function Service(props) {
 									onChange={handleChange('window_size')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -439,7 +487,7 @@ function Service(props) {
 									onChange={handleChange('extra_window_size')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -449,7 +497,7 @@ function Service(props) {
 									onChange={handleChange('adaptation_sets')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -460,7 +508,7 @@ function Service(props) {
 								/>
 							</Grid>
 							{!settings.options.streaming && (
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -471,7 +519,7 @@ function Service(props) {
 									/>
 								</Grid>
 							)}
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -481,7 +529,7 @@ function Service(props) {
 									onChange={handleChange('mpd_profile')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								{!settings.options.streaming && (
 									<Checkbox
 										label="single_file"
@@ -515,12 +563,12 @@ function Service(props) {
 									onChange={handleChange('hls_playlist')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography variant="h3">
 									<Trans>Segmentation</Trans>
 								</Typography>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Select
 									type="select"
 									label="dash_segment_type"
@@ -532,7 +580,11 @@ function Service(props) {
 									<MenuItem value="webm">webm</MenuItem>
 								</Select>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -542,7 +594,11 @@ function Service(props) {
 									onChange={handleChange('init_seg_name')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -553,7 +609,11 @@ function Service(props) {
 								/>
 							</Grid>
 							{settings.options.single_file && (
-								<Grid item xs={12} md={6}>
+								<Grid
+                                    size={{
+                                        xs: 12,
+                                        md: 6
+                                    }}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -568,7 +628,11 @@ function Service(props) {
 									/>
 								</Grid>
 							)}
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -578,7 +642,11 @@ function Service(props) {
 									onChange={handleChange('utc_timing_url')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -588,10 +656,10 @@ function Service(props) {
 									onChange={handleChange('write_prft')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -607,8 +675,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

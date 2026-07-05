@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Icon from '@mui/icons-material/KeyboardTab';
 import MenuItem from '@mui/material/MenuItem';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -69,12 +69,12 @@ function Source(props) {
 	if (config.srt.enabled === false) {
 		form = (
 			<React.Fragment>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>SRT server is not enabled</Trans>
 					</Typography>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Button
 						variant="outlined"
 						size="large"
@@ -115,7 +115,7 @@ function Source(props) {
 
 		form = (
 			<React.Fragment>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Select
 						type="select"
 						label={<Trans>Input stream</Trans>}
@@ -135,12 +135,12 @@ function Source(props) {
 				</Grid>
 				{settings.push.name === config.channelid && (
 					<React.Fragment>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<Typography>
 								<Trans>Address:</Trans>
 							</Typography>
 						</Grid>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<BoxTextarea>
 								<Textarea
 									rows={1}

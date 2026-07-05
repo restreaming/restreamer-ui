@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import ActionButton from '../../misc/ActionButton';
@@ -32,8 +32,8 @@ export default function Process(props) {
 	};
 
 	return (
-		<Grid container spacing={1}>
-			<Grid item xs={12}>
+        <Grid container spacing={1}>
+            <Grid size={12}>
 				{progress.state === 'connecting' && (
 					<BoxText>
 						<Typography variant="body2" gutterBottom>
@@ -100,7 +100,7 @@ export default function Process(props) {
 						</BoxText>
 					)}
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<ActionButton
 					order={progress.order}
 					state={progress.state}
@@ -110,8 +110,8 @@ export default function Process(props) {
 					onReconnect={handleAction('reconnect')}
 				/>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Progress.defaultProps = {

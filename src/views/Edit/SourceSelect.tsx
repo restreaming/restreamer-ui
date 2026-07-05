@@ -1,7 +1,7 @@
 import React from 'react';
 import SemverSatisfies from 'semver/functions/satisfies';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
@@ -112,8 +112,8 @@ export default function SourceSelect(props) {
 	}
 
 	return (
-		<Grid container spacing={1}>
-			<Grid item xs={12}>
+        <Grid container spacing={1}>
+            <Grid size={12}>
 				<Select
 					type={props.type}
 					selected={$source}
@@ -122,11 +122,11 @@ export default function SourceSelect(props) {
 					onSelect={handleSource}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				{sourceControl}
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 SourceSelect.defaultProps = {
@@ -165,7 +165,13 @@ function Select(props) {
 		const Icon = s.icon;
 
 		availableSources.push(
-			<Grid item xs={6} md={4} sx={{ textAlign: 'center' }} key={s.id}>
+			<Grid
+                sx={{ textAlign: 'center' }}
+                key={s.id}
+                size={{
+                    xs: 6,
+                    md: 4
+                }}>
 				<Button variant={variant} onClick={handleSource(s.id)}>
 					<div>
 						<Icon />
@@ -178,14 +184,14 @@ function Select(props) {
 
 	if (availableSources.length === 0) {
 		return (
-			<Grid container spacing={1}>
-				<Grid item xs={12}>
+            <Grid container spacing={1}>
+                <Grid size={12}>
 					<Typography variant="body1">
 						<Trans>No sources available</Trans>
 					</Typography>
 				</Grid>
-			</Grid>
-		);
+            </Grid>
+        );
 	}
 
 	return (

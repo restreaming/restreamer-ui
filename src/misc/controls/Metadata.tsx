@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Trans } from '@lingui/macro';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Tab from '@mui/material/Tab';
 import TextField from '@mui/material/TextField';
 
@@ -54,8 +54,8 @@ export default function Control(props) {
 	};
 
 	return (
-		<Grid container spacing={0}>
-			<Grid item xs={12}>
+        <Grid container spacing={0}>
+            <Grid size={12}>
 				<TabsHorizontal value={$tab} onChange={handleChangeTab}>
 					<Tab
 						className="tab"
@@ -70,7 +70,7 @@ export default function Control(props) {
 				</TabsHorizontal>
 				<TabPanel value={$tab} index="content">
 					<Grid container spacing={2}>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<TextField
 								variant="outlined"
 								fullWidth
@@ -79,7 +79,7 @@ export default function Control(props) {
 								onChange={handleChange('name')}
 							/>
 						</Grid>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<TextField
 								variant="outlined"
 								fullWidth
@@ -99,7 +99,7 @@ export default function Control(props) {
 				</TabPanel>
 				<TabPanel value={$tab} index="author">
 					<Grid container spacing={2}>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<TextField
 								variant="outlined"
 								fullWidth
@@ -108,7 +108,7 @@ export default function Control(props) {
 								onChange={handleChange('author.name')}
 							/>
 						</Grid>
-						<Grid item xs={12}>
+						<Grid size={12}>
 							<TextField
 								variant="outlined"
 								fullWidth
@@ -127,8 +127,8 @@ export default function Control(props) {
 					</Grid>
 				</TabPanel>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Control.defaultProps = {

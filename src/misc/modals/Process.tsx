@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Trans } from '@lingui/macro';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 
@@ -97,16 +97,21 @@ const Component = function (props) {
 	});
 
 	return (
-		<Modal open={props.open} onClose={props.onClose} className="modal">
-			<ModalContent
+        <Modal open={props.open} onClose={props.onClose} className="modal">
+            <ModalContent
 				title={props.title}
 				onClose={props.onClose}
 				onHelp={props.onHelp}
 			>
 				<Grid container spacing={1}>
-					<Grid item xs={12} md={8} lg={10}>
+					<Grid
+                        size={{
+                            xs: 12,
+                            md: 8,
+                            lg: 10
+                        }}>
 						<Grid container spacing={3}>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<div
 									style={{
 										backgroundColor:
@@ -116,11 +121,7 @@ const Component = function (props) {
 									}}
 								>
 									<Grid container spacing={1}>
-										<Grid
-											item
-											xs={12}
-											sx={{ marginBottom: '-1em' }}
-										>
+										<Grid sx={{ marginBottom: '-1em' }} size={12}>
 											<Typography
 												variant="body1"
 												sx={{
@@ -141,14 +142,10 @@ const Component = function (props) {
 												allowCopy
 											/>
 										</Grid>
-										<Grid item xs={12} marginTop={2}>
+										<Grid marginTop={2} size={12}>
 											<Divider />
 										</Grid>
-										<Grid
-											item
-											xs={12}
-											sx={{ marginTop: '.15em' }}
-										>
+										<Grid sx={{ marginTop: '.15em' }} size={12}>
 											<Typography
 												variant="body1"
 												sx={{
@@ -170,14 +167,10 @@ const Component = function (props) {
 												allowCopy
 											/>
 										</Grid>
-										<Grid item xs={12} marginTop={2}>
+										<Grid marginTop={2} size={12}>
 											<Divider />
 										</Grid>
-										<Grid
-											item
-											xs={12}
-											sx={{ marginTop: '.15em' }}
-										>
+										<Grid sx={{ marginTop: '.15em' }} size={12}>
 											<Typography
 												variant="body1"
 												sx={{
@@ -204,15 +197,20 @@ const Component = function (props) {
 							</Grid>
 						</Grid>
 					</Grid>
-					<Grid item xs={12} md={4} lg={2}>
+					<Grid
+                        size={{
+                            xs: 12,
+                            md: 4,
+                            lg: 2
+                        }}>
 						{props.progress !== null && (
 							<Progress {...props.progress} />
 						)}
 					</Grid>
 				</Grid>
 			</ModalContent>
-		</Modal>
-	);
+        </Modal>
+    );
 };
 
 export default Component;

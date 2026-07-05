@@ -8,7 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Divider from '@mui/material/Divider';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -193,8 +193,12 @@ function Service(props) {
 	};
 
 	return (
-		<Grid container spacing={2}>
-			<Grid item xs={12} md={3}>
+        <Grid container spacing={2}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 3
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -204,7 +208,11 @@ function Service(props) {
 					onChange={handleChange('protocol')}
 				/>
 			</Grid>
-			<Grid item xs={12} md={9}>
+            <Grid
+                size={{
+                    xs: 12,
+                    md: 9
+                }}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -214,7 +222,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-			<Grid item xs={12}>
+            <Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
@@ -227,7 +235,11 @@ function Service(props) {
 					</AccordionSummary>
 					<AccordionDetails>
 						<Grid container spacing={2}>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -237,7 +249,11 @@ function Service(props) {
 									onChange={handleChange('service_provider')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -247,7 +263,11 @@ function Service(props) {
 									onChange={handleChange('service_name')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -262,7 +282,11 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -277,7 +301,11 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -287,7 +315,11 @@ function Service(props) {
 									onChange={handleChange('mpegts_service_id')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<Select
 									type="select"
 									label="mpegts_service_type"
@@ -324,7 +356,7 @@ function Service(props) {
 							</Grid>
 							{settings.options.mpegts_service_type ===
 								'hex_value' && (
-								<Grid item xs={12}>
+								<Grid size={12}>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -340,7 +372,11 @@ function Service(props) {
 									/>
 								</Grid>
 							)}
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -354,7 +390,11 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -364,14 +404,18 @@ function Service(props) {
 									onChange={handleChange('mpegts_start_pid')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="mpegts_m2ts_mode"
 									checked={settings.options.mpegts_m2ts_mode}
 									onChange={handleChange('mpegts_m2ts_mode')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -381,7 +425,11 @@ function Service(props) {
 									onChange={handleChange('muxrate')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -391,7 +439,7 @@ function Service(props) {
 									onChange={handleChange('pes_payload_size')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<MultiSelect
 									type="select"
 									label="mpegts_flags"
@@ -420,7 +468,7 @@ function Service(props) {
 									/>
 								</MultiSelect>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Checkbox
 									label="mpegts_copyts"
 									checked={settings.options.mpegts_copyts}
@@ -436,7 +484,11 @@ function Service(props) {
 									)}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -446,7 +498,11 @@ function Service(props) {
 									onChange={handleChange('pcr_period')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -456,7 +512,11 @@ function Service(props) {
 									onChange={handleChange('pat_period')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -466,7 +526,11 @@ function Service(props) {
 									onChange={handleChange('sdt_period')}
 								/>
 							</Grid>
-							<Grid item xs={12} md={6}>
+							<Grid
+                                size={{
+                                    xs: 12,
+                                    md: 6
+                                }}>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -476,10 +540,10 @@ function Service(props) {
 									onChange={handleChange('tables_version')}
 								/>
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Divider />
 							</Grid>
-							<Grid item xs={12}>
+							<Grid size={12}>
 								<Typography>
 									<Trans>Documentation</Trans>{' '}
 									<Link
@@ -495,8 +559,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-		</Grid>
-	);
+        </Grid>
+    );
 }
 
 Service.defaultProps = {

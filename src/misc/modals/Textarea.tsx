@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@mui/material/GridLegacy';
+import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Stack from '@mui/material/Stack';
 
@@ -11,15 +11,15 @@ const Component = function (props) {
 	const { open, title, onClose, onHelp, children, sx, ...other } = props;
 
 	return (
-		<Modal open={props.open} onClose={props.onClose} className="modal">
-			<ModalContent
+        <Modal open={props.open} onClose={props.onClose} className="modal">
+            <ModalContent
 				title={props.title}
 				onClose={props.onClose}
 				onHelp={props.onHelp}
 				style={{ overflow: 'hidden' }}
 			>
 				<Grid container spacing={1}>
-					<Grid item xs={12}>
+					<Grid size={12}>
 						<Stack
 							direction="column"
 							spacing={1}
@@ -41,8 +41,8 @@ const Component = function (props) {
 					</Grid>
 				</Grid>
 			</ModalContent>
-		</Modal>
-	);
+        </Modal>
+    );
 };
 
 export default Component;
