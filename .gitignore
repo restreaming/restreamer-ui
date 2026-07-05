@@ -24,3 +24,5 @@ npm-debug.log*
 
 messages.mo
 .eslintcache
+
+tsconfig.tsbuildinfo
