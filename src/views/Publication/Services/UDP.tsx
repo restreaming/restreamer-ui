@@ -118,7 +118,7 @@ function Service(props) {
 	const createOutput = (settings) => {
 		const params = [];
 
-		for (let key in settings.params) {
+		for (const key in settings.params) {
 			if (settings.params[key].length === 0) {
 				continue;
 			}

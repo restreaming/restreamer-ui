@@ -94,7 +94,7 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	return (

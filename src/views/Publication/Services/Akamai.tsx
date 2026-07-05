@@ -102,7 +102,7 @@ function Service(props) {
 	const createOutput = (settings) => {
 		const address_extensions = [];
 
-		for (let key in settings.address_extensions) {
+		for (const key in settings.address_extensions) {
 			if (settings.address_extensions[key].length === 0) {
 				continue;
 			}

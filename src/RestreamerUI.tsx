@@ -86,7 +86,7 @@ export default function RestreamerUI(props) {
 
 		return () => {};
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	useInterval(() => {
@@ -178,7 +178,7 @@ export default function RestreamerUI(props) {
 		if (restreamer.current.IsConnected() === true) {
 			let metadata = await restreamer.current.GetMetadata(false);
 			const channels = await restreamer.current.ListChannels();
-			let current = Version.replace('restreamer-', '');
+			const current = Version.replace('restreamer-', '');
 			let previous = '';
 
 			if (SemverValid(current) === null) {
@@ -443,7 +443,7 @@ export default function RestreamerUI(props) {
 		);
 		const states = {};
 
-		for (let p of processes) {
+		for (const p of processes) {
 			states[p.id] = p.progress.state;
 		}
 

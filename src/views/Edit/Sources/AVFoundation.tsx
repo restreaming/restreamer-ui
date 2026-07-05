@@ -72,7 +72,7 @@ function Source(props) {
 	const settings = initSettings(props.settings);
 
 	const handleChange = (what) => (event) => {
-		let data = {};
+		const data = {};
 
 		if (['cursor', 'clicks'].includes(what)) {
 			data[what] = !settings[what];

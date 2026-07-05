@@ -19,7 +19,7 @@ function initSettings(initialSettings, knownDevices) {
 
 	if (devices.length !== 0) {
 		let found = false;
-		for (let device of devices) {
+		for (const device of devices) {
 			if (settings.device === device.id) {
 				found = true;
 				break;
@@ -80,7 +80,7 @@ function Source(props) {
 
 	React.useEffect(() => {
 		handleChange();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const options = devices.map((device) => {

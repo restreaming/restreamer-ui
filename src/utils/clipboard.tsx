@@ -21,7 +21,7 @@ const writeText = (promise) => {
 
 const writeTextDeprecated = (value) => {
 	// Strangely, this doesn't seem to work if the text is longer than just one row
-	var element = document.createElement('textarea');
+	const element = document.createElement('textarea');
 	element.value = value;
 	element.style.position = 'absolute';
 	element.style.width = '10px';

@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
 function isCustomOption(value, options) {
-	for (let o of options) {
+	for (const o of options) {
 		if (o.value === value) {
 			return false;
 		}
@@ -62,7 +62,7 @@ export default function Component(props) {
 
 	const options = [];
 
-	for (let o of props.options) {
+	for (const o of props.options) {
 		options.push(
 			<MenuItem
 				key={o.value}

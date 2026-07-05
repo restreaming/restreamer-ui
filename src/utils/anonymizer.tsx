@@ -1,7 +1,7 @@
 import urlparser from 'url-parse';
 
 const anonymize_url = (url) => {
-	let u = urlparser(url, true);
+	const u = urlparser(url, true);
 
 	if (u.hostname !== 'localhost') {
 		return `${u.protocol}//[anonymized]`;

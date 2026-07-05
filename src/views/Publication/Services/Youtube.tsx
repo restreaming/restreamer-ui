@@ -114,7 +114,7 @@ function Service(props) {
 		}
 
 		if (settings.mode === 'rtmps') {
-			let options = ['-f', 'flv'];
+			const options = ['-f', 'flv'];
 
 			if (props.skills.ffmpeg.version_major >= 6) {
 				const codecs = [];

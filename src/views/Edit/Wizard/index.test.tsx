@@ -60,7 +60,7 @@ const restreamer = {
 		};
 	},
 	Probe: (id, inputs) => {
-		let streams = [];
+		const streams = [];
 
 		if (inputs[0].address === '{rtmp,name=external.stream}') {
 			streams.push({
@@ -579,7 +579,7 @@ test('wizard: network source video h264', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/h264-none' },
 	});
@@ -637,7 +637,7 @@ test('wizard: network source video non-h264', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/other-none' },
 	});
@@ -695,7 +695,7 @@ test('wizard: network source audio aac', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/h264-aac' },
 	});
@@ -748,7 +748,7 @@ test('wizard: network source audio non-aac', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/h264-ogg' },
 	});
@@ -935,7 +935,7 @@ test('wizard: metadata', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/h264-aac' },
 	});
@@ -998,7 +998,7 @@ test('wizard: license', async () => {
 	expect(button).toBeDisabled();
 
 	// Add a stream address
-	let input = screen.getByLabelText('Address');
+	const input = screen.getByLabelText('Address');
 	fireEvent.change(input, {
 		target: { value: 'rtsp://127.0.0.1/live/h264-aac' },
 	});

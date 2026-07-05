@@ -240,7 +240,7 @@ export default function ChannelList(props) {
 		(async () => {
 			await onMount();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	React.useEffect(() => {
@@ -293,7 +293,7 @@ export default function ChannelList(props) {
 
 			setChannels(channels);
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, [$pos, allChannels, $nChannels, channelid, onClick, onState]);
 
 	const onMount = async () => {
@@ -573,7 +573,7 @@ ChannelList.defaultProps = {
 	onAdd: (name) => {},
 	onState: (channelids) => {
 		const states = {};
-		for (let channelid of channelids) {
+		for (const channelid of channelids) {
 			states[channelid] = '';
 		}
 

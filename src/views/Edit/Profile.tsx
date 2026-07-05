@@ -58,14 +58,14 @@ export default function Profile(props) {
 		(async () => {
 			await load();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const load = async () => {
 		// Add pseudo sources
 		props.skills.sources.noaudio = [];
 
-		let audio = $sources.audio;
+		const audio = $sources.audio;
 
 		let hasAudio = false;
 		for (let i = 0; i < $sources.video.streams.length; i++) {
@@ -120,7 +120,7 @@ export default function Profile(props) {
 	};
 
 	const handleProbeStreams = (type, device, settings, inputs, res) => {
-		let status = M.analyzeStreams(type, res.streams);
+		const status = M.analyzeStreams(type, res.streams);
 
 		if (type === 'video') {
 			let audio = $sources.audio;
@@ -318,7 +318,7 @@ export default function Profile(props) {
 				profile.stream = -1;
 			}
 
-			let audio = $sources.audio;
+			const audio = $sources.audio;
 			audio.type = source;
 
 			setSources({
@@ -326,7 +326,7 @@ export default function Profile(props) {
 				audio: audio,
 			});
 		} else {
-			let video = $sources.video;
+			const video = $sources.video;
 			video.type = source;
 
 			setSources({
@@ -471,7 +471,7 @@ export default function Profile(props) {
 
 		probe.log.push(`Stream hints for input from '${url}'`);
 
-		for (let s of $hintModal.streams) {
+		for (const s of $hintModal.streams) {
 			s.url = url;
 
 			let stream = `Stream #${s.index}:${s.stream}: `;

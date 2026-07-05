@@ -662,7 +662,7 @@ const createInputsOutputs = (sources, profiles, requireVideo = true) => {
 	const outputs = [];
 
 	// For each profile get the source and do the proper mapping
-	for (let profile of profiles) {
+	for (const profile of profiles) {
 		const complete = validateProfile(sources, profile, requireVideo);
 		if (complete === false) {
 			continue;
@@ -788,7 +788,7 @@ const createOutputStreams = (sources, profiles, requireVideo = true) => {
 	const streams = [];
 
 	// Generate a list of output streams from the profiles
-	for (let profile of profiles) {
+	for (const profile of profiles) {
 		const complete = validateProfile(sources, profile, requireVideo);
 		if (complete === false) {
 			continue;
@@ -1055,7 +1055,7 @@ const analyzeStreams = (type, streams) => {
 	let video = null;
 	let audio = null;
 
-	for (let stream of streams) {
+	for (const stream of streams) {
 		if (stream.type === 'video') {
 			if (video === null) {
 				video = stream;
@@ -1233,7 +1233,7 @@ const preselectProfile = (
 				if (streams[i].codec === 'h264') {
 					video.encoder.coder = 'copy';
 				} else {
-					let coder = Coders.Video.GetCoderForCodec(
+					const coder = Coders.Video.GetCoderForCodec(
 						'h264',
 						encoders.video,
 					);
@@ -1321,7 +1321,7 @@ const transformMetadata = (metadata, targetVersion, transformers) => {
 	// and sort them in ascending order.
 	const tlist = [];
 
-	for (let v in transformers) {
+	for (const v in transformers) {
 		if (SemverGt(v, metadata.version)) {
 			tlist.push(v);
 		}
@@ -1330,7 +1330,7 @@ const transformMetadata = (metadata, targetVersion, transformers) => {
 	tlist.sort(SemverCompare);
 
 	// Apply all found transformers
-	for (let t of tlist) {
+	for (const t of tlist) {
 		metadata = transformers[t](metadata);
 	}
 

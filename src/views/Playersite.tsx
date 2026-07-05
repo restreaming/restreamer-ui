@@ -156,7 +156,7 @@ export default function Playersite(props) {
 		(async () => {
 			await mount();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const mount = async () => {

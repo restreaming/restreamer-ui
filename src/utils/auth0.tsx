@@ -49,7 +49,7 @@ const getConfig = () => {
 	}
 
 	try {
-		let parsedConfig = JSON.parse(data);
+		const parsedConfig = JSON.parse(data);
 
 		config = {
 			...config,
@@ -122,7 +122,7 @@ const handleRedirectCallback = async () => {
 		urlParams.delete('code');
 		urlParams.delete('state');
 
-		let hash = urlParams.get('hash');
+		const hash = urlParams.get('hash');
 		urlParams.delete('hash');
 
 		let href =
@@ -153,14 +153,14 @@ const login = async (queryParams) => {
 		...getConfig(),
 	};
 
-	let queryString = [];
-	for (let n in queryParams) {
+	const queryString = [];
+	for (const n in queryParams) {
 		queryString.push(n + '=' + encodeURIComponent(queryParams[n]));
 	}
 
 	if (queryString.length !== 0) {
 		try {
-			let url = new URL(config.redirect_uri);
+			const url = new URL(config.redirect_uri);
 			if (url.search.length > 1) {
 				url.search = url.search + '&' + queryString.join('&');
 			} else {

@@ -125,7 +125,7 @@ function Service(props) {
 	const settings = init(props.settings);
 
 	const handleChange = (what) => (event) => {
-		let value = event.target.value;
+		const value = event.target.value;
 
 		if (what in settings.options) {
 			if (
@@ -152,7 +152,7 @@ function Service(props) {
 	const createOutput = (settings) => {
 		const options = ['-f', 'hls'];
 
-		for (let key in settings.options) {
+		for (const key in settings.options) {
 			if (settings.options[key].length === 0) {
 				continue;
 			}

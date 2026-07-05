@@ -98,7 +98,7 @@ function createOutputs(settings, skills, metadata, streams) {
 
 	const options = [];
 
-	for (let key in settings.options) {
+	for (const key in settings.options) {
 		if (settings.options[key].length === 0) {
 			continue;
 		}

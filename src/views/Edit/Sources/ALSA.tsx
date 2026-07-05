@@ -31,7 +31,7 @@ const initSettings = (initialSettings) => {
 };
 
 const createInputs = (settings) => {
-	let address = `hw:${settings.device}`;
+	const address = `hw:${settings.device}`;
 
 	const input = {
 		address: address,
@@ -55,7 +55,7 @@ function Source(props) {
 	const settings = initSettings(props.settings);
 
 	const handleChange = (what) => (event) => {
-		let data = {};
+		const data = {};
 
 		if (
 			['address', 'device', 'sampling', 'channels', 'delay'].includes(

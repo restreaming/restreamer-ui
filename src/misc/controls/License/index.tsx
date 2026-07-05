@@ -27,7 +27,7 @@ export default function License(props) {
 	let link = '';
 	let description = '';
 
-	// eslint-disable-next-line no-useless-escape
+	 
 	const reVersion = new RegExp('[0-9]+.[0-9]+$');
 
 	let version = '4.0';

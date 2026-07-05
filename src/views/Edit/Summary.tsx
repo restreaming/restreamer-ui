@@ -29,7 +29,7 @@ export default function Summary(props) {
 	let name = i18n._(t`No source selected`);
 	let address = '';
 	let encodingSummary = i18n._(t`None`);
-	let filterSummary = [];
+	const filterSummary = [];
 
 	let showEncoding = false;
 
@@ -67,7 +67,7 @@ export default function Summary(props) {
 					filters = Filters.Audio;
 				}
 
-				for (let filter of filters.List()) {
+				for (const filter of filters.List()) {
 					const name = filter.filter;
 
 					if (!(name in profile.filter.settings)) {

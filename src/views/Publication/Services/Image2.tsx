@@ -110,7 +110,7 @@ function Service(props) {
 	const createOutput = (settings) => {
 		const options = ['-f', 'image2'];
 
-		for (let key in settings.options) {
+		for (const key in settings.options) {
 			if (settings.options[key].length === 0) {
 				continue;
 			}

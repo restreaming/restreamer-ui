@@ -61,7 +61,7 @@ export function createInputsOutputs(
 	// and also consider the fifo and onfail option
 	// https://ffmpeg.org/ffmpeg-formats.html#fifo
 	for (let i = 0; i < outputs.length; i++) {
-		let o = {
+		const o = {
 			address: outputs[i].address,
 			options: [...outputs[i].options],
 		};
@@ -117,7 +117,7 @@ export function checkServiceRequirements(requires, skills) {
 
 	if (requires.protocols.length !== 0) {
 		let hasOne = false;
-		for (let protocol of requires.protocols) {
+		for (const protocol of requires.protocols) {
 			if (skills.protocols.output.includes(protocol) === true) {
 				hasOne = true;
 				break;
@@ -131,7 +131,7 @@ export function checkServiceRequirements(requires, skills) {
 
 	if (requires.formats.length !== 0) {
 		let hasOne = false;
-		for (let format of requires.formats) {
+		for (const format of requires.formats) {
 			if (skills.formats.muxers.includes(format) === true) {
 				hasOne = true;
 				break;
@@ -145,7 +145,7 @@ export function checkServiceRequirements(requires, skills) {
 
 	if (requires.devices.length !== 0) {
 		let hasOne = false;
-		for (let device of requires.devices) {
+		for (const device of requires.devices) {
 			if (device in skills.sinks) {
 				hasOne = true;
 				break;
@@ -159,7 +159,7 @@ export function checkServiceRequirements(requires, skills) {
 
 	if (requires.codecs.audio.length !== 0) {
 		let hasOne = false;
-		for (let codec of requires.codecs.audio) {
+		for (const codec of requires.codecs.audio) {
 			if (codec in skills.codecs.audio) {
 				hasOne = true;
 				break;
@@ -173,7 +173,7 @@ export function checkServiceRequirements(requires, skills) {
 
 	if (requires.codecs.video.length !== 0) {
 		let hasOne = false;
-		for (let codec of requires.codecs.video) {
+		for (const codec of requires.codecs.video) {
 			if (codec in skills.codecs.video) {
 				hasOne = true;
 				break;
@@ -214,31 +214,31 @@ export function conflateServiceSkills(requires, skills) {
 		},
 	};
 
-	for (let protocol of requires.protocols) {
+	for (const protocol of requires.protocols) {
 		if (skills.protocols.output.includes(protocol) === true) {
 			serviceSkills.protocols.push(protocol);
 		}
 	}
 
-	for (let format of requires.formats) {
+	for (const format of requires.formats) {
 		if (skills.formats.muxers.includes(format) === true) {
 			serviceSkills.formats.push(format);
 		}
 	}
 
-	for (let device of requires.devices) {
+	for (const device of requires.devices) {
 		if (device in skills.sinks) {
 			serviceSkills.devices[device] = [...skills.sinks[device]];
 		}
 	}
 
-	for (let codec of requires.codecs.audio) {
+	for (const codec of requires.codecs.audio) {
 		if (codec in skills.codecs.audio) {
 			serviceSkills.codecs.audio.push(codec);
 		}
 	}
 
-	for (let codec of requires.codecs.video) {
+	for (const codec of requires.codecs.video) {
 		if (codec in skills.codecs.video) {
 			serviceSkills.codecs.video.push(codec);
 		}
@@ -327,7 +327,7 @@ export function preselectProfile(profile, type, streams, codecs, skills) {
 
 		if (!codecs.includes(streams[i].codec)) {
 			// The codec doesn't match. Select the first available coder for one of the target codecs.
-			for (let codec of codecs) {
+			for (const codec of codecs) {
 				if (codec === 'copy') {
 					continue;
 				}
@@ -354,7 +354,7 @@ export function preselectProfile(profile, type, streams, codecs, skills) {
 			// The codec matches. Select the copy coder.
 			profile.encoder.coder = 'copy';
 
-			let coder =
+			const coder =
 				type === 'audio'
 					? Coders.Audio.Get('copy')
 					: Coders.Video.Get('copy');

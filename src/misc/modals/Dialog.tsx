@@ -2,7 +2,7 @@ import React from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
-import HelpIcon from '@mui/icons-material/HelpOutline';
+import HelpIcon from '@mui/icons-material/HelpOutlined';
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';

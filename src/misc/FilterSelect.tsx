@@ -35,7 +35,7 @@ export default function FilterSelect(props) {
 
 			// Create the filter graph in the order as the filters are registered
 			const graphs = [];
-			for (let f of filterOrder) {
+			for (const f of filterOrder) {
 				if (!(f in filter.settings)) {
 					continue;
 				}
@@ -76,7 +76,7 @@ export default function FilterSelect(props) {
 	// Creates filter components
 	const filterSettings = [];
 	if (!hwaccel) {
-		for (let c of filterRegistry.List()) {
+		for (const c of filterRegistry.List()) {
 			// Checks FFmpeg skills (filter is available)
 			if (props.availableFilters.includes(c.filter)) {
 				const Settings = c.component;

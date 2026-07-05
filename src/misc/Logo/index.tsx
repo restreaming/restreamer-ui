@@ -7,7 +7,7 @@ import company_logo from './images/logo.svg';
 export default function Logo(props) {
 	const link = 'https://datarhei.com';
 
-	// eslint-disable-next-line no-useless-escape
+	 
 	return (
 		<Box
 			component="a"

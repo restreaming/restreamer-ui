@@ -12,7 +12,7 @@ import Sources from './Sources';
 function initConfig(initialConfig) {
 	let config = {};
 
-	for (let s of Sources.List()) {
+	for (const s of Sources.List()) {
 		config[s.id] = {};
 	}
 
@@ -27,7 +27,7 @@ function initConfig(initialConfig) {
 function init(source) {
 	const settings = {};
 
-	for (let id of Sources.IDs()) {
+	for (const id of Sources.IDs()) {
 		settings[id] = {};
 	}
 
@@ -146,9 +146,9 @@ function Select(props) {
 		props.onSelect(source);
 	};
 
-	let availableSources = [];
+	const availableSources = [];
 
-	for (let s of Sources.List()) {
+	for (const s of Sources.List()) {
 		if (!(s.id in props.availableSources)) {
 			continue;
 		}

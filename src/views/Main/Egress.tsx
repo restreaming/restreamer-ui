@@ -73,7 +73,7 @@ export default function Egress(props) {
 		(async () => {
 			await update();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const update = async () => {
@@ -106,7 +106,7 @@ export default function Egress(props) {
 		name = <Trans>Player</Trans>;
 		icon = <OndemandVideoIcon className="player-icon" />;
 	} else {
-		let s = Services.Get(props.service);
+		const s = Services.Get(props.service);
 		if (s !== null) {
 			const Icon = s.icon;
 

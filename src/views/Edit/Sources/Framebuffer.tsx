@@ -46,7 +46,7 @@ function Source(props) {
 	const settings = initSettings(props.settings);
 
 	const handleChange = (what) => (event) => {
-		let data = {};
+		const data = {};
 
 		if (['device', 'framerate'].includes(what)) {
 			data[what] = event.target.value;

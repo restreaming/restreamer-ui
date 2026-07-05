@@ -59,7 +59,7 @@ export default function Wizard(props) {
 		(async () => {
 			await load();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	React.useEffect(() => {
@@ -269,8 +269,8 @@ export default function Wizard(props) {
 
 		handleBack = () => {};
 
-		let knownSources = [];
-		for (let s in $skills.sources) {
+		const knownSources = [];
+		for (const s in $skills.sources) {
 			if (s === 'network') {
 				knownSources.push('network');
 				if ($skills.protocols.input.includes('rtmp')) {
@@ -291,9 +291,9 @@ export default function Wizard(props) {
 			}
 		}
 
-		let availableSources = [];
+		const availableSources = [];
 
-		for (let s of Sources.List()) {
+		for (const s of Sources.List()) {
 			if (knownSources.indexOf(s.id) === -1) {
 				continue;
 			}
@@ -428,7 +428,7 @@ export default function Wizard(props) {
 			audioprofile.source = -1;
 
 			// set default for first video audio track
-			for (let s of streams) {
+			for (const s of streams) {
 				if (s.type !== 'audio') {
 					continue;
 				}
@@ -527,9 +527,9 @@ export default function Wizard(props) {
 			'any',
 		);
 
-		let decodersList = [];
+		const decodersList = [];
 
-		for (let c of decoders) {
+		for (const c of decoders) {
 			decodersList.push(
 				<MenuItem value={c.coder} key={c.coder}>
 					{c.name}
@@ -543,9 +543,9 @@ export default function Wizard(props) {
 			'any',
 		);
 
-		let encodersList = [];
+		const encodersList = [];
 
-		for (let c of encoders) {
+		for (const c of encoders) {
 			encodersList.push(
 				<MenuItem value={c.coder} key={c.coder}>
 					{c.name}
@@ -553,9 +553,9 @@ export default function Wizard(props) {
 			);
 		}
 
-		let streamList = [];
+		const streamList = [];
 
-		for (let s of streams) {
+		for (const s of streams) {
 			if (s.type !== 'video') {
 				continue;
 			}
@@ -704,10 +704,10 @@ export default function Wizard(props) {
 		const profile = $profile.audio;
 		const source = $sources.audio;
 
-		let streamList = [];
+		const streamList = [];
 		const streams = $sources.video.streams;
 
-		for (let s of streams) {
+		for (const s of streams) {
 			if (s.type !== 'audio') {
 				continue;
 			}
@@ -719,13 +719,13 @@ export default function Wizard(props) {
 			);
 		}
 
-		let deviceList = [];
+		const deviceList = [];
 
 		if (
 			'alsa' in $skills.sources &&
 			['video4linux2', 'raspicam'].includes($sources.video.type)
 		) {
-			for (let device of $skills.sources['alsa']) {
+			for (const device of $skills.sources['alsa']) {
 				if (!source.settings.address) {
 					source.settings.address = device.id;
 				}

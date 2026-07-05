@@ -116,7 +116,7 @@ function Service(props) {
 	const createOutput = (settings) => {
 		const options = ['-f', 'rtsp'];
 
-		for (let key in settings.options) {
+		for (const key in settings.options) {
 			if (settings.options[key].length !== 0) {
 				if (key !== 'user_agent') {
 					options.push('-' + key, settings.options[key]);

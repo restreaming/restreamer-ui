@@ -97,7 +97,7 @@ export default function Edit(props) {
 		(async () => {
 			await load();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	React.useEffect(() => {
@@ -116,7 +116,7 @@ export default function Edit(props) {
 		const proc = await props.restreamer.GetIngestProgress(_channelid);
 		setProcess(proc);
 
-		let metadata = await props.restreamer.GetIngestMetadata(_channelid);
+		const metadata = await props.restreamer.GetIngestMetadata(_channelid);
 		setData({
 			...$data,
 			...metadata,

@@ -423,7 +423,7 @@ const getProtocolClass = (url) => {
 const isAuthProtocol = (url) => {
 	const protocolClass = getProtocolClass(url);
 
-	// eslint-disable-next-line default-case
+	 
 	switch (protocolClass) {
 		case 'amqp':
 		case 'ftp':
@@ -454,7 +454,7 @@ const isSupportedProtocol = (url, supportedProtocols) => {
 
 const getHLSAddress = (host, credentials, name, secure) => {
 	// Test for IPv6 addresses and put brackets around
-	let url =
+	const url =
 		'http' +
 		(secure ? 's' : '') +
 		'://' +
@@ -539,7 +539,7 @@ const getSRT = (config) => {
 };
 
 const getLocalHLS = (config, name) => {
-	let url = getHLSAddress(config.hls.local, '', config.channelid, false);
+	const url = getHLSAddress(config.hls.local, '', config.channelid, false);
 
 	return url;
 };

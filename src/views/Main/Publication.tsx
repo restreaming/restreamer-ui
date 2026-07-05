@@ -84,7 +84,7 @@ export default function Publication(props) {
 		(async () => {
 			await update();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const update = async () => {
@@ -95,7 +95,7 @@ export default function Publication(props) {
 			services,
 		);
 
-		for (let p of processes) {
+		for (const p of processes) {
 			egresses.push({
 				id: p.id,
 				name: p.name,
@@ -159,9 +159,9 @@ export default function Publication(props) {
 		H('publication');
 	};
 
-	let egresses = [];
+	const egresses = [];
 
-	for (let e of $egresses.values()) {
+	for (const e of $egresses.values()) {
 		egresses.push(
 			<Root key={e.id}>
 				<Grid size={12}>

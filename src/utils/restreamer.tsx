@@ -162,7 +162,7 @@ class Restreamer {
 				return;
 		}
 
-		for (let l of this.listeners) {
+		for (const l of this.listeners) {
 			l({
 				severity: severity,
 				type: type,
@@ -228,7 +228,7 @@ class Restreamer {
 	// Login, Logout and Token handling
 
 	async Validate() {
-		let token = this._getRefreshToken();
+		const token = this._getRefreshToken();
 		if (token !== null) {
 			const ok = await this.RefreshToken();
 			if (ok === false) {
@@ -600,7 +600,7 @@ class Restreamer {
 			...val.codecs,
 		};
 
-		for (let codec of val.codecs.audio) {
+		for (const codec of val.codecs.audio) {
 			if (codec.encoders !== null) {
 				skills.encoders.audio.push(...codec.encoders);
 
@@ -612,7 +612,7 @@ class Restreamer {
 			}
 		}
 
-		for (let codec of val.codecs.video) {
+		for (const codec of val.codecs.video) {
 			if (codec.encoders !== null) {
 				skills.encoders.video.push(...codec.encoders);
 
@@ -624,11 +624,11 @@ class Restreamer {
 			}
 		}
 
-		for (let hwaccel of val.hwaccels) {
+		for (const hwaccel of val.hwaccels) {
 			skills.decoders.video.push(hwaccel.id);
 		}
 
-		for (let filter of val.filter) {
+		for (const filter of val.filter) {
 			skills.filter.push(filter.id);
 		}
 
@@ -638,11 +638,11 @@ class Restreamer {
 			...val.formats,
 		};
 
-		for (let format of val.formats.demuxers) {
+		for (const format of val.formats.demuxers) {
 			skills.formats.demuxers.push(format.id);
 		}
 
-		for (let format of val.formats.muxers) {
+		for (const format of val.formats.muxers) {
 			skills.formats.muxers.push(format.id);
 		}
 
@@ -652,11 +652,11 @@ class Restreamer {
 			...val.protocols,
 		};
 
-		for (let protocol of val.protocols.input) {
+		for (const protocol of val.protocols.input) {
 			skills.protocols.input.push(protocol.id);
 		}
 
-		for (let protocol of val.protocols.output) {
+		for (const protocol of val.protocols.output) {
 			skills.protocols.output.push(protocol.id);
 		}
 
@@ -666,7 +666,7 @@ class Restreamer {
 			...val.devices,
 		};
 
-		for (let device of val.devices.demuxers) {
+		for (const device of val.devices.demuxers) {
 			if (
 				!['avfoundation', 'video4linux2', 'alsa', 'fbdev'].includes(
 					device.id,
@@ -681,7 +681,7 @@ class Restreamer {
 
 			// Split out a Raspberry Pi camera and create a dedicated source
 			if (device.id === 'video4linux2') {
-				for (let d of device.devices) {
+				for (const d of device.devices) {
 					if (d.extra.match(/bcm2835[-_]v4l2/) !== null) {
 						if (!('raspicam' in skills.sources)) {
 							skills.sources['raspicam'] = [];
@@ -692,13 +692,13 @@ class Restreamer {
 					}
 				}
 			} else {
-				for (let d of device.devices) {
+				for (const d of device.devices) {
 					skills.sources[device.id].push({ ...d });
 				}
 			}
 		}
 
-		for (let device of val.devices.muxers) {
+		for (const device of val.devices.muxers) {
 			if (['fbdev'].includes(device.id)) {
 				if (device.devices.length === 0) {
 					continue;
@@ -706,7 +706,7 @@ class Restreamer {
 
 				skills.sinks[device.id] = [];
 
-				for (let d of device.devices) {
+				for (const d of device.devices) {
 					skills.sinks[device.id].push({ ...d });
 				}
 			}
@@ -845,7 +845,7 @@ class Restreamer {
 		const splitHostPort = (address) => {
 			let host = '';
 			let port = '';
-			let hostport = address.split(/:([0-9]+)$/);
+			const hostport = address.split(/:([0-9]+)$/);
 
 			if (hostport.length === 3) {
 				host = hostport[0];
@@ -902,7 +902,7 @@ class Restreamer {
 
 		// This is used for FFmpeg to access the HLS stream. This will happen always via HTTP.
 		// If the HTTP server is bound to a specific address, we'll use this one, localhost otherwise.
-		let [http_host, http_port] = splitHostPort(val.config.address);
+		const [http_host, http_port] = splitHostPort(val.config.address);
 		config.source.network.hls.local =
 			http_host.length !== 0 ? http_host : 'localhost';
 		if (http_port !== '80') {
@@ -962,7 +962,7 @@ class Restreamer {
 
 		config.source.network.srt.host = config.hostname;
 
-		let [srt_host, srt_port] = splitHostPort(val.config.srt.address);
+		const [srt_host, srt_port] = splitHostPort(val.config.srt.address);
 		config.source.network.srt.local =
 			srt_host.length !== 0 ? srt_host : 'localhost';
 		config.source.network.srt.host += ':' + srt_port;
@@ -1027,7 +1027,7 @@ class Restreamer {
 		const elms = name.split('.');
 
 		let config = this.config;
-		for (let e of elms) {
+		for (const e of elms) {
 			if (!(e in config)) {
 				return null;
 			}
@@ -1040,7 +1040,7 @@ class Restreamer {
 
 	// Get system metadata
 	async GetMetadata(defaults = true) {
-		let metadata = await this._getMetadata();
+		const metadata = await this._getMetadata();
 
 		if (defaults === false) {
 			return metadata;
@@ -1212,7 +1212,7 @@ class Restreamer {
 
 		let hasImported = false;
 
-		for (let p of processes) {
+		for (const p of processes) {
 			let matches = reIngest.exec(p.id);
 
 			if (matches === null) {
@@ -1271,13 +1271,13 @@ class Restreamer {
 			}
 		}
 
-		for (let [channelid, channel] of channels) {
+		for (const [channelid, channel] of channels) {
 			if (!egresses.has(channelid)) {
 				continue;
 			}
 
 			const egressList = egresses.get(channelid);
-			for (let egress of egressList) {
+			for (const egress of egressList) {
 				channel.egresses.set(egress.id, egress);
 			}
 
@@ -1297,7 +1297,7 @@ class Restreamer {
 
 		if (channelid === null) {
 			// Set the first detected channel as default selected channel
-			for (let [id] of this.channels) {
+			for (const [id] of this.channels) {
 				channelid = id;
 				break;
 			}
@@ -1337,7 +1337,7 @@ class Restreamer {
 		await this.DeleteIngest(channel.channelid);
 		await this.DeleteIngestSnapshot(channel.channelid);
 
-		for (let egressid of channel.egresses) {
+		for (const egressid of channel.egresses) {
 			await this.DeleteEgress(channel.channelid, egressid);
 		}
 
@@ -1348,7 +1348,7 @@ class Restreamer {
 		}
 
 		// select one of the remaining channels
-		for (let [channelid] of this.channels) {
+		for (const [channelid] of this.channels) {
 			this.SelectChannel(channelid);
 			break;
 		}
@@ -1371,7 +1371,7 @@ class Restreamer {
 	ListChannels() {
 		const channels = [];
 
-		for (let channel of this.channels.values()) {
+		for (const channel of this.channels.values()) {
 			channels.push({
 				id: channel.id,
 				channelid: channel.channelid,
@@ -1408,7 +1408,7 @@ class Restreamer {
 	}
 
 	SetChannel(channelid, channel) {
-		let c = this.channels.get(channelid);
+		const c = this.channels.get(channelid);
 		if (!c) {
 			return false;
 		}
@@ -1423,7 +1423,7 @@ class Restreamer {
 	}
 
 	GetChannelEgress(channelid, id) {
-		let channel = this.channels.get(channelid);
+		const channel = this.channels.get(channelid);
 		if (!channel) {
 			return null;
 		}
@@ -1443,7 +1443,7 @@ class Restreamer {
 	}
 
 	SetChannelEgress(channelid, id, data) {
-		let channel = this.channels.get(channelid);
+		const channel = this.channels.get(channelid);
 		if (!channel) {
 			return false;
 		}
@@ -1452,7 +1452,7 @@ class Restreamer {
 	}
 
 	DeleteChannelEgress(channelid, id) {
-		let channel = this.channels.get(channelid);
+		const channel = this.channels.get(channelid);
 		if (!channel) {
 			return false;
 		}
@@ -1521,12 +1521,12 @@ class Restreamer {
 			return sessions;
 		}
 
-		for (let p of protocols) {
+		for (const p of protocols) {
 			if (!(p in val)) {
 				continue;
 			}
 
-			for (let s of val[p]) {
+			for (const s of val[p]) {
 				if (!s.reference.startsWith(this.channel.channelid)) {
 					continue;
 				}
@@ -1725,7 +1725,7 @@ class Restreamer {
 			},
 		};
 
-		for (let i in inputs) {
+		for (const i in inputs) {
 			const input = inputs[i];
 
 			proc.input.push({
@@ -1779,7 +1779,7 @@ class Restreamer {
 
 		// 1.5 Set hls filename vars
 		const hlsStorage = control.hls.storage;
-		let segmentPlaylistPath =
+		const segmentPlaylistPath =
 			`${channel.channelid}` +
 			(control.hls.master_playlist ? `_{outputid}` : '');
 		let segmentFilePath =
@@ -2193,7 +2193,7 @@ class Restreamer {
 			reconnect: false,
 		};
 
-		for (let i in inputs) {
+		for (const i in inputs) {
 			const input = inputs[i];
 
 			config.input.push({
@@ -2311,7 +2311,7 @@ class Restreamer {
 			return false;
 		}
 
-		let metadata = await this.GetIngestMetadata(channelid);
+		const metadata = await this.GetIngestMetadata(channelid);
 
 		// update the player files
 		const playerType = 'videojs';
@@ -2507,7 +2507,7 @@ class Restreamer {
 
 	// Update the playersite
 	async UpdatePlayersite() {
-		let metadata = await this.GetMetadata();
+		const metadata = await this.GetMetadata();
 
 		const settings = this.InitPlayersiteSettings(metadata.playersite);
 		settings.player = 'videojs';
@@ -2795,7 +2795,7 @@ class Restreamer {
 			return;
 		}
 
-		for (let egressid of channel.egresses) {
+		for (const egressid of channel.egresses) {
 			await this._stopProcess(egressid);
 		}
 
@@ -2873,7 +2873,7 @@ class Restreamer {
 		// from the inputs only the first is used and only its options are considered.
 
 		let address = '';
-		let options = [];
+		const options = [];
 		if (control.source.source === 'hls+memfs') {
 			address = `{memfs}/${channel.channelid}.m3u8`;
 			options.push('-re');
@@ -2933,7 +2933,7 @@ class Restreamer {
 			},
 		};
 
-		for (let i in outputs) {
+		for (const i in outputs) {
 			const output = outputs[i];
 
 			if (!Array.isArray(output.options)) {
@@ -2941,7 +2941,7 @@ class Restreamer {
 			}
 
 			// set flags
-			let options = [];
+			const options = [];
 			if (control.process.low_delay) {
 				options.push('-flags', '+low_delay');
 			}
@@ -2955,7 +2955,7 @@ class Restreamer {
 			});
 		}
 
-		let [val, err] = await this._upsertProcess(egress.id, config);
+		const [val, err] = await this._upsertProcess(egress.id, config);
 		return [val, err];
 	}
 
@@ -3343,7 +3343,7 @@ class Restreamer {
 		if (p.config) {
 			p.config.options = p.config.options.map(anonymize);
 
-			for (let i in p.config.input) {
+			for (const i in p.config.input) {
 				p.config.input[i].address = anonymize(
 					p.config.input[i].address,
 				);
@@ -3351,7 +3351,7 @@ class Restreamer {
 					p.config.input[i].options.map(anonymize);
 			}
 
-			for (let i in p.config.output) {
+			for (const i in p.config.output) {
 				p.config.output[i].address = anonymize(
 					p.config.output[i].address,
 				);
@@ -3361,13 +3361,13 @@ class Restreamer {
 		}
 
 		if (p.state) {
-			for (let i in p.state.progress.inputs) {
+			for (const i in p.state.progress.inputs) {
 				p.state.progress.inputs[i].address = anonymize(
 					p.state.progress.inputs[i].address,
 				);
 			}
 
-			for (let i in p.state.progress.outputs) {
+			for (const i in p.state.progress.outputs) {
 				p.state.progress.outputs[i].address = anonymize(
 					p.state.progress.outputs[i].address,
 				);
@@ -3389,7 +3389,7 @@ class Restreamer {
 			p.report.prelude = p.report.prelude.map(anonymize);
 			p.report.log = p.report.log.map((l) => [l[0], anonymize(l[1])]);
 
-			for (let i in p.report.history) {
+			for (const i in p.report.history) {
 				p.report.history[i].prelude =
 					p.report.history[i].prelude.map(anonymize);
 				p.report.history[i].log = p.report.history[i].log.map((l) => [
@@ -3485,7 +3485,7 @@ class Restreamer {
 		const files = data.split(/\n/);
 
 		// upload player files
-		for (let file of files) {
+		for (const file of files) {
 			if (file.length === 0) {
 				continue;
 			}
@@ -3538,7 +3538,7 @@ class Restreamer {
 	}
 
 	async _getLocalAssetAsString(localPath) {
-		let data = await this._getLocalAsset(localPath);
+		const data = await this._getLocalAsset(localPath);
 		if (data === null) {
 			return null;
 		}
@@ -3925,16 +3925,16 @@ function parseRFC3339Date(d) {
 		m[9] = 0;
 	}
 
-	var year = +m[1];
-	var month = +m[2];
-	var day = +m[3];
-	var hour = +m[4];
-	var minute = +m[5];
-	var second = +m[6];
-	var msec = +m[7];
-	var tzHour = +m[8];
-	var tzMin = +m[9];
-	var tzOffset = tzHour * 60 + tzMin;
+	const year = +m[1];
+	const month = +m[2];
+	const day = +m[3];
+	const hour = +m[4];
+	const minute = +m[5];
+	const second = +m[6];
+	const msec = +m[7];
+	const tzHour = +m[8];
+	const tzMin = +m[9];
+	const tzOffset = tzHour * 60 + tzMin;
 
 	return new Date(
 		Date.UTC(year, month - 1, day, hour, minute - tzOffset, second, msec),

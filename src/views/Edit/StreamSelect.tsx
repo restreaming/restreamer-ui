@@ -17,9 +17,9 @@ export default function StreamSelect(props) {
 		props.onChange(stream);
 	};
 
-	let streamList = [];
+	const streamList = [];
 
-	for (let s of props.streams) {
+	for (const s of props.streams) {
 		if (s.type !== props.type) {
 			continue;
 		}

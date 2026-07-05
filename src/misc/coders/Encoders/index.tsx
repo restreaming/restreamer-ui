@@ -50,7 +50,7 @@ class Registry {
 	// Get the first coder for a codec that is in a
 	// list of available coders.
 	GetCoderForCodec(codec, availableCoders) {
-		for (let coder of this.services.values()) {
+		for (const coder of this.services.values()) {
 			if (coder.codec !== codec) {
 				continue;
 			}
@@ -71,7 +71,7 @@ class Registry {
 	GetCodersForCodec(codec, availableCoders, hwAcceleration) {
 		const coders = [];
 
-		for (let coder of this.services.values()) {
+		for (const coder of this.services.values()) {
 			if (coder.codec !== codec) {
 				continue;
 			}

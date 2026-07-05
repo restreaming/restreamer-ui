@@ -6,7 +6,7 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 import Divider from '@mui/material/Divider';
 import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined';
 import LayersIcon from '@mui/icons-material/Layers';
 import Link from '@mui/material/Link';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -352,7 +352,7 @@ function HeaderMenu(props) {
 						target="blank"
 					>
 						<ListItemIcon>
-							<HelpOutlineIcon fontSize="small" />
+							<HelpOutlinedIcon fontSize="small" />
 						</ListItemIcon>
 						<Trans>Docs</Trans>
 					</MenuItem>
@@ -410,7 +410,7 @@ function HeaderMenu(props) {
 						target="blank"
 					>
 						<ListItemIcon>
-							<HelpOutlineIcon fontSize="small" />
+							<HelpOutlinedIcon fontSize="small" />
 						</ListItemIcon>
 						<Trans>Docs</Trans>
 					</MenuItem>

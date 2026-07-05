@@ -131,7 +131,7 @@ export default function EncodingSelect(props) {
 
 	const encoderList = [];
 
-	for (let c of encoderRegistry.List()) {
+	for (const c of encoderRegistry.List()) {
 		// Does ffmpeg support the coder?
 		if (!availableEncoders.includes(c.coder)) {
 			continue;

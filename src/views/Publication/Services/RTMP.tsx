@@ -140,7 +140,7 @@ function Service(props) {
 			}
 		}
 
-		for (let key in settings.options) {
+		for (const key in settings.options) {
 			if (settings.options[key].length !== 0) {
 				if (key !== 'rtmp_flush_interval') {
 					options.push('-' + key, settings.options[key]);

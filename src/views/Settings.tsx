@@ -761,7 +761,6 @@ export default function Settings(props) {
 		return () => {
 			clearInterval(logTimer.current);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useInterval(() => {
@@ -1010,7 +1009,7 @@ export default function Settings(props) {
 				config.tls.enable = false;
 			}
 
-			for (let what of $config.overrides) {
+			for (const what of $config.overrides) {
 				if (!(what in configValues)) {
 					continue;
 				}
@@ -1077,7 +1076,7 @@ export default function Settings(props) {
 			};
 
 			if (err.code === 409) {
-				for (let errorfield in err.message) {
+				for (const errorfield in err.message) {
 					if (!(errorfield in configValues)) {
 						continue;
 					}
@@ -1091,7 +1090,7 @@ export default function Settings(props) {
 						};
 					}
 
-					for (let m of err.message[errorfield]) {
+					for (const m of err.message[errorfield]) {
 						tabs[tab].messages.push({
 							configvalue: errorfield,
 							error: ucfirst(m),
@@ -1125,7 +1124,7 @@ export default function Settings(props) {
 
 			const tabs = {};
 
-			for (let t in $tabs) {
+			for (const t in $tabs) {
 				tabs[t] = { errors: false, messages: [] };
 			}
 
@@ -1220,7 +1219,7 @@ export default function Settings(props) {
 				break;
 			}
 
-			let createdAt = about.created_at;
+			const createdAt = about.created_at;
 			if (createdAt !== null) {
 				currentKey = createdAt.toISOString();
 			}

@@ -58,7 +58,7 @@ export default function Changelog(props) {
 		(async () => {
 			await onMount();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const onMount = async () => {
@@ -87,14 +87,14 @@ export default function Changelog(props) {
 	};
 
 	const filter = (data, current, previous) => {
-		let lines = data.split('\n');
-		let filteredLines = [];
+		const lines = data.split('\n');
+		const filteredLines = [];
 
 		let copy = true;
 
 		for (let i = 0; i < lines.length; i++) {
 			if (lines[i].startsWith('## ')) {
-				let version = lines[i].replace('## ', '');
+				const version = lines[i].replace('## ', '');
 
 				if (SemverValid(version) === null) {
 					if (copy === true) {

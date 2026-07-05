@@ -89,7 +89,7 @@ export default function Add(props) {
 		(async () => {
 			await load();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	React.useEffect(() => {
@@ -108,7 +108,7 @@ export default function Add(props) {
 		const skills = await props.restreamer.Skills();
 		setSkills(skills);
 
-		let ingest = await props.restreamer.GetIngestMetadata(_channelid);
+		const ingest = await props.restreamer.GetIngestMetadata(_channelid);
 		setMetadata({
 			...$metadata,
 			name: ingest.meta.name,
@@ -345,7 +345,7 @@ export default function Add(props) {
 		return null;
 	}
 
-	let serviceList = [];
+	const serviceList = [];
 
 	let ServiceControl = null;
 	let serviceSkills = null;
@@ -353,7 +353,7 @@ export default function Add(props) {
 	let service = {};
 
 	if ($service === '') {
-		for (let s of Services.List()) {
+		for (const s of Services.List()) {
 			if ($filter !== 'all') {
 				if (s.category !== $filter) {
 					continue;

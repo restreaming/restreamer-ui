@@ -115,7 +115,7 @@ export default function Main(props) {
 			await load();
 			await update();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	React.useEffect(() => {

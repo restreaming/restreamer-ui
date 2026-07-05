@@ -22,7 +22,7 @@ export default function UploadButton(props) {
 			const file = files[0];
 
 			let type = null;
-			for (let t of props.acceptTypes) {
+			for (const t of props.acceptTypes) {
 				const accept = t.mimetype.split('/');
 				const actual = file.type.split('/');
 

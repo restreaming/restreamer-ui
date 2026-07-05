@@ -100,7 +100,7 @@ function Resources(props) {
 		(async () => {
 			await update();
 		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, []);
 
 	const update = async () => {

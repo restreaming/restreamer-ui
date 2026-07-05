@@ -335,7 +335,7 @@ class API {
 
 	async Processes(reference = '', ids = [], filter = []) {
 		let url = '/v3/process';
-		let params = [];
+		const params = [];
 
 		if (reference.length !== 0) {
 			params.push('reference=' + encodeURIComponent(reference));
@@ -507,7 +507,7 @@ class API {
 		const val = res.val;
 		res.val = [];
 
-		for (let path in val.publisher) {
+		for (const path in val.publisher) {
 			res.val.push(path);
 		}
 

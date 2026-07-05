@@ -3,7 +3,7 @@ function InitStream(initialStream) {
 		initialStream = {};
 	}
 
-	let stream = {
+	const stream = {
 		codec: '',
 		...initialStream,
 	};
@@ -16,7 +16,7 @@ function InitSkills(initialSkills) {
 		initialSkills = {};
 	}
 
-	let skills = {
+	const skills = {
 		ffmpeg: {},
 		...initialSkills,
 	};

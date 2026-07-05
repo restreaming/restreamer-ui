@@ -16,7 +16,7 @@ const Stream = function (props) {
 	const handleChange = (what) => (event) => {
 		const value = event.target.value;
 
-		let stream = {
+		const stream = {
 			...props.stream,
 		};
 

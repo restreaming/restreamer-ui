@@ -77,7 +77,7 @@ test('source:network pull', async () => {
 	};
 
 	const Source = Network.component;
-	let { getByLabelText, queryByText, rerender } = render(
+	const { getByLabelText, queryByText, rerender } = render(
 		<Source onChange={handleChange} knownDevices={[]} />,
 	);
 
@@ -490,7 +490,7 @@ test.each(pullmatrix.tests)(
 
 		const Source = Network.component;
 
-		let { getByText, getByRole } = render(
+		const { getByText, getByRole } = render(
 			<Source
 				settings={data.settings}
 				skills={data.skills}
@@ -522,7 +522,7 @@ test('source:network push', async () => {
 	};
 
 	const Source = Network.component;
-	let { queryByText, rerender } = render(
+	const { queryByText, rerender } = render(
 		<Source
 			settings={$settings}
 			onChange={handleChange}
@@ -597,7 +597,7 @@ test('source:network push RTMP', async () => {
 	};
 
 	const Source = Network.component;
-	let { getByText, queryByText, rerender } = render(
+	const { getByText, queryByText, rerender } = render(
 		<Source
 			settings={$settings}
 			skills={$skills_ffmpeg5}
@@ -637,7 +637,7 @@ test('source:network push SRT', async () => {
 	};
 
 	const Source = Network.component;
-	let { getByText, queryByText, rerender } = render(
+	const { getByText, queryByText, rerender } = render(
 		<Source
 			settings={$settings}
 			skills={$skills_ffmpeg5}
@@ -821,7 +821,7 @@ test.each(pushmatrix.tests)(
 		};
 
 		const Source = Network.component;
-		let { getByText, getByRole } = render(
+		const { getByText, getByRole } = render(
 			<Source
 				settings={data.settings}
 				config={data.config}
