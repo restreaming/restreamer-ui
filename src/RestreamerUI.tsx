@@ -36,7 +36,7 @@ const StyledI18n = styled(I18n)(({ theme }) => ({
 		height: '132px',
 	},
 
-	// todo: one layer
+	// TODO: one layer
 	[`& .${classes.MainContent}`]: {
 		height: '100%',
 		'& .MainContent-container': {
@@ -86,7 +86,7 @@ export default function RestreamerUI(props) {
 
 		return () => {};
 
-		 
+
 	}, []);
 
 	useInterval(() => {

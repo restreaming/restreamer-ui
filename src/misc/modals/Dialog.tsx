@@ -8,7 +8,7 @@ import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-// todo: use MuiDialog
+// TODO: use MuiDialog
 
 const Component = React.forwardRef((props, ref) => {
 	const paperStyle = {};
