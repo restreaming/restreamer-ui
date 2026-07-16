@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useLingui } from '@lingui/react';
-import { Trans, t } from '@lingui/macro';
+import { Trans, t } from '@lingui/react/macro';
 import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';

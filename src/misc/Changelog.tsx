@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
@@ -58,7 +58,7 @@ export default function Changelog(props) {
 		(async () => {
 			await onMount();
 		})();
-		 
+
 	}, []);
 
 	const onMount = async () => {

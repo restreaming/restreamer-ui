@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useLingui } from '@lingui/react';
-import { Trans, t } from '@lingui/macro';
+import { Trans, t } from '@lingui/react/macro';
 import urlparser from 'url-parse';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';

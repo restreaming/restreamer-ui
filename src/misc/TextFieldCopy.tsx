@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { useLingui } from '@lingui/react';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/react/macro';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';

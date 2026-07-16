@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import { createPlayer, videoFeatures, Poster } from '@videojs/react';
 import { VideoSkin } from '@videojs/react/video';
-import { HlsVideo } from '@videojs/react/media/hls-video';
+import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
 
 import '@videojs/react/video/skin.css';
 import './video-js-skin-internal.css';
@@ -51,7 +51,7 @@ export default function VideoJS(props) {
 					>
 						{controls ? (
 							<VideoSkin poster={poster}>
-								<HlsVideo
+								<HlsJsVideo
 									src={src}
 									autoPlay={autoplay}
 									muted={muted}
@@ -60,7 +60,7 @@ export default function VideoJS(props) {
 							</VideoSkin>
 						) : (
 							<>
-								<HlsVideo
+								<HlsJsVideo
 									src={src}
 									autoPlay={autoplay}
 									muted={muted}
