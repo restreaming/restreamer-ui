@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Trans, t } from '@lingui/react/macro';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';

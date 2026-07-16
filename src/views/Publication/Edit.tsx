@@ -4,7 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useLingui } from '@lingui/react';
-import { Trans, t } from '@lingui/react/macro';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 import Backdrop from '@mui/material/Backdrop';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
