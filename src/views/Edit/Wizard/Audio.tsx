@@ -21,15 +21,15 @@ export default function Audio(props) {
 	const { i18n } = useLingui();
 
 	return (
-        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-            <PaperHeader
+		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+			<PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Audio setup</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-            <Grid container spacing={2}>
+			<Grid container spacing={2}>
 				<Grid size={12}>
 					<Divider />
 				</Grid>
@@ -172,8 +172,8 @@ export default function Audio(props) {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 Audio.defaultProps = {

@@ -32,7 +32,6 @@ export default function Control(props) {
 	// Set the defaults
 	React.useEffect(() => {
 		props.onChange(settings, true);
-		 
 	}, []);
 
 	const handleChange = (what) => (event) => {
@@ -54,8 +53,8 @@ export default function Control(props) {
 	};
 
 	return (
-        <Grid container spacing={0}>
-            <Grid size={12}>
+		<Grid container spacing={0}>
+			<Grid size={12}>
 				<TabsHorizontal value={$tab} onChange={handleChangeTab}>
 					<Tab
 						className="tab"
@@ -127,8 +126,8 @@ export default function Control(props) {
 					</Grid>
 				</TabPanel>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Control.defaultProps = {

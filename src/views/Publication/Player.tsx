@@ -102,7 +102,6 @@ export default function Edit(props) {
 		(async () => {
 			await mount();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -393,8 +392,8 @@ export default function Edit(props) {
 	const logo = { ...$settings.logo, image: prepareUrl($settings.logo.image) };
 
 	return (
-        <Root>
-            <Paper xs={12} md={10}>
+		<Root>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Player</Trans>}
 					onAbort={handleAbort}
@@ -516,10 +515,11 @@ export default function Edit(props) {
 						<TabPanel value={$tab} index="logo">
 							<Grid container spacing={2}>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 9
-                                    }}>
+									size={{
+										xs: 12,
+										md: 9,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -530,10 +530,11 @@ export default function Edit(props) {
 									/>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 12,
+										md: 3,
+									}}
+								>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={logoImageTypes}
@@ -547,10 +548,11 @@ export default function Edit(props) {
 									/>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 4
-                                    }}>
+									size={{
+										xs: 12,
+										md: 4,
+									}}
+								>
 									<Select
 										variant="outlined"
 										fullWidth
@@ -576,10 +578,11 @@ export default function Edit(props) {
 									</Select>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 8
-                                    }}>
+									size={{
+										xs: 12,
+										md: 8,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -594,10 +597,11 @@ export default function Edit(props) {
 						<TabPanel value={$tab} index="poster">
 							<Grid container spacing={2}>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 9
-                                    }}>
+									size={{
+										xs: 12,
+										md: 9,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -608,10 +612,11 @@ export default function Edit(props) {
 									/>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 12,
+										md: 3,
+									}}
+								>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={posterImageTypes}
@@ -629,10 +634,11 @@ export default function Edit(props) {
 						<TabPanel value={$tab} index="statistic">
 							<Grid container spacing={2}>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -645,10 +651,11 @@ export default function Edit(props) {
 									/>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -744,10 +751,10 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-            <Dialog
+			<Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -763,8 +770,8 @@ export default function Edit(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Edit.defaultProps = {

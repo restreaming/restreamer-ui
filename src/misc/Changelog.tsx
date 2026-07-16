@@ -58,7 +58,6 @@ export default function Changelog(props) {
 		(async () => {
 			await onMount();
 		})();
-
 	}, []);
 
 	const onMount = async () => {
@@ -155,7 +154,7 @@ export default function Changelog(props) {
 	};
 
 	return (
-        <Dialog
+		<Dialog
 			open={props.open}
 			onClose={props.onClose}
 			title={<Trans>Update details (Changelog)</Trans>}
@@ -170,7 +169,7 @@ export default function Changelog(props) {
 				</Button>
 			}
 		>
-            <Grid container spacing={2}>
+			<Grid container spacing={2}>
 				<Grid size={12}>
 					<BoxText alignItems="flex-start">
 						<ReactMarkdown components={renderers}>
@@ -179,8 +178,8 @@ export default function Changelog(props) {
 					</BoxText>
 				</Grid>
 			</Grid>
-        </Dialog>
-    );
+		</Dialog>
+	);
 }
 
 Changelog.defaultProps = {

@@ -27,7 +27,6 @@ export default function License(props) {
 	let link = '';
 	let description = '';
 
-	 
 	const reVersion = new RegExp('[0-9]+.[0-9]+$');
 
 	let version = '4.0';
@@ -93,8 +92,8 @@ export default function License(props) {
 	}
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Creative Commons</Trans>}
 					value={props.license}
@@ -110,7 +109,7 @@ export default function License(props) {
 					<MenuItem value="CC BY-NC-ND 4.0">CC BY-NC-ND 4.0</MenuItem>
 				</Select>
 			</Grid>
-            {description.length !== 0 && (
+			{description.length !== 0 && (
 				<Grid size={12}>
 					<div style={{ marginBottom: '.5em', marginTop: '.5em' }}>
 						<Typography>{description}</Typography>
@@ -129,15 +128,15 @@ export default function License(props) {
 					</div>
 				</Grid>
 			)}
-            {image !== null && (
+			{image !== null && (
 				<Grid size={12}>
 					<Link href={link} target="_blank" rel="noopener noreferrer">
 						<img src={image} alt={props.license} />
 					</Link>
 				</Grid>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 License.defaultProps = {

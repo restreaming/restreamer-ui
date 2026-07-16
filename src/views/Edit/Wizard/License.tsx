@@ -13,15 +13,15 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function License(props) {
 	return (
-        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-            <PaperHeader
+		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+			<PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>License</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-            <Grid container spacing={2}>
+			<Grid container spacing={2}>
 				<Grid size={12}>
 					<Divider />
 				</Grid>
@@ -65,8 +65,8 @@ export default function License(props) {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 License.defaultProps = {

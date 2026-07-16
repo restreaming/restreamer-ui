@@ -155,34 +155,35 @@ function Coder(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Video.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<Video.Framerate
 					value={settings.fps}
 					onChange={update('fps')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<Video.GOP
 					value={settings.gop}
 					onChange={update('gop')}
@@ -190,7 +191,7 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-            {skills.ffmpeg.version_major >= 5 && (
+			{skills.ffmpeg.version_major >= 5 && (
 				<Grid size={12}>
 					<Video.FpsMode
 						value={settings.fps_mode}
@@ -198,20 +199,20 @@ function Coder(props) {
 					/>
 				</Grid>
 			)}
-            <Grid size={6}>
+			<Grid size={6}>
 				<Preset value={settings.preset} onChange={update('preset')} />
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<Video.Profile
 					value={settings.profile}
 					onChange={update('profile')}
 				/>
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<Tune value={settings.tune} onChange={update('tune')} />
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Coder.defaultProps = {

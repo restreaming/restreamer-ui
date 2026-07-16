@@ -91,7 +91,6 @@ function Source(props) {
 
 	React.useEffect(() => {
 		handleChange();
-		 
 	}, []);
 
 	const options = devices.map((device) => {
@@ -121,13 +120,13 @@ function Source(props) {
 	);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				{videoDevices}
 				<Button
 					size="small"
@@ -138,8 +137,8 @@ function Source(props) {
 					<Trans>Refresh</Trans>
 				</Button>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

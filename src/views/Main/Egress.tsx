@@ -73,7 +73,6 @@ export default function Egress(props) {
 		(async () => {
 			await update();
 		})();
-		 
 	}, []);
 
 	const update = async () => {
@@ -142,8 +141,8 @@ export default function Egress(props) {
 	}
 
 	return (
-        <StyledGrid container className={classes.egressBar}>
-            <Grid size={12}>
+		<StyledGrid container className={classes.egressBar}>
+			<Grid size={12}>
 				<Stack
 					direction="row"
 					sx={{
@@ -188,8 +187,8 @@ export default function Egress(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-        </StyledGrid>
-    );
+		</StyledGrid>
+	);
 }
 
 Egress.defaultProps = {

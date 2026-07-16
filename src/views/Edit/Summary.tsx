@@ -89,8 +89,8 @@ export default function Summary(props) {
 	}
 
 	return (
-        <BoxText>
-            <Grid container spacing={1}>
+		<BoxText>
+			<Grid container spacing={1}>
 				<Grid size={12}>
 					<Typography variant="subtitle2">{name}</Typography>
 					<Typography variant="body1">{address}</Typography>
@@ -122,8 +122,8 @@ export default function Summary(props) {
 					</React.Fragment>
 				)}
 			</Grid>
-        </BoxText>
-    );
+		</BoxText>
+	);
 }
 
 Summary.defaultProps = {

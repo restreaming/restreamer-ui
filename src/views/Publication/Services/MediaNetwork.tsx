@@ -72,12 +72,13 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 9
-                }}>
+		<Grid container spacing={2}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 9,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -86,11 +87,12 @@ function Service(props) {
 					onChange={handleChange('key')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 3
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 3,
+				}}
+			>
 				<FormInlineButton
 					target="blank"
 					href={stream_key_link}
@@ -99,8 +101,8 @@ function Service(props) {
 					<Trans>GET</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

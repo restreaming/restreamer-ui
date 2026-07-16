@@ -84,7 +84,6 @@ export default function Publication(props) {
 		(async () => {
 			await update();
 		})();
-		 
 	}, []);
 
 	const update = async () => {
@@ -183,8 +182,8 @@ export default function Publication(props) {
 	}
 
 	return (
-        <React.Fragment>
-            <Paper marginBottom="0">
+		<React.Fragment>
+			<Paper marginBottom="0">
 				<PaperHeader
 					title={<Trans>Publications</Trans>}
 					onAdd={handleServiceAdd}
@@ -214,7 +213,11 @@ export default function Publication(props) {
 							</Typography>
 						</Grid>
 					</Grid>
-					<Grid className={classes.bandwidth} sx={{ textAlign: 'center' }} size={12}>
+					<Grid
+						className={classes.bandwidth}
+						sx={{ textAlign: 'center' }}
+						size={12}
+					>
 						<Typography
 							component="div"
 							className={classes.bandwidthCount}
@@ -241,8 +244,8 @@ export default function Publication(props) {
 					{egresses}
 				</Grid>
 			</Paper>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Publication.defaultProps = {

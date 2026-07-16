@@ -90,29 +90,27 @@ function Source(props) {
 	);
 
 	return (
-        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-            <Grid size={12}>
+		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
-				{videoDevices}
-			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>{videoDevices}</Grid>
+			<Grid size={12}>
 				<Video.Framerate
 					value={settings.framerate}
 					onChange={handleChange('framerate')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<FormInlineButton onClick={handleProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Source.defaultProps = {

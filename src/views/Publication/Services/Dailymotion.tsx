@@ -87,8 +87,8 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -109,11 +109,12 @@ function Service(props) {
 					}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 9
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 9,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -123,8 +124,8 @@ function Service(props) {
 					onChange={handleChange('stream_key')}
 				/>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

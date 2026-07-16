@@ -104,14 +104,14 @@ export default function FilterSelect(props) {
 	// No suitable filter found
 	if (filterSettings === null && !hwaccel) {
 		return (
-            <Grid container spacing={2}>
-                <Grid size={12}>
+			<Grid container spacing={2}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>No suitable filter found.</Trans>
 					</Typography>
 				</Grid>
-            </Grid>
-        );
+			</Grid>
+		);
 
 		// hwaccel requires further settings
 	} else if (hwaccel) {
@@ -119,15 +119,15 @@ export default function FilterSelect(props) {
 	}
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select your filter settings (optional):</Trans>
 				</Typography>
 			</Grid>
-            {filterSettings}
-        </Grid>
-    );
+			{filterSettings}
+		</Grid>
+	);
 }
 
 FilterSelect.defaultProps = {

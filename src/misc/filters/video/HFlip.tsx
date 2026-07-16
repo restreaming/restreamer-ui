@@ -57,18 +57,17 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <Grid>
-            <Checkbox
+		<Grid>
+			<Checkbox
 				label={<Trans>Horizontal Flip</Trans>}
 				checked={settings.enabled}
 				onChange={update('enabled')}
 			/>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Filter.defaultProps = {

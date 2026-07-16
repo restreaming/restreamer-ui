@@ -52,19 +52,18 @@ function Source(props) {
 
 	React.useEffect(() => {
 		handleChange();
-		 
 	}, []);
 
 	const protocol = S.func.getProtocolClass(settings.address);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Enter the address of your network source:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -80,7 +79,7 @@ function Source(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-            {protocol === 'rtsp' && (
+			{protocol === 'rtsp' && (
 				<Grid size={12}>
 					<Checkbox
 						label={<Trans>UDP transport</Trans>}
@@ -89,11 +88,12 @@ function Source(props) {
 					/>
 				</Grid>
 			)}
-            <Grid
-                size={{
-                    md: 6,
-                    xs: 12
-                }}>
+			<Grid
+				size={{
+					md: 6,
+					xs: 12,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -106,11 +106,12 @@ function Source(props) {
 					<Trans>Username for the device.</Trans>
 				</Typography>
 			</Grid>
-            <Grid
-                size={{
-                    md: 6,
-                    xs: 12
-                }}>
+			<Grid
+				size={{
+					md: 6,
+					xs: 12,
+				}}
+			>
 				<Password
 					variant="outlined"
 					fullWidth
@@ -123,8 +124,8 @@ function Source(props) {
 					<Trans>Password for the device.</Trans>
 				</Typography>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

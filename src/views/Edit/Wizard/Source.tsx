@@ -11,15 +11,15 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function Source(props) {
 	return (
-        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-            <PaperHeader
+		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+			<PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Video setup</Trans>}
 				onAbort={props.Abort}
 				onHelp={props.onHelp}
 			/>
-            <Grid container spacing={2}>
+			<Grid container spacing={2}>
 				<Grid size={12}>
 					<Typography>
 						<Trans>
@@ -52,8 +52,8 @@ export default function Source(props) {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 Source.defaultProps = {

@@ -98,12 +98,11 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Checkbox
 					label={
 						<Trans>
@@ -114,7 +113,7 @@ function Filter(props) {
 					onChange={update('enabled')}
 				/>
 			</Grid>
-            {settings.enabled && (
+			{settings.enabled && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Framerate
@@ -124,8 +123,8 @@ function Filter(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

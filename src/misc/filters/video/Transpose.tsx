@@ -88,18 +88,17 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <Grid size={12}>
-            <Rotate
+		<Grid size={12}>
+			<Rotate
 				value={settings.value}
 				onChange={update('value')}
 				allowCustom
 			/>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Filter.defaultProps = {

@@ -25,7 +25,6 @@ export default function Control(props) {
 	// Set the defaults
 	React.useEffect(() => {
 		props.onChange(settings, true);
-		 
 	}, []);
 
 	const handleChange = (what) => (event) => {
@@ -41,8 +40,8 @@ export default function Control(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            {props.enabled && (
+		<Grid container spacing={2}>
+			{props.enabled && (
 				<Grid size={12}>
 					<Checkbox
 						label={<Trans>Enable</Trans>}
@@ -58,7 +57,7 @@ export default function Control(props) {
 					</Typography>
 				</Grid>
 			)}
-            {!props.enabled && (
+			{!props.enabled && (
 				<Grid size={12}>
 					<BoxText textAlign="center">
 						<Trans>The SRT output requires the SRT Server.</Trans>
@@ -75,8 +74,8 @@ export default function Control(props) {
 					</BoxText>
 				</Grid>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Control.defaulProps = {

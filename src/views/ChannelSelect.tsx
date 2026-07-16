@@ -7,7 +7,6 @@ export default function ChannelSelector(props) {
 
 	React.useEffect(() => {
 		onMount();
-		 
 	}, []);
 
 	React.useEffect(() => {

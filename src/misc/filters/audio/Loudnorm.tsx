@@ -57,20 +57,19 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid>
+		<React.Fragment>
+			<Grid>
 				<Checkbox
 					label={<Trans>Loudness Normalization</Trans>}
 					checked={settings.enabled}
 					onChange={update('enabled')}
 				/>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

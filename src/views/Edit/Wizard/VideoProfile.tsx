@@ -12,15 +12,15 @@ import Select from '../../../misc/Select';
 
 export default function VideoProfile(props) {
 	return (
-        <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
-            <PaperHeader
+		<Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
+			<PaperHeader
 				spacing={2}
 				variant="h1"
 				title={<Trans>Video setup</Trans>}
 				onAbort={props.onAbort}
 				onHelp={props.onHelp}
 			/>
-            <Grid container spacing={2}>
+			<Grid container spacing={2}>
 				<Grid size={12}>
 					<Divider />
 				</Grid>
@@ -114,8 +114,8 @@ export default function VideoProfile(props) {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 VideoProfile.defaultProps = {

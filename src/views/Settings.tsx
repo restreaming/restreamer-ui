@@ -1305,8 +1305,8 @@ export default function Settings(props) {
 	}
 
 	return (
-        <Root>
-            <Paper xs={12} md={10}>
+		<Root>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={title}
 					onAbort={handleAbort}
@@ -1664,10 +1664,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>HTTP port</Trans>}
@@ -1688,10 +1689,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>HTTPS port</Trans>}
@@ -1781,10 +1783,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 12
-                                    }}>
+									size={{
+										xs: 12,
+										md: 12,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>Maximum viewers</Trans>}
@@ -1810,10 +1813,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 12
-                                    }}>
+									size={{
+										xs: 12,
+										md: 12,
+									}}
+								>
 									<TextField
 										type="number"
 										label={
@@ -2166,10 +2170,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										label={<Trans>Username</Trans>}
 										env={env(
@@ -2199,10 +2204,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<Password
 										label={<Trans>Password</Trans>}
 										env={env(
@@ -2450,10 +2456,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										type="number"
 										label={
@@ -2487,10 +2494,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										type="number"
 										label={
@@ -2690,10 +2698,11 @@ export default function Settings(props) {
 									<Divider />
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 6,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 6,
+										md: 3,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>RTMP Port</Trans>}
@@ -2717,10 +2726,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 6,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 6,
+										md: 3,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>RTMPS Port</Trans>}
@@ -2746,10 +2756,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 6
-                                    }}>
+									size={{
+										xs: 12,
+										md: 6,
+									}}
+								>
 									<TextField
 										label={<Trans>App</Trans>}
 										env={env('rtmp.app')}
@@ -2819,10 +2830,11 @@ export default function Settings(props) {
 									<Divider />
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 6,
-                                        md: 4
-                                    }}>
+									size={{
+										xs: 6,
+										md: 4,
+									}}
+								>
 									<TextField
 										type="number"
 										label={<Trans>Port</Trans>}
@@ -2845,10 +2857,11 @@ export default function Settings(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 6,
-                                        md: 8
-                                    }}>
+									size={{
+										xs: 6,
+										md: 8,
+									}}
+								>
 									<Password
 										label={<Trans>Token</Trans>}
 										env={env('srt.token')}
@@ -3119,10 +3132,10 @@ export default function Settings(props) {
 					}
 				/>
 			</Paper>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-            <Backdrop open={$restart.restarting}>
+			<Backdrop open={$restart.restarting}>
 				<Paper xs={4} sm={4} md={4}>
 					<PaperHeader title={<Trans>Restarting</Trans>} />
 					<PaperContent>
@@ -3178,7 +3191,7 @@ export default function Settings(props) {
 					/>
 				</Paper>
 			</Backdrop>
-            <Dialog
+			<Dialog
 				open={$dialogs.saved}
 				title={<Trans>Restart required</Trans>}
 				onClose={handleSavedDialog}
@@ -3209,7 +3222,7 @@ export default function Settings(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-            <Dialog
+			<Dialog
 				open={$dialogs.restart}
 				title={<Trans>Restart</Trans>}
 				onClose={handleReloadDialog}
@@ -3238,8 +3251,8 @@ export default function Settings(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Settings.defaultProps = {

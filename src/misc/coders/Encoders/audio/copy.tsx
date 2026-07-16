@@ -42,7 +42,6 @@ function Coder(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return null;

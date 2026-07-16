@@ -185,12 +185,11 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Sampling
 					value={settings.sampling}
 					onChange={update('sampling')}
@@ -198,15 +197,15 @@ function Filter(props) {
 					allowCustom
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Layout
 					value={settings.layout}
 					onChange={update('layout')}
 					allowInherit
 				/>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

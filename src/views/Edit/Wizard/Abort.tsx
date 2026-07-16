@@ -10,14 +10,14 @@ import PaperHeader from '../../../misc/PaperHeader';
 
 export default function Abort(props) {
 	return (
-        <Paper xs={12} sm={8} md={6} marginBottom="6em" className="PaperM">
-            <PaperHeader
+		<Paper xs={12} sm={8} md={6} marginBottom="6em" className="PaperM">
+			<PaperHeader
 				spacing={3}
 				variant="h1"
 				title={<Trans>Abort</Trans>}
 				onHelp={props.onHelp}
 			/>
-            <Grid container spacing={3}>
+			<Grid container spacing={3}>
 				{props.nchannels <= 1 ? (
 					<React.Fragment>
 						<Grid size={12}>
@@ -71,8 +71,8 @@ export default function Abort(props) {
 					</React.Fragment>
 				)}
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 Abort.defaultProps = {

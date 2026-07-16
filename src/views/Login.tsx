@@ -139,7 +139,6 @@ export default function Login(props) {
 				setIsAuthenticated(isAuthenticated);
 			}
 		})();
-		 
 	}, []);
 
 	const handleLogin = async (event) => {
@@ -229,8 +228,8 @@ export default function Login(props) {
 	};
 
 	return (
-        <Paper xs={11} sm={10} md={6}>
-            <Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
+		<Paper xs={11} sm={10} md={6}>
+			<Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
 				{$loginTarget !== 'none' && (
 					<Grid sx={{ textAlign: 'center' }} size={12}>
 						{$auths.length > 1 && (
@@ -383,7 +382,10 @@ export default function Login(props) {
 								</Grid>
 								{$canUseAuth0 === false ? (
 									<React.Fragment>
-										<Grid sx={{ textAlign: 'center' }} size={12}>
+										<Grid
+											sx={{ textAlign: 'center' }}
+											size={12}
+										>
 											<Typography>
 												<Trans>
 													Auth0 is currently not
@@ -484,11 +486,11 @@ export default function Login(props) {
 					</React.Fragment>
 				)}
 			</Grid>
-            <Backdrop open={$loginCheck}>
+			<Backdrop open={$loginCheck}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 Login.defaultProps = {

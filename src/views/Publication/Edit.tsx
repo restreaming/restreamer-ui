@@ -110,7 +110,6 @@ export default function Edit(props) {
 		(async () => {
 			await update(true);
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -494,8 +493,8 @@ export default function Edit(props) {
 	const title = $settings.name.length === 0 ? $service.name : $settings.name;
 
 	return (
-        <Root>
-            <Paper xs={12} md={10}>
+		<Root>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -536,7 +535,10 @@ export default function Edit(props) {
 							className="panel"
 						>
 							<TabContent service={$service}>
-								<Grid sx={{ margin: '1em 0em 1em 0em' }} size={12}>
+								<Grid
+									sx={{ margin: '1em 0em 1em 0em' }}
+									size={12}
+								>
 									<Typography>
 										{$service.description}
 									</Typography>
@@ -628,7 +630,10 @@ export default function Edit(props) {
 														progress={$progress}
 													/>
 												</Grid>
-												<Grid sx={{ textAlign: 'right' }} size={12}>
+												<Grid
+													sx={{ textAlign: 'right' }}
+													size={12}
+												>
 													<Link
 														color="textSecondary"
 														href="#!"
@@ -801,7 +806,7 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-            <ProcessModal
+			<ProcessModal
 				open={$processDetails.open}
 				onClose={handleProcessDetails}
 				title={<Trans>Process details</Trans>}
@@ -809,14 +814,14 @@ export default function Edit(props) {
 				logdata={$processDetails.data}
 				onHelp={handleHelp('process-details')}
 			/>
-            <DebugModal
+			<DebugModal
 				open={$processDebug.open}
 				onClose={handleProcessDebug}
 				title={<Trans>Process report</Trans>}
 				data={$processDebug.data}
 				onHelp={handleHelp('process-report')}
 			/>
-            <Dialog
+			<Dialog
 				open={$deleteDialog}
 				onClose={handleServiceDeleteDialog}
 				title={<Trans>Do you want to delete {title}?</Trans>}
@@ -846,11 +851,11 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Edit.defaultProps = {

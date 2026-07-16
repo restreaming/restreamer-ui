@@ -135,12 +135,13 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 3
-                }}>
+		<Grid container spacing={2}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 3,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -150,11 +151,12 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 9
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 9,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					type="url"
@@ -164,7 +166,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						expandIcon={<ArrowDropDownIcon />}
@@ -177,10 +179,11 @@ function Service(props) {
 					<AccordionDetails>
 						<Grid container spacing={2}>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -193,10 +196,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -209,10 +213,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -225,10 +230,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 8
-                                }}>
+								size={{
+									xs: 12,
+									md: 8,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -239,10 +245,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -255,10 +262,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -271,10 +279,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -287,10 +296,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 4
-                                }}>
+								size={{
+									xs: 12,
+									md: 4,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -333,8 +343,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

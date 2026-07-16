@@ -133,19 +133,18 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid>
+		<React.Fragment>
+			<Grid>
 				<Checkbox
 					label={<Trans>Deinterlace (bwdif)</Trans>}
 					checked={settings.enabled}
 					onChange={update('enabled')}
 				/>
 			</Grid>
-            {settings.enabled && (
+			{settings.enabled && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Mode
@@ -167,8 +166,8 @@ function Filter(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

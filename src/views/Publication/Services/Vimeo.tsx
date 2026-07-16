@@ -74,8 +74,8 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -84,8 +84,8 @@ function Service(props) {
 					onChange={handleChange('key')}
 				/>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

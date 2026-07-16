@@ -150,12 +150,13 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 3
-                }}>
+		<Grid container spacing={2}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 3,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -165,11 +166,12 @@ function Service(props) {
 					onChange={handleChange('protocol')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 9
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 9,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -179,7 +181,7 @@ function Service(props) {
 					onChange={handleChange('address')}
 				/>
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -188,7 +190,7 @@ function Service(props) {
 					onChange={handleChange('username')}
 				/>
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<Password
 					variant="outlined"
 					fullWidth
@@ -197,7 +199,7 @@ function Service(props) {
 					onChange={handleChange('password')}
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
@@ -284,10 +286,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 6
-                                }}>
+								size={{
+									xs: 12,
+									md: 6,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -298,10 +301,11 @@ function Service(props) {
 								/>
 							</Grid>
 							<Grid
-                                size={{
-                                    xs: 12,
-                                    md: 6
-                                }}>
+								size={{
+									xs: 12,
+									md: 6,
+								}}
+							>
 								<TextField
 									variant="outlined"
 									fullWidth
@@ -330,8 +334,8 @@ function Service(props) {
 					</AccordionDetails>
 				</Accordion>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

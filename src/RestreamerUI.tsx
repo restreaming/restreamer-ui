@@ -85,8 +85,6 @@ export default function RestreamerUI(props) {
 		})();
 
 		return () => {};
-
-
 	}, []);
 
 	useInterval(() => {
@@ -544,8 +542,8 @@ export default function RestreamerUI(props) {
 		$state.connected && $state.compatibility.compatible && !$state.password;
 
 	return (
-        <StyledI18n>
-            <NotifyProvider value={{ Dispatch: notify }}>
+		<StyledI18n>
+			<NotifyProvider value={{ Dispatch: notify }}>
 				<Grid
 					container
 					direction="column"
@@ -576,21 +574,24 @@ export default function RestreamerUI(props) {
 							spacing={0}
 						>
 							<Grid
-                                size={{
-                                    sm: 1
-                                }}></Grid>
+								size={{
+									sm: 1,
+								}}
+							></Grid>
 							<Grid
-                                className="MainContent-item"
-                                size={{
-                                    xs: 12,
-                                    sm: 10
-                                }}>
+								className="MainContent-item"
+								size={{
+									xs: 12,
+									sm: 10,
+								}}
+							>
 								{view}
 							</Grid>
 							<Grid
-                                size={{
-                                    sm: 1
-                                }}></Grid>
+								size={{
+									sm: 1,
+								}}
+							></Grid>
 						</Grid>
 					</Grid>
 				</Grid>
@@ -639,8 +640,8 @@ export default function RestreamerUI(props) {
 					/>
 				)}
 			</NotifyProvider>
-        </StyledI18n>
-    );
+		</StyledI18n>
+	);
 }
 
 RestreamerUI.defaultProps = {

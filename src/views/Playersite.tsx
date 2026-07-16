@@ -156,7 +156,6 @@ export default function Playersite(props) {
 		(async () => {
 			await mount();
 		})();
-		 
 	}, []);
 
 	const mount = async () => {
@@ -369,8 +368,8 @@ export default function Playersite(props) {
 			: props.restreamer.GetCurrentChannelID();
 
 	return (
-        <Root>
-            <Paper xs={12} md={10}>
+		<Root>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={<Trans>EDIT: Publication Website</Trans>}
 					onAbort={handleAbort}
@@ -618,10 +617,11 @@ export default function Playersite(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 9
-                                    }}>
+									size={{
+										xs: 12,
+										md: 9,
+									}}
+								>
 									<Select
 										label={<Trans>Selection</Trans>}
 										value={$settings.template}
@@ -648,10 +648,11 @@ export default function Playersite(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 12,
+										md: 3,
+									}}
+								>
 									<FormInlineButton
 										variant="outlined"
 										color="secondary"
@@ -672,10 +673,11 @@ export default function Playersite(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 9
-                                    }}>
+									size={{
+										xs: 12,
+										md: 9,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -692,10 +694,11 @@ export default function Playersite(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 3
-                                    }}>
+									size={{
+										xs: 12,
+										md: 3,
+									}}
+								>
 									<UploadButton
 										variant="outlined"
 										color="primary"
@@ -850,10 +853,11 @@ export default function Playersite(props) {
 								</Grid>
 
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 8
-                                    }}>
+									size={{
+										xs: 12,
+										md: 8,
+									}}
+								>
 									<TextField
 										variant="outlined"
 										fullWidth
@@ -868,10 +872,11 @@ export default function Playersite(props) {
 									</Typography>
 								</Grid>
 								<Grid
-                                    size={{
-                                        xs: 12,
-                                        md: 4
-                                    }}>
+									size={{
+										xs: 12,
+										md: 4,
+									}}
+								>
 									<UploadButton
 										label={<Trans>Upload</Trans>}
 										acceptTypes={imageTypes}
@@ -1068,10 +1073,10 @@ export default function Playersite(props) {
 					}
 				/>
 			</Paper>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-            <Dialog
+			<Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -1087,8 +1092,8 @@ export default function Playersite(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Playersite.defaultProps = {

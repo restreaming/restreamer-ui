@@ -147,34 +147,35 @@ function Coder(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Video.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<Video.Framerate
 					value={settings.fps}
 					onChange={update('fps')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<Video.GOP
 					value={settings.gop}
 					onChange={update('gop')}
@@ -182,7 +183,7 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-            {skills.ffmpeg.version_major >= 5 && (
+			{skills.ffmpeg.version_major >= 5 && (
 				<Grid size={12}>
 					<Video.FpsMode
 						value={settings.fps_mode}
@@ -190,10 +191,10 @@ function Coder(props) {
 					/>
 				</Grid>
 			)}
-            <Grid size={6}>
+			<Grid size={6}>
 				<Speed value={settings.speed} onChange={update('speed')} />
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -202,14 +203,14 @@ function Coder(props) {
 					value={settings.qp}
 					onChange={update('qp')}
 					slotProps={{
-                        htmlInput: { min: -1, max: 255 }
-                    }}
+						htmlInput: { min: -1, max: 255 },
+					}}
 				/>
 				<Typography variant="caption">
 					<Trans>Constant Quantizer Mode (-1 to 255).</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={4}>
+			<Grid size={4}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -218,14 +219,14 @@ function Coder(props) {
 					value={settings.tiles}
 					onChange={update('tiles')}
 					slotProps={{
-                        htmlInput: { min: -1 }
-                    }}
+						htmlInput: { min: -1 },
+					}}
 				/>
 				<Typography variant="caption">
 					<Trans>Number of tiles encode with.</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={4}>
+			<Grid size={4}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -234,14 +235,14 @@ function Coder(props) {
 					value={settings.tile_rows}
 					onChange={update('tile_rows')}
 					slotProps={{
-                        htmlInput: { min: -1 }
-                    }}
+						htmlInput: { min: -1 },
+					}}
 				/>
 				<Typography variant="caption">
 					<Trans>Number of tiles rows to encode with.</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={4}>
+			<Grid size={4}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -250,14 +251,14 @@ function Coder(props) {
 					value={settings.tile_columns}
 					onChange={update('tile_columns')}
 					slotProps={{
-                        htmlInput: { min: -1 }
-                    }}
+						htmlInput: { min: -1 },
+					}}
 				/>
 				<Typography variant="caption">
 					<Trans>Number of tiles columns to encode with.</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -272,8 +273,8 @@ function Coder(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Coder.defaultProps = {

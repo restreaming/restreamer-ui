@@ -23,7 +23,6 @@ export default function Control(props) {
 	// Set the defaults
 	React.useEffect(() => {
 		props.onChange(settings, true);
-		 
 	}, []);
 
 	const handleChange = (what) => (event) => {
@@ -39,19 +38,20 @@ export default function Control(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Checkbox
 					label={<Trans>Enable snapshots</Trans>}
 					checked={settings.enable}
 					onChange={handleChange('enable')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -67,8 +67,8 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Control.defaulProps = {

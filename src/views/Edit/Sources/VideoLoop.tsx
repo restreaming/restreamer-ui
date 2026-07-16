@@ -137,8 +137,8 @@ function Source(props) {
 	};
 
 	return (
-        <React.Fragment>
-            <Grid
+		<React.Fragment>
+			<Grid
 				container
 				spacing={2}
 				sx={{ mt: 0.5, alignItems: 'flex-start' }}
@@ -153,10 +153,11 @@ function Source(props) {
 					</Typography>
 				</Grid>
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 9
-                    }}>
+					size={{
+						xs: 12,
+						md: 9,
+					}}
+				>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -166,10 +167,11 @@ function Source(props) {
 					/>
 				</Grid>
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 3
-                    }}>
+					size={{
+						xs: 12,
+						md: 3,
+					}}
+				>
 					<UploadButton
 						label={<Trans>Upload</Trans>}
 						acceptTypes={imageTypes}
@@ -189,10 +191,10 @@ function Source(props) {
 					</FormInlineButton>
 				</Grid>
 			</Grid>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-            <Dialog
+			<Dialog
 				open={$error.open}
 				title={$error.title}
 				onClose={hideUploadError}
@@ -208,8 +210,8 @@ function Source(props) {
 			>
 				<Typography variant="body1">{$error.message}</Typography>
 			</Dialog>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

@@ -173,8 +173,8 @@ const StyledMenu = styled((props) => (
 
 function AboutModal(props) {
 	return (
-        <Modal open={props.open} onClose={props.onClose} className="modal">
-            <ModalContent
+		<Modal open={props.open} onClose={props.onClose} className="modal">
+			<ModalContent
 				title="About datarhei Restreamer"
 				onClose={props.onClose}
 				className={classes.modalPaper}
@@ -250,8 +250,8 @@ function AboutModal(props) {
 					</Grid>
 				</StyledGrid>
 			</ModalContent>
-        </Modal>
-    );
+		</Modal>
+	);
 }
 
 AboutModal.defaultProps = {
@@ -451,14 +451,14 @@ HeaderMenu.defaultProps = {
 
 export default function Header(props) {
 	return (
-        <Grid
+		<Grid
 			container
 			className={classes.header}
 			spacing={0}
 			direction="row"
 			sx={{ alignItems: 'center' }}
 		>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Stack
 					direction="row"
 					sx={{
@@ -488,8 +488,8 @@ export default function Header(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Header.defaultProps = {

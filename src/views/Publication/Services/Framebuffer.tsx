@@ -108,11 +108,9 @@ function Service(props) {
 	);
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
-				{videoDevices}
-			</Grid>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>{videoDevices}</Grid>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Pixel format</Trans>}
 					value={settings.pix_fmt}
@@ -128,8 +126,8 @@ function Service(props) {
 					<MenuItem value="rgb565be">RGB565 Big Endian</MenuItem>
 				</Select>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

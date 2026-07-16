@@ -55,14 +55,14 @@ const Stream = function (props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            {/* <Grid item xs={6}>
+		<Grid container spacing={2}>
+			{/* <Grid item xs={6}>
 				<Select label={<Trans>Type</Trans>} value={props.stream.type} onChange={handleChange('type')}>
 					<MenuItem value="audio">Audio</MenuItem>
 					<MenuItem value="video">Video</MenuItem>
 				</Select>
 			</Grid> */}
-            {props.stream.type === 'audio' ? (
+			{props.stream.type === 'audio' ? (
 				<React.Fragment>
 					<Grid size={12}>
 						<Select
@@ -122,8 +122,8 @@ const Stream = function (props) {
 					</Grid>
 				</React.Fragment>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 };
 
 Stream.defaultProps = {
@@ -165,8 +165,8 @@ const Streams = function (props) {
 	};
 
 	return (
-        <Grid container spacing={1}>
-            {props.streams.map((stream, index) => (
+		<Grid container spacing={1}>
+			{props.streams.map((stream, index) => (
 				<Grid key={stream.index + ':' + stream.stream} size={12}>
 					<Stack>
 						<Typography
@@ -181,7 +181,7 @@ const Streams = function (props) {
 					</Stack>
 				</Grid>
 			))}
-            <Grid size={12}>
+			<Grid size={12}>
 				{props.streams.length < 2 && (
 					<Button
 						variant="outlined"
@@ -201,8 +201,8 @@ const Streams = function (props) {
 					</Button>
 				)}
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 };
 
 Streams.defaultProps = {

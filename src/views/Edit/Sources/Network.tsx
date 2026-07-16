@@ -423,7 +423,6 @@ const getProtocolClass = (url) => {
 const isAuthProtocol = (url) => {
 	const protocolClass = getProtocolClass(url);
 
-	 
 	switch (protocolClass) {
 		case 'amqp':
 		case 'ftp':
@@ -577,8 +576,8 @@ function AdvancedSettings(props) {
 	}
 
 	return (
-        <Grid size={12}>
-            <Accordion className="accordion">
+		<Grid size={12}>
+			<Accordion className="accordion">
 				<AccordionSummary
 					elevation={0}
 					expandIcon={<ArrowDropDownIcon />}
@@ -910,8 +909,8 @@ function AdvancedSettings(props) {
 					</Grid>
 				</AccordionDetails>
 			</Accordion>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 function Pull(props) {
@@ -925,18 +924,18 @@ function Pull(props) {
 	);
 
 	return (
-        <Grid
+		<Grid
 			container
 			spacing={2}
 			className={classes.gridContainer}
 			sx={{ alignItems: 'flex-start' }}
 		>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Enter the address of your network source:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -952,7 +951,7 @@ function Pull(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-            {validURL === true && (
+			{validURL === true && (
 				<React.Fragment>
 					{!supportedProtocol ? (
 						<Grid sx={{ textAlign: 'center' }} size={12}>
@@ -972,10 +971,11 @@ function Pull(props) {
 							{authProtocol && (
 								<React.Fragment>
 									<Grid
-                                        size={{
-                                            md: 6,
-                                            xs: 12
-                                        }}>
+										size={{
+											md: 6,
+											xs: 12,
+										}}
+									>
 										<TextField
 											variant="outlined"
 											fullWidth
@@ -993,10 +993,11 @@ function Pull(props) {
 										</Typography>
 									</Grid>
 									<Grid
-                                        size={{
-                                            md: 6,
-                                            xs: 12
-                                        }}>
+										size={{
+											md: 6,
+											xs: 12,
+										}}
+									>
 										<Password
 											variant="outlined"
 											fullWidth
@@ -1020,7 +1021,7 @@ function Pull(props) {
 					)}
 				</React.Fragment>
 			)}
-            <Grid size={12}>
+			<Grid size={12}>
 				<FormInlineButton
 					disabled={!validURL || !supportedProtocol}
 					onClick={props.onProbe}
@@ -1028,8 +1029,8 @@ function Pull(props) {
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 function Push(props) {
@@ -1048,13 +1049,13 @@ function Push(props) {
 
 	if (!supportsRTMP && !supportsSRT) {
 		return (
-            <Grid
+			<Grid
 				container
 				spacing={2}
 				className={classes.gridContainer}
 				sx={{ alignItems: 'flex-start' }}
 			>
-                <Grid sx={{ textAlign: 'center' }} size={12}>
+				<Grid sx={{ textAlign: 'center' }} size={12}>
 					<BoxText color="dark">
 						<WarningIcon fontSize="large" color="error" />
 						<Typography>
@@ -1065,13 +1066,13 @@ function Push(props) {
 						</Typography>
 					</BoxText>
 				</Grid>
-            </Grid>
-        );
+			</Grid>
+		);
 	}
 
 	return (
-        <React.Fragment>
-            <Grid
+		<React.Fragment>
+			<Grid
 				container
 				spacing={2}
 				className={classes.gridContainer}
@@ -1093,11 +1094,11 @@ function Push(props) {
 					</Select>
 				</Grid>
 			</Grid>
-            {settings.push.type === 'rtmp' && <PushRTMP {...props} />}
-            {settings.push.type === 'hls' && <PushHLS {...props} />}
-            {settings.push.type === 'srt' && <PushSRT {...props} />}
-        </React.Fragment>
-    );
+			{settings.push.type === 'rtmp' && <PushRTMP {...props} />}
+			{settings.push.type === 'hls' && <PushHLS {...props} />}
+			{settings.push.type === 'srt' && <PushSRT {...props} />}
+		</React.Fragment>
+	);
 }
 
 Push.defaultProps = {
@@ -1117,30 +1118,30 @@ function PushHLS(props) {
 	const HLS = getHLS(config);
 
 	return (
-        <Grid
+		<Grid
 			container
 			spacing={2}
 			className={classes.gridContainer}
 			sx={{ alignItems: 'flex-start' }}
 		>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Send stream to this address:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<BoxTextarea>
 					<Textarea rows={1} value={HLS} readOnly allowCopy />
 				</BoxTextarea>
 			</Grid>
-            <AdvancedSettings {...props} />
-            <Grid size={12}>
+			<AdvancedSettings {...props} />
+			<Grid size={12}>
 				<FormInlineButton onClick={props.onProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 function PushRTMP(props) {
@@ -1459,8 +1460,8 @@ function Source(props) {
 	};
 
 	return (
-        <React.Fragment>
-            <Grid
+		<React.Fragment>
+			<Grid
 				container
 				spacing={2}
 				sx={{ mt: 0.5, alignItems: 'flex-start' }}
@@ -1479,7 +1480,7 @@ function Source(props) {
 					</Select>
 				</Grid>
 			</Grid>
-            {settings.mode === 'pull' ? (
+			{settings.mode === 'pull' ? (
 				<Pull
 					settings={settings}
 					config={config}
@@ -1498,8 +1499,8 @@ function Source(props) {
 					onRefresh={handleRefresh}
 				/>
 			)}
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

@@ -18,13 +18,13 @@ const Component = React.forwardRef((props, ref) => {
 	}
 
 	return (
-        <Modal
+		<Modal
 			open={props.open}
 			onClose={props.onClose}
 			className="modal"
 			disableScrollLock
 		>
-            <Paper
+			<Paper
 				sx={{
 					p: '1em 1.5em 1.3em 1.5em',
 					width: '95%',
@@ -41,14 +41,15 @@ const Component = React.forwardRef((props, ref) => {
 			>
 				<Grid container spacing={0}>
 					<Grid
-                        sx={{
+						sx={{
 							marginBottom: '.7em',
 							'& button': {
 								float: 'right',
 								marginLeft: '.5em',
 							},
 						}}
-                        size={12}>
+						size={12}
+					>
 						<Typography variant="button">{props.title}</Typography>
 						{typeof props.onClose === 'function' && (
 							<IconButton
@@ -70,12 +71,10 @@ const Component = React.forwardRef((props, ref) => {
 						)}
 					</Grid>
 				</Grid>
-				<Grid size={12}>
-					{props.children}
-				</Grid>
+				<Grid size={12}>{props.children}</Grid>
 				<Grid container spacing={0}>
 					<Grid
-                        sx={{
+						sx={{
 							marginTop: '1.2em',
 							minHeight: '38px',
 							'& button': {
@@ -87,14 +86,15 @@ const Component = React.forwardRef((props, ref) => {
 								marginLeft: '.5em',
 							},
 						}}
-                        size={12}>
+						size={12}
+					>
 						<div>{props.buttonsRight}</div>
 						{props.buttonsLeft}
 					</Grid>
 				</Grid>
 			</Paper>
-        </Modal>
-    );
+		</Modal>
+	);
 });
 
 export default Component;

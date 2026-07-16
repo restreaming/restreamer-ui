@@ -58,7 +58,6 @@ export default function Profile(props) {
 		(async () => {
 			await load();
 		})();
-		 
 	}, []);
 
 	const load = async () => {
@@ -494,8 +493,8 @@ export default function Profile(props) {
 	}
 
 	return (
-        <React.Fragment>
-            {$activeStep === 0 && (
+		<React.Fragment>
+			{$activeStep === 0 && (
 				<React.Fragment>
 					<Grid container spacing={2}>
 						<Grid size={12}>
@@ -518,7 +517,10 @@ export default function Profile(props) {
 						{$videoProbe.status !== 'none' && (
 							<React.Fragment>
 								{$videoProbe.status === 'error' && (
-									<Grid sx={{ textAlign: 'center' }} size={12}>
+									<Grid
+										sx={{ textAlign: 'center' }}
+										size={12}
+									>
 										<BoxText color="dark">
 											<WarningIcon
 												fontSize="large"
@@ -561,7 +563,10 @@ export default function Profile(props) {
 									</Grid>
 								)}
 								{$videoProbe.status === 'nostream' && (
-									<Grid sx={{ textAlign: 'center' }} size={12}>
+									<Grid
+										sx={{ textAlign: 'center' }}
+										size={12}
+									>
 										<BoxText color="dark">
 											<WarningIcon
 												fontSize="large"
@@ -598,7 +603,10 @@ export default function Profile(props) {
 												)}
 											/>
 										</Grid>
-										<Grid sx={{ textAlign: 'right' }} size={12}>
+										<Grid
+											sx={{ textAlign: 'right' }}
+											size={12}
+										>
 											<Typography>
 												<Trans>
 													<Link
@@ -672,7 +680,7 @@ export default function Profile(props) {
 					/>
 				</React.Fragment>
 			)}
-            {$activeStep === 1 && (
+			{$activeStep === 1 && (
 				<React.Fragment>
 					<Grid container spacing={2}>
 						<Grid size={12}>
@@ -741,7 +749,10 @@ export default function Profile(props) {
 								{$audioProbe.status !== 'none' && (
 									<React.Fragment>
 										{$audioProbe.status === 'error' && (
-											<Grid sx={{ textAlign: 'center' }} size={12}>
+											<Grid
+												sx={{ textAlign: 'center' }}
+												size={12}
+											>
 												<BoxText color="dark">
 													<WarningIcon
 														fontSize="large"
@@ -786,7 +797,10 @@ export default function Profile(props) {
 											</Grid>
 										)}
 										{$audioProbe.status === 'nostream' && (
-											<Grid sx={{ textAlign: 'center' }} size={12}>
+											<Grid
+												sx={{ textAlign: 'center' }}
+												size={12}
+											>
 												<BoxText color="dark">
 													<WarningIcon
 														fontSize="large"
@@ -830,7 +844,10 @@ export default function Profile(props) {
 														)}
 													/>
 												</Grid>
-												<Grid sx={{ textAlign: 'right' }} size={12}>
+												<Grid
+													sx={{ textAlign: 'right' }}
+													size={12}
+												>
 													<Typography>
 														<Trans>
 															<Link
@@ -919,19 +936,19 @@ export default function Profile(props) {
 					/>
 				</React.Fragment>
 			)}
-            <Backdrop
+			<Backdrop
 				open={
 					$videoProbe.probing || $audioProbe.probing || $skillsRefresh
 				}
 			>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-            <ProbeModal
+			<ProbeModal
 				open={$probeModal.open}
 				onClose={handleProbeLogModal('none')}
 				data={$probeModal.data}
 			/>
-            <HintModal
+			<HintModal
 				open={$hintModal.open}
 				onClose={handleHintCancel}
 				onChange={handleHintChange}
@@ -940,8 +957,8 @@ export default function Profile(props) {
 				type={$hintModal.type}
 				streams={$hintModal.streams}
 			/>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Profile.defaultProps = {

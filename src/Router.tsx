@@ -25,15 +25,21 @@ export default function Router(props) {
 					/>
 					<Route
 						path="/playersite"
-						element={<Views.Playersite restreamer={props.restreamer} />}
+						element={
+							<Views.Playersite restreamer={props.restreamer} />
+						}
 					/>
 					<Route
 						path="/settings"
-						element={<Views.Settings restreamer={props.restreamer} />}
+						element={
+							<Views.Settings restreamer={props.restreamer} />
+						}
 					/>
 					<Route
 						path="/settings/:tab"
-						element={<Views.Settings restreamer={props.restreamer} />}
+						element={
+							<Views.Settings restreamer={props.restreamer} />
+						}
 					/>
 					<Route
 						path="/:channelid"

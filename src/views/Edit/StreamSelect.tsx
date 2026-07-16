@@ -78,8 +78,8 @@ export default function StreamSelect(props) {
 	}
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Stream</Trans>}
 					value={selected}
@@ -89,8 +89,8 @@ export default function StreamSelect(props) {
 					{streamList}
 				</Select>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 StreamSelect.defaultProps = {

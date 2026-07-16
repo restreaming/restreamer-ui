@@ -114,26 +114,25 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid size={6}>
+		<React.Fragment>
+			<Grid size={6}>
 				<VolumeLevel
 					value={settings.level}
 					onChange={update('level')}
 				/>
 			</Grid>
-            <Grid size={6}>
+			<Grid size={6}>
 				<VolumeDB
 					value={settings.db}
 					onChange={update('db')}
 					disabled={settings.level !== 'custom'}
 				/>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

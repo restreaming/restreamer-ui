@@ -75,8 +75,8 @@ export default function Component(props) {
 	}
 
 	return (
-        <Grid container spacing={2}>
-            {props.allowCustom === true ? (
+		<Grid container spacing={2}>
+			{props.allowCustom === true ? (
 				<React.Fragment>
 					{$value.isCustom === true ? (
 						<React.Fragment>
@@ -150,8 +150,8 @@ export default function Component(props) {
 					</FormControl>
 				</Grid>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Component.defaultProps = {

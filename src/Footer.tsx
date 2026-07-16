@@ -100,7 +100,6 @@ function Resources(props) {
 		(async () => {
 			await update();
 		})();
-		 
 	}, []);
 
 	const update = async () => {
@@ -155,20 +154,20 @@ function Resources(props) {
 	const core = $resources.core;
 
 	return (
-        <Stack
+		<Stack
 			className="footerRight"
 			direction="row"
 			sx={{ alignItems: 'center' }}
 			spacing={0}
 		>
-            {(system.cpu_used >= 75 ||
+			{(system.cpu_used >= 75 ||
 				system.mem_used >= 75 ||
 				core.memfs_used >= 75 ||
 				core.disk_used >= 75 ||
 				core.net_used >= 75) && (
 				<WarningIcon className={classes.warningIcon} color="service" />
 			)}
-            <Typography
+			<Typography
 				variant="button"
 				noWrap
 				aria-owns={open ? 'mouse-over-popover' : undefined}
@@ -178,7 +177,7 @@ function Resources(props) {
 				{system.cpu_used.toFixed(0)}% CPU / {system.mem_used.toFixed(0)}
 				% Mem
 			</Typography>
-            <Popover
+			<Popover
 				id="mouse-over-popover"
 				open={open}
 				onClose={handlePopoverClose}
@@ -194,10 +193,10 @@ function Resources(props) {
 					horizontal: 'left',
 				}}
 				slotProps={{
-                    paper: {
-                        onMouseLeave: isMobile ? null : handlePopoverClose,
-                    }
-                }}
+					paper: {
+						onMouseLeave: isMobile ? null : handlePopoverClose,
+					},
+				}}
 			>
 				<List
 					size="small"
@@ -462,8 +461,8 @@ function Resources(props) {
 					</ListItem> */}
 				</List>
 			</Popover>
-        </Stack>
-    );
+		</Stack>
+	);
 }
 
 Resources.defaultProps = {
@@ -491,14 +490,14 @@ export default function Footer(props) {
 
 	if (props.expand === true) {
 		return (
-            <StyledGrid
+			<StyledGrid
 				container
 				className={classes.footer}
 				spacing={0}
 				direction="row"
 				sx={{ alignItems: 'center' }}
 			>
-                <Grid size={12}>
+				<Grid size={12}>
 					<Stack
 						direction="row"
 						sx={{
@@ -522,18 +521,18 @@ export default function Footer(props) {
 						<Resources resources={props.resources} />
 					</Stack>
 				</Grid>
-            </StyledGrid>
-        );
+			</StyledGrid>
+		);
 	} else {
 		return (
-            <Grid
+			<Grid
 				container
 				className={classes.footer}
 				spacing={0}
 				direction="row"
 				sx={{ alignItems: 'center' }}
 			>
-                <Grid size={12}>
+				<Grid size={12}>
 					<Stack
 						direction="row"
 						sx={{
@@ -552,8 +551,8 @@ export default function Footer(props) {
 						</Stack>
 					</Stack>
 				</Grid>
-            </Grid>
-        );
+			</Grid>
+		);
 	}
 }
 

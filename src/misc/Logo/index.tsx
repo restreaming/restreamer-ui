@@ -7,7 +7,6 @@ import company_logo from './images/logo.svg';
 export default function Logo(props) {
 	const link = 'https://datarhei.com';
 
-	 
 	return (
 		<Box
 			component="a"

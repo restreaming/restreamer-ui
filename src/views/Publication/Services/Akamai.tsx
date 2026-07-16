@@ -126,12 +126,13 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+		<Grid container spacing={2}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -141,11 +142,12 @@ function Service(props) {
 					onChange={handleChange('pubUser')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 6
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 6,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -155,11 +157,12 @@ function Service(props) {
 					onChange={handleChange('pubPasswd')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 3
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 3,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -171,11 +174,12 @@ function Service(props) {
 					disabled
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 9
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 9,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -186,11 +190,12 @@ function Service(props) {
 					onChange={handleChange('stream_url')}
 				/>
 			</Grid>
-            <Grid
-                size={{
-                    xs: 12,
-                    md: 12
-                }}>
+			<Grid
+				size={{
+					xs: 12,
+					md: 12,
+				}}
+			>
 				<TextField
 					variant="outlined"
 					fullWidth
@@ -201,19 +206,20 @@ function Service(props) {
 					onChange={handleChange('playpath')}
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Checkbox
 					label="Enable backup URL"
 					checked={settings.enable_backup_stream}
 					onChange={handleChange('enable_backup_stream')}
 				/>
 			</Grid>
-            {settings.enable_backup_stream && (
+			{settings.enable_backup_stream && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 3
-                    }}>
+					size={{
+						xs: 12,
+						md: 3,
+					}}
+				>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -226,12 +232,13 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-            {settings.enable_backup_stream && (
+			{settings.enable_backup_stream && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 9
-                    }}>
+					size={{
+						xs: 12,
+						md: 9,
+					}}
+				>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -243,8 +250,8 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

@@ -10,16 +10,17 @@ import Typography from '@mui/material/Typography';
 
 const Component = function (props) {
 	return (
-        <Grid container spacing={props.spacing} padding={props.padding}>
-            <Grid
-                sx={{
+		<Grid container spacing={props.spacing} padding={props.padding}>
+			<Grid
+				sx={{
 					marginBottom: '.3em',
 					'& button': {
 						float: 'right',
 						marginLeft: '.5em',
 					},
 				}}
-                size={12}>
+				size={12}
+			>
 				{typeof props.onAbort === 'function' && (
 					<IconButton
 						color="inherit"
@@ -58,8 +59,8 @@ const Component = function (props) {
 				)}
 				<Typography variant={props.variant}>{props.title}</Typography>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 };
 
 export default Component;

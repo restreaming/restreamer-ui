@@ -14,7 +14,7 @@ const Component = React.forwardRef((props, ref) => {
 	const { title, onClose, onHelp, ...other } = props;
 
 	return (
-        <Paper
+		<Paper
 			sx={{
 				p: '1em 1.5em 1.3em 1.5em',
 				width: '95%',
@@ -29,9 +29,9 @@ const Component = React.forwardRef((props, ref) => {
 			ref={ref}
 			{...other}
 		>
-            <Grid container spacing={0}>
+			<Grid container spacing={0}>
 				<Grid
-                    sx={{
+					sx={{
 						marginBottom: '.7em',
 						'& button': {
 							float: 'right',
@@ -40,7 +40,8 @@ const Component = React.forwardRef((props, ref) => {
 							marginRight: '-.7em',
 						},
 					}}
-                    size={12}>
+					size={12}
+				>
 					<Stack
 						direction="row"
 						spacing={2}
@@ -80,10 +81,10 @@ const Component = React.forwardRef((props, ref) => {
 					</Stack>
 				</Grid>
 			</Grid>
-            {props.children}
-            <Grid container spacing={0}>
+			{props.children}
+			<Grid container spacing={0}>
 				<Grid
-                    sx={{
+					sx={{
 						marginTop: '1.2em',
 						minHeight: '38px',
 						'& button': {
@@ -95,7 +96,8 @@ const Component = React.forwardRef((props, ref) => {
 							marginLeft: '.5em',
 						},
 					}}
-                    size={12}>
+					size={12}
+				>
 					<Button
 						variant="outlined"
 						color="default"
@@ -105,8 +107,8 @@ const Component = React.forwardRef((props, ref) => {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 });
 
 export default Component;

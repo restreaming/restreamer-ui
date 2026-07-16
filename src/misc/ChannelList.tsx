@@ -115,15 +115,16 @@ function ChannelButton(props, largeChannelList) {
 	}
 
 	return (
-        <Grid
-            sx={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
-            size={{
-                xs: 12,
-                sm: 6,
-                md: 4,
-                lg: 3
-            }}>
-            <ImageButton
+		<Grid
+			sx={{ paddingBottom: largeChannelList ? '10px' : 'auto' }}
+			size={{
+				xs: 12,
+				sm: 6,
+				md: 4,
+				lg: 3,
+			}}
+		>
+			<ImageButton
 				focusRipple
 				disabled={props.disabled}
 				onClick={props.onClick}
@@ -171,8 +172,8 @@ function ChannelButton(props, largeChannelList) {
 					</Stack>
 				</Stack>
 			</ImageButton>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 ChannelButton.defaultProps = {
@@ -240,7 +241,6 @@ export default function ChannelList(props) {
 		(async () => {
 			await onMount();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -293,7 +293,6 @@ export default function ChannelList(props) {
 
 			setChannels(channels);
 		})();
-		 
 	}, [$pos, allChannels, $nChannels, channelid, onClick, onState]);
 
 	const onMount = async () => {
@@ -358,8 +357,8 @@ export default function ChannelList(props) {
 	};
 
 	return (
-        <React.Fragment>
-            <SwipeableDrawer
+		<React.Fragment>
+			<SwipeableDrawer
 				anchor="bottom"
 				open={props.open}
 				onOpen={() => {}}
@@ -379,8 +378,8 @@ export default function ChannelList(props) {
 				}}
 				disableScrollLock
 				slotProps={{
-                    backdrop: { invisible: true }
-                }}
+					backdrop: { invisible: true },
+				}}
 			>
 				<React.Fragment>
 					<Grid
@@ -516,7 +515,7 @@ export default function ChannelList(props) {
 					</Grid>
 				</React.Fragment>
 			</SwipeableDrawer>
-            <Dialog
+			<Dialog
 				open={$addChannel.open}
 				onClose={handleAddChannelDialog}
 				title={<Trans>Add new channel</Trans>}
@@ -560,8 +559,8 @@ export default function ChannelList(props) {
 					</Grid>
 				</Grid>
 			</Dialog>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 ChannelList.defaultProps = {

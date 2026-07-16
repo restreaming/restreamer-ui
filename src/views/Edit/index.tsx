@@ -97,7 +97,6 @@ export default function Edit(props) {
 		(async () => {
 			await load();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -476,8 +475,8 @@ export default function Edit(props) {
 	}
 
 	return (
-        <Root>
-            <Paper xs={12} md={10}>
+		<Root>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -629,10 +628,11 @@ export default function Edit(props) {
 								<Grid size={12}>
 									<Grid container spacing={2}>
 										<Grid
-                                            size={{
-                                                xs: 12,
-                                                md: 6
-                                            }}>
+											size={{
+												xs: 12,
+												md: 6,
+											}}
+										>
 											<Grid container spacing={2}>
 												<Grid size={12}>
 													<Typography variant="h3">
@@ -659,18 +659,20 @@ export default function Edit(props) {
 											</Grid>
 										</Grid>
 										<Grid
-                                            display={{
+											display={{
 												xs: 'block',
 												md: 'none',
 											}}
-                                            size={12}>
+											size={12}
+										>
 											<Divider />
 										</Grid>
 										<Grid
-                                            size={{
-                                                xs: 12,
-                                                md: 6
-                                            }}>
+											size={{
+												xs: 12,
+												md: 6,
+											}}
+										>
 											<Grid container spacing={2}>
 												<Grid size={12}>
 													<Typography variant="h3">
@@ -842,7 +844,7 @@ export default function Edit(props) {
 					}
 				/>
 			</Paper>
-            <Dialog
+			<Dialog
 				open={$editDialog.open}
 				onClose={handleSourceEditDialogAbort}
 				title={
@@ -876,7 +878,7 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-            <Dialog
+			<Dialog
 				open={$deleteDialog}
 				onClose={handleChannelDeleteDialog}
 				title={
@@ -908,11 +910,11 @@ export default function Edit(props) {
 					</Trans>
 				</Typography>
 			</Dialog>
-            <Backdrop open={$state.saving}>
+			<Backdrop open={$state.saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Edit.defaultProps = {

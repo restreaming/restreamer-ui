@@ -59,7 +59,6 @@ export default function Wizard(props) {
 		(async () => {
 			await load();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {

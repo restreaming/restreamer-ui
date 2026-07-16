@@ -103,8 +103,8 @@ export default function ResetPassword(props) {
 		$login.password !== $login.passwordConfirm;
 
 	return (
-        <Paper xs={12} sm={10} md={6} className="PaperL">
-            <Grid container spacing={3}>
+		<Paper xs={12} sm={10} md={6} className="PaperL">
+			<Grid container spacing={3}>
 				<Grid sx={{ textAlign: 'center' }} size={12}>
 					<Typography variant="h1">
 						<Trans>User registration</Trans>
@@ -169,7 +169,7 @@ export default function ResetPassword(props) {
 					</form>
 				</Grid>
 			</Grid>
-            <Backdrop open={$restart.restarting}>
+			<Backdrop open={$restart.restarting}>
 				<Paper xs={12} sm={4} md={3}>
 					<PaperHeader title={<Trans>Restarting</Trans>} />
 					<PaperContent>
@@ -213,8 +213,8 @@ export default function ResetPassword(props) {
 					/>
 				</Paper>
 			</Backdrop>
-        </Paper>
-    );
+		</Paper>
+	);
 }
 
 ResetPassword.defaultProps = {

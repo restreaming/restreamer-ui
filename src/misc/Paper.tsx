@@ -28,25 +28,26 @@ const Component = React.forwardRef((props, ref) => {
 					: {};
 
 	return (
-        <Grid
+		<Grid
 			container
 			spacing={1}
 			sx={{ justifyContent: 'center' }}
 			style={{ marginBottom: props.marginBottom }}
 		>
-            <Grid
-                size={{
-                    xs: props.xs,
-                    sm: props.sm,
-                    md: props.md,
-                    lg: props.lg
-                }}>
+			<Grid
+				size={{
+					xs: props.xs,
+					sm: props.sm,
+					md: props.md,
+					lg: props.lg,
+				}}
+			>
 				<Paper elevation={elevation} ref={ref} sx={paperSx} {...other}>
 					{props.children}
 				</Paper>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 });
 
 export default Component;

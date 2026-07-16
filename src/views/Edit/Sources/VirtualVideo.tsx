@@ -102,13 +102,13 @@ function Source(props) {
 	};
 
 	return (
-        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-            <Grid size={12}>
+		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select video source:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -136,7 +136,7 @@ function Source(props) {
 					<MenuItem value="life">Game Of Life</MenuItem>
 				</Select>
 			</Grid>
-            {[
+			{[
 				'testsrc',
 				'testsrc2',
 				'pal75bars',
@@ -163,7 +163,7 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-            {settings.source === 'life' && (
+			{settings.source === 'life' && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Video.Framerate
@@ -244,7 +244,7 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-            <Grid size={12}>
+			<Grid size={12}>
 				<FormInlineButton
 					disabled={settings.source === 'none'}
 					onClick={handleProbe}
@@ -252,8 +252,8 @@ function Source(props) {
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Source.defaultProps = {

@@ -59,7 +59,6 @@ function Source(props) {
 
 	React.useEffect(() => {
 		handleChange();
-		 
 	}, []);
 
 	let filteredDevices = props.knownDevices.filter(
@@ -133,20 +132,18 @@ function Source(props) {
 	);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select a device:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
-					<Grid size={12}>
-						{videoDevices}
-					</Grid>
+					<Grid size={12}>{videoDevices}</Grid>
 				</Grid>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
 					<Grid size={12}>
 						{audioDevices}
@@ -161,8 +158,8 @@ function Source(props) {
 					</Grid>
 				</Grid>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

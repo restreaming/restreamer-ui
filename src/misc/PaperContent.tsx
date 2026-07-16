@@ -6,16 +6,14 @@ const Component = function (props) {
 	const { children, spacing, textAlign } = props;
 
 	return (
-        <Grid
+		<Grid
 			container
 			spacing={spacing}
 			sx={{ justifyContent: 'center', textAlign }}
 		>
-            <Grid size={12}>
-				{children}
-			</Grid>
-        </Grid>
-    );
+			<Grid size={12}>{children}</Grid>
+		</Grid>
+	);
 };
 
 export default Component;

@@ -16,8 +16,8 @@ export default function Welcome() {
 	const { channelid: _channelid } = useParams();
 
 	return (
-        <Paper xs={12} md={6} className="PaperM">
-            <Grid container spacing={2} sx={{ justifyContent: 'center' }}>
+		<Paper xs={12} md={6} className="PaperM">
+			<Grid container spacing={2} sx={{ justifyContent: 'center' }}>
 				<Grid size={12}>
 					<PaperThumb
 						image={welcomeImage}
@@ -55,6 +55,6 @@ export default function Welcome() {
 					</Button>
 				</Grid>
 			</Grid>
-        </Paper>
-    );
+		</Paper>
+	);
 }

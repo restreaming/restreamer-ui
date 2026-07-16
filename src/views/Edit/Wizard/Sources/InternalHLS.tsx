@@ -41,25 +41,24 @@ function Source(props) {
 
 	React.useEffect(() => {
 		handleChange();
-		 
 	}, []);
 
 	const HLS = S.func.getHLS(config, settings.push.name);
 
 	return (
-        <React.Fragment>
-            <Grid size={12}>
+		<React.Fragment>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Send stream to this address:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<BoxTextarea>
 					<Textarea rows={1} value={HLS} readOnly allowCopy />
 				</BoxTextarea>
 			</Grid>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Source.defaultProps = {

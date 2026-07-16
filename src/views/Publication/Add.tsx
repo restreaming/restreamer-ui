@@ -89,7 +89,6 @@ export default function Add(props) {
 		(async () => {
 			await load();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -368,13 +367,14 @@ export default function Add(props) {
 			) {
 				serviceList.push(
 					<Grid
-                        sx={{ textAlign: 'center' }}
-                        key={s.id}
-                        size={{
-                            xs: 12,
-                            sm: 6,
-                            md: 3
-                        }}>
+						sx={{ textAlign: 'center' }}
+						key={s.id}
+						size={{
+							xs: 12,
+							sm: 6,
+							md: 3,
+						}}
+					>
 						<Tooltip
 							title={
 								<Root>
@@ -403,13 +403,14 @@ export default function Add(props) {
 			} else {
 				serviceList.push(
 					<Grid
-                        sx={{ textAlign: 'center' }}
-                        key={s.id}
-                        size={{
-                            xs: 12,
-                            sm: 6,
-                            md: 3
-                        }}>
+						sx={{ textAlign: 'center' }}
+						key={s.id}
+						size={{
+							xs: 12,
+							sm: 6,
+							md: 3,
+						}}
+					>
 						<Button
 							variant="big"
 							onClick={handleServiceSelect(s.id)}
@@ -434,8 +435,8 @@ export default function Add(props) {
 	}
 
 	return (
-        <React.Fragment>
-            <Paper xs={12} md={10}>
+		<React.Fragment>
+			<Paper xs={12} md={10}>
 				<PaperHeader
 					title={
 						<React.Fragment>
@@ -528,7 +529,10 @@ export default function Add(props) {
 									className="panel"
 								>
 									<TabContent service={service}>
-										<Grid sx={{ margin: '1em 0em 1em 0em' }} size={12}>
+										<Grid
+											sx={{ margin: '1em 0em 1em 0em' }}
+											size={12}
+										>
 											<Typography>
 												{service.description}
 											</Typography>
@@ -766,11 +770,11 @@ export default function Add(props) {
 					</React.Fragment>
 				)}
 			</Paper>
-            <Backdrop open={$saving}>
+			<Backdrop open={$saving}>
 				<CircularProgress color="inherit" />
 			</Backdrop>
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Add.defaultProps = {

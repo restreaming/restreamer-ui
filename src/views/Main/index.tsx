@@ -115,7 +115,6 @@ export default function Main(props) {
 			await load();
 			await update();
 		})();
-		 
 	}, []);
 
 	React.useEffect(() => {
@@ -292,8 +291,8 @@ export default function Main(props) {
 
 	if ($state.ready === false) {
 		return (
-            <Paper xs={8} sm={6} md={4} className="PaperM">
-                <Grid
+			<Paper xs={8} sm={6} md={4} className="PaperM">
+				<Grid
 					container
 					spacing={2}
 					sx={{ justifyContent: 'center', alignItems: 'center' }}
@@ -305,8 +304,8 @@ export default function Main(props) {
 						<Trans>Retrieving stream data ...</Trans>
 					</Grid>
 				</Grid>
-            </Paper>
-        );
+			</Paper>
+		);
 	}
 
 	if ($state.valid === false) {
@@ -330,19 +329,20 @@ export default function Main(props) {
 	}
 
 	return (
-        <Root>
-            <Grid
+		<Root>
+			<Grid
 				container
 				spacing={1}
 				sx={{ justifyContent: 'center' }}
 				className={classes.gridContainerL1}
 			>
 				<Grid
-                    size={{
-                        xs: 12,
-                        sm: 12,
-                        md: 8
-                    }}>
+					size={{
+						xs: 12,
+						sm: 12,
+						md: 8,
+					}}
+				>
 					<Paper marginBottom="0">
 						<PaperHeader
 							title={title}
@@ -360,7 +360,10 @@ export default function Main(props) {
 									spacing={0}
 									className={classes.playerL1}
 								>
-									<Grid className={classes.playerL2} size={12}>
+									<Grid
+										className={classes.playerL2}
+										size={12}
+									>
 										{($state.state === 'disconnected' ||
 											$state.state ===
 												'disconnecting') && (
@@ -599,18 +602,19 @@ export default function Main(props) {
 					</Paper>
 				</Grid>
 				<Grid
-                    size={{
-                        xs: 12,
-                        sm: 12,
-                        md: 4
-                    }}>
+					size={{
+						xs: 12,
+						sm: 12,
+						md: 4,
+					}}
+				>
 					<Publication
 						restreamer={props.restreamer}
 						channelid={_channelid}
 					/>
 				</Grid>
 			</Grid>
-            <ProcessModal
+			<ProcessModal
 				open={$processDetails.open}
 				onClose={handleProcessDetails}
 				title={<Trans>Process details</Trans>}
@@ -618,15 +622,15 @@ export default function Main(props) {
 				logdata={$processDetails.data}
 				onHelp={handleHelp('process-details')}
 			/>
-            <DebugModal
+			<DebugModal
 				open={$processDebug.open}
 				onClose={handleProcessDebug}
 				title={<Trans>Process report</Trans>}
 				data={$processDebug.data}
 				onHelp={handleHelp('process-report')}
 			/>
-        </Root>
-    );
+		</Root>
+	);
 }
 
 Main.defaultProps = {

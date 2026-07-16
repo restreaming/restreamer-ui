@@ -31,7 +31,6 @@ export default function Control(props) {
 	// Set the defaults
 	React.useEffect(() => {
 		props.onChange(settings, true);
-		 
 	}, []);
 
 	const handleChange = (what) => (event) => {
@@ -85,8 +84,8 @@ export default function Control(props) {
 	);
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -100,8 +99,8 @@ export default function Control(props) {
 					</Trans>
 				</Typography>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Control.defaulProps = {

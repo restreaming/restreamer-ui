@@ -111,26 +111,25 @@ function Coder(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Video.Bitrate
 					value={settings.bitrate}
 					onChange={update('bitrate')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Video.Framerate
 					value={settings.fps}
 					onChange={update('fps')}
 					allowCustom
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Video.GOP
 					value={settings.gop}
 					onChange={update('gop')}
@@ -138,14 +137,14 @@ function Coder(props) {
 					allowCustom
 				/>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Profile
 					value={settings.profile}
 					onChange={update('profile')}
 				/>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Coder.defaultProps = {

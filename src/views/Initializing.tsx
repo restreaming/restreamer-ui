@@ -10,8 +10,8 @@ import PaperContent from '../misc/PaperContent';
 
 export default function Invalid(props) {
 	return (
-        <Paper xs={8} sm={5} className="PaperM">
-            <PaperContent>
+		<Paper xs={8} sm={5} className="PaperM">
+			<PaperContent>
 				<Grid
 					container
 					spacing={2}
@@ -27,6 +27,6 @@ export default function Invalid(props) {
 					</Grid>
 				</Grid>
 			</PaperContent>
-        </Paper>
-    );
+		</Paper>
+	);
 }

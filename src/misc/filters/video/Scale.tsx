@@ -90,15 +90,14 @@ function Filter(props) {
 
 	React.useEffect(() => {
 		handleChange(null);
-		 
 	}, []);
 
 	return (
-        <React.Fragment>
-            <Grid size={settings.mode === 'none' ? 12 : 4}>
+		<React.Fragment>
+			<Grid size={settings.mode === 'none' ? 12 : 4}>
 				<Mode value={settings.mode} onChange={update('mode')}></Mode>
 			</Grid>
-            {settings.mode === 'fix' && (
+			{settings.mode === 'fix' && (
 				<Grid size={8}>
 					<Video.Size
 						allowCustom
@@ -108,7 +107,7 @@ function Filter(props) {
 					></Video.Size>
 				</Grid>
 			)}
-            {settings.mode === 'width' && (
+			{settings.mode === 'width' && (
 				<Grid size={8}>
 					<Video.Width
 						allowCustom
@@ -118,7 +117,7 @@ function Filter(props) {
 					></Video.Width>
 				</Grid>
 			)}
-            {settings.mode === 'height' && (
+			{settings.mode === 'height' && (
 				<Grid size={8}>
 					<Video.Height
 						allowCustom
@@ -128,8 +127,8 @@ function Filter(props) {
 					></Video.Height>
 				</Grid>
 			)}
-        </React.Fragment>
-    );
+		</React.Fragment>
+	);
 }
 
 Filter.defaultProps = {

@@ -78,13 +78,13 @@ function Source(props) {
 	};
 
 	return (
-        <Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-            <Grid size={12}>
+		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select audio source:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Source</Trans>}
 					value={settings.source}
@@ -95,7 +95,7 @@ function Source(props) {
 					<MenuItem value="sine">{i18n._(t`Sine`)}</MenuItem>
 				</Select>
 			</Grid>
-            {settings.source === 'silence' && (
+			{settings.source === 'silence' && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Audio.Sampling
@@ -112,7 +112,7 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-            {settings.source === 'noise' && (
+			{settings.source === 'noise' && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Audio.Sampling
@@ -163,7 +163,7 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-            {settings.source === 'sine' && (
+			{settings.source === 'sine' && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Audio.Sampling
@@ -201,13 +201,13 @@ function Source(props) {
 					</Grid>
 				</React.Fragment>
 			)}
-            <Grid size={12}>
+			<Grid size={12}>
 				<FormInlineButton onClick={handleProbe}>
 					<Trans>Probe</Trans>
 				</FormInlineButton>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Source.defaultProps = {

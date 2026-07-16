@@ -161,14 +161,14 @@ export default function EncodingSelect(props) {
 
 	if (encoderSettings === null || encoderList.length === 0) {
 		return (
-            <Grid container spacing={2}>
-                <Grid size={12}>
+			<Grid container spacing={2}>
+				<Grid size={12}>
 					<Typography>
 						<Trans>No suitable encoder found.</Trans>
 					</Typography>
 				</Grid>
-            </Grid>
-        );
+			</Grid>
+		);
 	}
 
 	const decoderSettings = (() => {
@@ -210,13 +210,13 @@ export default function EncodingSelect(props) {
 	// TODO: in case there's no decoder for a codec it should be mentioned.
 
 	return (
-        <Grid container spacing={2}>
-            <Grid size={12}>
+		<Grid container spacing={2}>
+			<Grid size={12}>
 				<Typography>
 					<Trans>Select your encoding setting:</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Select
 					label={<Trans>Codec</Trans>}
 					value={profile.encoder.coder}
@@ -228,7 +228,7 @@ export default function EncodingSelect(props) {
 					{encoderList}
 				</Select>
 			</Grid>
-            {decoderList.length >= 2 && (
+			{decoderList.length >= 2 && (
 				<React.Fragment>
 					<Grid size={12}>
 						<Select
@@ -239,15 +239,11 @@ export default function EncodingSelect(props) {
 							{decoderList}
 						</Select>
 					</Grid>
-					<Grid size={12}>
-						{decoderSettings}
-					</Grid>
+					<Grid size={12}>{decoderSettings}</Grid>
 				</React.Fragment>
 			)}
-            <Grid size={12}>
-				{encoderSettings}
-			</Grid>
-            {encoderSettingsHelp !== null && (
+			<Grid size={12}>{encoderSettings}</Grid>
+			{encoderSettingsHelp !== null && (
 				<Grid size={12}>
 					<Trans>
 						<Link
@@ -260,8 +256,8 @@ export default function EncodingSelect(props) {
 					</Trans>
 				</Grid>
 			)}
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 EncodingSelect.defaultProps = {

@@ -31,16 +31,17 @@ export default function ProfileSummary(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            <Grid
-                sx={{
+		<Grid container spacing={2}>
+			<Grid
+				sx={{
 					'& button': {
 						marginTop: '1em',
 						float: 'right',
 						marginLeft: '1em',
 					},
 				}}
-                size={12}>
+				size={12}
+			>
 				<IconButton
 					size="small"
 					color="inherit"
@@ -59,22 +60,23 @@ export default function ProfileSummary(props) {
 					<Trans>Video settings</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Summary
 					type="video"
 					sources={props.sources}
 					profile={profile.video}
 				/>
 			</Grid>
-            <Grid
-                sx={{
+			<Grid
+				sx={{
 					'& button': {
 						marginTop: '1em',
 						float: 'right',
 						marginLeft: '1em',
 					},
 				}}
-                size={12}>
+				size={12}
+			>
 				<IconButton
 					size="small"
 					color="inherit"
@@ -93,15 +95,15 @@ export default function ProfileSummary(props) {
 					<Trans>Audio settings</Trans>
 				</Typography>
 			</Grid>
-            <Grid size={12}>
+			<Grid size={12}>
 				<Summary
 					type="audio"
 					sources={props.sources}
 					profile={profile.audio}
 				/>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 ProfileSummary.defaultProps = {

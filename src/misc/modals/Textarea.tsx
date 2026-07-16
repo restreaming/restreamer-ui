@@ -11,8 +11,8 @@ const Component = function (props) {
 	const { open, title, onClose, onHelp, children, sx, ...other } = props;
 
 	return (
-        <Modal open={props.open} onClose={props.onClose} className="modal">
-            <ModalContent
+		<Modal open={props.open} onClose={props.onClose} className="modal">
+			<ModalContent
 				title={props.title}
 				onClose={props.onClose}
 				onHelp={props.onHelp}
@@ -41,8 +41,8 @@ const Component = function (props) {
 					</Grid>
 				</Grid>
 			</ModalContent>
-        </Modal>
-    );
+		</Modal>
+	);
 };
 
 export default Component;

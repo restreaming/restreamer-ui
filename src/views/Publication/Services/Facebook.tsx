@@ -108,13 +108,14 @@ function Service(props) {
 	};
 
 	return (
-        <Grid container spacing={2}>
-            {settings.rtmp_primary === true && (
+		<Grid container spacing={2}>
+			{settings.rtmp_primary === true && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 9
-                    }}>
+					size={{
+						xs: 12,
+						md: 9,
+					}}
+				>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -124,12 +125,13 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-            {settings.rtmp_primary === true && (
+			{settings.rtmp_primary === true && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 3
-                    }}>
+					size={{
+						xs: 12,
+						md: 3,
+					}}
+				>
 					<FormInlineButton
 						target="blank"
 						href={stream_key_link}
@@ -139,12 +141,13 @@ function Service(props) {
 					</FormInlineButton>
 				</Grid>
 			)}
-            {settings.rtmp_backup === true && (
+			{settings.rtmp_backup === true && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 9
-                    }}>
+					size={{
+						xs: 12,
+						md: 9,
+					}}
+				>
 					<TextField
 						variant="outlined"
 						fullWidth
@@ -154,12 +157,13 @@ function Service(props) {
 					/>
 				</Grid>
 			)}
-            {settings.rtmp_backup === true && (
+			{settings.rtmp_backup === true && (
 				<Grid
-                    size={{
-                        xs: 12,
-                        md: 3
-                    }}>
+					size={{
+						xs: 12,
+						md: 3,
+					}}
+				>
 					<FormInlineButton
 						target="blank"
 						href={stream_key_link}
@@ -169,7 +173,7 @@ function Service(props) {
 					</FormInlineButton>
 				</Grid>
 			)}
-            <Grid size={12}>
+			<Grid size={12}>
 				<Checkbox
 					label={<Trans>Enable primary stream</Trans>}
 					checked={settings.rtmp_primary}
@@ -181,8 +185,8 @@ function Service(props) {
 					onChange={handleChange('rtmp_backup')}
 				/>
 			</Grid>
-        </Grid>
-    );
+		</Grid>
+	);
 }
 
 Service.defaultProps = {

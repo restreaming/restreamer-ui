@@ -24,7 +24,6 @@ export default function Component(props) {
 
 	React.useEffect(() => {
 		scrollTo();
-		 
 	}, [content]);
 
 	const handleCopy = async () => {

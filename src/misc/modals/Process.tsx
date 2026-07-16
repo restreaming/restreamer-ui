@@ -97,19 +97,20 @@ const Component = function (props) {
 	});
 
 	return (
-        <Modal open={props.open} onClose={props.onClose} className="modal">
-            <ModalContent
+		<Modal open={props.open} onClose={props.onClose} className="modal">
+			<ModalContent
 				title={props.title}
 				onClose={props.onClose}
 				onHelp={props.onHelp}
 			>
 				<Grid container spacing={1}>
 					<Grid
-                        size={{
-                            xs: 12,
-                            md: 8,
-                            lg: 10
-                        }}>
+						size={{
+							xs: 12,
+							md: 8,
+							lg: 10,
+						}}
+					>
 						<Grid container spacing={3}>
 							<Grid size={12}>
 								<div
@@ -121,7 +122,10 @@ const Component = function (props) {
 									}}
 								>
 									<Grid container spacing={1}>
-										<Grid sx={{ marginBottom: '-1em' }} size={12}>
+										<Grid
+											sx={{ marginBottom: '-1em' }}
+											size={12}
+										>
 											<Typography
 												variant="body1"
 												sx={{
@@ -145,7 +149,10 @@ const Component = function (props) {
 										<Grid marginTop={2} size={12}>
 											<Divider />
 										</Grid>
-										<Grid sx={{ marginTop: '.15em' }} size={12}>
+										<Grid
+											sx={{ marginTop: '.15em' }}
+											size={12}
+										>
 											<Typography
 												variant="body1"
 												sx={{
@@ -170,7 +177,10 @@ const Component = function (props) {
 										<Grid marginTop={2} size={12}>
 											<Divider />
 										</Grid>
-										<Grid sx={{ marginTop: '.15em' }} size={12}>
+										<Grid
+											sx={{ marginTop: '.15em' }}
+											size={12}
+										>
 											<Typography
 												variant="body1"
 												sx={{
@@ -198,19 +208,20 @@ const Component = function (props) {
 						</Grid>
 					</Grid>
 					<Grid
-                        size={{
-                            xs: 12,
-                            md: 4,
-                            lg: 2
-                        }}>
+						size={{
+							xs: 12,
+							md: 4,
+							lg: 2,
+						}}
+					>
 						{props.progress !== null && (
 							<Progress {...props.progress} />
 						)}
 					</Grid>
 				</Grid>
 			</ModalContent>
-        </Modal>
-    );
+		</Modal>
+	);
 };
 
 export default Component;
