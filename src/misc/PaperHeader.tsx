@@ -22,46 +22,49 @@ const Component = function (props) {
 						minWidth: 0,
 					}}
 				>
-					<Typography variant={props.variant} sx={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+					<Typography
+						variant={props.variant}
+						sx={{ minWidth: 0, overflowWrap: 'anywhere' }}
+					>
 						{props.title}
 					</Typography>
 					<Stack direction="row" spacing={0.5} sx={{ flexShrink: 0 }}>
-				{typeof props.onAbort === 'function' && (
-					<IconButton
-						color="inherit"
-						size="small"
-						onClick={props.onAbort}
-					>
-						<CloseIcon />
-					</IconButton>
-				)}
-				{typeof props.onEdit === 'function' && (
-					<IconButton
-						color="inherit"
-						size="small"
-						onClick={props.onEdit}
-					>
-						<EditIcon />
-					</IconButton>
-				)}
-				{typeof props.onAdd === 'function' && (
-					<IconButton
-						color="inherit"
-						size="small"
-						onClick={props.onAdd}
-					>
-						<AddIcon />
-					</IconButton>
-				)}
-				{typeof props.onHelp === 'function' && (
-					<IconButton
-						color="inherit"
-						size="small"
-						onClick={props.onHelp}
-					>
-						<HelpIcon />
-					</IconButton>
-				)}
+						{typeof props.onAbort === 'function' && (
+							<IconButton
+								color="inherit"
+								size="small"
+								onClick={props.onAbort}
+							>
+								<CloseIcon />
+							</IconButton>
+						)}
+						{typeof props.onEdit === 'function' && (
+							<IconButton
+								color="inherit"
+								size="small"
+								onClick={props.onEdit}
+							>
+								<EditIcon />
+							</IconButton>
+						)}
+						{typeof props.onAdd === 'function' && (
+							<IconButton
+								color="inherit"
+								size="small"
+								onClick={props.onAdd}
+							>
+								<AddIcon />
+							</IconButton>
+						)}
+						{typeof props.onHelp === 'function' && (
+							<IconButton
+								color="inherit"
+								size="small"
+								onClick={props.onHelp}
+							>
+								<HelpIcon />
+							</IconButton>
+						)}
 					</Stack>
 				</Stack>
 			</Grid>

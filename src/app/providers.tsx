@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ThemeProvider } from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/material';
@@ -9,12 +9,12 @@ import '@fontsource/roboto';
 import theme from '../theme';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  return (
-	<StyledEngineProvider injectFirst>
-	  <ThemeProvider theme={theme}>
-		<CssBaseline />
-		{children}
-	  </ThemeProvider>
-	</StyledEngineProvider>
-  );
+	return (
+		<StyledEngineProvider injectFirst>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				{children}
+			</ThemeProvider>
+		</StyledEngineProvider>
+	);
 }

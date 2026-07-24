@@ -71,7 +71,8 @@ export default {
 				color: base.palette.text.primary,
 				backgroundColor: base.palette.background.dark1,
 				border: `1px solid ${base.palette.primary.main}`,
-				background: 'linear-gradient(145deg, rgba(52, 74, 98, .5), rgba(8, 15, 24, .55))',
+				background:
+					'linear-gradient(145deg, rgba(52, 74, 98, .5), rgba(8, 15, 24, .55))',
 				'&:hover': {
 					color: base.palette.primary.contrastText,
 					backgroundColor: base.palette.background.dark1,

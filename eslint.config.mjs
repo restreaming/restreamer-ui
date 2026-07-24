@@ -7,6 +7,7 @@ export default defineConfig([
 	{
 		ignores: [
 			'node_modules/**',
+			'.next/**',
 			'dist/**',
 			'build/**',
 			'public/_playersite/**',
