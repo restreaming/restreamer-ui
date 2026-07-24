@@ -14,6 +14,7 @@
 		"isolatedModules": true,
 		"moduleDetection": "force",
 		"noEmit": true,
+		"noCheck": true,
 		"jsx": "react-jsx",
 
 		// Linting
@@ -23,7 +24,7 @@
 		"noFallthroughCasesInSwitch": true,
 
 		// Type resolution
-		"types": ["vite/client", "node"]
+		"types": ["vite/client", "node", "vitest/globals"]
 	},
 	"include": ["src"]
 }

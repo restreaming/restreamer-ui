@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 // TODO: use MuiDialog
 
-const Component = React.forwardRef((props, ref) => {
+const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 	const paperStyle = {};
 
 	if (props.maxWidth > 0) {

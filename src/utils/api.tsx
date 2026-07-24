@@ -1,4 +1,8 @@
 class API {
+	base: string;
+	address: string;
+	token: any;
+	cache: Map<any, any>;
 	constructor(address) {
 		this.base = '/api';
 		this.address = address;
@@ -15,7 +19,7 @@ class API {
 		console.error(`[CoreAPI] Error: ${message}`);
 	}
 
-	async _GET(path, options) {
+	async _GET(path, options = {}) {
 		const key = path + JSON.stringify(options);
 
 		const data = this.cache.get(key);
@@ -39,27 +43,27 @@ class API {
 		return res;
 	}
 
-	async _HEAD(path, options) {
+	async _HEAD(path, options = {}) {
 		return await this._call('HEAD', path, options);
 	}
 
-	async _POST(path, options) {
+	async _POST(path, options = {}) {
 		return await this._call('POST', path, options);
 	}
 
-	async _PUT(path, options) {
+	async _PUT(path, options = {}) {
 		return await this._call('PUT', path, options);
 	}
 
-	async _DELETE(path, options) {
+	async _DELETE(path, options = {}) {
 		return await this._call('DELETE', path, options);
 	}
 
-	async _PATCH(path, options) {
+	async _PATCH(path, options = {}) {
 		return await this._call('PATCH', path, options);
 	}
 
-	async _call(method, path, options = {}) {
+	async _call(method, path, options: any = {}) {
 		options = {
 			method: method.toUpperCase(),
 			expect: 'any',

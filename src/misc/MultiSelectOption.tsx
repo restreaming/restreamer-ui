@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuItem from '@mui/material/MenuItem';
 
-const Component = React.forwardRef((props, ref) => {
+const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 	const { name, value, selected, ...other } = props;
 
 	return (

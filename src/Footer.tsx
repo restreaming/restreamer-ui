@@ -26,6 +26,7 @@ const classes = {
 	footer: `${PREFIX}-footer`,
 	warningIcon: `${PREFIX}-warningIcon`,
 	subheader: `${PREFIX}-subheader`,
+	logo: `${PREFIX}-logo`,
 };
 
 const StyledGrid = styled(Grid)(({ theme }) => ({

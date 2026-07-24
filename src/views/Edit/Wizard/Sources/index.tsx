@@ -6,6 +6,7 @@ import * as Raspicam from './Raspicam';
 import * as V4L from './V4L';
 
 class Registry {
+	services: Map<any, any>;
 	constructor() {
 		this.services = new Map();
 	}

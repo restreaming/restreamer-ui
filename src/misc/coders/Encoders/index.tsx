@@ -25,7 +25,9 @@ import * as VP9 from './video/vp9_libvpx';
 import * as AV1Rav1e from './video/av1_librav1e';
 
 class Registry {
-	constructor(type) {
+	type: string;
+	services: Map<any, any>;
+	constructor(type: string) {
 		this.type = type;
 		this.services = new Map();
 	}

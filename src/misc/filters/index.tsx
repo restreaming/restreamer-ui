@@ -14,7 +14,9 @@ import * as VFlip from './video/VFlip';
 
 // Register filters type: audio/video
 class Registry {
-	constructor(type) {
+	type: string;
+	services: Map<any, any>;
+	constructor(type: string) {
 		this.type = type;
 		this.services = new Map();
 	}

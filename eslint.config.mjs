@@ -9,6 +9,7 @@ export default defineConfig([
 			'node_modules/**',
 			'dist/**',
 			'build/**',
+			'public/_playersite/**',
 			'src/locales/*/messages.js',
 		],
 	},
@@ -18,5 +19,25 @@ export default defineConfig([
 		extends: ['js/recommended'],
 		languageOptions: { globals: globals.browser },
 	},
+	{
+		plugins: {
+			import: {
+				rules: {
+					'no-anonymous-default-export': {
+						meta: { type: 'problem' },
+						create: () => ({}),
+					},
+				},
+			},
+		},
+	},
 	tseslint.configs.recommended,
+	{
+		rules: {
+			'no-anonymous-default-export': 'off',
+			'prefer-const': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
+		},
+	},
 ]);

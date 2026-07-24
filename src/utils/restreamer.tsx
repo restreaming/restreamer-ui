@@ -16,6 +16,24 @@ import API from './api';
 import { anonymize } from './anonymizer';
 
 class Restreamer {
+	address: string;
+	api: API;
+	listeners: any[];
+	valid: boolean;
+	requiresLogin: boolean;
+	connected: boolean;
+	refresh: any;
+	ignoreAPIErrors: boolean;
+	about: any;
+	skills: any;
+	config: any;
+	cache: any;
+	channels: Map<any, any>;
+	channel: any;
+	refreshToken: any;
+	updates: any;
+	hasUpdates: boolean;
+	hasService: boolean;
 	constructor(address) {
 		try {
 			new URL(address);

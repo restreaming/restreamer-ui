@@ -3,7 +3,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-const Component = React.forwardRef((props, ref) => {
+const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 	let { marginBottom, xs, sm, md, ld, className, elevation, ...other } =
 		props;
 

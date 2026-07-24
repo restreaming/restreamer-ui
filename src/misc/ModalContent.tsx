@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-const Component = React.forwardRef((props, ref) => {
+const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 	const { title, onClose, onHelp, ...other } = props;
 
 	return (

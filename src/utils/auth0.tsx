@@ -8,7 +8,7 @@ let isAvailable = false;
 try {
 	new Auth0Client({
 		domain: 'example.eu.auth0.com',
-		client_id: 'some_client_id',
+		clientId: 'some_client_id',
 		audience: 'https://example.com/',
 		cacheLocation: 'memory',
 	});
@@ -78,7 +78,7 @@ const init = () => {
 	try {
 		client = new Auth0Client({
 			domain: config.domain,
-			client_id: config.client_id,
+			clientId: config.client_id,
 			audience: config.audience,
 			cacheLocation: 'localstorage',
 			advancedOptions: { defaultScope: 'openid' },

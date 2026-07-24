@@ -11,6 +11,7 @@ import * as VirtualAudio from './VirtualAudio';
 import * as VirtualVideo from './VirtualVideo';
 
 class Registry {
+	services: Map<any, any>;
 	constructor() {
 		this.services = new Map();
 	}
