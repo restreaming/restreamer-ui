@@ -17,6 +17,7 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 		"allowJs": true,
+		"types": ["node", "vitest/globals"],
 		"forceConsistentCasingInFileNames": true,
 		"incremental": true,
 		"plugins": [{ "name": "next" }]
