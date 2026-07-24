@@ -28,7 +28,7 @@ jobs:
           pnpm install
           pnpm build
         env:
-          PUBLIC_URL: "./"
+          NEXT_PUBLIC_CORE_ADDRESS: ${{ vars.NEXT_PUBLIC_CORE_ADDRESS }}
 
       - name: Upload React build as artifact
         uses: actions/upload-artifact@v4

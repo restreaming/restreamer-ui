@@ -27,6 +27,18 @@ Then open <http://localhost:3000>. If the variable is not set, the UI connects
 to the same origin it was loaded from. Restart the development or production
 server after changing environment variables.
 
+For a direct Docker build, pass the address when building because public Next.js
+environment variables are embedded into the browser bundle:
+
+```bash
+docker build \
+  --build-arg NEXT_PUBLIC_CORE_ADDRESS=http://core-ip:core-port \
+  -t restreamer-ui .
+```
+
+The GitHub Actions workflows read the repository variable named
+`NEXT_PUBLIC_CORE_ADDRESS` during the frontend build.
+
 ### To add/fix translations
 
 Locales are located in `src/locals`

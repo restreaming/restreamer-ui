@@ -2,9 +2,18 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider } from "@mui/material";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { vi } from "vitest";
 import theme from "../theme";
 import I18n from "../I18n";
+
+vi.mock("next/navigation", () => ({
+  useParams: () => ({}),
+  useRouter: () => ({
+    back: vi.fn(),
+    push: vi.fn(),
+    replace: vi.fn(),
+  }),
+}));
 
 /*
 This is wrapper for the render method in order to provide all required providers and
@@ -54,30 +63,15 @@ a user clicking around. Example:
     });
 */
 
-const NoRoute = (...args: Any[]) => {
-  void args;
-  return null;
-};
-
 const AllTheProviders =
-  (initialEntries: Any, path: Any) =>
+  (...args: Any[]) =>
   ({ children }: Any) => {
-    if (typeof initialEntries === "undefined") {
-      initialEntries = "/";
-    }
-    if (typeof path === "undefined") {
-      path = "/";
-    }
+    void args;
     return (
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <I18n>
-            <MemoryRouter initialEntries={[initialEntries]}>
-              <Routes>
-                <Route path={path} element={children} />
-                <Route path="*" element={<NoRoute />} />
-              </Routes>
-            </MemoryRouter>
+            {children}
           </I18n>
         </ThemeProvider>
       </StyledEngineProvider>

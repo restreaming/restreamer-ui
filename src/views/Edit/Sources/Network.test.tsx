@@ -1,5 +1,6 @@
 import { render, fireEvent } from "../../../utils/testing";
 import "@testing-library/jest-dom/vitest";
+import { test } from "vitest";
 
 import * as Network from "./Network";
 

@@ -1,5 +1,6 @@
 import { render, fireEvent, act, screen } from "../../../utils/testing";
 import "@testing-library/jest-dom/vitest";
+import { test } from "vitest";
 
 import Wizard from "./index";
 

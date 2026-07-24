@@ -1,5 +1,6 @@
 import { render, act } from "../../utils/testing";
 import "@testing-library/jest-dom/vitest";
+import { test } from "vitest";
 
 import * as Decoders from "./Decoders";
 import * as Encoders from "./Encoders";
