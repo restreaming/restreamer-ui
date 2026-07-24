@@ -6,7 +6,7 @@ import ModalContent from "../ModalContent";
 import Textarea from "../Textarea";
 
 const Component = function (props: Any) {
-  const { children, ...other } = props;
+  const { children, sx, ...other } = props;
 
   return (
     <Modal open={props.open} onClose={props.onClose} className="modal">

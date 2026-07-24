@@ -1,5 +1,5 @@
-type DynamicObject = Record<string, any>;
-type Any = ReturnType<Function>;
+type Any = ReturnType<typeof JSON.parse>;
+type DynamicObject = Record<string, Any>;
 
 declare module "semver/functions/gt" {
   const gt: (version: string, comparison: string) => boolean;
@@ -38,10 +38,10 @@ declare module "semver/functions/minor" {
   export default minor;
 }
 declare module "url-parse" {
-  const UrlParse: any;
+  const UrlParse: Any;
   export default UrlParse;
 }
 declare module "handlebars/dist/cjs/handlebars" {
-  const Handlebars: any;
+  const Handlebars: Any;
   export default Handlebars;
 }

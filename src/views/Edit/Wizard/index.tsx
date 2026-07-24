@@ -112,7 +112,9 @@ export default function Wizard(props: Any) {
       status: "none",
     });
 
-    let [res, err] = await props.restreamer.Probe(_channelid, source.inputs);
+    const probeResult = await props.restreamer.Probe(_channelid, source.inputs);
+    let res = probeResult[0];
+    const err = probeResult[1];
     if (err !== null) {
       res = {
         streams: [],

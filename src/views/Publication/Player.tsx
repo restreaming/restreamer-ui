@@ -368,7 +368,7 @@ export default function Edit(props: Any) {
       const u = new URL(url);
       u.searchParams.set("_rscache", String(Math.random()));
       return u.href;
-    } catch (e) {
+    } catch {
       return url + "?" + Math.random();
     }
   };

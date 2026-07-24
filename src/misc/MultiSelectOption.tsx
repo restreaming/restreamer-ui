@@ -10,7 +10,7 @@ interface MultiSelectOptionProps {
 
 const Component = React.forwardRef<HTMLLIElement, MultiSelectOptionProps>(
   (props: Any, ref: Any) => {
-    const { name, value, selected, ...other } = props;
+    const { ...other } = props;
 
     return (
       <MenuItem

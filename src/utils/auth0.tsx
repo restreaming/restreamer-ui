@@ -14,7 +14,7 @@ try {
   });
 
   isAvailable = true;
-} catch (e) {
+} catch {
   isAvailable = false;
 }
 
@@ -85,7 +85,7 @@ const init = (...args: Any[]) => {
       authorizationParams: { audience: config.audience },
       cacheLocation: "localstorage",
     });
-  } catch (e) {
+  } catch {
     return false;
   }
 
@@ -175,7 +175,7 @@ const login = async (queryParams: Any) => {
 
   try {
     await client.loginWithRedirect(options);
-  } catch (e) {
+  } catch {
     return false;
   }
 

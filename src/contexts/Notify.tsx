@@ -1,7 +1,9 @@
 import React from "react";
 
 const NotifyContext = React.createContext({
-  Dispatch: (...args: Any[]) => { void args; },
+  Dispatch: (...args: Any[]) => {
+    void args;
+  },
 });
 
 export const NotifyProvider = NotifyContext.Provider;

@@ -78,7 +78,7 @@ export default function Changelog(props: Any) {
       response = await fetch("CHANGELOG.md", {
         method: "GET",
       });
-    } catch (err) {
+    } catch {
       return "";
     }
 

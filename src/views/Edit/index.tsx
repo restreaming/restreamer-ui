@@ -239,7 +239,9 @@ export default function Edit(props: Any) {
   };
 
   const handleSourceProbe = async (inputs: Any) => {
-    let [res, err] = await props.restreamer.Probe(_channelid, inputs);
+    const probeResult = await props.restreamer.Probe(_channelid, inputs);
+    let res = probeResult[0];
+    const err = probeResult[1];
     if (err !== null) {
       res = {
         streams: [],

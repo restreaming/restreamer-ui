@@ -692,7 +692,8 @@ const configValues: DynamicObject = {
 const RETRIES = 60;
 
 function ErrorTab(props: Any) {
-  let { label, errors, ...other } = props;
+  let { label } = props;
+  const { errors, ...other } = props;
 
   if (errors === true) {
     label = (

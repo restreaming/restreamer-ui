@@ -37,7 +37,7 @@ class Restreamer {
   constructor(address: Any) {
     try {
       new URL(address);
-    } catch (e) {
+    } catch {
       address = window.location.protocol + "//" + window.location.host;
     }
 
@@ -147,7 +147,7 @@ class Restreamer {
 
     try {
       new URL(address);
-    } catch (e) {
+    } catch {
       return false;
     }
 
@@ -461,7 +461,7 @@ class Restreamer {
         claims = jwtDecode(token);
         this._setTokenRefresh((claims as DynamicObject).exi);
         this.api.SetToken(token);
-      } catch (e) {
+      } catch {
         this.api.SetToken("");
       }
     }
@@ -574,7 +574,9 @@ class Restreamer {
       sinks: {},
     };
 
-    let [val, err] = await this._call(this.api.Skills);
+    const skillsResult = await this._call(this.api.Skills);
+    let val = skillsResult[0];
+    const err = skillsResult[1];
     if (err !== null) {
       this.skills = skills;
       return;
@@ -3131,7 +3133,7 @@ class Restreamer {
             }),
           },
         );
-      } catch (err) {
+      } catch {
         return;
       }
 
@@ -3530,7 +3532,7 @@ class Restreamer {
         response = await fetch(assetPath, {
           method: "GET",
         });
-      } catch (err) {
+      } catch {
         return null;
       }
 
