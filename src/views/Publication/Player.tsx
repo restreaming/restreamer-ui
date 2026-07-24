@@ -87,8 +87,8 @@ export default function Edit(props) {
 	const [$player] = React.useState('videojs-public');
 	const [$ready, setReady] = React.useState(false);
 	const [$state, setState] = React.useState('disconnected');
-	const [$metadata, setMetadata] = React.useState({});
-	const [$settings, setSettings] = React.useState({});
+	const [$metadata, setMetadata] = React.useState<DynamicObject>({});
+	const [$settings, setSettings] = React.useState<DynamicObject>({});
 	const [$tab, setTab] = React.useState('embed');
 	const [$revision, setRevision] = React.useState(0);
 	const [$saving, setSaving] = React.useState(false);

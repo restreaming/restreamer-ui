@@ -47,7 +47,7 @@ export default function Component(props) {
 				value={props.value}
 				label={props.label}
 				type={props.type}
-				inputprops={{
+				inputProps={{
 					readOnly: true,
 				}}
 				size={props.size}

@@ -62,5 +62,19 @@ declare module '@mui/material/SvgIcon' {
 declare module '@mui/material/Alert' {
 	interface AlertPropsColorOverrides {
 		service: true;
+		default: true;
+	}
+}
+
+declare module '@mui/material/TextField' {
+	interface BaseTextFieldProps {
+		min?: string | number;
+		max?: string | number;
+		step?: string | number;
+		readOnly?: boolean;
+	}
+
+	interface TextFieldPropsColorOverrides {
+		default: true;
 	}
 }

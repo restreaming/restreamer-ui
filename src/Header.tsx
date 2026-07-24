@@ -131,20 +131,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 	},
 }));
 
-const StyledMenu = styled((props) => (
-	<Menu
-		elevation={0}
-		anchorOrigin={{
-			vertical: 'bottom',
-			horizontal: 'right',
-		}}
-		transformOrigin={{
-			vertical: 'top',
-			horizontal: 'right',
-		}}
-		{...props}
-	/>
-))(({ theme }) => ({
+const StyledMenu = styled(Menu)(({ theme }) => ({
 	'& .MuiPaper-root': {
 		borderRadius: 5,
 		marginTop: theme.spacing(1),
@@ -318,8 +305,8 @@ function HeaderMenu(props) {
 					)}
 					{props.showPlayersite === true && (
 						<MenuItem onClick={props.onPlayersite}>
-							<ListItemIcon size="large">
-								<WebIcon fontSize="small" size="large" />
+							<ListItemIcon>
+								<WebIcon fontSize="small" />
 							</ListItemIcon>
 							<Trans>Playersite</Trans>
 						</MenuItem>

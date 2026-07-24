@@ -75,19 +75,19 @@ export default function Edit(props) {
 	const { channelid: _channelid, tab: _tab } = useParams();
 	const notify = React.useContext(NotifyContext);
 	const [$tab, setTab] = React.useState(_tab ? _tab : 'general');
-	const [$state, setState] = React.useState({
+	const [$state, setState] = React.useState<DynamicObject>({
 		editing: false,
 		edit: '',
 		complete: false,
 		saving: false,
 	});
 	const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
-	const [$skills, setSkills] = React.useState({});
-	const [$config, setConfig] = React.useState({});
-	const [$process, setProcess] = React.useState({});
+	const [$skills, setSkills] = React.useState<DynamicObject>({});
+	const [$config, setConfig] = React.useState<DynamicObject>({});
+	const [$process, setProcess] = React.useState<DynamicObject>({});
 	const [$ready, setReady] = React.useState(false);
 	const [$deleteDialog, setDeleteDialog] = React.useState(false);
-	const [$editDialog, setEditDialog] = React.useState({
+	const [$editDialog, setEditDialog] = React.useState<DynamicObject>({
 		open: false,
 		target: '',
 		what: '',

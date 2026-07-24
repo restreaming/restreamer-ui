@@ -73,8 +73,8 @@ export default function Add(props) {
 	const notify = React.useContext(NotifyContext);
 	const [$service, setService] = React.useState('');
 	const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));
-	const [$sources, setSources] = React.useState([]);
-	const [$localSources, setLocalSources] = React.useState([]);
+	const [$sources, setSources] = React.useState<DynamicObject[]>([]);
+	const [$localSources, setLocalSources] = React.useState<DynamicObject[]>([]);
 	const [$filter, setFilter] = React.useState('all');
 	const [$tab, setTab] = React.useState('general');
 	const [$skills, setSkills] = React.useState(null);

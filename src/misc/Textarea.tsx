@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import type { CSSProperties } from 'react';
 
 import { useLingui } from '@lingui/react';
 import { t } from '@lingui/core/macro';
@@ -18,7 +19,7 @@ export default function Component(props) {
 	const [$modal, setModal] = React.useState(false);
 
 	const notify = useContext(NotifyContext);
-	const textAreaRef = React.createRef();
+	const textAreaRef = React.createRef<HTMLTextAreaElement>();
 
 	const { content } = props;
 
@@ -107,14 +108,14 @@ export default function Component(props) {
 		props.disabled !== true &&
 		props.downloadName.length !== 0;
 
-	let textAreaDivStyle = {
+	let textAreaDivStyle: CSSProperties = {
 		width: '100%',
 	};
-	let textAreaStyle = {
+	let textAreaStyle: CSSProperties = {
 		lineHeight: 1.3,
 		fontSize: 14,
 	};
-	let actionButton = {
+	let actionButton: CSSProperties = {
 		float: 'right',
 		padding: '0.5em',
 		backgroundColor: Palette.background.footer1,

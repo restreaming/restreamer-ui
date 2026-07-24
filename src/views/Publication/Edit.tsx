@@ -74,8 +74,8 @@ export default function Edit(props) {
 	const [$settings, setSettings] = React.useState(
 		M.getDefaultEgressMetadata(),
 	);
-	const [$sources, setSources] = React.useState([]);
-	const [$localSources, setLocalSources] = React.useState([]);
+	const [$sources, setSources] = React.useState<DynamicObject[]>([]);
+	const [$localSources, setLocalSources] = React.useState<DynamicObject[]>([]);
 	const [$tab, setTab] = React.useState('general');
 	const [$progress, setProgress] = React.useState({});
 	const [$processDetails, setProcessDetails] = React.useState({

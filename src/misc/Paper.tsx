@@ -2,12 +2,19 @@ import React from 'react';
 
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import type { ReactNode } from 'react';
 
-const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
-	let { marginBottom, xs, sm, md, ld, className, elevation, ...other } =
-		props;
+interface PaperProps {
+	marginBottom?: string;
+	xs?: number;
+	sm?: number;
+	md?: number;
+	lg?: number;
+	className?: string;
+	children?: ReactNode;
+}
 
-	elevation = 0;
+const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
 
 	const paperSx =
 		props.className === 'paperM'
@@ -42,7 +49,7 @@ const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 					lg: props.lg,
 				}}
 			>
-				<Paper elevation={elevation} ref={ref} sx={paperSx} {...other}>
+				<Paper elevation={0} ref={ref} sx={paperSx}>
 					{props.children}
 				</Paper>
 			</Grid>
@@ -51,13 +58,3 @@ const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 });
 
 export default Component;
-
-Component.defaultProps = {
-	marginBottom: '6em',
-	xs: 12,
-	sm: undefined,
-	md: undefined,
-	lg: undefined,
-	elevation: 0,
-	className: 'paper',
-};

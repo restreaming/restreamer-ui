@@ -7,11 +7,23 @@ import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import type { CSSProperties, ReactNode } from 'react';
 
 // TODO: use MuiDialog
 
-const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
-	const paperStyle = {};
+interface DialogProps {
+	open?: boolean;
+	title?: ReactNode;
+	onClose?: (() => void) | null;
+	onHelp?: (() => void) | null;
+	buttonsRight?: ReactNode;
+	buttonsLeft?: ReactNode;
+	maxWidth?: number;
+	children?: ReactNode;
+}
+
+const Component = React.forwardRef<HTMLDivElement, DialogProps>((props, ref) => {
+	const paperStyle: CSSProperties = {};
 
 	if (props.maxWidth > 0) {
 		paperStyle.maxWidth = props.maxWidth + 'px';
@@ -98,13 +110,3 @@ const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 });
 
 export default Component;
-
-Component.defaultProps = {
-	open: false,
-	title: '',
-	onClose: null,
-	onHelp: null,
-	buttonsRight: null,
-	buttonsLefts: null,
-	maxWidth: -1,
-};

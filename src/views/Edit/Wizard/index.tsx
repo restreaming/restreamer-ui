@@ -35,16 +35,16 @@ export default function Wizard(props) {
 	const { channelid: _channelid } = useParams();
 	const notify = React.useContext(NotifyContext);
 	const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
-	const [$sources, setSources] = React.useState({
+	const [$sources, setSources] = React.useState<DynamicObject>({
 		video: M.initSource('video', null),
 		audio: M.initSource('audio', null),
 	});
 	const [$profile, setProfile] = React.useState(M.initProfile());
-	const [$skills, setSkills] = React.useState({});
-	const [$config, setConfig] = React.useState({});
+	const [$skills, setSkills] = React.useState<DynamicObject>({});
+	const [$config, setConfig] = React.useState<DynamicObject>({});
 	const [$step, setStep] = React.useState('TYPE');
 	const [$sourceid, setSourceid] = React.useState('');
-	const [$probe, setProbe] = React.useState({
+	const [$probe, setProbe] = React.useState<DynamicObject>({
 		probing: false,
 		status: 'none',
 	});

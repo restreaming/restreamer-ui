@@ -27,7 +27,7 @@ export default function Component(props) {
 				onChange={props.onChange}
 				input={<OutlinedInput />}
 				renderValue={props.renderValue}
-				MenuProps={MenuProps}
+				MenuProps={{ disableScrollLock: true }}
 			>
 				{props.children}
 			</Select>

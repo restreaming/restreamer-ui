@@ -142,7 +142,7 @@ export default function Playersite(props) {
 	const [$ingest, setIngest] = React.useState(false);
 	const [$available, setAvailable] = React.useState(false);
 	const [$data, setData] = React.useState(M.getDefaultMetadata());
-	const [$settings, setSettings] = React.useState({});
+	const [$settings, setSettings] = React.useState<DynamicObject>({});
 	const [$channels, setChannels] = React.useState([]);
 	const [$templates, setTemplates] = React.useState([]);
 	const [$tab, setTab] = React.useState('general');

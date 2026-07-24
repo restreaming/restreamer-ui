@@ -9,8 +9,19 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import type { CSSProperties, ReactNode } from 'react';
 
-const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
+interface ModalContentProps {
+	title?: ReactNode;
+	onClose?: (() => void) | null;
+	onHelp?: (() => void) | null;
+	children?: ReactNode;
+	className?: string;
+	style?: CSSProperties;
+}
+
+const Component = React.forwardRef<HTMLDivElement, ModalContentProps>(
+	(props, ref) => {
 	const { title, onClose, onHelp, ...other } = props;
 
 	return (
@@ -109,12 +120,7 @@ const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 			</Grid>
 		</Paper>
 	);
-});
+	},
+);
 
 export default Component;
-
-Component.defaultProps = {
-	title: '',
-	onClose: null,
-	onHelp: null,
-};

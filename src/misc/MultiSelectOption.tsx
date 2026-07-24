@@ -2,7 +2,14 @@ import React from 'react';
 
 import MenuItem from '@mui/material/MenuItem';
 
-const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
+interface MultiSelectOptionProps {
+	name?: string;
+	value?: string;
+	selected?: boolean;
+}
+
+const Component = React.forwardRef<HTMLLIElement, MultiSelectOptionProps>(
+	(props, ref) => {
 	const { name, value, selected, ...other } = props;
 
 	return (
@@ -22,12 +29,7 @@ const Component = React.forwardRef<HTMLElement, any>((props, ref) => {
 			{props.name}
 		</MenuItem>
 	);
-});
+	},
+);
 
 export default Component;
-
-Component.defaultProps = {
-	name: '',
-	value: '',
-	selected: false,
-};

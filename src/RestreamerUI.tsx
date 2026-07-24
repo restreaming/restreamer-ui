@@ -49,7 +49,7 @@ const StyledI18n = styled(I18n)(({ theme }) => ({
 }));
 
 export default function RestreamerUI(props) {
-	const [$state, setState] = React.useState({
+	const [$state, setState] = React.useState<DynamicObject>({
 		initialized: false,
 		valid: false,
 		connected: false,
@@ -60,7 +60,7 @@ export default function RestreamerUI(props) {
 		service: false,
 	});
 	const [$ready, setReady] = React.useState(false);
-	const [$snack, setSnack] = React.useState({
+	const [$snack, setSnack] = React.useState<DynamicObject>({
 		open: false,
 		message: '',
 		severity: 'info',
@@ -70,7 +70,7 @@ export default function RestreamerUI(props) {
 		channelid: '',
 		channels: [],
 	});
-	const [$metadata, setMetadata] = React.useState({});
+	const [$metadata, setMetadata] = React.useState<DynamicObject>({});
 	const [$changelog, setChangelog] = React.useState({
 		open: false,
 		current: '',

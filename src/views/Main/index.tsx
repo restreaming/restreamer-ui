@@ -81,7 +81,7 @@ const Root = styled('div')(({ theme }) => ({
 export default function Main(props) {
 	const navigate = useNavigate();
 	const { channelid: _channelid } = useParams();
-	const [$state, setState] = React.useState({
+	const [$state, setState] = React.useState<DynamicObject>({
 		ready: false,
 		valid: false,
 		progress: {},
@@ -103,7 +103,7 @@ export default function Main(props) {
 		open: false,
 		data: '',
 	});
-	const [$config, setConfig] = React.useState(null);
+	const [$config, setConfig] = React.useState<DynamicObject | null>(null);
 	const [$invalid, setInvalid] = React.useState(false);
 
 	useInterval(async () => {

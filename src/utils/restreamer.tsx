@@ -82,7 +82,7 @@ class Restreamer {
 		this._checkForUpdates();
 	}
 
-	_initAbout(initialAbout) {
+	_initAbout(initialAbout = {}) {
 		if (!initialAbout) {
 			initialAbout = {};
 		}
@@ -209,7 +209,6 @@ class Restreamer {
 								this._dispatchEvent(
 									'error',
 									'network',
-									res.err.status,
 									res.err.message,
 								);
 							} else if (res.err.code === 401) {
@@ -217,7 +216,6 @@ class Restreamer {
 								this._dispatchEvent(
 									'error',
 									'auth',
-									res.err.status,
 									res.err.message,
 								);
 							}
@@ -1332,7 +1330,7 @@ class Restreamer {
 		}
 	}
 
-	CreateChannel(name) {
+	CreateChannel(name = '') {
 		const channelid = uuidv4();
 		this.channels.set(channelid, {
 			id: `restreamer-ui:ingest:${channelid}`,
@@ -3865,7 +3863,7 @@ class Restreamer {
 			return null;
 		};
 
-		const getValue = (metrics, metric, labels) => {
+		const getValue = (metrics, metric, labels = {}) => {
 			const m = getMetrics(metrics, metric, labels);
 			if (m === null) {
 				return 0;
@@ -3931,16 +3929,16 @@ function parseRFC3339Date(d) {
 
 	// Milliseconds are optional.
 	if (m[7] === undefined) {
-		m[7] = 0;
+		m[7] = '0';
 	} else {
-		m[7] = parseInt((1.0 / parseFloat(m[7])) * 100);
+		m[7] = String(parseInt((1.0 / parseFloat(m[7])) * 100));
 	}
 
 	// If timezone is undefined, it must be Z or nothing (otherwise the group would have captured).
 	if (m[8] === undefined && m[9] === undefined) {
 		// Use UTC.
-		m[8] = 0;
-		m[9] = 0;
+		m[8] = '0';
+		m[9] = '0';
 	}
 
 	const year = +m[1];

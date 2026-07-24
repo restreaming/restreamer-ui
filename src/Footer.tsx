@@ -200,7 +200,6 @@ function Resources(props) {
 				}}
 			>
 				<List
-					size="small"
 					subheader={
 						<ListSubheader className={classes.subheader}>
 							<Trans>Uptime</Trans>
@@ -221,7 +220,6 @@ function Resources(props) {
 					</ListItem>
 				</List>
 				<List
-					size="small"
 					subheader={
 						<ListSubheader className={classes.subheader}>
 							<Trans>System</Trans>
@@ -270,7 +268,6 @@ function Resources(props) {
 					</ListItem>
 				</List>
 				<List
-					size="small"
 					subheader={
 						<ListSubheader className={classes.subheader}>
 							<Trans>Application</Trans>
@@ -472,7 +469,7 @@ Resources.defaultProps = {
 	},
 };
 
-const initVersion = (initialVersion) => {
+const initVersion = (initialVersion = {}) => {
 	if (!initialVersion) {
 		initialVersion = {};
 	}
