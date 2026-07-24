@@ -5,7 +5,10 @@ export default {
 		root: {
 			color: base.palette.text.primary,
 			backgroundColor: base.palette.background.paper,
-			padding: '.85em 1.25em .85em 1.25em',
+			padding: '1.25rem 1.5rem',
+			border: `1px solid ${base.palette.background.light1}`,
+			borderRadius: 16,
+			boxShadow: '0 16px 40px rgba(0, 0, 0, .18)',
 		},
 	},
 	variants: [

@@ -43,34 +43,36 @@ const classes = {
 const StyledGrid = styled(Grid)(({ theme }) => ({
 	[`& .${classes.header}`]: {
 		width: '100%',
-		height: 132,
-		lineHeight: '132px',
-		backgroundColor: 'transparent',
+		height: 96,
+		lineHeight: '96px',
+		backgroundColor: 'rgba(11, 18, 27, .58)',
+		borderBottom: `1px solid ${theme.palette.background.light1}`,
+		backdropFilter: 'blur(16px)',
 		color: theme.palette.text.secondary,
 		'& .headerRight': {
 			float: 'right',
-			marginRight: 42,
+			marginRight: 32,
 		},
 		'& .headerFab': {
-			height: 60,
-			width: 60,
+			height: 48,
+			width: 48,
 			marginLeft: '1em',
 			boxShadow: 'unset',
 			'& .fabIcon': {
-				fontSize: 30,
+				fontSize: 24,
 			},
 			'&:hover': {
 				backgroundColor: theme.palette.background.box_default,
 			},
 		},
 		'& .headerFabHighlight': {
-			height: 60,
-			width: 60,
+			height: 48,
+			width: 48,
 			marginLeft: '1em',
 			boxShadow: 'unset',
 			border: `3px solid ${theme.palette.secondary.main}`,
 			'& .fabIcon': {
-				fontSize: 30,
+				fontSize: 24,
 			},
 			'&:hover': {
 				backgroundColor: theme.palette.background.box_default,
@@ -79,11 +81,11 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 		'& .headerLeft': {
 			fontSize: '3.5rem',
 			fontWeight: 300,
-			marginLeft: 40,
+			marginLeft: 32,
 		},
 		'& .headerTitle': {
 			fontFamily: '"Dosis", "Roboto", "Helvetica", "Arial", sans-serif',
-			fontSize: '3rem',
+			fontSize: '2.2rem',
 			fontWeight: 300,
 			marginLeft: 10,
 			marginBottom: '0.2em',
@@ -438,7 +440,7 @@ HeaderMenu.defaultProps = {
 
 export default function Header(props) {
 	return (
-		<Grid
+		<StyledGrid
 			container
 			className={classes.header}
 			spacing={0}
@@ -475,7 +477,7 @@ export default function Header(props) {
 					</Stack>
 				</Stack>
 			</Grid>
-		</Grid>
+		</StyledGrid>
 	);
 }
 

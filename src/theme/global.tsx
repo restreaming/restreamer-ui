@@ -10,6 +10,8 @@ export default {
 	body: {
 		background: `${base.palette.background.button_disabled} url(${universe}) no-repeat fixed left top`,
 		backgroundSize: 'cover',
+		backgroundBlendMode: 'soft-light',
+		color: base.palette.text.primary,
 		overflowX: 'hidden',
 		overflowY: 'scroll',
 	},

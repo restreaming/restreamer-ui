@@ -4,10 +4,11 @@ export default {
 	styleOverrides: {
 		root: {
 			color: base.palette.text.primary,
-			backgroundColor: base.palette.primary.dark,
+			backgroundColor: 'rgba(8, 15, 24, .5)',
+			borderRadius: 10,
 			'& .MuiOutlinedInput-notchedOutline': {
 				borderColor: base.palette.primary.main,
-				borderWidth: 2,
+				borderWidth: 1,
 			},
 			'&:hover .MuiOutlinedInput-notchedOutline': {
 				borderColor: base.palette.primary.light,

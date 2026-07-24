@@ -3570,7 +3570,7 @@ class Restreamer {
 			let response = null;
 
 			try {
-				const assetPath = `${import.meta.env.BASE_URL}${localPath.replace(/^\//, '')}`;
+				const assetPath = `${process.env.BASE_URL}${localPath.replace(/^\//, '')}`;
 				response = await fetch(assetPath, {
 					method: 'GET',
 				});

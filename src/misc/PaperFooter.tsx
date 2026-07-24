@@ -9,14 +9,18 @@ const Component = function (props) {
 				sx={{
 					marginBottom: '.3em',
 					marginTop: '1.2em',
-					minHeight: '38px',
+					minHeight: '42px',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+					gap: 1,
 					'& button': {
 						marginRight: '.5em',
 					},
-					'& div button': {
-						float: 'right',
-						marginRight: '0',
-						marginLeft: '.5em',
+					'& > div': {
+						display: 'flex',
+						gap: 1,
+						alignItems: 'center',
 					},
 				}}
 				size={12}

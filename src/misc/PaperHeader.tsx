@@ -7,20 +7,25 @@ import Grid from '@mui/material/Grid';
 import HelpIcon from '@mui/icons-material/HelpOutlined';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 const Component = function (props) {
 	return (
 		<Grid container spacing={props.spacing} sx={{ padding: props.padding }}>
-			<Grid
-				sx={{
-					marginBottom: '.3em',
-					'& button': {
-						float: 'right',
-						marginLeft: '.5em',
-					},
-				}}
-				size={12}
-			>
+			<Grid size={12}>
+				<Stack
+					direction="row"
+					sx={{
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						gap: 1,
+						minWidth: 0,
+					}}
+				>
+					<Typography variant={props.variant} sx={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+						{props.title}
+					</Typography>
+					<Stack direction="row" spacing={0.5} sx={{ flexShrink: 0 }}>
 				{typeof props.onAbort === 'function' && (
 					<IconButton
 						color="inherit"
@@ -57,7 +62,8 @@ const Component = function (props) {
 						<HelpIcon />
 					</IconButton>
 				)}
-				<Typography variant={props.variant}>{props.title}</Typography>
+					</Stack>
+				</Stack>
 			</Grid>
 		</Grid>
 	);

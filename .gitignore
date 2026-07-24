@@ -27,3 +27,7 @@ messages.mo
 
 tsconfig.tsbuildinfo
 .playwright-mcp/
+
+.next
+next-env.d.ts
+dist

@@ -39,14 +39,16 @@ const StyledI18n = styled(I18n)(({ theme }) => ({
 		flexDirection: 'column',
 	},
 	[`& .${classes.MainHeader}`]: {
-		height: '132px',
+		height: '96px',
 	},
 
 	// TODO: one layer
 	[`& .${classes.MainContent}`]: {
 		height: '100%',
 		'& .MainContent-container': {
-			minHeight: 'calc(100vh - 230px)',
+			minHeight: 'calc(100vh - 156px)',
+			padding: { xs: '1.25rem 1rem 2rem', sm: '2rem 1.5rem 3rem' },
+			boxSizing: 'border-box',
 		},
 		'& .MainContent-item': {
 			maxWidth: '980px',

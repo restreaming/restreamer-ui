@@ -4,17 +4,26 @@ const root = {
 	textAlign: 'center',
 	textTransform: 'uppercase',
 	userSelect: 'none',
+	borderRadius: 10,
+	minHeight: 42,
+	padding: '0 18px',
+	transition:
+		'transform .18s ease, box-shadow .18s ease, background-color .18s ease',
+	'&:hover': {
+		transform: 'translateY(-1px)',
+	},
 };
 
 const outlined = {
 	base: {
 		color: base.palette.text.primary,
 		backgroundColor: base.palette.background.dark1,
-		border: `2px solid ${base.palette.primary.main}`,
+		border: `1px solid ${base.palette.primary.main}`,
+		boxShadow: '0 8px 18px rgba(0, 0, 0, .16)',
 		'&:hover': {
 			color: base.palette.primary.contrastText,
 			backgroundColor: base.palette.background.dark1,
-			border: `2px solid ${base.palette.primary.light}`,
+			border: `1px solid ${base.palette.primary.light}`,
 		},
 		'&:disabled': {
 			color: `${base.palette.text.disabled}`,
@@ -29,11 +38,11 @@ const outlined = {
 	primary: {
 		color: base.palette.text.primary,
 		backgroundColor: base.palette.background.dark1,
-		border: `2px solid ${base.palette.secondary.main}`,
+		border: `1px solid ${base.palette.secondary.main}`,
 		'&:hover': {
 			color: base.palette.secondary.contrastText,
 			backgroundColor: base.palette.secondary.main,
-			border: `2px solid ${base.palette.secondary.main}`,
+			border: `1px solid ${base.palette.secondary.main}`,
 		},
 	},
 	// color secondary: danger
@@ -54,19 +63,22 @@ export default {
 		{
 			props: { variant: 'big' },
 			style: {
-				height: 130,
+				height: 138,
 				width: '100%',
+				borderRadius: 14,
+				padding: '18px 12px',
 				textTransform: 'initial!important',
 				color: base.palette.text.primary,
 				backgroundColor: base.palette.background.dark1,
-				border: `2px solid ${base.palette.primary.main}`,
+				border: `1px solid ${base.palette.primary.main}`,
+				background: 'linear-gradient(145deg, rgba(52, 74, 98, .5), rgba(8, 15, 24, .55))',
 				'&:hover': {
 					color: base.palette.primary.contrastText,
 					backgroundColor: base.palette.background.dark1,
-					border: `2px solid ${base.palette.secondary.main}!important`,
+					border: `1px solid ${base.palette.secondary.main}!important`,
 				},
 				'&:active': {
-					border: `2px solid ${base.palette.secondary.main}!important`,
+					border: `1px solid ${base.palette.secondary.main}!important`,
 				},
 				'&.Mui-disabled': {
 					border: `2px solid ${base.palette.text.disabled}!important`,
@@ -88,12 +100,14 @@ export default {
 		{
 			props: { variant: 'bigSelected' },
 			style: {
-				height: 130,
+				height: 138,
 				width: '100%',
+				borderRadius: 14,
+				padding: '18px 12px',
 				textTransform: 'initial!important',
 				color: base.palette.text.primary,
 				backgroundColor: base.palette.background.dark1,
-				border: `2px solid ${base.palette.secondary.main}!important`,
+				border: `1px solid ${base.palette.secondary.main}!important`,
 				'&:hover': {
 					color: base.palette.primary.contrastText,
 					backgroundColor: base.palette.background.dark1,

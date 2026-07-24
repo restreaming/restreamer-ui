@@ -12,19 +12,22 @@ import '@fontsource/roboto/700.css';
 const base = {
 	htmlFontSize: 16,
 	fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-	fontSize: 12,
+	fontSize: 14,
 	fontWeightLight: 300,
 	fontWeightRegular: 400,
 	fontWeightMedium: 500,
 	fontWeightBold: 700,
 	h1: {
 		fontFamily: '"Dosis", "Roboto", "Helvetica", "Arial", sans-serif',
-		fontSize: '2rem',
-		marginBottom: '.25rem',
+		fontSize: '2.35rem',
+		fontWeight: 400,
+		letterSpacing: '-.02em',
+		marginBottom: '.5rem',
 	},
 	h2: {
 		fontFamily: '"Dosis", "Roboto", "Helvetica", "Arial", sans-serif',
-		fontSize: '1.8rem',
+		fontSize: '1.9rem',
+		fontWeight: 400,
 		marginTop: '.25rem',
 		marginBottom: '.25rem',
 		wordBreak: 'break-word',
@@ -60,6 +63,7 @@ const base = {
 	},
 	body1: {
 		fontSize: '1rem',
+		lineHeight: 1.6,
 	},
 	body2: {
 		fontSize: '.9rem',
@@ -71,7 +75,9 @@ const base = {
 		marginBottom: '.5rem',
 	},
 	button: {
-		fontSize: '.9rem',
+		fontSize: '.82rem',
+		fontWeight: 600,
+		letterSpacing: '.035em',
 	},
 	pagetitle: {
 		fontSize: '1rem',

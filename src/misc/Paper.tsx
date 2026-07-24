@@ -15,18 +15,19 @@ interface PaperProps {
 }
 
 const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
+	const variant = props.className?.toLowerCase();
 	const paperSx =
-		props.className === 'paperM'
+		variant === 'paperm'
 			? {
-					p: '3em 3.5em',
+					p: { xs: 2, sm: 3 },
 				}
-			: props.className === 'paperL'
+			: variant === 'paperl'
 				? {
-						p: '4em 4.5em',
+						p: { xs: 2.5, sm: 4 },
 					}
-				: props.className === 'paperService'
+				: variant === 'paperservice'
 					? {
-							p: '4em 4.5em',
+							p: { xs: 2.5, sm: 4 },
 							border: '1px solid',
 							borderColor: 'background.light1',
 							bgcolor: 'service.contrastText',
@@ -36,8 +37,8 @@ const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
 	return (
 		<Grid
 			container
-			spacing={1}
-			sx={{ justifyContent: 'center' }}
+			spacing={{ xs: 1.5, sm: 2 }}
+			sx={{ justifyContent: 'center', width: '100%', minWidth: 0 }}
 			style={{ marginBottom: props.marginBottom }}
 		>
 			<Grid
@@ -47,6 +48,7 @@ const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
 					md: props.md,
 					lg: props.lg,
 				}}
+				sx={{ width: '100%', minWidth: 0 }}
 			>
 				<Paper elevation={0} ref={ref} sx={paperSx}>
 					{props.children}

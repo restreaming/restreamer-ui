@@ -1,10 +1,10 @@
 export default {
 	styleOverrides: {
 		root: {
-			minHeight: 30,
+			minHeight: 42,
 			minWidth: '30%',
 			margin: '0em',
-			paddingTop: '2.5em',
+			paddingTop: '1rem',
 			textAlign: 'left',
 		},
 		indicator: {

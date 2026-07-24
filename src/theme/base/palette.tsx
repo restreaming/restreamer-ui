@@ -11,62 +11,62 @@ export default {
 		// MuiAccordion
 		accordion_border: 'rgba(128, 128, 128, .6)',
 		// MuiMenuItem, Header.js (MenuIcon, MenuItem), Progress.js (Progress boxes)
-		box_default: 'rgb(77, 77, 77)',
+		box_default: 'rgb(43, 58, 76)',
 		// MuiListItem, Progress.js (Progress boxes - danger)
-		box_danger: 'rgb(193, 39, 45)',
+		box_danger: 'rgb(160, 54, 65)',
 		// MuiButton, global.js (Page background)
-		button_disabled: '#333333',
+		button_disabled: '#0b1118',
 		// MuiButton, MuiMenu, MuiToggleButton, MultiSelectOption.js (MenuItem)
-		dark1: 'rgba(0, 0, 0, .1)',
+		dark1: 'rgba(8, 15, 24, .72)',
 		// MuiOutlinedInput, BoxText.js (color=dark)
-		dark2: 'rgba(0, 0, 0, .25)',
+		dark2: 'rgba(8, 15, 24, .48)',
 		// Footer.js, Textarea.js, global.js (Scrollbar)
-		footer1: 'rgba(66, 61, 63, .9)',
+		footer1: 'rgba(19, 32, 47, .96)',
 		// Footer.js, Textarea.js
-		footer2: 'rgba(39, 36, 37, .9)',
+		footer2: 'rgba(11, 18, 27, .98)',
 		// MuiAppBar, BoxText.js (color=light = default), TabsHorizontal.js, Paper.js
-		light1: 'rgba(255, 255, 255, .1)',
+		light1: 'rgba(190, 214, 235, .14)',
 		// MuiDialog, MuiPaper, MuiTooltip, Header.js, ModalContent.js, Dialog.js
-		modal: 'rgb(71, 71, 71)',
+		modal: 'rgb(18, 29, 43)',
 		// BoxTextarea.js, Progress.js, Process.js, Textarea.js, gobal.js (textarea)
-		modalbox: 'rgb(91, 91, 91)',
+		modalbox: 'rgb(25, 40, 57)',
 		// MuiFab, MuiListItem, MuiPaper, Headerjs,
-		paper: 'rgba(56, 56, 56, .95)',
+		paper: 'rgba(19, 31, 46, .94)',
 	},
 	default: {
-		main: '#686868',
+		main: '#8da1b8',
 	},
 	primary: {
 		// MuiOutlinedInput
-		light: '#919090',
+		light: '#b4c5d7',
 		// MuiAlert, MuiMenu, MuiOutlinedInput, MuiSelect
-		main: '#686868',
+		main: '#344a62',
 		// MuiMenu, MuiOutlinedInput
-		dark: '#4D4D4D',
+		dark: '#203246',
 		// MuiButton
 		contrastText: '#fff',
 	},
 	secondary: {
 		// MuiAlert, MuiButton, MuiFab, MuiOutlinedInput, MuiSelect, MuiToggleButton
-		main: '#39B54A',
+		main: '#47d597',
 		// MuiButton, MuiFab
 		contrastText: '#fff',
 	},
 	service: {
 		// MuiButton, Login.js
-		main: '#EAEA05',
+		main: '#f4d35e',
 		// Paper.js
 		contrastText: 'rgba(43,41,42,.95)',
 	},
 	error: {
 		// MuiAlert, MuiButton, BoxText.js (color=danger), Env.js
-		main: '#C1272D',
+		main: '#e26772',
 		// MuiButton
 		contrastText: '#fff',
 	},
 	warning: {
 		// MuiAlert, Main->index.js
-		main: '#E28014',
+		main: '#f0a85b',
 	},
 	selected: {
 		// MuiFab
@@ -80,9 +80,9 @@ export default {
 		// TabsHorizontal.js, Dialog.js, global.js (Textarea)
 		primary: '#fff',
 		// MuiSelect, MuiTab, Footer.js, Header.js
-		secondary: 'rgba(255, 255, 255, 0.7)',
+		secondary: 'rgba(215, 229, 242, 0.72)',
 		// MuiCheckbox, Checkbox.js
-		disabled: 'rgba(255, 255, 255, 0.38)',
+		disabled: 'rgba(215, 229, 242, 0.38)',
 		// MuiTypography
 		hint: 'rgba(255, 255, 255, 0.7)',
 	},
