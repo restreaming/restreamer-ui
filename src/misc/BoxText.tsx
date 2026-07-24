@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   const {
     children,
     color = "light",

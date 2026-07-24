@@ -21,30 +21,32 @@ import StreamSelect from "./StreamSelect";
 
 import FilterSelect from "../../misc/FilterSelect";
 
-export default function Profile(props: any) {
-  const [$sources, setSources] = React.useState({
+export default function Profile(props: Any) {
+  const [$sources, setSources] = React.useState<DynamicObject>({
     video: M.initSource("video", props.sources[0]),
     audio: M.initSource("audio", props.sources[1]),
   });
-  const [$profile, setProfile] = React.useState(M.initProfile(props.profile));
-  const [$videoProbe, setVideoProbe] = React.useState({
+  const [$profile, setProfile] = React.useState<DynamicObject>(
+    M.initProfile(props.profile),
+  );
+  const [$videoProbe, setVideoProbe] = React.useState<DynamicObject>({
     probing: false,
     log: [],
     modal: false,
     status: "none",
   });
-  const [$audioProbe, setAudioProbe] = React.useState({
+  const [$audioProbe, setAudioProbe] = React.useState<DynamicObject>({
     probing: false,
     log: [],
     modal: false,
     status: "none",
   });
   const [$skillsRefresh, setSkillsRefresh] = React.useState(false);
-  const [$probeModal, setProbeModal] = React.useState({
+  const [$probeModal, setProbeModal] = React.useState<DynamicObject>({
     open: false,
     data: "",
   });
-  const [$hintModal, setHintModal] = React.useState({
+  const [$hintModal, setHintModal] = React.useState<DynamicObject>({
     open: false,
     type: "",
     streams: [],
@@ -54,13 +56,16 @@ export default function Profile(props: any) {
   );
   const [$ready, setReady] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
     })();
   }, []);
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     // Add pseudo sources
     props.skills.sources.noaudio = [];
 
@@ -88,15 +93,22 @@ export default function Profile(props: any) {
     setReady(true);
   };
 
-  const handleNextStep = () => {
-    setActiveStep((prevActiveStep: any) => prevActiveStep + 1);
+  const handleNextStep = (...args: Any[]) => {
+    void args;
+    setActiveStep((prevActiveStep: Any) => prevActiveStep + 1);
   };
 
-  const handleBackStep = () => {
-    setActiveStep((prevActiveStep: any) => prevActiveStep - 1);
+  const handleBackStep = (...args: Any[]) => {
+    void args;
+    setActiveStep((prevActiveStep: Any) => prevActiveStep - 1);
   };
 
-  const handleProbe = async (type: any, device: any, settings: any, inputs: any) => {
+  const handleProbe = async (
+    type: Any,
+    device: Any,
+    settings: Any,
+    inputs: Any,
+  ) => {
     if (type === "video") {
       setVideoProbe({
         ...$videoProbe,
@@ -118,7 +130,13 @@ export default function Profile(props: any) {
     return status === "success";
   };
 
-  const handleProbeStreams = (type: any, device: any, settings: any, inputs: any, res: any) => {
+  const handleProbeStreams = (
+    type: Any,
+    device: Any,
+    settings: Any,
+    inputs: Any,
+    res: Any,
+  ) => {
     const status = M.analyzeStreams(type, res.streams);
 
     if (type === "video") {
@@ -222,17 +240,18 @@ export default function Profile(props: any) {
     return status;
   };
 
-  const handleRefresh = async () => {
+  const handleRefresh = async (...args: Any[]) => {
+    void args;
     setSkillsRefresh(true);
     await props.onRefresh();
     setSkillsRefresh(false);
   };
 
-  const handleStore = async (name: any, data: any) => {
+  const handleStore = async (name: Any, data: Any) => {
     return await props.onStore(name, data);
   };
 
-  const handleEncoding = (type: any) => (encoder: any, decoder: any) => {
+  const handleEncoding = (type: Any) => (encoder: Any, decoder: Any) => {
     const profile = $profile[type];
 
     profile.encoder = encoder;
@@ -244,7 +263,7 @@ export default function Profile(props: any) {
     });
   };
 
-  const handleFilter = (type: any) => (filter: any) => {
+  const handleFilter = (type: Any) => (filter: Any) => {
     const profile = $profile[type];
 
     profile.filter = filter;
@@ -255,18 +274,20 @@ export default function Profile(props: any) {
     });
   };
 
-  const handleDone = () => {
+  const handleDone = (...args: Any[]) => {
+    void args;
     const sources = M.cleanupSources($sources);
     const profile = M.cleanupProfile($profile);
 
     props.onDone(sources, profile);
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     props.onAbort();
   };
 
-  const handleProbeLogModal = (type: any) => (event: any) => {
+  const handleProbeLogModal = (type: Any) => (event: Any) => {
     event.preventDefault();
 
     if (type === "video") {
@@ -290,7 +311,7 @@ export default function Profile(props: any) {
     }
   };
 
-  const handleSourceChange = (type: any, source: any) => {
+  const handleSourceChange = (type: Any, source: Any) => {
     const profile = $profile[type];
     const custom = $profile.custom;
 
@@ -343,7 +364,7 @@ export default function Profile(props: any) {
     });
   };
 
-  const handleSourceSettingsChange = (type: any, source: any, settings: any) => {
+  const handleSourceSettingsChange = (type: Any) => {
     if (type === "video") {
       setVideoProbe({
         ...$videoProbe,
@@ -357,7 +378,7 @@ export default function Profile(props: any) {
     }
   };
 
-  const handleStreamSelect = (type: any, what: any) => (stream: any) => {
+  const handleStreamSelect = (type: Any, what: Any) => (stream: Any) => {
     const profile = $profile;
 
     profile[type].stream = stream;
@@ -372,7 +393,7 @@ export default function Profile(props: any) {
     });
   };
 
-  const handleHintModal = (type: any, streams: any) => (event: any) => {
+  const handleHintModal = (type: Any, streams: Any) => (event: Any) => {
     if (event) {
       event.preventDefault();
     }
@@ -442,14 +463,15 @@ export default function Profile(props: any) {
     }
   };
 
-  const handleHintChange = (streams: any) => {
+  const handleHintChange = (streams: Any) => {
     setHintModal({
       ...$hintModal,
       streams: streams,
     });
   };
 
-  const handleHintCancel = () => {
+  const handleHintCancel = (...args: Any[]) => {
+    void args;
     setHintModal({
       ...$hintModal,
       streams: [],
@@ -458,13 +480,14 @@ export default function Profile(props: any) {
     handleHintModal("none", [])(null);
   };
 
-  const handleHintDone = () => {
+  const handleHintDone = (...args: Any[]) => {
+    void args;
     const type = $hintModal.type;
 
     const device = $sources[type].type;
     const settings = $sources[type].settings;
     const inputs = $sources[type].inputs;
-    const probe = {
+    const probe: DynamicObject = {
       streams: $hintModal.streams,
       log: [],
     };
@@ -558,7 +581,7 @@ export default function Profile(props: any) {
                       <WarningIcon fontSize="large" color="error" />
                       <Typography>
                         <Trans>
-                          The source doesn't provide any video streams. Please
+                          The source doesn't provide Any video streams. Please
                           check the{" "}
                           <Link
                             href="#!"
@@ -744,7 +767,7 @@ export default function Profile(props: any) {
                           <WarningIcon fontSize="large" color="error" />
                           <Typography>
                             <Trans>
-                              The source doesn't provide any audio streams.
+                              The source doesn't provide Any audio streams.
                               Please check the{" "}
                               <Link
                                 href="#!"
@@ -862,16 +885,24 @@ Profile.defaultProps = {
   profile: {},
   config: {},
   startWith: "",
-  onDone: function (sources: any, profile: any) {},
-  onAbort: function () {},
-  onProbe: function (inputs: any) {
+  onDone: function (...args: Any[]) {
+    void args;
+  },
+  onAbort: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
     return {
       streams: [],
       log: ["onProbe function not provided for this component"],
     };
   },
-  onRefresh: function () {},
-  onStore: function (name: any, data: any) {
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
+  onStore: function (...args: Any[]) {
+    void args;
     return "";
   },
 };

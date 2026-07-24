@@ -56,11 +56,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="datarhei.com Logo" {...props} />;
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   // v1.0 > v2.0
   if (settings.base_url && !settings.v2_protocol) {
     if (settings.base_url.length !== 0) {
@@ -110,10 +110,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -182,8 +182,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const output = {
+  const createOutput = (settings: Any) => {
+    const output: DynamicObject = {
       address: null,
       options: null,
     };
@@ -195,7 +195,7 @@ function Service(props: any) {
       output.options = ["-f", "flv"];
 
       if (props.skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: Any[] = [];
         if (props.skills.codecs.video.includes("hevc")) {
           codecs.push("hvc1");
         }
@@ -287,7 +287,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

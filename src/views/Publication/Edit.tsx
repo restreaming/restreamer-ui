@@ -48,7 +48,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(() => ({
   [`& .${classes.gridContainer}`]: {
     marginTop: "0.5em",
     marginBottom: "1em",
@@ -60,7 +60,7 @@ const Root = styled("div")(({ theme }: any) => ({
   },
 }));
 
-export default function Edit(props: any) {
+export default function Edit(props: Any) {
   const { i18n } = useLingui();
   const {
     channelid: _channelid,
@@ -75,7 +75,7 @@ export default function Edit(props: any) {
   const [$sources, setSources] = React.useState<DynamicObject[]>([]);
   const [$localSources, setLocalSources] = React.useState<DynamicObject[]>([]);
   const [$tab, setTab] = React.useState("general");
-  const [$progress, setProgress] = React.useState({});
+  const [$progress, setProgress] = React.useState<Any>({});
   const [$processDetails, setProcessDetails] = React.useState({
     open: false,
     data: {
@@ -91,7 +91,7 @@ export default function Edit(props: any) {
     data: "",
   });
   const [$unsavedChanges, setUnsavedChanges] = React.useState(false);
-  const [$skills, setSkills] = React.useState(null);
+  const [$skills, setSkills] = React.useState<Any>(null);
   const [$metadata, setMetadata] = React.useState({
     name: "",
     description: "",
@@ -99,27 +99,34 @@ export default function Edit(props: any) {
   });
   const [$deleteDialog, setDeleteDialog] = React.useState(false);
   const [$saving, setSaving] = React.useState(false);
-  const [$service, setService] = React.useState(null);
-  const [$serviceSkills, setServiceSkills] = React.useState(null);
+  const [$service, setService] = React.useState<Any>(null);
+  const [$serviceSkills, setServiceSkills] = React.useState<Any>(null);
   const [$invalid, setInvalid] = React.useState("");
 
-  useInterval(async () => {
+  useInterval(async (...args: Any[]) => {
+    void args;
     await update(false);
   }, 1000);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await update(true);
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid.length !== 0) {
-      navigate($invalid, { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid.length !== 0) {
+        navigate($invalid, { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const update = async (isFirst: any) => {
+  const update = async (isFirst: Any) => {
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid("/");
@@ -140,7 +147,7 @@ export default function Edit(props: any) {
     setProgress(proc.progress);
 
     if (isFirst === true) {
-      const s = Services.Get(_service);
+      const s = Services.Get(_service ?? "");
       if (s === null) {
         notify.Dispatch(
           "warning",
@@ -157,6 +164,9 @@ export default function Edit(props: any) {
       setSkills(skills);
 
       const serviceSkills = helper.conflateServiceSkills(s.requires, skills);
+      if (serviceSkills === null) {
+        return;
+      }
       setServiceSkills(serviceSkills);
 
       const ingest = await props.restreamer.GetIngestMetadata(_channelid);
@@ -167,7 +177,7 @@ export default function Edit(props: any) {
         license: ingest.license,
       });
 
-      const localSources = [];
+      const localSources: Any[] = [];
 
       localSources.push("hls+" + ingest.control.hls.storage);
 
@@ -211,7 +221,7 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleServiceAction = async (action: any) => {
+  const handleServiceAction = async (action: Any) => {
     let state = "disconnected";
 
     if (action === "connect") {
@@ -232,7 +242,7 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleServiceChange = (outputs: any, settings: any) => {
+  const handleServiceChange = (outputs: Any, settings: Any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -246,38 +256,39 @@ export default function Edit(props: any) {
     setUnsavedChanges(true);
   };
 
-  const handleEncoding = (type: any) => (encoder: any, decoder: any, automatic: any) => {
-    const profiles = $settings.profiles;
+  const handleEncoding =
+    (type: Any) => (encoder: Any, decoder: Any, automatic: Any) => {
+      const profiles = $settings.profiles;
 
-    profiles[0][type].encoder = encoder;
-    profiles[0][type].decoder = decoder;
+      profiles[0][type].encoder = encoder;
+      profiles[0][type].decoder = decoder;
 
-    const streams = M.createOutputStreams($sources, profiles, false);
+      const streams = M.createOutputStreams($sources, profiles, false);
 
-    let outputs = $settings.outputs;
+      let outputs = $settings.outputs;
 
-    if ("createOutputs" in $service) {
-      outputs = $service.createOutputs(
-        $settings.settings,
-        $serviceSkills,
-        $metadata,
-        streams,
-      );
-    }
+      if ("createOutputs" in $service) {
+        outputs = $service.createOutputs(
+          $settings.settings,
+          $serviceSkills,
+          $metadata,
+          streams,
+        );
+      }
 
-    setSettings({
-      ...$settings,
-      profiles: profiles,
-      streams: streams,
-      outputs: outputs,
-    });
+      setSettings({
+        ...$settings,
+        profiles: profiles,
+        streams: streams,
+        outputs: outputs,
+      });
 
-    if (!automatic) {
-      setUnsavedChanges(true);
-    }
-  };
+      if (!automatic) {
+        setUnsavedChanges(true);
+      }
+    };
 
-  const handleFilter = (type: any) => (filter: any, automatic: any) => {
+  const handleFilter = (type: Any) => (filter: Any, automatic: Any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -292,7 +303,8 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleServiceDone = async () => {
+  const handleServiceDone = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     const [global, inputs, outputs] = helper.createInputsOutputs(
@@ -344,7 +356,7 @@ export default function Edit(props: any) {
     setUnsavedChanges(false);
   };
 
-  const handleServiceName = (event: any) => {
+  const handleServiceName = (event: Any) => {
     const name = event.target.value;
 
     setSettings({
@@ -355,7 +367,7 @@ export default function Edit(props: any) {
     setUnsavedChanges(true);
   };
 
-  const handleControlChange = (what: any) => (control: any, automatic: any) => {
+  const handleControlChange = (what: Any) => (control: Any, automatic: Any) => {
     setSettings({
       ...$settings,
       control: {
@@ -369,11 +381,13 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleServiceDeleteDialog = () => {
+  const handleServiceDeleteDialog = (...args: Any[]) => {
+    void args;
     setDeleteDialog(!$deleteDialog);
   };
 
-  const handleServiceDelete = async () => {
+  const handleServiceDelete = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     const res = await props.restreamer.DeleteEgress(_channelid, id);
@@ -400,24 +414,28 @@ export default function Edit(props: any) {
     navigate(`/${_channelid}`);
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}/`);
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
-  const handleHelp = (topic: any) => () => {
-    if (!topic) {
-      H("publication-" + $tab);
-      return;
-    }
+  const handleHelp =
+    (topic: Any) =>
+    (...args: Any[]) => {
+      void args;
+      if (!topic) {
+        H("publication-" + $tab);
+        return;
+      }
 
-    H(topic);
-  };
+      H(topic);
+    };
 
-  const handleProcessDetails = async (event: any) => {
+  const handleProcessDetails = async (event: Any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -432,7 +450,8 @@ export default function Edit(props: any) {
         logdata = data;
       }
 
-      processLogTimer.current = setInterval(async () => {
+      processLogTimer.current = setInterval(async (...args: Any[]) => {
+        void args;
         await updateProcessDetailsLog();
       }, 1000);
     } else {
@@ -446,7 +465,8 @@ export default function Edit(props: any) {
     });
   };
 
-  const updateProcessDetailsLog = async () => {
+  const updateProcessDetailsLog = async (...args: Any[]) => {
+    void args;
     const data = await props.restreamer.GetEgressLog(_channelid, id);
     if (data !== null) {
       setProcessDetails({
@@ -457,7 +477,7 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleProcessDebug = async (event: any) => {
+  const handleProcessDebug = async (event: Any) => {
     event.preventDefault();
 
     const show = !$processDebug.open;

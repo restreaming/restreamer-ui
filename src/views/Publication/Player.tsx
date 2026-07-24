@@ -39,7 +39,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(({ theme }: Any) => ({
   [`& .${classes.gridContainer}`]: {
     paddingTop: "1em",
   },
@@ -77,7 +77,7 @@ const posterImageTypes = [
   { mimetype: "image/jpeg", extension: "jpg", maxSize: 1 * 1024 * 1024 },
 ];
 
-export default function Edit(props: any) {
+export default function Edit(props: Any) {
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const { i18n } = useLingui();
@@ -101,19 +101,26 @@ export default function Edit(props: any) {
   });
   const [$invalid, setInvalid] = React.useState("");
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await mount();
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid.length !== 0) {
-      navigate($invalid, { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid.length !== 0) {
+        navigate($invalid, { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const mount = async () => {
+  const mount = async (...args: Any[]) => {
+    void args;
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid("/");
@@ -142,8 +149,8 @@ export default function Edit(props: any) {
   };
 
   const handleChange =
-    (what: any, section : any = "") =>
-    (event: any) => {
+    (what: Any, section: Any = "") =>
+    (event: Any) => {
       const value = event.target.value;
       const settings = $settings;
 
@@ -165,13 +172,14 @@ export default function Edit(props: any) {
         settings.logo[what] = value;
       }
 
-      if (timeout.current !== null) {
+      if (timeout.current !== undefined) {
         clearTimeout(timeout.current);
-        timeout.current = null;
+        timeout.current = undefined;
       }
 
-      timeout.current = setTimeout(() => {
-        timeout.current = null;
+      timeout.current = setTimeout((...args: Any[]) => {
+        void args;
+        timeout.current = undefined;
         setRevision($revision + 1);
       }, 500);
 
@@ -181,7 +189,7 @@ export default function Edit(props: any) {
       });
     };
 
-  const handleLogoUpload = async (data: any, extension: any) => {
+  const handleLogoUpload = async (data: Any, extension: Any) => {
     const path = await props.restreamer.UploadLogo(_channelid, data, extension);
 
     handleChange(
@@ -196,7 +204,7 @@ export default function Edit(props: any) {
     setSaving(false);
   };
 
-  const handlePosterUpload = async (data: any, extension: any) => {
+  const handlePosterUpload = async (data: Any, extension: Any) => {
     const path = await props.restreamer.UploadPoster(
       _channelid,
       data,
@@ -212,12 +220,14 @@ export default function Edit(props: any) {
     setSaving(false);
   };
 
-  const handleUploadStart = () => {
+  const handleUploadStart = (...args: Any[]) => {
+    void args;
     setSaving(true);
   };
 
-  const handleUploadError = (title: any) => (err: any) => {
-    const message = (() => {
+  const handleUploadError = (title: Any) => (err: Any) => {
+    const message = ((...args: Any[]) => {
+      void args;
       switch (err.type) {
         case "nofiles":
           return <Trans>Please select a file to upload.</Trans>;
@@ -248,7 +258,7 @@ export default function Edit(props: any) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title: any, message: any) => {
+  const showUploadError = (title: Any, message: Any) => {
     setError({
       ...$error,
       open: true,
@@ -257,14 +267,16 @@ export default function Edit(props: any) {
     });
   };
 
-  const hideUploadError = () => {
+  const hideUploadError = (...args: Any[]) => {
+    void args;
     setError({
       ...$error,
       open: false,
     });
   };
 
-  const handleLogoReset = (event: any) => {
+  const handleLogoReset = (...args: Any[]) => {
+    void args;
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -298,7 +310,8 @@ export default function Edit(props: any) {
     });
   };
 
-  const handlePosterReset = (event: any) => {
+  const handlePosterReset = (...args: Any[]) => {
+    void args;
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -311,7 +324,8 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleDone = async () => {
+  const handleDone = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     const metadata = {
@@ -327,19 +341,21 @@ export default function Edit(props: any) {
     notify.Dispatch("success", "save:player", i18n._(t`Player settings saved`));
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}/`);
   };
 
-  const handleHelp = () => {
+  const handleHelp = (...args: Any[]) => {
+    void args;
     H("player-" + $tab);
   };
 
-  const prepareUrl = (url: any) => {
+  const prepareUrl = (url: Any) => {
     if (url.length === 0) {
       return "";
     }

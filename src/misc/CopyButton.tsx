@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import { useLingui } from "@lingui/react";
 import { t } from "@lingui/core/macro";
@@ -8,12 +8,13 @@ import FileCopyIcon from "@mui/icons-material/FileCopy";
 import CopyToClipboard from "../utils/clipboard";
 import NotifyContext from "../contexts/Notify";
 
-export default function CopyButton(props: any) {
+export default function CopyButton(props: Any) {
   const notify = useContext(NotifyContext);
   const { i18n } = useLingui();
   const { children, value, ...other } = props;
 
-  const handleCopy = async () => {
+  const handleCopy = async (...args: Any[]) => {
+    void args;
     const success = await CopyToClipboard(value);
 
     if (success === true) {

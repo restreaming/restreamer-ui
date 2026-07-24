@@ -62,13 +62,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: "#39B54A" }} {...props} />
   );
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "rtsp://",
     address: "",
@@ -91,10 +91,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -108,7 +108,7 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
+  const createOutput = (settings: Any) => {
     const options = ["-f", "rtsp"];
 
     for (const key in settings.options) {
@@ -136,7 +136,7 @@ function Service(props: any) {
       address = url.toString();
     }
 
-    const output = {
+    const output: DynamicObject = {
       address: address,
       options: options,
     };
@@ -317,7 +317,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

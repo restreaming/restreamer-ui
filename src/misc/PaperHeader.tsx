@@ -1,4 +1,3 @@
-
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
@@ -8,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
-const Component = function (props: any) {
+const Component = function (props: Any) {
   return (
     <Grid container spacing={props.spacing} sx={{ padding: props.padding }}>
       <Grid size={12}>

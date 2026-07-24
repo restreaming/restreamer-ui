@@ -2,9 +2,11 @@ import React from "react";
 
 import Helper from "../../helper";
 
-function createMapping(settings: any, stream: any, skills: any) {
+function createMapping(_settings: Any, stream: Any, skills: Any) {
+  void _settings;
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
+  void skills;
 
   const local = ["-an"];
 
@@ -17,12 +19,12 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Coder(props: any) {
-  const settings = {};
+function Coder(props: Any) {
+  const settings: DynamicObject = {};
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -36,7 +38,8 @@ function Coder(props: any) {
     );
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -47,7 +50,9 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings: any, mapping: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const coder = "none";
@@ -56,12 +61,12 @@ const codec = "none";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize() {
   return `${name}`;
 }
 
-function defaults(stream: any, skills: any) {
-  const settings = {};
+function defaults(stream: Any, skills: Any) {
+  const settings: DynamicObject = {};
 
   return {
     settings: settings,

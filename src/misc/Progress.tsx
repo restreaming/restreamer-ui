@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
@@ -7,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Duration from "./Duration";
 import Number from "./Number";
 
-function init(props: any) {
+function init(props: Any) {
   const initProps = {
     time: 0,
     fps: 0,
@@ -25,7 +24,7 @@ function init(props: any) {
   return initProps;
 }
 
-export default function Progress(props: any) {
+export default function Progress(props: Any) {
   const progress = init(props);
 
   return (

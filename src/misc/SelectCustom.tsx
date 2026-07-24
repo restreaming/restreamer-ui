@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 
-function isCustomOption(value: any, options: any) {
+function isCustomOption(value: Any, options: Any) {
   for (const o of options) {
     if (o.value === value) {
       return false;
@@ -17,7 +17,7 @@ function isCustomOption(value: any, options: any) {
   return true;
 }
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   const [$value, setValue] = React.useState({
     value: props.value,
     isCustom: isCustomOption(props.value, props.options),
@@ -25,7 +25,7 @@ export default function Component(props: any) {
       isCustomOption(props.value, props.options) === true ? props.value : "",
   });
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: Any) => {
     const v = event.target.value;
 
     const value = $value;
@@ -49,7 +49,7 @@ export default function Component(props: any) {
     });
   };
 
-  const handleCustomChange = (event: any) => {
+  const handleCustomChange = (event: Any) => {
     setValue({
       ...$value,
       custom: event.target.value,
@@ -58,7 +58,7 @@ export default function Component(props: any) {
     props.onChange(event);
   };
 
-  const options = [];
+  const options: Any[] = [];
 
   for (const o of props.options) {
     options.push(
@@ -142,5 +142,7 @@ Component.defaultProps = {
   disabled: false,
   customKey: "custom",
   allowCustom: false,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

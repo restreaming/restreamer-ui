@@ -13,12 +13,12 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import Select from "../../../misc/Select";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings: any) => {
+const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     source: "none",
     fps: "25",
     size: "1920x1080",
@@ -35,8 +35,8 @@ const initSettings = (initialSettings: any) => {
   return settings;
 };
 
-const createInputs = (settings: any) => {
-  const inputs = [];
+const createInputs = (settings: Any) => {
+  const inputs: Any[] = [];
 
   let address = "";
 
@@ -85,11 +85,11 @@ const createInputs = (settings: any) => {
   return inputs;
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     props.onChange({
@@ -98,7 +98,8 @@ function Source(props: any) {
     });
   };
 
-  const handleProbe = () => {
+  const handleProbe = (...args: Any[]) => {
+    void args;
     props.onProbe(settings, createInputs(settings));
   };
 
@@ -253,11 +254,15 @@ function Source(props: any) {
 
 Source.defaultProps = {
   settings: {},
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

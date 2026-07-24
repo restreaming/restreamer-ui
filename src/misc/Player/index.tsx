@@ -1,11 +1,10 @@
-
 import VideoJS from "./videojs";
 
-export default function Player(props: any) {
+export default function Player(props: Any) {
   const type = props.type ? props.type : "videojs-internal";
 
   if (type === "videojs-internal" || type === "videojs-public") {
-    const config = {
+    const config: DynamicObject = {
       controls: props.controls,
       poster: props.poster,
       autoplay:

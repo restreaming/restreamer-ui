@@ -39,15 +39,15 @@ i18n.load({
 });
 
 const aliases: Record<string, string> = {
-	pt: 'pt-br',
-	'zh-cn': 'zh-hans',
+  pt: "pt-br",
+  "zh-cn": "zh-hans",
 };
 
 const getAlias = (lang: string | null): string => {
-	if (lang === null) {
-		return "";
-	}
-	if (lang in aliases) {
+  if (lang === null) {
+    return "";
+  }
+  if (lang in aliases) {
     return aliases[lang];
   }
 

@@ -1,7 +1,6 @@
-
 import TextareaModal from "./Textarea";
 
-const Component = function (props: any) {
+const Component = function (props: Any) {
   return (
     <TextareaModal
       open={props.open}

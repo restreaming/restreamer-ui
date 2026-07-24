@@ -1,4 +1,5 @@
 type DynamicObject = Record<string, any>;
+type Any = ReturnType<Function>;
 
 declare module "semver/functions/gt" {
   const gt: (version: string, comparison: string) => boolean;

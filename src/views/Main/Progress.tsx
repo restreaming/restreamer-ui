@@ -8,7 +8,7 @@ import Duration from "../../misc/Duration";
 import Number from "../../misc/Number";
 import Palette from "../../theme/base/palette";
 
-export default function Progress(props: any) {
+export default function Progress(props: Any) {
   const uptime = props.progress.time;
   const bitrate = props.progress.bitrate;
   const fps = props.progress.fps;

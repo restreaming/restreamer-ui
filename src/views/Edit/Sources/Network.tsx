@@ -30,12 +30,12 @@ import Textarea from "../../../misc/Textarea";
 
 const useStyles = () => ({ gridContainer: "gridContainer" });
 
-const initSettings = (initialSettings: any, config: any) => {
+const initSettings = (initialSettings: Any, config: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     mode: "pull",
     address: "",
     username: "",
@@ -87,12 +87,12 @@ const initSettings = (initialSettings: any, config: any) => {
   return settings;
 };
 
-const initConfig = (initialConfig: any) => {
+const initConfig = (initialConfig: Any) => {
   if (!initialConfig) {
     initialConfig = {};
   }
 
-  const config = {
+  const config: DynamicObject = {
     rtmp: {},
     srt: {},
     hls: {},
@@ -130,7 +130,7 @@ const initConfig = (initialConfig: any) => {
   return config;
 };
 
-const initSkills = (initialSkills: any) => {
+const initSkills = (initialSkills: Any) => {
   if (!initialSkills) {
     initialSkills = {};
   }
@@ -174,12 +174,12 @@ const initSkills = (initialSkills: any) => {
   return skills;
 };
 
-const createInputs = (settings: any, config: any, skills: any) => {
+const createInputs = (settings: Any, config: Any, skills: Any) => {
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
 
-  const input = {
+  const input: DynamicObject = {
     address: "",
     options: [],
   };
@@ -260,7 +260,7 @@ const createInputs = (settings: any, config: any, skills: any) => {
       );
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: Any[] = [];
         if (skills.codecs.video.hevc?.length > 0) {
           codecs.push("hvc1");
         }
@@ -317,7 +317,7 @@ const createInputs = (settings: any, config: any, skills: any) => {
       );
 
       if (skills.ffmpeg.version_major >= 6) {
-        const codecs = [];
+        const codecs: Any[] = [];
         if (skills.codecs.video.hevc?.length > 0) {
           codecs.push("hvc1");
         }
@@ -354,7 +354,7 @@ const createInputs = (settings: any, config: any, skills: any) => {
   return [input];
 };
 
-const addUsernamePassword = (address: any, username: any, password: any) => {
+const addUsernamePassword = (address: Any, username: Any, password: Any) => {
   if (username.length === 0 && password.length === 0) {
     return address;
   }
@@ -374,7 +374,7 @@ const addUsernamePassword = (address: any, username: any, password: any) => {
   return url.toString();
 };
 
-const getProtocol = (url: any) => {
+const getProtocol = (url: Any) => {
   const re = new RegExp("^([a-z][a-z0-9.+-:]*)://", "i");
   const matches = url.match(re);
 
@@ -385,7 +385,7 @@ const getProtocol = (url: any) => {
   return matches[1];
 };
 
-const getProtocolClass = (url: any) => {
+const getProtocolClass = (url: Any) => {
   if (typeof url !== "string") {
     url = "";
   }
@@ -408,7 +408,7 @@ const getProtocolClass = (url: any) => {
   return protocol;
 };
 
-const isAuthProtocol = (url: any) => {
+const isAuthProtocol = (url: Any) => {
   const protocolClass = getProtocolClass(url);
 
   switch (protocolClass) {
@@ -426,7 +426,7 @@ const isAuthProtocol = (url: any) => {
   return false;
 };
 
-const isSupportedProtocol = (url: any, supportedProtocols: any) => {
+const isSupportedProtocol = (url: Any, supportedProtocols: Any) => {
   const protocol = getProtocol(url);
   if (protocol.length === 0) {
     return false;
@@ -439,7 +439,7 @@ const isSupportedProtocol = (url: any, supportedProtocols: any) => {
   return true;
 };
 
-const getHLSAddress = (host: any, credentials: any, name: any, secure: any) => {
+const getHLSAddress = (host: Any, credentials: Any, name: Any, secure: Any) => {
   // Test for IPv6 addresses and put brackets around
   const url =
     "http" +
@@ -454,7 +454,13 @@ const getHLSAddress = (host: any, credentials: any, name: any, secure: any) => {
   return url;
 };
 
-const getRTMPAddress = (host: any, app: any, name: any, token: any, secure: any) => {
+const getRTMPAddress = (
+  host: Any,
+  app: Any,
+  name: Any,
+  token: Any,
+  secure: Any,
+) => {
   let url =
     "rtmp" + (secure ? "s" : "") + "://" + host + app + "/" + name + ".stream";
 
@@ -465,7 +471,13 @@ const getRTMPAddress = (host: any, app: any, name: any, token: any, secure: any)
   return url;
 };
 
-const getSRTAddress = (host: any, name: any, token: any, passphrase: any, publish: any) => {
+const getSRTAddress = (
+  host: Any,
+  name: Any,
+  token: Any,
+  passphrase: Any,
+  publish: Any,
+) => {
   let url =
     "srt" +
     "://" +
@@ -483,7 +495,8 @@ const getSRTAddress = (host: any, name: any, token: any, passphrase: any, publis
   return url;
 };
 
-const getHLS = (config: any, name: any) => {
+const getHLS = (config: Any, name: Any) => {
+  void name;
   const url = getHLSAddress(
     config.hls.host,
     config.hls.credentials,
@@ -494,7 +507,7 @@ const getHLS = (config: any, name: any) => {
   return url;
 };
 
-const getRTMP = (config: any) => {
+const getRTMP = (config: Any) => {
   const url = getRTMPAddress(
     config.rtmp.host,
     config.rtmp.app,
@@ -506,7 +519,7 @@ const getRTMP = (config: any) => {
   return url;
 };
 
-const getSRT = (config: any) => {
+const getSRT = (config: Any) => {
   const url = getSRTAddress(
     config.srt.host,
     config.channelid,
@@ -518,21 +531,22 @@ const getSRT = (config: any) => {
   return url;
 };
 
-const getLocalHLS = (config: any, name: any) => {
+const getLocalHLS = (config: Any, name: Any) => {
+  void name;
   const url = getHLSAddress(config.hls.local, "", config.channelid, false);
 
   return url;
 };
 
-const getLocalRTMP = (name: any) => {
+const getLocalRTMP = (name: Any) => {
   return "{rtmp,name=" + name + "}";
 };
 
-const getLocalSRT = (name: any) => {
+const getLocalSRT = (name: Any) => {
   return "{srt,name=" + name + ",mode=request}";
 };
 
-const isValidURL = (address: any) => {
+const isValidURL = (address: Any) => {
   const protocol = getProtocolClass(address);
   if (protocol.length === 0) {
     return false;
@@ -541,7 +555,7 @@ const isValidURL = (address: any) => {
   return true;
 };
 
-function AdvancedSettings(props: any) {
+function AdvancedSettings(props: Any) {
   const settings = props.settings;
   let protocolClass = getProtocolClass(settings.address);
   if (settings.mode === "push") {
@@ -809,7 +823,7 @@ function AdvancedSettings(props: any) {
   );
 }
 
-function Pull(props: any) {
+function Pull(props: Any) {
   const classes = useStyles();
   const settings = props.settings;
   const authProtocol = isAuthProtocol(settings.address);
@@ -917,7 +931,7 @@ function Pull(props: any) {
   );
 }
 
-function Push(props: any) {
+function Push(props: Any) {
   const classes = useStyles();
   const settings = props.settings;
 
@@ -944,7 +958,7 @@ function Push(props: any) {
             <WarningIcon fontSize="large" color="error" />
             <Typography>
               <Trans>
-                The available FFmpeg binary doesn't support any of the required
+                The available FFmpeg binary doesn't support Any of the required
                 protocols.
               </Trans>
             </Typography>
@@ -990,12 +1004,18 @@ Push.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function PushHLS(props: any) {
+function PushHLS(props: Any) {
   const classes = useStyles();
   const config = props.config;
 
@@ -1028,7 +1048,7 @@ function PushHLS(props: any) {
   );
 }
 
-function PushRTMP(props: any) {
+function PushRTMP(props: Any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1066,9 +1086,9 @@ function PushRTMP(props: any) {
     const RTMP = getRTMP(config);
 
     const filteredDevices = props.knownDevices.filter(
-      (device: any) => device.media === "rtmp",
+      (device: Any) => device.media === "rtmp",
     );
-    const options = filteredDevices.map((device: any) => {
+    const options = filteredDevices.map((device: Any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1148,12 +1168,18 @@ PushRTMP.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function PushSRT(props: any) {
+function PushSRT(props: Any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1191,9 +1217,9 @@ function PushSRT(props: any) {
     const SRT = getSRT(config);
 
     const filteredDevices = props.knownDevices.filter(
-      (device: any) => device.media === "srt",
+      (device: Any) => device.media === "srt",
     );
-    const options = filteredDevices.map((device: any) => {
+    const options = filteredDevices.map((device: Any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1273,18 +1299,24 @@ PushSRT.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const config = initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = initSkills(props.skills);
 
-  const handleChange = (section: any, what: any) => (event: any) => {
+  const handleChange = (section: Any, what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (section === "http") {
@@ -1323,11 +1355,13 @@ function Source(props: any) {
     });
   };
 
-  const handleProbe = () => {
+  const handleProbe = (...args: Any[]) => {
+    void args;
     props.onProbe(settings, createInputs(settings, config, skills));
   };
 
-  const handleRefresh = () => {
+  const handleRefresh = (...args: Any[]) => {
+    void args;
     props.onRefresh();
   };
 
@@ -1374,11 +1408,15 @@ Source.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

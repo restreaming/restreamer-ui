@@ -47,7 +47,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(() => ({
   [`& .${classes.buttonAbort}`]: {
     marginBottom: "0.3em",
   },
@@ -62,7 +62,7 @@ const Root = styled("div")(({ theme }: any) => ({
   },
 }));
 
-export default function Add(props: any) {
+export default function Add(props: Any) {
   const theme = useTheme();
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up("sm"));
 
@@ -77,7 +77,7 @@ export default function Add(props: any) {
   const [$localSources, setLocalSources] = React.useState<DynamicObject[]>([]);
   const [$filter, setFilter] = React.useState("all");
   const [$tab, setTab] = React.useState("general");
-  const [$skills, setSkills] = React.useState(null);
+  const [$skills, setSkills] = React.useState<Any>(null);
   const [$metadata, setMetadata] = React.useState({
     name: "",
     description: "",
@@ -86,19 +86,26 @@ export default function Add(props: any) {
   const [$saving, setSaving] = React.useState(false);
   const [$invalid, setInvalid] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid === true) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid === true) {
+        navigate("/", { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid(true);
@@ -116,7 +123,7 @@ export default function Add(props: any) {
       license: ingest.license,
     });
 
-    const localSources = [];
+    const localSources: Any[] = [];
 
     localSources.push("hls+" + ingest.control.hls.storage);
 
@@ -135,7 +142,7 @@ export default function Add(props: any) {
     setReady(true);
   };
 
-  const handleFilterChange = (event: any, value: any) => {
+  const handleFilterChange = (value: Any) => {
     if (!value) {
       return;
     }
@@ -143,51 +150,57 @@ export default function Add(props: any) {
     setFilter(value);
   };
 
-  const handleServiceSelect = (service: any) => () => {
-    if (service.length !== 0) {
-      const s = Services.Get(service);
-      if (s === null) {
-        return;
+  const handleServiceSelect =
+    (service: Any) =>
+    (...args: Any[]) => {
+      void args;
+      if (service.length !== 0) {
+        const s = Services.Get(service);
+        if (s === null) {
+          return;
+        }
+
+        const serviceSkills = helper.conflateServiceSkills(s.requires, $skills);
+        if (serviceSkills === null) {
+          return;
+        }
+
+        const profiles = $settings.profiles;
+        profiles[0].video = helper.preselectProfile(
+          profiles[0].video,
+          "video",
+          $sources[0].streams,
+          serviceSkills.codecs.video,
+          $skills,
+        );
+        profiles[0].audio = helper.preselectProfile(
+          profiles[0].audio,
+          "audio",
+          $sources[0].streams,
+          serviceSkills.codecs.audio,
+          $skills,
+        );
+
+        setSettings({
+          ...$settings,
+          name: s.name,
+          profiles: profiles,
+          streams: M.createOutputStreams($sources, profiles, false),
+        });
+
+        setTab("general");
+      } else {
+        // Reset the service outputs and settings
+        setSettings({
+          ...$settings,
+          ...M.initEgressMetadata({}),
+        });
       }
 
-      const serviceSkills = helper.conflateServiceSkills(s.requires, $skills);
+      setService(service);
+    };
 
-      const profiles = $settings.profiles;
-      profiles[0].video = helper.preselectProfile(
-        profiles[0].video,
-        "video",
-        $sources[0].streams,
-        serviceSkills.codecs.video,
-        $skills,
-      );
-      profiles[0].audio = helper.preselectProfile(
-        profiles[0].audio,
-        "audio",
-        $sources[0].streams,
-        serviceSkills.codecs.audio,
-        $skills,
-      );
-
-      setSettings({
-        ...$settings,
-        name: s.name,
-        profiles: profiles,
-        streams: M.createOutputStreams($sources, profiles, false),
-      });
-
-      setTab("general");
-    } else {
-      // Reset the service outputs and settings
-      setSettings({
-        ...$settings,
-        ...M.initEgressMetadata({}),
-      });
-    }
-
-    setService(service);
-  };
-
-  const handleServiceChange = (outputs: any, settings: any) => {
+  const handleServiceChange = (outputs: Any, settings: Any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -199,7 +212,7 @@ export default function Add(props: any) {
     });
   };
 
-  const handleProcessing = (type: any) => (encoder: any, decoder: any) => {
+  const handleProcessing = (type: Any) => (encoder: Any, decoder: Any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].encoder = encoder;
@@ -233,7 +246,7 @@ export default function Add(props: any) {
     });
   };
 
-  const handleProcessingFilter = (type: any) => (filter: any) => {
+  const handleProcessingFilter = (type: Any) => (filter: Any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -244,7 +257,8 @@ export default function Add(props: any) {
     });
   };
 
-  const handleServiceDone = async () => {
+  const handleServiceDone = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     const [global, inputs, outputs] = helper.createInputsOutputs(
@@ -299,7 +313,7 @@ export default function Add(props: any) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleServiceName = (event: any) => {
+  const handleServiceName = (event: Any) => {
     const name = event.target.value;
 
     setSettings({
@@ -308,7 +322,7 @@ export default function Add(props: any) {
     });
   };
 
-  const handleControlChange = (what: any) => (control: any) => {
+  const handleControlChange = (what: Any) => (control: Any) => {
     setSettings({
       ...$settings,
       control: {
@@ -318,15 +332,17 @@ export default function Add(props: any) {
     });
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}`);
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
-  const handleHelp = () => {
+  const handleHelp = (...args: Any[]) => {
+    void args;
     let topic = "publication-add";
 
     if ($service !== "") {
@@ -340,12 +356,12 @@ export default function Add(props: any) {
     return null;
   }
 
-  const serviceList = [];
+  const serviceList: Any[] = [];
 
   let ServiceControl = null;
-  let serviceSkills = null;
+  let serviceSkills: DynamicObject = {};
 
-  let service: DynamicObject = {};
+  let service: DynamicObject | null = {};
 
   if ($service === "") {
     for (const s of Services.List()) {
@@ -422,7 +438,8 @@ export default function Add(props: any) {
     }
 
     ServiceControl = service.component;
-    serviceSkills = helper.conflateServiceSkills(service.requires, $skills);
+    serviceSkills =
+      helper.conflateServiceSkills(service.requires, $skills) ?? {};
   }
 
   return (

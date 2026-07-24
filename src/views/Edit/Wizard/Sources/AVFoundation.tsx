@@ -13,8 +13,8 @@ import Typography from "@mui/material/Typography";
 import * as S from "../../Sources/AVFoundation";
 import Select from "../../../../misc/Select";
 
-function initSettings(initialSettings: any) {
-  const settings = {
+function initSettings(initialSettings: Any) {
+  const settings: DynamicObject = {
     ...S.func.initSettings(initialSettings),
     format: "nv12",
     framerate: 25,
@@ -24,15 +24,15 @@ function initSettings(initialSettings: any) {
   return settings;
 }
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (newSettings : any = settings) => {
+  const handleChange = (newSettings: Any = settings) => {
     newSettings = newSettings || settings;
 
     const filteredDevices = props.knownDevices.filter(
-      (device: any) => device.media === "video",
+      (device: Any) => device.media === "video",
     );
 
     props.onChange(
@@ -43,11 +43,12 @@ function Source(props: any) {
     );
   };
 
-  const handleRefresh = () => {
+  const handleRefresh = (...args: Any[]) => {
+    void args;
     props.onRefresh();
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -58,14 +59,15 @@ function Source(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange();
   }, []);
 
   let filteredDevices = props.knownDevices.filter(
-    (device: any) => device.media === "video",
+    (device: Any) => device.media === "video",
   );
-  let options = filteredDevices.map((device: any) => {
+  let options = filteredDevices.map((device: Any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -98,9 +100,9 @@ function Source(props: any) {
   );
 
   filteredDevices = props.knownDevices.filter(
-    (device: any) => device.media === "audio",
+    (device: Any) => device.media === "audio",
   );
-  options = filteredDevices.map((device: any) => {
+  options = filteredDevices.map((device: Any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -166,11 +168,15 @@ function Source(props: any) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

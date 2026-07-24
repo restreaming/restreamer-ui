@@ -1,4 +1,3 @@
-
 import { faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Trans } from "@lingui/react/macro";
@@ -59,13 +58,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: "#39B54A" }} {...props} />
   );
 }
 
-const defaults = {
+const defaults: DynamicObject = {
   connect_timeout: "3000",
   ffs: "25600",
   inputbw: "0",
@@ -95,7 +94,7 @@ const defaults = {
   pbkeylen: "16",
 };
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "srt://",
     address: "",
@@ -112,10 +111,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what in settings.params) {
@@ -133,8 +132,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const params = [];
+  const createOutput = (settings: Any) => {
+    const params: Any[] = [];
 
     for (const key in settings.params) {
       if (settings.params[key].length === 0) {
@@ -154,7 +153,7 @@ function Service(props: any) {
 
     const options = ["-bsf:v", "dump_extra", "-f", "mpegts"];
 
-    const output = {
+    const output: DynamicObject = {
       address: settings.protocol + settings.address + "?" + params.join("&"),
       options: options,
     };
@@ -614,7 +613,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

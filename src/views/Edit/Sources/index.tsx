@@ -11,16 +11,16 @@ import * as VirtualAudio from "./VirtualAudio";
 import * as VirtualVideo from "./VirtualVideo";
 
 class Registry {
-  services: Map<any, any>;
+  services: Map<Any, Any>;
   constructor() {
     this.services = new Map();
   }
 
-  Register(service: any) {
+  Register(service: Any) {
     this.services.set(service.id, service);
   }
 
-  Get(id: any) {
+  Get(id: Any) {
     const service = this.services.get(id);
     if (service) {
       return service;

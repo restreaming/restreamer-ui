@@ -49,99 +49,105 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(() => ({
   [`& .${classes.inlineEnv}`]: {
     float: "right",
   },
 }));
 
-const configValues = {
+const configValues: DynamicObject = {
   update_check: {
     tab: "general",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.update_check = !config.update_check;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.update_check;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   id: {
     tab: "service",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.id = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.id;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   name: {
     tab: "service",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.name = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.name;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "log.level": {
     tab: "logging",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.log.level = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.log.level;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "log.max_lines": {
     tab: "logging",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.log.max_lines = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.log.max_lines;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   address: {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.address = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.address;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "host.name": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.host.name = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.host.name;
     },
-    validate: (config: any) => {
+    validate: (config: Any) => {
       if (config.tls.auto === false) {
         return null;
       }
 
-      const names = toArray(config.host.name, ",").filter((name: any) => {
+      const names = toArray(config.host.name, ",").filter((name: Any) => {
         if (name.match(/([0-9]+\.)+/) !== null) {
           return true;
         }
@@ -162,481 +168,522 @@ const configValues = {
   },
   "tls.address": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.tls.address = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.tls.address;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "tls.auto": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.tls.auto = !config.tls.auto;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.tls.auto;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "tls.email": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.tls.email = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.tls.email;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "api.auth.enable": {
     tab: "auth",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.api.auth.enable = !config.api.auth.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.api.auth.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "api.auth.username": {
     tab: "auth",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.api.auth.username = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.api.auth.username;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "api.auth.password": {
     tab: "auth",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.api.auth.password = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.api.auth.password;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.enable": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.rtmp.enable = !config.rtmp.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.enable_tls": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.rtmp.enable_tls = !config.rtmp.enable_tls;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.enable_tls;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.address": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.rtmp.address = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.address;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.address_tls": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.rtmp.address_tls = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.address_tls;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.app": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.rtmp.app = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.app;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "rtmp.token": {
     tab: "rtmp",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.rtmp.token = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.rtmp.token;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "ffmpeg.log.max_lines": {
     tab: "logging",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.ffmpeg.log.max_lines = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.ffmpeg.log.max_lines;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "ffmpeg.log.max_history": {
     tab: "logging",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.ffmpeg.log.max_history = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.ffmpeg.log.max_history;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "srt.enable": {
     tab: "srt",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.srt.enable = !config.srt.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.srt.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "srt.address": {
     tab: "srt",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.srt.address = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.srt.address;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "srt.passphrase": {
     tab: "srt",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.srt.passphrase = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.srt.passphrase;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "srt.token": {
     tab: "srt",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.srt.token = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.srt.token;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.cors.allow_all": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.storage.cors.allow_all = !config.storage.cors.allow_all;
     },
-    unset: (config: any) => {
+    unset: (...args: Any[]) => {
+      void args;
       return;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.cors.origins": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.cors.origins = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.cors.origins;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.max_size_mbytes": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.max_size_mbytes = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.max_size_mbytes;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.enable": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.storage.disk.cache.enable = !config.storage.disk.cache.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.max_size_mbytes": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.cache.max_size_mbytes = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.max_size_mbytes;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.ttl_seconds": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.cache.ttl_seconds = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.ttl_seconds;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.max_file_size_mbytes": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.cache.max_file_size_mbytes = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.max_file_size_mbytes;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.types.allow": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.cache.types.allow = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.types.allow;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.disk.cache.types.block": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.disk.cache.types.block = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.disk.cache.types.block;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.memory.auth.enable": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.storage.memory.auth.enable = !config.storage.memory.auth.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.memory.auth.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.memory.auth.username": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.memory.auth.username = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.memory.auth.username;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.memory.auth.password": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.memory.auth.password = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.memory.auth.password;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.memory.max_size_mbytes": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.storage.memory.max_size_mbytes = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.memory.max_size_mbytes;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "storage.memory.purge": {
     tab: "storage",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.storage.memory.purge = !config.storage.memory.purge;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.storage.memory.purge;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.enable": {
     tab: "playback",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.sessions.enable = !config.sessions.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.ip_ignorelist": {
     tab: "playback",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.sessions.ip_ignorelist = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.ip_ignorelist;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.session_timeout_sec": {
     tab: "playback",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.sessions.session_timeout_sec = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.session_timeout_sec;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.persist": {
     tab: "playback",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.sessions.persist = !config.sessions.persist;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.persist;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.max_bitrate_mbit": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.sessions.max_bitrate_mbit = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.max_bitrate_mbit;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "sessions.max_sessions": {
     tab: "network",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.sessions.max_sessions = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.sessions.max_sessions;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "service.enable": {
     tab: "service",
-    set: (config: any, value: any) => {
+    set: (config: Any) => {
       config.service.enable = !config.service.enable;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.service.enable;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
   "service.token": {
     tab: "service",
-    set: (config: any, value: any) => {
+    set: (config: Any, value: Any) => {
       config.service.token = value;
     },
-    unset: (config: any) => {
+    unset: (config: Any) => {
       delete config.service.token;
     },
-    validate: (config: any) => {
+    validate: (...args: Any[]) => {
+      void args;
       return null;
     },
   },
@@ -644,7 +691,7 @@ const configValues = {
 
 const RETRIES = 60;
 
-function ErrorTab(props: any) {
+function ErrorTab(props: Any) {
   let { label, errors, ...other } = props;
 
   if (errors === true) {
@@ -659,9 +706,9 @@ function ErrorTab(props: any) {
   return <Tab label={label} {...other} />;
 }
 
-function ErrorBox(props: any) {
+function ErrorBox(props: Any) {
   const messages = props.messages.filter(
-    (m: any) => props.configvalue === "" || m.configvalue === props.configvalue,
+    (m: Any) => props.configvalue === "" || m.configvalue === props.configvalue,
   );
 
   if (messages.length === 0) {
@@ -671,7 +718,7 @@ function ErrorBox(props: any) {
   return (
     <BoxText color="danger">
       <Typography variant="body2" gutterBottom>
-        {messages.map((e: any, i: any) => (
+        {messages.map((e: Any, i: Any) => (
           <span key={i}>
             {e.error}
             <br />
@@ -687,14 +734,14 @@ ErrorBox.defaultProps = {
   messages: [],
 };
 
-const toArray = (val: any, separator: any) => {
+const toArray = (val: Any, separator: Any) => {
   return val
     .split(separator)
-    .map((l: any) => l.trim())
-    .filter((l: any) => l.length !== 0);
+    .map((l: Any) => l.trim())
+    .filter((l: Any) => l.length !== 0);
 };
 
-const toInt = (val: any) => {
+const toInt = (val: Any) => {
   if (typeof val === "string") {
     return val.length === 0 ? 0 : parseInt(val);
   }
@@ -702,12 +749,12 @@ const toInt = (val: any) => {
   return val;
 };
 
-export default function Settings(props: any) {
+export default function Settings(props: Any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { tab: _tab } = useParams();
   const notify = React.useContext(NotifyContext);
-  const [$config, setConfig] = React.useState({
+  const [$config, setConfig] = React.useState<DynamicObject>({
     ready: false,
     modified: false,
     data: null,
@@ -725,7 +772,7 @@ export default function Settings(props: any) {
     want: props.restreamer.CheckForUpdates(),
   });
   const [$tab, setTab] = React.useState(_tab ? _tab : "general");
-  const [$tabs, setTabs] = React.useState({
+  const [$tabs, setTabs] = React.useState<DynamicObject>({
     general: { errors: false, messages: [] }, // messages is an array of objects: {configvalue: '', error: ''}
     network: { errors: false, messages: [] },
     auth: { errors: false, messages: [] },
@@ -755,30 +802,35 @@ export default function Settings(props: any) {
     },
   });
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
     })();
 
-    return () => {
+    return (...args: Any[]) => {
+      void args;
       clearInterval(logTimer.current);
     };
   }, []);
 
-  useInterval(() => {
+  useInterval((...args: Any[]) => {
+    void args;
     setUpdates({
       ...$updates,
       has: props.restreamer.HasUpdates(),
     });
   }, 1000 * 2);
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     setReloadKey(props.restreamer.CreatedAt().toISOString());
 
     const data = await props.restreamer.Config();
 
     let config = null;
-    let overrides = [];
+    let overrides: Any[] = [];
     let outdated = false;
 
     if (data !== null) {
@@ -834,12 +886,14 @@ export default function Settings(props: any) {
     });
   };
 
-  const handleExpertMode = () => {
+  const handleExpertMode = (...args: Any[]) => {
+    void args;
     props.restreamer.SetExpert(!$expert);
     setExpert(!$expert);
   };
 
-  const handleCheckForUpdates = () => {
+  const handleCheckForUpdates = (...args: Any[]) => {
+    void args;
     props.restreamer.SetCheckForUpdates(!$updates.want);
     setUpdates({
       ...$updates,
@@ -847,7 +901,7 @@ export default function Settings(props: any) {
     });
   };
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
     const config = $config.data;
 
@@ -871,7 +925,7 @@ export default function Settings(props: any) {
 
     // Remove all error for a config value
     tabs[tab].messages = tabs[tab].messages.filter(
-      (m: any) => m.configvalue !== what,
+      (m: Any) => m.configvalue !== what,
     );
     if (tabs[tab].messages.length === 0) {
       tabs[tab].errors = false;
@@ -900,7 +954,7 @@ export default function Settings(props: any) {
     });
   };
 
-  const handleCoreConfig = (event: any) => {
+  const handleCoreConfig = (event: Any) => {
     const value = event.target.value;
 
     setConfig({
@@ -910,11 +964,12 @@ export default function Settings(props: any) {
     });
   };
 
-  const handleChangeTab = async (event: any, value: any) => {
+  const handleChangeTab = async (value: Any) => {
     if (value === "logging") {
       await updateLogdata();
 
-      logTimer.current = setInterval(async () => {
+      logTimer.current = setInterval(async (...args: Any[]) => {
+        void args;
         await updateLogdata();
       }, 1000);
     } else {
@@ -924,12 +979,14 @@ export default function Settings(props: any) {
     setTab(value);
   };
 
-  const updateLogdata = async () => {
+  const updateLogdata = async (...args: Any[]) => {
+    void args;
     const logdata = await props.restreamer.Log();
     setLogdata(logdata.join("\n"));
   };
 
-  const handleSave = async () => {
+  const handleSave = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     let config = null;
@@ -1013,13 +1070,14 @@ export default function Settings(props: any) {
       try {
         config = JSON.parse($config.core);
       } catch (e) {
-        const tabs = {};
+        console.error(e);
+        const tabs: DynamicObject = {};
         tabs["service"] = {
           errors: true,
           messages: [
             {
               configvalue: "coreconfig",
-              error: e.message,
+              error: e instanceof Error ? e.message : String(e),
             },
           ],
         };
@@ -1063,8 +1121,8 @@ export default function Settings(props: any) {
         );
       }
 
-      const tabs = {};
-      const ucfirst = (string: any) => {
+      const tabs: DynamicObject = {};
+      const ucfirst = (string: Any) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
       };
 
@@ -1115,7 +1173,7 @@ export default function Settings(props: any) {
         ),
       );
 
-      const tabs = {};
+      const tabs: DynamicObject = {};
 
       for (const t in $tabs) {
         tabs[t] = { errors: false, messages: [] };
@@ -1141,21 +1199,24 @@ export default function Settings(props: any) {
     setSaving(false);
   };
 
-  const handleSavedDialog = () => {
+  const handleSavedDialog = (...args: Any[]) => {
+    void args;
     setDialogs({
       ...$dialogs,
       saved: !$dialogs.saved,
     });
   };
 
-  const handleReloadDialog = () => {
+  const handleReloadDialog = (...args: Any[]) => {
+    void args;
     setDialogs({
       ...$dialogs,
       restart: !$dialogs.restart,
     });
   };
 
-  const handleReload = async () => {
+  const handleReload = async (...args: Any[]) => {
+    void args;
     setDialogs({
       ...$dialogs,
       saved: false,
@@ -1184,8 +1245,8 @@ export default function Settings(props: any) {
       return;
     }
 
-    const waitFor = (ms: any) => {
-      return new Promise((resolve: any) => {
+    const waitFor = (ms: Any) => {
+      return new Promise((resolve: Any) => {
         setTimeout(resolve, ms);
       });
     };
@@ -1248,15 +1309,19 @@ export default function Settings(props: any) {
     return true;
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate(-1);
   };
 
-  const handleHelp = (topic: any) => () => {
-    H("settings-" + topic);
-  };
+  const handleHelp =
+    (topic: Any) =>
+    (...args: Any[]) => {
+      void args;
+      H("settings-" + topic);
+    };
 
-  const env = (what: any) => {
+  const env = (what: Any) => {
     if ($config.overrides.indexOf(what) !== -1) {
       return true;
     }
@@ -2111,7 +2176,8 @@ export default function Settings(props: any) {
                     <Link
                       color="secondary"
                       href="#/settings/auth"
-                      onClick={() => {
+                      onClick={(...args: Any[]) => {
+                        void args;
                         setTab("auth");
                       }}
                     >
@@ -2356,7 +2422,8 @@ export default function Settings(props: any) {
                       <Link
                         color="secondary"
                         href="#/settings/network"
-                        onClick={() => {
+                        onClick={(...args: Any[]) => {
+                          void args;
                           setTab("network");
                         }}
                       >

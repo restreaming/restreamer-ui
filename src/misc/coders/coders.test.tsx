@@ -9,18 +9,19 @@ const videodecoders = Decoders.Video.List();
 const audioencoders = Encoders.Audio.List();
 const videoencoders = Encoders.Video.List();
 
-const testfunc = async (coder: any) => {
+const testfunc = async (coder: Any) => {
   const defaults = coder.defaults();
 
   let $settings = {};
   let $mapping = {};
 
-  const handleChange = (settings: any, mapping: any) => {
+  const handleChange = (settings: Any, mapping: Any) => {
     $settings = settings;
     $mapping = mapping;
   };
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     render(<coder.component onChange={handleChange} />);
   });
 

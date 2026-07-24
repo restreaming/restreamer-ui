@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
@@ -10,24 +9,30 @@ import EditIcon from "@mui/icons-material/Edit";
 import * as M from "../../utils/metadata";
 import Summary from "./Summary";
 
-function IconWizard(props: any) {
+function IconWizard(props: Any) {
   return <AutoFixHighIcon {...props} />;
 }
 
-function IconEdit(props: any) {
+function IconEdit(props: Any) {
   return <EditIcon {...props} />;
 }
 
-export default function ProfileSummary(props: any) {
+export default function ProfileSummary(props: Any) {
   const profile = M.initProfile(props.profile);
 
-  const handleEdit = (what: any) => () => {
-    props.onEdit(what);
-  };
+  const handleEdit =
+    (what: Any) =>
+    (...args: Any[]) => {
+      void args;
+      props.onEdit(what);
+    };
 
-  const handleWizard = () => () => {
-    props.onWizard();
-  };
+  const handleWizard =
+    () =>
+    (...args: Any[]) => {
+      void args;
+      props.onWizard();
+    };
 
   return (
     <Grid container spacing={2}>
@@ -84,6 +89,10 @@ export default function ProfileSummary(props: any) {
 ProfileSummary.defaultProps = {
   sources: [],
   profile: null,
-  onEdit: function (type: any) {},
-  onWizard: function () {},
+  onEdit: function (...args: Any[]) {
+    void args;
+  },
+  onWizard: function (...args: Any[]) {
+    void args;
+  },
 };

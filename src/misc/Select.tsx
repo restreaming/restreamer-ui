@@ -1,9 +1,8 @@
-
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <FormControl variant={props.variant} fullWidth>
       <InputLabel>{props.label}</InputLabel>
@@ -25,5 +24,7 @@ Component.defaultProps = {
   label: "",
   value: "",
   disabled: false,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

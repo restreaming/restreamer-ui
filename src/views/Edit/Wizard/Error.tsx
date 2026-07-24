@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -9,7 +8,7 @@ import BoxText from "../../../misc/BoxText";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Error(props: any) {
+export default function Error(props: Any) {
   return (
     <Paper xs={12} sm={8} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -42,7 +41,13 @@ export default function Error(props: any) {
 }
 
 Error.defaultProps = {
-  onAbort: () => {},
-  onHelp: () => {},
-  onNext: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
+  onHelp: (...args: Any[]) => {
+    void args;
+  },
+  onNext: (...args: Any[]) => {
+    void args;
+  },
 };

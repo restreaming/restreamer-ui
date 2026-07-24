@@ -1,4 +1,3 @@
-
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
 import { t } from "@lingui/core/macro";
@@ -7,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "../../../misc/Select";
 import SelectCustom from "../../../misc/SelectCustom";
 
-function Bitrate(props: any) {
+function Bitrate(props: Any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: "32768", label: "32768 kbit/s" },
@@ -50,10 +49,12 @@ Bitrate.defaultProps = {
   variant: "outlined",
   label: <Trans>Bitrate</Trans>,
   customLabel: <Trans>Custom bitrate (kbit/s)</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function GOP(props: any) {
+function GOP(props: Any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: "1", label: "1" },
@@ -89,10 +90,12 @@ GOP.defaultProps = {
   variant: "outlined",
   label: <Trans>Keyframe interval (seconds)</Trans>,
   customLabel: <Trans>Custom keyframe interval</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Framerate(props: any) {
+function Framerate(props: Any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "60", label: "60" },
@@ -134,10 +137,12 @@ Framerate.defaultProps = {
   variant: "outlined",
   label: <Trans>Framerate</Trans>,
   customLabel: <Trans>Custom framerate</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Profile(props: any) {
+function Profile(props: Any) {
   return (
     <Select
       label={<Trans>Profile</Trans>}
@@ -154,11 +159,13 @@ function Profile(props: any) {
 
 Profile.defaultProps = {
   value: "",
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 // https://en.wikipedia.org/wiki/Graphics_display_resolution
-function Size(props: any) {
+function Size(props: Any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "7680x4320", label: "7680x4320 (8K UHD)" },
@@ -204,10 +211,12 @@ Size.defaultProps = {
   variant: "outlined",
   label: <Trans>Size</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Height(props: any) {
+function Height(props: Any) {
   const { i18n } = useLingui();
   const height = [
     { value: "4320", label: "4320" },
@@ -246,10 +255,12 @@ Height.defaultProps = {
   variant: "outlined",
   label: <Trans>Height</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Width(props: any) {
+function Width(props: Any) {
   const { i18n } = useLingui();
   const width = [
     { value: "7680", label: "7680" },
@@ -289,10 +300,12 @@ Width.defaultProps = {
   variant: "outlined",
   label: <Trans>Width</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Format(props: any) {
+function Format(props: Any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "yuv420p", label: "yuv420p" },
@@ -328,10 +341,12 @@ Format.defaultProps = {
   variant: "outlined",
   label: <Trans>Format</Trans>,
   customLabel: <Trans>Custom format</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function PixFormat(props: any) {
+function PixFormat(props: Any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "yuv420p", label: "yuv420p" },
@@ -365,10 +380,12 @@ PixFormat.defaultProps = {
   variant: "outlined",
   label: <Trans>Pixel Format</Trans>,
   customLabel: <Trans>Custom format</Trans>,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function FpsMode(props: any) {
+function FpsMode(props: Any) {
   return (
     <Select
       label={<Trans>Framerate mode</Trans>}
@@ -393,7 +410,9 @@ function FpsMode(props: any) {
 
 FpsMode.defaultProps = {
   value: "",
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export default {

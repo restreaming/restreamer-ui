@@ -1,4 +1,3 @@
-
 import { faImages } from "@fortawesome/free-solid-svg-icons";
 import { useLingui } from "@lingui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,12 +10,12 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import SelectCustom from "../../../misc/SelectCustom";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings: any) => {
+const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     device: "none",
     framerate: "25",
     ...initialSettings,
@@ -25,12 +24,12 @@ const initSettings = (initialSettings: any) => {
   return settings;
 };
 
-const createInputs = (settings: any) => {
+const createInputs = (settings: Any) => {
   const address =
     settings.device === "custom" || settings.device === "none"
       ? settings.deviceCustom
       : settings.device;
-  const input = {
+  const input: DynamicObject = {
     address: address,
     options: [],
   };
@@ -41,12 +40,12 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
-    const data = {};
+  const handleChange = (what: Any) => (event: Any) => {
+    const data: DynamicObject = {};
 
     if (["device", "framerate"].includes(what)) {
       data[what] = event.target.value;
@@ -58,14 +57,15 @@ function Source(props: any) {
     });
   };
 
-  const handleProbe = () => {
+  const handleProbe = (...args: Any[]) => {
+    void args;
     props.onProbe(settings, createInputs(settings));
   };
 
   const filteredDevices = props.knownDevices.filter(
-    (device: any) => device.extra !== "",
+    (device: Any) => device.extra !== "",
   );
-  const options = filteredDevices.map((device: any) => {
+  const options = filteredDevices.map((device: Any) => {
     return {
       value: device.id,
       label: device.name + " (" + device.extra + ")",
@@ -116,11 +116,15 @@ function Source(props: any) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return (
     <FontAwesomeIcon icon={faImages} style={{ color: "#FFF" }} {...props} />
   );

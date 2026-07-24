@@ -203,7 +203,7 @@ const topics: DynamicObject = {
   },
 };
 
-function getTopicURL(topic: any, locale: any) {
+function getTopicURL(topic: Any, locale: Any) {
   if (!(topic in topics)) {
     console.warn(`help topic "${topic}" not found`);
     // If topic doesn't exist, return default URL
@@ -219,7 +219,7 @@ function getTopicURL(topic: any, locale: any) {
   return topics[topic][locale];
 }
 
-export default function Help(topic: any) {
+export default function Help(topic: Any) {
   const url = getTopicURL(topic, i18n.locale);
 
   window.open(url);

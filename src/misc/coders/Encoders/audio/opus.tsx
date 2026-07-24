@@ -11,7 +11,7 @@ import Audio from "../../settings/Audio";
 import SelectCustom from "../../../SelectCustom";
 import Helper from "../../helper";
 
-function init(initialState: any) {
+function init(initialState: Any) {
   const state = {
     bitrate: "64",
     delay: "auto",
@@ -21,9 +21,10 @@ function init(initialState: any) {
   return state;
 }
 
-function createMapping(settings: any, stream: any, skills: any) {
+function createMapping(settings: Any, stream: Any, skills: Any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
+  void skills;
 
   let sampling = settings.sampling;
   let layout = settings.layout;
@@ -59,7 +60,7 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Delay(props: any) {
+function Delay(props: Any) {
   const { i18n } = useLingui();
   const options = [
     { value: "20", label: "20ms" },
@@ -99,15 +100,17 @@ Delay.defaultProps = {
   allowCustom: false,
   label: <Trans>Delay</Trans>,
   customLabel: <Trans>Custom delay</Trans>,
-  onChange: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Coder(props: any) {
+function Coder(props: Any) {
   const settings = init(props.settings);
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -121,7 +124,7 @@ function Coder(props: any) {
     );
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     const newSettings = {
@@ -132,7 +135,8 @@ function Coder(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -161,7 +165,9 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings: any, mapping: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const coder = "opus";
@@ -170,11 +176,11 @@ const codec = "opus";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize(settings: Any) {
   return `${name}, ${settings.bitrate} kbit/s`;
 }
 
-function defaults(stream: any, skills: any) {
+function defaults(stream: Any, skills: Any) {
   const settings = init({});
 
   return {

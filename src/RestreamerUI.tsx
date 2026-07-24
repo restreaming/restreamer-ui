@@ -92,15 +92,20 @@ export default function RestreamerUI(props: RestreamerUIProps) {
 
   const restreamer = React.useRef<Restreamer>(null!);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await handleMount();
     })();
 
-    return () => {};
+    return (...args: Any[]) => {
+      void args;
+    };
   }, []);
 
-  useInterval(() => {
+  useInterval((...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       updates: restreamer.current.HasUpdates(),
@@ -130,14 +135,16 @@ export default function RestreamerUI(props: RestreamerUIProps) {
           valid: false,
         });
       } else if (type === "auth") {
-        (async () => {
+        (async (...args: Any[]) => {
+          void args;
           await handleLogout();
         })();
       }
     }
   };
 
-  const handleMount = async () => {
+  const handleMount = async (...args: Any[]) => {
+    void args;
     restreamer.current = new Restreamer(props.address);
     restreamer.current.AddListener((event: DynamicObject) => {
       notify(event.severity, event.type, event.message);
@@ -179,7 +186,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     setReady(true);
   };
 
-  const checkChangelog = async () => {
+  const checkChangelog = async (...args: Any[]) => {
+    void args;
     let showChangelog = true;
 
     if (restreamer.current.IsConnected() === true) {
@@ -248,7 +256,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     return showChangelog;
   };
 
-  const handleCloseChangelog = async () => {
+  const handleCloseChangelog = async (...args: Any[]) => {
+    void args;
     await restreamer.current.SetMetadata({
       ...$metadata,
       bundle: {
@@ -278,7 +287,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     return connected;
   };
 
-  const handleAuth0 = async () => {
+  const handleAuth0 = async (...args: Any[]) => {
+    void args;
     const token = await auth0.getToken();
     const connected = await restreamer.current.LoginWithToken(token);
 
@@ -289,7 +299,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     });
   };
 
-  const handleLogout = async () => {
+  const handleLogout = async (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       initialized: false,
@@ -322,7 +333,7 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     password: string,
     loginPassword: string,
   ) => {
-    const data = {
+    const data: DynamicObject = {
       api: {
         auth: {
           enable: true,
@@ -360,7 +371,7 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     restreamer.current.IgnoreAPIErrors(true);
 
     const waitFor = (ms: number) => {
-      return new Promise((resolve: any) => {
+      return new Promise((resolve: Any) => {
         setTimeout(resolve, ms);
       });
     };
@@ -399,15 +410,18 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     return "OK";
   };
 
-  const handlePlayersite = () => {
+  const handlePlayersite = (...args: Any[]) => {
+    void args;
     document.location.hash = "#/playersite";
   };
 
-  const handleSettings = () => {
+  const handleSettings = (...args: Any[]) => {
+    void args;
     document.location.hash = "#/settings";
   };
 
-  const handleChannelList = () => {
+  const handleChannelList = (...args: Any[]) => {
+    void args;
     const channelid = restreamer.current.GetCurrentChannelID();
     const channels = restreamer.current.ListChannels();
 
@@ -426,7 +440,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     document.location.hash = `#/${channelid}`;
   };
 
-  const handleCloseChannelList = () => {
+  const handleCloseChannelList = (...args: Any[]) => {
+    void args;
     setChannelList({
       ...$channelList,
       open: false,
@@ -459,14 +474,16 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     return states;
   };
 
-  const handleCloseSnack = () => {
+  const handleCloseSnack = (...args: Any[]) => {
+    void args;
     setSnack({
       ...$snack,
       open: false,
     });
   };
 
-  const handleResources = async () => {
+  const handleResources = async (...args: Any[]) => {
+    void args;
     return await restreamer.current.Resources();
   };
 

@@ -1,4 +1,3 @@
-
 import { faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Trans } from "@lingui/react/macro";
@@ -61,13 +60,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: "#39B54A" }} {...props} />
   );
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "udp://",
     address: "",
@@ -101,10 +100,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -126,7 +125,7 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
+  const createOutput = (settings: Any) => {
     const options = ["-f", "mpegts"];
 
     for (const key in settings.options) {
@@ -163,7 +162,7 @@ function Service(props: any) {
       } else if (key === "mpegts_flags") {
         let flags = "";
 
-        settings.options[key].forEach((flag: any) => {
+        settings.options[key].forEach((flag: Any) => {
           flags += "+" + flag;
         });
 
@@ -173,7 +172,7 @@ function Service(props: any) {
       }
     }
 
-    const output = {
+    const output: DynamicObject = {
       address: settings.protocol + settings.address,
       options: options,
     };
@@ -532,7 +531,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

@@ -29,7 +29,7 @@ import Probe from "./Probe";
 import License from "./License";
 import Metadata from "./Metadata";
 
-export default function Wizard(props: any) {
+export default function Wizard(props: Any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
@@ -55,19 +55,26 @@ export default function Wizard(props: any) {
   const [$ready, setReady] = React.useState(false);
   const [$invalid, setInvalid] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid === true) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid === true) {
+        navigate("/", { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid(true);
@@ -90,14 +97,15 @@ export default function Wizard(props: any) {
     setReady(true);
   };
 
-  const refreshSkills = async () => {
+  const refreshSkills = async (...args: Any[]) => {
+    void args;
     await props.restreamer.RefreshSkills();
 
     const skills = await props.restreamer.Skills();
     setSkills(skills);
   };
 
-  const probe = async (type: any, source: any) => {
+  const probe = async (type: Any, source: Any) => {
     setProbe({
       ...$probe,
       probing: true,
@@ -169,7 +177,8 @@ export default function Wizard(props: any) {
     return status === "success";
   };
 
-  const handleDone = async () => {
+  const handleDone = async (...args: Any[]) => {
+    void args;
     const data = $data;
 
     data.sources = M.cleanupSources($sources);
@@ -229,7 +238,8 @@ export default function Wizard(props: any) {
     return true;
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     setAbort({
       ...$abort,
       step: $step,
@@ -238,13 +248,17 @@ export default function Wizard(props: any) {
     setStep("ABORT");
   };
 
-  const handleAdvanced = () => {
+  const handleAdvanced = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}/edit`);
   };
 
-  const handleHelp = (what: any) => () => {
-    H("wizard-" + what);
-  };
+  const handleHelp =
+    (what: Any) =>
+    (...args: Any[]) => {
+      void args;
+      H("wizard-" + what);
+    };
 
   if ($ready === false) {
     return null;
@@ -254,14 +268,19 @@ export default function Wizard(props: any) {
   let handleBack = null;
 
   if ($step === "TYPE") {
-    handleNext = (sourceid: any) => () => {
-      setSourceid(sourceid);
-      setStep("VIDEO SETTINGS");
+    handleNext =
+      (sourceid: Any) =>
+      (...args: Any[]) => {
+        void args;
+        setSourceid(sourceid);
+        setStep("VIDEO SETTINGS");
+      };
+
+    handleBack = (...args: Any[]) => {
+      void args;
     };
 
-    handleBack = () => {};
-
-    const knownSources = [];
+    const knownSources: Any[] = [];
     for (const s in $skills.sources) {
       if (s === "network") {
         knownSources.push("network");
@@ -283,7 +302,7 @@ export default function Wizard(props: any) {
       }
     }
 
-    const availableSources = [];
+    const availableSources: Any[] = [];
 
     for (const s of Sources.List()) {
       if (knownSources.indexOf(s.id) === -1) {
@@ -314,7 +333,8 @@ export default function Wizard(props: any) {
       />
     );
   } else if ($step === "VIDEO SETTINGS") {
-    handleNext = async () => {
+    handleNext = async (...args: Any[]) => {
+      void args;
       // probing ...
       setStep("VIDEO PROBE");
 
@@ -329,7 +349,8 @@ export default function Wizard(props: any) {
       setStep("VIDEO SETTINGS");
     };
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setProbe({
         ...$probe,
         status: "none",
@@ -343,7 +364,12 @@ export default function Wizard(props: any) {
       setStep("TYPE");
     };
 
-    const handleChange = (type: any, settings: any, inputs: any, ready: any) => {
+    const handleChange = (
+      type: Any,
+      settings: Any,
+      inputs: Any,
+      ready: Any,
+    ) => {
       const source = $sources.video;
 
       source.type = type;
@@ -357,7 +383,8 @@ export default function Wizard(props: any) {
       });
     };
 
-    const handleRefresh = async () => {
+    const handleRefresh = async (...args: Any[]) => {
+      void args;
       setSkillsRefresh(true);
       await refreshSkills();
       setSkillsRefresh(false);
@@ -400,7 +427,8 @@ export default function Wizard(props: any) {
   else if ($step === "VIDEO PROBE") {
     return <Probe onAbort={handleAbort} />;
   } else if ($step === "VIDEO RESULT") {
-    handleNext = () => {
+    handleNext = (...args: Any[]) => {
+      void args;
       const streams = $sources.video.streams;
       const videoprofile = $profile.video;
 
@@ -461,11 +489,12 @@ export default function Wizard(props: any) {
       setStep("AUDIO SETTINGS");
     };
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setStep("VIDEO SETTINGS");
     };
 
-    const handleStreamChange = (event: any) => {
+    const handleStreamChange = (event: Any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -477,7 +506,7 @@ export default function Wizard(props: any) {
       });
     };
 
-    const handleEncoderChange = (event: any) => {
+    const handleEncoderChange = (event: Any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -489,7 +518,7 @@ export default function Wizard(props: any) {
       });
     };
 
-    const handleDecoderChange = (event: any) => {
+    const handleDecoderChange = (event: Any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -501,7 +530,7 @@ export default function Wizard(props: any) {
       });
     };
 
-    const isCompatible = (stream: any) => {
+    const isCompatible = (stream: Any) => {
       if (stream.codec === "h264") {
         return true;
       }
@@ -516,10 +545,10 @@ export default function Wizard(props: any) {
     const decoders = Decoders.Video.GetCodersForCodec(
       streams[profile.stream].codec,
       $skills.decoders.video,
-      "any",
+      "Any",
     );
 
-    const decodersList = [];
+    const decodersList: Any[] = [];
 
     for (const c of decoders) {
       decodersList.push(
@@ -532,10 +561,10 @@ export default function Wizard(props: any) {
     const encoders = Encoders.Video.GetCodersForCodec(
       "h264",
       $skills.encoders.video,
-      "any",
+      "Any",
     );
 
-    const encodersList = [];
+    const encodersList: Any[] = [];
 
     for (const c of encoders) {
       encodersList.push(
@@ -545,7 +574,7 @@ export default function Wizard(props: any) {
       );
     }
 
-    const streamList = [];
+    const streamList: Any[] = [];
 
     for (const s of streams) {
       if (s.type !== "video") {
@@ -579,7 +608,8 @@ export default function Wizard(props: any) {
       />
     );
   } else if ($step === "AUDIO SETTINGS") {
-    handleNext = async () => {
+    handleNext = async (...args: Any[]) => {
+      void args;
       if ($profile.audio.source === 1) {
         const source = $sources.audio;
 
@@ -604,11 +634,12 @@ export default function Wizard(props: any) {
       }
     };
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setStep("VIDEO RESULT");
     };
 
-    const handleAudioStreamChange = (event: any) => {
+    const handleAudioStreamChange = (event: Any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -620,7 +651,7 @@ export default function Wizard(props: any) {
       });
     };
 
-    const handleAudioDeviceChange = (event: any) => {
+    const handleAudioDeviceChange = (event: Any) => {
       const value = event.target.value;
 
       const source = $sources.audio;
@@ -633,7 +664,7 @@ export default function Wizard(props: any) {
       });
     };
 
-    const handleStream = (event: any) => {
+    const handleStream = (event: Any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -696,7 +727,7 @@ export default function Wizard(props: any) {
     const profile = $profile.audio;
     const source = $sources.audio;
 
-    const streamList = [];
+    const streamList: Any[] = [];
     const streams = $sources.video.streams;
 
     for (const s of streams) {
@@ -711,7 +742,7 @@ export default function Wizard(props: any) {
       );
     }
 
-    const deviceList = [];
+    const deviceList: Any[] = [];
 
     if (
       "alsa" in $skills.sources &&
@@ -737,7 +768,7 @@ export default function Wizard(props: any) {
       // options:
       // 1. use audio track (and encode it if it is not compatible)
       // 2. add silence
-      // 3. don't use any audio
+      // 3. don't use Any audio
     } else if (profile.source === 1) {
       if ($sources.audio.type === "alsa") {
         // ALSA audio device
@@ -752,7 +783,7 @@ export default function Wizard(props: any) {
 
       // options:
       // 1. add silence
-      // 2. don't use any audio
+      // 2. don't use Any audio
     }
 
     return (
@@ -775,7 +806,8 @@ export default function Wizard(props: any) {
   } else if ($step === "AUDIO PROBE") {
     return <Probe onAbort={handleAbort} />;
   } else if ($step === "AUDIO RESULT") {
-    handleNext = () => {
+    handleNext = (...args: Any[]) => {
+      void args;
       let stream = null;
       const profile = $profile.audio;
 
@@ -812,7 +844,7 @@ export default function Wizard(props: any) {
       setStep("META");
     };
 
-    const isCompatible = (stream: any) => {
+    const isCompatible = (stream: Any) => {
       if (stream.codec === "aac" || stream.codec === "mp3") {
         return true;
       }
@@ -824,15 +856,17 @@ export default function Wizard(props: any) {
 
     return null;
   } else if ($step === "META") {
-    handleNext = () => {
+    handleNext = (...args: Any[]) => {
+      void args;
       setStep("LICENSE");
     };
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setStep("AUDIO SETTINGS");
     };
 
-    const handleMetadataChange = (settings: any) => {
+    const handleMetadataChange = (settings: Any) => {
       setData({
         ...$data,
         meta: settings,
@@ -850,7 +884,8 @@ export default function Wizard(props: any) {
       />
     );
   } else if ($step === "LICENSE") {
-    handleNext = async () => {
+    handleNext = async (...args: Any[]) => {
+      void args;
       setStep("SAVING");
 
       const res = await handleDone();
@@ -862,11 +897,12 @@ export default function Wizard(props: any) {
       }
     };
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setStep("META");
     };
 
-    const handleLicenseChange = (license: any) => {
+    const handleLicenseChange = (license: Any) => {
       setData({
         ...$data,
         license: license,
@@ -888,7 +924,8 @@ export default function Wizard(props: any) {
   } else if ($step === "DONE") {
     return null;
   } else if ($step === "ERROR") {
-    handleNext = () => {
+    handleNext = (...args: Any[]) => {
+      void args;
       setStep("TYPE");
     };
 
@@ -896,11 +933,13 @@ export default function Wizard(props: any) {
   } else if ($step === "ABORT") {
     const nchannels = props.restreamer.ListChannels().length;
 
-    handleBack = () => {
+    handleBack = (...args: Any[]) => {
+      void args;
       setStep($abort.step);
     };
 
-    handleNext = () => {
+    handleNext = (...args: Any[]) => {
+      void args;
       props.restreamer.DeleteChannel(_channelid);
 
       // Select a channel to jump back to

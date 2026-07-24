@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -49,11 +48,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="Kick.com Logo" {...props} />;
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     server_url: "",
     stream_key: "",
@@ -63,10 +62,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -76,8 +75,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const output = {
+  const createOutput = (settings: Any) => {
+    const output: DynamicObject = {
       address: settings.server_url,
       options: ["-rtmp_playpath", settings.stream_key, "-f", "flv"],
     };
@@ -137,7 +136,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

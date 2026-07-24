@@ -9,7 +9,7 @@ interface MultiSelectOptionProps {
 }
 
 const Component = React.forwardRef<HTMLLIElement, MultiSelectOptionProps>(
-  (props: any, ref: any) => {
+  (props: Any, ref: Any) => {
     const { name, value, selected, ...other } = props;
 
     return (

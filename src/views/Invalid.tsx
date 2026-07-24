@@ -10,7 +10,7 @@ import PaperFooter from "../misc/PaperFooter";
 
 import { Trans } from "@lingui/react/macro";
 
-const isProbablyMixedContent = (address: any) => {
+const isProbablyMixedContent = (address: Any) => {
   try {
     const location = new URL(address);
     if (
@@ -19,12 +19,12 @@ const isProbablyMixedContent = (address: any) => {
     ) {
       return true;
     }
-  } catch (e) {}
+  } catch {}
 
   return false;
 };
 
-export default function Invalid(props: any) {
+export default function Invalid(props: Any) {
   const [$mixed] = React.useState(isProbablyMixedContent(props.address));
 
   return (

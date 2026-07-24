@@ -1,4 +1,4 @@
-export default async function CopyToClipboard(content: any) {
+export default async function CopyToClipboard(content: Any) {
   let success = false;
 
   if (!navigator.clipboard) {
@@ -10,16 +10,16 @@ export default async function CopyToClipboard(content: any) {
   return success;
 }
 
-const writeText = (promise: any) => {
+const writeText = (promise: Any) => {
   return promise
     .then(() => true)
-    .catch((err: any) => {
+    .catch((err: Any) => {
       console.warn(err);
       return false;
     });
 };
 
-const writeTextDeprecated = (value: any) => {
+const writeTextDeprecated = (value: Any) => {
   // Strangely, this doesn't seem to work if the text is longer than just one row
   const element = document.createElement("textarea");
   element.value = value;

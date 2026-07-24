@@ -85,7 +85,7 @@ const theme = createTheme({
     MuiToggleButtonGroup: { ...toggleButtonGroup },
     MuiTooltip: { ...tooltip },
     MuiTypography: { ...ctypography },
-  } as any,
+  } as Any,
 });
 
 export default theme;

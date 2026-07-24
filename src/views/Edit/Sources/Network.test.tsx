@@ -67,11 +67,12 @@ const $config = {
   },
 };
 
-test("source:network pull", async () => {
+test("source:network pull", async (...args: Any[]) => {
+  void args;
   let $settings: DynamicObject = {
     mode: "pull",
   };
-  const handleChange = (settings: any) => {
+  const handleChange = (settings: Any) => {
     $settings = settings;
   };
 
@@ -150,7 +151,7 @@ test("source:network pull", async () => {
   ).toBe(null);
 });
 
-const pullmatrix = {
+const pullmatrix: DynamicObject = {
   settings: {
     mode: "pull",
     address: "",
@@ -477,9 +478,10 @@ pullmatrix.tests = [
 
 test.each(pullmatrix.tests)(
   "source:network pull $name input with ffmpeg $skills.ffmpeg.version",
-  async (data: any) => {
-    let $inputs = [];
-    const handleProbe = (_: any, inputs: any) => {
+  async (...args: Any[]) => {
+    const data = args[0];
+    let $inputs: Any[] = [];
+    const handleProbe = (_: Any, inputs: Any) => {
       $inputs = inputs;
     };
 
@@ -504,7 +506,8 @@ test.each(pullmatrix.tests)(
   },
 );
 
-test("source:network push", async () => {
+test("source:network push", async (...args: Any[]) => {
+  void args;
   let $settings = {
     mode: "push",
     push: {
@@ -512,7 +515,7 @@ test("source:network push", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings: any) => {
+  const handleChange = (settings: Any) => {
     $settings = settings;
   };
 
@@ -525,7 +528,7 @@ test("source:network push", async () => {
 
   expect(
     queryByText(
-      `The available FFmpeg binary doesn't support any of the required protocols.`,
+      `The available FFmpeg binary doesn't support Any of the required protocols.`,
     ),
   ).toBeInTheDocument();
 
@@ -540,7 +543,7 @@ test("source:network push", async () => {
 
   expect(
     queryByText(
-      `The available FFmpeg binary doesn't support any of the required protocols.`,
+      `The available FFmpeg binary doesn't support Any of the required protocols.`,
     ),
   ).toBe(null);
 
@@ -555,7 +558,7 @@ test("source:network push", async () => {
 
   expect(
     queryByText(
-      `The available FFmpeg binary doesn't support any of the required protocols.`,
+      `The available FFmpeg binary doesn't support Any of the required protocols.`,
     ),
   ).toBe(null);
 
@@ -570,12 +573,13 @@ test("source:network push", async () => {
 
   expect(
     queryByText(
-      `The available FFmpeg binary doesn't support any of the required protocols.`,
+      `The available FFmpeg binary doesn't support Any of the required protocols.`,
     ),
   ).toBe(null);
 });
 
-test("source:network push RTMP", async () => {
+test("source:network push RTMP", async (...args: Any[]) => {
+  void args;
   let $settings = {
     mode: "push",
     push: {
@@ -583,7 +587,7 @@ test("source:network push RTMP", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings: any) => {
+  const handleChange = (settings: Any) => {
     $settings = settings;
   };
 
@@ -615,7 +619,8 @@ test("source:network push RTMP", async () => {
   expect(getByText("Probe")).toBeInTheDocument();
 });
 
-test("source:network push SRT", async () => {
+test("source:network push SRT", async (...args: Any[]) => {
+  void args;
   let $settings = {
     mode: "push",
     push: {
@@ -623,7 +628,7 @@ test("source:network push SRT", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings: any) => {
+  const handleChange = (settings: Any) => {
     $settings = settings;
   };
 
@@ -805,9 +810,10 @@ pushmatrix.tests = [
 
 test.each(pushmatrix.tests)(
   "source:network push $name input with ffmpeg $skills.ffmpeg.version",
-  async (data: any) => {
-    let $inputs = [];
-    const handleProbe = (_: any, inputs: any) => {
+  async (...args: Any[]) => {
+    const data = args[0];
+    let $inputs: Any[] = [];
+    const handleProbe = (_: Any, inputs: Any) => {
       $inputs = inputs;
     };
 

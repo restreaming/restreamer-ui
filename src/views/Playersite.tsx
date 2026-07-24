@@ -49,7 +49,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(() => ({
   [`& .${classes.buttonOpen}`]: {
     float: "right",
     marginLeft: ".5em",
@@ -67,27 +67,30 @@ const templateTypes = [
   { mimetype: "text/html", extension: "html", maxSize: 500 * 1024 },
 ];
 
-function CheckboxList(props: any) {
+function CheckboxList(props: Any) {
   const [$checked, setChecked] = React.useState(props.selected);
 
-  const handleToggle = (value: any) => () => {
-    const currentIndex = $checked.indexOf(value);
-    const newChecked = [...$checked];
+  const handleToggle =
+    (value: Any) =>
+    (...args: Any[]) => {
+      void args;
+      const currentIndex = $checked.indexOf(value);
+      const newChecked = [...$checked];
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+      if (currentIndex === -1) {
+        newChecked.push(value);
+      } else {
+        newChecked.splice(currentIndex, 1);
+      }
 
-    setChecked(newChecked);
+      setChecked(newChecked);
 
-    props.onChange({
-      target: {
-        value: [...newChecked],
-      },
-    });
-  };
+      props.onChange({
+        target: {
+          value: [...newChecked],
+        },
+      });
+    };
 
   return (
     <List
@@ -98,7 +101,7 @@ function CheckboxList(props: any) {
         maxHeight: 300,
       }}
     >
-      {props.items.map((value: any) => {
+      {props.items.map((value: Any) => {
         const labelId = `checkbox-list-label-${value.id}`;
 
         return (
@@ -130,10 +133,12 @@ CheckboxList.defaultProps = {
   disabled: false,
   selected: [],
   items: [],
-  onChange: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-export default function Playersite(props: any) {
+export default function Playersite(props: Any) {
   const navigate = useNavigate();
   const { i18n } = useLingui();
   const address = props.restreamer.Address() + "/";
@@ -144,8 +149,8 @@ export default function Playersite(props: any) {
   const [$available, setAvailable] = React.useState(false);
   const [$data, setData] = React.useState(M.getDefaultMetadata());
   const [$settings, setSettings] = React.useState<DynamicObject>({});
-  const [$channels, setChannels] = React.useState([]);
-  const [$templates, setTemplates] = React.useState([]);
+  const [$channels, setChannels] = React.useState<Any[]>([]);
+  const [$templates, setTemplates] = React.useState<Any[]>([]);
   const [$tab, setTab] = React.useState("general");
   const [$saving, setSaving] = React.useState(false);
   const [$error, setError] = React.useState({
@@ -154,13 +159,16 @@ export default function Playersite(props: any) {
     message: "",
   });
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await mount();
     })();
   }, []);
 
-  const mount = async () => {
+  const mount = async (...args: Any[]) => {
+    void args;
     const data = await props.restreamer.GetMetadata();
 
     setData(data);
@@ -174,7 +182,7 @@ export default function Playersite(props: any) {
     setReady(true);
   };
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
     const settings = $settings;
 
@@ -199,7 +207,7 @@ export default function Playersite(props: any) {
     });
   };
 
-  const handleBackgroundImageUpload = async (data: any, extension: any) => {
+  const handleBackgroundImageUpload = async (data: Any, extension: Any) => {
     const path = await props.restreamer.UploadPlayersiteBackgroundImage(
       data,
       extension,
@@ -214,7 +222,7 @@ export default function Playersite(props: any) {
     setSaving(false);
   };
 
-  const handleTemplateUpload = async (data: any, extension: any) => {
+  const handleTemplateUpload = async (data: Any) => {
     const name = await props.restreamer.UploadPlayersiteTemplate(
       data,
       $settings.templatename,
@@ -230,7 +238,8 @@ export default function Playersite(props: any) {
     setSaving(false);
   };
 
-  const handleTemplateDelete = async () => {
+  const handleTemplateDelete = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
     await props.restreamer.DeletePlayersiteTemplate($settings.template);
@@ -243,12 +252,14 @@ export default function Playersite(props: any) {
     setSaving(false);
   };
 
-  const handleUploadStart = () => {
+  const handleUploadStart = (...args: Any[]) => {
+    void args;
     setSaving(true);
   };
 
-  const handleUploadError = (title: any) => (err: any) => {
-    const message = (() => {
+  const handleUploadError = (title: Any) => (err: Any) => {
+    const message = ((...args: Any[]) => {
+      void args;
       switch (err.type) {
         case "nofiles":
           return <Trans>Please select a file to upload.</Trans>;
@@ -279,7 +290,7 @@ export default function Playersite(props: any) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title: any, message: any) => {
+  const showUploadError = (title: Any, message: Any) => {
     setError({
       ...$error,
       open: true,
@@ -288,17 +299,19 @@ export default function Playersite(props: any) {
     });
   };
 
-  const hideUploadError = () => {
+  const hideUploadError = (...args: Any[]) => {
+    void args;
     setError({
       ...$error,
       open: false,
     });
   };
 
-  const handleDone = async () => {
+  const handleDone = async (...args: Any[]) => {
+    void args;
     setSaving(true);
 
-    const data = {
+    const data: DynamicObject = {
       ...$data,
       playersite: $settings,
     };
@@ -336,15 +349,17 @@ export default function Playersite(props: any) {
     );
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate("/");
   };
 
-  const handleHelp = () => {
+  const handleHelp = (...args: Any[]) => {
+    void args;
     H("playersite-" + $tab);
   };
 
@@ -457,12 +472,12 @@ export default function Playersite(props: any) {
                       <Trans>Selected channel</Trans>
                     </MenuItem>
                     {$channels
-                      .sort((a: any, b: any) => {
+                      .sort((a: Any, b: Any) => {
                         const aname = a.name.toUpperCase();
                         const bname = b.name.toUpperCase();
                         return aname < bname ? -1 : aname > bname ? 1 : 0;
                       })
-                      .map((c: any) => {
+                      .map((c: Any) => {
                         return (
                           <MenuItem key={c.channelid} value={c.channelid}>
                             {c.name}
@@ -480,36 +495,36 @@ export default function Playersite(props: any) {
                     type="select"
                     label={<Trans>Additional channels</Trans>}
                     value={$settings.channel_list.filter(
-                      (c: any) => c !== main_channelid,
+                      (c: Any) => c !== main_channelid,
                     )}
-                    renderValue={(selected: any) => {
+                    renderValue={(selected: Any) => {
                       return selected
-                        .map((id: any) => {
+                        .map((id: Any) => {
                           const channel = props.restreamer.GetChannel(id);
                           if (channel === null) {
                             return "";
                           }
                           return channel.name;
                         })
-                        .filter((name: any) => name.length !== 0)
+                        .filter((name: Any) => name.length !== 0)
                         .join(", ");
                     }}
                     onChange={handleChange("channel_list")}
                   >
                     {$channels
-                      .sort((a: any, b: any) => {
+                      .sort((a: Any, b: Any) => {
                         const aname = a.name.toUpperCase();
                         const bname = b.name.toUpperCase();
                         return aname < bname ? -1 : aname > bname ? 1 : 0;
                       })
-                      .map((c: any) => {
+                      .map((c: Any) => {
                         return {
                           id: c.channelid,
                           name: c.name,
                         };
                       })
-                      .filter((c: any) => c.id !== main_channelid)
-                      .map((c: any) => {
+                      .filter((c: Any) => c.id !== main_channelid)
+                      .map((c: Any) => {
                         return (
                           <MultiSelectOption
                             key={c.id}
@@ -588,7 +603,7 @@ export default function Playersite(props: any) {
                     <MenuItem value="!default">
                       <Trans>Default</Trans>
                     </MenuItem>
-                    {$templates.sort().map((a: any) => {
+                    {$templates.sort().map((a: Any) => {
                       return (
                         <MenuItem key={a} value={a}>
                           {a}

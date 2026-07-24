@@ -1,7 +1,6 @@
-
 import CardMedia from "@mui/material/CardMedia";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <CardMedia
       sx={{

@@ -1,23 +1,23 @@
-
 import { Trans } from "@lingui/react/macro";
 import Icon from "@mui/icons-material/Movie";
 
 // This is a pseudo audio source for selecting the audio streams from the video source
 
-const initSettings = (initialSettings: any) => {
+const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     ...initialSettings,
   };
 
   return settings;
 };
 
-const createInputs = (settings: any) => {
-  const input = {
+const createInputs = (...args: Any[]) => {
+  void args;
+  const input: DynamicObject = {
     address: "",
     options: [],
   };
@@ -25,18 +25,22 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
-function Source(props: any) {
+function Source() {
   return null;
 }
 
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon {...props} />;
 }
 

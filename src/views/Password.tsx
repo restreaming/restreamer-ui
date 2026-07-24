@@ -15,7 +15,7 @@ import PaperContent from "../misc/PaperContent";
 import PaperFooter from "../misc/PaperFooter";
 import TextField from "../misc/TextField";
 
-const generatePassword = (length: any) => {
+const generatePassword = (length: Any) => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -29,7 +29,7 @@ const generatePassword = (length: any) => {
   return password;
 };
 
-export default function ResetPassword(props: any) {
+export default function ResetPassword(props: Any) {
   const [$login, setLogin] = React.useState({
     username: props.username.length === 0 ? "admin" : props.username,
     password:
@@ -48,7 +48,7 @@ export default function ResetPassword(props: any) {
     timeout: false,
   });
 
-  const handleReset = async (event: any) => {
+  const handleReset = async (event: Any) => {
     event.preventDefault();
 
     setRestart({
@@ -88,7 +88,7 @@ export default function ResetPassword(props: any) {
     }
   };
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     setLogin({
@@ -213,7 +213,9 @@ export default function ResetPassword(props: any) {
 }
 
 ResetPassword.defaultProps = {
-  onReset: function (username: any, password: any) {},
+  onReset: function (...args: Any[]) {
+    void args;
+  },
   username: "",
   usernameOverride: false,
   password: "",

@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -8,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Source(props: any) {
+export default function Source(props: Any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -56,8 +55,14 @@ export default function Source(props: any) {
 }
 
 Source.defaultProps = {
-  onAbort: () => {},
-  onHelp: () => {},
-  onAdvanced: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
+  onHelp: (...args: Any[]) => {
+    void args;
+  },
+  onAdvanced: (...args: Any[]) => {
+    void args;
+  },
   sources: [],
 };

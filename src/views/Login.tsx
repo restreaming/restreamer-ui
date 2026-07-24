@@ -17,7 +17,7 @@ import Paper from "../misc/Paper";
 import Password from "../misc/Password";
 import Select from "../misc/Select";
 
-function hasAuthType(auths: any, type: any) {
+function hasAuthType(auths: Any, type: Any) {
   for (let i = 0; i < auths.length; i++) {
     if (auths[i].type === type) {
       return true;
@@ -27,9 +27,9 @@ function hasAuthType(auths: any, type: any) {
   return false;
 }
 
-function initAuths(auths: any) {
+function initAuths(auths: Any) {
   auths = auths
-    .map((a: any) => {
+    .map((a: Any) => {
       const params = a.split(" ");
       if (params[0] === "localjwt") {
         return {
@@ -80,8 +80,8 @@ function initAuths(auths: any) {
 
       return null;
     })
-    .filter((a: any) => a !== null)
-    .sort((a: any, b: any) => {
+    .filter((a: Any) => a !== null)
+    .sort((a: Any, b: Any) => {
       if (a.type !== "auth0" || b.type !== "auth0" || a.type !== b.type) {
         if (a.type < b.type) {
           return -1;
@@ -108,7 +108,7 @@ function initAuths(auths: any) {
   return auths;
 }
 
-export default function Login(props: any) {
+export default function Login(props: Any) {
   const [$auths] = React.useState(initAuths(props.auths));
   const [$login, setLogin] = React.useState({
     username: "",
@@ -121,15 +121,17 @@ export default function Login(props: any) {
   const [$loginTarget, setLoginTarget] = React.useState("none");
   const [$loginCheck, setLoginCheck] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       if (hasAuthType($auths, "auth0") && $canUseAuth0) {
         setLoginTarget("auth0");
       } else if (hasAuthType($auths, "local")) {
         setLoginTarget("local");
       }
 
-      const auth0auths = $auths.filter((a: any) => a.type === "auth0");
+      const auth0auths = $auths.filter((a: Any) => a.type === "auth0");
       if (auth0auths.length === 1) {
         setAuth0(auth0auths[0].id);
       }
@@ -141,7 +143,7 @@ export default function Login(props: any) {
     })();
   }, []);
 
-  const handleLogin = async (event: any) => {
+  const handleLogin = async (event: Any) => {
     event.preventDefault();
 
     setLoginCheck(true);
@@ -152,7 +154,8 @@ export default function Login(props: any) {
     }
   };
 
-  const handleAuth0Login = async () => {
+  const handleAuth0Login = async (...args: Any[]) => {
+    void args;
     setLoginCheck(true);
 
     let config = null;
@@ -199,12 +202,13 @@ export default function Login(props: any) {
     setLoginCheck(false);
   };
 
-  const handleAuth0 = async () => {
+  const handleAuth0 = async (...args: Any[]) => {
+    void args;
     setLoginCheck(true);
     await props.onAuth0();
   };
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     setLogin({
@@ -213,13 +217,13 @@ export default function Login(props: any) {
     });
   };
 
-  const handleAuth0Change = (event: any) => {
+  const handleAuth0Change = (event: Any) => {
     const value = event.target.value;
 
     setAuth0(value);
   };
 
-  const handleLoginTargetChange = (event: any, value: any) => {
+  const handleLoginTargetChange = (value: Any) => {
     if (!value) {
       return;
     }
@@ -394,8 +398,8 @@ export default function Login(props: any) {
                               <Trans>Choose tenant ...</Trans>
                             </MenuItem>
                             {$auths
-                              .filter((a: any) => a.type === "auth0")
-                              .map((a: any) => {
+                              .filter((a: Any) => a.type === "auth0")
+                              .map((a: Any) => {
                                 return (
                                   <MenuItem key={a.id} value={a.id}>
                                     {a.domain}
@@ -452,6 +456,10 @@ Login.defaultProps = {
   address: "",
   auths: [],
   hasService: false,
-  onLogin: function (username: any, password: any) {},
-  onAuth0: function () {},
+  onLogin: function (...args: Any[]) {
+    void args;
+  },
+  onAuth0: function (...args: Any[]) {
+    void args;
+  },
 };

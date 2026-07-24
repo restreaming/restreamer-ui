@@ -18,12 +18,12 @@ const imageTypes = [
   { mimetype: "audio/*", extension: "audio", maxSize: 25 * 1024 * 1024 },
 ];
 
-const initSettings = (initialSettings: any) => {
+const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     address: "",
     mimetype: "",
     ...initialSettings,
@@ -32,9 +32,9 @@ const initSettings = (initialSettings: any) => {
   return settings;
 };
 
-const createInputs = (settings: any) => {
+const createInputs = (settings: Any) => {
   const address = "{diskfs}" + settings.address;
-  const input = {
+  const input: DynamicObject = {
     address: address,
     options: [],
   };
@@ -45,7 +45,7 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const settings = initSettings(props.settings);
   const [$saving, setSaving] = React.useState(false);
   const [$error, setError] = React.useState({
@@ -54,7 +54,7 @@ function Source(props: any) {
     message: "",
   });
 
-  const handleFileUpload = async (data: any, extension: any, mimetype: any) => {
+  const handleFileUpload = async (data: Any, mimetype: Any) => {
     const path = await props.onStore("audioloop.source", data);
 
     props.onChange({
@@ -66,11 +66,12 @@ function Source(props: any) {
     setSaving(false);
   };
 
-  const handleUploadStart = () => {
+  const handleUploadStart = (...args: Any[]) => {
+    void args;
     setSaving(true);
   };
 
-  const handleUploadError = (title: any) => (err: any) => {
+  const handleUploadError = (title: Any) => (err: Any) => {
     let message = null;
 
     switch (err.type) {
@@ -108,7 +109,7 @@ function Source(props: any) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title: any, message: any) => {
+  const showUploadError = (title: Any, message: Any) => {
     setError({
       ...$error,
       open: true,
@@ -117,14 +118,16 @@ function Source(props: any) {
     });
   };
 
-  const hideUploadError = () => {
+  const hideUploadError = (...args: Any[]) => {
+    void args;
     setError({
       ...$error,
       open: false,
     });
   };
 
-  const handleProbe = () => {
+  const handleProbe = (...args: Any[]) => {
+    void args;
     props.onProbe(settings, createInputs(settings));
   };
 
@@ -135,8 +138,8 @@ function Source(props: any) {
           <Typography variant="caption">
             <Trans>
               Upload an audio file (
-              {imageTypes.map((t: any) => t.mimetype).join(", ")}) in order to loop
-              it.
+              {imageTypes.map((t: Any) => t.mimetype).join(", ")}) in order to
+              loop it.
             </Trans>
           </Typography>
         </Grid>
@@ -201,15 +204,22 @@ function Source(props: any) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
-  onRefresh: function () {},
-  onStore: function (name: any, data: any) {
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
+  onStore: function (...args: Any[]) {
+    void args;
     return "";
   },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

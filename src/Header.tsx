@@ -40,7 +40,7 @@ const classes = {
   colorHighlight: `${PREFIX}-colorHighlight`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }: any) => ({
+const StyledGrid = styled(Grid)(({ theme }: Any) => ({
   [`& .${classes.header}`]: {
     width: "100%",
     height: 96,
@@ -133,7 +133,7 @@ const StyledGrid = styled(Grid)(({ theme }: any) => ({
   },
 }));
 
-const StyledMenu = styled(Menu)(({ theme }: any) => ({
+const StyledMenu = styled(Menu)(({ theme }: Any) => ({
   "& .MuiPaper-root": {
     borderRadius: 5,
     marginTop: theme.spacing(1),
@@ -244,7 +244,9 @@ function AboutModal(props: DynamicObject) {
 
 AboutModal.defaultProps = {
   open: false,
-  onClose: () => {},
+  onClose: (...args: Any[]) => {
+    void args;
+  },
 };
 
 function HeaderMenu(props: DynamicObject) {
@@ -255,7 +257,8 @@ function HeaderMenu(props: DynamicObject) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClose = () => {
+  const handleMenuClose = (...args: Any[]) => {
+    void args;
     setAnchorEl(null);
   };
 
@@ -412,10 +415,18 @@ function HeaderMenu(props: DynamicObject) {
 }
 
 HeaderMenu.defaultProps = {
-  onChannel: () => {},
-  onPlayersite: () => {},
-  onSettings: () => {},
-  onLogout: () => {},
+  onChannel: (...args: Any[]) => {
+    void args;
+  },
+  onPlayersite: (...args: Any[]) => {
+    void args;
+  },
+  onSettings: (...args: Any[]) => {
+    void args;
+  },
+  onLogout: (...args: Any[]) => {
+    void args;
+  },
   expand: false,
   showPlayersite: false,
   showSettings: false,

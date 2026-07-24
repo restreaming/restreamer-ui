@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import CircularProgress from "@mui/material/CircularProgress";
 import Grid from "@mui/material/Grid";
@@ -7,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Probe(props: any) {
+export default function Probe(props: Any) {
   return (
     <Paper xs={12} md={5} marginBottom="6em" className="PaperM">
       <PaperHeader spacing={2} variant="h1" onAbort={props.onAbort} />
@@ -30,5 +29,7 @@ export default function Probe(props: any) {
 }
 
 Probe.defaultProps = {
-  onAbort: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
 };

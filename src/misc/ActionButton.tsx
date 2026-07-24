@@ -1,8 +1,9 @@
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
 
-export default function ActionButton(props: any) {
-  const button = (() => {
+export default function ActionButton(props: Any) {
+  const button = ((...args: Any[]) => {
+    void args;
     if (props.state === "connecting") {
       return (
         <Button variant="outlined" fullWidth disabled>
@@ -114,7 +115,13 @@ ActionButton.defaultProps = {
   state: "disconnected",
   reconnect: -1,
   disabled: false,
-  onDisconnect: function () {},
-  onConnect: function () {},
-  onReconnect: function () {},
+  onDisconnect: function (...args: Any[]) {
+    void args;
+  },
+  onConnect: function (...args: Any[]) {
+    void args;
+  },
+  onReconnect: function (...args: Any[]) {
+    void args;
+  },
 };

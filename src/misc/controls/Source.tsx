@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import Select from "../Select";
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     source: "hls+memfs",
     ...settings,
@@ -25,15 +25,16 @@ function init(settings: any) {
   return initSettings;
 }
 
-export default function Control(props: any) {
+export default function Control(props: Any) {
   const settings = init(props.settings);
 
   // Set the defaults
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -41,7 +42,7 @@ export default function Control(props: any) {
     props.onChange(settings, false);
   };
 
-  const items = [];
+  const items: Any[] = [];
 
   items.push(
     <MenuItem
@@ -100,5 +101,7 @@ export default function Control(props: any) {
 Control.defaulProps = {
   settings: {},
   sources: [],
-  onChange: function (settings: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

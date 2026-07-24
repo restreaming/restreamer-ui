@@ -13,14 +13,14 @@ not to repeat them for each test.
 If you want to debug a test by having a look at the current output of the component,
 simply import the "screen" object from this file and use the "debug()" method:
 
-    test('displays the header and paragraph text', () => {
+    test('displays the header and paragraph text', (...args: Any[]) => { void args;
         render(<Travel />)
         screen.debug()
     })
 
 or of a specific element in the component:
 
-    test('displays the header and paragraph text', () => {
+    test('displays the header and paragraph text', (...args: Any[]) => { void args;
         render(<Travel />)
         const header = screen.getByRole('heading', { name: /travel anywhere/i })
         screen.debug(header)
@@ -37,7 +37,7 @@ a user clicking around. Example:
     import { render, screen } from "@testing-library/react";
     import userEvent from "@testing-library/user-event";
 
-    test("radio", () => {
+    test("radio", (...args: Any[]) => { void args;
         const user = userEvent.setup();
         render(
             <form>
@@ -54,13 +54,14 @@ a user clicking around. Example:
     });
 */
 
-const NoRoute = (props: any) => {
+const NoRoute = (...args: Any[]) => {
+  void args;
   return null;
 };
 
 const AllTheProviders =
-  (initialEntries: any, path: any) =>
-  ({ children }: any) => {
+  (initialEntries: Any, path: Any) =>
+  ({ children }: Any) => {
     if (typeof initialEntries === "undefined") {
       initialEntries = "/";
     }
@@ -83,8 +84,12 @@ const AllTheProviders =
     );
   };
 
-const customRender = (ui: any, options : any = {}, initialEntries : any = "/", path : any = "/") =>
-  render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
+const customRender = (
+  ui: Any,
+  options: Any = {},
+  initialEntries: Any = "/",
+  path: Any = "/",
+) => render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
 
 // re-export everything
 export * from "@testing-library/react";

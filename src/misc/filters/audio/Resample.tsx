@@ -11,7 +11,7 @@ import SelectCustom from "../../../misc/SelectCustom";
 // Resample Filter
 // https://ffmpeg.org/ffmpeg-filters.html#toc-aresample-1
 
-function init(initialState: any) {
+function init(initialState: Any) {
   const state = {
     channels: "2",
     layout: "stereo",
@@ -22,10 +22,10 @@ function init(initialState: any) {
   return state;
 }
 
-function createGraph(settings: any) {
+function createGraph(settings: Any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: Any[] = [];
 
   const sampling = settings.sampling;
   const layout = settings.layout;
@@ -45,7 +45,7 @@ function createGraph(settings: any) {
   return "aresample=" + mapping.join(":");
 }
 
-function Layout(props: any) {
+function Layout(props: Any) {
   const { i18n } = useLingui();
   const options = [
     { value: "mono", label: "mono" },
@@ -89,10 +89,12 @@ Layout.defaultProps = {
   allowCustom: false,
   label: <Trans>Layout</Trans>,
   customLabel: <Trans>Custom layout</Trans>,
-  onChange: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Sampling(props: any) {
+function Sampling(props: Any) {
   const { i18n } = useLingui();
   const options = [
     { value: "96000", label: "96000 Hz" },
@@ -140,13 +142,15 @@ Sampling.defaultProps = {
   allowCustom: false,
   label: <Trans>Sampling</Trans>,
   customLabel: <Trans>Custom sampling (Hz)</Trans>,
-  onChange: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Filter(props: any) {
+function Filter(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -156,7 +160,7 @@ function Filter(props: any) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     const newSettings = {
@@ -184,7 +188,8 @@ function Filter(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -211,7 +216,9 @@ function Filter(props: any) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings: any, graph: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const filter = "aresample";
@@ -219,7 +226,7 @@ const name = "Resample";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize(settings: Any) {
   return `${name} (${settings.layout}, ${settings.sampling}Hz)`;
 }
 

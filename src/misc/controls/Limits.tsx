@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     cpu_usage: 0,
     memory_mbytes: 0,
@@ -16,15 +16,16 @@ function init(settings: any) {
   return initSettings;
 }
 
-export default function Control(props: any) {
+export default function Control(props: Any) {
   const settings = init(props.settings);
 
   // Set the defaults
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -105,5 +106,7 @@ export default function Control(props: any) {
 
 Control.defaulProps = {
   settings: {},
-  onChange: function (settings: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

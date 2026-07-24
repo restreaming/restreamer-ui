@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 import { Trans } from "@lingui/react/macro";
@@ -138,12 +137,12 @@ const requires = {
 };
 
 // ServiceIcon is a React component and returns the icon for this service
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <ExtensionIcon style={{ color: "#FFFFFF" }} {...props} />;
 }
 
 // Initialize the settings, i.e. set defaults for fields that are not defined
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     stream_key: "",
     rtmp_primary: true,
@@ -161,9 +160,17 @@ function init(settings: any) {
 // This function should be exported, such that it can be called from the
 // outside in case e.g. the streams changed (due to changes in the encoding
 // settings) and the output options depend on that information.
-function createOutputs(settings: any, skills: any, metadata: any, streams: any) {
+function createOutputs(
+  settings: Any,
+  skills: Any,
+  metadata: Any,
+  streams: Any,
+) {
+  void skills;
+  void metadata;
+  void streams;
   settings = init(settings);
-  const outputs = [];
+  const outputs: Any[] = [];
 
   if (settings.stream_key.length === 0) {
     return outputs;
@@ -219,11 +226,11 @@ function createOutputs(settings: any, skills: any, metadata: any, streams: any) 
 //   }
 //
 // The 'protocols' array lists all the protocols from your requirments
-// that are actually available. The array is empty if you don't have any
+// that are actually available. The array is empty if you don't have Any
 // protocol requirements.
 //
 // The 'formats' array lists all the formats from your requirements that
-// are actually available. The array is empty if you don't have any format
+// are actually available. The array is empty if you don't have Any format
 // requirements.
 //
 // The 'codecs' object holds an 'audio' and a 'video' object. These objects
@@ -262,10 +269,10 @@ function createOutputs(settings: any, skills: any, metadata: any, streams: any) 
 //
 // 'settings' is the settings object where you store the settings for the
 // service. Its state is managed by the parent React component.
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (["rtmp_primary", "rtmp_backup"].includes(what)) {
@@ -320,7 +327,9 @@ Service.defaultProps = {
   skills: null,
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 Service.propTypes = {

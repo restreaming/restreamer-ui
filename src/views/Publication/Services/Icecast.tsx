@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -55,11 +54,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="Icecat Logo" {...props} />;
 }
 
-function init(settings: any, metadata: any) {
+function init(settings: Any, metadata: Any) {
   const initSettings = {
     protocol: "icecast://",
     address: "",
@@ -82,7 +81,13 @@ function init(settings: any, metadata: any) {
   return initSettings;
 }
 
-function createOutputs(settings: any, skills: any, metadata: any, streams: any) {
+function createOutputs(
+  settings: Any,
+  skills: Any,
+  metadata: Any,
+  streams: Any,
+) {
+  void skills;
   settings = init(settings, metadata);
   let hasVideo = false;
   let audioCodec = "";
@@ -95,7 +100,7 @@ function createOutputs(settings: any, skills: any, metadata: any, streams: any) 
     }
   }
 
-  const options = [];
+  const options: Any[] = [];
 
   for (const key in settings.options) {
     if (settings.options[key].length === 0) {
@@ -138,7 +143,7 @@ function createOutputs(settings: any, skills: any, metadata: any, streams: any) 
     }
   }
 
-  const output = {
+  const output: DynamicObject = {
     address: settings.protocol + settings.address,
     options: options,
   };
@@ -146,10 +151,10 @@ function createOutputs(settings: any, skills: any, metadata: any, streams: any) 
   return [output];
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings, props.metadata);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -312,7 +317,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

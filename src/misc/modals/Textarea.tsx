@@ -1,4 +1,3 @@
-
 import Grid from "@mui/material/Grid";
 import Modal from "@mui/material/Modal";
 import Stack from "@mui/material/Stack";
@@ -6,8 +5,8 @@ import Stack from "@mui/material/Stack";
 import ModalContent from "../ModalContent";
 import Textarea from "../Textarea";
 
-const Component = function (props: any) {
-  const { open, title, onClose, onHelp, children, sx, ...other } = props;
+const Component = function (props: Any) {
+  const { children, ...other } = props;
 
   return (
     <Modal open={props.open} onClose={props.onClose} className="modal">

@@ -1,4 +1,3 @@
-
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
 import { t } from "@lingui/core/macro";
@@ -13,12 +12,12 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import SelectCustom from "../../../misc/SelectCustom";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings: any) => {
+const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
 
-  const settings = {
+  const settings: DynamicObject = {
     aindex: "default",
     vindex: "default",
     format: "nv12",
@@ -32,12 +31,12 @@ const initSettings = (initialSettings: any) => {
   return settings;
 };
 
-const createInputs = (settings: any) => {
+const createInputs = (settings: Any) => {
   const vindex = settings.vindex;
   const aindex = settings.aindex;
 
   const address = `${vindex}:${aindex}`;
-  const input = {
+  const input: DynamicObject = {
     address: address,
     options: [],
   };
@@ -67,12 +66,12 @@ const createInputs = (settings: any) => {
   return [input];
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
-    const data = {};
+  const handleChange = (what: Any) => (event: Any) => {
+    const data: DynamicObject = {};
 
     if (["cursor", "clicks"].includes(what)) {
       data[what] = !settings[what];
@@ -86,18 +85,20 @@ function Source(props: any) {
     });
   };
 
-  const handleRefresh = () => {
+  const handleRefresh = (...args: Any[]) => {
+    void args;
     props.onRefresh();
   };
 
-  const handleProbe = () => {
+  const handleProbe = (...args: Any[]) => {
+    void args;
     props.onProbe(settings, createInputs(settings));
   };
 
   let filteredDevices = props.knownDevices.filter(
-    (device: any) => device.media === "video",
+    (device: Any) => device.media === "video",
   );
-  let options = filteredDevices.map((device: any) => {
+  let options = filteredDevices.map((device: Any) => {
     return {
       value: device.id,
       label: device.name,
@@ -127,9 +128,9 @@ function Source(props: any) {
   );
 
   filteredDevices = props.knownDevices.filter(
-    (device: any) => device.media === "audio",
+    (device: Any) => device.media === "audio",
   );
-  options = filteredDevices.map((device: any) => {
+  options = filteredDevices.map((device: Any) => {
     return {
       value: device.id,
       label: device.name,
@@ -228,12 +229,18 @@ function Source(props: any) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings: any) {},
-  onProbe: function (settings: any, inputs: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

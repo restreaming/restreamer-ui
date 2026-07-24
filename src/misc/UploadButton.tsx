@@ -1,13 +1,17 @@
-
 import FormInlineButton from "./FormInlineButton";
 
-export default function UploadButton(props: any) {
+export default function UploadButton(props: Any) {
   const { acceptTypes, label, onError, onStart, onUpload, ...other } = props;
+  void acceptTypes;
+  void label;
+  void onError;
+  void onStart;
+  void onUpload;
 
-  const accept = props.acceptTypes.map((t: any) => t.mimetype);
+  const accept = props.acceptTypes.map((t: Any) => t.mimetype);
 
-  const handleUpload = (event: any) => {
-    const handler = (event: any) => {
+  const handleUpload = (event: Any) => {
+    const handler = (event: Any) => {
       const files = event.target.files;
 
       if (files.length === 0) {
@@ -57,7 +61,8 @@ export default function UploadButton(props: any) {
 
       const reader = new FileReader();
       reader.readAsArrayBuffer(file);
-      reader.onloadend = async () => {
+      reader.onloadend = async (...args: Any[]) => {
+        void args;
         if (reader.result === null) {
           // reading the file failed
           props.onError({
@@ -96,6 +101,10 @@ export default function UploadButton(props: any) {
 UploadButton.defaultProps = {
   label: "",
   acceptTypes: [],
-  onError: function () {},
-  onUpload: function (data: any, extension: any) {},
+  onError: function (...args: Any[]) {
+    void args;
+  },
+  onUpload: function (...args: Any[]) {
+    void args;
+  },
 };

@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
@@ -9,12 +8,12 @@ import ModalContent from "../ModalContent";
 import Progress from "../Progress";
 import Textarea from "../Textarea";
 
-const initLogdata = (logdata: any) => {
+const initLogdata = (logdata: Any) => {
   if (!logdata) {
     logdata = {};
   }
 
-  const data = {
+  const data: DynamicObject = {
     command: [],
     prelude: [],
     log: [],
@@ -71,7 +70,7 @@ const initLogdata = (logdata: any) => {
 // 	});
 // }
 
-const formatLogline = (entry: any) => {
+const formatLogline = (entry: Any) => {
   let line = new Date(entry[0] * 1000).toISOString() + " ";
 
   const matches = entry[1].match(/^\[([0-9A-Za-z]+) @ 0x[0-9a-f]+\]/i);
@@ -89,7 +88,7 @@ const formatLogline = (entry: any) => {
   return line;
 };
 
-const Component = function (props: any) {
+const Component = function (props: Any) {
   const logdata = initLogdata({
     ...props.logdata,
     command: props.progress?.command,

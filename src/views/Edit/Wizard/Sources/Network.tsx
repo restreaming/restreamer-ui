@@ -10,8 +10,8 @@ import * as S from "../../Sources/Network";
 import Checkbox from "../../../../misc/Checkbox";
 import Password from "../../../../misc/Password";
 
-const initSettings = (initialSettings: any, config: any) => {
-  const settings = {
+const initSettings = (initialSettings: Any, config: Any) => {
+  const settings: DynamicObject = {
     ...S.func.initSettings(initialSettings, config),
     mode: "pull",
   };
@@ -19,12 +19,12 @@ const initSettings = (initialSettings: any, config: any) => {
   return settings;
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const config = S.func.initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = S.func.initSkills(props.skills);
 
-  const handleChange = (newSettings : any = settings) => {
+  const handleChange = (newSettings: Any = settings) => {
     newSettings = newSettings || settings;
 
     props.onChange(
@@ -35,7 +35,7 @@ function Source(props: any) {
     );
   };
 
-  const update = (protocol: any, what: any) => (event: any) => {
+  const update = (protocol: Any, what: Any) => (event: Any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -50,7 +50,8 @@ function Source(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange();
   }, []);
 
@@ -131,10 +132,12 @@ Source.defaultProps = {
   settings: {},
   config: null,
   skills: null,
-  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

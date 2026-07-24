@@ -20,13 +20,13 @@ import * as AV1CUVID from "./video/av1_cuvid";
 
 class Registry {
   type: string;
-  services: Map<any, any>;
+  services: Map<Any, Any>;
   constructor(type: string) {
     this.type = type;
     this.services = new Map();
   }
 
-  Register(service: any) {
+  Register(service: Any) {
     if (service.type !== this.type) {
       return;
     }
@@ -34,7 +34,7 @@ class Registry {
     this.services.set(service.coder, service);
   }
 
-  Get(coder: any) {
+  Get(coder: Any) {
     const service = this.services.get(coder);
     if (service) {
       return service;
@@ -45,7 +45,7 @@ class Registry {
 
   // Get the first coder for a codec that is in a
   // list of available coders.
-  GetCoderForCodec(codec: any, availableCoders: any) {
+  GetCoderForCodec(codec: Any, availableCoders: Any) {
     for (const coder of this.services.values()) {
       if (!coder.codecs.includes(codec)) {
         continue;
@@ -63,9 +63,9 @@ class Registry {
 
   // Get a list of coders for a codec that is in a list of
   // availabled coders. The option for hwAcceleration can be
-  // 'any', 'no', or 'yes'.
-  GetCodersForCodec(codec: any, availableCoders: any, hwAcceleration: any) {
-    const coders = [];
+  // 'Any', 'no', or 'yes'.
+  GetCodersForCodec(codec: Any, availableCoders: Any, hwAcceleration: Any) {
+    const coders: Any[] = [];
 
     for (const coder of this.services.values()) {
       // An empty codecs list is a catch-all
@@ -79,7 +79,7 @@ class Registry {
         continue;
       }
 
-      if (hwAcceleration === "any") {
+      if (hwAcceleration === "Any") {
         coders.push(coder);
         continue;
       }

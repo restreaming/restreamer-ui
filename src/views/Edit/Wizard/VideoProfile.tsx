@@ -10,7 +10,7 @@ import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 import Select from "../../../misc/Select";
 
-export default function VideoProfile(props: any) {
+export default function VideoProfile(props: Any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -117,18 +117,32 @@ export default function VideoProfile(props: any) {
 }
 
 VideoProfile.defaultProps = {
-  onAbort: () => {},
-  onHelp: () => {},
-  onBack: () => {},
-  onNext: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
+  onHelp: (...args: Any[]) => {
+    void args;
+  },
+  onBack: (...args: Any[]) => {
+    void args;
+  },
+  onNext: (...args: Any[]) => {
+    void args;
+  },
   compatible: false,
-  onStreamChange: () => {},
+  onStreamChange: (...args: Any[]) => {
+    void args;
+  },
   streamList: [],
   stream: 0,
-  onDecoderChange: () => {},
+  onDecoderChange: (...args: Any[]) => {
+    void args;
+  },
   decodersList: [],
   decoder: "",
-  onEncoderChange: () => {},
+  onEncoderChange: (...args: Any[]) => {
+    void args;
+  },
   encodersList: [],
   encoder: "",
 };

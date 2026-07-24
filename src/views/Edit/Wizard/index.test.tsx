@@ -4,16 +4,19 @@ import "@testing-library/jest-dom/vitest";
 import Wizard from "./index";
 
 const restreamer = {
-  SelectChannel: () => {
+  SelectChannel: (...args: Any[]) => {
+    void args;
     return "test";
   },
-  GetChannel: () => {
+  GetChannel: (...args: Any[]) => {
+    void args;
     return {
       id: "test",
       name: "test",
     };
   },
-  Skills: () => {
+  Skills: (...args: Any[]) => {
+    void args;
     return {
       ffmpeg: {
         version: "5.1.2",
@@ -39,8 +42,11 @@ const restreamer = {
       },
     };
   },
-  RefreshSkills: () => {},
-  ConfigActive: () => {
+  RefreshSkills: (...args: Any[]) => {
+    void args;
+  },
+  ConfigActive: (...args: Any[]) => {
+    void args;
     return {
       source: {
         network: {
@@ -58,8 +64,8 @@ const restreamer = {
       },
     };
   },
-  Probe: (id: any, inputs: any) => {
-    const streams = [];
+  Probe: (inputs: Any) => {
+    const streams: Any[] = [];
 
     if (inputs[0].address === "{rtmp,name=external.stream}") {
       streams.push({
@@ -308,17 +314,28 @@ const restreamer = {
 
     return [{ streams: streams }, null];
   },
-  UpsertIngest: (_channelid: any, global: any, inputs: any, outputs: any, control: any) => {
+  UpsertIngest: (...args: Any[]) => {
+    void args;
     return [{}, null];
   },
-  SetIngestMetadata: (_channelid: any, data: any) => {},
-  UpsertIngestSnapshot: (_channelid: any, control: any) => {},
-  UpdatePlayer: (_channelid: any) => {},
-  UpdatePlayersite: () => {},
+  SetIngestMetadata: (...args: Any[]) => {
+    void args;
+  },
+  UpsertIngestSnapshot: (...args: Any[]) => {
+    void args;
+  },
+  UpdatePlayer: (...args: Any[]) => {
+    void args;
+  },
+  UpdatePlayersite: (...args: Any[]) => {
+    void args;
+  },
 };
 
-test("wizard", async () => {
-  await act(async () => {
+test("wizard", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -336,8 +353,10 @@ test("wizard", async () => {
   expect(screen.queryByText("SRT server")).toBeInTheDocument();
 });
 
-test("wizard: rtmp source video h264-aac", async () => {
-  await act(async () => {
+test("wizard: rtmp source video h264-aac", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -355,7 +374,8 @@ test("wizard: rtmp source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -374,7 +394,8 @@ test("wizard: rtmp source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -386,7 +407,8 @@ test("wizard: rtmp source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -396,7 +418,8 @@ test("wizard: rtmp source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -406,13 +429,16 @@ test("wizard: rtmp source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Save" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 });
 
-test("wizard: srt source video h264-aac", async () => {
-  await act(async () => {
+test("wizard: srt source video h264-aac", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -430,7 +456,8 @@ test("wizard: srt source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -449,7 +476,8 @@ test("wizard: srt source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -461,7 +489,8 @@ test("wizard: srt source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -471,7 +500,8 @@ test("wizard: srt source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -481,13 +511,16 @@ test("wizard: srt source video h264-aac", async () => {
   button = screen.getByRole("button", { name: "Save" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 });
 
-test("wizard: network source error", async () => {
-  await act(async () => {
+test("wizard: network source error", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -512,7 +545,8 @@ test("wizard: network source error", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -531,13 +565,14 @@ test("wizard: network source error", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(
     screen.queryByText(
-      /The source doesn't provide any video streams. Please check the device./,
+      /The source doesn't provide Any video streams. Please check the device./,
     ),
   ).toBeInTheDocument();
 
@@ -552,16 +587,18 @@ test("wizard: network source error", async () => {
 	button = screen.getByRole('button', { name: 'Next' });
 	expect(button).toBeEnabled();
 
-	await act(async () => {
+	await act(async (...args: Any[]) => { void args;
 		fireEvent.click(button);
 	});
 
-	expect(screen.queryByText(/The source doesn't provide any compatible video streams./)).toBeInTheDocument();
+	expect(screen.queryByText(/The source doesn't provide Any compatible video streams./)).toBeInTheDocument();
     */
 });
 
-test("wizard: network source video h264", async () => {
-  await act(async () => {
+test("wizard: network source video h264", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -586,7 +623,8 @@ test("wizard: network source video h264", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -605,21 +643,24 @@ test("wizard: network source video h264", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(
     screen.queryByText(
-      /The video source doesn't provide any compatible audio stream./,
+      /The video source doesn't provide Any compatible audio stream./,
     ),
   ).toBeInTheDocument();
   expect(screen.queryByText(/Silence Audio/)).toBeInTheDocument();
   expect(screen.queryByText(/No audio/)).toBeInTheDocument();
 });
 
-test("wizard: network source video non-h264", async () => {
-  await act(async () => {
+test("wizard: network source video non-h264", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -644,7 +685,8 @@ test("wizard: network source video non-h264", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -663,21 +705,24 @@ test("wizard: network source video non-h264", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(
     screen.queryByText(
-      /The video source doesn't provide any compatible audio stream./,
+      /The video source doesn't provide Any compatible audio stream./,
     ),
   ).toBeInTheDocument();
   expect(screen.queryByText(/Silence Audio/)).toBeInTheDocument();
   expect(screen.queryByText(/No audio/)).toBeInTheDocument();
 });
 
-test("wizard: network source audio aac", async () => {
-  await act(async () => {
+test("wizard: network source audio aac", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -702,7 +747,8 @@ test("wizard: network source audio aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -710,7 +756,8 @@ test("wizard: network source audio aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -722,15 +769,18 @@ test("wizard: network source audio aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
 });
 
-test("wizard: network source audio non-aac", async () => {
-  await act(async () => {
+test("wizard: network source audio non-aac", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -755,7 +805,8 @@ test("wizard: network source audio non-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -763,7 +814,8 @@ test("wizard: network source audio non-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -775,15 +827,18 @@ test("wizard: network source audio non-aac", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
 });
 
-test("wizard: network source silence audio", async () => {
-  await act(async () => {
+test("wizard: network source silence audio", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -808,7 +863,8 @@ test("wizard: network source silence audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -816,7 +872,8 @@ test("wizard: network source silence audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -828,9 +885,10 @@ test("wizard: network source silence audio", async () => {
   expect(screen.queryByLabelText("Silence Audio")).not.toBeChecked();
   expect(screen.queryByLabelText("No audio")).not.toBeChecked();
 
-  input = screen.queryByLabelText("Silence Audio");
+  input = screen.queryByLabelText("Silence Audio")!;
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(input);
   });
 
@@ -842,15 +900,18 @@ test("wizard: network source silence audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
 });
 
-test("wizard: network source no audio", async () => {
-  await act(async () => {
+test("wizard: network source no audio", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -875,7 +936,8 @@ test("wizard: network source no audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -883,7 +945,8 @@ test("wizard: network source no audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -895,9 +958,10 @@ test("wizard: network source no audio", async () => {
   expect(screen.queryByLabelText("Silence Audio")).not.toBeChecked();
   expect(screen.queryByLabelText("No audio")).not.toBeChecked();
 
-  input = screen.queryByLabelText("No audio");
+  input = screen.queryByLabelText("No audio")!;
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(input);
   });
 
@@ -909,15 +973,18 @@ test("wizard: network source no audio", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(screen.queryByText(/Metadata/)).toBeInTheDocument();
 });
 
-test("wizard: metadata", async () => {
-  await act(async () => {
+test("wizard: metadata", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -942,7 +1009,8 @@ test("wizard: metadata", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -950,7 +1018,8 @@ test("wizard: metadata", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -958,7 +1027,8 @@ test("wizard: metadata", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -972,15 +1042,18 @@ test("wizard: metadata", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
   expect(screen.queryByText(/License/)).toBeInTheDocument();
 });
 
-test("wizard: license", async () => {
-  await act(async () => {
+test("wizard: license", async (...args: Any[]) => {
+  void args;
+  await act(async (...args: Any[]) => {
+    void args;
     render(
       <Wizard restreamer={restreamer} />,
       {},
@@ -1005,7 +1078,8 @@ test("wizard: license", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -1013,7 +1087,8 @@ test("wizard: license", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -1021,7 +1096,8 @@ test("wizard: license", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -1029,7 +1105,8 @@ test("wizard: license", async () => {
   button = screen.getByRole("button", { name: "Next" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 
@@ -1039,7 +1116,8 @@ test("wizard: license", async () => {
   button = screen.getByRole("button", { name: "Save" });
   expect(button).toBeEnabled();
 
-  await act(async () => {
+  await act(async (...args: Any[]) => {
+    void args;
     fireEvent.click(button);
   });
 });

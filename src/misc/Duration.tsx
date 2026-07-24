@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Duration(props: any) {
+export default function Duration(props: Any) {
   const fullSeconds = Math.floor(props.seconds);
   const s = fullSeconds % 60;
   const m = Math.floor(fullSeconds / 60) % 60;

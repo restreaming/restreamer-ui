@@ -1,4 +1,3 @@
-
 import { v4 as uuidv4 } from "uuid";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -8,7 +7,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 
 import Env from "./Env";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   const id = props.id === null ? uuidv4() : props.id;
   const adornment = props.env ? (
     <InputAdornment position="end">
@@ -44,5 +43,7 @@ Component.defaultProps = {
   env: false,
   type: "text",
   helperText: null,
-  onChange: function (value: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

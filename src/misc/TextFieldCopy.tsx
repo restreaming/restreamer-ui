@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import { useLingui } from "@lingui/react";
 import { t } from "@lingui/core/macro";
@@ -11,12 +11,13 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 
 import CopyToClipboard from "../utils/clipboard";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   const { i18n } = useLingui();
 
   const notify = useContext(NotifyContext);
 
-  const handleCopy = async () => {
+  const handleCopy = async (...args: Any[]) => {
+    void args;
     const success = await CopyToClipboard(props.value);
 
     if (success === true) {
@@ -72,5 +73,7 @@ Component.defaultProps = {
   readOnly: true,
   allowCopy: true,
   size: "small",
-  onChange: function (value: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

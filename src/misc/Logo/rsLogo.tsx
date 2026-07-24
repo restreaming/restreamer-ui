@@ -1,9 +1,9 @@
-
 import Box from "@mui/material/Box";
 
 import company_logo from "./images/rs-logo.svg";
 
-export default function Logo(props: any) {
+export default function Logo(props: DynamicObject) {
+  void props;
   const link = "https://github.com/datarhei/restreamer";
 
   return (

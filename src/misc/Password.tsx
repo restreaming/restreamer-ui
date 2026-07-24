@@ -11,14 +11,15 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import Env from "./Env";
 
-export default function Password(props: any) {
+export default function Password(props: Any) {
   const [$visible, setVisible] = React.useState(props.show);
 
-  const handleClickShowPassword = () => {
+  const handleClickShowPassword = (...args: Any[]) => {
+    void args;
     setVisible(!$visible);
   };
 
-  const handleMouseDownPassword = (event: any) => {
+  const handleMouseDownPassword = (event: Any) => {
     event.preventDefault();
   };
 
@@ -77,5 +78,7 @@ Password.defaultProps = {
   helperText: false,
   inputProps: {},
   error: false,
-  onChange: function (value: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

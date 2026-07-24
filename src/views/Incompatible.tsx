@@ -1,11 +1,10 @@
-
 import { Trans } from "@lingui/react/macro";
 
 import Paper from "../misc/Paper";
 import PaperHeader from "../misc/PaperHeader";
 import PaperContent from "../misc/PaperContent";
 
-export default function Incompatible(props: any) {
+export default function Incompatible(props: Any) {
   const text =
     props.type === "core" ? (
       <Trans>

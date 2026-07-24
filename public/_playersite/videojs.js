@@ -1,3 +1,4 @@
+/* global color, playerConfig, mute, autoplay */
 // Video.js v10 playersite init
 // playerConfig and helper vars (autoplay, mute, color, chromecast, airplay)
 // are defined in the inline script block above this file.

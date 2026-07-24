@@ -1,4 +1,4 @@
-function InitStream(initialStream: any) {
+function InitStream(initialStream: Any) {
   if (!initialStream) {
     initialStream = {};
   }
@@ -11,7 +11,7 @@ function InitStream(initialStream: any) {
   return stream;
 }
 
-function InitSkills(initialSkills: any) {
+function InitSkills(initialSkills: Any) {
   if (!initialSkills) {
     initialSkills = {};
   }

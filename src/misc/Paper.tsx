@@ -14,48 +14,50 @@ interface PaperProps {
   children?: ReactNode;
 }
 
-const Component = React.forwardRef<HTMLDivElement, PaperProps>((props: any, ref: any) => {
-  const variant = props.className?.toLowerCase();
-  const paperSx =
-    variant === "paperm"
-      ? {
-          p: { xs: 2, sm: 3 },
-        }
-      : variant === "paperl"
+const Component = React.forwardRef<HTMLDivElement, PaperProps>(
+  (props: Any, ref: Any) => {
+    const variant = props.className?.toLowerCase();
+    const paperSx =
+      variant === "paperm"
         ? {
-            p: { xs: 2.5, sm: 4 },
+            p: { xs: 2, sm: 3 },
           }
-        : variant === "paperservice"
+        : variant === "paperl"
           ? {
               p: { xs: 2.5, sm: 4 },
-              border: "1px solid",
-              borderColor: "background.light1",
-              bgcolor: "service.contrastText",
             }
-          : {};
+          : variant === "paperservice"
+            ? {
+                p: { xs: 2.5, sm: 4 },
+                border: "1px solid",
+                borderColor: "background.light1",
+                bgcolor: "service.contrastText",
+              }
+            : {};
 
-  return (
-    <Grid
-      container
-      spacing={{ xs: 1.5, sm: 2 }}
-      sx={{ justifyContent: "center", width: "100%", minWidth: 0 }}
-      style={{ marginBottom: props.marginBottom }}
-    >
+    return (
       <Grid
-        size={{
-          xs: props.xs,
-          sm: props.sm,
-          md: props.md,
-          lg: props.lg,
-        }}
-        sx={{ width: "100%", minWidth: 0 }}
+        container
+        spacing={{ xs: 1.5, sm: 2 }}
+        sx={{ justifyContent: "center", width: "100%", minWidth: 0 }}
+        style={{ marginBottom: props.marginBottom }}
       >
-        <Paper elevation={0} ref={ref} sx={paperSx}>
-          {props.children}
-        </Paper>
+        <Grid
+          size={{
+            xs: props.xs,
+            sm: props.sm,
+            md: props.md,
+            lg: props.lg,
+          }}
+          sx={{ width: "100%", minWidth: 0 }}
+        >
+          <Paper elevation={0} ref={ref} sx={paperSx}>
+            {props.children}
+          </Paper>
+        </Grid>
       </Grid>
-    </Grid>
-  );
-});
+    );
+  },
+);
 
 export default Component;

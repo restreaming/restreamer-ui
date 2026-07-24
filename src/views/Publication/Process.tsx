@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -6,9 +5,8 @@ import Typography from "@mui/material/Typography";
 import ActionButton from "../../misc/ActionButton";
 import BoxText from "../../misc/BoxText";
 import Duration from "../../misc/Duration";
-import Progress from "../../misc/Progress";
 
-function init(progress: any) {
+function init(progress: Any) {
   const initProgress = {
     state: "disconnected",
     reconnect: -1,
@@ -23,12 +21,15 @@ function init(progress: any) {
   return initProgress;
 }
 
-export default function Process(props: any) {
+export default function Process(props: Any) {
   const progress = init(props.progress);
 
-  const handleAction = (action: any) => () => {
-    props.onAction(action);
-  };
+  const handleAction =
+    (action: Any) =>
+    (...args: Any[]) => {
+      void args;
+      props.onAction(action);
+    };
 
   return (
     <Grid container spacing={1}>

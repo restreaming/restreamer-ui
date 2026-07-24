@@ -16,7 +16,7 @@ const classes = {
   serviceName: `${PREFIX}-serviceName`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }: any) => ({
+const StyledGrid = styled(Grid)(() => ({
   [`& .${classes.serviceIcon}`]: {
     fontSize: "4rem!important",
     maxHeight: 64,
@@ -28,7 +28,7 @@ const StyledGrid = styled(Grid)(({ theme }: any) => ({
   },
 }));
 
-export default function TabContent(props: any) {
+export default function TabContent(props: Any) {
   return (
     <StyledGrid container spacing={2}>
       <Grid size={12}>

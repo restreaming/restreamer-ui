@@ -7,7 +7,7 @@ import * as M from "../../utils/metadata";
  * @param {array} streams
  * @returns
  */
-export function createSourcesFromStreams(streams: any) {
+export function createSourcesFromStreams(streams: Any) {
   return [
     {
       type: "network",
@@ -35,10 +35,10 @@ export function createSourcesFromStreams(streams: any) {
  * @returns
  */
 export function createInputsOutputs(
-  sources: any,
-  profiles: any,
-  outputs: any,
-  requireVideo : any = true,
+  sources: Any,
+  profiles: Any,
+  outputs: Any,
+  requireVideo: Any = true,
 ) {
   const [global, inpts, outpts] = M.createInputsOutputs(
     sources,
@@ -50,7 +50,7 @@ export function createInputsOutputs(
     return [global, [], []];
   }
 
-  const out = [];
+  const out: Any[] = [];
 
   // iterate through all service outputs and copy its values
   // to a new object. if encoding is enabled, it will be done
@@ -80,7 +80,7 @@ export function createInputsOutputs(
  * @param {*} requires requirement object
  * @returns validated requirement object
  */
-export function validateRequirements(requires: any) {
+export function validateRequirements(requires: Any) {
   if (!requires) {
     requires = {};
   }
@@ -108,7 +108,7 @@ export function validateRequirements(requires: any) {
  * @param {*} skills
  * @returns {boolean}
  */
-export function checkServiceRequirements(requires: any, skills: any) {
+export function checkServiceRequirements(requires: Any, skills: Any) {
   if (!skills) {
     return false;
   }
@@ -194,14 +194,14 @@ export function checkServiceRequirements(requires: any, skills: any) {
  * @param {*} skills
  * @returns
  */
-export function conflateServiceSkills(requires: any, skills: any) {
+export function conflateServiceSkills(requires: Any, skills: Any) {
   if (!skills) {
     return null;
   }
 
   requires = validateRequirements(requires);
 
-  const serviceSkills = {
+  const serviceSkills: DynamicObject = {
     ffmpeg: {
       ...skills.ffmpeg,
     },
@@ -256,7 +256,13 @@ export function conflateServiceSkills(requires: any, skills: any) {
  * @param {*} skills FFmpeg skills
  * @returns {boolean} Whether the provided profile is valid
  */
-export function preselectProfile(profile: any, type: any, streams: any, codecs: any, skills: any) {
+export function preselectProfile(
+  profile: Any,
+  type: Any,
+  streams: Any,
+  codecs: Any,
+  skills: Any,
+) {
   const encoders = skills.encoders[type];
 
   /**
@@ -268,7 +274,7 @@ export function preselectProfile(profile: any, type: any, streams: any, codecs: 
    * @param {*} codecs List of target codecs
    * @returns {boolean} Whether the provided profile is valid
    */
-  const isPlausible = (profile: any, type: any, streams: any, codecs: any) => {
+  const isPlausible = (profile: Any, type: Any, streams: Any, codecs: Any) => {
     if (profile.stream < 0) {
       return false;
     }

@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -51,11 +50,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="Red5 Logo" {...props} />;
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "rtmp://",
     username: "",
@@ -69,10 +68,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -82,8 +81,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const options = [];
+  const createOutput = (settings: Any) => {
+    const options: Any[] = [];
 
     if (settings.protocol === "rtsp") {
       options.push("-f", "rtsp");
@@ -100,7 +99,7 @@ function Service(props: any) {
       protocol = settings.protocol;
     }
 
-    const output = {
+    const output: DynamicObject = {
       address:
         protocol +
         settings.address +
@@ -219,7 +218,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

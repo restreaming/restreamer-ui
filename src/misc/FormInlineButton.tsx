@@ -1,7 +1,6 @@
-
 import Button from "@mui/material/Button";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <Button
       variant="outlined"

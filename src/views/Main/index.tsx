@@ -38,7 +38,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(({ theme }: Any) => ({
   [`& .${classes.gridContainerL1}`]: {
     marginBottom: "6em",
   },
@@ -78,7 +78,7 @@ const Root = styled("div")(({ theme }: any) => ({
   },
 }));
 
-export default function Main(props: any) {
+export default function Main(props: Any) {
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const [$state, setState] = React.useState<DynamicObject>({
@@ -106,24 +106,32 @@ export default function Main(props: any) {
   const [$config, setConfig] = React.useState<DynamicObject | null>(null);
   const [$invalid, setInvalid] = React.useState(false);
 
-  useInterval(async () => {
+  useInterval(async (...args: Any[]) => {
+    void args;
     await update();
   }, 1000);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
       await update();
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid === true) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid === true) {
+        navigate("/", { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     const config = props.restreamer.ConfigActive();
     setConfig(config);
 
@@ -136,7 +144,8 @@ export default function Main(props: any) {
     await update();
   };
 
-  const update = async () => {
+  const update = async (...args: Any[]) => {
+    void args;
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid(true);
@@ -155,7 +164,8 @@ export default function Main(props: any) {
 
     if (state.state === "connecting") {
       if (state.onConnect === null) {
-        state.onConnect = async () => {
+        state.onConnect = async (...args: Any[]) => {
+          void args;
           await props.restreamer.StopIngestSnapshot(_channelid);
           await props.restreamer.StartIngestSnapshot(_channelid);
         };
@@ -163,7 +173,8 @@ export default function Main(props: any) {
     } else if (state.state === "connected") {
       if (state.onConnect !== null && typeof state.onConnect === "function") {
         const onConnect = state.onConnect;
-        setTimeout(async () => {
+        setTimeout(async (...args: Any[]) => {
+          void args;
           await onConnect();
         }, 100);
         state.onConnect = null;
@@ -171,12 +182,12 @@ export default function Main(props: any) {
     }
 
     if ($metadata.control.rtmp.enable) {
-      if (!$config.source.network.rtmp.enabled) {
+      if (!$config?.source?.network?.rtmp?.enabled) {
         state.state = "error";
         state.progress.error = "RTMP server is not enabled, but required.";
       }
     } else if ($metadata.control.srt.enable) {
-      if (!$config.source.network.srt.enabled) {
+      if (!$config?.source?.network?.srt?.enabled) {
         state.state = "error";
         state.progress.error = "SRT server is not enabled, but required.";
       }
@@ -188,11 +199,13 @@ export default function Main(props: any) {
     });
   };
 
-  const connect = async () => {
+  const connect = async (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       state: "connecting",
-      onConnect: async () => {
+      onConnect: async (...args: Any[]) => {
+        void args;
         await props.restreamer.StopIngestSnapshot(_channelid);
         await props.restreamer.StartIngestSnapshot(_channelid);
       },
@@ -202,7 +215,8 @@ export default function Main(props: any) {
     await props.restreamer.StartIngestSnapshot(_channelid);
   };
 
-  const disconnect = async () => {
+  const disconnect = async (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       state: "disconnecting",
@@ -214,16 +228,18 @@ export default function Main(props: any) {
     await disconnectEgresses();
   };
 
-  const reconnect = async () => {
+  const reconnect = async (...args: Any[]) => {
+    void args;
     await disconnect();
     await connect();
   };
 
-  const disconnectEgresses = async () => {
+  const disconnectEgresses = async (...args: Any[]) => {
+    void args;
     await props.restreamer.StopAllEgresses(_channelid);
   };
 
-  const handleProcessDetails = async (event: any) => {
+  const handleProcessDetails = async (event: Any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -238,7 +254,8 @@ export default function Main(props: any) {
         logdata = data;
       }
 
-      processLogTimer.current = setInterval(async () => {
+      processLogTimer.current = setInterval(async (...args: Any[]) => {
+        void args;
         await updateProcessDetailsLog();
       }, 1000);
     } else {
@@ -252,7 +269,8 @@ export default function Main(props: any) {
     });
   };
 
-  const updateProcessDetailsLog = async () => {
+  const updateProcessDetailsLog = async (...args: Any[]) => {
+    void args;
     const data = await props.restreamer.GetIngestLog(_channelid);
     if (data !== null) {
       setProcessDetails({
@@ -263,7 +281,7 @@ export default function Main(props: any) {
     }
   };
 
-  const handleProcessDebug = async (event: any) => {
+  const handleProcessDebug = async (event: Any) => {
     event.preventDefault();
 
     let data = "";
@@ -280,9 +298,12 @@ export default function Main(props: any) {
     });
   };
 
-  const handleHelp = (topic: any) => () => {
-    H(topic);
-  };
+  const handleHelp =
+    (topic: Any) =>
+    (...args: Any[]) => {
+      void args;
+      H(topic);
+    };
 
   if ($state.ready === false) {
     return (

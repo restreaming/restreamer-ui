@@ -11,7 +11,7 @@ import * as Filters from "../../misc/filters";
 import BoxText from "../../misc/BoxText";
 import Sources from "./Sources";
 
-export default function Summary(props: any) {
+export default function Summary(props: Any) {
   const { i18n } = useLingui();
   const sources = props.sources;
   const profile = props.profile;
@@ -30,7 +30,7 @@ export default function Summary(props: any) {
   let name = i18n._(t`No source selected`);
   let address = "";
   let encodingSummary = i18n._(t`None`);
-  const filterSummary = [];
+  const filterSummary: Any[] = [];
 
   let showEncoding = false;
 
@@ -57,7 +57,7 @@ export default function Summary(props: any) {
 
     if (profile.encoder.coder !== "none" && profile.encoder.coder !== "copy") {
       if (profile.filter.graph.length !== 0) {
-        let filters = null;
+        let filters: Any = null;
 
         if (props.type === "video") {
           filters = Filters.Video;

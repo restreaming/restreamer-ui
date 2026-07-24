@@ -20,7 +20,8 @@ function getAddress() {
 export function ClientOnly() {
   const [address, setAddress] = React.useState("");
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     setAddress(getAddress());
   }, []);
 

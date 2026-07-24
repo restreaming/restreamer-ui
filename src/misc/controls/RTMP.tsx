@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import BoxText from "../BoxText";
 import Checkbox from "../Checkbox";
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     enable: false,
     ...settings,
@@ -18,16 +18,17 @@ function init(settings: any) {
   return initSettings;
 }
 
-export default function Control(props: any) {
+export default function Control(props: Any) {
   const navigate = useNavigate();
   const settings = init(props.settings);
 
   // Set the defaults
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (["enable"].includes(what)) {
@@ -80,5 +81,7 @@ export default function Control(props: any) {
 Control.defaulProps = {
   settings: {},
   enabled: false,
-  onChange: function (settings: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

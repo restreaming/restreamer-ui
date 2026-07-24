@@ -1,7 +1,6 @@
-
 import Grid from "@mui/material/Grid";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <Grid
       sx={{ flexGrow: 1, display: "flex", height: "100%", minWidth: 0 }}

@@ -9,7 +9,7 @@ import "./video-js-skin-public.css";
 
 const Player = createPlayer({ features: videoFeatures });
 
-export default function VideoJS(props: any) {
+export default function VideoJS(props: Any) {
   const { options, type, logo } = props;
 
   // In videojs v10, sources is usually passed to the video element src prop

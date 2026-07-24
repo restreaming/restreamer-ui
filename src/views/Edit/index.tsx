@@ -49,7 +49,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(({ theme }: Any) => ({
   [`& .${classes.wizardButtonElement}`]: {
     display: "flex",
     alignItems: "flex-start",
@@ -69,7 +69,7 @@ const Root = styled("div")(({ theme }: any) => ({
   },
 }));
 
-export default function Edit(props: any) {
+export default function Edit(props: Any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid, tab: _tab } = useParams();
@@ -94,19 +94,26 @@ export default function Edit(props: any) {
   });
   const [$invalid, setInvalid] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await load();
     })();
   }, []);
 
-  React.useEffect(() => {
-    if ($invalid === true) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate, $invalid]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      if ($invalid === true) {
+        navigate("/", { replace: true });
+      }
+    },
+    [navigate, $invalid],
+  );
 
-  const load = async () => {
+  const load = async (...args: Any[]) => {
+    void args;
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid(true);
@@ -147,11 +154,11 @@ export default function Edit(props: any) {
     setReady(true);
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
-  const handleSourceEditDialog = (target: any) => (what: any) => {
+  const handleSourceEditDialog = (target: Any) => (what: Any) => {
     if ($process.order === "start") {
       setEditDialog({
         ...$editDialog,
@@ -170,7 +177,8 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleSourceEditDialogAbort = () => {
+  const handleSourceEditDialogAbort = (...args: Any[]) => {
+    void args;
     setEditDialog({
       ...$editDialog,
       open: false,
@@ -179,7 +187,8 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleSourceEditDialogDone = async () => {
+  const handleSourceEditDialogDone = async (...args: Any[]) => {
+    void args;
     let stopped = false;
 
     stopped = await props.restreamer.StopIngest(_channelid);
@@ -209,7 +218,7 @@ export default function Edit(props: any) {
     }
   };
 
-  const handleSourceEdit = (what: any) => {
+  const handleSourceEdit = (what: Any) => {
     setState({
       ...$state,
       editing: true,
@@ -217,18 +226,19 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleSkillsRefresh = async () => {
+  const handleSkillsRefresh = async (...args: Any[]) => {
+    void args;
     await props.restreamer.RefreshSkills();
 
     const skills = await props.restreamer.Skills();
     setSkills(skills);
   };
 
-  const handleSourceStore = async (name: any, data: any) => {
+  const handleSourceStore = async (name: Any, data: Any) => {
     return await props.restreamer.UploadData("", name, data);
   };
 
-  const handleSourceProbe = async (inputs: any) => {
+  const handleSourceProbe = async (inputs: Any) => {
     let [res, err] = await props.restreamer.Probe(_channelid, inputs);
     if (err !== null) {
       res = {
@@ -240,10 +250,10 @@ export default function Edit(props: any) {
     return res;
   };
 
-  const handleSourceDone = (sources: any, profile: any) => {
+  const handleSourceDone = (sources: Any, profile: Any) => {
     const complete = M.validateProfile(sources, profile);
 
-    let streams = [];
+    let streams: Any[] = [];
     if (complete === true) {
       streams = M.createOutputStreams(sources, [profile]);
     }
@@ -262,18 +272,20 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleSourceAbort = () => {
+  const handleSourceAbort = (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       editing: false,
     });
   };
 
-  const handleWizard = () => {
+  const handleWizard = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}/edit/wizard`);
   };
 
-  const handleControlChange = (what: any) => (settings: any) => {
+  const handleControlChange = (what: Any) => (settings: Any) => {
     const control = {
       ...$data.control,
       [what]: settings,
@@ -285,27 +297,29 @@ export default function Edit(props: any) {
     });
   };
 
-  const handleMetadataChange = (settings: any) => {
+  const handleMetadataChange = (settings: Any) => {
     setData({
       ...$data,
       meta: settings,
     });
   };
 
-  const handleLicenseChange = (license: any) => {
+  const handleLicenseChange = (license: Any) => {
     setData({
       ...$data,
       license: license,
     });
   };
 
-  const handleDone = async () => {
+  const handleDone = async (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       saving: true,
     });
 
-    const save = async () => {
+    const save = async (...args: Any[]) => {
+      void args;
       const sources = $data.sources;
       const profiles = $data.profiles;
       const control = $data.control;
@@ -410,15 +424,18 @@ export default function Edit(props: any) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleAbort = () => {
+  const handleAbort = (...args: Any[]) => {
+    void args;
     navigate(`/${_channelid}/`);
   };
 
-  const handleChannelDeleteDialog = () => {
+  const handleChannelDeleteDialog = (...args: Any[]) => {
+    void args;
     setDeleteDialog(!$deleteDialog);
   };
 
-  const handleChannelDelete = async () => {
+  const handleChannelDelete = async (...args: Any[]) => {
+    void args;
     setState({
       ...$state,
       saving: true,
@@ -452,7 +469,8 @@ export default function Edit(props: any) {
     navigate("/");
   };
 
-  const handleHelp = () => {
+  const handleHelp = (...args: Any[]) => {
+    void args;
     H("edit-" + $tab);
   };
 

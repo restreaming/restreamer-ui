@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -12,7 +11,7 @@ import BoxText from "../../../misc/BoxText";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Video(props: any) {
+export default function Video(props: Any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -50,7 +49,7 @@ export default function Video(props: any) {
               <WarningIcon fontSize="large" color="error" />
               <Typography sx={{ textAlign: "center" }}>
                 <Trans>
-                  The source doesn't provide any video streams. Please check the
+                  The source doesn't provide Any video streams. Please check the
                   device.
                 </Trans>
               </Typography>
@@ -61,7 +60,7 @@ export default function Video(props: any) {
               <WarningIcon fontSize="large" color="error" />
               <Typography sx={{ textAlign: "center" }}>
                 <Trans>
-                  The source doesn't provide any compatible video streams.
+                  The source doesn't provide Any compatible video streams.
                   Please check the{" "}
                   <Link
                     color="secondary"
@@ -106,10 +105,18 @@ export default function Video(props: any) {
 }
 
 Video.defaultProps = {
-  onAbort: () => {},
-  onHelp: () => {},
-  onBack: () => {},
-  onNext: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
+  onHelp: (...args: Any[]) => {
+    void args;
+  },
+  onBack: (...args: Any[]) => {
+    void args;
+  },
+  onNext: (...args: Any[]) => {
+    void args;
+  },
   sourceid: "",
   status: "",
   ready: false,

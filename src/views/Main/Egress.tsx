@@ -19,7 +19,7 @@ const classes = {
   egressBar: `${PREFIX}-egressBar`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }: any) => ({
+const StyledGrid = styled(Grid)(({ theme }: Any) => ({
   [`&.${classes.egressBar}`]: {
     marginTop: "-.4em",
     marginBottom: "-.2em",
@@ -66,20 +66,23 @@ const StyledGrid = styled(Grid)(({ theme }: any) => ({
   },
 }));
 
-export default function Egress(props: any) {
+export default function Egress(props: Any) {
   const [$order, setOrder] = React.useState("stop");
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await update();
     })();
   }, []);
 
-  const update = async () => {
+  const update = async (...args: Any[]) => {
+    void args;
     setOrder(props.order);
   };
 
-  const handleSwitch = async (event: any) => {
+  const handleSwitch = async (event: Any) => {
     const checked = event.target.checked;
 
     const order = checked === true ? "start" : "stop";
@@ -202,6 +205,10 @@ Egress.defaultProps = {
   state: "disconnected",
   order: "stop",
   reconnect: true,
-  onEdit: function () {},
-  onOrder: function (order: any) {},
+  onEdit: function (...args: Any[]) {
+    void args;
+  },
+  onOrder: function (...args: Any[]) {
+    void args;
+  },
 };

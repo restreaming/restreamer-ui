@@ -1,8 +1,7 @@
-
 import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 
-export default function TabPanel(props: any) {
+export default function TabPanel(props: Any) {
   const { children, value, index, ...other } = props;
 
   return (

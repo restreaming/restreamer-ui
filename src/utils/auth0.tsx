@@ -18,11 +18,12 @@ try {
   isAvailable = false;
 }
 
-const canUseAuth0 = () => {
+const canUseAuth0 = (...args: Any[]) => {
+  void args;
   return isAvailable;
 };
 
-const setConfig = (config: any) => {
+const setConfig = (config: Any) => {
   Storage.Set(
     "auth0",
     JSON.stringify({
@@ -35,7 +36,8 @@ const setConfig = (config: any) => {
   );
 };
 
-const getConfig = () => {
+const getConfig = (...args: Any[]) => {
+  void args;
   let config = {
     domain: "",
     client_id: "",
@@ -55,12 +57,13 @@ const getConfig = () => {
       ...config,
       ...parsedConfig,
     };
-  } catch (e) {}
+  } catch {}
 
   return config;
 };
 
-const init = () => {
+const init = (...args: Any[]) => {
+  void args;
   if (canUseAuth0() === false) {
     return false;
   }
@@ -89,7 +92,8 @@ const init = () => {
   return true;
 };
 
-const handleRedirectCallback = async () => {
+const handleRedirectCallback = async (...args: Any[]) => {
+  void args;
   if (client === null) {
     return {
       initialized: false,
@@ -142,17 +146,14 @@ const handleRedirectCallback = async () => {
   };
 };
 
-const login = async (queryParams: any) => {
+const login = async (queryParams: Any) => {
   if (client === null) {
     return false;
   }
 
-  const config = {
-    redirect_uri: window.location.origin,
-    ...getConfig(),
-  };
+  const config = getConfig();
 
-  const queryString = [];
+  const queryString: Any[] = [];
   for (const n in queryParams) {
     queryString.push(n + "=" + encodeURIComponent(queryParams[n]));
   }
@@ -167,10 +168,10 @@ const login = async (queryParams: any) => {
       }
 
       config.redirect_uri = url.href;
-    } catch (e) {}
+    } catch {}
   }
 
-  const options = {};
+  const options: DynamicObject = {};
 
   try {
     await client.loginWithRedirect(options);
@@ -181,18 +182,21 @@ const login = async (queryParams: any) => {
   return true;
 };
 
-const logout = async () => {
+const logout = async (...args: Any[]) => {
+  void args;
   if (client === null) {
     return;
   }
 
   await client.logout({
-    returnTo: window.location.href,
-    localOnly: true,
+    logoutParams: {
+      returnTo: window.location.href,
+    },
   });
 };
 
-const getToken = async () => {
+const getToken = async (...args: Any[]) => {
+  void args;
   let token = "";
 
   if (client === null) {
@@ -208,7 +212,8 @@ const getToken = async () => {
   return token;
 };
 
-const isAuthenticated = async () => {
+const isAuthenticated = async (...args: Any[]) => {
+  void args;
   if (client === null) {
     return false;
   }

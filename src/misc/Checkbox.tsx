@@ -1,8 +1,7 @@
-
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <FormControlLabel
       control={
@@ -30,5 +29,7 @@ Component.defaultProps = {
   label: "",
   checked: false,
   disabled: false,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

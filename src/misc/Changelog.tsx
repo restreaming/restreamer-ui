@@ -13,14 +13,14 @@ import SemverValid from "semver/functions/valid";
 import BoxText from "./BoxText";
 import Dialog from "./modals/Dialog";
 
-const H1 = styled("h1")(({ theme }: any) => ({
+const H1 = styled("h1")(({ theme }: Any) => ({
   fontFamily: theme.typography.h1.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   marginTop: ".5rem",
   marginBottom: "-1rem",
 }));
 
-const H2 = styled("h2")(({ theme }: any) => ({
+const H2 = styled("h2")(({ theme }: Any) => ({
   fontFamily: theme.typography.h2.fontFamily,
   fontSize: theme.typography.h2.fontSize,
   paddingTop: "1.5rem",
@@ -33,41 +33,45 @@ const H2 = styled("h2")(({ theme }: any) => ({
   },
 }));
 
-const H3 = styled("h3")(({ theme }: any) => ({
+const H3 = styled("h3")(({ theme }: Any) => ({
   fontFamily: theme.typography.h3.fontFamily,
   fontSize: theme.typography.h3.fontSize,
   paddingTop: ".5rem",
   marginBottom: theme.typography.h3.marginBottom,
 }));
 
-const H4 = styled("h4")(({ theme }: any) => ({
+const H4 = styled("h4")(({ theme }: Any) => ({
   fontFamily: theme.typography.h4.fontFamily,
   fontSize: theme.typography.h4.fontSize,
   marginBottom: theme.typography.h4.marginBottom,
 }));
 
-const A = styled("a")(({ theme }: any) => ({
+const A = styled("a")(({ theme }: Any) => ({
   fontWeight: "bold",
   color: theme.palette.secondary.main,
 }));
 
-export default function Changelog(props: any) {
+export default function Changelog(props: Any) {
   const [$data, setData] = React.useState("");
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await onMount();
     })();
   }, []);
 
-  const onMount = async () => {
+  const onMount = async (...args: Any[]) => {
+    void args;
     let data = await loadData();
     data = filter(data, props.current, props.previous);
 
     setData(data);
   };
 
-  const loadData = async () => {
+  const loadData = async (...args: Any[]) => {
+    void args;
     let response = null;
 
     try {
@@ -85,9 +89,9 @@ export default function Changelog(props: any) {
     return await response.text();
   };
 
-  const filter = (data: any, current: any, previous: any) => {
+  const filter = (data: Any, current: Any, previous: Any) => {
     const lines = data.split("\n");
-    const filteredLines = [];
+    const filteredLines: Any[] = [];
 
     let copy = true;
 
@@ -139,11 +143,11 @@ export default function Changelog(props: any) {
   }
 
   const renderers = {
-    h1: (props: any) => <H1 {...props}>{props.children}</H1>,
-    h2: (props: any) => <H2 {...props}>{props.children}</H2>,
-    h3: (props: any) => <H3 {...props}>{props.children}</H3>,
-    h4: (props: any) => <H4 {...props}>{props.children}</H4>,
-    a: (props: any) => (
+    h1: (props: Any) => <H1 {...props}>{props.children}</H1>,
+    h2: (props: Any) => <H2 {...props}>{props.children}</H2>,
+    h3: (props: Any) => <H3 {...props}>{props.children}</H3>,
+    h4: (props: Any) => <H4 {...props}>{props.children}</H4>,
+    a: (props: Any) => (
       <A target="_blank" {...props}>
         {props.children}
       </A>
@@ -177,5 +181,7 @@ Changelog.defaultProps = {
   open: false,
   current: "",
   previous: "",
-  onClose: () => {},
+  onClose: (...args: Any[]) => {
+    void args;
+  },
 };

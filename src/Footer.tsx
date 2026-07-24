@@ -29,7 +29,7 @@ const classes = {
   logo: `${PREFIX}-logo`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }: any) => ({
+const StyledGrid = styled(Grid)(({ theme }: Any) => ({
   [`&.${classes.footer}`]: {
     zIndex: "2",
     position: "relative",
@@ -88,23 +88,28 @@ function Resources(props: DynamicObject) {
     setPopover(event.currentTarget);
   };
 
-  const handlePopoverClose = () => {
+  const handlePopoverClose = (...args: Any[]) => {
+    void args;
     setPopover(null);
   };
 
   const open = Boolean($popover);
 
-  useInterval(async () => {
+  useInterval(async (...args: Any[]) => {
+    void args;
     await update();
   }, 2000);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await update();
     })();
   }, []);
 
-  const update = async () => {
+  const update = async (...args: Any[]) => {
+    void args;
     const resources = await props.resources();
     if (resources === null) {
       return;
@@ -397,12 +402,13 @@ function Resources(props: DynamicObject) {
 }
 
 Resources.defaultProps = {
-  resources: () => {
+  resources: (...args: Any[]) => {
+    void args;
     return null;
   },
 };
 
-const initVersion = (initialVersion : any = {}) => {
+const initVersion = (initialVersion: Any = {}) => {
   if (!initialVersion) {
     initialVersion = {};
   }
@@ -492,7 +498,8 @@ Footer.defaultProps = {
   app: "",
   name: "",
   version: initVersion(),
-  resources: () => {
+  resources: (...args: Any[]) => {
+    void args;
     return null;
   },
 };

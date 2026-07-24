@@ -5,10 +5,10 @@ import { RgbaStringColorPicker } from "react-colorful";
 import TextField from "@mui/material/TextField";
 
 // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
-function hexToRGBA(value: any) {
+function hexToRGBA(value: Any) {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   const shorthandRegex = /^#([a-f\d])([a-f\d])([a-f\d])$/i;
-  value = value.replace(shorthandRegex, function (m: any, r: any, g: any, b: any) {
+  value = value.replace(shorthandRegex, function (r: Any, g: Any, b: Any) {
     return "#" + r + r + g + g + b + b;
   });
 
@@ -18,18 +18,20 @@ function hexToRGBA(value: any) {
     : value;
 }
 
-export default function ColorPicker(props: any) {
+export default function ColorPicker(props: Any) {
   const [$open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = (...args: Any[]) => {
+    void args;
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (...args: Any[]) => {
+    void args;
     setOpen(false);
   };
 
-  const handleChange = (color: any) => {
+  const handleChange = (color: Any) => {
     props.onChange({
       target: {
         value: color,
@@ -73,5 +75,7 @@ ColorPicker.defaultProps = {
   label: "",
   fullWidth: false,
   value: "rgba(255, 255, 255, 1)",
-  onChange: () => {},
+  onChange: (...args: Any[]) => {
+    void args;
+  },
 };

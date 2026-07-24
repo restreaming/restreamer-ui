@@ -11,7 +11,7 @@ import SelectCustom from "../../SelectCustom";
 // Framerate Filter
 // http://ffmpeg.org/ffmpeg-all.html#framerate
 
-function init(initialState: any) {
+function init(initialState: Any) {
   const state = {
     enabled: false,
     fps: "30",
@@ -21,10 +21,10 @@ function init(initialState: any) {
   return state;
 }
 
-function createGraph(settings: any) {
+function createGraph(settings: Any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: Any[] = [];
 
   if (settings.enabled) {
     mapping.push(`framerate=fps=${settings.fps}`);
@@ -33,7 +33,7 @@ function createGraph(settings: any) {
   return mapping.join(",");
 }
 
-function Framerate(props: any) {
+function Framerate(props: Any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "60", label: "60" },
@@ -68,13 +68,15 @@ Framerate.defaultProps = {
   value: "",
   variant: "outlined",
   allowCustom: true,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Filter(props: any) {
+function Filter(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -84,7 +86,7 @@ function Filter(props: any) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const newSettings = {
       ...settings,
     };
@@ -97,7 +99,8 @@ function Filter(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -126,7 +129,9 @@ function Filter(props: any) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings: any, mapping: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const filter = "fps";
@@ -134,7 +139,7 @@ const name = "Frame Interpolation";
 const type = "video";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize(settings: Any) {
   return `${name} (${settings.fps}fps)`;
 }
 

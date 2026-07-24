@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -9,44 +8,45 @@ import * as Filters from "./filters";
 // Import all encoders (audio/video)
 import * as Encoders from "./coders/Encoders";
 
-export default function FilterSelect(props: any) {
+export default function FilterSelect(props: Any) {
   const profile = props.profile;
 
   // handleFilterChange
   // what: Filter name
   // settings (component settings):  {Key: Value}
   // mapping (FFmpeg -af/-vf args): ['String', ...]
-  const handleFilterSettingsChange = (what: any) => (settings: any, graph: any, automatic: any) => {
-    const filter = profile.filter;
+  const handleFilterSettingsChange =
+    (what: Any) => (settings: Any, graph: Any, automatic: Any) => {
+      const filter = profile.filter;
 
-    // Store mapping/settings per component
-    filter.settings[what] = {
-      settings: settings,
-      graph: graph,
+      // Store mapping/settings per component
+      filter.settings[what] = {
+        settings: settings,
+        graph: graph,
+      };
+
+      // Get the order of the filters
+      const filterOrder =
+        props.type === "video"
+          ? Filters.Video.Filters()
+          : Filters.Audio.Filters();
+
+      // Create the filter graph in the order as the filters are registered
+      const graphs: Any[] = [];
+      for (const f of filterOrder) {
+        if (!(f in filter.settings)) {
+          continue;
+        }
+
+        if (filter.settings[f].graph.length !== 0) {
+          graphs.push(filter.settings[f].graph);
+        }
+      }
+
+      filter.graph = graphs.join(",");
+
+      props.onChange(filter, automatic);
     };
-
-    // Get the order of the filters
-    const filterOrder =
-      props.type === "video"
-        ? Filters.Video.Filters()
-        : Filters.Audio.Filters();
-
-    // Create the filter graph in the order as the filters are registered
-    const graphs = [];
-    for (const f of filterOrder) {
-      if (!(f in filter.settings)) {
-        continue;
-      }
-
-      if (filter.settings[f].graph.length !== 0) {
-        graphs.push(filter.settings[f].graph);
-      }
-    }
-
-    filter.graph = graphs.join(",");
-
-    props.onChange(filter, automatic);
-  };
 
   // Set filterRegistry by type
   const filterRegistry =
@@ -63,15 +63,16 @@ export default function FilterSelect(props: any) {
   const encoderRegistry = props.type === "video" ? Encoders.Video : null;
   const hwaccel =
     props.type === "video" &&
+    encoderRegistry !== null &&
     encoderRegistry
       .List()
       .some(
-        (encoder: any) =>
+        (encoder: Any) =>
           encoder.codec === props.profile.encoder.coder && encoder.hwaccel,
       );
 
   // Creates filter components
-  const filterSettings = [];
+  const filterSettings: Any[] = [];
   if (!hwaccel) {
     for (const c of filterRegistry.List()) {
       // Checks FFmpeg skills (filter is available)
@@ -131,5 +132,7 @@ FilterSelect.defaultProps = {
   type: "",
   profile: {},
   availableFilters: [],
-  onChange: function (filter: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

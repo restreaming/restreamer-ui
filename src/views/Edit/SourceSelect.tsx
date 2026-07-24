@@ -9,8 +9,8 @@ import { Trans } from "@lingui/react/macro";
 
 import Sources from "./Sources";
 
-function initConfig(initialConfig: any) {
-  let config = {};
+function initConfig(initialConfig: Any) {
+  let config: DynamicObject = {};
 
   for (const s of Sources.List()) {
     config[s.id] = {};
@@ -24,8 +24,8 @@ function initConfig(initialConfig: any) {
   return config;
 }
 
-function init(source: any) {
-  const settings = {};
+function init(source: Any) {
+  const settings: DynamicObject = {};
 
   for (const id of Sources.IDs()) {
     settings[id] = {};
@@ -36,7 +36,7 @@ function init(source: any) {
   return settings;
 }
 
-function reducer(settings: any, data: any) {
+function reducer(settings: Any, data: Any) {
   const newSettings = {
     ...settings,
     ...data,
@@ -45,7 +45,7 @@ function reducer(settings: any, data: any) {
   return newSettings;
 }
 
-export default function SourceSelect(props: any) {
+export default function SourceSelect(props: Any) {
   // $source holds the currently selected device. It is initialized with the
   // last stored source.
   const [$source, setSource] = React.useState(props.source.type);
@@ -59,28 +59,29 @@ export default function SourceSelect(props: any) {
     init,
   );
 
-  const config = initConfig(props.config);
+  const config: DynamicObject = initConfig(props.config);
 
-  const handleSource = (source: any) => {
+  const handleSource = (source: Any) => {
     props.onChange(props.type);
     setSource(source);
 
     props.onSelect(props.type, source);
   };
 
-  const handleRefresh = async () => {
+  const handleRefresh = async (...args: Any[]) => {
+    void args;
     await props.onRefresh();
   };
 
-  const handleStore = async (name: any, data: any) => {
+  const handleStore = async (name: Any, data: Any) => {
     return await props.onStore(name, data);
   };
 
-  const handleProbe = async (settings: any, inputs: any) => {
+  const handleProbe = async (settings: Any, inputs: Any) => {
     await props.onProbe(props.type, $source, settings, inputs);
   };
 
-  const handleChange = (source: any) => (settings: any) => {
+  const handleChange = (source: Any) => (settings: Any) => {
     setSettings({
       ...$settings,
       [source]: settings,
@@ -132,19 +133,32 @@ SourceSelect.defaultProps = {
   skills: {},
   source: {},
   config: {},
-  onProbe: function (type: any, device: any, settings: any, inputs: any) {},
-  onSelect: function (type: any, device: any) {},
-  onChange: function (type: any, device: any, settings: any) {},
-  onRefresh: function () {},
-  onStore: function (name: any, data: any) {},
+  onProbe: function (...args: Any[]) {
+    void args;
+  },
+  onSelect: function (...args: Any[]) {
+    void args;
+  },
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
+  onStore: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Select(props: any) {
-  const handleSource = (source: any) => () => {
-    props.onSelect(source);
-  };
+function Select(props: Any) {
+  const handleSource =
+    (source: Any) =>
+    (...args: Any[]) => {
+      void args;
+      props.onSelect(source);
+    };
 
-  const availableSources = [];
+  const availableSources: Any[] = [];
 
   for (const s of Sources.List()) {
     if (!(s.id in props.availableSources)) {
@@ -205,5 +219,7 @@ Select.defaultProps = {
   selected: "",
   ffversion: "0.0.0",
   availableSources: {},
-  onSelect: function (source: any) {},
+  onSelect: function (...args: Any[]) {
+    void args;
+  },
 };

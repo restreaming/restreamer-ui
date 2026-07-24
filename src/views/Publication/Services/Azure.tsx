@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -50,11 +49,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="azure media service Logo" {...props} />;
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "rtmp://",
     address: "",
@@ -64,10 +63,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -77,8 +76,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const output = {
+  const createOutput = (settings: Any) => {
+    const output: DynamicObject = {
       address: settings.protocol + settings.address,
       options: ["-f", "flv"],
     };
@@ -128,7 +127,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

@@ -1,8 +1,7 @@
-
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   return (
     <Box
       sx={{
@@ -42,5 +41,7 @@ export default function Component(props: any) {
 Component.defaultProps = {
   value: "",
   children: null,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

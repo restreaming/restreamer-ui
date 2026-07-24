@@ -1,4 +1,5 @@
-const isAvailable = () => {
+const isAvailable = (...args: Any[]) => {
+  void args;
   if (typeof window === "undefined") {
     return false;
   }
@@ -31,7 +32,7 @@ const isAvailable = () => {
   }
 };
 
-const Set = (key: any, value: any) => {
+const Set = (key: Any, value: Any) => {
   if (isAvailable() === false) {
     return;
   }
@@ -39,7 +40,7 @@ const Set = (key: any, value: any) => {
   window.localStorage.setItem("@@restreamer-ui@@" + key, value);
 };
 
-const Get = (key: any) => {
+const Get = (key: Any) => {
   if (isAvailable() === false) {
     return null;
   }
@@ -47,7 +48,7 @@ const Get = (key: any) => {
   return window.localStorage.getItem("@@restreamer-ui@@" + key);
 };
 
-const Remove = (key: any) => {
+const Remove = (key: Any) => {
   if (isAvailable() === false) {
     return;
   }

@@ -14,8 +14,8 @@ import Typography from "@mui/material/Typography";
 import * as S from "../../Sources/V4L";
 import Select from "../../../../misc/Select";
 
-function initSettings(initialSettings: any, knownDevices: any) {
-  const settings = {
+function initSettings(initialSettings: Any, knownDevices: Any) {
+  const settings: DynamicObject = {
     ...S.func.initSettings(initialSettings),
     format: "nv12",
     framerate: "25",
@@ -49,9 +49,9 @@ function initSettings(initialSettings: any, knownDevices: any) {
   return settings;
 }
 
-function initDevices(initialDevices: any) {
+function initDevices(initialDevices: Any) {
   const devices = initialDevices.filter(
-    (device: any) =>
+    (device: Any) =>
       device.media === "video" &&
       device.extra.match(/bcm2835[-_]v4l2/) === null,
   );
@@ -59,12 +59,12 @@ function initDevices(initialDevices: any) {
   return devices;
 }
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings, props.knownDevices);
   const devices = initDevices(props.knownDevices);
 
-  const handleChange = (newSettings : any = settings) => {
+  const handleChange = (newSettings: Any = settings) => {
     newSettings = newSettings || settings;
 
     props.onChange(
@@ -75,11 +75,12 @@ function Source(props: any) {
     );
   };
 
-  const handleRefresh = () => {
+  const handleRefresh = (...args: Any[]) => {
+    void args;
     props.onRefresh();
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -90,11 +91,12 @@ function Source(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange();
   }, []);
 
-  const options = devices.map((device: any) => {
+  const options = devices.map((device: Any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name} ({device.id})
@@ -145,11 +147,15 @@ function Source(props: any) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
-  onRefresh: function () {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
+  onRefresh: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <FontAwesomeIcon icon={faUsb} style={{ color: "#FFF" }} {...props} />;
 }
 

@@ -44,7 +44,7 @@ const Image = styled("span")(() => ({
   position: "relative",
 }));
 
-const ImageSrc = styled("span")(({ theme }: any) => ({
+const ImageSrc = styled("span")(({ theme }: Any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -56,7 +56,7 @@ const ImageSrc = styled("span")(({ theme }: any) => ({
   border: `2px solid ${theme.palette.primary.dark}`,
 }));
 
-const ImageAlt = styled("span")(({ theme }: any) => ({
+const ImageAlt = styled("span")(({ theme }: Any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -68,7 +68,7 @@ const ImageAlt = styled("span")(({ theme }: any) => ({
   color: theme.palette.common.white,
 }));
 
-const ImageBackdrop = styled("span")(({ theme }: any) => ({
+const ImageBackdrop = styled("span")(({ theme }: Any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -81,7 +81,7 @@ const ImageBackdrop = styled("span")(({ theme }: any) => ({
   border: `2px solid ${theme.palette.primary.dark}`,
 }));
 
-function ChannelButton(props: any, largeChannelList : any = false) {
+function ChannelButton(props: Any, largeChannelList: Any = false) {
   const theme = useTheme();
 
   let color = theme.palette.primary.main;
@@ -179,13 +179,15 @@ ChannelButton.defaultProps = {
   title: "",
   state: "",
   disabled: false,
-  onClick: () => {},
+  onClick: (...args: Any[]) => {
+    void args;
+  },
 };
 
 const calculateColumnsPerRow = (
-  breakpointSmall: any,
-  breakpointMedium: any,
-  breakpointLarge: any,
+  breakpointSmall: Any,
+  breakpointMedium: Any,
+  breakpointLarge: Any,
 ) => {
   if (breakpointLarge) {
     return 4;
@@ -197,11 +199,15 @@ const calculateColumnsPerRow = (
   return 1;
 };
 
-const calculateRowsToFit = (windowHeight: any, thumbnailHeight: any, otherUIHeight: any) => {
+const calculateRowsToFit = (
+  windowHeight: Any,
+  thumbnailHeight: Any,
+  otherUIHeight: Any,
+) => {
   return Math.floor((windowHeight - otherUIHeight) / thumbnailHeight);
 };
 
-export default function ChannelList(props: any) {
+export default function ChannelList(props: Any) {
   const theme = useTheme();
   const breakpointSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const breakpointMedium = useMediaQuery(theme.breakpoints.up("md"));
@@ -210,7 +216,7 @@ export default function ChannelList(props: any) {
   const [$nChannels, setNChannels] = React.useState(
     breakpointSmall ? (breakpointMedium ? (breakpointLarge ? 4 : 3) : 2) : 1,
   );
-  const [$channels, setChannels] = React.useState([]);
+  const [$channels, setChannels] = React.useState<Any[]>([]);
   const [$addChannel, setAddChannel] = React.useState({
     open: false,
     name: "",
@@ -222,64 +228,87 @@ export default function ChannelList(props: any) {
 
   const [$largeChannelList, setLargeChannelList] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await onMount();
     })();
   }, []);
 
-  React.useEffect(() => {
-    setNChannels(
-      breakpointSmall ? (breakpointMedium ? (breakpointLarge ? 4 : 3) : 2) : 1,
-    );
-  }, [breakpointSmall, breakpointMedium, breakpointLarge]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      setNChannels(
+        breakpointSmall
+          ? breakpointMedium
+            ? breakpointLarge
+              ? 4
+              : 3
+            : 2
+          : 1,
+      );
+    },
+    [breakpointSmall, breakpointMedium, breakpointLarge],
+  );
 
-  React.useEffect(() => {
-    (async () => {
-      if (allChannels.length === 0) {
-        return;
-      }
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      (async (...args: Any[]) => {
+        void args;
+        if (allChannels.length === 0) {
+          return;
+        }
 
-      let channels = allChannels
-        .sort((a: any, b: any) => {
-          const aname = a.name.toUpperCase();
-          const bname = b.name.toUpperCase();
-          return aname < bname ? -1 : aname > bname ? 1 : 0;
-        })
-        .slice($pos, $pos + $nChannels);
+        let channels = allChannels
+          .sort((a: Any, b: Any) => {
+            const aname = a.name.toUpperCase();
+            const bname = b.name.toUpperCase();
+            return aname < bname ? -1 : aname > bname ? 1 : 0;
+          })
+          .slice($pos, $pos + $nChannels);
 
-      const states = await onState(channels.map((channel: any) => channel.id));
-
-      channels = channels.map((channel: any) => {
-        return (
-          <ChannelButton
-            key={channel.channelid}
-            url={channel.thumbnail}
-            width={200}
-            title={channel.name}
-            state={states[channel.id]}
-            disabled={channelid === channel.channelid}
-            onClick={() => {
-              onClick(channel.channelid);
-              if ($largeChannelList) {
-                onClose();
-              }
-            }}
-            largeChannelList={$largeChannelList}
-          />
+        const states = await onState(
+          channels.map((channel: Any) => channel.id),
         );
-      });
 
-      setChannels(channels);
-    })();
-  }, [$pos, allChannels, $nChannels, channelid, onClick, onState]);
+        channels = channels.map((channel: Any) => {
+          return (
+            <ChannelButton
+              key={channel.channelid}
+              url={channel.thumbnail}
+              width={200}
+              title={channel.name}
+              state={states[channel.id]}
+              disabled={channelid === channel.channelid}
+              onClick={(...args: Any[]) => {
+                void args;
+                onClick(channel.channelid);
+                if ($largeChannelList) {
+                  onClose();
+                }
+              }}
+              largeChannelList={$largeChannelList}
+            />
+          );
+        });
 
-  const onMount = async () => {
+        setChannels(channels);
+      })();
+    },
+    [$pos, allChannels, $nChannels, channelid, onClick, onState],
+  );
+
+  const onMount = async (...args: Any[]) => {
+    void args;
     setPos(0);
   };
 
-  React.useEffect(() => {
-    const handleResize = () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    const handleResize = (...args: Any[]) => {
+      void args;
       setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
     };
@@ -288,26 +317,31 @@ export default function ChannelList(props: any) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  React.useEffect(() => {
-    const columns = calculateColumnsPerRow(
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      const columns = calculateColumnsPerRow(
+        breakpointSmall,
+        breakpointMedium,
+        breakpointLarge,
+      );
+      const rows = $largeChannelList
+        ? calculateRowsToFit(windowHeight, 200, 60)
+        : 1;
+      setNChannels(rows * columns);
+    },
+    [
       breakpointSmall,
       breakpointMedium,
       breakpointLarge,
-    );
-    const rows = $largeChannelList
-      ? calculateRowsToFit(windowHeight, 200, 60)
-      : 1;
-    setNChannels(rows * columns);
-  }, [
-    breakpointSmall,
-    breakpointMedium,
-    breakpointLarge,
-    windowHeight,
-    windowWidth,
-    $largeChannelList,
-  ]);
+      windowHeight,
+      windowWidth,
+      $largeChannelList,
+    ],
+  );
 
-  const handleAddChannelDialog = () => {
+  const handleAddChannelDialog = (...args: Any[]) => {
+    void args;
     setAddChannel({
       ...$addChannel,
       open: !$addChannel.open,
@@ -315,7 +349,7 @@ export default function ChannelList(props: any) {
     });
   };
 
-  const handleAddChannelChange = (event: any) => {
+  const handleAddChannelChange = (event: Any) => {
     setAddChannel({
       ...$addChannel,
       name: event.target.value,
@@ -330,7 +364,8 @@ export default function ChannelList(props: any) {
     return null;
   }
 
-  const handleLargeChannelList = () => {
+  const handleLargeChannelList = (...args: Any[]) => {
+    void args;
     setLargeChannelList(!$largeChannelList);
     setPos(0);
   };
@@ -340,7 +375,9 @@ export default function ChannelList(props: any) {
       <SwipeableDrawer
         anchor="bottom"
         open={props.open}
-        onOpen={() => {}}
+        onOpen={(...args: Any[]) => {
+          void args;
+        }}
         onClose={props.onClose}
         sx={{
           "& .MuiDrawer-paper": {
@@ -429,7 +466,8 @@ export default function ChannelList(props: any) {
                   }}
                 >
                   <IconButton
-                    onClick={() => {
+                    onClick={(...args: Any[]) => {
+                      void args;
                       setPos($pos - 1);
                     }}
                     disabled={$pos === 0}
@@ -469,7 +507,8 @@ export default function ChannelList(props: any) {
                   }}
                 >
                   <IconButton
-                    onClick={() => {
+                    onClick={(...args: Any[]) => {
+                      void args;
                       setPos($pos + 1);
                     }}
                     disabled={$pos + $nChannels >= allChannels.length}
@@ -505,7 +544,8 @@ export default function ChannelList(props: any) {
             variant="outlined"
             color="primary"
             disabled={$addChannel.name.length === 0}
-            onClick={() => {
+            onClick={(...args: Any[]) => {
+              void args;
               handleAddChannelDialog();
               props.onAdd($addChannel.name);
             }}
@@ -539,11 +579,17 @@ ChannelList.defaultProps = {
   open: false,
   channelid: "",
   channels: [],
-  onClose: () => {},
-  onClick: (channelid: any) => {},
-  onAdd: (name: any) => {},
-  onState: (channelids: any) => {
-    const states = {};
+  onClose: (...args: Any[]) => {
+    void args;
+  },
+  onClick: (...args: Any[]) => {
+    void args;
+  },
+  onAdd: (...args: Any[]) => {
+    void args;
+  },
+  onState: (channelids: Any) => {
+    const states: DynamicObject = {};
     for (const channelid of channelids) {
       states[channelid] = "";
     }

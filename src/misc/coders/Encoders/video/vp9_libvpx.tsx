@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Video from "../../settings/Video";
 import Helper from "../../helper";
 
-function init(initialState: any) {
+function init(initialState: Any) {
   const state = {
     bitrate: "4096",
     fps: "25",
@@ -17,9 +17,10 @@ function init(initialState: any) {
   return state;
 }
 
-function createMapping(settings: any, stream: any, skills: any) {
+function createMapping(settings: Any, stream: Any, skills: Any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
+  void skills;
 
   const local = [
     "-codec:v",
@@ -60,12 +61,12 @@ function createMapping(settings: any, stream: any, skills: any) {
   return mapping;
 }
 
-function Coder(props: any) {
+function Coder(props: Any) {
   const settings = init(props.settings);
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -79,7 +80,7 @@ function Coder(props: any) {
     );
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -88,7 +89,8 @@ function Coder(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -142,7 +144,9 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings: any, mapping: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const coder = "libvpx-vp9";
@@ -151,11 +155,11 @@ const codec = "vp9";
 const type = "video";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize(settings: Any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Preset: ${settings.preset}, Profile: ${settings.profile}`;
 }
 
-function defaults(stream: any, skills: any) {
+function defaults(stream: Any, skills: Any) {
   const settings = init({});
 
   return {

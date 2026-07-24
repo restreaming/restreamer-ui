@@ -10,7 +10,7 @@ import Select from "../../Select";
 // Volume Filter
 // http://ffmpeg.org/ffmpeg-all.html#volume
 
-function init(initialState: any) {
+function init(initialState: Any) {
   const state = {
     level: "inherit",
     db: 0,
@@ -20,10 +20,10 @@ function init(initialState: any) {
   return state;
 }
 
-function createGraph(settings: any) {
+function createGraph(settings: Any) {
   settings = init(settings);
 
-  const mapping = [];
+  const mapping: Any[] = [];
 
   switch (settings.level) {
     case "inherit":
@@ -39,7 +39,7 @@ function createGraph(settings: any) {
   return mapping.join(",");
 }
 
-function VolumeLevel(props: any) {
+function VolumeLevel(props: Any) {
   return (
     <Select
       label={<Trans>Volume</Trans>}
@@ -67,10 +67,12 @@ function VolumeLevel(props: any) {
 
 VolumeLevel.defaultProps = {
   value: "",
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function VolumeDB(props: any) {
+function VolumeDB(props: Any) {
   return (
     <TextField
       variant="outlined"
@@ -87,13 +89,15 @@ function VolumeDB(props: any) {
 VolumeDB.defaultProps = {
   value: "",
   disabled: false,
-  onChange: function (event: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function Filter(props: any) {
+function Filter(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings: any) => {
+  const handleChange = (newSettings: Any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -103,7 +107,7 @@ function Filter(props: any) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -112,7 +116,8 @@ function Filter(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange(null);
   }, []);
 
@@ -134,7 +139,9 @@ function Filter(props: any) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings: any, graph: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 const filter = "volume";
@@ -142,7 +149,7 @@ const name = "Volume";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings: any) {
+function summarize(settings: Any) {
   let summary = `${name} (`;
 
   if (settings.level === "custom") {

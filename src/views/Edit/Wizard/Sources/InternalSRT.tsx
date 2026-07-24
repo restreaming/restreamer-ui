@@ -16,8 +16,8 @@ import BoxTextarea from "../../../../misc/BoxTextarea";
 import Select from "../../../../misc/Select";
 import Textarea from "../../../../misc/Textarea";
 
-const initSettings = (initialSettings: any, config: any) => {
-  const settings = {
+const initSettings = (initialSettings: Any, config: Any) => {
+  const settings: DynamicObject = {
     ...S.func.initSettings(initialSettings, config),
     mode: "push",
   };
@@ -27,14 +27,14 @@ const initSettings = (initialSettings: any, config: any) => {
   return settings;
 };
 
-function Source(props: any) {
+function Source(props: Any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const config = S.func.initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = S.func.initSkills(props.skills);
 
-  const handleChange = (newSettings : any = settings) => {
+  const handleChange = (newSettings: Any = settings) => {
     newSettings = newSettings || settings;
 
     const inputs = S.func.createInputs(newSettings, config, skills);
@@ -43,11 +43,12 @@ function Source(props: any) {
     props.onChange(S.id, newSettings, inputs, config.srt.enabled);
   };
 
-  const handleRefresh = () => {
+  const handleRefresh = (...args: Any[]) => {
+    void args;
     props.onRefresh();
   };
 
-  const update = (what: any) => (event: any) => {
+  const update = (what: Any) => (event: Any) => {
     const value = event.target.value;
     const newSettings = {
       ...settings,
@@ -60,7 +61,8 @@ function Source(props: any) {
     handleChange(newSettings);
   };
 
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     handleChange();
   }, []);
 
@@ -89,9 +91,9 @@ function Source(props: any) {
     );
   } else {
     const filteredDevices = props.knownDevices.filter(
-      (device: any) => device.media === "srt",
+      (device: Any) => device.media === "srt",
     );
-    const options = filteredDevices.map((device: any) => {
+    const options = filteredDevices.map((device: Any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -158,10 +160,12 @@ Source.defaultProps = {
   settings: {},
   config: null,
   skills: null,
-  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
-function SourceIcon(props: any) {
+function SourceIcon(props: Any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

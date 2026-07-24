@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import TabPanel from "../TabPanel";
 import TabsHorizontal from "../TabsHorizontal";
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     name: "Livestream",
     description: "Live from earth. Powered by datarhei Restreamer.",
@@ -25,16 +25,17 @@ function init(settings: any) {
   return initSettings;
 }
 
-export default function Control(props: any) {
+export default function Control(props: Any) {
   const [$tab, setTab] = React.useState("content");
   const settings = init(props.settings);
 
   // Set the defaults
-  React.useEffect(() => {
+  React.useEffect((...args: Any[]) => {
+    void args;
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what === "author.name") {
@@ -48,7 +49,7 @@ export default function Control(props: any) {
     props.onChange(settings, false);
   };
 
-  const handleChangeTab = (event: any, value: any) => {
+  const handleChangeTab = (value: Any) => {
     setTab(value);
   };
 
@@ -124,5 +125,7 @@ export default function Control(props: any) {
 
 Control.defaultProps = {
   settings: {},
-  onChange: function (metadata: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

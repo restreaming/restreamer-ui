@@ -9,19 +9,27 @@ export default function useInterval(
   const savedCallback = React.useRef<() => void>(callback);
 
   // Remember the latest callback.
-  React.useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      savedCallback.current = callback;
+    },
+    [callback],
+  );
 
   // Set up the interval.
-  React.useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      function tick() {
+        savedCallback.current();
+      }
 
-    if (delay !== null) {
-      const id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    },
+    [delay],
+  );
 }

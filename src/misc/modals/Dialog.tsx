@@ -23,7 +23,7 @@ interface DialogProps {
 }
 
 const Component = React.forwardRef<HTMLDivElement, DialogProps>(
-  (props: any, ref: any) => {
+  (props: Any, ref: Any) => {
     const paperStyle: CSSProperties = {};
 
     if (props.maxWidth > 0) {

@@ -12,8 +12,8 @@ import Select from "../Select";
 import Video from "../coders/settings/Video";
 import Audio from "../coders/settings/Audio";
 
-const Stream = function (props: any) {
-  const handleChange = (what: any) => (event: any) => {
+const Stream = function (props: Any) {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     const stream = {
@@ -126,11 +126,13 @@ const Stream = function (props: any) {
 
 Stream.defaultProps = {
   stream: {},
-  onChange: () => {},
+  onChange: (...args: Any[]) => {
+    void args;
+  },
 };
 
-const Streams = function (props: any) {
-  const handleChange = (index: any) => (stream: any) => {
+const Streams = function (props: Any) {
+  const handleChange = (index: Any) => (stream: Any) => {
     const streams = props.streams.slice();
 
     streams[index] = stream;
@@ -138,7 +140,8 @@ const Streams = function (props: any) {
     props.onChange(streams);
   };
 
-  const handleAddStream = () => {
+  const handleAddStream = (...args: Any[]) => {
+    void args;
     const streams = props.streams.slice();
 
     streams.push({
@@ -156,15 +159,18 @@ const Streams = function (props: any) {
     props.onChange(streams);
   };
 
-  const handleRemoveStream = (index: any) => () => {
-    const streams = props.streams.toSpliced(index, 1);
+  const handleRemoveStream =
+    (index: Any) =>
+    (...args: Any[]) => {
+      void args;
+      const streams = props.streams.toSpliced(index, 1);
 
-    props.onChange(streams);
-  };
+      props.onChange(streams);
+    };
 
   return (
     <Grid container spacing={1}>
-      {props.streams.map((stream: any, index: any) => (
+      {props.streams.map((stream: Any, index: Any) => (
         <Grid key={stream.index + ":" + stream.stream} size={12}>
           <Stack>
             <Typography sx={{ textTransform: "UPPERCASE", marginBottom: 2 }}>
@@ -197,10 +203,12 @@ const Streams = function (props: any) {
 Streams.defaultProps = {
   streams: [],
   type: "",
-  onChange: () => {},
+  onChange: (...args: Any[]) => {
+    void args;
+  },
 };
 
-const Component = function (props: any) {
+const Component = function (props: Any) {
   return (
     <Dialog
       open={props.open}
@@ -234,6 +242,8 @@ Component.defaultProps = {
   streams: [],
   type: "",
   onClose: null,
-  onDone: () => {},
+  onDone: (...args: Any[]) => {
+    void args;
+  },
   onHelp: null,
 };

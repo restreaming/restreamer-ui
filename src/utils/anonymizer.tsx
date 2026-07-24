@@ -1,6 +1,6 @@
 import urlparser from "url-parse";
 
-const anonymize_url = (url: any) => {
+const anonymize_url = (url: Any) => {
   const u = urlparser(url, true);
 
   if (u.hostname !== "localhost") {
@@ -29,16 +29,16 @@ const anonymize_url = (url: any) => {
   return u.toString();
 };
 
-const anonymize = (text: any) => {
+const anonymize = (text: Any) => {
   const regex = /(?:([a-z0-9\\]+):)?\/[A-Za-z0-9-._~!$&'()*+,;=:@?/{}%\\]*/gm;
 
-  return text.replaceAll(regex, (match: any, scheme: any) => {
+  return text.replaceAll(regex, (match: Any, scheme: Any) => {
     if (scheme) {
       match = match.replace(scheme, scheme.replaceAll("\\", ""));
       return anonymize_url(match);
     }
 
-    const pathElm = match.split("/").filter((p: any) => p.length !== 0);
+    const pathElm = match.split("/").filter((p: Any) => p.length !== 0);
     if (pathElm.length < 2) {
       return match;
     }

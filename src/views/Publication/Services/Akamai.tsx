@@ -1,4 +1,3 @@
-
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -51,11 +50,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props: any) {
+function ServiceIcon(props: Any) {
   return <img src={Logo} alt="Akamai Logo" {...props} />;
 }
 
-function init(settings: any) {
+function init(settings: Any) {
   const initSettings = {
     protocol: "rtmp://",
     stream_url: "",
@@ -77,10 +76,10 @@ function init(settings: any) {
   return initSettings;
 }
 
-function Service(props: any) {
+function Service(props: Any) {
   const settings = init(props.settings);
 
-  const handleChange = (what: any) => (event: any) => {
+  const handleChange = (what: Any) => (event: Any) => {
     const value = event.target.value;
 
     if (what in settings.address_extensions) {
@@ -98,8 +97,8 @@ function Service(props: any) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings: any) => {
-    const address_extensions = [];
+  const createOutput = (settings: Any) => {
+    const address_extensions: Any[] = [];
 
     for (const key in settings.address_extensions) {
       if (settings.address_extensions[key].length === 0) {
@@ -110,7 +109,7 @@ function Service(props: any) {
 
     const options = ["-f", "flv"];
 
-    const output = {
+    const output: DynamicObject = {
       address:
         settings.protocol +
         settings.stream_url +
@@ -256,7 +255,9 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output: any, settings: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };
 
 export {

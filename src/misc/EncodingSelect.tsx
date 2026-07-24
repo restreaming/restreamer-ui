@@ -13,7 +13,7 @@ import * as Decoders from "./coders/Decoders";
 import Select from "./Select";
 import H from "../utils/help";
 
-export default function EncodingSelect(props: any) {
+export default function EncodingSelect(props: Any) {
   const { i18n } = useLingui();
 
   const profile = props.profile;
@@ -24,7 +24,7 @@ export default function EncodingSelect(props: any) {
   const availableDecoders =
     props.type === "video" ? props.skills.decoders.video : [];
 
-  const handleDecoderChange = (event: any) => {
+  const handleDecoderChange = (event: Any) => {
     const decoder = profile.decoder;
     const stream = props.streams[profile.stream];
     decoder.coder = event.target.value;
@@ -44,7 +44,11 @@ export default function EncodingSelect(props: any) {
     props.onChange(profile.encoder, decoder, false);
   };
 
-  const handleDecoderSettingsChange = (settings: any, mapping: any, automatic: any) => {
+  const handleDecoderSettingsChange = (
+    settings: Any,
+    mapping: Any,
+    automatic: Any,
+  ) => {
     const decoder = profile.decoder;
 
     decoder.settings = settings;
@@ -53,7 +57,7 @@ export default function EncodingSelect(props: any) {
     props.onChange(profile.encoder, decoder, automatic);
   };
 
-  const handleEncoderChange = (event: any) => {
+  const handleEncoderChange = (event: Any) => {
     const encoder = profile.encoder;
     const stream = props.streams[profile.stream];
     encoder.coder = event.target.value;
@@ -73,7 +77,11 @@ export default function EncodingSelect(props: any) {
     props.onChange(encoder, profile.decoder, false);
   };
 
-  const handleEncoderSettingsChange = (settings: any, mapping: any, automatic: any) => {
+  const handleEncoderSettingsChange = (
+    settings: Any,
+    mapping: Any,
+    automatic: Any,
+  ) => {
     const encoder = profile.encoder;
 
     encoder.settings = settings;
@@ -82,7 +90,7 @@ export default function EncodingSelect(props: any) {
     props.onChange(encoder, profile.decoder, automatic);
   };
 
-  const handleEncoderHelp = (topic: any) => (event: any) => {
+  const handleEncoderHelp = (topic: Any) => (event: Any) => {
     event.preventDefault();
     H("encoder-" + topic);
   };
@@ -130,7 +138,7 @@ export default function EncodingSelect(props: any) {
       ? handleEncoderHelp(coder.coder)
       : null;
 
-  const encoderList = [];
+  const encoderList: Any[] = [];
 
   for (const c of encoderRegistry.List()) {
     // Does ffmpeg support the coder?
@@ -172,7 +180,8 @@ export default function EncodingSelect(props: any) {
     );
   }
 
-  const decoderSettings = (() => {
+  const decoderSettings = ((...args: Any[]) => {
+    void args;
     if (coder.coder !== "copy" && coder.coder !== "none") {
       const c = decoderRegistry.Get(profile.decoder.coder);
       if (c !== null && availableDecoders.includes(c.coder)) {
@@ -191,14 +200,14 @@ export default function EncodingSelect(props: any) {
 
     return null;
   })();
-  const decoderList = [];
+  const decoderList: Any[] = [];
 
   if (coder.coder !== "copy" && coder.coder !== "none") {
     // List all decoders for the codec of the stream
     for (const c of decoderRegistry.GetCodersForCodec(
       stream.codec,
       availableDecoders,
-      "any",
+      "Any",
     )) {
       decoderList.push(
         <MenuItem value={c.coder} key={c.coder}>
@@ -263,5 +272,7 @@ EncodingSelect.defaultProps = {
   profile: {},
   codecs: [],
   skills: {},
-  onChange: function (encoder: any, decoder: any, automatic: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

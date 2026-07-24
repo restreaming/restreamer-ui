@@ -13,7 +13,7 @@ import NotifyContext from "../contexts/Notify";
 import Palette from "../theme/base/palette";
 import TextareaModal from "./modals/Textarea";
 
-export default function Component(props: any) {
+export default function Component(props: Any) {
   const { i18n } = useLingui();
 
   const [$modal, setModal] = React.useState(false);
@@ -23,11 +23,16 @@ export default function Component(props: any) {
 
   const { content } = props;
 
-  React.useEffect(() => {
-    scrollTo();
-  }, [content]);
+  React.useEffect(
+    (...args: Any[]) => {
+      void args;
+      scrollTo();
+    },
+    [content],
+  );
 
-  const handleCopy = async () => {
+  const handleCopy = async (...args: Any[]) => {
+    void args;
     let success = false;
 
     if (!navigator.clipboard) {
@@ -35,7 +40,7 @@ export default function Component(props: any) {
 
       try {
         success = document.execCommand("copy");
-      } catch (err) {}
+      } catch {}
 
       textAreaRef.current!.setSelectionRange(0, 0);
     } else {
@@ -59,20 +64,22 @@ export default function Component(props: any) {
     }
   };
 
-  const handleModal = () => {
+  const handleModal = (...args: Any[]) => {
+    void args;
     setModal(!$modal);
   };
 
-  const writeText = (promise: any) => {
+  const writeText = (promise: Any) => {
     return promise
       .then(() => true)
-      .catch((err: any) => {
+      .catch((err: Any) => {
         console.warn(err);
         return false;
       });
   };
 
-  const scrollTo = () => {
+  const scrollTo = (...args: Any[]) => {
+    void args;
     if (props.scrollTo === "bottom") {
       textAreaRef.current!.scrollTop = textAreaRef.current!.scrollHeight;
     }
@@ -80,7 +87,8 @@ export default function Component(props: any) {
     return;
   };
 
-  const handleDownload = () => {
+  const handleDownload = (...args: Any[]) => {
+    void args;
     const element = document.createElement("a");
     element.setAttribute(
       "href",
@@ -230,6 +238,8 @@ Component.defaultProps = {
   downloadName: "",
   disabled: false,
   scrollTo: "top",
-  onChange: function (value: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
   onHelp: null,
 };

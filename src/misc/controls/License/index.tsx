@@ -1,4 +1,3 @@
-
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
 import { t } from "@lingui/core/macro";
@@ -16,10 +15,10 @@ import cc_by_nd from "./images/by-nd.svg";
 import cc_by_nc_nd from "./images/by-nc-nd.svg";
 import Select from "../../Select";
 
-export default function License(props: any) {
+export default function License(props: Any) {
   const { i18n } = useLingui();
 
-  const handleLicenseChange = (event: any) => {
+  const handleLicenseChange = (event: Any) => {
     props.onChange(event.target.value);
   };
 
@@ -49,42 +48,42 @@ export default function License(props: any) {
       image = cc_by;
       link = `https://creativecommons.org/licenses/by/${version}/`;
       description = i18n._(
-        t`This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use.`,
+        t`This license allows reusers to distribute, remix, adapt, and build upon the material in Any medium or format, so long as attribution is given to the creator. The license allows for commercial use.`,
       );
       break;
     case "CC BY-SA":
       image = cc_by_sa;
       link = `https://creativecommons.org/licenses/by-sa/${version}/`;
       description = i18n._(
-        t`This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.`,
+        t`This license allows reusers to distribute, remix, adapt, and build upon the material in Any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.`,
       );
       break;
     case "CC BY-NC":
       image = cc_by_nc;
       link = `https://creativecommons.org/licenses/by-nc/${version}/`;
       description = i18n._(
-        t`This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator.`,
+        t`This license allows reusers to distribute, remix, adapt, and build upon the material in Any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator.`,
       );
       break;
     case "CC BY-NC-SA":
       image = cc_by_nc_sa;
       link = `https://creativecommons.org/licenses/by-nc-sa/${version}/`;
       description = i18n._(
-        t`This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.`,
+        t`This license allows reusers to distribute, remix, adapt, and build upon the material in Any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.`,
       );
       break;
     case "CC BY-ND":
       image = cc_by_nd;
       link = `https://creativecommons.org/licenses/by-nd/${version}/`;
       description = i18n._(
-        t`This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use.`,
+        t`This license allows reusers to copy and distribute the material in Any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use.`,
       );
       break;
     case "CC BY-NC-ND":
       image = cc_by_nc_nd;
       link = `https://creativecommons.org/licenses/by-nc-nd/${version}/`;
       description = i18n._(
-        t`This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator.`,
+        t`This license allows reusers to copy and distribute the material in Any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator.`,
       );
       break;
     default:
@@ -139,5 +138,7 @@ export default function License(props: any) {
 
 License.defaultProps = {
   license: "none",
-  onChange: function (license: any) {},
+  onChange: function (...args: Any[]) {
+    void args;
+  },
 };

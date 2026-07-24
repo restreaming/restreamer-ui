@@ -18,7 +18,7 @@ import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 import Select from "../../../misc/Select";
 
-export default function Audio(props: any) {
+export default function Audio(props: Any) {
   const { i18n } = useLingui();
 
   return (
@@ -49,7 +49,7 @@ export default function Audio(props: any) {
             <BoxText color="dark">
               <WarningIcon fontSize="large" color="error" />
               <Typography sx={{ textAlign: "center" }}>
-                <Trans>The source doesn't provide any audio streams.</Trans>
+                <Trans>The source doesn't provide Any audio streams.</Trans>
               </Typography>
             </BoxText>
           )}
@@ -58,7 +58,7 @@ export default function Audio(props: any) {
               <WarningIcon fontSize="large" color="error" />
               <Typography sx={{ textAlign: "center" }}>
                 <Trans>
-                  The source doesn't provide any compatible audio streams.
+                  The source doesn't provide Any compatible audio streams.
                 </Trans>
               </Typography>
             </BoxText>
@@ -71,7 +71,7 @@ export default function Audio(props: any) {
                 <Grid size={12}>
                   <Typography>
                     <Trans>
-                      The video source doesn't provide any compatible audio
+                      The video source doesn't provide Any compatible audio
                       stream. <strong>Silence audio</strong> is recommended.
                       Services e.g. YouTube, Facebook &amp; Co. require an audio
                       channel.
@@ -167,14 +167,28 @@ export default function Audio(props: any) {
 }
 
 Audio.defaultProps = {
-  onAbort: () => {},
-  onHelp: () => {},
-  onBack: () => {},
-  onNext: () => {},
-  onSource: () => {},
+  onAbort: (...args: Any[]) => {
+    void args;
+  },
+  onHelp: (...args: Any[]) => {
+    void args;
+  },
+  onBack: (...args: Any[]) => {
+    void args;
+  },
+  onNext: (...args: Any[]) => {
+    void args;
+  },
+  onSource: (...args: Any[]) => {
+    void args;
+  },
   source: "",
-  onAudioStreamChange: () => {},
-  onAudioDeviceChange: () => {},
+  onAudioStreamChange: (...args: Any[]) => {
+    void args;
+  },
+  onAudioDeviceChange: (...args: Any[]) => {
+    void args;
+  },
   streamList: [],
   deviceList: [],
   status: "",

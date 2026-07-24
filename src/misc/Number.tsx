@@ -2,8 +2,8 @@ import React from "react";
 
 import { i18n } from "@lingui/core";
 
-export default function Number(props: any) {
-  const options = {
+export default function Number(props: Any) {
+  const options: DynamicObject = {
     minimumFractionDigits: props.minDigits,
     maximumFractionDigits: props.digits,
   };

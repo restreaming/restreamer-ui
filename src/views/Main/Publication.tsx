@@ -30,7 +30,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }: any) => ({
+const Root = styled("div")(() => ({
   [`& .${classes.viewerCount}`]: {
     fontSize: "3.5rem",
     fontWeight: 600,
@@ -63,31 +63,36 @@ const Root = styled("div")(({ theme }: any) => ({
   },
 }));
 
-export default function Publication(props: any) {
+export default function Publication(props: Any) {
   const navigate = useNavigate();
   const services = Services.IDs();
-  const [$egresses, setEgresses] = React.useState([]);
+  const [$egresses, setEgresses] = React.useState<Any[]>([]);
   const [$session, setSession] = React.useState({
     viewer: 0,
     bandwidth: 0,
   });
 
-  useInterval(async () => {
+  useInterval(async (...args: Any[]) => {
+    void args;
     await update();
   }, 1000);
 
-  useInterval(async () => {
+  useInterval(async (...args: Any[]) => {
+    void args;
     await sessions();
   }, 1000);
 
-  React.useEffect(() => {
-    (async () => {
+  React.useEffect((...args: Any[]) => {
+    void args;
+    (async (...args: Any[]) => {
+      void args;
       await update();
     })();
   }, []);
 
-  const update = async () => {
-    const egresses = [];
+  const update = async (...args: Any[]) => {
+    void args;
+    const egresses: Any[] = [];
 
     const processes = await props.restreamer.ListIngestEgresses(
       props.channelid,
@@ -107,7 +112,8 @@ export default function Publication(props: any) {
     setEgresses(egresses);
   };
 
-  const sessions = async () => {
+  const sessions = async (...args: Any[]) => {
+    void args;
     const current = await props.restreamer.CurrentSessions([
       "ffmpeg",
       "hls",
@@ -121,23 +127,26 @@ export default function Publication(props: any) {
     });
   };
 
-  const handleServiceAdd = (event: any) => {
+  const handleServiceAdd = (event: Any) => {
     event.preventDefault();
 
     navigate(`/${props.channelid}/publication/`);
   };
 
-  const handleServiceEdit = (service: any, index: any) => () => {
-    let target = `/${props.channelid}/publication/${service}`;
+  const handleServiceEdit =
+    (service: Any, index: Any) =>
+    (...args: Any[]) => {
+      void args;
+      let target = `/${props.channelid}/publication/${service}`;
 
-    if (service !== "player") {
-      target = target + "/" + index;
-    }
+      if (service !== "player") {
+        target = target + "/" + index;
+      }
 
-    navigate(target);
-  };
+      navigate(target);
+    };
 
-  const handleOrderChange = (id: any) => async (order: any) => {
+  const handleOrderChange = (id: Any) => async (order: Any) => {
     let res = false;
 
     if (order === "start") {
@@ -154,11 +163,12 @@ export default function Publication(props: any) {
     return res;
   };
 
-  const handleHelp = () => {
+  const handleHelp = (...args: Any[]) => {
+    void args;
     H("publication");
   };
 
-  const egresses = [];
+  const egresses: Any[] = [];
 
   for (const e of $egresses.values()) {
     egresses.push(
