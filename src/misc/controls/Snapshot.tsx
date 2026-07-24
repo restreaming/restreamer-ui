@@ -1,77 +1,76 @@
-import React from 'react';
+import React from "react";
 
-import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+import { Trans } from "@lingui/react/macro";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
-import Checkbox from '../Checkbox';
+import Checkbox from "../Checkbox";
 
 function init(settings) {
-	const initSettings = {
-		enable: true,
-		interval: 60,
-		...settings,
-	};
+  const initSettings = {
+    enable: true,
+    interval: 60,
+    ...settings,
+  };
 
-	return initSettings;
+  return initSettings;
 }
 
 export default function Control(props) {
-	const settings = init(props.settings);
+  const settings = init(props.settings);
 
-	// Set the defaults
-	React.useEffect(() => {
-		props.onChange(settings, true);
-	}, []);
+  // Set the defaults
+  React.useEffect(() => {
+    props.onChange(settings, true);
+  }, []);
 
-	const handleChange = (what) => (event) => {
-		const value = event.target.value;
+  const handleChange = (what) => (event) => {
+    const value = event.target.value;
 
-		if (['enable'].includes(what)) {
-			settings[what] = !settings[what];
-		} else {
-			settings[what] = value;
-		}
+    if (["enable"].includes(what)) {
+      settings[what] = !settings[what];
+    } else {
+      settings[what] = value;
+    }
 
-		props.onChange(settings, false);
-	};
+    props.onChange(settings, false);
+  };
 
-	return (
-		<Grid container spacing={2}>
-			<Grid size={12}>
-				<Checkbox
-					label={<Trans>Enable snapshots</Trans>}
-					checked={settings.enable}
-					onChange={handleChange('enable')}
-				/>
-			</Grid>
-			<Grid
-				size={{
-					xs: 12,
-					md: 6,
-				}}
-			>
-				<TextField
-					variant="outlined"
-					fullWidth
-					label={<Trans>Interval (seconds)</Trans>}
-					disabled={!settings.enable}
-					value={settings.interval}
-					onChange={handleChange('interval')}
-				/>
-				<Typography variant="caption">
-					<Trans>
-						Seconds until the snapshot/thumbnail of the video source
-						is updated.
-					</Trans>
-				</Typography>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid size={12}>
+        <Checkbox
+          label={<Trans>Enable snapshots</Trans>}
+          checked={settings.enable}
+          onChange={handleChange("enable")}
+        />
+      </Grid>
+      <Grid
+        size={{
+          xs: 12,
+          md: 6,
+        }}
+      >
+        <TextField
+          variant="outlined"
+          fullWidth
+          label={<Trans>Interval (seconds)</Trans>}
+          disabled={!settings.enable}
+          value={settings.interval}
+          onChange={handleChange("interval")}
+        />
+        <Typography variant="caption">
+          <Trans>
+            Seconds until the snapshot/thumbnail of the video source is updated.
+          </Trans>
+        </Typography>
+      </Grid>
+    </Grid>
+  );
 }
 
 Control.defaulProps = {
-	settings: {},
-	onChange: function (settings, automatic) {},
+  settings: {},
+  onChange: function (settings, automatic) {},
 };

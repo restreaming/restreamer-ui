@@ -1,9 +1,9 @@
-import base from '../base';
+import base from "../base";
 
 export default {
-	styleOverrides: {
-		root: {
-			color: base.palette.text.primary,
-		},
-	},
+  styleOverrides: {
+    root: {
+      color: base.palette.text.primary,
+    },
+  },
 };

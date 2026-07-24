@@ -1,15 +1,15 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
-import breakpoints from './breakpoints';
-import palette from './palette';
-import typography from './typography';
-import shape from './shape';
+import breakpoints from "./breakpoints";
+import palette from "./palette";
+import typography from "./typography";
+import shape from "./shape";
 
 const theme = createTheme({
-	breakpoints: { ...breakpoints },
-	palette: { ...palette },
-	typography: typography as any,
-	shape: { ...shape },
+  breakpoints: { ...breakpoints },
+  palette: { ...palette },
+  typography: typography as any,
+  shape: { ...shape },
 });
 
 export default theme;

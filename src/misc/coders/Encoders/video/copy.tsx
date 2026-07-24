@@ -1,79 +1,79 @@
-import React from 'react';
+import React from "react";
 
-import Helper from '../../helper';
+import Helper from "../../helper";
 
 function createMapping(settings, stream, skills) {
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const local = ['-codec:v', 'copy'];
+  const local = ["-codec:v", "copy"];
 
-	const mapping = {
-		global: [],
-		local: local,
-		filter: [],
-	};
+  const mapping = {
+    global: [],
+    local: local,
+    filter: [],
+  };
 
-	return mapping;
+  return mapping;
 }
 
 function Coder(props) {
-	const settings = {};
-	const stream = Helper.InitStream(props.stream);
-	const skills = Helper.InitSkills(props.skills);
+  const settings = {};
+  const stream = Helper.InitStream(props.stream);
+  const skills = Helper.InitSkills(props.skills);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		props.onChange(
-			newSettings,
-			createMapping(newSettings, stream, skills),
-			automatic,
-		);
-	};
+    props.onChange(
+      newSettings,
+      createMapping(newSettings, stream, skills),
+      automatic,
+    );
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+  }, []);
 
-	return null;
+  return null;
 }
 
 Coder.defaultProps = {
-	stream: {},
-	settings: {},
-	skills: {},
-	onChange: function (settings, mapping) {},
+  stream: {},
+  settings: {},
+  skills: {},
+  onChange: function (settings, mapping) {},
 };
 
 function summarize(settings) {
-	return `${name}`;
+  return `${name}`;
 }
 
 function defaults(stream, skills) {
-	return {
-		settings: {},
-		mapping: createMapping({}, stream, skills),
-	};
+  return {
+    settings: {},
+    mapping: createMapping({}, stream, skills),
+  };
 }
 
-const coder = 'copy';
-const name = 'Passthrough (copy)';
-const codec = 'copy';
-const type = 'video';
+const coder = "copy";
+const name = "Passthrough (copy)";
+const codec = "copy";
+const type = "video";
 const hwaccel = false;
 
 export {
-	coder,
-	name,
-	codec,
-	type,
-	hwaccel,
-	summarize,
-	defaults,
-	Coder as component,
+  coder,
+  name,
+  codec,
+  type,
+  hwaccel,
+  summarize,
+  defaults,
+  Coder as component,
 };

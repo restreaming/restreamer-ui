@@ -1,187 +1,182 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Trans } from '@lingui/react/macro';
-import { t } from '@lingui/core/macro';
-import { useLingui } from '@lingui/react';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Icon from '@mui/icons-material/KeyboardTab';
-import MenuItem from '@mui/material/MenuItem';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import Typography from '@mui/material/Typography';
+import { Trans } from "@lingui/react/macro";
+import { t } from "@lingui/core/macro";
+import { useLingui } from "@lingui/react";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Icon from "@mui/icons-material/KeyboardTab";
+import MenuItem from "@mui/material/MenuItem";
+import RefreshIcon from "@mui/icons-material/Refresh";
+import Typography from "@mui/material/Typography";
 
-import * as S from '../../Sources/Network';
-import BoxTextarea from '../../../../misc/BoxTextarea';
-import Select from '../../../../misc/Select';
-import Textarea from '../../../../misc/Textarea';
+import * as S from "../../Sources/Network";
+import BoxTextarea from "../../../../misc/BoxTextarea";
+import Select from "../../../../misc/Select";
+import Textarea from "../../../../misc/Textarea";
 
 const initSettings = (initialSettings, config) => {
-	const settings = {
-		...S.func.initSettings(initialSettings, config),
-		mode: 'push',
-	};
+  const settings = {
+    ...S.func.initSettings(initialSettings, config),
+    mode: "push",
+  };
 
-	settings.push.type = 'rtmp';
+  settings.push.type = "rtmp";
 
-	return settings;
+  return settings;
 };
 
 function Source(props) {
-	const { i18n } = useLingui();
-	const navigate = useNavigate();
-	const config = S.func.initConfig(props.config);
-	const settings = initSettings(props.settings, config);
-	const skills = S.func.initSkills(props.skills);
+  const { i18n } = useLingui();
+  const navigate = useNavigate();
+  const config = S.func.initConfig(props.config);
+  const settings = initSettings(props.settings, config);
+  const skills = S.func.initSkills(props.skills);
 
-	const handleChange = (newSettings = settings) => {
-		newSettings = newSettings || settings;
+  const handleChange = (newSettings = settings) => {
+    newSettings = newSettings || settings;
 
-		const inputs = S.func.createInputs(newSettings, config, skills);
-		newSettings.address = inputs[0].address;
+    const inputs = S.func.createInputs(newSettings, config, skills);
+    newSettings.address = inputs[0].address;
 
-		props.onChange(S.id, newSettings, inputs, config.rtmp.enabled);
-	};
+    props.onChange(S.id, newSettings, inputs, config.rtmp.enabled);
+  };
 
-	const handleRefresh = () => {
-		props.onRefresh();
-	};
+  const handleRefresh = () => {
+    props.onRefresh();
+  };
 
-	const update = (what) => (event) => {
-		const value = event.target.value;
-		const newSettings = {
-			...settings,
-		};
+  const update = (what) => (event) => {
+    const value = event.target.value;
+    const newSettings = {
+      ...settings,
+    };
 
-		if (what in newSettings.push) {
-			newSettings.push[what] = value;
-		}
+    if (what in newSettings.push) {
+      newSettings.push[what] = value;
+    }
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange();
-	}, []);
+  React.useEffect(() => {
+    handleChange();
+  }, []);
 
-	let form = null;
+  let form = null;
 
-	if (config.rtmp.enabled === false) {
-		form = (
-			<React.Fragment>
-				<Grid size={12}>
-					<Typography>
-						<Trans>RTMP server is not enabled</Trans>
-					</Typography>
-				</Grid>
-				<Grid size={12}>
-					<Button
-						variant="outlined"
-						size="large"
-						fullWidth
-						color="primary"
-						onClick={() => navigate('/settings/rtmp')}
-					>
-						<Trans>Enable RTMP server ...</Trans>
-					</Button>
-				</Grid>
-			</React.Fragment>
-		);
-	} else {
-		const filteredDevices = props.knownDevices.filter(
-			(device) => device.media === 'rtmp',
-		);
-		const options = filteredDevices.map((device) => {
-			return (
-				<MenuItem key={device.id} value={device.id}>
-					{device.name}
-				</MenuItem>
-			);
-		});
+  if (config.rtmp.enabled === false) {
+    form = (
+      <React.Fragment>
+        <Grid size={12}>
+          <Typography>
+            <Trans>RTMP server is not enabled</Trans>
+          </Typography>
+        </Grid>
+        <Grid size={12}>
+          <Button
+            variant="outlined"
+            size="large"
+            fullWidth
+            color="primary"
+            onClick={() => navigate("/settings/rtmp")}
+          >
+            <Trans>Enable RTMP server ...</Trans>
+          </Button>
+        </Grid>
+      </React.Fragment>
+    );
+  } else {
+    const filteredDevices = props.knownDevices.filter(
+      (device) => device.media === "rtmp",
+    );
+    const options = filteredDevices.map((device) => {
+      return (
+        <MenuItem key={device.id} value={device.id}>
+          {device.name}
+        </MenuItem>
+      );
+    });
 
-		options.unshift(
-			<MenuItem key="none" value="none" disabled>
-				{i18n._(t`Choose an input stream ...`)}
-			</MenuItem>,
-		);
+    options.unshift(
+      <MenuItem key="none" value="none" disabled>
+        {i18n._(t`Choose an input stream ...`)}
+      </MenuItem>,
+    );
 
-		options.push(
-			<MenuItem key={config.channelid} value={config.channelid}>
-				{i18n._(t`Send stream to address ...`)}
-			</MenuItem>,
-		);
+    options.push(
+      <MenuItem key={config.channelid} value={config.channelid}>
+        {i18n._(t`Send stream to address ...`)}
+      </MenuItem>,
+    );
 
-		const RTMP = S.func.getRTMP(config);
+    const RTMP = S.func.getRTMP(config);
 
-		form = (
-			<React.Fragment>
-				<Grid size={12}>
-					<Select
-						type="select"
-						label={<Trans>Input stream</Trans>}
-						value={settings.push.name}
-						onChange={update('name')}
-					>
-						{options}
-					</Select>
-					<Button
-						size="small"
-						startIcon={<RefreshIcon />}
-						onClick={handleRefresh}
-						sx={{ float: 'right' }}
-					>
-						<Trans>Refresh</Trans>
-					</Button>
-				</Grid>
-				{settings.push.name === config.channelid && (
-					<React.Fragment>
-						<Grid size={12}>
-							<Typography>
-								<Trans>Address:</Trans>
-							</Typography>
-						</Grid>
-						<Grid size={12}>
-							<BoxTextarea>
-								<Textarea
-									rows={1}
-									value={RTMP}
-									readOnly
-									allowCopy
-								/>
-							</BoxTextarea>
-						</Grid>
-					</React.Fragment>
-				)}
-			</React.Fragment>
-		);
-	}
+    form = (
+      <React.Fragment>
+        <Grid size={12}>
+          <Select
+            type="select"
+            label={<Trans>Input stream</Trans>}
+            value={settings.push.name}
+            onChange={update("name")}
+          >
+            {options}
+          </Select>
+          <Button
+            size="small"
+            startIcon={<RefreshIcon />}
+            onClick={handleRefresh}
+            sx={{ float: "right" }}
+          >
+            <Trans>Refresh</Trans>
+          </Button>
+        </Grid>
+        {settings.push.name === config.channelid && (
+          <React.Fragment>
+            <Grid size={12}>
+              <Typography>
+                <Trans>Address:</Trans>
+              </Typography>
+            </Grid>
+            <Grid size={12}>
+              <BoxTextarea>
+                <Textarea rows={1} value={RTMP} readOnly allowCopy />
+              </BoxTextarea>
+            </Grid>
+          </React.Fragment>
+        )}
+      </React.Fragment>
+    );
+  }
 
-	return form;
+  return form;
 }
 
 Source.defaultProps = {
-	knownDevices: [],
-	settings: {},
-	config: null,
-	skills: null,
-	onChange: function (type, settings, inputs, ready) {},
-	onRefresh: function () {},
+  knownDevices: [],
+  settings: {},
+  config: null,
+  skills: null,
+  onChange: function (type, settings, inputs, ready) {},
+  onRefresh: function () {},
 };
 
 function SourceIcon(props) {
-	return <Icon style={{ color: '#FFF' }} {...props} />;
+  return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 
-const id = 'rtmp';
-const type = 'network';
+const id = "rtmp";
+const type = "network";
 const name = <Trans>RTMP server</Trans>;
-const capabilities = ['audio', 'video'];
+const capabilities = ["audio", "video"];
 
 export {
-	id,
-	type,
-	name,
-	capabilities,
-	SourceIcon as icon,
-	Source as component,
+  id,
+  type,
+  name,
+  capabilities,
+  SourceIcon as icon,
+  Source as component,
 };

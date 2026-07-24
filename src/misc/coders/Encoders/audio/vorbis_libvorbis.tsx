@@ -1,120 +1,120 @@
-import React from 'react';
+import React from "react";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
-import Audio from '../../settings/Audio';
-import Helper from '../../helper';
+import Audio from "../../settings/Audio";
+import Helper from "../../helper";
 
 function init(initialState) {
-	const state = {
-		bitrate: '64',
-		...initialState,
-	};
+  const state = {
+    bitrate: "64",
+    ...initialState,
+  };
 
-	return state;
+  return state;
 }
 
 function createMapping(settings, stream, skills) {
-	stream = Helper.InitStream(stream);
-	skills = Helper.InitSkills(skills);
+  stream = Helper.InitStream(stream);
+  skills = Helper.InitSkills(skills);
 
-	const local = [
-		'-codec:a',
-		'libvorbis',
-		'-b:a',
-		`${settings.bitrate}k`,
-		'-shortest',
-	];
+  const local = [
+    "-codec:a",
+    "libvorbis",
+    "-b:a",
+    `${settings.bitrate}k`,
+    "-shortest",
+  ];
 
-	const mapping = {
-		global: [['-vsync', 'drop']],
-		local: local,
-		filter: [],
-	};
+  const mapping = {
+    global: [["-vsync", "drop"]],
+    local: local,
+    filter: [],
+  };
 
-	return mapping;
+  return mapping;
 }
 
 function Coder(props) {
-	const settings = init(props.settings);
-	const stream = Helper.InitStream(props.stream);
-	const skills = Helper.InitSkills(props.skills);
+  const settings = init(props.settings);
+  const stream = Helper.InitStream(props.stream);
+  const skills = Helper.InitSkills(props.skills);
 
-	const handleChange = (newSettings) => {
-		let automatic = false;
-		if (!newSettings) {
-			newSettings = settings;
-			automatic = true;
-		}
+  const handleChange = (newSettings) => {
+    let automatic = false;
+    if (!newSettings) {
+      newSettings = settings;
+      automatic = true;
+    }
 
-		props.onChange(
-			newSettings,
-			createMapping(newSettings, stream, skills),
-			automatic,
-		);
-	};
+    props.onChange(
+      newSettings,
+      createMapping(newSettings, stream, skills),
+      automatic,
+    );
+  };
 
-	const update = (what) => (event) => {
-		const value = event.target.value;
+  const update = (what) => (event) => {
+    const value = event.target.value;
 
-		const newSettings = {
-			...settings,
-			[what]: value,
-		};
+    const newSettings = {
+      ...settings,
+      [what]: value,
+    };
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange(null);
-	}, []);
+  React.useEffect(() => {
+    handleChange(null);
+  }, []);
 
-	return (
-		<Grid container spacing={2}>
-			<Grid size={12}>
-				<Audio.Bitrate
-					value={settings.bitrate}
-					onChange={update('bitrate')}
-					allowCustom
-				/>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid size={12}>
+        <Audio.Bitrate
+          value={settings.bitrate}
+          onChange={update("bitrate")}
+          allowCustom
+        />
+      </Grid>
+    </Grid>
+  );
 }
 
 Coder.defaultProps = {
-	stream: {},
-	settings: {},
-	skills: {},
-	onChange: function (settings, mapping) {},
+  stream: {},
+  settings: {},
+  skills: {},
+  onChange: function (settings, mapping) {},
 };
 
-const coder = 'libvorbis';
-const name = 'Vorbis (libvorbis)';
-const codec = 'vorbis';
-const type = 'audio';
+const coder = "libvorbis";
+const name = "Vorbis (libvorbis)";
+const codec = "vorbis";
+const type = "audio";
 const hwaccel = false;
 
 function summarize(settings) {
-	return `${name}, ${settings.bitrate} kbit/s`;
+  return `${name}, ${settings.bitrate} kbit/s`;
 }
 
 function defaults(stream, skills) {
-	const settings = init({});
+  const settings = init({});
 
-	return {
-		settings: settings,
-		mapping: createMapping(settings, stream, skills),
-	};
+  return {
+    settings: settings,
+    mapping: createMapping(settings, stream, skills),
+  };
 }
 
 export {
-	coder,
-	name,
-	codec,
-	type,
-	hwaccel,
-	summarize,
-	defaults,
-	Coder as component,
+  coder,
+  name,
+  codec,
+  type,
+  hwaccel,
+  summarize,
+  defaults,
+  Coder as component,
 };

@@ -1,9 +1,9 @@
 export default {
-	styleOverrides: {
-		groupedHorizontal: {
-			'&:not(:last-child)': {
-				borderRight: 0,
-			},
-		},
-	},
+  styleOverrides: {
+    groupedHorizontal: {
+      "&:not(:last-child)": {
+        borderRight: 0,
+      },
+    },
+  },
 };

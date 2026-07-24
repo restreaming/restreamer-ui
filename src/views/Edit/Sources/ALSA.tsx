@@ -1,193 +1,189 @@
-import React from 'react';
+import React from "react";
 
-import { useLingui } from '@lingui/react';
-import { Trans } from '@lingui/react/macro';
-import { t } from '@lingui/core/macro';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Icon from '@mui/icons-material/Usb';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+import { useLingui } from "@lingui/react";
+import { Trans } from "@lingui/react/macro";
+import { t } from "@lingui/core/macro";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Icon from "@mui/icons-material/Usb";
+import RefreshIcon from "@mui/icons-material/Refresh";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
-import Audio from '../../../misc/coders/settings/Audio';
-import FormInlineButton from '../../../misc/FormInlineButton';
-import SelectCustom from '../../../misc/SelectCustom';
+import Audio from "../../../misc/coders/settings/Audio";
+import FormInlineButton from "../../../misc/FormInlineButton";
+import SelectCustom from "../../../misc/SelectCustom";
 
 const initSettings = (initialSettings) => {
-	if (!initialSettings) {
-		initialSettings = {};
-	}
+  if (!initialSettings) {
+    initialSettings = {};
+  }
 
-	const settings = {
-		address: 'hw:1,0',
-		device: '1,0',
-		sampling: '44100',
-		channels: '1',
-		delay: 0,
-		...initialSettings,
-	};
+  const settings = {
+    address: "hw:1,0",
+    device: "1,0",
+    sampling: "44100",
+    channels: "1",
+    delay: 0,
+    ...initialSettings,
+  };
 
-	return settings;
+  return settings;
 };
 
 const createInputs = (settings) => {
-	const address = `hw:${settings.device}`;
+  const address = `hw:${settings.device}`;
 
-	const input = {
-		address: address,
-		options: [],
-	};
+  const input = {
+    address: address,
+    options: [],
+  };
 
-	input.options.push('-f', 'alsa');
-	input.options.push('-thread_queue_size', '512');
-	input.options.push('-channels', '' + settings.channels);
-	input.options.push('-sample_rate', '' + settings.sampling);
+  input.options.push("-f", "alsa");
+  input.options.push("-thread_queue_size", "512");
+  input.options.push("-channels", "" + settings.channels);
+  input.options.push("-sample_rate", "" + settings.sampling);
 
-	if (settings.delay !== 0) {
-		input.options.push('-itsoffset', settings.delay + 'ms');
-	}
+  if (settings.delay !== 0) {
+    input.options.push("-itsoffset", settings.delay + "ms");
+  }
 
-	return [input];
+  return [input];
 };
 
 function Source(props) {
-	const { i18n } = useLingui();
-	const settings = initSettings(props.settings);
+  const { i18n } = useLingui();
+  const settings = initSettings(props.settings);
 
-	const handleChange = (what) => (event) => {
-		const data = {};
+  const handleChange = (what) => (event) => {
+    const data = {};
 
-		if (
-			['address', 'device', 'sampling', 'channels', 'delay'].includes(
-				what,
-			)
-		) {
-			data[what] = event.target.value;
-		}
+    if (["address", "device", "sampling", "channels", "delay"].includes(what)) {
+      data[what] = event.target.value;
+    }
 
-		props.onChange({
-			...settings,
-			...data,
-		});
-	};
+    props.onChange({
+      ...settings,
+      ...data,
+    });
+  };
 
-	const handleRefresh = () => {
-		props.onRefresh();
-	};
+  const handleRefresh = () => {
+    props.onRefresh();
+  };
 
-	const handleProbe = () => {
-		props.onProbe(settings, createInputs(settings));
-	};
+  const handleProbe = () => {
+    props.onProbe(settings, createInputs(settings));
+  };
 
-	const filteredDevices = props.knownDevices.filter(
-		(device) => device.media === 'audio',
-	);
-	const options = filteredDevices.map((device) => {
-		return {
-			value: device.id.replace(/^hw:/, ''),
-			label: device.name,
-		};
-	});
+  const filteredDevices = props.knownDevices.filter(
+    (device) => device.media === "audio",
+  );
+  const options = filteredDevices.map((device) => {
+    return {
+      value: device.id.replace(/^hw:/, ""),
+      label: device.name,
+    };
+  });
 
-	options.unshift({
-		value: 'none',
-		label: i18n._(t`Choose an input device ...`),
-		disabled: true,
-	});
-	options.push({
-		value: 'custom',
-		label: i18n._(t`Custom ...`),
-	});
+  options.unshift({
+    value: "none",
+    label: i18n._(t`Choose an input device ...`),
+    disabled: true,
+  });
+  options.push({
+    value: "custom",
+    label: i18n._(t`Custom ...`),
+  });
 
-	return (
-		<Grid container spacing={2} sx={{ mt: 0.5, alignItems: 'flex-start' }}>
-			<Grid size={12}>
-				<Typography>
-					<Trans>Select a device:</Trans>
-				</Typography>
-			</Grid>
-			<Grid size={12}>
-				<SelectCustom
-					options={options}
-					label={<Trans>Audio device</Trans>}
-					customLabel={<Trans>Custom audio device</Trans>}
-					value={settings.device}
-					onChange={handleChange('device')}
-					variant="outlined"
-					allowCustom
-				/>
-				<Button
-					size="small"
-					startIcon={<RefreshIcon />}
-					onClick={handleRefresh}
-					sx={{ float: 'right' }}
-				>
-					<Trans>Refresh</Trans>
-				</Button>
-			</Grid>
-			<Grid size={12}>
-				<Audio.Sampling
-					value={settings.sampling}
-					onChange={handleChange('sampling')}
-					allowCustom
-				/>
-			</Grid>
-			<Grid size={6}>
-				<TextField
-					variant="outlined"
-					fullWidth
-					label={<Trans>Channels</Trans>}
-					value={settings.channels}
-					onChange={handleChange('channels')}
-				/>
-			</Grid>
-			<Grid size={6}>
-				<TextField
-					variant="outlined"
-					fullWidth
-					label={<Trans>Delay (ms)</Trans>}
-					value={settings.delay}
-					onChange={handleChange('delay')}
-				/>
-			</Grid>
-			<Grid size={12}>
-				<FormInlineButton onClick={handleProbe}>
-					<Trans>Probe</Trans>
-				</FormInlineButton>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2} sx={{ mt: 0.5, alignItems: "flex-start" }}>
+      <Grid size={12}>
+        <Typography>
+          <Trans>Select a device:</Trans>
+        </Typography>
+      </Grid>
+      <Grid size={12}>
+        <SelectCustom
+          options={options}
+          label={<Trans>Audio device</Trans>}
+          customLabel={<Trans>Custom audio device</Trans>}
+          value={settings.device}
+          onChange={handleChange("device")}
+          variant="outlined"
+          allowCustom
+        />
+        <Button
+          size="small"
+          startIcon={<RefreshIcon />}
+          onClick={handleRefresh}
+          sx={{ float: "right" }}
+        >
+          <Trans>Refresh</Trans>
+        </Button>
+      </Grid>
+      <Grid size={12}>
+        <Audio.Sampling
+          value={settings.sampling}
+          onChange={handleChange("sampling")}
+          allowCustom
+        />
+      </Grid>
+      <Grid size={6}>
+        <TextField
+          variant="outlined"
+          fullWidth
+          label={<Trans>Channels</Trans>}
+          value={settings.channels}
+          onChange={handleChange("channels")}
+        />
+      </Grid>
+      <Grid size={6}>
+        <TextField
+          variant="outlined"
+          fullWidth
+          label={<Trans>Delay (ms)</Trans>}
+          value={settings.delay}
+          onChange={handleChange("delay")}
+        />
+      </Grid>
+      <Grid size={12}>
+        <FormInlineButton onClick={handleProbe}>
+          <Trans>Probe</Trans>
+        </FormInlineButton>
+      </Grid>
+    </Grid>
+  );
 }
 
 Source.defaultProps = {
-	knownDevices: [],
-	settings: {},
-	onChange: function (settings) {},
-	onProbe: function (settings, inputs) {},
-	onRefresh: function () {},
+  knownDevices: [],
+  settings: {},
+  onChange: function (settings) {},
+  onProbe: function (settings, inputs) {},
+  onRefresh: function () {},
 };
 
 function SourceIcon(props) {
-	return <Icon {...props} />;
+  return <Icon {...props} />;
 }
 
-const id = 'alsa';
+const id = "alsa";
 const name = <Trans>ALSA</Trans>;
-const capabilities = ['audio'];
-const ffversion = '^4.1.0 || ^5.0.0 || ^6.1.0';
+const capabilities = ["audio"];
+const ffversion = "^4.1.0 || ^5.0.0 || ^6.1.0";
 
 const func = {
-	initSettings,
-	createInputs,
+  initSettings,
+  createInputs,
 };
 
 export {
-	id,
-	name,
-	capabilities,
-	ffversion,
-	SourceIcon as icon,
-	Source as component,
-	func,
+  id,
+  name,
+  capabilities,
+  ffversion,
+  SourceIcon as icon,
+  Source as component,
+  func,
 };

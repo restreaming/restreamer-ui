@@ -1,136 +1,128 @@
-import React from 'react';
+import React from "react";
 
-import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
-import Tab from '@mui/material/Tab';
-import TextField from '@mui/material/TextField';
+import { Trans } from "@lingui/react/macro";
+import Grid from "@mui/material/Grid";
+import Tab from "@mui/material/Tab";
+import TextField from "@mui/material/TextField";
 
-import TabPanel from '../TabPanel';
-import TabsHorizontal from '../TabsHorizontal';
+import TabPanel from "../TabPanel";
+import TabsHorizontal from "../TabsHorizontal";
 
 function init(settings) {
-	const initSettings = {
-		name: 'Livestream',
-		description: 'Live from earth. Powered by datarhei Restreamer.',
-		author: {},
-		...settings,
-	};
+  const initSettings = {
+    name: "Livestream",
+    description: "Live from earth. Powered by datarhei Restreamer.",
+    author: {},
+    ...settings,
+  };
 
-	initSettings.author = {
-		name: '',
-		description: '',
-		...initSettings.author,
-	};
+  initSettings.author = {
+    name: "",
+    description: "",
+    ...initSettings.author,
+  };
 
-	return initSettings;
+  return initSettings;
 }
 
 export default function Control(props) {
-	const [$tab, setTab] = React.useState('content');
-	const settings = init(props.settings);
+  const [$tab, setTab] = React.useState("content");
+  const settings = init(props.settings);
 
-	// Set the defaults
-	React.useEffect(() => {
-		props.onChange(settings, true);
-	}, []);
+  // Set the defaults
+  React.useEffect(() => {
+    props.onChange(settings, true);
+  }, []);
 
-	const handleChange = (what) => (event) => {
-		const value = event.target.value;
+  const handleChange = (what) => (event) => {
+    const value = event.target.value;
 
-		if (what === 'author.name') {
-			settings.author.name = value;
-		} else if (what === 'author.description') {
-			settings.author.description = value;
-		} else {
-			settings[what] = value;
-		}
+    if (what === "author.name") {
+      settings.author.name = value;
+    } else if (what === "author.description") {
+      settings.author.description = value;
+    } else {
+      settings[what] = value;
+    }
 
-		props.onChange(settings, false);
-	};
+    props.onChange(settings, false);
+  };
 
-	const handleChangeTab = (event, value) => {
-		setTab(value);
-	};
+  const handleChangeTab = (event, value) => {
+    setTab(value);
+  };
 
-	return (
-		<Grid container spacing={0}>
-			<Grid size={12}>
-				<TabsHorizontal value={$tab} onChange={handleChangeTab}>
-					<Tab
-						className="tab"
-						label={<Trans>Content</Trans>}
-						value="content"
-					/>
-					<Tab
-						className="tab"
-						label={<Trans>Author</Trans>}
-						value="author"
-					/>
-				</TabsHorizontal>
-				<TabPanel value={$tab} index="content">
-					<Grid container spacing={2}>
-						<Grid size={12}>
-							<TextField
-								variant="outlined"
-								fullWidth
-								label={<Trans>Name</Trans>}
-								value={settings.name}
-								onChange={handleChange('name')}
-							/>
-						</Grid>
-						<Grid size={12}>
-							<TextField
-								variant="outlined"
-								fullWidth
-								multiline
-								rows={10}
-								sx={{
-									'& .MuiOutlinedInput-input': {
-										whiteSpace: 'pre-line',
-									},
-								}}
-								label={<Trans>Description</Trans>}
-								value={settings.description}
-								onChange={handleChange('description')}
-							/>
-						</Grid>
-					</Grid>
-				</TabPanel>
-				<TabPanel value={$tab} index="author">
-					<Grid container spacing={2}>
-						<Grid size={12}>
-							<TextField
-								variant="outlined"
-								fullWidth
-								label={<Trans>Name</Trans>}
-								value={settings.author.name}
-								onChange={handleChange('author.name')}
-							/>
-						</Grid>
-						<Grid size={12}>
-							<TextField
-								variant="outlined"
-								fullWidth
-								multiline
-								rows={10}
-								sx={{
-									'& .MuiOutlinedInput-input': {
-										whiteSpace: 'pre-line',
-									},
-								}}
-								label={<Trans>Description</Trans>}
-								value={settings.author.description}
-								onChange={handleChange('author.description')}
-							/>
-						</Grid>
-					</Grid>
-				</TabPanel>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={0}>
+      <Grid size={12}>
+        <TabsHorizontal value={$tab} onChange={handleChangeTab}>
+          <Tab className="tab" label={<Trans>Content</Trans>} value="content" />
+          <Tab className="tab" label={<Trans>Author</Trans>} value="author" />
+        </TabsHorizontal>
+        <TabPanel value={$tab} index="content">
+          <Grid container spacing={2}>
+            <Grid size={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label={<Trans>Name</Trans>}
+                value={settings.name}
+                onChange={handleChange("name")}
+              />
+            </Grid>
+            <Grid size={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={10}
+                sx={{
+                  "& .MuiOutlinedInput-input": {
+                    whiteSpace: "pre-line",
+                  },
+                }}
+                label={<Trans>Description</Trans>}
+                value={settings.description}
+                onChange={handleChange("description")}
+              />
+            </Grid>
+          </Grid>
+        </TabPanel>
+        <TabPanel value={$tab} index="author">
+          <Grid container spacing={2}>
+            <Grid size={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label={<Trans>Name</Trans>}
+                value={settings.author.name}
+                onChange={handleChange("author.name")}
+              />
+            </Grid>
+            <Grid size={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={10}
+                sx={{
+                  "& .MuiOutlinedInput-input": {
+                    whiteSpace: "pre-line",
+                  },
+                }}
+                label={<Trans>Description</Trans>}
+                value={settings.author.description}
+                onChange={handleChange("author.description")}
+              />
+            </Grid>
+          </Grid>
+        </TabPanel>
+      </Grid>
+    </Grid>
+  );
 }
 
 Control.defaultProps = {
-	settings: {},
-	onChange: function (metadata) {},
+  settings: {},
+  onChange: function (metadata) {},
 };

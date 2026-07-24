@@ -1,40 +1,40 @@
-import React from 'react';
+import React from "react";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
 const Component = function (props) {
-	return (
-		<Grid container spacing={3}>
-			<Grid
-				sx={{
-					marginBottom: '.3em',
-					marginTop: '1.2em',
-					minHeight: '42px',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-					gap: 1,
-					'& button': {
-						marginRight: '.5em',
-					},
-					'& > div': {
-						display: 'flex',
-						gap: 1,
-						alignItems: 'center',
-					},
-				}}
-				size={12}
-			>
-				<div>{props.buttonsRight}</div>
-				{props.buttonsLeft}
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={3}>
+      <Grid
+        sx={{
+          marginBottom: ".3em",
+          marginTop: "1.2em",
+          minHeight: "42px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 1,
+          "& button": {
+            marginRight: ".5em",
+          },
+          "& > div": {
+            display: "flex",
+            gap: 1,
+            alignItems: "center",
+          },
+        }}
+        size={12}
+      >
+        <div>{props.buttonsRight}</div>
+        {props.buttonsLeft}
+      </Grid>
+    </Grid>
+  );
 };
 
 export default Component;
 
 Component.defaultProps = {
-	buttonsLeft: null,
-	buttonsRight: null,
+  buttonsLeft: null,
+  buttonsRight: null,
 };

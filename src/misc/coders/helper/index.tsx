@@ -1,37 +1,37 @@
 function InitStream(initialStream) {
-	if (!initialStream) {
-		initialStream = {};
-	}
+  if (!initialStream) {
+    initialStream = {};
+  }
 
-	const stream = {
-		codec: '',
-		...initialStream,
-	};
+  const stream = {
+    codec: "",
+    ...initialStream,
+  };
 
-	return stream;
+  return stream;
 }
 
 function InitSkills(initialSkills) {
-	if (!initialSkills) {
-		initialSkills = {};
-	}
+  if (!initialSkills) {
+    initialSkills = {};
+  }
 
-	const skills = {
-		ffmpeg: {},
-		...initialSkills,
-	};
+  const skills = {
+    ffmpeg: {},
+    ...initialSkills,
+  };
 
-	skills.ffmpeg = {
-		version: '5.0.0',
-		version_major: 5,
-		version_minor: 0,
-		...skills.ffmpeg,
-	};
+  skills.ffmpeg = {
+    version: "5.0.0",
+    version_major: 5,
+    version_minor: 0,
+    ...skills.ffmpeg,
+  };
 
-	return skills;
+  return skills;
 }
 
 export default {
-	InitStream,
-	InitSkills,
+  InitStream,
+  InitSkills,
 };

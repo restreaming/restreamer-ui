@@ -1,105 +1,105 @@
-import { I18nProvider } from '@lingui/react';
-import { i18n } from '@lingui/core';
+import { I18nProvider } from "@lingui/react";
+import { i18n } from "@lingui/core";
 
-import { messages as EN } from './locales/en/messages.mjs';
-import { messages as DA } from './locales/da/messages.mjs';
-import { messages as DE } from './locales/de/messages.mjs';
-import { messages as EL } from './locales/el/messages.mjs';
-import { messages as ES } from './locales/es/messages.mjs';
-import { messages as FR } from './locales/fr/messages.mjs';
-import { messages as IT } from './locales/it/messages.mjs';
-import { messages as KO } from './locales/ko/messages.mjs';
-import { messages as PL } from './locales/pl/messages.mjs';
-import { messages as PT } from './locales/pt-br/messages.mjs';
-import { messages as RU } from './locales/ru/messages.mjs';
-import { messages as SL } from './locales/sl/messages.mjs';
-import { messages as TR } from './locales/tr/messages.mjs';
-import { messages as UK } from './locales/uk/messages.mjs';
-import { messages as ZH } from './locales/zh-hans/messages.mjs';
-import * as Storage from './utils/storage';
+import { messages as EN } from "./locales/en/messages.mjs";
+import { messages as DA } from "./locales/da/messages.mjs";
+import { messages as DE } from "./locales/de/messages.mjs";
+import { messages as EL } from "./locales/el/messages.mjs";
+import { messages as ES } from "./locales/es/messages.mjs";
+import { messages as FR } from "./locales/fr/messages.mjs";
+import { messages as IT } from "./locales/it/messages.mjs";
+import { messages as KO } from "./locales/ko/messages.mjs";
+import { messages as PL } from "./locales/pl/messages.mjs";
+import { messages as PT } from "./locales/pt-br/messages.mjs";
+import { messages as RU } from "./locales/ru/messages.mjs";
+import { messages as SL } from "./locales/sl/messages.mjs";
+import { messages as TR } from "./locales/tr/messages.mjs";
+import { messages as UK } from "./locales/uk/messages.mjs";
+import { messages as ZH } from "./locales/zh-hans/messages.mjs";
+import * as Storage from "./utils/storage";
 
 i18n.load({
-	en: EN,
-	da: DA,
-	de: DE,
-	el: EL,
-	es: ES,
-	fr: FR,
-	it: IT,
-	ko: KO,
-	pl: PL,
-	'pt-br': PT,
-	ru: RU,
-	sl: SL,
-	tr: TR,
-	uk: UK,
-	'zh-hans': ZH,
+  en: EN,
+  da: DA,
+  de: DE,
+  el: EL,
+  es: ES,
+  fr: FR,
+  it: IT,
+  ko: KO,
+  pl: PL,
+  "pt-br": PT,
+  ru: RU,
+  sl: SL,
+  tr: TR,
+  uk: UK,
+  "zh-hans": ZH,
 });
 
 const aliases = {
-	pt: 'pt-br',
-	'zh-cn': 'zh-hans',
+  pt: "pt-br",
+  "zh-cn": "zh-hans",
 };
 
 const getAlias = (lang) => {
-	if (lang in aliases) {
-		return aliases[lang];
-	}
+  if (lang in aliases) {
+    return aliases[lang];
+  }
 
-	return lang;
+  return lang;
 };
 
 const getLanguage = (defaultLanguage, supportedLanguages) => {
-	const initialLang = getAlias(Storage.Get('language'));
-	let lang = initialLang;
-	if (supportedLanguages.indexOf(lang) === -1) {
-		lang = getAlias(getBrowserLanguage(defaultLanguage));
+  const initialLang = getAlias(Storage.Get("language"));
+  let lang = initialLang;
+  if (supportedLanguages.indexOf(lang) === -1) {
+    lang = getAlias(getBrowserLanguage(defaultLanguage));
 
-		if (supportedLanguages.indexOf(lang) === -1) {
-			lang = defaultLanguage;
-		}
-	}
+    if (supportedLanguages.indexOf(lang) === -1) {
+      lang = defaultLanguage;
+    }
+  }
 
-	Storage.Set('language', lang);
+  Storage.Set("language", lang);
 
-	return lang;
+  return lang;
 };
 
 const getBrowserLanguage = (defaultLanguage) => {
-	if (typeof window === 'undefined') {
-		return defaultLanguage;
-	}
+  if (typeof window === "undefined") {
+    return defaultLanguage;
+  }
 
-	const lang = window.navigator.language;
+  const lang = window.navigator.language;
 
-	const match = lang.match(/^[a-z]+(-[a-z]+)?/i);
-	if (!match) {
-		return defaultLanguage;
-	}
+  const match = lang.match(/^[a-z]+(-[a-z]+)?/i);
+  if (!match) {
+    return defaultLanguage;
+  }
 
-	return match[0].toLowerCase();
+  return match[0].toLowerCase();
 };
 
 i18n.activate(
-	getLanguage('en', [
-		'en',
-		'da',
-		'de',
-		'el',
-		'es',
-		'fr',
-		'it',
-		'ko',
-		'pl',
-		'pt-br',
-		'ru',
-		'sl',
-		'tr',
-		'uk',
-		'zh-hans',
-	]),
+  getLanguage("en", [
+    "en",
+    "da",
+    "de",
+    "el",
+    "es",
+    "fr",
+    "it",
+    "ko",
+    "pl",
+    "pt-br",
+    "ru",
+    "sl",
+    "tr",
+    "uk",
+    "zh-hans",
+  ]),
 );
 
 export default function Provider(props) {
-	return <I18nProvider i18n={i18n}>{props.children}</I18nProvider>;
+  return <I18nProvider i18n={i18n}>{props.children}</I18nProvider>;
 }

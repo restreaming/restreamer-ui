@@ -1,36 +1,36 @@
-import * as AVFoundation from './AVFoundation';
-import * as InternalRTMP from './InternalRTMP';
-import * as InternalSRT from './InternalSRT';
-import * as Network from './Network';
-import * as Raspicam from './Raspicam';
-import * as V4L from './V4L';
+import * as AVFoundation from "./AVFoundation";
+import * as InternalRTMP from "./InternalRTMP";
+import * as InternalSRT from "./InternalSRT";
+import * as Network from "./Network";
+import * as Raspicam from "./Raspicam";
+import * as V4L from "./V4L";
 
 class Registry {
-	services: Map<any, any>;
-	constructor() {
-		this.services = new Map();
-	}
+  services: Map<any, any>;
+  constructor() {
+    this.services = new Map();
+  }
 
-	Register(service) {
-		this.services.set(service.id, service);
-	}
+  Register(service) {
+    this.services.set(service.id, service);
+  }
 
-	Get(id) {
-		const service = this.services.get(id);
-		if (service) {
-			return service;
-		}
+  Get(id) {
+    const service = this.services.get(id);
+    if (service) {
+      return service;
+    }
 
-		return null;
-	}
+    return null;
+  }
 
-	IDs() {
-		return Array.from(this.services.keys());
-	}
+  IDs() {
+    return Array.from(this.services.keys());
+  }
 
-	List() {
-		return Array.from(this.services.values());
-	}
+  List() {
+    return Array.from(this.services.values());
+  }
 }
 
 const registry = new Registry();

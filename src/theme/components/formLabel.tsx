@@ -1,11 +1,11 @@
-import base from '../base';
+import base from "../base";
 
 export default {
-	styleOverrides: {
-		root: {
-			'&.Mui-focused': {
-				color: base.palette.text.primary,
-			},
-		},
-	},
+  styleOverrides: {
+    root: {
+      "&.Mui-focused": {
+        color: base.palette.text.primary,
+      },
+    },
+  },
 };

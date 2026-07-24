@@ -1,77 +1,77 @@
-import * as Akamai from './Akamai';
-import * as Azure from './Azure';
-import * as Brightcove from './Brightcove';
-import * as CDN77 from './CDN77';
-import * as Core from './Core';
-import * as DaCast from './DaCast';
-import * as Dailymotion from './Dailymotion';
-import * as DASH from './DASH';
-import * as DLive from './DLive';
-import * as Facebook from './Facebook';
-import * as Framebuffer from './Framebuffer';
-import * as HLS from './HLS';
-import * as Icecast from './Icecast';
-import * as Image2 from './Image2';
-import * as Instagram from './Instagram';
-import * as Kick from './Kick';
-import * as Linkedin from './Linkedin';
-import * as Livepush from './Livepush';
-import * as Livespotting from './Livespotting';
-import * as MediaNetwork from './MediaNetwork';
-import * as MPEGTS from './MPEGTS';
-import * as NimoTv from './NimoTv';
-import * as Owncast from './Owncast';
-import * as PeerTube from './PeerTube';
-import * as PicartoTv from './PicartoTv';
-import * as Red5 from './Red5';
-import * as Restream from './Restream';
-import * as RTMP from './RTMP';
-import * as RTSP from './RTSP';
-import * as Rumble from './Rumble';
-import * as SRT from './SRT';
-import * as Trovo from './Trovo';
-import * as Telegram from './Telegram';
-import * as Twitch from './Twitch';
-import * as Twitter from './Twitter';
-import * as UDP from './UDP';
-import * as Vimeo from './Vimeo';
-import * as WOWZA from './WOWZA';
-import * as Wettercom from './Wettercom';
-import * as Youtube from './Youtube';
+import * as Akamai from "./Akamai";
+import * as Azure from "./Azure";
+import * as Brightcove from "./Brightcove";
+import * as CDN77 from "./CDN77";
+import * as Core from "./Core";
+import * as DaCast from "./DaCast";
+import * as Dailymotion from "./Dailymotion";
+import * as DASH from "./DASH";
+import * as DLive from "./DLive";
+import * as Facebook from "./Facebook";
+import * as Framebuffer from "./Framebuffer";
+import * as HLS from "./HLS";
+import * as Icecast from "./Icecast";
+import * as Image2 from "./Image2";
+import * as Instagram from "./Instagram";
+import * as Kick from "./Kick";
+import * as Linkedin from "./Linkedin";
+import * as Livepush from "./Livepush";
+import * as Livespotting from "./Livespotting";
+import * as MediaNetwork from "./MediaNetwork";
+import * as MPEGTS from "./MPEGTS";
+import * as NimoTv from "./NimoTv";
+import * as Owncast from "./Owncast";
+import * as PeerTube from "./PeerTube";
+import * as PicartoTv from "./PicartoTv";
+import * as Red5 from "./Red5";
+import * as Restream from "./Restream";
+import * as RTMP from "./RTMP";
+import * as RTSP from "./RTSP";
+import * as Rumble from "./Rumble";
+import * as SRT from "./SRT";
+import * as Trovo from "./Trovo";
+import * as Telegram from "./Telegram";
+import * as Twitch from "./Twitch";
+import * as Twitter from "./Twitter";
+import * as UDP from "./UDP";
+import * as Vimeo from "./Vimeo";
+import * as WOWZA from "./WOWZA";
+import * as Wettercom from "./Wettercom";
+import * as Youtube from "./Youtube";
 
 class Registry {
-	services: Map<string, DynamicObject>;
-	constructor() {
-		this.services = new Map();
-	}
+  services: Map<string, DynamicObject>;
+  constructor() {
+    this.services = new Map();
+  }
 
-	Register(service: DynamicObject) {
-		if (service.id.match(/[^0-9a-z]/)) {
-			console.warn(
-				`the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`,
-			);
-			return;
-		}
+  Register(service: DynamicObject) {
+    if (service.id.match(/[^0-9a-z]/)) {
+      console.warn(
+        `the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`,
+      );
+      return;
+    }
 
-		this.services.set(service.id, service);
-	}
+    this.services.set(service.id, service);
+  }
 
-	Get(id: string): DynamicObject | null {
-		const service = this.services.get(id);
-		if (service) {
-			return service;
-		}
+  Get(id: string): DynamicObject | null {
+    const service = this.services.get(id);
+    if (service) {
+      return service;
+    }
 
-		return null;
-	}
+    return null;
+  }
 
-	IDs(): string[] {
-		return Array.from(this.services.keys());
-	}
+  IDs(): string[] {
+    return Array.from(this.services.keys());
+  }
 
-	List(): DynamicObject[] {
-		return Array.from(this.services.values());
-	}
+  List(): DynamicObject[] {
+    return Array.from(this.services.values());
+  }
 }
 
 const registry = new Registry();

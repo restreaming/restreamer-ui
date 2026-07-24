@@ -1,189 +1,189 @@
-import React from 'react';
+import React from "react";
 
-import { useLingui } from '@lingui/react';
-import { Trans } from '@lingui/react/macro';
-import { t } from '@lingui/core/macro';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Icon from '@mui/icons-material/Apple';
-import MenuItem from '@mui/material/MenuItem';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import Typography from '@mui/material/Typography';
+import { useLingui } from "@lingui/react";
+import { Trans } from "@lingui/react/macro";
+import { t } from "@lingui/core/macro";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Icon from "@mui/icons-material/Apple";
+import MenuItem from "@mui/material/MenuItem";
+import RefreshIcon from "@mui/icons-material/Refresh";
+import Typography from "@mui/material/Typography";
 
-import * as S from '../../Sources/AVFoundation';
-import Select from '../../../../misc/Select';
+import * as S from "../../Sources/AVFoundation";
+import Select from "../../../../misc/Select";
 
 function initSettings(initialSettings) {
-	const settings = {
-		...S.func.initSettings(initialSettings),
-		format: 'nv12',
-		framerate: 25,
-		size: 'auto',
-	};
+  const settings = {
+    ...S.func.initSettings(initialSettings),
+    format: "nv12",
+    framerate: 25,
+    size: "auto",
+  };
 
-	return settings;
+  return settings;
 }
 
 function Source(props) {
-	const { i18n } = useLingui();
-	const settings = initSettings(props.settings);
+  const { i18n } = useLingui();
+  const settings = initSettings(props.settings);
 
-	const handleChange = (newSettings = settings) => {
-		newSettings = newSettings || settings;
+  const handleChange = (newSettings = settings) => {
+    newSettings = newSettings || settings;
 
-		const filteredDevices = props.knownDevices.filter(
-			(device) => device.media === 'video',
-		);
+    const filteredDevices = props.knownDevices.filter(
+      (device) => device.media === "video",
+    );
 
-		props.onChange(
-			S.id,
-			newSettings,
-			S.func.createInputs(newSettings),
-			filteredDevices.length !== 0 ? true : false,
-		);
-	};
+    props.onChange(
+      S.id,
+      newSettings,
+      S.func.createInputs(newSettings),
+      filteredDevices.length !== 0 ? true : false,
+    );
+  };
 
-	const handleRefresh = () => {
-		props.onRefresh();
-	};
+  const handleRefresh = () => {
+    props.onRefresh();
+  };
 
-	const update = (what) => (event) => {
-		const value = event.target.value;
-		const newSettings = settings;
+  const update = (what) => (event) => {
+    const value = event.target.value;
+    const newSettings = settings;
 
-		if (what in newSettings) {
-			newSettings[what] = value;
-		}
+    if (what in newSettings) {
+      newSettings[what] = value;
+    }
 
-		handleChange(newSettings);
-	};
+    handleChange(newSettings);
+  };
 
-	React.useEffect(() => {
-		handleChange();
-	}, []);
+  React.useEffect(() => {
+    handleChange();
+  }, []);
 
-	let filteredDevices = props.knownDevices.filter(
-		(device) => device.media === 'video',
-	);
-	let options = filteredDevices.map((device) => {
-		return (
-			<MenuItem key={device.id} value={device.id}>
-				{device.name}
-			</MenuItem>
-		);
-	});
+  let filteredDevices = props.knownDevices.filter(
+    (device) => device.media === "video",
+  );
+  let options = filteredDevices.map((device) => {
+    return (
+      <MenuItem key={device.id} value={device.id}>
+        {device.name}
+      </MenuItem>
+    );
+  });
 
-	if (options.length === 0) {
-		options.push(
-			<MenuItem key="none" value="none" disabled={true}>
-				{i18n._(t`No input device available`)}
-			</MenuItem>,
-		);
-	} else {
-		options.unshift(
-			<MenuItem key="default" value="default">
-				{i18n._(t`Default`)}
-			</MenuItem>,
-		);
-	}
+  if (options.length === 0) {
+    options.push(
+      <MenuItem key="none" value="none" disabled={true}>
+        {i18n._(t`No input device available`)}
+      </MenuItem>,
+    );
+  } else {
+    options.unshift(
+      <MenuItem key="default" value="default">
+        {i18n._(t`Default`)}
+      </MenuItem>,
+    );
+  }
 
-	const videoDevices = (
-		<Select
-			label={<Trans>Video device</Trans>}
-			value={settings.vindex}
-			onChange={update('vindex')}
-		>
-			{options}
-		</Select>
-	);
+  const videoDevices = (
+    <Select
+      label={<Trans>Video device</Trans>}
+      value={settings.vindex}
+      onChange={update("vindex")}
+    >
+      {options}
+    </Select>
+  );
 
-	filteredDevices = props.knownDevices.filter(
-		(device) => device.media === 'audio',
-	);
-	options = filteredDevices.map((device) => {
-		return (
-			<MenuItem key={device.id} value={device.id}>
-				{device.name}
-			</MenuItem>
-		);
-	});
+  filteredDevices = props.knownDevices.filter(
+    (device) => device.media === "audio",
+  );
+  options = filteredDevices.map((device) => {
+    return (
+      <MenuItem key={device.id} value={device.id}>
+        {device.name}
+      </MenuItem>
+    );
+  });
 
-	options.unshift(
-		<MenuItem key="none" value="none">
-			{i18n._(t`None`)}
-		</MenuItem>,
-	);
+  options.unshift(
+    <MenuItem key="none" value="none">
+      {i18n._(t`None`)}
+    </MenuItem>,
+  );
 
-	if (options.length > 1) {
-		options.unshift(
-			<MenuItem key="default" value="default">
-				{i18n._(t`Default`)}
-			</MenuItem>,
-		);
-	}
+  if (options.length > 1) {
+    options.unshift(
+      <MenuItem key="default" value="default">
+        {i18n._(t`Default`)}
+      </MenuItem>,
+    );
+  }
 
-	const audioDevices = (
-		<Select
-			label={<Trans>Audio Device</Trans>}
-			value={settings.aindex}
-			onChange={update('aindex')}
-		>
-			{options}
-		</Select>
-	);
+  const audioDevices = (
+    <Select
+      label={<Trans>Audio Device</Trans>}
+      value={settings.aindex}
+      onChange={update("aindex")}
+    >
+      {options}
+    </Select>
+  );
 
-	return (
-		<React.Fragment>
-			<Grid size={12}>
-				<Typography>
-					<Trans>Select a device:</Trans>
-				</Typography>
-			</Grid>
-			<Grid size={12}>
-				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
-					<Grid size={12}>{videoDevices}</Grid>
-				</Grid>
-			</Grid>
-			<Grid size={12}>
-				<Grid container spacing={1} sx={{ alignItems: 'center' }}>
-					<Grid size={12}>
-						{audioDevices}
-						<Button
-							size="small"
-							startIcon={<RefreshIcon />}
-							onClick={handleRefresh}
-							sx={{ float: 'right' }}
-						>
-							<Trans>Refresh</Trans>
-						</Button>
-					</Grid>
-				</Grid>
-			</Grid>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <Grid size={12}>
+        <Typography>
+          <Trans>Select a device:</Trans>
+        </Typography>
+      </Grid>
+      <Grid size={12}>
+        <Grid container spacing={1} sx={{ alignItems: "center" }}>
+          <Grid size={12}>{videoDevices}</Grid>
+        </Grid>
+      </Grid>
+      <Grid size={12}>
+        <Grid container spacing={1} sx={{ alignItems: "center" }}>
+          <Grid size={12}>
+            {audioDevices}
+            <Button
+              size="small"
+              startIcon={<RefreshIcon />}
+              onClick={handleRefresh}
+              sx={{ float: "right" }}
+            >
+              <Trans>Refresh</Trans>
+            </Button>
+          </Grid>
+        </Grid>
+      </Grid>
+    </React.Fragment>
+  );
 }
 
 Source.defaultProps = {
-	knownDevices: [],
-	settings: {},
-	onChange: function (type, settings, inputs, ready) {},
-	onRefresh: function () {},
+  knownDevices: [],
+  settings: {},
+  onChange: function (type, settings, inputs, ready) {},
+  onRefresh: function () {},
 };
 
 function SourceIcon(props) {
-	return <Icon style={{ color: '#FFF' }} {...props} />;
+  return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 
-const id = 'avfoundation';
-const type = 'avfoundation';
+const id = "avfoundation";
+const type = "avfoundation";
 const name = <Trans>Connected device</Trans>;
-const capabilities = ['audio', 'video'];
+const capabilities = ["audio", "video"];
 
 export {
-	id,
-	type,
-	name,
-	capabilities,
-	SourceIcon as icon,
-	Source as component,
+  id,
+  type,
+  name,
+  capabilities,
+  SourceIcon as icon,
+  Source as component,
 };

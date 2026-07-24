@@ -1,6 +1,6 @@
 .media-internal {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Custom styling for the internal preview player to show only play/pause and volume controls */
@@ -11,5 +11,5 @@
 .media-internal .media-button--cast,
 .media-internal .media-button--pip,
 .media-internal .media-button--fullscreen {
-	display: none !important;
+  display: none !important;
 }

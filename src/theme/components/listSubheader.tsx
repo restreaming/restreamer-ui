@@ -1,7 +1,7 @@
 export default {
-	styleOverrides: {
-		root: {
-			lineHeight: '2em',
-		},
-	},
+  styleOverrides: {
+    root: {
+      lineHeight: "2em",
+    },
+  },
 };

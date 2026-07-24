@@ -1,138 +1,136 @@
-import React from 'react';
+import React from "react";
 
-import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import { Trans } from "@lingui/react/macro";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 // Import all filters (audio/video)
-import * as Filters from './filters';
+import * as Filters from "./filters";
 
 // Import all encoders (audio/video)
-import * as Encoders from './coders/Encoders';
+import * as Encoders from "./coders/Encoders";
 
 export default function FilterSelect(props) {
-	const profile = props.profile;
+  const profile = props.profile;
 
-	// handleFilterChange
-	// what: Filter name
-	// settings (component settings):  {Key: Value}
-	// mapping (FFmpeg -af/-vf args): ['String', ...]
-	const handleFilterSettingsChange =
-		(what) => (settings, graph, automatic) => {
-			const filter = profile.filter;
+  // handleFilterChange
+  // what: Filter name
+  // settings (component settings):  {Key: Value}
+  // mapping (FFmpeg -af/-vf args): ['String', ...]
+  const handleFilterSettingsChange = (what) => (settings, graph, automatic) => {
+    const filter = profile.filter;
 
-			// Store mapping/settings per component
-			filter.settings[what] = {
-				settings: settings,
-				graph: graph,
-			};
+    // Store mapping/settings per component
+    filter.settings[what] = {
+      settings: settings,
+      graph: graph,
+    };
 
-			// Get the order of the filters
-			const filterOrder =
-				props.type === 'video'
-					? Filters.Video.Filters()
-					: Filters.Audio.Filters();
+    // Get the order of the filters
+    const filterOrder =
+      props.type === "video"
+        ? Filters.Video.Filters()
+        : Filters.Audio.Filters();
 
-			// Create the filter graph in the order as the filters are registered
-			const graphs = [];
-			for (const f of filterOrder) {
-				if (!(f in filter.settings)) {
-					continue;
-				}
+    // Create the filter graph in the order as the filters are registered
+    const graphs = [];
+    for (const f of filterOrder) {
+      if (!(f in filter.settings)) {
+        continue;
+      }
 
-				if (filter.settings[f].graph.length !== 0) {
-					graphs.push(filter.settings[f].graph);
-				}
-			}
+      if (filter.settings[f].graph.length !== 0) {
+        graphs.push(filter.settings[f].graph);
+      }
+    }
 
-			filter.graph = graphs.join(',');
+    filter.graph = graphs.join(",");
 
-			props.onChange(filter, automatic);
-		};
+    props.onChange(filter, automatic);
+  };
 
-	// Set filterRegistry by type
-	const filterRegistry =
-		props.type === 'video'
-			? Filters.Video
-			: props.type === 'audio'
-				? Filters.Audio
-				: null;
-	if (filterRegistry === null) {
-		return null;
-	}
+  // Set filterRegistry by type
+  const filterRegistry =
+    props.type === "video"
+      ? Filters.Video
+      : props.type === "audio"
+        ? Filters.Audio
+        : null;
+  if (filterRegistry === null) {
+    return null;
+  }
 
-	// Checks the state of hwaccel (gpu encoding)
-	const encoderRegistry = props.type === 'video' ? Encoders.Video : null;
-	const hwaccel =
-		props.type === 'video' &&
-		encoderRegistry
-			.List()
-			.some(
-				(encoder) =>
-					encoder.codec === props.profile.encoder.coder &&
-					encoder.hwaccel,
-			);
+  // Checks the state of hwaccel (gpu encoding)
+  const encoderRegistry = props.type === "video" ? Encoders.Video : null;
+  const hwaccel =
+    props.type === "video" &&
+    encoderRegistry
+      .List()
+      .some(
+        (encoder) =>
+          encoder.codec === props.profile.encoder.coder && encoder.hwaccel,
+      );
 
-	// Creates filter components
-	const filterSettings = [];
-	if (!hwaccel) {
-		for (const c of filterRegistry.List()) {
-			// Checks FFmpeg skills (filter is available)
-			if (props.availableFilters.includes(c.filter)) {
-				const Settings = c.component;
+  // Creates filter components
+  const filterSettings = [];
+  if (!hwaccel) {
+    for (const c of filterRegistry.List()) {
+      // Checks FFmpeg skills (filter is available)
+      if (props.availableFilters.includes(c.filter)) {
+        const Settings = c.component;
 
-				if (!(c.filter in profile.filter.settings)) {
-					profile.filter.settings[c.filter] = c.defaults();
-				} else {
-					profile.filter.settings[c.filter] = {
-						...c.defaults(),
-						...profile.filter.settings[c.filter],
-					};
-				}
+        if (!(c.filter in profile.filter.settings)) {
+          profile.filter.settings[c.filter] = c.defaults();
+        } else {
+          profile.filter.settings[c.filter] = {
+            ...c.defaults(),
+            ...profile.filter.settings[c.filter],
+          };
+        }
 
-				filterSettings.push(
-					<Settings
-						key={c.filter}
-						settings={profile.filter.settings[c.filter].settings}
-						onChange={handleFilterSettingsChange(c.filter)}
-					/>,
-				);
-			}
-		}
-	}
+        filterSettings.push(
+          <Settings
+            key={c.filter}
+            settings={profile.filter.settings[c.filter].settings}
+            onChange={handleFilterSettingsChange(c.filter)}
+          />,
+        );
+      }
+    }
+  }
 
-	// No suitable filter found
-	if (filterSettings === null && !hwaccel) {
-		return (
-			<Grid container spacing={2}>
-				<Grid size={12}>
-					<Typography>
-						<Trans>No suitable filter found.</Trans>
-					</Typography>
-				</Grid>
-			</Grid>
-		);
+  // No suitable filter found
+  if (filterSettings === null && !hwaccel) {
+    return (
+      <Grid container spacing={2}>
+        <Grid size={12}>
+          <Typography>
+            <Trans>No suitable filter found.</Trans>
+          </Typography>
+        </Grid>
+      </Grid>
+    );
 
-		// hwaccel requires further settings
-	} else if (hwaccel) {
-		return false;
-	}
+    // hwaccel requires further settings
+  } else if (hwaccel) {
+    return false;
+  }
 
-	return (
-		<Grid container spacing={2}>
-			<Grid size={12}>
-				<Typography>
-					<Trans>Select your filter settings (optional):</Trans>
-				</Typography>
-			</Grid>
-			{filterSettings}
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid size={12}>
+        <Typography>
+          <Trans>Select your filter settings (optional):</Trans>
+        </Typography>
+      </Grid>
+      {filterSettings}
+    </Grid>
+  );
 }
 
 FilterSelect.defaultProps = {
-	type: '',
-	profile: {},
-	availableFilters: [],
-	onChange: function (filter, automatic) {},
+  type: "",
+  profile: {},
+  availableFilters: [],
+  onChange: function (filter, automatic) {},
 };

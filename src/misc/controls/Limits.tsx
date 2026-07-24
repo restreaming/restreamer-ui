@@ -1,113 +1,109 @@
-import React from 'react';
+import React from "react";
 
-import { Trans } from '@lingui/react/macro';
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+import { Trans } from "@lingui/react/macro";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
 function init(settings) {
-	const initSettings = {
-		cpu_usage: 0,
-		memory_mbytes: 0,
-		waitfor_seconds: 5,
-		...settings,
-	};
+  const initSettings = {
+    cpu_usage: 0,
+    memory_mbytes: 0,
+    waitfor_seconds: 5,
+    ...settings,
+  };
 
-	return initSettings;
+  return initSettings;
 }
 
 export default function Control(props) {
-	const settings = init(props.settings);
+  const settings = init(props.settings);
 
-	// Set the defaults
-	React.useEffect(() => {
-		props.onChange(settings, true);
-	}, []);
+  // Set the defaults
+  React.useEffect(() => {
+    props.onChange(settings, true);
+  }, []);
 
-	const handleChange = (what) => (event) => {
-		const value = event.target.value;
+  const handleChange = (what) => (event) => {
+    const value = event.target.value;
 
-		settings[what] = value;
+    settings[what] = value;
 
-		props.onChange(settings, false);
-	};
+    props.onChange(settings, false);
+  };
 
-	return (
-		<Grid container spacing={2}>
-			<Grid
-				size={{
-					xs: 12,
-					md: 4,
-				}}
-			>
-				<TextField
-					variant="outlined"
-					fullWidth
-					type="number"
-					label={<Trans>CPU Limit (percent)</Trans>}
-					value={settings.cpu_usage}
-					onChange={handleChange('cpu_usage')}
-					slotProps={{
-						htmlInput: { min: 0, max: 100 },
-					}}
-				/>
-				<Typography variant="caption">
-					<Trans>
-						CPU usage limit in percent (0-100%), 0 for unlimited.
-					</Trans>
-				</Typography>
-			</Grid>
-			<Grid
-				size={{
-					xs: 12,
-					md: 4,
-				}}
-			>
-				<TextField
-					variant="outlined"
-					fullWidth
-					type="number"
-					label={<Trans>Memory Limit (megabytes)</Trans>}
-					value={settings.memory_mbytes}
-					onChange={handleChange('memory_mbytes')}
-					slotProps={{
-						htmlInput: { min: 0 },
-					}}
-				/>
-				<Typography variant="caption">
-					<Trans>
-						Memory usage limit in megabytes, 0 for unlimited.
-					</Trans>
-				</Typography>
-			</Grid>
-			<Grid
-				size={{
-					xs: 12,
-					md: 4,
-				}}
-			>
-				<TextField
-					variant="outlined"
-					fullWidth
-					type="number"
-					label={<Trans>Threshold (seconds)</Trans>}
-					value={settings.waitfor_seconds}
-					onChange={handleChange('waitfor_seconds')}
-					slotProps={{
-						htmlInput: { min: 0 },
-					}}
-				/>
-				<Typography variant="caption">
-					<Trans>
-						Number of seconds the limits are allowed to be exceeded.
-					</Trans>
-				</Typography>
-			</Grid>
-		</Grid>
-	);
+  return (
+    <Grid container spacing={2}>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
+        <TextField
+          variant="outlined"
+          fullWidth
+          type="number"
+          label={<Trans>CPU Limit (percent)</Trans>}
+          value={settings.cpu_usage}
+          onChange={handleChange("cpu_usage")}
+          slotProps={{
+            htmlInput: { min: 0, max: 100 },
+          }}
+        />
+        <Typography variant="caption">
+          <Trans>CPU usage limit in percent (0-100%), 0 for unlimited.</Trans>
+        </Typography>
+      </Grid>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
+        <TextField
+          variant="outlined"
+          fullWidth
+          type="number"
+          label={<Trans>Memory Limit (megabytes)</Trans>}
+          value={settings.memory_mbytes}
+          onChange={handleChange("memory_mbytes")}
+          slotProps={{
+            htmlInput: { min: 0 },
+          }}
+        />
+        <Typography variant="caption">
+          <Trans>Memory usage limit in megabytes, 0 for unlimited.</Trans>
+        </Typography>
+      </Grid>
+      <Grid
+        size={{
+          xs: 12,
+          md: 4,
+        }}
+      >
+        <TextField
+          variant="outlined"
+          fullWidth
+          type="number"
+          label={<Trans>Threshold (seconds)</Trans>}
+          value={settings.waitfor_seconds}
+          onChange={handleChange("waitfor_seconds")}
+          slotProps={{
+            htmlInput: { min: 0 },
+          }}
+        />
+        <Typography variant="caption">
+          <Trans>
+            Number of seconds the limits are allowed to be exceeded.
+          </Trans>
+        </Typography>
+      </Grid>
+    </Grid>
+  );
 }
 
 Control.defaulProps = {
-	settings: {},
-	onChange: function (settings, automatic) {},
+  settings: {},
+  onChange: function (settings, automatic) {},
 };

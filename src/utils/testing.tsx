@@ -1,11 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/vitest';
-import { ThemeProvider } from '@mui/material/styles';
-import { StyledEngineProvider } from '@mui/material';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import theme from '../theme';
-import I18n from '../I18n';
+import React from "react";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { ThemeProvider } from "@mui/material/styles";
+import { StyledEngineProvider } from "@mui/material";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import theme from "../theme";
+import I18n from "../I18n";
 
 /*
 This is wrapper for the render method in order to provide all required providers and
@@ -56,39 +56,39 @@ a user clicking around. Example:
 */
 
 const NoRoute = (props) => {
-	return null;
+  return null;
 };
 
 const AllTheProviders =
-	(initialEntries, path) =>
-	({ children }) => {
-		if (typeof initialEntries === 'undefined') {
-			initialEntries = '/';
-		}
-		if (typeof path === 'undefined') {
-			path = '/';
-		}
-		return (
-			<StyledEngineProvider injectFirst>
-				<ThemeProvider theme={theme}>
-					<I18n>
-						<MemoryRouter initialEntries={[initialEntries]}>
-							<Routes>
-								<Route path={path} element={children} />
-								<Route path="*" element={<NoRoute />} />
-							</Routes>
-						</MemoryRouter>
-					</I18n>
-				</ThemeProvider>
-			</StyledEngineProvider>
-		);
-	};
+  (initialEntries, path) =>
+  ({ children }) => {
+    if (typeof initialEntries === "undefined") {
+      initialEntries = "/";
+    }
+    if (typeof path === "undefined") {
+      path = "/";
+    }
+    return (
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <I18n>
+            <MemoryRouter initialEntries={[initialEntries]}>
+              <Routes>
+                <Route path={path} element={children} />
+                <Route path="*" element={<NoRoute />} />
+              </Routes>
+            </MemoryRouter>
+          </I18n>
+        </ThemeProvider>
+      </StyledEngineProvider>
+    );
+  };
 
-const customRender = (ui, options = {}, initialEntries = '/', path = '/') =>
-	render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
+const customRender = (ui, options = {}, initialEntries = "/", path = "/") =>
+  render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
 
 // re-export everything
-export * from '@testing-library/react';
+export * from "@testing-library/react";
 
 // override render method
 export { customRender as render };
