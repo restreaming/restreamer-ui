@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 import PropTypes from "prop-types";
 
 import { useLingui } from "@lingui/react";
@@ -67,9 +67,9 @@ export default function Add(props: Any) {
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up("sm"));
 
   const { i18n } = useLingui();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [$ready, setReady] = React.useState(false);
-  const { channelid: _channelid } = useParams();
+  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const notify = React.useContext(NotifyContext);
   const [$service, setService] = React.useState("");
   const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));
@@ -98,10 +98,10 @@ export default function Add(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid === true) {
-        navigate("/", { replace: true });
+        router.replace("/");
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const load = async (...args: Any[]) => {
@@ -310,7 +310,7 @@ export default function Add(props: Any) {
 
     notify.Dispatch("success", "save:egress:" + $service, message);
 
-    navigate(`/${_channelid}/`);
+    router.push(`/${_channelid}/`);
   };
 
   const handleServiceName = (event: Any) => {
@@ -334,7 +334,7 @@ export default function Add(props: Any) {
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}`);
+    router.push(`/${_channelid}`);
   };
 
   const handleChangeTab = (value: Any) => {

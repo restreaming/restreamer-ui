@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 
 import { Trans } from "@lingui/react/macro";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -79,8 +79,8 @@ const Root = styled("div")(({ theme }: Any) => ({
 }));
 
 export default function Main(props: Any) {
-  const navigate = useNavigate();
-  const { channelid: _channelid } = useParams();
+  const router = useRouter();
+  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const [$state, setState] = React.useState<DynamicObject>({
     ready: false,
     valid: false,
@@ -124,10 +124,10 @@ export default function Main(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid === true) {
-        navigate("/", { replace: true });
+        router.replace("/");
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const load = async (...args: Any[]) => {
@@ -362,7 +362,7 @@ export default function Main(props: Any) {
           <Paper marginBottom="0">
             <PaperHeader
               title={title}
-              onEdit={() => navigate(`/${_channelid}/edit`)}
+              onEdit={() => router.push(`/${_channelid}/edit`)}
               onHelp={handleHelp("main")}
             />
             <Grid container spacing={1} className={classes.gridContainerL2}>

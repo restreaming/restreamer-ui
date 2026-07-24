@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -19,7 +19,7 @@ function init(settings: Any) {
 }
 
 export default function Control(props: Any) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const settings = init(props.settings);
 
   // Set the defaults
@@ -67,7 +67,7 @@ export default function Control(props: Any) {
               style={{ marginTop: 10, marginBottom: 3 }}
               fullWidth
               color="primary"
-              onClick={() => navigate("/settings/rtmp")}
+              onClick={() => router.push("/settings/rtmp")}
             >
               <Trans>Enable now</Trans>
             </Button>

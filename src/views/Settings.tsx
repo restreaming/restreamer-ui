@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 import PropTypes from "prop-types";
 
 import { useLingui } from "@lingui/react";
@@ -752,8 +752,8 @@ const toInt = (val: Any) => {
 
 export default function Settings(props: Any) {
   const { i18n } = useLingui();
-  const navigate = useNavigate();
-  const { tab: _tab } = useParams();
+  const router = useRouter();
+  const { tab: _tab } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const notify = React.useContext(NotifyContext);
   const [$config, setConfig] = React.useState<DynamicObject>({
     ready: false,
@@ -1312,7 +1312,7 @@ export default function Settings(props: Any) {
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate(-1);
+    router.back();
   };
 
   const handleHelp =

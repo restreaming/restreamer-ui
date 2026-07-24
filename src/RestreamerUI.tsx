@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import { styled } from "@mui/material/styles";
 import Alert from "@mui/material/Alert";
@@ -16,7 +19,7 @@ import I18n from "./I18n";
 import Header from "./Header";
 import * as M from "./utils/metadata";
 import Restreamer from "./utils/restreamer";
-import Router from "./Router";
+import AppRoute from "./AppRoute";
 import Views from "./views";
 import { UI as Version } from "./version";
 import Changelog from "./misc/Changelog";
@@ -33,7 +36,7 @@ const classes = {
 };
 
 interface RestreamerUIProps {
-  address: string;
+  route?: string;
 }
 
 const StyledI18n = styled(I18n)(() => ({
@@ -62,6 +65,7 @@ const StyledI18n = styled(I18n)(() => ({
 }));
 
 export default function RestreamerUI(props: RestreamerUIProps) {
+  const router = useRouter();
   const [$state, setState] = React.useState<DynamicObject>({
     initialized: false,
     valid: false,
@@ -94,9 +98,12 @@ export default function RestreamerUI(props: RestreamerUIProps) {
 
   React.useEffect((...args: Any[]) => {
     void args;
+    const address =
+      process.env.NEXT_PUBLIC_CORE_ADDRESS?.trim() || window.location.origin;
+
     (async (...args: Any[]) => {
       void args;
-      await handleMount();
+      await handleMount(address);
     })();
 
     return (...args: Any[]) => {
@@ -143,9 +150,8 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     }
   };
 
-  const handleMount = async (...args: Any[]) => {
-    void args;
-    restreamer.current = new Restreamer(props.address);
+  const handleMount = async (address: string) => {
+    restreamer.current = new Restreamer(address);
     restreamer.current.AddListener((event: DynamicObject) => {
       notify(event.severity, event.type, event.message);
     });
@@ -412,12 +418,12 @@ export default function RestreamerUI(props: RestreamerUIProps) {
 
   const handlePlayersite = (...args: Any[]) => {
     void args;
-    document.location.hash = "#/playersite";
+    router.push("/playersite");
   };
 
   const handleSettings = (...args: Any[]) => {
     void args;
-    document.location.hash = "#/settings";
+    router.push("/settings");
   };
 
   const handleChannelList = (...args: Any[]) => {
@@ -437,7 +443,7 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     restreamer.current.SelectChannel(channelid);
     handleChannelList();
 
-    document.location.hash = `#/${channelid}`;
+    router.push(`/${channelid}`);
   };
 
   const handleCloseChannelList = (...args: Any[]) => {
@@ -457,7 +463,7 @@ export default function RestreamerUI(props: RestreamerUIProps) {
       open: false,
     });
 
-    document.location.hash = `#/${channelid}/edit/wizard`;
+    router.push(`/${channelid}/edit/wizard`);
   };
 
   const handleStateChannel = async (channelids: string[]) => {
@@ -555,7 +561,12 @@ export default function RestreamerUI(props: RestreamerUIProps) {
         />
       );
     } else {
-      view = <Router restreamer={restreamer.current} />;
+      view = (
+        <AppRoute
+          route={props.route ?? "channel-select"}
+          restreamer={restreamer.current}
+        />
+      );
       resources = handleResources;
     }
   }
@@ -671,7 +682,3 @@ export default function RestreamerUI(props: RestreamerUIProps) {
     </StyledI18n>
   );
 }
-
-RestreamerUI.defaultProps = {
-  address: "",
-};

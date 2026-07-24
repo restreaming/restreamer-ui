@@ -17,7 +17,15 @@ npm run start
 ```
 
 Connect the UI with a [datarhei Core](https://github.com/datarhei/core):
-<http://localhost:3000?address=http://core-ip:core-port>
+Create a `.env.local` file in the project root before starting the UI:
+
+```env
+NEXT_PUBLIC_CORE_ADDRESS=http://core-ip:core-port
+```
+
+Then open <http://localhost:3000>. If the variable is not set, the UI connects
+to the same origin it was loaded from. Restart the development or production
+server after changing environment variables.
 
 ### To add/fix translations
 

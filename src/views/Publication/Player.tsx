@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -78,8 +78,8 @@ const posterImageTypes = [
 ];
 
 export default function Edit(props: Any) {
-  const navigate = useNavigate();
-  const { channelid: _channelid } = useParams();
+  const router = useRouter();
+  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const { i18n } = useLingui();
   const address = props.restreamer.Address();
   const timeout = React.useRef<ReturnType<typeof setTimeout> | undefined>(
@@ -113,10 +113,10 @@ export default function Edit(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid.length !== 0) {
-        navigate($invalid, { replace: true });
+        router.replace($invalid);
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const mount = async (...args: Any[]) => {
@@ -347,7 +347,7 @@ export default function Edit(props: Any) {
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}/`);
+    router.push(`/${_channelid}/`);
   };
 
   const handleHelp = (...args: Any[]) => {

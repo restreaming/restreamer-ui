@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -139,7 +139,7 @@ CheckboxList.defaultProps = {
 };
 
 export default function Playersite(props: Any) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { i18n } = useLingui();
   const address = props.restreamer.Address() + "/";
   const playersiteUrl = props.restreamer.GetPlayersiteUrl();
@@ -355,7 +355,7 @@ export default function Playersite(props: Any) {
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate("/");
+    router.push("/");
   };
 
   const handleHelp = (...args: Any[]) => {
@@ -368,7 +368,7 @@ export default function Playersite(props: Any) {
   }
 
   if ($ingest === false) {
-    navigate("/");
+    router.push("/");
     return null;
   }
 

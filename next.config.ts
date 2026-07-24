@@ -1,5 +1,10 @@
+import { linguiMacroSwcPlugin } from "@lingui/swc-plugin/options";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    swcPlugins: [linguiMacroSwcPlugin()],
+  },
   async headers() {
     return [
       {

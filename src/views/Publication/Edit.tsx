@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 import PropTypes from "prop-types";
 
 import { useLingui } from "@lingui/react";
@@ -66,9 +66,9 @@ export default function Edit(props: Any) {
     channelid: _channelid,
     service: _service,
     index: _index,
-  } = useParams();
+  } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const id = props.restreamer.GetEgressId(_service, _index);
-  const navigate = useNavigate();
+  const router = useRouter();
   const notify = React.useContext(NotifyContext);
   const [$ready, setReady] = React.useState(false);
   const [$settings, setSettings] = React.useState(M.getDefaultEgressMetadata());
@@ -120,10 +120,10 @@ export default function Edit(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid.length !== 0) {
-        navigate($invalid, { replace: true });
+        router.replace($invalid);
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const update = async (isFirst: Any) => {
@@ -411,12 +411,12 @@ export default function Edit(props: Any) {
       i18n._(t`The publication service "${$settings.name}" has been deleted`),
     );
 
-    navigate(`/${_channelid}`);
+    router.push(`/${_channelid}`);
   };
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}/`);
+    router.push(`/${_channelid}/`);
   };
 
   const handleChangeTab = (value: Any) => {

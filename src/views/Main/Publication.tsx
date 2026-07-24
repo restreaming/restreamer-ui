@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import { Trans } from "@lingui/react/macro";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
@@ -64,7 +64,7 @@ const Root = styled("div")(() => ({
 }));
 
 export default function Publication(props: Any) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const services = Services.IDs();
   const [$egresses, setEgresses] = React.useState<Any[]>([]);
   const [$session, setSession] = React.useState({
@@ -130,7 +130,7 @@ export default function Publication(props: Any) {
   const handleServiceAdd = (event: Any) => {
     event.preventDefault();
 
-    navigate(`/${props.channelid}/publication/`);
+    router.push(`/${props.channelid}/publication/`);
   };
 
   const handleServiceEdit =
@@ -143,7 +143,7 @@ export default function Publication(props: Any) {
         target = target + "/" + index;
       }
 
-      navigate(target);
+      router.push(target);
     };
 
   const handleOrderChange = (id: Any) => async (order: Any) => {

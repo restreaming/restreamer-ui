@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 import PropTypes from "prop-types";
 
 import { useLingui } from "@lingui/react";
@@ -71,8 +71,8 @@ const Root = styled("div")(({ theme }: Any) => ({
 
 export default function Edit(props: Any) {
   const { i18n } = useLingui();
-  const navigate = useNavigate();
-  const { channelid: _channelid, tab: _tab } = useParams();
+  const router = useRouter();
+  const { channelid: _channelid, tab: _tab } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const notify = React.useContext(NotifyContext);
   const [$tab, setTab] = React.useState(_tab ? _tab : "general");
   const [$state, setState] = React.useState<DynamicObject>({
@@ -106,10 +106,10 @@ export default function Edit(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid === true) {
-        navigate("/", { replace: true });
+        router.replace("/");
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const load = async (...args: Any[]) => {
@@ -284,7 +284,7 @@ export default function Edit(props: Any) {
 
   const handleWizard = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}/edit/wizard`);
+    router.push(`/${_channelid}/edit/wizard`);
   };
 
   const handleControlChange = (what: Any) => (settings: Any) => {
@@ -423,12 +423,12 @@ export default function Edit(props: Any) {
       i18n._(t`Channel "${$data.meta.name}" saved`),
     );
 
-    navigate(`/${_channelid}/`);
+    router.push(`/${_channelid}/`);
   };
 
   const handleAbort = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}/`);
+    router.push(`/${_channelid}/`);
   };
 
   const handleChannelDeleteDialog = (...args: Any[]) => {
@@ -468,7 +468,7 @@ export default function Edit(props: Any) {
       i18n._(t`The channel "${$data.meta.name}" has been deleted`),
     );
 
-    navigate("/");
+    router.push("/");
   };
 
   const handleHelp = (...args: Any[]) => {

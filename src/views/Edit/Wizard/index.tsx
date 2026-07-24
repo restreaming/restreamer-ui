@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 
 import { useLingui } from "@lingui/react";
 import { t } from "@lingui/core/macro";
@@ -31,8 +31,8 @@ import Metadata from "./Metadata";
 
 export default function Wizard(props: Any) {
   const { i18n } = useLingui();
-  const navigate = useNavigate();
-  const { channelid: _channelid } = useParams();
+  const router = useRouter();
+  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
   const notify = React.useContext(NotifyContext);
   const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
   const [$sources, setSources] = React.useState<DynamicObject>({
@@ -67,10 +67,10 @@ export default function Wizard(props: Any) {
     (...args: Any[]) => {
       void args;
       if ($invalid === true) {
-        navigate("/", { replace: true });
+        router.replace("/");
       }
     },
-    [navigate, $invalid],
+    [router, $invalid],
   );
 
   const load = async (...args: Any[]) => {
@@ -235,7 +235,7 @@ export default function Wizard(props: Any) {
 
     notify.Dispatch("success", "save:ingest", i18n._(t`Main channel saved`));
 
-    navigate(`/${_channelid}`);
+    router.push(`/${_channelid}`);
 
     return true;
   };
@@ -252,7 +252,7 @@ export default function Wizard(props: Any) {
 
   const handleAdvanced = (...args: Any[]) => {
     void args;
-    navigate(`/${_channelid}/edit`);
+    router.push(`/${_channelid}/edit`);
   };
 
   const handleHelp =
@@ -948,7 +948,7 @@ export default function Wizard(props: Any) {
       const channels = props.restreamer.ListChannels();
       props.restreamer.SelectChannel(channels[0].channelid);
 
-      navigate(`/`);
+      router.push(`/`);
     };
 
     return (

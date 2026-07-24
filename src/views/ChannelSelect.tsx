@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 export default function ChannelSelector(props: Any) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [$channelid, setChannelid] = React.useState("");
 
   React.useEffect((...args: Any[]) => {
@@ -13,9 +13,9 @@ export default function ChannelSelector(props: Any) {
   React.useEffect(
     (...args: Any[]) => {
       void args;
-      navigate(`/${$channelid}`, { replace: true });
+      router.replace(`/${$channelid}`);
     },
-    [navigate, $channelid],
+    [router, $channelid],
   );
 
   const onMount = (...args: Any[]) => {

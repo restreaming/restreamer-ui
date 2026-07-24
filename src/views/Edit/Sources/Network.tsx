@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -1051,7 +1051,7 @@ function PushHLS(props: Any) {
 function PushRTMP(props: Any) {
   const { i18n } = useLingui();
   const classes = useStyles();
-  const navigate = useNavigate();
+  const router = useRouter();
   const config = props.config;
 
   let form = null;
@@ -1075,7 +1075,7 @@ function PushRTMP(props: Any) {
             size="large"
             fullWidth
             color="primary"
-            onClick={() => navigate("/settings/rtmp")}
+            onClick={() => router.push("/settings/rtmp")}
           >
             <Trans>Enable RTMP server ...</Trans>
           </Button>
@@ -1182,7 +1182,7 @@ PushRTMP.defaultProps = {
 function PushSRT(props: Any) {
   const { i18n } = useLingui();
   const classes = useStyles();
-  const navigate = useNavigate();
+  const router = useRouter();
   const config = props.config;
 
   let form = null;
@@ -1206,7 +1206,7 @@ function PushSRT(props: Any) {
             size="large"
             fullWidth
             color="primary"
-            onClick={() => navigate("/settings/srt")}
+            onClick={() => router.push("/settings/srt")}
           >
             <Trans>Enable SRT server ...</Trans>
           </Button>

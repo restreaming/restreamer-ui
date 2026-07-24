@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams } from "next/navigation";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -11,8 +11,8 @@ import Paper from "../misc/Paper";
 import PaperThumb from "../misc/PaperThumb";
 
 export default function Welcome() {
-  const navigate = useNavigate();
-  const { channelid: _channelid } = useParams();
+  const router = useRouter();
+  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
 
   return (
     <Paper xs={12} md={6} className="PaperM">
@@ -48,7 +48,7 @@ export default function Welcome() {
             fullWidth
             variant="outlined"
             color="primary"
-            onClick={() => navigate(`/${_channelid}/edit/wizard`)}
+            onClick={() => router.push(`/${_channelid}/edit/wizard`)}
           >
             <Trans>Next: Video setup</Trans>
           </Button>

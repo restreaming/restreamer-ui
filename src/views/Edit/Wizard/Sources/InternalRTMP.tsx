@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import { Trans } from "@lingui/react/macro";
 import { t } from "@lingui/core/macro";
@@ -29,7 +29,7 @@ const initSettings = (initialSettings: Any, config: Any) => {
 
 function Source(props: Any) {
   const { i18n } = useLingui();
-  const navigate = useNavigate();
+  const router = useRouter();
   const config = S.func.initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = S.func.initSkills(props.skills);
@@ -82,7 +82,7 @@ function Source(props: Any) {
             size="large"
             fullWidth
             color="primary"
-            onClick={() => navigate("/settings/rtmp")}
+            onClick={() => router.push("/settings/rtmp")}
           >
             <Trans>Enable RTMP server ...</Trans>
           </Button>
