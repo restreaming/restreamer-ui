@@ -60,7 +60,7 @@ msgstr "Ekle"
 
 #: src/misc/modals/Hint.tsx
 msgid "Add Audio"
-msgstr ""
+msgstr "Ses ekle"
 
 #: src/views/Playersite.tsx
 msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
@@ -74,10 +74,6 @@ msgstr "Yeni kanal ekle"
 msgid "Add Publication"
 msgstr "Yayın Ekle"
 
-#: src/misc/modals/Hint.js
-#~ msgid "Add Stream"
-#~ msgstr ""
-
 #. placeholder {0}: service.name
 #: src/views/Publication/Add.tsx
 msgid "Add: {0}"
@@ -85,11 +81,11 @@ msgstr "Ekle: {0}"
 
 #: src/views/Playersite.tsx
 msgid "Additional channels"
-msgstr ""
+msgstr "Ek kanallar"
 
 #: src/views/Playersite.tsx
 msgid "Additional channels to display on the playersite."
-msgstr ""
+msgstr "Oynatıcı sitesinde gösterilecek ek kanallar."
 
 #: src/views/Edit/Sources/Network.tsx
 #: src/views/Edit/Wizard/Sources/Network.tsx
@@ -1251,7 +1247,7 @@ msgstr "Oynatıcıya ek olarak Restreamer, canlı yayınınızı kolay ve hızl�
 
 #: src/views/Edit/Profile.tsx
 msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
-msgstr ""
+msgstr "Yine de devam etmek için kullanılabilir akışlar hakkında <0>ipuçları</0> sağlayabilirsiniz."
 
 #: src/misc/controls/HLS.tsx
 #: src/views/Settings.tsx
@@ -1294,10 +1290,6 @@ msgstr "Enjekte 4"
 #: src/views/Edit/Wizard/Sources/InternalSRT.tsx
 msgid "Input stream"
 msgstr "Girdi akışı"
-
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Instafeed.me"
-#~ msgstr "Instafeed.me"
 
 #: src/views/Publication/Services/PeerTube.tsx
 msgid "Instance domain"
@@ -1400,11 +1392,7 @@ msgstr "Facebook Live RTMP hizmetine Canlı Yayın"
 
 #: src/views/Publication/Services/Instagram.tsx
 msgid "Live-Streaming to Instagram Live RTMP Service."
-msgstr ""
-
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Live-Streaming to Instagram Live RTMP Service. The stream key requires a service such as <0>Instafeed.me</0> or <1>Yellow Duck</1>."
-#~ msgstr "Instagram Live RTMP Hizmetine Canlı Akış. Akış anahtarı <0>Instafeed.me</0> veya <1>Yellow Duck</1> gibi bir hizmet gerektirir."
+msgstr "Instagram Live RTMP hizmetine canlı yayın."
 
 #: src/views/Publication/Services/MediaNetwork.tsx
 msgid "Live-Streaming to Media Network RTMP Service."
@@ -1847,7 +1835,7 @@ msgstr "Piksel biçimi"
 
 #: src/misc/coders/settings/Video.tsx
 msgid "Pixel Format"
-msgstr ""
+msgstr "Piksel biçimi"
 
 #: src/views/Login.tsx
 msgid "Plan: <0>Starter</0>"
@@ -2174,11 +2162,7 @@ msgstr "Yeniden Yükle"
 
 #: src/misc/modals/Hint.tsx
 msgid "Remove Audio"
-msgstr ""
-
-#: src/misc/modals/Hint.js
-#~ msgid "Remove Stream"
-#~ msgstr ""
+msgstr "Sesi kaldır"
 
 #: src/views/Settings.tsx
 msgid "Remove the oldest entries if the /memfs is full"
@@ -2490,13 +2474,9 @@ msgstr "Ayarlar"
 msgid "Settings (expert mode)"
 msgstr "Ayarlar (uzman modu)"
 
-#: src/views/Settings.js
-#~ msgid "Settings for /data path. The access is protected by"
-#~ msgstr "Veri yolu için ayarlar. Erişim şu şekilde korunur"
-
 #: src/views/Settings.tsx
 msgid "Settings for /data path. The access is protected by "
-msgstr ""
+msgstr "/data yolu ayarları. Erişim şu şekilde korunur: "
 
 #: src/views/Settings.tsx
 msgid "Settings for /memfs path."
@@ -2631,7 +2611,7 @@ msgstr "Akış"
 
 #: src/views/Publication/Services/Wettercom.tsx
 msgid "Stream ID"
-msgstr ""
+msgstr "Akış kimliği"
 
 #: src/views/Publication/Services/CDN77.tsx
 #: src/views/Publication/Services/DaCast.tsx
@@ -3112,13 +3092,9 @@ msgstr "Canlı Akışınızı bir Owncast sunucusuna aktarın. <0>Burada </0>aya
 msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr "Canlı Akışınızı bir Rumble RTMP hizmetine aktarın. <0>Burada </0>ayarlar hakkında daha fazla ayrıntı bulabilirsiniz."
 
-#: src/views/Publication/Services/Wettercom.js
-#~ msgid "Transmit your Livestream to wetter.com. Contact the publisher  <0>here </0>."
-#~ msgstr ""
-
 #: src/views/Publication/Services/Wettercom.tsx
 msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
-msgstr ""
+msgstr "Canlı yayınınınızı wetter.com'a aktarın. Yayıncıyla <0>buradan </0>iletişime geçin."
 
 #: src/views/Publication/Services/Youtube.tsx
 msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
@@ -3132,10 +3108,6 @@ msgstr "Video akışınızı, Twitter Producer'da oluşturulan gerekli anahtarla
 #: src/misc/coders/Encoders/video/hevc_libx265.tsx
 msgid "Tune"
 msgstr "Tune"
-
-#: src/misc/modals/Hint.js
-#~ msgid "Type"
-#~ msgstr ""
 
 #: src/views/Edit/Sources/Network.tsx
 #: src/views/Edit/Wizard/Sources/Network.tsx
@@ -3346,10 +3318,6 @@ msgstr "Genişlik"
 #: src/views/Settings.tsx
 msgid "Write protection"
 msgstr "Koruma yazın"
-
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Yellow Duck"
-#~ msgstr "Yellow Duck"
 
 #: src/views/Edit/Wizard/Abort.tsx
 msgid "Yes"

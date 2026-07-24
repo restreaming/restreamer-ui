@@ -74,10 +74,6 @@ msgstr "Add new channel"
 msgid "Add Publication"
 msgstr "Add Publication"
 
-#: src/misc/modals/Hint.js
-#~ msgid "Add Stream"
-#~ msgstr "Add Stream"
-
 #. placeholder {0}: service.name
 #: src/views/Publication/Add.tsx
 msgid "Add: {0}"
@@ -1295,10 +1291,6 @@ msgstr "Inject 4"
 msgid "Input stream"
 msgstr "Input stream"
 
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Instafeed.me"
-#~ msgstr "Instafeed.me"
-
 #: src/views/Publication/Services/PeerTube.tsx
 msgid "Instance domain"
 msgstr "Instance domain"
@@ -1401,10 +1393,6 @@ msgstr "Live-Streaming to Facebook Live RTMP service"
 #: src/views/Publication/Services/Instagram.tsx
 msgid "Live-Streaming to Instagram Live RTMP Service."
 msgstr "Live-Streaming to Instagram Live RTMP Service."
-
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Live-Streaming to Instagram Live RTMP Service. The stream key requires a service such as <0>Instafeed.me</0> or <1>Yellow Duck</1>."
-#~ msgstr "Live-Streaming to Instagram Live RTMP Service. The stream key requires a service such as <0>Instafeed.me</0> or <1>Yellow Duck</1>."
 
 #: src/views/Publication/Services/MediaNetwork.tsx
 msgid "Live-Streaming to Media Network RTMP Service."
@@ -2176,10 +2164,6 @@ msgstr "Reload"
 msgid "Remove Audio"
 msgstr "Remove Audio"
 
-#: src/misc/modals/Hint.js
-#~ msgid "Remove Stream"
-#~ msgstr "Remove Stream"
-
 #: src/views/Settings.tsx
 msgid "Remove the oldest entries if the /memfs is full"
 msgstr "Remove the oldest entries if the /memfs is full"
@@ -2489,10 +2473,6 @@ msgstr "Settings"
 #: src/views/Settings.tsx
 msgid "Settings (expert mode)"
 msgstr "Settings (expert mode)"
-
-#: src/views/Settings.js
-#~ msgid "Settings for /data path. The access is protected by"
-#~ msgstr "Settings for /data path. The access is protected by"
 
 #: src/views/Settings.tsx
 msgid "Settings for /data path. The access is protected by "
@@ -3112,10 +3092,6 @@ msgstr "Transmit your Livestream to an Owncast server. <0>Here </0>you can find 
 msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
 msgstr "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
 
-#: src/views/Publication/Services/Wettercom.js
-#~ msgid "Transmit your Livestream to wetter.com. Contact the publisher  <0>here </0>."
-#~ msgstr "Transmit your Livestream to wetter.com. Contact the publisher  <0>here </0>."
-
 #: src/views/Publication/Services/Wettercom.tsx
 msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
 msgstr "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
@@ -3132,10 +3108,6 @@ msgstr "Transmits your video stream with the required key, which was generated i
 #: src/misc/coders/Encoders/video/hevc_libx265.tsx
 msgid "Tune"
 msgstr "Tune"
-
-#: src/misc/modals/Hint.js
-#~ msgid "Type"
-#~ msgstr "Type"
 
 #: src/views/Edit/Sources/Network.tsx
 #: src/views/Edit/Wizard/Sources/Network.tsx
@@ -3346,10 +3318,6 @@ msgstr "Width"
 #: src/views/Settings.tsx
 msgid "Write protection"
 msgstr "Write protection"
-
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Yellow Duck"
-#~ msgstr "Yellow Duck"
 
 #: src/views/Edit/Wizard/Abort.tsx
 msgid "Yes"
