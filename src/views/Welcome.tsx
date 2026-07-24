@@ -12,7 +12,12 @@ import PaperThumb from "../misc/PaperThumb";
 
 export default function Welcome() {
   const router = useRouter();
-  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
 
   return (
     <Paper xs={12} md={6} className="PaperM">

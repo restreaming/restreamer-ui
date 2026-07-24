@@ -753,7 +753,12 @@ const toInt = (val: Any) => {
 export default function Settings(props: Any) {
   const { i18n } = useLingui();
   const router = useRouter();
-  const { tab: _tab } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { tab: _tab } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const notify = React.useContext(NotifyContext);
   const [$config, setConfig] = React.useState<DynamicObject>({
     ready: false,

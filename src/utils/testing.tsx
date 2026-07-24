@@ -70,9 +70,7 @@ const AllTheProviders =
     return (
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <I18n>
-            {children}
-          </I18n>
+          <I18n>{children}</I18n>
         </ThemeProvider>
       </StyledEngineProvider>
     );

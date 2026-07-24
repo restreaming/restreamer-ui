@@ -69,7 +69,12 @@ export default function Add(props: Any) {
   const { i18n } = useLingui();
   const router = useRouter();
   const [$ready, setReady] = React.useState(false);
-  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const notify = React.useContext(NotifyContext);
   const [$service, setService] = React.useState("");
   const [$settings, setSettings] = React.useState(M.initEgressMetadata({}));

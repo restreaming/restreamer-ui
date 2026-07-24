@@ -80,7 +80,12 @@ const Root = styled("div")(({ theme }: Any) => ({
 
 export default function Main(props: Any) {
   const router = useRouter();
-  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const [$state, setState] = React.useState<DynamicObject>({
     ready: false,
     valid: false,

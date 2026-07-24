@@ -72,7 +72,12 @@ const Root = styled("div")(({ theme }: Any) => ({
 export default function Edit(props: Any) {
   const { i18n } = useLingui();
   const router = useRouter();
-  const { channelid: _channelid, tab: _tab } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid, tab: _tab } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const notify = React.useContext(NotifyContext);
   const [$tab, setTab] = React.useState(_tab ? _tab : "general");
   const [$state, setState] = React.useState<DynamicObject>({

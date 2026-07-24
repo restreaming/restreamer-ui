@@ -32,7 +32,12 @@ import Metadata from "./Metadata";
 export default function Wizard(props: Any) {
   const { i18n } = useLingui();
   const router = useRouter();
-  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const notify = React.useContext(NotifyContext);
   const [$data, setData] = React.useState(M.getDefaultIngestMetadata());
   const [$sources, setSources] = React.useState<DynamicObject>({

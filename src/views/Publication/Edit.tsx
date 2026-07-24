@@ -66,7 +66,12 @@ export default function Edit(props: Any) {
     channelid: _channelid,
     service: _service,
     index: _index,
-  } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const id = props.restreamer.GetEgressId(_service, _index);
   const router = useRouter();
   const notify = React.useContext(NotifyContext);

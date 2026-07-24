@@ -79,7 +79,12 @@ const posterImageTypes = [
 
 export default function Edit(props: Any) {
   const router = useRouter();
-  const { channelid: _channelid } = useParams<{ channelid: string; tab?: string; service?: string; index?: string }>();
+  const { channelid: _channelid } = useParams<{
+    channelid: string;
+    tab?: string;
+    service?: string;
+    index?: string;
+  }>();
   const { i18n } = useLingui();
   const address = props.restreamer.Address();
   const timeout = React.useRef<ReturnType<typeof setTimeout> | undefined>(
