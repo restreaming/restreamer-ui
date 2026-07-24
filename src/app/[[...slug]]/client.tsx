@@ -1,19 +1,32 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import React from 'react'
+import RestreamerUI from '../../RestreamerUI'
 
-const App = dynamic(() => import('../../RestreamerUI'), { ssr: false })
+function getAddress() {
+	const urlParams = new URLSearchParams(window.location.search)
+	if (urlParams.has('address')) {
+		return urlParams.get('address') ?? ''
+	}
 
-const urlParams = new URLSearchParams(window.location.search.substring(1));
-const address = urlParams.has('address')
-	? urlParams.get('address')
-	: window.location.pathname.endsWith('/ui/')
+	return window.location.pathname.endsWith('/ui/')
 		? window.location.protocol +
 			'//' +
 			window.location.host +
 			window.location.pathname.replace(/ui\/$/, '')
-		: window.location.protocol + '//' + window.location.host;
+		: window.location.protocol + '//' + window.location.host
+}
 
 export function ClientOnly() {
-  return <App address={address} />
+	const [address, setAddress] = React.useState('')
+
+	React.useEffect(() => {
+		setAddress(getAddress())
+	}, [])
+
+	if (address === '') {
+		return null
+	}
+
+	return <RestreamerUI address={address} />
 }

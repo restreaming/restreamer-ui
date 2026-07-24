@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Trans } from '@lingui/react/macro';
 import Button from '@mui/material/Button';
 

@@ -1,4 +1,8 @@
 const isAvailable = () => {
+	if (typeof window === 'undefined') {
+		return false;
+	}
+
 	// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 	let storage = null;
 

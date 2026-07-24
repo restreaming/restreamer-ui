@@ -11,6 +11,7 @@ export default defineConfig([
 			'build/**',
 			'public/_playersite/**',
 			'src/locales/*/messages.js',
+			'src/locales/*/messages.mjs',
 		],
 	},
 	{

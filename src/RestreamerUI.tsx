@@ -32,7 +32,7 @@ const classes = {
 	MainContent: `${PREFIX}-MainContent`,
 };
 
-const StyledI18n = styled(I18n)(({ theme }) => ({
+const StyledI18n = styled(I18n)(() => ({
 	[`& .${classes.root}`]: {
 		minHeight: '100vh',
 		display: 'flex',
