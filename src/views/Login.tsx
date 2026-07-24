@@ -17,7 +17,7 @@ import Paper from "../misc/Paper";
 import Password from "../misc/Password";
 import Select from "../misc/Select";
 
-function hasAuthType(auths, type) {
+function hasAuthType(auths: any, type: any) {
   for (let i = 0; i < auths.length; i++) {
     if (auths[i].type === type) {
       return true;
@@ -27,9 +27,9 @@ function hasAuthType(auths, type) {
   return false;
 }
 
-function initAuths(auths) {
+function initAuths(auths: any) {
   auths = auths
-    .map((a) => {
+    .map((a: any) => {
       const params = a.split(" ");
       if (params[0] === "localjwt") {
         return {
@@ -80,8 +80,8 @@ function initAuths(auths) {
 
       return null;
     })
-    .filter((a) => a !== null)
-    .sort((a, b) => {
+    .filter((a: any) => a !== null)
+    .sort((a: any, b: any) => {
       if (a.type !== "auth0" || b.type !== "auth0" || a.type !== b.type) {
         if (a.type < b.type) {
           return -1;
@@ -108,7 +108,7 @@ function initAuths(auths) {
   return auths;
 }
 
-export default function Login(props) {
+export default function Login(props: any) {
   const [$auths] = React.useState(initAuths(props.auths));
   const [$login, setLogin] = React.useState({
     username: "",
@@ -129,7 +129,7 @@ export default function Login(props) {
         setLoginTarget("local");
       }
 
-      const auth0auths = $auths.filter((a) => a.type === "auth0");
+      const auth0auths = $auths.filter((a: any) => a.type === "auth0");
       if (auth0auths.length === 1) {
         setAuth0(auth0auths[0].id);
       }
@@ -141,7 +141,7 @@ export default function Login(props) {
     })();
   }, []);
 
-  const handleLogin = async (event) => {
+  const handleLogin = async (event: any) => {
     event.preventDefault();
 
     setLoginCheck(true);
@@ -204,7 +204,7 @@ export default function Login(props) {
     await props.onAuth0();
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     setLogin({
@@ -213,13 +213,13 @@ export default function Login(props) {
     });
   };
 
-  const handleAuth0Change = (event) => {
+  const handleAuth0Change = (event: any) => {
     const value = event.target.value;
 
     setAuth0(value);
   };
 
-  const handleLoginTargetChange = (event, value) => {
+  const handleLoginTargetChange = (event: any, value: any) => {
     if (!value) {
       return;
     }
@@ -394,8 +394,8 @@ export default function Login(props) {
                               <Trans>Choose tenant ...</Trans>
                             </MenuItem>
                             {$auths
-                              .filter((a) => a.type === "auth0")
-                              .map((a) => {
+                              .filter((a: any) => a.type === "auth0")
+                              .map((a: any) => {
                                 return (
                                   <MenuItem key={a.id} value={a.id}>
                                     {a.domain}
@@ -452,6 +452,6 @@ Login.defaultProps = {
   address: "",
   auths: [],
   hasService: false,
-  onLogin: function (username, password) {},
+  onLogin: function (username: any, password: any) {},
   onAuth0: function () {},
 };

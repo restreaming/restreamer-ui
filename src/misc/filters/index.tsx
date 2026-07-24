@@ -21,7 +21,7 @@ class Registry {
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     if (service.type !== this.type) {
       return;
     }
@@ -29,7 +29,7 @@ class Registry {
     this.services.set(service.filter, service);
   }
 
-  Get(filter) {
+  Get(filter: any) {
     const service = this.services.get(filter);
     if (service) {
       return service;

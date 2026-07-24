@@ -1,4 +1,3 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -17,10 +16,10 @@ import cc_by_nd from "./images/by-nd.svg";
 import cc_by_nc_nd from "./images/by-nc-nd.svg";
 import Select from "../../Select";
 
-export default function License(props) {
+export default function License(props: any) {
   const { i18n } = useLingui();
 
-  const handleLicenseChange = (event) => {
+  const handleLicenseChange = (event: any) => {
     props.onChange(event.target.value);
   };
 
@@ -140,5 +139,5 @@ export default function License(props) {
 
 License.defaultProps = {
   license: "none",
-  onChange: function (license) {},
+  onChange: function (license: any) {},
 };

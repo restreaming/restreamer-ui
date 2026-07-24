@@ -1,7 +1,7 @@
 import { Auth0Client } from "@auth0/auth0-spa-js";
 import * as Storage from "./storage";
 
-let client = null;
+let client: Auth0Client | null = null;
 
 let isAvailable = false;
 
@@ -22,7 +22,7 @@ const canUseAuth0 = () => {
   return isAvailable;
 };
 
-const setConfig = (config) => {
+const setConfig = (config: any) => {
   Storage.Set(
     "auth0",
     JSON.stringify({
@@ -114,7 +114,7 @@ const handleRedirectCallback = async () => {
       return {
         initialized: true,
         error: true,
-        description: e.message,
+        description: e instanceof Error ? e.message : String(e),
       };
     }
 
@@ -142,7 +142,7 @@ const handleRedirectCallback = async () => {
   };
 };
 
-const login = async (queryParams) => {
+const login = async (queryParams: any) => {
   if (client === null) {
     return false;
   }
@@ -170,9 +170,7 @@ const login = async (queryParams) => {
     } catch (e) {}
   }
 
-  const options = {
-    redirect_uri: config.redirect_uri,
-  };
+  const options = {};
 
   try {
     await client.loginWithRedirect(options);

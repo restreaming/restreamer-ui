@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -8,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Saving(props) {
+export default function Saving(props: any) {
   return (
     <Paper xs={12} md={5} marginBottom="6em" className="PaperM">
       <PaperHeader spacing={2} variant="h1" onAbort={props.onAbort} />

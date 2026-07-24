@@ -10,7 +10,7 @@ import Select from "../../Select";
 // Volume Filter
 // http://ffmpeg.org/ffmpeg-all.html#volume
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     level: "inherit",
     db: 0,
@@ -20,7 +20,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -39,7 +39,7 @@ function createGraph(settings) {
   return mapping.join(",");
 }
 
-function VolumeLevel(props) {
+function VolumeLevel(props: any) {
   return (
     <Select
       label={<Trans>Volume</Trans>}
@@ -67,10 +67,10 @@ function VolumeLevel(props) {
 
 VolumeLevel.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function VolumeDB(props) {
+function VolumeDB(props: any) {
   return (
     <TextField
       variant="outlined"
@@ -87,13 +87,13 @@ function VolumeDB(props) {
 VolumeDB.defaultProps = {
   value: "",
   disabled: false,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -103,7 +103,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -134,7 +134,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, graph, automatic) {},
+  onChange: function (settings: any, graph: any, automatic: any) {},
 };
 
 const filter = "volume";
@@ -142,7 +142,7 @@ const name = "Volume";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   let summary = `${name} (`;
 
   if (settings.level === "custom") {

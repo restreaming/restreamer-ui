@@ -38,7 +38,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.gridContainerL1}`]: {
     marginBottom: "6em",
   },
@@ -78,7 +78,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Main(props) {
+export default function Main(props: any) {
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const [$state, setState] = React.useState<DynamicObject>({
@@ -223,7 +223,7 @@ export default function Main(props) {
     await props.restreamer.StopAllEgresses(_channelid);
   };
 
-  const handleProcessDetails = async (event) => {
+  const handleProcessDetails = async (event: any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -263,7 +263,7 @@ export default function Main(props) {
     }
   };
 
-  const handleProcessDebug = async (event) => {
+  const handleProcessDebug = async (event: any) => {
     event.preventDefault();
 
     let data = "";
@@ -280,7 +280,7 @@ export default function Main(props) {
     });
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic: any) => () => {
     H(topic);
   };
 

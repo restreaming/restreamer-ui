@@ -49,7 +49,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.buttonOpen}`]: {
     float: "right",
     marginLeft: ".5em",
@@ -67,10 +67,10 @@ const templateTypes = [
   { mimetype: "text/html", extension: "html", maxSize: 500 * 1024 },
 ];
 
-function CheckboxList(props) {
+function CheckboxList(props: any) {
   const [$checked, setChecked] = React.useState(props.selected);
 
-  const handleToggle = (value) => () => {
+  const handleToggle = (value: any) => () => {
     const currentIndex = $checked.indexOf(value);
     const newChecked = [...$checked];
 
@@ -98,7 +98,7 @@ function CheckboxList(props) {
         maxHeight: 300,
       }}
     >
-      {props.items.map((value) => {
+      {props.items.map((value: any) => {
         const labelId = `checkbox-list-label-${value.id}`;
 
         return (
@@ -133,7 +133,7 @@ CheckboxList.defaultProps = {
   onChange: function () {},
 };
 
-export default function Playersite(props) {
+export default function Playersite(props: any) {
   const navigate = useNavigate();
   const { i18n } = useLingui();
   const address = props.restreamer.Address() + "/";
@@ -174,7 +174,7 @@ export default function Playersite(props) {
     setReady(true);
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
     const settings = $settings;
 
@@ -199,7 +199,7 @@ export default function Playersite(props) {
     });
   };
 
-  const handleBackgroundImageUpload = async (data, extension) => {
+  const handleBackgroundImageUpload = async (data: any, extension: any) => {
     const path = await props.restreamer.UploadPlayersiteBackgroundImage(
       data,
       extension,
@@ -214,7 +214,7 @@ export default function Playersite(props) {
     setSaving(false);
   };
 
-  const handleTemplateUpload = async (data, extension) => {
+  const handleTemplateUpload = async (data: any, extension: any) => {
     const name = await props.restreamer.UploadPlayersiteTemplate(
       data,
       $settings.templatename,
@@ -247,7 +247,7 @@ export default function Playersite(props) {
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     const message = (() => {
       switch (err.type) {
         case "nofiles":
@@ -279,7 +279,7 @@ export default function Playersite(props) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -336,7 +336,7 @@ export default function Playersite(props) {
     );
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
@@ -457,12 +457,12 @@ export default function Playersite(props) {
                       <Trans>Selected channel</Trans>
                     </MenuItem>
                     {$channels
-                      .sort((a, b) => {
+                      .sort((a: any, b: any) => {
                         const aname = a.name.toUpperCase();
                         const bname = b.name.toUpperCase();
                         return aname < bname ? -1 : aname > bname ? 1 : 0;
                       })
-                      .map((c) => {
+                      .map((c: any) => {
                         return (
                           <MenuItem key={c.channelid} value={c.channelid}>
                             {c.name}
@@ -480,36 +480,36 @@ export default function Playersite(props) {
                     type="select"
                     label={<Trans>Additional channels</Trans>}
                     value={$settings.channel_list.filter(
-                      (c) => c !== main_channelid,
+                      (c: any) => c !== main_channelid,
                     )}
-                    renderValue={(selected) => {
+                    renderValue={(selected: any) => {
                       return selected
-                        .map((id) => {
+                        .map((id: any) => {
                           const channel = props.restreamer.GetChannel(id);
                           if (channel === null) {
                             return "";
                           }
                           return channel.name;
                         })
-                        .filter((name) => name.length !== 0)
+                        .filter((name: any) => name.length !== 0)
                         .join(", ");
                     }}
                     onChange={handleChange("channel_list")}
                   >
                     {$channels
-                      .sort((a, b) => {
+                      .sort((a: any, b: any) => {
                         const aname = a.name.toUpperCase();
                         const bname = b.name.toUpperCase();
                         return aname < bname ? -1 : aname > bname ? 1 : 0;
                       })
-                      .map((c) => {
+                      .map((c: any) => {
                         return {
                           id: c.channelid,
                           name: c.name,
                         };
                       })
-                      .filter((c) => c.id !== main_channelid)
-                      .map((c) => {
+                      .filter((c: any) => c.id !== main_channelid)
+                      .map((c: any) => {
                         return (
                           <MultiSelectOption
                             key={c.id}
@@ -588,7 +588,7 @@ export default function Playersite(props) {
                     <MenuItem value="!default">
                       <Trans>Default</Trans>
                     </MenuItem>
-                    {$templates.sort().map((a) => {
+                    {$templates.sort().map((a: any) => {
                       return (
                         <MenuItem key={a} value={a}>
                           {a}

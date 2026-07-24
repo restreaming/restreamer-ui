@@ -1,13 +1,12 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-export default function LanguageSelect(props) {
+export default function LanguageSelect(props: any) {
   const { i18n } = useLingui();
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     const language = event.target.value;
 
     i18n.activate(language);
@@ -61,5 +60,5 @@ export default function LanguageSelect(props) {
 }
 
 LanguageSelect.defaultProps = {
-  onChange: function (lang) {},
+  onChange: function (lang: any) {},
 };

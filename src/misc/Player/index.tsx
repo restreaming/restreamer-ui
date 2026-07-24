@@ -1,8 +1,7 @@
-import React from "react";
 
 import VideoJS from "./videojs";
 
-export default function Player(props) {
+export default function Player(props: any) {
   const type = props.type ? props.type : "videojs-internal";
 
   if (type === "videojs-internal" || type === "videojs-public") {

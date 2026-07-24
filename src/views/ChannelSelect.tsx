@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ChannelSelector(props) {
+export default function ChannelSelector(props: any) {
   const navigate = useNavigate();
   const [$channelid, setChannelid] = React.useState("");
 

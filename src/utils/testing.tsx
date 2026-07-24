@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import { ThemeProvider } from "@mui/material/styles";
@@ -55,13 +54,13 @@ a user clicking around. Example:
     });
 */
 
-const NoRoute = (props) => {
+const NoRoute = (props: any) => {
   return null;
 };
 
 const AllTheProviders =
-  (initialEntries, path) =>
-  ({ children }) => {
+  (initialEntries: any, path: any) =>
+  ({ children }: any) => {
     if (typeof initialEntries === "undefined") {
       initialEntries = "/";
     }
@@ -84,7 +83,7 @@ const AllTheProviders =
     );
   };
 
-const customRender = (ui, options = {}, initialEntries = "/", path = "/") =>
+const customRender = (ui: any, options : any = {}, initialEntries : any = "/", path : any = "/") =>
   render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
 
 // re-export everything

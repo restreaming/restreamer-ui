@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent } from "../../../utils/testing";
 import "@testing-library/jest-dom/vitest";
 
@@ -72,7 +71,7 @@ test("source:network pull", async () => {
   let $settings: DynamicObject = {
     mode: "pull",
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -478,9 +477,9 @@ pullmatrix.tests = [
 
 test.each(pullmatrix.tests)(
   "source:network pull $name input with ffmpeg $skills.ffmpeg.version",
-  async (data) => {
+  async (data: any) => {
     let $inputs = [];
-    const handleProbe = (_, inputs) => {
+    const handleProbe = (_: any, inputs: any) => {
       $inputs = inputs;
     };
 
@@ -513,7 +512,7 @@ test("source:network push", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -584,7 +583,7 @@ test("source:network push RTMP", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -624,7 +623,7 @@ test("source:network push SRT", async () => {
       name: "external",
     },
   };
-  const handleChange = (settings) => {
+  const handleChange = (settings: any) => {
     $settings = settings;
   };
 
@@ -806,9 +805,9 @@ pushmatrix.tests = [
 
 test.each(pushmatrix.tests)(
   "source:network push $name input with ffmpeg $skills.ffmpeg.version",
-  async (data) => {
+  async (data: any) => {
     let $inputs = [];
-    const handleProbe = (_, inputs) => {
+    const handleProbe = (_: any, inputs: any) => {
       $inputs = inputs;
     };
 

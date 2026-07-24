@@ -138,12 +138,12 @@ const requires = {
 };
 
 // ServiceIcon is a React component and returns the icon for this service
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <ExtensionIcon style={{ color: "#FFFFFF" }} {...props} />;
 }
 
 // Initialize the settings, i.e. set defaults for fields that are not defined
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     stream_key: "",
     rtmp_primary: true,
@@ -161,7 +161,7 @@ function init(settings) {
 // This function should be exported, such that it can be called from the
 // outside in case e.g. the streams changed (due to changes in the encoding
 // settings) and the output options depend on that information.
-function createOutputs(settings, skills, metadata, streams) {
+function createOutputs(settings: any, skills: any, metadata: any, streams: any) {
   settings = init(settings);
   const outputs = [];
 
@@ -262,10 +262,10 @@ function createOutputs(settings, skills, metadata, streams) {
 //
 // 'settings' is the settings object where you store the settings for the
 // service. Its state is managed by the parent React component.
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (["rtmp_primary", "rtmp_backup"].includes(what)) {
@@ -320,7 +320,7 @@ Service.defaultProps = {
   skills: null,
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 Service.propTypes = {

@@ -1,7 +1,7 @@
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
 
-export default function ActionButton(props) {
+export default function ActionButton(props: any) {
   const button = (() => {
     if (props.state === "connecting") {
       return (

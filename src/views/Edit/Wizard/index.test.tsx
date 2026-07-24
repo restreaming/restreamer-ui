@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent, act, screen } from "../../../utils/testing";
 import "@testing-library/jest-dom/vitest";
 
@@ -59,7 +58,7 @@ const restreamer = {
       },
     };
   },
-  Probe: (id, inputs) => {
+  Probe: (id: any, inputs: any) => {
     const streams = [];
 
     if (inputs[0].address === "{rtmp,name=external.stream}") {
@@ -309,12 +308,12 @@ const restreamer = {
 
     return [{ streams: streams }, null];
   },
-  UpsertIngest: (_channelid, global, inputs, outputs, control) => {
+  UpsertIngest: (_channelid: any, global: any, inputs: any, outputs: any, control: any) => {
     return [{}, null];
   },
-  SetIngestMetadata: (_channelid, data) => {},
-  UpsertIngestSnapshot: (_channelid, control) => {},
-  UpdatePlayer: (_channelid) => {},
+  SetIngestMetadata: (_channelid: any, data: any) => {},
+  UpsertIngestSnapshot: (_channelid: any, control: any) => {},
+  UpdatePlayer: (_channelid: any) => {},
   UpdatePlayersite: () => {},
 };
 

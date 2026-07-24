@@ -1,11 +1,10 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Icon from "@mui/icons-material/Block";
 
 // This is a pseudo audio source for selecting no audio
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -17,7 +16,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const input = {
     address: "",
     options: [],
@@ -26,18 +25,18 @@ const createInputs = (settings) => {
   return [input];
 };
 
-function Source(props) {
+function Source(props: any) {
   return null;
 }
 
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon {...props} />;
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
@@ -11,18 +10,18 @@ import EditIcon from "@mui/icons-material/Edit";
 import * as M from "../../utils/metadata";
 import Summary from "./Summary";
 
-function IconWizard(props) {
+function IconWizard(props: any) {
   return <AutoFixHighIcon {...props} />;
 }
 
-function IconEdit(props) {
+function IconEdit(props: any) {
   return <EditIcon {...props} />;
 }
 
-export default function ProfileSummary(props) {
+export default function ProfileSummary(props: any) {
   const profile = M.initProfile(props.profile);
 
-  const handleEdit = (what) => () => {
+  const handleEdit = (what: any) => () => {
     props.onEdit(what);
   };
 
@@ -85,6 +84,6 @@ export default function ProfileSummary(props) {
 ProfileSummary.defaultProps = {
   sources: [],
   profile: null,
-  onEdit: function (type) {},
+  onEdit: function (type: any) {},
   onWizard: function () {},
 };

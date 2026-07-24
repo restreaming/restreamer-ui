@@ -12,8 +12,8 @@ import Select from "../Select";
 import Video from "../coders/settings/Video";
 import Audio from "../coders/settings/Audio";
 
-const Stream = function (props) {
-  const handleChange = (what) => (event) => {
+const Stream = function (props: any) {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     const stream = {
@@ -129,8 +129,8 @@ Stream.defaultProps = {
   onChange: () => {},
 };
 
-const Streams = function (props) {
-  const handleChange = (index) => (stream) => {
+const Streams = function (props: any) {
+  const handleChange = (index: any) => (stream: any) => {
     const streams = props.streams.slice();
 
     streams[index] = stream;
@@ -156,7 +156,7 @@ const Streams = function (props) {
     props.onChange(streams);
   };
 
-  const handleRemoveStream = (index) => () => {
+  const handleRemoveStream = (index: any) => () => {
     const streams = props.streams.toSpliced(index, 1);
 
     props.onChange(streams);
@@ -164,7 +164,7 @@ const Streams = function (props) {
 
   return (
     <Grid container spacing={1}>
-      {props.streams.map((stream, index) => (
+      {props.streams.map((stream: any, index: any) => (
         <Grid key={stream.index + ":" + stream.stream} size={12}>
           <Stack>
             <Typography sx={{ textTransform: "UPPERCASE", marginBottom: 2 }}>
@@ -200,7 +200,7 @@ Streams.defaultProps = {
   onChange: () => {},
 };
 
-const Component = function (props) {
+const Component = function (props: any) {
   return (
     <Dialog
       open={props.open}

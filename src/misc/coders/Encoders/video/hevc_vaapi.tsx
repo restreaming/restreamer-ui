@@ -10,7 +10,7 @@ import Select from "../../../Select";
 import Video from "../../settings/Video";
 import Helper from "../../helper";
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     bitrate: "4096",
     fps: "25",
@@ -24,7 +24,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -70,7 +70,7 @@ function createMapping(settings, stream, skills) {
   };
 }
 
-function RateControl(props) {
+function RateControl(props: any) {
   return (
     <Select
       label={<Trans>Rate control</Trans>}
@@ -90,10 +90,10 @@ function RateControl(props) {
 
 RateControl.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Profile(props) {
+function Profile(props: any) {
   return (
     <Select
       label={<Trans>Profile</Trans>}
@@ -109,15 +109,15 @@ function Profile(props) {
 
 Profile.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Coder(props) {
+function Coder(props: any) {
   const settings = init(props.settings);
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -131,7 +131,7 @@ function Coder(props) {
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -207,7 +207,7 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const coder = "hevc_vaapi";
@@ -216,11 +216,11 @@ const codec = "hevc";
 const type = "video";
 const hwaccel = true;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Profile: ${settings.profile}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

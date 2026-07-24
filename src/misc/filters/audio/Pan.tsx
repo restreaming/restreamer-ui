@@ -10,7 +10,7 @@ import Select from "../../Select";
 // Pan Filter
 // https://ffmpeg.org/ffmpeg-filters.html#pan-1
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     value: "inherit",
     ...initialState,
@@ -19,7 +19,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -39,7 +39,7 @@ function createGraph(settings) {
 }
 
 // filter
-function Pan(props) {
+function Pan(props: any) {
   return (
     <React.Fragment>
       <Select
@@ -66,13 +66,13 @@ function Pan(props) {
 
 Pan.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -82,7 +82,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
     };
@@ -107,7 +107,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, graph, automatic) {},
+  onChange: function (settings: any, graph: any, automatic: any) {},
 };
 
 const filter = "pan";
@@ -115,7 +115,7 @@ const name = "Pan";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name} (${settings.value.replace(/_/i, " ")})`;
 }
 

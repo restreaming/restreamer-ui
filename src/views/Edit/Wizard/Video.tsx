@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -13,7 +12,7 @@ import BoxText from "../../../misc/BoxText";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Video(props) {
+export default function Video(props: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

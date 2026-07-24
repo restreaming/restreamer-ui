@@ -1,4 +1,3 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -14,7 +13,7 @@ import Audio from "../../../misc/coders/settings/Audio";
 import FormInlineButton from "../../../misc/FormInlineButton";
 import SelectCustom from "../../../misc/SelectCustom";
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -31,7 +30,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address = `hw:${settings.device}`;
 
   const input = {
@@ -51,11 +50,11 @@ const createInputs = (settings) => {
   return [input];
 };
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const data = {};
 
     if (["address", "device", "sampling", "channels", "delay"].includes(what)) {
@@ -77,9 +76,9 @@ function Source(props) {
   };
 
   const filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "audio",
+    (device: any) => device.media === "audio",
   );
-  const options = filteredDevices.map((device) => {
+  const options = filteredDevices.map((device: any) => {
     return {
       value: device.id.replace(/^hw:/, ""),
       label: device.name,
@@ -159,12 +158,12 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon {...props} />;
 }
 

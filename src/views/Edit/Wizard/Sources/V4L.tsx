@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 import * as S from "../../Sources/V4L";
 import Select from "../../../../misc/Select";
 
-function initSettings(initialSettings, knownDevices) {
+function initSettings(initialSettings: any, knownDevices: any) {
   const settings = {
     ...S.func.initSettings(initialSettings),
     format: "nv12",
@@ -49,9 +49,9 @@ function initSettings(initialSettings, knownDevices) {
   return settings;
 }
 
-function initDevices(initialDevices) {
+function initDevices(initialDevices: any) {
   const devices = initialDevices.filter(
-    (device) =>
+    (device: any) =>
       device.media === "video" &&
       device.extra.match(/bcm2835[-_]v4l2/) === null,
   );
@@ -59,12 +59,12 @@ function initDevices(initialDevices) {
   return devices;
 }
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings, props.knownDevices);
   const devices = initDevices(props.knownDevices);
 
-  const handleChange = (newSettings = settings) => {
+  const handleChange = (newSettings : any = settings) => {
     newSettings = newSettings || settings;
 
     props.onChange(
@@ -79,7 +79,7 @@ function Source(props) {
     props.onRefresh();
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -94,7 +94,7 @@ function Source(props) {
     handleChange();
   }, []);
 
-  const options = devices.map((device) => {
+  const options = devices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name} ({device.id})
@@ -145,11 +145,11 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (type, settings, inputs, ready) {},
+  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh: function () {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <FontAwesomeIcon icon={faUsb} style={{ color: "#FFF" }} {...props} />;
 }
 

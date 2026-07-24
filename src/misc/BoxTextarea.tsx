@@ -1,8 +1,7 @@
-import React from "react";
 
 import Stack from "@mui/material/Stack";
 
-export default function Component(props) {
+export default function Component(props: any) {
   const { children, sx, ...other } = props;
 
   return (

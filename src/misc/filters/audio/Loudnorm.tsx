@@ -8,7 +8,7 @@ import Checkbox from "../../Checkbox";
 // Loudnorm Filter
 // http://ffmpeg.org/ffmpeg-all.html#loudnorm
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     enabled: false,
     ...initialState,
@@ -17,7 +17,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -29,10 +29,10 @@ function createGraph(settings) {
   return mapping.join(",");
 }
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -42,7 +42,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
     };
@@ -74,7 +74,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, graph, automatic) {},
+  onChange: function (settings: any, graph: any, automatic: any) {},
 };
 
 const filter = "loudnorm";
@@ -82,7 +82,7 @@ const name = "Loudness Normalization";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}`;
 }
 

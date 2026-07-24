@@ -2,7 +2,7 @@ import React from "react";
 
 import Helper from "../../helper";
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     ...initialState,
   };
@@ -10,7 +10,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -23,12 +23,12 @@ function createMapping(settings, stream, skills) {
   return mapping;
 }
 
-function Coder(props) {
+function Coder(props: any) {
   const settings = init(props.settings);
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -53,7 +53,7 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const coder = "h264_mmal";
@@ -62,7 +62,7 @@ const codecs = ["h264"];
 const type = "video";
 const hwaccel = true;
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

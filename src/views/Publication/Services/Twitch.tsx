@@ -1,4 +1,3 @@
-import React from "react";
 
 import { faTwitch } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,13 +35,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faTwitch} style={{ color: "#9147FF" }} {...props} />
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     region: "live",
     key: "",
@@ -52,10 +51,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -65,7 +64,7 @@ function Service(props) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     let region_postfix = ".twitch.tv";
     if (settings.region.includes("live-video.net")) {
       region_postfix = "";
@@ -229,7 +228,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

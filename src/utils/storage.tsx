@@ -31,7 +31,7 @@ const isAvailable = () => {
   }
 };
 
-const Set = (key, value) => {
+const Set = (key: any, value: any) => {
   if (isAvailable() === false) {
     return;
   }
@@ -39,7 +39,7 @@ const Set = (key, value) => {
   window.localStorage.setItem("@@restreamer-ui@@" + key, value);
 };
 
-const Get = (key) => {
+const Get = (key: any) => {
   if (isAvailable() === false) {
     return null;
   }
@@ -47,7 +47,7 @@ const Get = (key) => {
   return window.localStorage.getItem("@@restreamer-ui@@" + key);
 };
 
-const Remove = (key) => {
+const Remove = (key: any) => {
   if (isAvailable() === false) {
     return;
   }

@@ -21,7 +21,7 @@ import StreamSelect from "./StreamSelect";
 
 import FilterSelect from "../../misc/FilterSelect";
 
-export default function Profile(props) {
+export default function Profile(props: any) {
   const [$sources, setSources] = React.useState({
     video: M.initSource("video", props.sources[0]),
     audio: M.initSource("audio", props.sources[1]),
@@ -89,14 +89,14 @@ export default function Profile(props) {
   };
 
   const handleNextStep = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((prevActiveStep: any) => prevActiveStep + 1);
   };
 
   const handleBackStep = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setActiveStep((prevActiveStep: any) => prevActiveStep - 1);
   };
 
-  const handleProbe = async (type, device, settings, inputs) => {
+  const handleProbe = async (type: any, device: any, settings: any, inputs: any) => {
     if (type === "video") {
       setVideoProbe({
         ...$videoProbe,
@@ -118,7 +118,7 @@ export default function Profile(props) {
     return status === "success";
   };
 
-  const handleProbeStreams = (type, device, settings, inputs, res) => {
+  const handleProbeStreams = (type: any, device: any, settings: any, inputs: any, res: any) => {
     const status = M.analyzeStreams(type, res.streams);
 
     if (type === "video") {
@@ -228,11 +228,11 @@ export default function Profile(props) {
     setSkillsRefresh(false);
   };
 
-  const handleStore = async (name, data) => {
+  const handleStore = async (name: any, data: any) => {
     return await props.onStore(name, data);
   };
 
-  const handleEncoding = (type) => (encoder, decoder) => {
+  const handleEncoding = (type: any) => (encoder: any, decoder: any) => {
     const profile = $profile[type];
 
     profile.encoder = encoder;
@@ -244,7 +244,7 @@ export default function Profile(props) {
     });
   };
 
-  const handleFilter = (type) => (filter) => {
+  const handleFilter = (type: any) => (filter: any) => {
     const profile = $profile[type];
 
     profile.filter = filter;
@@ -266,7 +266,7 @@ export default function Profile(props) {
     props.onAbort();
   };
 
-  const handleProbeLogModal = (type) => (event) => {
+  const handleProbeLogModal = (type: any) => (event: any) => {
     event.preventDefault();
 
     if (type === "video") {
@@ -290,7 +290,7 @@ export default function Profile(props) {
     }
   };
 
-  const handleSourceChange = (type, source) => {
+  const handleSourceChange = (type: any, source: any) => {
     const profile = $profile[type];
     const custom = $profile.custom;
 
@@ -343,7 +343,7 @@ export default function Profile(props) {
     });
   };
 
-  const handleSourceSettingsChange = (type, source, settings) => {
+  const handleSourceSettingsChange = (type: any, source: any, settings: any) => {
     if (type === "video") {
       setVideoProbe({
         ...$videoProbe,
@@ -357,7 +357,7 @@ export default function Profile(props) {
     }
   };
 
-  const handleStreamSelect = (type, what) => (stream) => {
+  const handleStreamSelect = (type: any, what: any) => (stream: any) => {
     const profile = $profile;
 
     profile[type].stream = stream;
@@ -372,7 +372,7 @@ export default function Profile(props) {
     });
   };
 
-  const handleHintModal = (type, streams) => (event) => {
+  const handleHintModal = (type: any, streams: any) => (event: any) => {
     if (event) {
       event.preventDefault();
     }
@@ -442,7 +442,7 @@ export default function Profile(props) {
     }
   };
 
-  const handleHintChange = (streams) => {
+  const handleHintChange = (streams: any) => {
     setHintModal({
       ...$hintModal,
       streams: streams,
@@ -862,16 +862,16 @@ Profile.defaultProps = {
   profile: {},
   config: {},
   startWith: "",
-  onDone: function (sources, profile) {},
+  onDone: function (sources: any, profile: any) {},
   onAbort: function () {},
-  onProbe: function (inputs) {
+  onProbe: function (inputs: any) {
     return {
       streams: [],
       log: ["onProbe function not provided for this component"],
     };
   },
   onRefresh: function () {},
-  onStore: function (name, data) {
+  onStore: function (name: any, data: any) {
     return "";
   },
 };

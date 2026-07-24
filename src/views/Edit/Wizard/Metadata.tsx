@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -11,7 +10,7 @@ import MetadataControl from "../../../misc/controls/Metadata";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Metadata(props) {
+export default function Metadata(props: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -72,6 +71,6 @@ Metadata.defaultProps = {
   onHelp: () => {},
   onBack: () => {},
   onNext: () => {},
-  onChange: (metadata) => {},
+  onChange: (metadata: any) => {},
   metadata: {},
 };

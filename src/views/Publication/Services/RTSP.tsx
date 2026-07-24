@@ -1,4 +1,3 @@
-import React from "react";
 import urlparser from "url-parse";
 
 import { faTools } from "@fortawesome/free-solid-svg-icons";
@@ -63,13 +62,13 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon icon={faTools} style={{ color: "#39B54A" }} {...props} />
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     protocol: "rtsp://",
     address: "",
@@ -92,10 +91,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -109,7 +108,7 @@ function Service(props) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const options = ["-f", "rtsp"];
 
     for (const key in settings.options) {
@@ -318,7 +317,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

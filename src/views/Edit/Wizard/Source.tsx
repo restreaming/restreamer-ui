@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -9,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Source(props) {
+export default function Source(props: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

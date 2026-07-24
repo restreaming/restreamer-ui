@@ -1,8 +1,7 @@
-import React from "react";
 
 import Grid from "@mui/material/Grid";
 
-const Component = function (props) {
+const Component = function (props: any) {
   const { children, spacing, textAlign } = props;
 
   return (

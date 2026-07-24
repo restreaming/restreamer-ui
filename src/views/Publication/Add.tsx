@@ -47,7 +47,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.buttonAbort}`]: {
     marginBottom: "0.3em",
   },
@@ -62,7 +62,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Add(props) {
+export default function Add(props: any) {
   const theme = useTheme();
   const breakpointUpSm = useMediaQuery(theme.breakpoints.up("sm"));
 
@@ -135,7 +135,7 @@ export default function Add(props) {
     setReady(true);
   };
 
-  const handleFilterChange = (event, value) => {
+  const handleFilterChange = (event: any, value: any) => {
     if (!value) {
       return;
     }
@@ -143,7 +143,7 @@ export default function Add(props) {
     setFilter(value);
   };
 
-  const handleServiceSelect = (service) => () => {
+  const handleServiceSelect = (service: any) => () => {
     if (service.length !== 0) {
       const s = Services.Get(service);
       if (s === null) {
@@ -187,7 +187,7 @@ export default function Add(props) {
     setService(service);
   };
 
-  const handleServiceChange = (outputs, settings) => {
+  const handleServiceChange = (outputs: any, settings: any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -199,7 +199,7 @@ export default function Add(props) {
     });
   };
 
-  const handleProcessing = (type) => (encoder, decoder) => {
+  const handleProcessing = (type: any) => (encoder: any, decoder: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].encoder = encoder;
@@ -233,7 +233,7 @@ export default function Add(props) {
     });
   };
 
-  const handleProcessingFilter = (type) => (filter) => {
+  const handleProcessingFilter = (type: any) => (filter: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -299,7 +299,7 @@ export default function Add(props) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleServiceName = (event) => {
+  const handleServiceName = (event: any) => {
     const name = event.target.value;
 
     setSettings({
@@ -308,7 +308,7 @@ export default function Add(props) {
     });
   };
 
-  const handleControlChange = (what) => (control) => {
+  const handleControlChange = (what: any) => (control: any) => {
     setSettings({
       ...$settings,
       control: {
@@ -322,7 +322,7 @@ export default function Add(props) {
     navigate(`/${_channelid}`);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 

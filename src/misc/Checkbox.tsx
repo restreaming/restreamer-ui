@@ -1,9 +1,8 @@
-import React from "react";
 
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-export default function Component(props) {
+export default function Component(props: any) {
   return (
     <FormControlLabel
       control={
@@ -31,5 +30,5 @@ Component.defaultProps = {
   label: "",
   checked: false,
   disabled: false,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };

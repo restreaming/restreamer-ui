@@ -10,7 +10,7 @@ import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 import Select from "../../../misc/Select";
 
-export default function VideoProfile(props) {
+export default function VideoProfile(props: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader

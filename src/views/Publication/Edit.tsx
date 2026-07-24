@@ -48,7 +48,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.gridContainer}`]: {
     marginTop: "0.5em",
     marginBottom: "1em",
@@ -60,7 +60,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Edit(props) {
+export default function Edit(props: any) {
   const { i18n } = useLingui();
   const {
     channelid: _channelid,
@@ -119,7 +119,7 @@ export default function Edit(props) {
     }
   }, [navigate, $invalid]);
 
-  const update = async (isFirst) => {
+  const update = async (isFirst: any) => {
     const channelid = props.restreamer.SelectChannel(_channelid);
     if (channelid === "" || channelid !== _channelid) {
       setInvalid("/");
@@ -211,7 +211,7 @@ export default function Edit(props) {
     }
   };
 
-  const handleServiceAction = async (action) => {
+  const handleServiceAction = async (action: any) => {
     let state = "disconnected";
 
     if (action === "connect") {
@@ -232,7 +232,7 @@ export default function Edit(props) {
     });
   };
 
-  const handleServiceChange = (outputs, settings) => {
+  const handleServiceChange = (outputs: any, settings: any) => {
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
     }
@@ -246,7 +246,7 @@ export default function Edit(props) {
     setUnsavedChanges(true);
   };
 
-  const handleEncoding = (type) => (encoder, decoder, automatic) => {
+  const handleEncoding = (type: any) => (encoder: any, decoder: any, automatic: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].encoder = encoder;
@@ -277,7 +277,7 @@ export default function Edit(props) {
     }
   };
 
-  const handleFilter = (type) => (filter, automatic) => {
+  const handleFilter = (type: any) => (filter: any, automatic: any) => {
     const profiles = $settings.profiles;
 
     profiles[0][type].filter = filter;
@@ -344,7 +344,7 @@ export default function Edit(props) {
     setUnsavedChanges(false);
   };
 
-  const handleServiceName = (event) => {
+  const handleServiceName = (event: any) => {
     const name = event.target.value;
 
     setSettings({
@@ -355,7 +355,7 @@ export default function Edit(props) {
     setUnsavedChanges(true);
   };
 
-  const handleControlChange = (what) => (control, automatic) => {
+  const handleControlChange = (what: any) => (control: any, automatic: any) => {
     setSettings({
       ...$settings,
       control: {
@@ -404,11 +404,11 @@ export default function Edit(props) {
     navigate(`/${_channelid}/`);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic: any) => () => {
     if (!topic) {
       H("publication-" + $tab);
       return;
@@ -417,7 +417,7 @@ export default function Edit(props) {
     H(topic);
   };
 
-  const handleProcessDetails = async (event) => {
+  const handleProcessDetails = async (event: any) => {
     event.preventDefault();
 
     const open = !$processDetails.open;
@@ -457,7 +457,7 @@ export default function Edit(props) {
     }
   };
 
-  const handleProcessDebug = async (event) => {
+  const handleProcessDebug = async (event: any) => {
     event.preventDefault();
 
     const show = !$processDebug.open;

@@ -1,4 +1,3 @@
-import React from "react";
 import Grid from "@mui/material/Grid";
 import { createPlayer, videoFeatures, Poster } from "@videojs/react";
 import { VideoSkin } from "@videojs/react/video";
@@ -10,7 +9,7 @@ import "./video-js-skin-public.css";
 
 const Player = createPlayer({ features: videoFeatures });
 
-export default function VideoJS(props) {
+export default function VideoJS(props: any) {
   const { options, type, logo } = props;
 
   // In videojs v10, sources is usually passed to the video element src prop

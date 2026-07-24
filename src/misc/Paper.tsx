@@ -14,7 +14,7 @@ interface PaperProps {
   children?: ReactNode;
 }
 
-const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
+const Component = React.forwardRef<HTMLDivElement, PaperProps>((props: any, ref: any) => {
   const variant = props.className?.toLowerCase();
   const paperSx =
     variant === "paperm"

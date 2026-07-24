@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import SelectCustom from "../../../misc/SelectCustom";
 
-function Bitrate(props) {
+function Bitrate(props: any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: "256", label: "256 kbit/s" },
@@ -50,10 +50,10 @@ Bitrate.defaultProps = {
   variant: "outlined",
   label: <Trans>Bitrate</Trans>,
   customLabel: <Trans>Custom bitrate (kbit/s)</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Layout(props) {
+function Layout(props: any) {
   const { i18n } = useLingui();
   const options = [
     { value: "mono", label: "mono" },
@@ -140,7 +140,7 @@ Layout.defaultProps = {
   onChange: function () {},
 };
 
-function Sampling(props) {
+function Sampling(props: any) {
   const { i18n } = useLingui();
   const options = [
     { value: "96000", label: "96000 Hz" },

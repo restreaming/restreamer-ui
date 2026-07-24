@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
@@ -10,14 +9,14 @@ import * as Filters from "./filters";
 // Import all encoders (audio/video)
 import * as Encoders from "./coders/Encoders";
 
-export default function FilterSelect(props) {
+export default function FilterSelect(props: any) {
   const profile = props.profile;
 
   // handleFilterChange
   // what: Filter name
   // settings (component settings):  {Key: Value}
   // mapping (FFmpeg -af/-vf args): ['String', ...]
-  const handleFilterSettingsChange = (what) => (settings, graph, automatic) => {
+  const handleFilterSettingsChange = (what: any) => (settings: any, graph: any, automatic: any) => {
     const filter = profile.filter;
 
     // Store mapping/settings per component
@@ -67,7 +66,7 @@ export default function FilterSelect(props) {
     encoderRegistry
       .List()
       .some(
-        (encoder) =>
+        (encoder: any) =>
           encoder.codec === props.profile.encoder.coder && encoder.hwaccel,
       );
 
@@ -132,5 +131,5 @@ FilterSelect.defaultProps = {
   type: "",
   profile: {},
   availableFilters: [],
-  onChange: function (filter, automatic) {},
+  onChange: function (filter: any, automatic: any) {},
 };

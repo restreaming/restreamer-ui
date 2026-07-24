@@ -5,7 +5,7 @@ import Chip from "@mui/material/Chip";
 import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 
-const HtmlTooltip = styled(Tooltip)(({ theme }) => ({
+const HtmlTooltip = styled(Tooltip)(({ theme }: any) => ({
   "& .MuiTooltip-tooltip": {
     backgroundColor: theme.palette.error.main,
     color: theme.palette.text.primary,
@@ -17,7 +17,7 @@ const HtmlTooltip = styled(Tooltip)(({ theme }) => ({
   },
 }));
 
-export default function Component(props) {
+export default function Component(props: any) {
   return (
     <HtmlTooltip
       title={

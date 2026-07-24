@@ -11,7 +11,7 @@ import * as Filters from "../../misc/filters";
 import BoxText from "../../misc/BoxText";
 import Sources from "./Sources";
 
-export default function Summary(props) {
+export default function Summary(props: any) {
   const { i18n } = useLingui();
   const sources = props.sources;
   const profile = props.profile;

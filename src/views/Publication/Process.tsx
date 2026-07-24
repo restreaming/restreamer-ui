@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
@@ -9,7 +8,7 @@ import BoxText from "../../misc/BoxText";
 import Duration from "../../misc/Duration";
 import Progress from "../../misc/Progress";
 
-function init(progress) {
+function init(progress: any) {
   const initProgress = {
     state: "disconnected",
     reconnect: -1,
@@ -24,10 +23,10 @@ function init(progress) {
   return initProgress;
 }
 
-export default function Process(props) {
+export default function Process(props: any) {
   const progress = init(props.progress);
 
-  const handleAction = (action) => () => {
+  const handleAction = (action: any) => () => {
     props.onAction(action);
   };
 

@@ -9,7 +9,7 @@ import Select from "../../Select";
 // Transpose Filter
 // http://ffmpeg.org/ffmpeg-all.html#transpose-1
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     value: "none",
     ...initialState,
@@ -18,7 +18,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -44,7 +44,7 @@ function createGraph(settings) {
 }
 
 // filter
-function Rotate(props) {
+function Rotate(props: any) {
   return (
     <Select
       label={<Trans>Rotate</Trans>}
@@ -61,13 +61,13 @@ function Rotate(props) {
 
 Rotate.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -77,7 +77,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -99,7 +99,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const filter = "transpose";
@@ -107,7 +107,7 @@ const name = "Transpose";
 const type = "video";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name} (${settings.value}° clockwise)`;
 }
 

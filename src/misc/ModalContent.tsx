@@ -21,7 +21,7 @@ interface ModalContentProps {
 }
 
 const Component = React.forwardRef<HTMLDivElement, ModalContentProps>(
-  (props, ref) => {
+  (props: any, ref: any) => {
     const { title, onClose, onHelp, ...other } = props;
 
     return (

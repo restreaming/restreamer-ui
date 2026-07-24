@@ -1,8 +1,7 @@
-import React from "react";
 
 import Button from "@mui/material/Button";
 
-export default function Component(props) {
+export default function Component(props: any) {
   return (
     <Button
       variant="outlined"

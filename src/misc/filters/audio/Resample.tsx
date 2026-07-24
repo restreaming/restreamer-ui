@@ -11,7 +11,7 @@ import SelectCustom from "../../../misc/SelectCustom";
 // Resample Filter
 // https://ffmpeg.org/ffmpeg-filters.html#toc-aresample-1
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     channels: "2",
     layout: "stereo",
@@ -22,7 +22,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -45,7 +45,7 @@ function createGraph(settings) {
   return "aresample=" + mapping.join(":");
 }
 
-function Layout(props) {
+function Layout(props: any) {
   const { i18n } = useLingui();
   const options = [
     { value: "mono", label: "mono" },
@@ -92,7 +92,7 @@ Layout.defaultProps = {
   onChange: function () {},
 };
 
-function Sampling(props) {
+function Sampling(props: any) {
   const { i18n } = useLingui();
   const options = [
     { value: "96000", label: "96000 Hz" },
@@ -143,10 +143,10 @@ Sampling.defaultProps = {
   onChange: function () {},
 };
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -156,7 +156,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
 
     const newSettings = {
@@ -211,7 +211,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, graph, automatic) {},
+  onChange: function (settings: any, graph: any, automatic: any) {},
 };
 
 const filter = "aresample";
@@ -219,7 +219,7 @@ const name = "Resample";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name} (${settings.layout}, ${settings.sampling}Hz)`;
 }
 

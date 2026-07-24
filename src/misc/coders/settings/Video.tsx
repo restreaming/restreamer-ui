@@ -1,4 +1,3 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -8,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "../../../misc/Select";
 import SelectCustom from "../../../misc/SelectCustom";
 
-function Bitrate(props) {
+function Bitrate(props: any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: "32768", label: "32768 kbit/s" },
@@ -51,10 +50,10 @@ Bitrate.defaultProps = {
   variant: "outlined",
   label: <Trans>Bitrate</Trans>,
   customLabel: <Trans>Custom bitrate (kbit/s)</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function GOP(props) {
+function GOP(props: any) {
   const { i18n } = useLingui();
   const bitrates = [
     { value: "1", label: "1" },
@@ -90,10 +89,10 @@ GOP.defaultProps = {
   variant: "outlined",
   label: <Trans>Keyframe interval (seconds)</Trans>,
   customLabel: <Trans>Custom keyframe interval</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Framerate(props) {
+function Framerate(props: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "60", label: "60" },
@@ -135,10 +134,10 @@ Framerate.defaultProps = {
   variant: "outlined",
   label: <Trans>Framerate</Trans>,
   customLabel: <Trans>Custom framerate</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Profile(props) {
+function Profile(props: any) {
   return (
     <Select
       label={<Trans>Profile</Trans>}
@@ -155,11 +154,11 @@ function Profile(props) {
 
 Profile.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
 // https://en.wikipedia.org/wiki/Graphics_display_resolution
-function Size(props) {
+function Size(props: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "7680x4320", label: "7680x4320 (8K UHD)" },
@@ -205,10 +204,10 @@ Size.defaultProps = {
   variant: "outlined",
   label: <Trans>Size</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Height(props) {
+function Height(props: any) {
   const { i18n } = useLingui();
   const height = [
     { value: "4320", label: "4320" },
@@ -247,10 +246,10 @@ Height.defaultProps = {
   variant: "outlined",
   label: <Trans>Height</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Width(props) {
+function Width(props: any) {
   const { i18n } = useLingui();
   const width = [
     { value: "7680", label: "7680" },
@@ -290,10 +289,10 @@ Width.defaultProps = {
   variant: "outlined",
   label: <Trans>Width</Trans>,
   customLabel: <Trans>Custom size</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Format(props) {
+function Format(props: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "yuv420p", label: "yuv420p" },
@@ -329,10 +328,10 @@ Format.defaultProps = {
   variant: "outlined",
   label: <Trans>Format</Trans>,
   customLabel: <Trans>Custom format</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function PixFormat(props) {
+function PixFormat(props: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "yuv420p", label: "yuv420p" },
@@ -366,10 +365,10 @@ PixFormat.defaultProps = {
   variant: "outlined",
   label: <Trans>Pixel Format</Trans>,
   customLabel: <Trans>Custom format</Trans>,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function FpsMode(props) {
+function FpsMode(props: any) {
   return (
     <Select
       label={<Trans>Framerate mode</Trans>}
@@ -394,7 +393,7 @@ function FpsMode(props) {
 
 FpsMode.defaultProps = {
   value: "",
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
 export default {

@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
@@ -34,11 +33,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="Trovo Logo" {...props} />;
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     key: "",
     ...settings,
@@ -47,10 +46,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -60,7 +59,7 @@ function Service(props) {
     props.onChange([output], settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const output = {
       address: "rtmp://livepush.trovo.live/live/" + settings.key,
       options: ["-f", "flv"],
@@ -104,7 +103,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

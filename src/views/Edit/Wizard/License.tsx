@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Button from "@mui/material/Button";
@@ -11,7 +10,7 @@ import LicenseControl from "../../../misc/controls/License";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function License(props) {
+export default function License(props: any) {
   return (
     <Paper xs={12} sm={9} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
@@ -70,6 +69,6 @@ License.defaultProps = {
   onHelp: () => {},
   onBack: () => {},
   onNext: () => {},
-  onChange: (license) => {},
+  onChange: (license: any) => {},
   license: "",
 };

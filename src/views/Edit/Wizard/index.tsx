@@ -29,7 +29,7 @@ import Probe from "./Probe";
 import License from "./License";
 import Metadata from "./Metadata";
 
-export default function Wizard(props) {
+export default function Wizard(props: any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
@@ -97,7 +97,7 @@ export default function Wizard(props) {
     setSkills(skills);
   };
 
-  const probe = async (type, source) => {
+  const probe = async (type: any, source: any) => {
     setProbe({
       ...$probe,
       probing: true,
@@ -242,7 +242,7 @@ export default function Wizard(props) {
     navigate(`/${_channelid}/edit`);
   };
 
-  const handleHelp = (what) => () => {
+  const handleHelp = (what: any) => () => {
     H("wizard-" + what);
   };
 
@@ -254,7 +254,7 @@ export default function Wizard(props) {
   let handleBack = null;
 
   if ($step === "TYPE") {
-    handleNext = (sourceid) => () => {
+    handleNext = (sourceid: any) => () => {
       setSourceid(sourceid);
       setStep("VIDEO SETTINGS");
     };
@@ -343,7 +343,7 @@ export default function Wizard(props) {
       setStep("TYPE");
     };
 
-    const handleChange = (type, settings, inputs, ready) => {
+    const handleChange = (type: any, settings: any, inputs: any, ready: any) => {
       const source = $sources.video;
 
       source.type = type;
@@ -465,7 +465,7 @@ export default function Wizard(props) {
       setStep("VIDEO SETTINGS");
     };
 
-    const handleStreamChange = (event) => {
+    const handleStreamChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -477,7 +477,7 @@ export default function Wizard(props) {
       });
     };
 
-    const handleEncoderChange = (event) => {
+    const handleEncoderChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -489,7 +489,7 @@ export default function Wizard(props) {
       });
     };
 
-    const handleDecoderChange = (event) => {
+    const handleDecoderChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.video;
@@ -501,7 +501,7 @@ export default function Wizard(props) {
       });
     };
 
-    const isCompatible = (stream) => {
+    const isCompatible = (stream: any) => {
       if (stream.codec === "h264") {
         return true;
       }
@@ -608,7 +608,7 @@ export default function Wizard(props) {
       setStep("VIDEO RESULT");
     };
 
-    const handleAudioStreamChange = (event) => {
+    const handleAudioStreamChange = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -620,7 +620,7 @@ export default function Wizard(props) {
       });
     };
 
-    const handleAudioDeviceChange = (event) => {
+    const handleAudioDeviceChange = (event: any) => {
       const value = event.target.value;
 
       const source = $sources.audio;
@@ -633,7 +633,7 @@ export default function Wizard(props) {
       });
     };
 
-    const handleStream = (event) => {
+    const handleStream = (event: any) => {
       const value = event.target.value;
 
       const profile = $profile.audio;
@@ -812,7 +812,7 @@ export default function Wizard(props) {
       setStep("META");
     };
 
-    const isCompatible = (stream) => {
+    const isCompatible = (stream: any) => {
       if (stream.codec === "aac" || stream.codec === "mp3") {
         return true;
       }
@@ -832,7 +832,7 @@ export default function Wizard(props) {
       setStep("AUDIO SETTINGS");
     };
 
-    const handleMetadataChange = (settings) => {
+    const handleMetadataChange = (settings: any) => {
       setData({
         ...$data,
         meta: settings,
@@ -866,7 +866,7 @@ export default function Wizard(props) {
       setStep("META");
     };
 
-    const handleLicenseChange = (license) => {
+    const handleLicenseChange = (license: any) => {
       setData({
         ...$data,
         license: license,

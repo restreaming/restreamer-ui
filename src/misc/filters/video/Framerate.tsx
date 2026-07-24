@@ -11,7 +11,7 @@ import SelectCustom from "../../SelectCustom";
 // Framerate Filter
 // http://ffmpeg.org/ffmpeg-all.html#framerate
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     enabled: false,
     fps: "30",
@@ -21,7 +21,7 @@ function init(initialState) {
   return state;
 }
 
-function createGraph(settings) {
+function createGraph(settings: any) {
   settings = init(settings);
 
   const mapping = [];
@@ -33,7 +33,7 @@ function createGraph(settings) {
   return mapping.join(",");
 }
 
-function Framerate(props) {
+function Framerate(props: any) {
   const { i18n } = useLingui();
   const sizes = [
     { value: "60", label: "60" },
@@ -68,13 +68,13 @@ Framerate.defaultProps = {
   value: "",
   variant: "outlined",
   allowCustom: true,
-  onChange: function (event) {},
+  onChange: function (event: any) {},
 };
 
-function Filter(props) {
+function Filter(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -84,7 +84,7 @@ function Filter(props) {
     props.onChange(newSettings, createGraph(newSettings), automatic);
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
     };
@@ -126,7 +126,7 @@ function Filter(props) {
 
 Filter.defaultProps = {
   settings: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const filter = "fps";
@@ -134,7 +134,7 @@ const name = "Frame Interpolation";
 const type = "video";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name} (${settings.fps}fps)`;
 }
 

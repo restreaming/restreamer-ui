@@ -11,7 +11,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 
 import CopyToClipboard from "../utils/clipboard";
 
-export default function Component(props) {
+export default function Component(props: any) {
   const { i18n } = useLingui();
 
   const notify = useContext(NotifyContext);
@@ -72,5 +72,5 @@ Component.defaultProps = {
   readOnly: true,
   allowCopy: true,
   size: "small",
-  onChange: function (value) {},
+  onChange: function (value: any) {},
 };

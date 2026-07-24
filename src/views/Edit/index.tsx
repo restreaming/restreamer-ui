@@ -49,7 +49,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.wizardButtonElement}`]: {
     display: "flex",
     alignItems: "flex-start",
@@ -69,7 +69,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Edit(props) {
+export default function Edit(props: any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { channelid: _channelid, tab: _tab } = useParams();
@@ -147,11 +147,11 @@ export default function Edit(props) {
     setReady(true);
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
-  const handleSourceEditDialog = (target) => (what) => {
+  const handleSourceEditDialog = (target: any) => (what: any) => {
     if ($process.order === "start") {
       setEditDialog({
         ...$editDialog,
@@ -209,7 +209,7 @@ export default function Edit(props) {
     }
   };
 
-  const handleSourceEdit = (what) => {
+  const handleSourceEdit = (what: any) => {
     setState({
       ...$state,
       editing: true,
@@ -224,11 +224,11 @@ export default function Edit(props) {
     setSkills(skills);
   };
 
-  const handleSourceStore = async (name, data) => {
+  const handleSourceStore = async (name: any, data: any) => {
     return await props.restreamer.UploadData("", name, data);
   };
 
-  const handleSourceProbe = async (inputs) => {
+  const handleSourceProbe = async (inputs: any) => {
     let [res, err] = await props.restreamer.Probe(_channelid, inputs);
     if (err !== null) {
       res = {
@@ -240,7 +240,7 @@ export default function Edit(props) {
     return res;
   };
 
-  const handleSourceDone = (sources, profile) => {
+  const handleSourceDone = (sources: any, profile: any) => {
     const complete = M.validateProfile(sources, profile);
 
     let streams = [];
@@ -273,7 +273,7 @@ export default function Edit(props) {
     navigate(`/${_channelid}/edit/wizard`);
   };
 
-  const handleControlChange = (what) => (settings) => {
+  const handleControlChange = (what: any) => (settings: any) => {
     const control = {
       ...$data.control,
       [what]: settings,
@@ -285,14 +285,14 @@ export default function Edit(props) {
     });
   };
 
-  const handleMetadataChange = (settings) => {
+  const handleMetadataChange = (settings: any) => {
     setData({
       ...$data,
       meta: settings,
     });
   };
 
-  const handleLicenseChange = (license) => {
+  const handleLicenseChange = (license: any) => {
     setData({
       ...$data,
       license: license,

@@ -18,7 +18,7 @@ import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 import Select from "../../../misc/Select";
 
-export default function Audio(props) {
+export default function Audio(props: any) {
   const { i18n } = useLingui();
 
   return (

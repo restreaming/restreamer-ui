@@ -8,7 +8,7 @@ import FileCopyIcon from "@mui/icons-material/FileCopy";
 import CopyToClipboard from "../utils/clipboard";
 import NotifyContext from "../contexts/Notify";
 
-export default function CopyButton(props) {
+export default function CopyButton(props: any) {
   const notify = useContext(NotifyContext);
   const { i18n } = useLingui();
   const { children, value, ...other } = props;

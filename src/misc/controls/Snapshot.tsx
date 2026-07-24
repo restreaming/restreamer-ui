@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import Checkbox from "../Checkbox";
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     enable: true,
     interval: 60,
@@ -17,7 +17,7 @@ function init(settings) {
   return initSettings;
 }
 
-export default function Control(props) {
+export default function Control(props: any) {
   const settings = init(props.settings);
 
   // Set the defaults
@@ -25,7 +25,7 @@ export default function Control(props) {
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (["enable"].includes(what)) {
@@ -72,5 +72,5 @@ export default function Control(props) {
 
 Control.defaulProps = {
   settings: {},
-  onChange: function (settings, automatic) {},
+  onChange: function (settings: any, automatic: any) {},
 };

@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Divider from "@mui/material/Divider";
@@ -10,7 +9,7 @@ import ModalContent from "../ModalContent";
 import Progress from "../Progress";
 import Textarea from "../Textarea";
 
-const initLogdata = (logdata) => {
+const initLogdata = (logdata: any) => {
   if (!logdata) {
     logdata = {};
   }
@@ -72,7 +71,7 @@ const initLogdata = (logdata) => {
 // 	});
 // }
 
-const formatLogline = (entry) => {
+const formatLogline = (entry: any) => {
   let line = new Date(entry[0] * 1000).toISOString() + " ";
 
   const matches = entry[1].match(/^\[([0-9A-Za-z]+) @ 0x[0-9a-f]+\]/i);
@@ -90,7 +89,7 @@ const formatLogline = (entry) => {
   return line;
 };
 
-const Component = function (props) {
+const Component = function (props: any) {
   const logdata = initLogdata({
     ...props.logdata,
     command: props.progress?.command,

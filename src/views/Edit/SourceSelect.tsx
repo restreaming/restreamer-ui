@@ -9,7 +9,7 @@ import { Trans } from "@lingui/react/macro";
 
 import Sources from "./Sources";
 
-function initConfig(initialConfig) {
+function initConfig(initialConfig: any) {
   let config = {};
 
   for (const s of Sources.List()) {
@@ -24,7 +24,7 @@ function initConfig(initialConfig) {
   return config;
 }
 
-function init(source) {
+function init(source: any) {
   const settings = {};
 
   for (const id of Sources.IDs()) {
@@ -36,7 +36,7 @@ function init(source) {
   return settings;
 }
 
-function reducer(settings, data) {
+function reducer(settings: any, data: any) {
   const newSettings = {
     ...settings,
     ...data,
@@ -45,7 +45,7 @@ function reducer(settings, data) {
   return newSettings;
 }
 
-export default function SourceSelect(props) {
+export default function SourceSelect(props: any) {
   // $source holds the currently selected device. It is initialized with the
   // last stored source.
   const [$source, setSource] = React.useState(props.source.type);
@@ -61,7 +61,7 @@ export default function SourceSelect(props) {
 
   const config = initConfig(props.config);
 
-  const handleSource = (source) => {
+  const handleSource = (source: any) => {
     props.onChange(props.type);
     setSource(source);
 
@@ -72,15 +72,15 @@ export default function SourceSelect(props) {
     await props.onRefresh();
   };
 
-  const handleStore = async (name, data) => {
+  const handleStore = async (name: any, data: any) => {
     return await props.onStore(name, data);
   };
 
-  const handleProbe = async (settings, inputs) => {
+  const handleProbe = async (settings: any, inputs: any) => {
     await props.onProbe(props.type, $source, settings, inputs);
   };
 
-  const handleChange = (source) => (settings) => {
+  const handleChange = (source: any) => (settings: any) => {
     setSettings({
       ...$settings,
       [source]: settings,
@@ -132,15 +132,15 @@ SourceSelect.defaultProps = {
   skills: {},
   source: {},
   config: {},
-  onProbe: function (type, device, settings, inputs) {},
-  onSelect: function (type, device) {},
-  onChange: function (type, device, settings) {},
+  onProbe: function (type: any, device: any, settings: any, inputs: any) {},
+  onSelect: function (type: any, device: any) {},
+  onChange: function (type: any, device: any, settings: any) {},
   onRefresh: function () {},
-  onStore: function (name, data) {},
+  onStore: function (name: any, data: any) {},
 };
 
-function Select(props) {
-  const handleSource = (source) => () => {
+function Select(props: any) {
+  const handleSource = (source: any) => () => {
     props.onSelect(source);
   };
 
@@ -205,5 +205,5 @@ Select.defaultProps = {
   selected: "",
   ffversion: "0.0.0",
   availableSources: {},
-  onSelect: function (source) {},
+  onSelect: function (source: any) {},
 };

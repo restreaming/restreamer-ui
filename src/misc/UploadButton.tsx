@@ -1,14 +1,13 @@
-import React from "react";
 
 import FormInlineButton from "./FormInlineButton";
 
-export default function UploadButton(props) {
+export default function UploadButton(props: any) {
   const { acceptTypes, label, onError, onStart, onUpload, ...other } = props;
 
-  const accept = props.acceptTypes.map((t) => t.mimetype);
+  const accept = props.acceptTypes.map((t: any) => t.mimetype);
 
-  const handleUpload = (event) => {
-    const handler = (event) => {
+  const handleUpload = (event: any) => {
+    const handler = (event: any) => {
       const files = event.target.files;
 
       if (files.length === 0) {
@@ -63,7 +62,7 @@ export default function UploadButton(props) {
           // reading the file failed
           props.onError({
             type: "read",
-            message: reader.error.message,
+            message: reader.error?.message ?? "Unable to read the file",
           });
           return;
         }
@@ -98,5 +97,5 @@ UploadButton.defaultProps = {
   label: "",
   acceptTypes: [],
   onError: function () {},
-  onUpload: function (data, extension) {},
+  onUpload: function (data: any, extension: any) {},
 };

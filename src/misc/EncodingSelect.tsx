@@ -13,7 +13,7 @@ import * as Decoders from "./coders/Decoders";
 import Select from "./Select";
 import H from "../utils/help";
 
-export default function EncodingSelect(props) {
+export default function EncodingSelect(props: any) {
   const { i18n } = useLingui();
 
   const profile = props.profile;
@@ -24,7 +24,7 @@ export default function EncodingSelect(props) {
   const availableDecoders =
     props.type === "video" ? props.skills.decoders.video : [];
 
-  const handleDecoderChange = (event) => {
+  const handleDecoderChange = (event: any) => {
     const decoder = profile.decoder;
     const stream = props.streams[profile.stream];
     decoder.coder = event.target.value;
@@ -44,7 +44,7 @@ export default function EncodingSelect(props) {
     props.onChange(profile.encoder, decoder, false);
   };
 
-  const handleDecoderSettingsChange = (settings, mapping, automatic) => {
+  const handleDecoderSettingsChange = (settings: any, mapping: any, automatic: any) => {
     const decoder = profile.decoder;
 
     decoder.settings = settings;
@@ -53,7 +53,7 @@ export default function EncodingSelect(props) {
     props.onChange(profile.encoder, decoder, automatic);
   };
 
-  const handleEncoderChange = (event) => {
+  const handleEncoderChange = (event: any) => {
     const encoder = profile.encoder;
     const stream = props.streams[profile.stream];
     encoder.coder = event.target.value;
@@ -73,7 +73,7 @@ export default function EncodingSelect(props) {
     props.onChange(encoder, profile.decoder, false);
   };
 
-  const handleEncoderSettingsChange = (settings, mapping, automatic) => {
+  const handleEncoderSettingsChange = (settings: any, mapping: any, automatic: any) => {
     const encoder = profile.encoder;
 
     encoder.settings = settings;
@@ -82,7 +82,7 @@ export default function EncodingSelect(props) {
     props.onChange(encoder, profile.decoder, automatic);
   };
 
-  const handleEncoderHelp = (topic) => (event) => {
+  const handleEncoderHelp = (topic: any) => (event: any) => {
     event.preventDefault();
     H("encoder-" + topic);
   };
@@ -263,5 +263,5 @@ EncodingSelect.defaultProps = {
   profile: {},
   codecs: [],
   skills: {},
-  onChange: function (encoder, decoder, automatic) {},
+  onChange: function (encoder: any, decoder: any, automatic: any) {},
 };

@@ -1,10 +1,9 @@
-import React from "react";
 
 import Box from "@mui/material/Box";
 
 import company_logo from "./images/logo.svg";
 
-export default function Logo(props) {
+export default function Logo(props: any) {
   const link = "https://datarhei.com";
 
   return (

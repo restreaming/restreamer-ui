@@ -13,7 +13,7 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import Select from "../../../misc/Select";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -35,7 +35,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const inputs = [];
 
   let address = "";
@@ -85,11 +85,11 @@ const createInputs = (settings) => {
   return inputs;
 };
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     props.onChange({
@@ -253,11 +253,11 @@ function Source(props) {
 
 Source.defaultProps = {
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

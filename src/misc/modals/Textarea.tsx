@@ -1,4 +1,3 @@
-import React from "react";
 
 import Grid from "@mui/material/Grid";
 import Modal from "@mui/material/Modal";
@@ -7,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import ModalContent from "../ModalContent";
 import Textarea from "../Textarea";
 
-const Component = function (props) {
+const Component = function (props: any) {
   const { open, title, onClose, onHelp, children, sx, ...other } = props;
 
   return (

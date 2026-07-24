@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Video from "../../settings/Video";
 import Helper from "../../helper";
 
-function init(initialState) {
+function init(initialState: any) {
   const state = {
     bitrate: "4096",
     fps: "25",
@@ -17,7 +17,7 @@ function init(initialState) {
   return state;
 }
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -60,12 +60,12 @@ function createMapping(settings, stream, skills) {
   return mapping;
 }
 
-function Coder(props) {
+function Coder(props: any) {
   const settings = init(props.settings);
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -79,7 +79,7 @@ function Coder(props) {
     );
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const newSettings = {
       ...settings,
       [what]: event.target.value,
@@ -142,7 +142,7 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const coder = "libvpx-vp9";
@@ -151,11 +151,11 @@ const codec = "vp9";
 const type = "video";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}, ${settings.bitrate} kbit/s, ${settings.fps} FPS, Preset: ${settings.preset}, Profile: ${settings.profile}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = init({});
 
   return {

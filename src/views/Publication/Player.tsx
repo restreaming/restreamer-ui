@@ -39,7 +39,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.gridContainer}`]: {
     paddingTop: "1em",
   },
@@ -77,7 +77,7 @@ const posterImageTypes = [
   { mimetype: "image/jpeg", extension: "jpg", maxSize: 1 * 1024 * 1024 },
 ];
 
-export default function Edit(props) {
+export default function Edit(props: any) {
   const navigate = useNavigate();
   const { channelid: _channelid } = useParams();
   const { i18n } = useLingui();
@@ -142,8 +142,8 @@ export default function Edit(props) {
   };
 
   const handleChange =
-    (what, section = "") =>
-    (event) => {
+    (what: any, section : any = "") =>
+    (event: any) => {
       const value = event.target.value;
       const settings = $settings;
 
@@ -181,7 +181,7 @@ export default function Edit(props) {
       });
     };
 
-  const handleLogoUpload = async (data, extension) => {
+  const handleLogoUpload = async (data: any, extension: any) => {
     const path = await props.restreamer.UploadLogo(_channelid, data, extension);
 
     handleChange(
@@ -196,7 +196,7 @@ export default function Edit(props) {
     setSaving(false);
   };
 
-  const handlePosterUpload = async (data, extension) => {
+  const handlePosterUpload = async (data: any, extension: any) => {
     const path = await props.restreamer.UploadPoster(
       _channelid,
       data,
@@ -216,7 +216,7 @@ export default function Edit(props) {
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     const message = (() => {
       switch (err.type) {
         case "nofiles":
@@ -248,7 +248,7 @@ export default function Edit(props) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -264,7 +264,7 @@ export default function Edit(props) {
     });
   };
 
-  const handleLogoReset = (event) => {
+  const handleLogoReset = (event: any) => {
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -298,7 +298,7 @@ export default function Edit(props) {
     });
   };
 
-  const handlePosterReset = (event) => {
+  const handlePosterReset = (event: any) => {
     // For the cleanup of the core, we need to check the following:
     // 1. is the image on the core or external?
     // 2. is the image used somewhere else?
@@ -327,7 +327,7 @@ export default function Edit(props) {
     notify.Dispatch("success", "save:player", i18n._(t`Player settings saved`));
   };
 
-  const handleChangeTab = (event, value) => {
+  const handleChangeTab = (event: any, value: any) => {
     setTab(value);
   };
 
@@ -339,7 +339,7 @@ export default function Edit(props) {
     H("player-" + $tab);
   };
 
-  const prepareUrl = (url) => {
+  const prepareUrl = (url: any) => {
     if (url.length === 0) {
       return "";
     }

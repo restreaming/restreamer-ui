@@ -30,7 +30,7 @@ import Textarea from "../../../misc/Textarea";
 
 const useStyles = () => ({ gridContainer: "gridContainer" });
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -87,7 +87,7 @@ const initSettings = (initialSettings, config) => {
   return settings;
 };
 
-const initConfig = (initialConfig) => {
+const initConfig = (initialConfig: any) => {
   if (!initialConfig) {
     initialConfig = {};
   }
@@ -130,7 +130,7 @@ const initConfig = (initialConfig) => {
   return config;
 };
 
-const initSkills = (initialSkills) => {
+const initSkills = (initialSkills: any) => {
   if (!initialSkills) {
     initialSkills = {};
   }
@@ -174,7 +174,7 @@ const initSkills = (initialSkills) => {
   return skills;
 };
 
-const createInputs = (settings, config, skills) => {
+const createInputs = (settings: any, config: any, skills: any) => {
   config = initConfig(config);
   settings = initSettings(settings, config);
   skills = initSkills(skills);
@@ -354,7 +354,7 @@ const createInputs = (settings, config, skills) => {
   return [input];
 };
 
-const addUsernamePassword = (address, username, password) => {
+const addUsernamePassword = (address: any, username: any, password: any) => {
   if (username.length === 0 && password.length === 0) {
     return address;
   }
@@ -374,7 +374,7 @@ const addUsernamePassword = (address, username, password) => {
   return url.toString();
 };
 
-const getProtocol = (url) => {
+const getProtocol = (url: any) => {
   const re = new RegExp("^([a-z][a-z0-9.+-:]*)://", "i");
   const matches = url.match(re);
 
@@ -385,7 +385,7 @@ const getProtocol = (url) => {
   return matches[1];
 };
 
-const getProtocolClass = (url) => {
+const getProtocolClass = (url: any) => {
   if (typeof url !== "string") {
     url = "";
   }
@@ -408,7 +408,7 @@ const getProtocolClass = (url) => {
   return protocol;
 };
 
-const isAuthProtocol = (url) => {
+const isAuthProtocol = (url: any) => {
   const protocolClass = getProtocolClass(url);
 
   switch (protocolClass) {
@@ -426,7 +426,7 @@ const isAuthProtocol = (url) => {
   return false;
 };
 
-const isSupportedProtocol = (url, supportedProtocols) => {
+const isSupportedProtocol = (url: any, supportedProtocols: any) => {
   const protocol = getProtocol(url);
   if (protocol.length === 0) {
     return false;
@@ -439,7 +439,7 @@ const isSupportedProtocol = (url, supportedProtocols) => {
   return true;
 };
 
-const getHLSAddress = (host, credentials, name, secure) => {
+const getHLSAddress = (host: any, credentials: any, name: any, secure: any) => {
   // Test for IPv6 addresses and put brackets around
   const url =
     "http" +
@@ -454,7 +454,7 @@ const getHLSAddress = (host, credentials, name, secure) => {
   return url;
 };
 
-const getRTMPAddress = (host, app, name, token, secure) => {
+const getRTMPAddress = (host: any, app: any, name: any, token: any, secure: any) => {
   let url =
     "rtmp" + (secure ? "s" : "") + "://" + host + app + "/" + name + ".stream";
 
@@ -465,7 +465,7 @@ const getRTMPAddress = (host, app, name, token, secure) => {
   return url;
 };
 
-const getSRTAddress = (host, name, token, passphrase, publish) => {
+const getSRTAddress = (host: any, name: any, token: any, passphrase: any, publish: any) => {
   let url =
     "srt" +
     "://" +
@@ -483,7 +483,7 @@ const getSRTAddress = (host, name, token, passphrase, publish) => {
   return url;
 };
 
-const getHLS = (config, name) => {
+const getHLS = (config: any, name: any) => {
   const url = getHLSAddress(
     config.hls.host,
     config.hls.credentials,
@@ -494,7 +494,7 @@ const getHLS = (config, name) => {
   return url;
 };
 
-const getRTMP = (config) => {
+const getRTMP = (config: any) => {
   const url = getRTMPAddress(
     config.rtmp.host,
     config.rtmp.app,
@@ -506,7 +506,7 @@ const getRTMP = (config) => {
   return url;
 };
 
-const getSRT = (config) => {
+const getSRT = (config: any) => {
   const url = getSRTAddress(
     config.srt.host,
     config.channelid,
@@ -518,21 +518,21 @@ const getSRT = (config) => {
   return url;
 };
 
-const getLocalHLS = (config, name) => {
+const getLocalHLS = (config: any, name: any) => {
   const url = getHLSAddress(config.hls.local, "", config.channelid, false);
 
   return url;
 };
 
-const getLocalRTMP = (name) => {
+const getLocalRTMP = (name: any) => {
   return "{rtmp,name=" + name + "}";
 };
 
-const getLocalSRT = (name) => {
+const getLocalSRT = (name: any) => {
   return "{srt,name=" + name + ",mode=request}";
 };
 
-const isValidURL = (address) => {
+const isValidURL = (address: any) => {
   const protocol = getProtocolClass(address);
   if (protocol.length === 0) {
     return false;
@@ -541,7 +541,7 @@ const isValidURL = (address) => {
   return true;
 };
 
-function AdvancedSettings(props) {
+function AdvancedSettings(props: any) {
   const settings = props.settings;
   let protocolClass = getProtocolClass(settings.address);
   if (settings.mode === "push") {
@@ -809,7 +809,7 @@ function AdvancedSettings(props) {
   );
 }
 
-function Pull(props) {
+function Pull(props: any) {
   const classes = useStyles();
   const settings = props.settings;
   const authProtocol = isAuthProtocol(settings.address);
@@ -917,7 +917,7 @@ function Pull(props) {
   );
 }
 
-function Push(props) {
+function Push(props: any) {
   const classes = useStyles();
   const settings = props.settings;
 
@@ -990,12 +990,12 @@ Push.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function PushHLS(props) {
+function PushHLS(props: any) {
   const classes = useStyles();
   const config = props.config;
 
@@ -1028,7 +1028,7 @@ function PushHLS(props) {
   );
 }
 
-function PushRTMP(props) {
+function PushRTMP(props: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1066,9 +1066,9 @@ function PushRTMP(props) {
     const RTMP = getRTMP(config);
 
     const filteredDevices = props.knownDevices.filter(
-      (device) => device.media === "rtmp",
+      (device: any) => device.media === "rtmp",
     );
-    const options = filteredDevices.map((device) => {
+    const options = filteredDevices.map((device: any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1148,12 +1148,12 @@ PushRTMP.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function PushSRT(props) {
+function PushSRT(props: any) {
   const { i18n } = useLingui();
   const classes = useStyles();
   const navigate = useNavigate();
@@ -1191,9 +1191,9 @@ function PushSRT(props) {
     const SRT = getSRT(config);
 
     const filteredDevices = props.knownDevices.filter(
-      (device) => device.media === "srt",
+      (device: any) => device.media === "srt",
     );
-    const options = filteredDevices.map((device) => {
+    const options = filteredDevices.map((device: any) => {
       return (
         <MenuItem key={device.id} value={device.id}>
           {device.name}
@@ -1273,18 +1273,18 @@ PushSRT.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const config = initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = initSkills(props.skills);
 
-  const handleChange = (section, what) => (event) => {
+  const handleChange = (section: any, what: any) => (event: any) => {
     const value = event.target.value;
 
     if (section === "http") {
@@ -1374,11 +1374,11 @@ Source.defaultProps = {
   settings: {},
   config: {},
   skills: null,
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

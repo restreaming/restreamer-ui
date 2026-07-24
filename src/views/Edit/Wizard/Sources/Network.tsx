@@ -10,7 +10,7 @@ import * as S from "../../Sources/Network";
 import Checkbox from "../../../../misc/Checkbox";
 import Password from "../../../../misc/Password";
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   const settings = {
     ...S.func.initSettings(initialSettings, config),
     mode: "pull",
@@ -19,12 +19,12 @@ const initSettings = (initialSettings, config) => {
   return settings;
 };
 
-function Source(props) {
+function Source(props: any) {
   const config = S.func.initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = S.func.initSkills(props.skills);
 
-  const handleChange = (newSettings = settings) => {
+  const handleChange = (newSettings : any = settings) => {
     newSettings = newSettings || settings;
 
     props.onChange(
@@ -35,7 +35,7 @@ function Source(props) {
     );
   };
 
-  const update = (protocol, what) => (event) => {
+  const update = (protocol: any, what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -131,10 +131,10 @@ Source.defaultProps = {
   settings: {},
   config: null,
   skills: null,
-  onChange: function (type, settings, inputs, ready) {},
+  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

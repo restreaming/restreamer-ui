@@ -2,7 +2,7 @@ import React from "react";
 
 import Helper from "../../helper";
 
-function createMapping(settings, stream, skills) {
+function createMapping(settings: any, stream: any, skills: any) {
   stream = Helper.InitStream(stream);
   skills = Helper.InitSkills(skills);
 
@@ -21,12 +21,12 @@ function createMapping(settings, stream, skills) {
   return mapping;
 }
 
-function Coder(props) {
+function Coder(props: any) {
   const settings = {};
   const stream = Helper.InitStream(props.stream);
   const skills = Helper.InitSkills(props.skills);
 
-  const handleChange = (newSettings) => {
+  const handleChange = (newSettings: any) => {
     let automatic = false;
     if (!newSettings) {
       newSettings = settings;
@@ -51,7 +51,7 @@ Coder.defaultProps = {
   stream: {},
   settings: {},
   skills: {},
-  onChange: function (settings, mapping) {},
+  onChange: function (settings: any, mapping: any) {},
 };
 
 const coder = "copy";
@@ -60,11 +60,11 @@ const codec = "copy";
 const type = "audio";
 const hwaccel = false;
 
-function summarize(settings) {
+function summarize(settings: any) {
   return `${name}`;
 }
 
-function defaults(stream, skills) {
+function defaults(stream: any, skills: any) {
   const settings = {};
 
   return {

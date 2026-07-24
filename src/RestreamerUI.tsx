@@ -32,6 +32,10 @@ const classes = {
   MainContent: `${PREFIX}-MainContent`,
 };
 
+interface RestreamerUIProps {
+  address: string;
+}
+
 const StyledI18n = styled(I18n)(() => ({
   [`& .${classes.root}`]: {
     minHeight: "100vh",
@@ -57,7 +61,7 @@ const StyledI18n = styled(I18n)(() => ({
   },
 }));
 
-export default function RestreamerUI(props) {
+export default function RestreamerUI(props: RestreamerUIProps) {
   const [$state, setState] = React.useState<DynamicObject>({
     initialized: false,
     valid: false,
@@ -74,7 +78,7 @@ export default function RestreamerUI(props) {
     message: "",
     severity: "info",
   });
-  const [$channelList, setChannelList] = React.useState({
+  const [$channelList, setChannelList] = React.useState<DynamicObject>({
     open: false,
     channelid: "",
     channels: [],
@@ -86,7 +90,7 @@ export default function RestreamerUI(props) {
     previous: "",
   });
 
-  const restreamer = React.useRef(null);
+  const restreamer = React.useRef<Restreamer>(null!);
 
   React.useEffect(() => {
     (async () => {
@@ -103,7 +107,7 @@ export default function RestreamerUI(props) {
     });
   }, 1000 * 60);
 
-  const notify = (severity, type, message) => {
+  const notify = (severity: string, type: string, message: string) => {
     setSnack({
       ...$snack,
       open: true,
@@ -135,7 +139,7 @@ export default function RestreamerUI(props) {
 
   const handleMount = async () => {
     restreamer.current = new Restreamer(props.address);
-    restreamer.current.AddListener((event) => {
+    restreamer.current.AddListener((event: DynamicObject) => {
       notify(event.severity, event.type, event.message);
     });
 
@@ -259,7 +263,7 @@ export default function RestreamerUI(props) {
     });
   };
 
-  const handleLogin = async (username, password) => {
+  const handleLogin = async (username: string, password: string) => {
     const connected = await restreamer.current.Login(username, password);
 
     await checkChangelog();
@@ -313,10 +317,10 @@ export default function RestreamerUI(props) {
   };
 
   const handlePasswordReset = async (
-    username,
-    loginUsername,
-    password,
-    loginPassword,
+    username: string,
+    loginUsername: string,
+    password: string,
+    loginPassword: string,
   ) => {
     const data = {
       api: {
@@ -355,8 +359,8 @@ export default function RestreamerUI(props) {
 
     restreamer.current.IgnoreAPIErrors(true);
 
-    const waitFor = (ms) => {
-      return new Promise((resolve) => {
+    const waitFor = (ms: number) => {
+      return new Promise((resolve: any) => {
         setTimeout(resolve, ms);
       });
     };
@@ -415,7 +419,7 @@ export default function RestreamerUI(props) {
     });
   };
 
-  const handleSelectChannel = (channelid) => {
+  const handleSelectChannel = (channelid: string) => {
     restreamer.current.SelectChannel(channelid);
     handleChannelList();
 
@@ -429,7 +433,7 @@ export default function RestreamerUI(props) {
     });
   };
 
-  const handleAddChannel = (name) => {
+  const handleAddChannel = (name: string) => {
     const channelid = restreamer.current.CreateChannel(name);
     restreamer.current.SelectChannel(channelid);
 
@@ -441,12 +445,12 @@ export default function RestreamerUI(props) {
     document.location.hash = `#/${channelid}/edit/wizard`;
   };
 
-  const handleStateChannel = async (channelids) => {
+  const handleStateChannel = async (channelids: string[]) => {
     const processes = await restreamer.current.ListProcesses(
       ["state"],
       channelids,
     );
-    const states = {};
+    const states: Record<string, string> = {};
 
     for (const p of processes) {
       states[p.id] = p.progress.state;
@@ -474,7 +478,7 @@ export default function RestreamerUI(props) {
     );
   }
 
-  let version = {};
+  let version: DynamicObject = {};
   let app = "";
   let name = "";
   if ($state.initialized === true) {
@@ -483,9 +487,7 @@ export default function RestreamerUI(props) {
     name = restreamer.current.Name();
   }
 
-  let resources = () => {
-    return null;
-  };
+  let resources: () => Promise<DynamicObject | null> = async () => null;
 
   let view = null;
   if ($state.initialized === false) {

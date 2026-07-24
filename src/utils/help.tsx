@@ -1,6 +1,6 @@
 import { i18n } from "@lingui/core";
 
-const topics = {
+const topics: DynamicObject = {
   "edit-general": {
     en: "https://docs.datarhei.com/restreamer/knowledge-base/manual/edit-livestream/general",
     de: "https://docs.datarhei.com/restreamer/v/de/wissensdatenbank/user-guides/streameinstellungen/allgemeine-streameinstellungen",
@@ -203,7 +203,7 @@ const topics = {
   },
 };
 
-function getTopicURL(topic, locale) {
+function getTopicURL(topic: any, locale: any) {
   if (!(topic in topics)) {
     console.warn(`help topic "${topic}" not found`);
     // If topic doesn't exist, return default URL
@@ -219,7 +219,7 @@ function getTopicURL(topic, locale) {
   return topics[topic][locale];
 }
 
-export default function Help(topic) {
+export default function Help(topic: any) {
   const url = getTopicURL(topic, i18n.locale);
 
   window.open(url);

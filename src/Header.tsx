@@ -40,7 +40,7 @@ const classes = {
   colorHighlight: `${PREFIX}-colorHighlight`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }) => ({
+const StyledGrid = styled(Grid)(({ theme }: any) => ({
   [`& .${classes.header}`]: {
     width: "100%",
     height: 96,
@@ -133,7 +133,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const StyledMenu = styled(Menu)(({ theme }) => ({
+const StyledMenu = styled(Menu)(({ theme }: any) => ({
   "& .MuiPaper-root": {
     borderRadius: 5,
     marginTop: theme.spacing(1),
@@ -160,7 +160,7 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
   },
 }));
 
-function AboutModal(props) {
+function AboutModal(props: DynamicObject) {
   return (
     <Modal open={props.open} onClose={props.onClose} className="modal">
       <ModalContent
@@ -247,11 +247,11 @@ AboutModal.defaultProps = {
   onClose: () => {},
 };
 
-function HeaderMenu(props) {
-  const [$anchorEl, setAnchorEl] = React.useState(null);
+function HeaderMenu(props: DynamicObject) {
+  const [$anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const [$about, setAbout] = React.useState(false);
 
-  const handleMenuOpen = (event) => {
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -259,7 +259,7 @@ function HeaderMenu(props) {
     setAnchorEl(null);
   };
 
-  const handleLanguageChange = (language) => {
+  const handleLanguageChange = (language: string) => {
     Storage.Set("language", language);
   };
 
@@ -423,7 +423,7 @@ HeaderMenu.defaultProps = {
   hasService: false,
 };
 
-export default function Header(props) {
+export default function Header(props: DynamicObject) {
   return (
     <StyledGrid
       container

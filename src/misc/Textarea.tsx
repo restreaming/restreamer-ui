@@ -13,7 +13,7 @@ import NotifyContext from "../contexts/Notify";
 import Palette from "../theme/base/palette";
 import TextareaModal from "./modals/Textarea";
 
-export default function Component(props) {
+export default function Component(props: any) {
   const { i18n } = useLingui();
 
   const [$modal, setModal] = React.useState(false);
@@ -31,16 +31,16 @@ export default function Component(props) {
     let success = false;
 
     if (!navigator.clipboard) {
-      textAreaRef.current.select();
+      textAreaRef.current!.select();
 
       try {
         success = document.execCommand("copy");
       } catch (err) {}
 
-      textAreaRef.current.setSelectionRange(0, 0);
+      textAreaRef.current!.setSelectionRange(0, 0);
     } else {
       success = await writeText(
-        navigator.clipboard.writeText(textAreaRef.current.value),
+        navigator.clipboard.writeText(textAreaRef.current!.value),
       );
     }
 
@@ -63,10 +63,10 @@ export default function Component(props) {
     setModal(!$modal);
   };
 
-  const writeText = (promise) => {
+  const writeText = (promise: any) => {
     return promise
       .then(() => true)
-      .catch((err) => {
+      .catch((err: any) => {
         console.warn(err);
         return false;
       });
@@ -74,7 +74,7 @@ export default function Component(props) {
 
   const scrollTo = () => {
     if (props.scrollTo === "bottom") {
-      textAreaRef.current.scrollTop = textAreaRef.current.scrollHeight;
+      textAreaRef.current!.scrollTop = textAreaRef.current!.scrollHeight;
     }
 
     return;
@@ -230,6 +230,6 @@ Component.defaultProps = {
   downloadName: "",
   disabled: false,
   scrollTo: "top",
-  onChange: function (value) {},
+  onChange: function (value: any) {},
   onHelp: null,
 };

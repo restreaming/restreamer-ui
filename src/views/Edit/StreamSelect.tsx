@@ -1,4 +1,3 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -8,11 +7,11 @@ import MenuItem from "@mui/material/MenuItem";
 
 import Select from "../../misc/Select";
 
-export default function StreamSelect(props) {
+export default function StreamSelect(props: any) {
   const { i18n } = useLingui();
   let selected = props.selected;
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     const stream = parseInt(event.target.value);
 
     props.onChange(stream);
@@ -100,5 +99,5 @@ StreamSelect.defaultProps = {
   selected: -1,
   allowCustom: false,
   allowNone: false,
-  onChange: function (stream) {},
+  onChange: function (stream: any) {},
 };

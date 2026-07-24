@@ -9,7 +9,7 @@ import * as S from "../../Sources/Network";
 import BoxTextarea from "../../../../misc/BoxTextarea";
 import Textarea from "../../../../misc/Textarea";
 
-const initSettings = (initialSettings, config) => {
+const initSettings = (initialSettings: any, config: any) => {
   const settings = {
     ...S.func.initSettings(initialSettings, config),
     mode: "push",
@@ -20,12 +20,12 @@ const initSettings = (initialSettings, config) => {
   return settings;
 };
 
-function Source(props) {
+function Source(props: any) {
   const config = S.func.initConfig(props.config);
   const settings = initSettings(props.settings, config);
   const skills = S.func.initSkills(props.skills);
 
-  const handleChange = (newSettings = settings) => {
+  const handleChange = (newSettings : any = settings) => {
     newSettings = newSettings || settings;
 
     const inputs = S.func.createInputs(newSettings, config, skills);
@@ -60,10 +60,10 @@ Source.defaultProps = {
   settings: {},
   config: null,
   skills: null,
-  onChange: function (type, settings, inputs, ready) {},
+  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 
 import { useLingui } from "@lingui/react";
 import { Trans } from "@lingui/react/macro";
@@ -14,7 +13,7 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import SelectCustom from "../../../misc/SelectCustom";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -33,7 +32,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const vindex = settings.vindex;
   const aindex = settings.aindex;
 
@@ -68,11 +67,11 @@ const createInputs = (settings) => {
   return [input];
 };
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const data = {};
 
     if (["cursor", "clicks"].includes(what)) {
@@ -96,9 +95,9 @@ function Source(props) {
   };
 
   let filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "video",
+    (device: any) => device.media === "video",
   );
-  let options = filteredDevices.map((device) => {
+  let options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name,
@@ -128,9 +127,9 @@ function Source(props) {
   );
 
   filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "audio",
+    (device: any) => device.media === "audio",
   );
-  options = filteredDevices.map((device) => {
+  options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name,
@@ -229,12 +228,12 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

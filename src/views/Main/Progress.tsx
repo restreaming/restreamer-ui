@@ -1,4 +1,3 @@
-import React from "react";
 import type { CSSProperties } from "react";
 
 import { Trans } from "@lingui/react/macro";
@@ -9,7 +8,7 @@ import Duration from "../../misc/Duration";
 import Number from "../../misc/Number";
 import Palette from "../../theme/base/palette";
 
-export default function Progress(props) {
+export default function Progress(props: any) {
   const uptime = props.progress.time;
   const bitrate = props.progress.bitrate;
   const fps = props.progress.fps;

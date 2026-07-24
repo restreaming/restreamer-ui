@@ -1,4 +1,3 @@
-import React from "react";
 
 import { faUsb } from "@fortawesome/free-brands-svg-icons";
 import { useLingui } from "@lingui/react";
@@ -14,7 +13,7 @@ import FormInlineButton from "../../../misc/FormInlineButton";
 import SelectCustom from "../../../misc/SelectCustom";
 import Video from "../../../misc/coders/settings/Video";
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -30,7 +29,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address =
     settings.device === "custom" || settings.device === "none"
       ? settings.deviceCustom
@@ -51,11 +50,11 @@ const createInputs = (settings) => {
   return [input];
 };
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const data = {};
 
     if (["device", "format", "framerate", "size"].includes(what)) {
@@ -77,9 +76,9 @@ function Source(props) {
   };
 
   const filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "video",
+    (device: any) => device.media === "video",
   );
-  const options = filteredDevices.map((device) => {
+  const options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name + " (" + device.id + ")",
@@ -156,12 +155,12 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <FontAwesomeIcon icon={faUsb} style={{ color: "#FFF" }} {...props} />;
 }
 

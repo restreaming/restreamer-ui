@@ -30,7 +30,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.viewerCount}`]: {
     fontSize: "3.5rem",
     fontWeight: 600,
@@ -63,7 +63,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-export default function Publication(props) {
+export default function Publication(props: any) {
   const navigate = useNavigate();
   const services = Services.IDs();
   const [$egresses, setEgresses] = React.useState([]);
@@ -121,13 +121,13 @@ export default function Publication(props) {
     });
   };
 
-  const handleServiceAdd = (event) => {
+  const handleServiceAdd = (event: any) => {
     event.preventDefault();
 
     navigate(`/${props.channelid}/publication/`);
   };
 
-  const handleServiceEdit = (service, index) => () => {
+  const handleServiceEdit = (service: any, index: any) => () => {
     let target = `/${props.channelid}/publication/${service}`;
 
     if (service !== "player") {
@@ -137,7 +137,7 @@ export default function Publication(props) {
     navigate(target);
   };
 
-  const handleOrderChange = (id) => async (order) => {
+  const handleOrderChange = (id: any) => async (order: any) => {
     let res = false;
 
     if (order === "start") {

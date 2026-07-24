@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
@@ -17,7 +16,7 @@ const classes = {
   serviceName: `${PREFIX}-serviceName`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }) => ({
+const StyledGrid = styled(Grid)(({ theme }: any) => ({
   [`& .${classes.serviceIcon}`]: {
     fontSize: "4rem!important",
     maxHeight: 64,
@@ -29,7 +28,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-export default function TabContent(props) {
+export default function TabContent(props: any) {
   return (
     <StyledGrid container spacing={2}>
       <Grid size={12}>

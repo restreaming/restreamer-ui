@@ -1,4 +1,3 @@
-import React from "react";
 import { render, act } from "../../utils/testing";
 import "@testing-library/jest-dom/vitest";
 
@@ -10,13 +9,13 @@ const videodecoders = Decoders.Video.List();
 const audioencoders = Encoders.Audio.List();
 const videoencoders = Encoders.Video.List();
 
-const testfunc = async (coder) => {
+const testfunc = async (coder: any) => {
   const defaults = coder.defaults();
 
   let $settings = {};
   let $mapping = {};
 
-  const handleChange = (settings, mapping) => {
+  const handleChange = (settings: any, mapping: any) => {
     $settings = settings;
     $mapping = mapping;
   };

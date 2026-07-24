@@ -32,7 +32,7 @@ class Registry {
     this.services = new Map();
   }
 
-  Register(service) {
+  Register(service: any) {
     if (service.type !== this.type) {
       return;
     }
@@ -40,7 +40,7 @@ class Registry {
     this.services.set(service.coder, service);
   }
 
-  Get(coder) {
+  Get(coder: any) {
     const service = this.services.get(coder);
     if (service) {
       return service;
@@ -51,7 +51,7 @@ class Registry {
 
   // Get the first coder for a codec that is in a
   // list of available coders.
-  GetCoderForCodec(codec, availableCoders) {
+  GetCoderForCodec(codec: any, availableCoders: any) {
     for (const coder of this.services.values()) {
       if (coder.codec !== codec) {
         continue;
@@ -70,7 +70,7 @@ class Registry {
   // Get a list of coders for a codec that is in a list of
   // availabled coders. The option for hwAcceleration can be
   // 'any', 'no', or 'yes'.
-  GetCodersForCodec(codec, availableCoders, hwAcceleration) {
+  GetCodersForCodec(codec: any, availableCoders: any, hwAcceleration: any) {
     const coders = [];
 
     for (const coder of this.services.values()) {

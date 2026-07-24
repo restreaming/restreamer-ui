@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { I18nProvider } from "@lingui/react";
 import { i18n } from "@lingui/core";
 
@@ -36,20 +38,23 @@ i18n.load({
   "zh-hans": ZH,
 });
 
-const aliases = {
-  pt: "pt-br",
-  "zh-cn": "zh-hans",
+const aliases: Record<string, string> = {
+	pt: 'pt-br',
+	'zh-cn': 'zh-hans',
 };
 
-const getAlias = (lang) => {
-  if (lang in aliases) {
+const getAlias = (lang: string | null): string => {
+	if (lang === null) {
+		return "";
+	}
+	if (lang in aliases) {
     return aliases[lang];
   }
 
   return lang;
 };
 
-const getLanguage = (defaultLanguage, supportedLanguages) => {
+const getLanguage = (defaultLanguage: string, supportedLanguages: string[]) => {
   const initialLang = getAlias(Storage.Get("language"));
   let lang = initialLang;
   if (supportedLanguages.indexOf(lang) === -1) {
@@ -65,7 +70,7 @@ const getLanguage = (defaultLanguage, supportedLanguages) => {
   return lang;
 };
 
-const getBrowserLanguage = (defaultLanguage) => {
+const getBrowserLanguage = (defaultLanguage: string) => {
   if (typeof window === "undefined") {
     return defaultLanguage;
   }
@@ -100,6 +105,6 @@ i18n.activate(
   ]),
 );
 
-export default function Provider(props) {
+export default function Provider(props: { children: ReactNode }) {
   return <I18nProvider i18n={i18n}>{props.children}</I18nProvider>;
 }

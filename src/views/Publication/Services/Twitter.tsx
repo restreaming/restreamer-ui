@@ -1,4 +1,3 @@
-import React from "react";
 
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { v4 as uuidv4 } from "uuid";
@@ -66,7 +65,7 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon
       icon={faTwitter}
@@ -76,7 +75,7 @@ function ServiceIcon(props) {
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     mode: "rtmps",
     stream_key: "",
@@ -87,10 +86,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -100,7 +99,7 @@ function Service(props) {
     props.onChange(outputs, settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const outputs = [];
 
     if (settings.stream_key.length === 0) {
@@ -238,7 +237,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

@@ -7,7 +7,7 @@ import * as M from "../../utils/metadata";
  * @param {array} streams
  * @returns
  */
-export function createSourcesFromStreams(streams) {
+export function createSourcesFromStreams(streams: any) {
   return [
     {
       type: "network",
@@ -35,10 +35,10 @@ export function createSourcesFromStreams(streams) {
  * @returns
  */
 export function createInputsOutputs(
-  sources,
-  profiles,
-  outputs,
-  requireVideo = true,
+  sources: any,
+  profiles: any,
+  outputs: any,
+  requireVideo : any = true,
 ) {
   const [global, inpts, outpts] = M.createInputsOutputs(
     sources,
@@ -80,7 +80,7 @@ export function createInputsOutputs(
  * @param {*} requires requirement object
  * @returns validated requirement object
  */
-export function validateRequirements(requires) {
+export function validateRequirements(requires: any) {
   if (!requires) {
     requires = {};
   }
@@ -108,7 +108,7 @@ export function validateRequirements(requires) {
  * @param {*} skills
  * @returns {boolean}
  */
-export function checkServiceRequirements(requires, skills) {
+export function checkServiceRequirements(requires: any, skills: any) {
   if (!skills) {
     return false;
   }
@@ -194,7 +194,7 @@ export function checkServiceRequirements(requires, skills) {
  * @param {*} skills
  * @returns
  */
-export function conflateServiceSkills(requires, skills) {
+export function conflateServiceSkills(requires: any, skills: any) {
   if (!skills) {
     return null;
   }
@@ -256,7 +256,7 @@ export function conflateServiceSkills(requires, skills) {
  * @param {*} skills FFmpeg skills
  * @returns {boolean} Whether the provided profile is valid
  */
-export function preselectProfile(profile, type, streams, codecs, skills) {
+export function preselectProfile(profile: any, type: any, streams: any, codecs: any, skills: any) {
   const encoders = skills.encoders[type];
 
   /**
@@ -268,7 +268,7 @@ export function preselectProfile(profile, type, streams, codecs, skills) {
    * @param {*} codecs List of target codecs
    * @returns {boolean} Whether the provided profile is valid
    */
-  const isPlausible = (profile, type, streams, codecs) => {
+  const isPlausible = (profile: any, type: any, streams: any, codecs: any) => {
     if (profile.stream < 0) {
       return false;
     }

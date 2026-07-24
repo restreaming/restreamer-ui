@@ -49,7 +49,7 @@ const classes = {
 };
 
 // TODO jss-to-styled codemod: The Fragment root was replaced by div. Change the tag if needed.
-const Root = styled("div")(({ theme }) => ({
+const Root = styled("div")(({ theme }: any) => ({
   [`& .${classes.inlineEnv}`]: {
     float: "right",
   },
@@ -58,90 +58,90 @@ const Root = styled("div")(({ theme }) => ({
 const configValues = {
   update_check: {
     tab: "general",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.update_check = !config.update_check;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.update_check;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   id: {
     tab: "service",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.id = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.id;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   name: {
     tab: "service",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.name = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.name;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "log.level": {
     tab: "logging",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.log.level = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.log.level;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "log.max_lines": {
     tab: "logging",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.log.max_lines = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.log.max_lines;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   address: {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.address = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.address;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "host.name": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.host.name = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.host.name;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       if (config.tls.auto === false) {
         return null;
       }
 
-      const names = toArray(config.host.name, ",").filter((name) => {
+      const names = toArray(config.host.name, ",").filter((name: any) => {
         if (name.match(/([0-9]+\.)+/) !== null) {
           return true;
         }
@@ -162,481 +162,481 @@ const configValues = {
   },
   "tls.address": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.tls.address = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.tls.address;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "tls.auto": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.tls.auto = !config.tls.auto;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.tls.auto;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "tls.email": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.tls.email = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.tls.email;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "api.auth.enable": {
     tab: "auth",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.api.auth.enable = !config.api.auth.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.api.auth.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "api.auth.username": {
     tab: "auth",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.api.auth.username = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.api.auth.username;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "api.auth.password": {
     tab: "auth",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.api.auth.password = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.api.auth.password;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.enable": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.enable = !config.rtmp.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.enable_tls": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.enable_tls = !config.rtmp.enable_tls;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.enable_tls;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.address": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.address = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.address;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.address_tls": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.address_tls = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.address_tls;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.app": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.app = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.app;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "rtmp.token": {
     tab: "rtmp",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.rtmp.token = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.rtmp.token;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "ffmpeg.log.max_lines": {
     tab: "logging",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.ffmpeg.log.max_lines = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.ffmpeg.log.max_lines;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "ffmpeg.log.max_history": {
     tab: "logging",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.ffmpeg.log.max_history = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.ffmpeg.log.max_history;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "srt.enable": {
     tab: "srt",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.srt.enable = !config.srt.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.srt.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "srt.address": {
     tab: "srt",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.srt.address = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.srt.address;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "srt.passphrase": {
     tab: "srt",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.srt.passphrase = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.srt.passphrase;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "srt.token": {
     tab: "srt",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.srt.token = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.srt.token;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.cors.allow_all": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.cors.allow_all = !config.storage.cors.allow_all;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       return;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.cors.origins": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.cors.origins = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.cors.origins;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.max_size_mbytes": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.max_size_mbytes = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.max_size_mbytes;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.enable": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.enable = !config.storage.disk.cache.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.max_size_mbytes": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.max_size_mbytes = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.max_size_mbytes;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.ttl_seconds": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.ttl_seconds = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.ttl_seconds;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.max_file_size_mbytes": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.max_file_size_mbytes = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.max_file_size_mbytes;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.types.allow": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.types.allow = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.types.allow;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.disk.cache.types.block": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.disk.cache.types.block = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.disk.cache.types.block;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.memory.auth.enable": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.memory.auth.enable = !config.storage.memory.auth.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.memory.auth.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.memory.auth.username": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.memory.auth.username = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.memory.auth.username;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.memory.auth.password": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.memory.auth.password = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.memory.auth.password;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.memory.max_size_mbytes": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.memory.max_size_mbytes = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.memory.max_size_mbytes;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "storage.memory.purge": {
     tab: "storage",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.storage.memory.purge = !config.storage.memory.purge;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.storage.memory.purge;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.enable": {
     tab: "playback",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.enable = !config.sessions.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.ip_ignorelist": {
     tab: "playback",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.ip_ignorelist = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.ip_ignorelist;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.session_timeout_sec": {
     tab: "playback",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.session_timeout_sec = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.session_timeout_sec;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.persist": {
     tab: "playback",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.persist = !config.sessions.persist;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.persist;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.max_bitrate_mbit": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.max_bitrate_mbit = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.max_bitrate_mbit;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "sessions.max_sessions": {
     tab: "network",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.sessions.max_sessions = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.sessions.max_sessions;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "service.enable": {
     tab: "service",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.service.enable = !config.service.enable;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.service.enable;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
   "service.token": {
     tab: "service",
-    set: (config, value) => {
+    set: (config: any, value: any) => {
       config.service.token = value;
     },
-    unset: (config) => {
+    unset: (config: any) => {
       delete config.service.token;
     },
-    validate: (config) => {
+    validate: (config: any) => {
       return null;
     },
   },
@@ -644,7 +644,7 @@ const configValues = {
 
 const RETRIES = 60;
 
-function ErrorTab(props) {
+function ErrorTab(props: any) {
   let { label, errors, ...other } = props;
 
   if (errors === true) {
@@ -659,9 +659,9 @@ function ErrorTab(props) {
   return <Tab label={label} {...other} />;
 }
 
-function ErrorBox(props) {
+function ErrorBox(props: any) {
   const messages = props.messages.filter(
-    (m) => props.configvalue === "" || m.configvalue === props.configvalue,
+    (m: any) => props.configvalue === "" || m.configvalue === props.configvalue,
   );
 
   if (messages.length === 0) {
@@ -671,7 +671,7 @@ function ErrorBox(props) {
   return (
     <BoxText color="danger">
       <Typography variant="body2" gutterBottom>
-        {messages.map((e, i) => (
+        {messages.map((e: any, i: any) => (
           <span key={i}>
             {e.error}
             <br />
@@ -687,14 +687,14 @@ ErrorBox.defaultProps = {
   messages: [],
 };
 
-const toArray = (val, separator) => {
+const toArray = (val: any, separator: any) => {
   return val
     .split(separator)
-    .map((l) => l.trim())
-    .filter((l) => l.length !== 0);
+    .map((l: any) => l.trim())
+    .filter((l: any) => l.length !== 0);
 };
 
-const toInt = (val) => {
+const toInt = (val: any) => {
   if (typeof val === "string") {
     return val.length === 0 ? 0 : parseInt(val);
   }
@@ -702,7 +702,7 @@ const toInt = (val) => {
   return val;
 };
 
-export default function Settings(props) {
+export default function Settings(props: any) {
   const { i18n } = useLingui();
   const navigate = useNavigate();
   const { tab: _tab } = useParams();
@@ -847,7 +847,7 @@ export default function Settings(props) {
     });
   };
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
     const config = $config.data;
 
@@ -871,7 +871,7 @@ export default function Settings(props) {
 
     // Remove all error for a config value
     tabs[tab].messages = tabs[tab].messages.filter(
-      (m) => m.configvalue !== what,
+      (m: any) => m.configvalue !== what,
     );
     if (tabs[tab].messages.length === 0) {
       tabs[tab].errors = false;
@@ -900,7 +900,7 @@ export default function Settings(props) {
     });
   };
 
-  const handleCoreConfig = (event) => {
+  const handleCoreConfig = (event: any) => {
     const value = event.target.value;
 
     setConfig({
@@ -910,7 +910,7 @@ export default function Settings(props) {
     });
   };
 
-  const handleChangeTab = async (event, value) => {
+  const handleChangeTab = async (event: any, value: any) => {
     if (value === "logging") {
       await updateLogdata();
 
@@ -1064,7 +1064,7 @@ export default function Settings(props) {
       }
 
       const tabs = {};
-      const ucfirst = (string) => {
+      const ucfirst = (string: any) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
       };
 
@@ -1184,8 +1184,8 @@ export default function Settings(props) {
       return;
     }
 
-    const waitFor = (ms) => {
-      return new Promise((resolve) => {
+    const waitFor = (ms: any) => {
+      return new Promise((resolve: any) => {
         setTimeout(resolve, ms);
       });
     };
@@ -1252,11 +1252,11 @@ export default function Settings(props) {
     navigate(-1);
   };
 
-  const handleHelp = (topic) => () => {
+  const handleHelp = (topic: any) => () => {
     H("settings-" + topic);
   };
 
-  const env = (what) => {
+  const env = (what: any) => {
     if ($config.overrides.indexOf(what) !== -1) {
       return true;
     }

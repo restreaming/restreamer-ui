@@ -1,8 +1,7 @@
-import React from "react";
 
 import TextareaModal from "./Textarea";
 
-const Component = function (props) {
+const Component = function (props: any) {
   return (
     <TextareaModal
       open={props.open}

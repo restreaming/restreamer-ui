@@ -1,4 +1,3 @@
-import React from "react";
 
 import { faImages as icon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,7 +36,7 @@ const requires = {
   devices: ["fbdev"],
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon
       icon={icon}
@@ -47,7 +46,7 @@ function ServiceIcon(props) {
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     device: "none",
     pix_fmt: "bgra",
@@ -57,10 +56,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -70,7 +69,7 @@ function Service(props) {
     props.onChange(outputs, settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const outputs = [];
 
     outputs.push({
@@ -82,9 +81,9 @@ function Service(props) {
   };
 
   const filteredDevices = props.skills.devices.fbdev.filter(
-    (device) => device.extra !== "",
+    (device: any) => device.extra !== "",
   );
-  const options = filteredDevices.map((device) => {
+  const options = filteredDevices.map((device: any) => {
     return {
       value: device.id,
       label: device.name + " (" + device.extra + ")",
@@ -135,7 +134,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

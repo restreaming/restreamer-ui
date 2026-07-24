@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     cpu_usage: 0,
     memory_mbytes: 0,
@@ -16,7 +16,7 @@ function init(settings) {
   return initSettings;
 }
 
-export default function Control(props) {
+export default function Control(props: any) {
   const settings = init(props.settings);
 
   // Set the defaults
@@ -24,7 +24,7 @@ export default function Control(props) {
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -105,5 +105,5 @@ export default function Control(props) {
 
 Control.defaulProps = {
   settings: {},
-  onChange: function (settings, automatic) {},
+  onChange: function (settings: any, automatic: any) {},
 };

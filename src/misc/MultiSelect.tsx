@@ -1,4 +1,3 @@
-import React from "react";
 
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -13,7 +12,7 @@ const MenuProps = {
   },
 };
 
-export default function Component(props) {
+export default function Component(props: any) {
   return (
     <FormControl variant={props.variant} disabled={props.disabled} fullWidth>
       <InputLabel>{props.label}</InputLabel>
@@ -36,6 +35,6 @@ Component.defaultProps = {
   label: "",
   value: [],
   disabled: false,
-  renderValue: (selected) => selected.join(", "),
-  onChange: function (event) {},
+  renderValue: (selected: any) => selected.join(", "),
+  onChange: function (event: any) {},
 };

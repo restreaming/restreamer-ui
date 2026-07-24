@@ -1,4 +1,3 @@
-import React from "react";
 
 import { Trans } from "@lingui/react/macro";
 import Accordion from "@mui/material/Accordion";
@@ -56,11 +55,11 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return <img src={Logo} alt="Icecat Logo" {...props} />;
 }
 
-function init(settings, metadata) {
+function init(settings: any, metadata: any) {
   const initSettings = {
     protocol: "icecast://",
     address: "",
@@ -83,7 +82,7 @@ function init(settings, metadata) {
   return initSettings;
 }
 
-function createOutputs(settings, skills, metadata, streams) {
+function createOutputs(settings: any, skills: any, metadata: any, streams: any) {
   settings = init(settings, metadata);
   let hasVideo = false;
   let audioCodec = "";
@@ -147,10 +146,10 @@ function createOutputs(settings, skills, metadata, streams) {
   return [output];
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings, props.metadata);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (what in settings.options) {
@@ -313,7 +312,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

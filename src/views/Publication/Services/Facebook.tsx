@@ -1,4 +1,3 @@
-import React from "react";
 
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,7 +35,7 @@ const requires = {
   },
 };
 
-function ServiceIcon(props) {
+function ServiceIcon(props: any) {
   return (
     <FontAwesomeIcon
       icon={faFacebook}
@@ -46,7 +45,7 @@ function ServiceIcon(props) {
   );
 }
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     stream_key_primary: "",
     stream_key_backup: "",
@@ -58,10 +57,10 @@ function init(settings) {
   return initSettings;
 }
 
-function Service(props) {
+function Service(props: any) {
   const settings = init(props.settings);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     if (["rtmp_primary", "rtmp_backup"].includes(what)) {
@@ -75,7 +74,7 @@ function Service(props) {
     props.onChange(output, settings);
   };
 
-  const createOutput = (settings) => {
+  const createOutput = (settings: any) => {
     const outputs = [];
 
     const output_primary = {
@@ -186,7 +185,7 @@ Service.defaultProps = {
   skills: {},
   metadata: {},
   streams: [],
-  onChange: function (output, settings) {},
+  onChange: function (output: any, settings: any) {},
 };
 
 export {

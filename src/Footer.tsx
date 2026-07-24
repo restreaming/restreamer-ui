@@ -29,7 +29,7 @@ const classes = {
   logo: `${PREFIX}-logo`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }) => ({
+const StyledGrid = styled(Grid)(({ theme }: any) => ({
   [`&.${classes.footer}`]: {
     zIndex: "2",
     position: "relative",
@@ -80,11 +80,11 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-function Resources(props) {
-  const [$popover, setPopover] = React.useState(null);
-  const [$resources, setResources] = React.useState(null);
+function Resources(props: DynamicObject) {
+  const [$popover, setPopover] = React.useState<HTMLElement | null>(null);
+  const [$resources, setResources] = React.useState<DynamicObject | null>(null);
 
-  const handlePopoverOpen = (event) => {
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setPopover(event.currentTarget);
   };
 
@@ -190,7 +190,7 @@ function Resources(props) {
         }}
         slotProps={{
           paper: {
-            onMouseLeave: isMobile ? null : handlePopoverClose,
+            onMouseLeave: isMobile ? undefined : handlePopoverClose,
           },
         }}
       >
@@ -402,7 +402,7 @@ Resources.defaultProps = {
   },
 };
 
-const initVersion = (initialVersion = {}) => {
+const initVersion = (initialVersion : any = {}) => {
   if (!initialVersion) {
     initialVersion = {};
   }
@@ -416,7 +416,7 @@ const initVersion = (initialVersion = {}) => {
   return version;
 };
 
-export default function Footer(props) {
+export default function Footer(props: DynamicObject) {
   const version = initVersion(props.version);
 
   if (props.expand === true) {

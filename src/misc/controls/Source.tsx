@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import Select from "../Select";
 
-function init(settings) {
+function init(settings: any) {
   const initSettings = {
     source: "hls+memfs",
     ...settings,
@@ -25,7 +25,7 @@ function init(settings) {
   return initSettings;
 }
 
-export default function Control(props) {
+export default function Control(props: any) {
   const settings = init(props.settings);
 
   // Set the defaults
@@ -33,7 +33,7 @@ export default function Control(props) {
     props.onChange(settings, true);
   }, []);
 
-  const handleChange = (what) => (event) => {
+  const handleChange = (what: any) => (event: any) => {
     const value = event.target.value;
 
     settings[what] = value;
@@ -100,5 +100,5 @@ export default function Control(props) {
 Control.defaulProps = {
   settings: {},
   sources: [],
-  onChange: function (settings, automatic) {},
+  onChange: function (settings: any, automatic: any) {},
 };

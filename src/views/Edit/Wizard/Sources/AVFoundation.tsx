@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import * as S from "../../Sources/AVFoundation";
 import Select from "../../../../misc/Select";
 
-function initSettings(initialSettings) {
+function initSettings(initialSettings: any) {
   const settings = {
     ...S.func.initSettings(initialSettings),
     format: "nv12",
@@ -24,15 +24,15 @@ function initSettings(initialSettings) {
   return settings;
 }
 
-function Source(props) {
+function Source(props: any) {
   const { i18n } = useLingui();
   const settings = initSettings(props.settings);
 
-  const handleChange = (newSettings = settings) => {
+  const handleChange = (newSettings : any = settings) => {
     newSettings = newSettings || settings;
 
     const filteredDevices = props.knownDevices.filter(
-      (device) => device.media === "video",
+      (device: any) => device.media === "video",
     );
 
     props.onChange(
@@ -47,7 +47,7 @@ function Source(props) {
     props.onRefresh();
   };
 
-  const update = (what) => (event) => {
+  const update = (what: any) => (event: any) => {
     const value = event.target.value;
     const newSettings = settings;
 
@@ -63,9 +63,9 @@ function Source(props) {
   }, []);
 
   let filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "video",
+    (device: any) => device.media === "video",
   );
-  let options = filteredDevices.map((device) => {
+  let options = filteredDevices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -98,9 +98,9 @@ function Source(props) {
   );
 
   filteredDevices = props.knownDevices.filter(
-    (device) => device.media === "audio",
+    (device: any) => device.media === "audio",
   );
-  options = filteredDevices.map((device) => {
+  options = filteredDevices.map((device: any) => {
     return (
       <MenuItem key={device.id} value={device.id}>
         {device.name}
@@ -166,11 +166,11 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (type, settings, inputs, ready) {},
+  onChange: function (type: any, settings: any, inputs: any, ready: any) {},
   onRefresh: function () {},
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

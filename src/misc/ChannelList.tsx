@@ -44,7 +44,7 @@ const Image = styled("span")(() => ({
   position: "relative",
 }));
 
-const ImageSrc = styled("span")(({ theme }) => ({
+const ImageSrc = styled("span")(({ theme }: any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -56,7 +56,7 @@ const ImageSrc = styled("span")(({ theme }) => ({
   border: `2px solid ${theme.palette.primary.dark}`,
 }));
 
-const ImageAlt = styled("span")(({ theme }) => ({
+const ImageAlt = styled("span")(({ theme }: any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -68,7 +68,7 @@ const ImageAlt = styled("span")(({ theme }) => ({
   color: theme.palette.common.white,
 }));
 
-const ImageBackdrop = styled("span")(({ theme }) => ({
+const ImageBackdrop = styled("span")(({ theme }: any) => ({
   position: "absolute",
   left: 0,
   right: 0,
@@ -81,7 +81,7 @@ const ImageBackdrop = styled("span")(({ theme }) => ({
   border: `2px solid ${theme.palette.primary.dark}`,
 }));
 
-function ChannelButton(props, largeChannelList = false) {
+function ChannelButton(props: any, largeChannelList : any = false) {
   const theme = useTheme();
 
   let color = theme.palette.primary.main;
@@ -183,9 +183,9 @@ ChannelButton.defaultProps = {
 };
 
 const calculateColumnsPerRow = (
-  breakpointSmall,
-  breakpointMedium,
-  breakpointLarge,
+  breakpointSmall: any,
+  breakpointMedium: any,
+  breakpointLarge: any,
 ) => {
   if (breakpointLarge) {
     return 4;
@@ -197,11 +197,11 @@ const calculateColumnsPerRow = (
   return 1;
 };
 
-const calculateRowsToFit = (windowHeight, thumbnailHeight, otherUIHeight) => {
+const calculateRowsToFit = (windowHeight: any, thumbnailHeight: any, otherUIHeight: any) => {
   return Math.floor((windowHeight - otherUIHeight) / thumbnailHeight);
 };
 
-export default function ChannelList(props) {
+export default function ChannelList(props: any) {
   const theme = useTheme();
   const breakpointSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const breakpointMedium = useMediaQuery(theme.breakpoints.up("md"));
@@ -241,16 +241,16 @@ export default function ChannelList(props) {
       }
 
       let channels = allChannels
-        .sort((a, b) => {
+        .sort((a: any, b: any) => {
           const aname = a.name.toUpperCase();
           const bname = b.name.toUpperCase();
           return aname < bname ? -1 : aname > bname ? 1 : 0;
         })
         .slice($pos, $pos + $nChannels);
 
-      const states = await onState(channels.map((channel) => channel.id));
+      const states = await onState(channels.map((channel: any) => channel.id));
 
-      channels = channels.map((channel) => {
+      channels = channels.map((channel: any) => {
         return (
           <ChannelButton
             key={channel.channelid}
@@ -315,7 +315,7 @@ export default function ChannelList(props) {
     });
   };
 
-  const handleAddChannelChange = (event) => {
+  const handleAddChannelChange = (event: any) => {
     setAddChannel({
       ...$addChannel,
       name: event.target.value,
@@ -540,9 +540,9 @@ ChannelList.defaultProps = {
   channelid: "",
   channels: [],
   onClose: () => {},
-  onClick: (channelid) => {},
-  onAdd: (name) => {},
-  onState: (channelids) => {
+  onClick: (channelid: any) => {},
+  onAdd: (name: any) => {},
+  onState: (channelids: any) => {
     const states = {};
     for (const channelid of channelids) {
       states[channelid] = "";

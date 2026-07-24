@@ -18,7 +18,7 @@ const imageTypes = [
   { mimetype: "audio/*", extension: "audio", maxSize: 25 * 1024 * 1024 },
 ];
 
-const initSettings = (initialSettings) => {
+const initSettings = (initialSettings: any) => {
   if (!initialSettings) {
     initialSettings = {};
   }
@@ -32,7 +32,7 @@ const initSettings = (initialSettings) => {
   return settings;
 };
 
-const createInputs = (settings) => {
+const createInputs = (settings: any) => {
   const address = "{diskfs}" + settings.address;
   const input = {
     address: address,
@@ -45,7 +45,7 @@ const createInputs = (settings) => {
   return [input];
 };
 
-function Source(props) {
+function Source(props: any) {
   const settings = initSettings(props.settings);
   const [$saving, setSaving] = React.useState(false);
   const [$error, setError] = React.useState({
@@ -54,7 +54,7 @@ function Source(props) {
     message: "",
   });
 
-  const handleFileUpload = async (data, extension, mimetype) => {
+  const handleFileUpload = async (data: any, extension: any, mimetype: any) => {
     const path = await props.onStore("audioloop.source", data);
 
     props.onChange({
@@ -70,7 +70,7 @@ function Source(props) {
     setSaving(true);
   };
 
-  const handleUploadError = (title) => (err) => {
+  const handleUploadError = (title: any) => (err: any) => {
     let message = null;
 
     switch (err.type) {
@@ -108,7 +108,7 @@ function Source(props) {
     showUploadError(title, message);
   };
 
-  const showUploadError = (title, message) => {
+  const showUploadError = (title: any, message: any) => {
     setError({
       ...$error,
       open: true,
@@ -135,7 +135,7 @@ function Source(props) {
           <Typography variant="caption">
             <Trans>
               Upload an audio file (
-              {imageTypes.map((t) => t.mimetype).join(", ")}) in order to loop
+              {imageTypes.map((t: any) => t.mimetype).join(", ")}) in order to loop
               it.
             </Trans>
           </Typography>
@@ -201,15 +201,15 @@ function Source(props) {
 Source.defaultProps = {
   knownDevices: [],
   settings: {},
-  onChange: function (settings) {},
-  onProbe: function (settings, inputs) {},
+  onChange: function (settings: any) {},
+  onProbe: function (settings: any, inputs: any) {},
   onRefresh: function () {},
-  onStore: function (name, data) {
+  onStore: function (name: any, data: any) {
     return "";
   },
 };
 
-function SourceIcon(props) {
+function SourceIcon(props: any) {
   return <Icon style={{ color: "#FFF" }} {...props} />;
 }
 

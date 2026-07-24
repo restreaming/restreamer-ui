@@ -8,7 +8,7 @@ import {
 
 import Views from "./views";
 
-export default function Router(props) {
+export default function Router(props: DynamicObject) {
   if (props.restreamer === null) {
     return null;
   }

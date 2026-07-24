@@ -19,22 +19,22 @@ class Restreamer {
   address: string;
   api: API;
   listeners: any[];
-  valid: boolean;
-  requiresLogin: boolean;
-  connected: boolean;
+  valid = false;
+  requiresLogin = true;
+  connected = false;
   refresh: any;
-  ignoreAPIErrors: boolean;
+  ignoreAPIErrors = false;
   about: any;
   skills: any;
   config: any;
   cache: any;
-  channels: Map<any, any>;
+  channels = new Map<any, any>();
   channel: any;
   refreshToken: any;
   updates: any;
-  hasUpdates: boolean;
-  hasService: boolean;
-  constructor(address) {
+  hasUpdates = false;
+  hasService = false;
+  constructor(address: any) {
     try {
       new URL(address);
     } catch (e) {
@@ -82,7 +82,7 @@ class Restreamer {
     this._checkForUpdates();
   }
 
-  _initAbout(initialAbout = {}) {
+  _initAbout(initialAbout : any = {}) {
     if (!initialAbout) {
       initialAbout = {};
     }
@@ -140,7 +140,7 @@ class Restreamer {
     return this.address;
   }
 
-  SetAddress(address) {
+  SetAddress(address: any) {
     if (address === this.address) {
       return true;
     }
@@ -161,15 +161,15 @@ class Restreamer {
 
   // Events
 
-  AddListener(listener) {
+  AddListener(listener: any) {
     return this.listeners.push(listener) - 1;
   }
 
-  RemoveListener(id) {
+  RemoveListener(id: any) {
     this.listeners.splice(id, 1);
   }
 
-  _dispatchEvent(severity, type, message) {
+  _dispatchEvent(severity: any, type: any, message: any) {
     switch (severity) {
       case "error":
       case "warning":
@@ -191,7 +191,7 @@ class Restreamer {
 
   // API calls
 
-  async _call(fn, ...args) {
+  async _call(fn: any, ...args: any[]) {
     const res = await fn.apply(this.api, args);
     if (res.err !== null && !this.ignoreAPIErrors) {
       if (res.err.code === -1) {
@@ -229,7 +229,7 @@ class Restreamer {
     return [res.val, res.err];
   }
 
-  IgnoreAPIErrors(toggle) {
+  IgnoreAPIErrors(toggle: any) {
     this.ignoreAPIErrors = toggle;
   }
 
@@ -269,7 +269,7 @@ class Restreamer {
     return true;
   }
 
-  async Login(username, password) {
+  async Login(username: any, password: any) {
     if (this.requiresLogin === false) {
       await this._init();
       return true;
@@ -315,7 +315,7 @@ class Restreamer {
     return true;
   }
 
-  async LoginWithToken(token) {
+  async LoginWithToken(token: any) {
     if (this.requiresLogin === false) {
       await this._init();
       return true;
@@ -437,7 +437,7 @@ class Restreamer {
     await this._discoverChannels();
   }
 
-  _setTokenRefresh(expiresIn) {
+  _setTokenRefresh(expiresIn: any) {
     clearTimeout(this.refresh);
 
     if (expiresIn > 60) {
@@ -451,14 +451,14 @@ class Restreamer {
     return;
   }
 
-  _setAccessToken(token) {
+  _setAccessToken(token: any) {
     if (token === null) {
       this.api.SetToken("");
     } else {
       let claims = null;
       try {
         claims = jwtDecode(token);
-        this._setTokenRefresh(claims.exi);
+        this._setTokenRefresh((claims as DynamicObject).exi);
         this.api.SetToken(token);
       } catch (e) {
         this.api.SetToken("");
@@ -466,7 +466,7 @@ class Restreamer {
     }
   }
 
-  _setRefreshToken(token) {
+  _setRefreshToken(token: any) {
     if (token === null) {
       this.refreshToken = null;
       Storage.Remove("token");
@@ -532,7 +532,7 @@ class Restreamer {
   }
 
   async _initSkills() {
-    const skills = {
+    const skills: DynamicObject = {
       ffmpeg: {
         version: "",
         version_major: 0,
@@ -714,7 +714,7 @@ class Restreamer {
       }
     }
 
-    let channels = (await this.ListRTMPChannels()).map((name) => {
+    let channels = (await this.ListRTMPChannels()).map((name: any) => {
       return {
         media: "rtmp",
         id: name,
@@ -724,7 +724,7 @@ class Restreamer {
 
     skills.sources["network"].push(...channels);
 
-    channels = (await this.ListSRTChannels()).map((name) => {
+    channels = (await this.ListSRTChannels()).map((name: any) => {
       return {
         media: "srt",
         id: name,
@@ -765,7 +765,7 @@ class Restreamer {
     return config;
   }
 
-  async ConfigSet(config) {
+  async ConfigSet(config: any) {
     const res = await this._call(this.api.ConfigSet, config);
 
     return res;
@@ -826,7 +826,7 @@ class Restreamer {
       return;
     }
 
-    const isIP = (host) => {
+    const isIP = (host: any) => {
       if (host === "localhost") {
         return true;
       }
@@ -844,7 +844,7 @@ class Restreamer {
       return false;
     };
 
-    const splitHostPort = (address) => {
+    const splitHostPort = (address: any) => {
       let host = "";
       let port = "";
       const hostport = address.split(/:([0-9]+)$/);
@@ -1012,7 +1012,7 @@ class Restreamer {
     return true;
   }
 
-  ConfigOverrides(name) {
+  ConfigOverrides(name: any) {
     if (!this.config) {
       return false;
     }
@@ -1020,7 +1020,7 @@ class Restreamer {
     return this.config.overrides.includes(name);
   }
 
-  ConfigValue(name) {
+  ConfigValue(name: any) {
     if (!this.config) {
       return null;
     }
@@ -1040,7 +1040,7 @@ class Restreamer {
   }
 
   // Get system metadata
-  async GetMetadata(defaults = true) {
+  async GetMetadata(defaults : any = true) {
     const metadata = await this._getMetadata();
 
     if (defaults === false) {
@@ -1051,7 +1051,7 @@ class Restreamer {
   }
 
   // Set system metadata
-  async SetMetadata(metadata) {
+  async SetMetadata(metadata: any) {
     return await this._setMetadata(metadata);
   }
 
@@ -1079,7 +1079,7 @@ class Restreamer {
     return address;
   }
 
-  PrefixPublicHTTPAddress(path) {
+  PrefixPublicHTTPAddress(path: any) {
     const address = this.GetPublicHTTPAddress();
 
     if (path.match(/^https?:\/\//) !== null) {
@@ -1094,13 +1094,13 @@ class Restreamer {
   }
 
   // Get all RTMP/SRT/SNAPSHOT+MEMFS/HLS+MEMFS addresses
-  GetPublicAddress(what, channelid) {
+  GetPublicAddress(what: any, channelid: any) {
     const config = this.ConfigActive();
     const host = config.hostname;
 
     let address = "";
 
-    function getPort(servicePort) {
+    function getPort(servicePort: any) {
       let port = servicePort.split(/:([0-9]+)$/)[1];
       if (port && !port.includes(":")) {
         port = `:${port}`;
@@ -1182,7 +1182,7 @@ class Restreamer {
   }
 
   // Get the iframe codes for the player
-  GetPublicIframeCode(channelid) {
+  GetPublicIframeCode(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return "";
@@ -1312,7 +1312,7 @@ class Restreamer {
     }
   }
 
-  CreateChannel(name = "") {
+  CreateChannel(name : any = "") {
     const channelid = uuidv4();
     this.channels.set(channelid, {
       id: `restreamer-ui:ingest:${channelid}`,
@@ -1325,7 +1325,7 @@ class Restreamer {
     return channelid;
   }
 
-  async DeleteChannel(channelid) {
+  async DeleteChannel(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return false;
@@ -1354,7 +1354,7 @@ class Restreamer {
     return true;
   }
 
-  SelectChannel(channelid) {
+  SelectChannel(channelid: any) {
     if (!this.channels.has(channelid)) {
       return "";
     }
@@ -1383,7 +1383,7 @@ class Restreamer {
     return channels;
   }
 
-  GetChannel(channelid) {
+  GetChannel(channelid: any) {
     const channel = this.channels.get(channelid);
     if (!channel) {
       return null;
@@ -1399,7 +1399,7 @@ class Restreamer {
     };
   }
 
-  SetChannel(channelid, channel) {
+  SetChannel(channelid: any, channel: any) {
     const c = this.channels.get(channelid);
     if (!c) {
       return false;
@@ -1414,7 +1414,7 @@ class Restreamer {
     return true;
   }
 
-  GetChannelEgress(channelid, id) {
+  GetChannelEgress(channelid: any, id: any) {
     const channel = this.channels.get(channelid);
     if (!channel) {
       return null;
@@ -1434,7 +1434,7 @@ class Restreamer {
     };
   }
 
-  SetChannelEgress(channelid, id, data) {
+  SetChannelEgress(channelid: any, id: any, data: any) {
     const channel = this.channels.get(channelid);
     if (!channel) {
       return false;
@@ -1443,7 +1443,7 @@ class Restreamer {
     channel.egresses.set(id, data);
   }
 
-  DeleteChannelEgress(channelid, id) {
+  DeleteChannelEgress(channelid: any, id: any) {
     const channel = this.channels.get(channelid);
     if (!channel) {
       return false;
@@ -1461,7 +1461,7 @@ class Restreamer {
   }
 
   // Get the path for the HLS manifest
-  GetChannelManifestPath(channelid, storage) {
+  GetChannelManifestPath(channelid: any, storage: any) {
     if (!storage) {
       storage = "memfs";
     }
@@ -1475,16 +1475,16 @@ class Restreamer {
   }
 
   // Get the path for the poster image
-  GetChannelPosterPath(channelid, storage) {
+  GetChannelPosterPath(channelid: any, storage: any) {
     return `memfs/${channelid}.jpg`;
   }
 
   // Get the path for the player
-  GetChannelPlayerPath(channelid) {
+  GetChannelPlayerPath(channelid: any) {
     return `${channelid}.html`;
   }
 
-  GetChannelAddress(what, channelid) {
+  GetChannelAddress(what: any, channelid: any) {
     const address = this.Address();
 
     if (what === "hls+memfs") {
@@ -1502,7 +1502,7 @@ class Restreamer {
 
   // Sessions
 
-  async CurrentSessions(protocols) {
+  async CurrentSessions(protocols: any) {
     const sessions = {
       sessions: 0,
       bitrate_kbit: 0,
@@ -1554,7 +1554,7 @@ class Restreamer {
   }
 
   // Get process information for ingest
-  async GetIngest(channelid, filter = []) {
+  async GetIngest(channelid: any, filter: any[] = []) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return null;
@@ -1564,7 +1564,7 @@ class Restreamer {
   }
 
   // Get the ingest metadata
-  async GetIngestMetadata(channelid) {
+  async GetIngestMetadata(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return M.initIngestMetadata({});
@@ -1581,7 +1581,7 @@ class Restreamer {
   }
 
   // Set the ingest metadata
-  async SetIngestMetadata(channelid, metadata) {
+  async SetIngestMetadata(channelid: any, metadata: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1595,7 +1595,7 @@ class Restreamer {
   }
 
   // Get the ingest progress
-  async GetIngestProgress(channelid) {
+  async GetIngestProgress(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return this._getProgressFromState(null);
@@ -1607,7 +1607,7 @@ class Restreamer {
   }
 
   // Get the ingest log
-  async GetIngestLog(channelid) {
+  async GetIngestLog(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return null;
@@ -1617,7 +1617,7 @@ class Restreamer {
   }
 
   // Get the ingest debug log
-  async GetIngestDebug(channelid) {
+  async GetIngestDebug(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return {};
@@ -1627,7 +1627,7 @@ class Restreamer {
   }
 
   // Start the ingest process
-  async StartIngest(channelid) {
+  async StartIngest(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1637,7 +1637,7 @@ class Restreamer {
   }
 
   // Start the ingest snapshot process
-  async StartIngestSnapshot(channelid) {
+  async StartIngestSnapshot(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1647,7 +1647,7 @@ class Restreamer {
   }
 
   // Stop the ingest process
-  async StopIngest(channelid) {
+  async StopIngest(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1657,7 +1657,7 @@ class Restreamer {
   }
 
   // Stop the ingest snapshot process
-  async StopIngestSnapshot(channelid) {
+  async StopIngestSnapshot(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1667,7 +1667,7 @@ class Restreamer {
   }
 
   // Delete the ingest process
-  async DeleteIngest(channelid) {
+  async DeleteIngest(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1677,7 +1677,7 @@ class Restreamer {
   }
 
   // Delete the ingest snaphot process
-  async DeleteIngestSnapshot(channelid) {
+  async DeleteIngestSnapshot(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -1687,7 +1687,7 @@ class Restreamer {
   }
 
   // Update/Insert the ingest process
-  async UpsertIngest(channelid, global, inputs, outputs, control) {
+  async UpsertIngest(channelid: any, global: any, inputs: any, outputs: any, control: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return [null, { message: "Unknown channel ID" }];
@@ -1723,7 +1723,7 @@ class Restreamer {
       proc.input.push({
         id: "input_" + i,
         address: input.address,
-        options: input.options.map((o) => "" + o),
+        options: input.options.map((o: any) => "" + o),
       });
     }
 
@@ -1799,7 +1799,7 @@ class Restreamer {
     const output = {
       id: "output_0",
       address: hls_segment_playlist,
-      options: ["-dn", "-sn", ...outputs[0].options.map((o) => "" + o)],
+      options: ["-dn", "-sn", ...outputs[0].options.map((o: any) => "" + o)],
       cleanup: [],
     };
 
@@ -1824,7 +1824,7 @@ class Restreamer {
     // fix Malformed AAC bitstream detected for hls version 7
     let hls_aac_adtstoasc = false;
 
-    const getHLSParams = (lhls, version) => {
+    const getHLSParams = (lhls: any, version: any) => {
       if (lhls) {
         // lhls
         return [
@@ -1930,14 +1930,14 @@ class Restreamer {
     if (tee_muxer) {
       // f=hls:start_number=0...
       const hls_params = hls_params_raw
-        .filter((o) => {
+        .filter((o: any) => {
           // unsupported in tee_muxer
           return !(
             o[0] === "segment_format_options" ||
             o[0] === "max_muxing_queue_size"
           );
         })
-        .map((o) => o[0] + "=" + o[1])
+        .map((o: any) => o[0] + "=" + o[1])
         .join(":");
 
       // set flags
@@ -1962,8 +1962,8 @@ class Restreamer {
       // ['-f', 'hls', '-start_number', '0', ...]
       // adding the '-' in front of the first option, then flatten everything
       const hls_params = hls_params_raw
-        .map((o) => ["-" + o[0], o[1]])
-        .reduce((acc, val) => acc.concat(val), []);
+        .map((o: any) => ["-" + o[0], o[1]])
+        .reduce((acc: any, val: any) => acc.concat(val), []);
 
       // set flags
       if (control.process.low_delay) {
@@ -2061,7 +2061,7 @@ class Restreamer {
   }
 
   // Upsert the ingest snapshot process
-  async UpsertIngestSnapshot(channelid, control) {
+  async UpsertIngestSnapshot(channelid: any, control: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return [null, { message: "Unknown channel ID" }];
@@ -2113,7 +2113,7 @@ class Restreamer {
   }
 
   // Check whether the manifest of the ingest process is available
-  async HasIngestFiles(channelid) {
+  async HasIngestFiles(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -2131,7 +2131,7 @@ class Restreamer {
   }
 
   // Probe an external stream
-  async Probe(channelid, inputs) {
+  async Probe(channelid: any, inputs: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return [null, { message: "Unknown channel ID" }];
@@ -2162,7 +2162,7 @@ class Restreamer {
       config.input.push({
         id: "input_" + i,
         address: input.address,
-        options: input.options.map((o) => "" + o),
+        options: input.options.map((o: any) => "" + o),
       });
     }
 
@@ -2180,7 +2180,7 @@ class Restreamer {
   }
 
   // Probe the ingest stream
-  async ProbeIngest(channelid) {
+  async ProbeIngest(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return [null, { message: "Unknown channel ID" }];
@@ -2227,7 +2227,7 @@ class Restreamer {
   // Selfhosted Player
 
   // Set defaults for the settings of the selfhosted player
-  InitPlayerSettings(initSettings) {
+  InitPlayerSettings(initSettings: any) {
     if (!initSettings) {
       initSettings = {};
     }
@@ -2268,7 +2268,7 @@ class Restreamer {
   }
 
   // Update the player the selfthosted player
-  async UpdatePlayer(channelid) {
+  async UpdatePlayer(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (channel === null) {
       return false;
@@ -2342,7 +2342,7 @@ class Restreamer {
     return true;
   }
 
-  async UpdatePlayerConfig(channelid, metadata) {
+  async UpdatePlayerConfig(channelid: any, metadata: any) {
     metadata.player = this.InitPlayerSettings(metadata.player);
 
     const playerConfig = {
@@ -2377,7 +2377,7 @@ class Restreamer {
   }
 
   // Upload channel specific channel data
-  async UploadData(channelid, name, data) {
+  async UploadData(channelid: any, name: any, data: any) {
     if (channelid.length === 0) {
       channelid = this.GetCurrentChannelID();
     }
@@ -2398,19 +2398,19 @@ class Restreamer {
   }
 
   // Upload a logo for the selfhosted player
-  async UploadLogo(channelid, data, extension) {
+  async UploadLogo(channelid: any, data: any, extension: any) {
     return this.UploadData(channelid, "logo." + extension, data);
   }
 
   // Upload a poster image for the selfhosted player
-  async UploadPoster(channelid, data, extension) {
+  async UploadPoster(channelid: any, data: any, extension: any) {
     return this.UploadData(channelid, "poster." + extension, data);
   }
 
   // Playersite
 
   // Set defaults for the settings of the playersite
-  InitPlayersiteSettings(initSettings) {
+  InitPlayersiteSettings(initSettings: any) {
     if (!initSettings) {
       initSettings = {};
     }
@@ -2419,7 +2419,7 @@ class Restreamer {
       player: "videojs",
       playersite: false,
       channelid: "current",
-      channel_list: this.ListChannels().map((c) => c.channelid),
+      channel_list: this.ListChannels().map((c: any) => c.channelid),
       title: "restreamer",
       share: true,
       support: true,
@@ -2486,17 +2486,17 @@ class Restreamer {
 
     // filter channels based on the main channel and additional channels
     const channels = this.ListChannels().filter(
-      (c) =>
+      (c: any) =>
         settings.channel_list.indexOf(c.channelid) !== -1 ||
         c.channelid === channel.channelid,
     );
 
     // Handlebars function ifEquals
-    Handlebars.registerHelper("ifEquals", function (arg1, arg2, options) {
+    Handlebars.registerHelper("ifEquals", function (arg1: any, arg2: any, options: any) {
       return arg1 === arg2 ? options.fn(this) : options.inverse(this);
     });
 
-    Handlebars.registerHelper("ifnoteq", function (arg1, arg2, options) {
+    Handlebars.registerHelper("ifnoteq", function (arg1: any, arg2: any, options: any) {
       if (arg1 !== arg2) {
         return options.fn(this);
       }
@@ -2594,7 +2594,7 @@ class Restreamer {
   }
 
   // Upload the background image for the playersite
-  async UploadPlayersiteBackgroundImage(data, extension) {
+  async UploadPlayersiteBackgroundImage(data: any, extension: any) {
     // sanitize extension
     extension = extension.replace(/[^0-9a-z]/gi, "");
 
@@ -2606,7 +2606,7 @@ class Restreamer {
   }
 
   // Upload a playersite template file
-  async UploadPlayersiteTemplate(data, name) {
+  async UploadPlayersiteTemplate(data: any, name: any) {
     // sanitize name
     name = name.replace(/[^0-9a-z]/gi, "");
 
@@ -2618,7 +2618,7 @@ class Restreamer {
   }
 
   // Delete a playersite template file
-  async DeletePlayersiteTemplate(name) {
+  async DeletePlayersiteTemplate(name: any) {
     // sanitize name
     name = name.replace(/[^0-9a-z]/gi, "");
 
@@ -2629,7 +2629,7 @@ class Restreamer {
     return true;
   }
 
-  async GetPlayersiteTemplate(name) {
+  async GetPlayersiteTemplate(name: any) {
     // sanitize name
     name = name.replace(/[^0-9a-z]/gi, "");
 
@@ -2643,7 +2643,7 @@ class Restreamer {
   async ListPlayersiteTemplates() {
     let templates = await this._listAssets("/playersite/templates/*");
 
-    templates = templates.map((t) => {
+    templates = templates.map((t: any) => {
       const components = t.split("/");
       const name = components[components.length - 1].split(".", 1)[0];
       return name;
@@ -2654,12 +2654,12 @@ class Restreamer {
 
   // Egress
 
-  GetEgressId(service, id) {
+  GetEgressId(service: any, id: any) {
     return `restreamer-ui:egress:${service}:${id}`;
   }
 
   // Get process information for egress
-  async GetEgress(channelid, id, filter = []) {
+  async GetEgress(channelid: any, id: any, filter: any[] = []) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return;
@@ -2673,7 +2673,7 @@ class Restreamer {
   }
 
   // Get metadata for egress
-  async GetEgressMetadata(channelid, id) {
+  async GetEgressMetadata(channelid: any, id: any) {
     let metadata = null;
 
     const channel = this.GetChannel(channelid);
@@ -2689,7 +2689,7 @@ class Restreamer {
   }
 
   // Set metadata for egress
-  async SetEgressMetadata(channelid, id, metadata) {
+  async SetEgressMetadata(channelid: any, id: any, metadata: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2707,7 +2707,7 @@ class Restreamer {
   }
 
   // Start egress process
-  async StartEgress(channelid, id) {
+  async StartEgress(channelid: any, id: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2721,7 +2721,7 @@ class Restreamer {
   }
 
   // Stop egress process
-  async StopEgress(channelid, id) {
+  async StopEgress(channelid: any, id: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2735,7 +2735,7 @@ class Restreamer {
   }
 
   // Stop all egress processes
-  async StopAllEgresses(channelid) {
+  async StopAllEgresses(channelid: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return;
@@ -2749,7 +2749,7 @@ class Restreamer {
   }
 
   // Delete egress process
-  async DeleteEgress(channelid, id) {
+  async DeleteEgress(channelid: any, id: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2769,7 +2769,7 @@ class Restreamer {
   }
 
   // Get the egress log
-  async GetEgressLog(channelid, id) {
+  async GetEgressLog(channelid: any, id: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2783,7 +2783,7 @@ class Restreamer {
   }
 
   // Get the egress debug log
-  async GetEgressDebug(channelid, id) {
+  async GetEgressDebug(channelid: any, id: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2797,7 +2797,7 @@ class Restreamer {
   }
 
   // Update an egress process
-  async UpdateEgress(channelid, id, global, inputs, outputs, control) {
+  async UpdateEgress(channelid: any, id: any, global: any, inputs: any, outputs: any, control: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return null;
@@ -2892,7 +2892,7 @@ class Restreamer {
         options.push("-flags", "+low_delay");
       }
 
-      options.push(...output.options.map((o) => "" + o));
+      options.push(...output.options.map((o: any) => "" + o));
 
       config.output.push({
         id: "output_" + i,
@@ -2906,7 +2906,7 @@ class Restreamer {
   }
 
   // Create an egress process
-  async CreateEgress(channelid, service, global, inputs, outputs, control) {
+  async CreateEgress(channelid: any, service: any, global: any, inputs: any, outputs: any, control: any) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return ["", { message: "Unknown channel ID" }];
@@ -2940,7 +2940,7 @@ class Restreamer {
 
   // Ingest + Egresses
 
-  async ListIngestEgresses(channelid, services = []) {
+  async ListIngestEgresses(channelid: any, services: any[] = []) {
     const channel = this.GetChannel(channelid);
     if (!channel) {
       return [];
@@ -2950,7 +2950,7 @@ class Restreamer {
 
     let list = await this._listProcesses(["state"], channel.channelid);
 
-    list = list.filter((p) => {
+    list = list.filter((p: any) => {
       if (p.id === channel.id) {
         p.index = "";
         p.service = "player";
@@ -2976,7 +2976,7 @@ class Restreamer {
       return false;
     });
 
-    list.sort((a, b) => {
+    list.sort((a: any, b: any) => {
       if (a.service === "player") {
         return -1;
       } else if (b.service === "player") {
@@ -3008,11 +3008,11 @@ class Restreamer {
     return list;
   }
 
-  async ListProcesses(filter = [], ids = []) {
+  async ListProcesses(filter: string[] = [], ids: string[] = []) {
     return await this._listProcesses(filter, "", ids);
   }
 
-  async GetDebug(processid) {
+  async GetDebug(processid: any) {
     const about = await this._getAboutDebug();
     const skills = await this.Skills();
     const config = await this._getConfigDebug();
@@ -3046,7 +3046,7 @@ class Restreamer {
     return Storage.Get("expert") === "true";
   }
 
-  SetExpert(value) {
+  SetExpert(value: any) {
     Storage.Set("expert", !!value);
   }
 
@@ -3056,7 +3056,7 @@ class Restreamer {
     return Storage.Get("updates") === "true";
   }
 
-  SetCheckForUpdates(value) {
+  SetCheckForUpdates(value: any) {
     Storage.Set("updates", !!value);
 
     this._checkForUpdates();
@@ -3125,7 +3125,7 @@ class Restreamer {
         ...(await response.json()),
       };
 
-      const findVersion = (name) => {
+      const findVersion = (name: any) => {
         const matches = name.match(/v(\d+\.\d+\.\d+)\s*$/);
         if (matches === null) {
           return "0.0.0";
@@ -3163,7 +3163,7 @@ class Restreamer {
 
   // Private system related function
 
-  async _setMetadata(data) {
+  async _setMetadata(data: any) {
     const [, err] = await this._call(
       this.api.SetMetadata,
       "restreamer-ui",
@@ -3187,7 +3187,7 @@ class Restreamer {
 
   // Private process related functions
 
-  async _listProcesses(filter = [], reference = "", ids = []) {
+  async _listProcesses(filter: any[] = [], reference: any = "", ids: any[] = []) {
     const [val, err] = await this._call(
       this.api.Processes,
       reference,
@@ -3205,7 +3205,7 @@ class Restreamer {
     return val;
   }
 
-  async _getProcess(id, filter = []) {
+  async _getProcess(id: any, filter: any[] = []) {
     const [val, err] = await this._call(this.api.Process, id, filter);
     if (err !== null) {
       return null;
@@ -3214,7 +3214,7 @@ class Restreamer {
     return this._sanitizeProcess(val);
   }
 
-  _sanitizeProcess(proc) {
+  _sanitizeProcess(proc: any) {
     if (!proc.id) {
       proc.id = "";
     }
@@ -3246,7 +3246,7 @@ class Restreamer {
     return proc;
   }
 
-  async _getProcessConfig(id) {
+  async _getProcessConfig(id: any) {
     const [val, err] = await this._call(this.api.ProcessConfig, id);
     if (err !== null) {
       return null;
@@ -3255,7 +3255,7 @@ class Restreamer {
     return val;
   }
 
-  async _getProcessState(id) {
+  async _getProcessState(id: any) {
     const [val, err] = await this._call(this.api.ProcessState, id);
     if (err !== null) {
       return null;
@@ -3264,7 +3264,7 @@ class Restreamer {
     return val;
   }
 
-  async _getProcessLog(id) {
+  async _getProcessLog(id: any) {
     const [val, err] = await this._call(this.api.ProcessReport, id);
     if (err !== null) {
       return null;
@@ -3273,7 +3273,7 @@ class Restreamer {
     return val;
   }
 
-  async _getProcessDebug(id) {
+  async _getProcessDebug(id: any) {
     const [p, err] = await this._call(this.api.Process, id, [
       "config",
       "state",
@@ -3324,12 +3324,12 @@ class Restreamer {
       }
 
       p.report.prelude = p.report.prelude.map(anonymize);
-      p.report.log = p.report.log.map((l) => [l[0], anonymize(l[1])]);
+      p.report.log = p.report.log.map((l: any) => [l[0], anonymize(l[1])]);
 
       for (const i in p.report.history) {
         p.report.history[i].prelude =
           p.report.history[i].prelude.map(anonymize);
-        p.report.history[i].log = p.report.history[i].log.map((l) => [
+        p.report.history[i].log = p.report.history[i].log.map((l: any) => [
           l[0],
           anonymize(l[1]),
         ]);
@@ -3339,7 +3339,7 @@ class Restreamer {
     return p;
   }
 
-  async _startProcess(id) {
+  async _startProcess(id: any) {
     const [, err] = await this._call(this.api.ProcessCommand, id, "start");
     if (err !== null) {
       return false;
@@ -3348,7 +3348,7 @@ class Restreamer {
     return true;
   }
 
-  async _stopProcess(id) {
+  async _stopProcess(id: any) {
     const [, err] = await this._call(this.api.ProcessCommand, id, "stop");
     if (err !== null) {
       return false;
@@ -3357,7 +3357,7 @@ class Restreamer {
     return true;
   }
 
-  async _upsertProcess(id, config) {
+  async _upsertProcess(id: any, config: any) {
     const [val, err] = await this._call(this.api.ProcessUpdate, id, config);
     if (err !== null) {
       if (err.code === 404) {
@@ -3368,7 +3368,7 @@ class Restreamer {
     return [val, err];
   }
 
-  async _deleteProcess(id) {
+  async _deleteProcess(id: any) {
     const [, err] = await this._call(this.api.ProcessDelete, id);
     if (err !== null) {
       if (err.code === 404) {
@@ -3381,7 +3381,7 @@ class Restreamer {
     return true;
   }
 
-  async _setProcessMetadata(id, data) {
+  async _setProcessMetadata(id: any, data: any) {
     const [, err] = await this._call(
       this.api.ProcessSetMetadata,
       id,
@@ -3395,7 +3395,7 @@ class Restreamer {
     return true;
   }
 
-  async _getProcessMetadata(id) {
+  async _getProcessMetadata(id: any) {
     const [val, err] = await this._call(
       this.api.ProcessGetMetadata,
       id,
@@ -3410,7 +3410,7 @@ class Restreamer {
 
   // Assets
 
-  async _updatePlayerEssentials(player) {
+  async _updatePlayerEssentials(player: any) {
     // get the list of supplemental files for the player
     const data = await this._getLocalAssetAsString(
       `/_player/${player}/files.txt`,
@@ -3474,7 +3474,7 @@ class Restreamer {
     await this._deleteAsset("/logo512.png");
   }
 
-  async _getLocalAssetAsString(localPath) {
+  async _getLocalAssetAsString(localPath: any) {
     const data = await this._getLocalAsset(localPath);
     if (data === null) {
       return null;
@@ -3485,7 +3485,7 @@ class Restreamer {
     return text;
   }
 
-  async _getLocalAsset(localPath) {
+  async _getLocalAsset(localPath: any) {
     let data = this.cache.assets.get(localPath);
     if (data === undefined) {
       let response = null;
@@ -3511,7 +3511,7 @@ class Restreamer {
     return data;
   }
 
-  async _uploadLocalAsset(localPath, remotePath) {
+  async _uploadLocalAsset(localPath: any, remotePath: any) {
     const data = await this._getLocalAsset(localPath);
     if (data === null) {
       return false;
@@ -3522,19 +3522,19 @@ class Restreamer {
     return true;
   }
 
-  async _uploadAssetData(remotePath, data) {
+  async _uploadAssetData(remotePath: any, data: any) {
     await this._call(this.api.DataPutFile, remotePath, data);
 
     return true;
   }
 
-  async _deleteAsset(remotePath) {
+  async _deleteAsset(remotePath: any) {
     await this._call(this.api.DataDeleteFile, remotePath);
 
     return true;
   }
 
-  async _hasAsset(remotePath) {
+  async _hasAsset(remotePath: any) {
     const [, err] = await this._call(this.api.DataHasFile, remotePath);
     if (err !== null) {
       return false;
@@ -3543,7 +3543,7 @@ class Restreamer {
     return true;
   }
 
-  async _getAssetAsString(remotePath) {
+  async _getAssetAsString(remotePath: any) {
     const [val, err] = await this._call(this.api.DataGetFile, remotePath);
     if (err !== null) {
       return "";
@@ -3552,7 +3552,7 @@ class Restreamer {
     return val;
   }
 
-  async _listAssets(remotePathPattern) {
+  async _listAssets(remotePathPattern: any) {
     const [val, err] = await this._call(
       this.api.DataListFiles,
       remotePathPattern,
@@ -3561,7 +3561,7 @@ class Restreamer {
       return [];
     }
 
-    return val.map((f) => f.name);
+    return val.map((f: any) => f.name);
   }
 
   async _listRTMPChannels() {
@@ -3585,7 +3585,7 @@ class Restreamer {
   async _getAboutDebug() {
     const about = await this.About();
 
-    about.auths = about.auths.map((a) =>
+    about.auths = about.auths.map((a: any) =>
       a.startsWith("auth0 ") ? "auth0" : a,
     );
 
@@ -3600,31 +3600,31 @@ class Restreamer {
 
     const config = data.config;
 
-    config.host.name = config.host.name.map((e) => "[anonymized]");
+    config.host.name = config.host.name.map((e: any) => "[anonymized]");
 
     config.api.auth.username = "[anonymized]";
     config.api.auth.password = "[anonymized]";
     config.api.auth.jwt.secret = "[anonymized]";
 
-    config.api.auth.auth0.tenants = config.host.name.map((e) => "[anonymized]");
+    config.api.auth.auth0.tenants = config.host.name.map((e: any) => "[anonymized]");
 
     config.api.access.http.allow = config.api.access.http.allow.map(
-      (e) => "[anonymized]",
+      (e: any) => "[anonymized]",
     );
     config.api.access.http.block = config.api.access.http.block.map(
-      (e) => "[anonymized]",
+      (e: any) => "[anonymized]",
     );
     config.api.access.https.allow = config.api.access.https.allow.map(
-      (e) => "[anonymized]",
+      (e: any) => "[anonymized]",
     );
     config.api.access.https.block = config.api.access.https.block.map(
-      (e) => "[anonymized]",
+      (e: any) => "[anonymized]",
     );
 
     config.storage.memory.auth.username = "[anonymized]";
     config.storage.memory.auth.password = "[anonymized]";
 
-    config.storage.s3 = config.storage.s3.map((e) => {
+    config.storage.s3 = config.storage.s3.map((e: any) => {
       return {
         ...e,
         auth: {
@@ -3643,7 +3643,7 @@ class Restreamer {
       config.storage.cors.origins[0] !== "*"
     ) {
       config.storage.cors.origins = config.storage.cors.origins.map(
-        (e) => "[anonymized]",
+        (e: any) => "[anonymized]",
       );
     }
 
@@ -3655,13 +3655,13 @@ class Restreamer {
     config.service.token = "[anonymized]";
 
     config.sessions.ip_ignorelist = config.sessions.ip_ignorelist.map(
-      (e) => "[anonymized]",
+      (e: any) => "[anonymized]",
     );
 
     return config;
   }
 
-  _getProgressFromState(state) {
+  _getProgressFromState(state: any) {
     const progress = {
       valid: false,
       order: "stop",
@@ -3750,7 +3750,7 @@ class Restreamer {
       return null;
     }
 
-    const getMetrics = (metrics, metric, labels) => {
+    const getMetrics = (metrics: any, metric: any, labels: any) => {
       loop: for (const m of metrics) {
         if (m.name !== metric) {
           continue;
@@ -3776,7 +3776,7 @@ class Restreamer {
       return null;
     };
 
-    const getValue = (metrics, metric, labels = {}) => {
+    const getValue = (metrics: any, metric: any, labels : any = {}) => {
       const m = getMetrics(metrics, metric, labels);
       if (m === null) {
         return 0;
@@ -3833,7 +3833,7 @@ class Restreamer {
 const dateRegex =
   /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2}):(\d{2})(?:\.?(\d+))?(?:(?:([+-]\d{2}):?(\d{2}))|Z)?$/;
 
-function parseRFC3339Date(d) {
+function parseRFC3339Date(d: any) {
   const m = dateRegex.exec(d);
   if (m === null) {
     return null;

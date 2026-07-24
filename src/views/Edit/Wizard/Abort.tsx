@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Paper from "../../../misc/Paper";
 import PaperHeader from "../../../misc/PaperHeader";
 
-export default function Abort(props) {
+export default function Abort(props: any) {
   return (
     <Paper xs={12} sm={8} md={6} marginBottom="6em" className="PaperM">
       <PaperHeader
