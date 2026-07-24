@@ -15,8 +15,13 @@ ENV PORT=3000
 
 WORKDIR /ui
 
-COPY --from=builder /ui ./ui
 RUN npm i -g pnpm@latest
+COPY --from=builder /ui/package.json /ui/pnpm-lock.yaml ./
+RUN pnpm install --prod --frozen-lockfile
+
+COPY --from=builder /ui/.next ./.next
+COPY --from=builder /ui/public ./public
+COPY --from=builder /ui/next.config.ts ./next.config.ts
 
 EXPOSE 3000
 
