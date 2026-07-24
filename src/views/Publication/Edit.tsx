@@ -85,7 +85,7 @@ export default function Edit(props) {
 			log: [],
 		},
 	});
-	const processLogTimer = React.useRef();
+	const processLogTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 	const [$processDebug, setProcessDebug] = React.useState({
 		open: false,
 		data: '',

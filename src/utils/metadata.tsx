@@ -349,7 +349,7 @@ const initMetadata = (initialMetadata) => {
 
 const transformers = {};
 
-const mergeMetadata = (metadata, base) => {
+const mergeMetadata = (metadata: DynamicObject, base: DynamicObject = {}) => {
 	if (!metadata) {
 		metadata = {};
 	}
@@ -431,7 +431,7 @@ const ingestTransformers = {
 	},
 };
 
-const mergeIngestMetadata = (metadata, base) => {
+const mergeIngestMetadata = (metadata: DynamicObject, base: DynamicObject = {}) => {
 	if (!metadata) {
 		metadata = {};
 	}
@@ -524,7 +524,7 @@ const initEgressMetadata = (initialMetadata) => {
 
 const egressTransformers = {};
 
-const mergeEgressMetadata = (metadata, base) => {
+const mergeEgressMetadata = (metadata: DynamicObject, base: DynamicObject = {}) => {
 	if (!metadata) {
 		metadata = {};
 	}

@@ -84,7 +84,7 @@ const AllTheProviders =
 		);
 	};
 
-const customRender = (ui, options, initialEntries, path) =>
+const customRender = (ui, options = {}, initialEntries = '/', path = '/') =>
 	render(ui, { wrapper: AllTheProviders(initialEntries, path), ...options });
 
 // re-export everything

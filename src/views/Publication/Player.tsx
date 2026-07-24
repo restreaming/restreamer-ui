@@ -82,7 +82,7 @@ export default function Edit(props) {
 	const { channelid: _channelid } = useParams();
 	const { i18n } = useLingui();
 	const address = props.restreamer.Address();
-	const timeout = React.useRef();
+	const timeout = React.useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const notify = React.useContext(NotifyContext);
 	const [$player] = React.useState('videojs-public');
 	const [$ready, setReady] = React.useState(false);

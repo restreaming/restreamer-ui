@@ -98,7 +98,7 @@ export default function Main(props) {
 			log: [],
 		},
 	});
-	const processLogTimer = React.useRef();
+	const processLogTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 	const [$processDebug, setProcessDebug] = React.useState({
 		open: false,
 		data: '',
@@ -145,7 +145,7 @@ export default function Main(props) {
 
 		const progress = await props.restreamer.GetIngestProgress(_channelid);
 
-		const state = {
+		const state: DynamicObject = {
 			...$state,
 			ready: true,
 			valid: progress.valid,

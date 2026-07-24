@@ -133,7 +133,7 @@ export default function Edit(props) {
 			metadata.profiles[0],
 		);
 
-		const state = {
+		const state: DynamicObject = {
 			complete: complete,
 		};
 

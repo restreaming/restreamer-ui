@@ -119,9 +119,6 @@ export default function Component(props) {
 		float: 'right',
 		padding: '0.5em',
 		backgroundColor: Palette.background.footer1,
-		'&:hover': {
-			backgroundColor: Palette.background.footer2,
-		},
 	};
 	if (props.rows === 1) {
 		textAreaStyle = {
@@ -168,8 +165,8 @@ export default function Component(props) {
 				<Stack
 					direction="column"
 					spacing={0}
-					width="100%"
 					sx={{
+						width: '100%',
 						justifyContent: 'flex-start',
 						alignItems: 'flex-end',
 					}}

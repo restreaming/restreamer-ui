@@ -28,7 +28,7 @@ function Source(props) {
 	const { i18n } = useLingui();
 	const settings = initSettings(props.settings);
 
-	const handleChange = (newSettings) => {
+	const handleChange = (newSettings = settings) => {
 		newSettings = newSettings || settings;
 
 		const filteredDevices = props.knownDevices.filter(

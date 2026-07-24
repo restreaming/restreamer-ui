@@ -84,11 +84,7 @@ export default function Component(props) {
 								<FormControl variant={props.variant} fullWidth>
 									<InputLabel>{props.label}</InputLabel>
 									<Select
-										value={
-											$value.isCustom === false
-												? $value.value
-												: props.customKey
-										}
+								value={props.customKey}
 										onChange={handleChange}
 										disabled={props.disabled}
 										label={props.label}
@@ -101,10 +97,7 @@ export default function Component(props) {
 								<TextField
 									variant={props.variant}
 									fullWidth
-									disabled={
-										props.disabled === true ||
-										$value.isCustom === false
-									}
+									disabled={props.disabled === true}
 									label={
 										props.customLabel
 											? props.customLabel

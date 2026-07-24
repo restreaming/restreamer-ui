@@ -56,7 +56,7 @@ function Source(props) {
 	const settings = initSettings(props.settings, props.knownDevices);
 	const devices = initDevices(props.knownDevices);
 
-	const handleChange = (newSettings) => {
+	const handleChange = (newSettings = settings) => {
 		newSettings = newSettings || settings;
 
 		props.onChange(

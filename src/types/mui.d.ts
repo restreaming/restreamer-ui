@@ -78,3 +78,19 @@ declare module '@mui/material/TextField' {
 		default: true;
 	}
 }
+
+declare module '@mui/material/Button' {
+	interface ButtonPropsColorOverrides {
+		default: true;
+	}
+	interface ButtonPropsVariantOverrides {
+		big: true;
+		bigSelected: true;
+	}
+}
+
+declare module '@mui/material/Switch' {
+	interface SwitchPropsColorOverrides {
+		default: true;
+	}
+}

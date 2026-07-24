@@ -25,7 +25,7 @@ function Source(props) {
 	const settings = initSettings(props.settings, config);
 	const skills = S.func.initSkills(props.skills);
 
-	const handleChange = (newSettings) => {
+	const handleChange = (newSettings = settings) => {
 		newSettings = newSettings || settings;
 
 		const inputs = S.func.createInputs(newSettings, config, skills);

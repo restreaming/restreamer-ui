@@ -44,6 +44,7 @@ import UploadButton from '../misc/UploadButton';
 const PREFIX = 'Playersite';
 
 const classes = {
+	root: `${PREFIX}-root`,
 	buttonOpen: `${PREFIX}-buttonOpen`,
 };
 

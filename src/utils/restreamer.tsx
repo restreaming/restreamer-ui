@@ -87,7 +87,7 @@ class Restreamer {
 			initialAbout = {};
 		}
 
-		const about = {
+		const about: DynamicObject = {
 			id: '',
 			name: '',
 			created_at: null,
@@ -3931,7 +3931,7 @@ function parseRFC3339Date(d) {
 	if (m[7] === undefined) {
 		m[7] = '0';
 	} else {
-		m[7] = String(parseInt((1.0 / parseFloat(m[7])) * 100));
+		m[7] = String(Math.floor((1.0 / parseFloat(m[7])) * 100));
 	}
 
 	// If timezone is undefined, it must be Z or nothing (otherwise the group would have captured).

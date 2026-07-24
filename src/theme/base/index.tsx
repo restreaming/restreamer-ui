@@ -8,7 +8,7 @@ import shape from './shape';
 const theme = createTheme({
 	breakpoints: { ...breakpoints },
 	palette: { ...palette },
-	typography: { ...typography },
+	typography: typography as any,
 	shape: { ...shape },
 });
 

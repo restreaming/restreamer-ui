@@ -81,7 +81,7 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
 	border: `2px solid ${theme.palette.primary.dark}`,
 }));
 
-function ChannelButton(props, largeChannelList) {
+function ChannelButton(props, largeChannelList = false) {
 	const theme = useTheme();
 
 	let color = theme.palette.primary.main;
@@ -134,7 +134,7 @@ function ChannelButton(props, largeChannelList) {
 					<Image
 						sx={{
 							width: props.width,
-							height: parseInt((props.width / 16) * 9),
+								height: Math.floor((props.width / 16) * 9),
 						}}
 					>
 						<ImageAlt>

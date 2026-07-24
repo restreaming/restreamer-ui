@@ -28,6 +28,8 @@ import Password from '../../../misc/Password';
 import Select from '../../../misc/Select';
 import Textarea from '../../../misc/Textarea';
 
+const useStyles = () => ({ gridContainer: 'gridContainer' });
+
 const initSettings = (initialSettings, config) => {
 	if (!initialSettings) {
 		initialSettings = {};
@@ -188,7 +190,7 @@ const createInputs = (settings, config, skills) => {
 			if (name === 'none') {
 				name = config.channelid;
 			}
-			input.address = getLocalHLS(name);
+				input.address = getLocalHLS(config, name);
 		} else if (settings.push.type === 'rtmp') {
 			if (name === config.channelid) {
 				name += '.stream';
@@ -1116,7 +1118,7 @@ function PushHLS(props) {
 	const classes = useStyles();
 	const config = props.config;
 
-	const HLS = getHLS(config);
+	const HLS = getHLS(config, '');
 
 	return (
 		<Grid

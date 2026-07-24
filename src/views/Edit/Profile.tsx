@@ -218,6 +218,8 @@ export default function Profile(props) {
 				},
 			});
 		}
+
+		return status;
 	};
 
 	const handleRefresh = async () => {
@@ -449,10 +451,11 @@ export default function Profile(props) {
 
 	const handleHintCancel = () => {
 		setHintModal({
+			...$hintModal,
 			streams: [],
 		});
 
-		handleHintModal('none')(null);
+		handleHintModal('none', [])(null);
 	};
 
 	const handleHintDone = () => {
@@ -485,7 +488,7 @@ export default function Profile(props) {
 
 		handleProbeStreams(type, device, settings, inputs, probe);
 
-		handleHintModal('none')(null);
+		handleHintModal('none', [])(null);
 	};
 
 	if ($ready === false) {
@@ -598,9 +601,10 @@ export default function Profile(props) {
 												type="video"
 												streams={$sources.video.streams}
 												selected={$profile.video.stream}
-												onChange={handleStreamSelect(
-													'video',
-												)}
+															onChange={handleStreamSelect(
+																'video',
+																'stream',
+															)}
 											/>
 										</Grid>
 										<Grid
@@ -839,9 +843,10 @@ export default function Profile(props) {
 															$profile.audio
 																.stream
 														}
-														onChange={handleStreamSelect(
-															'audio',
-														)}
+																onChange={handleStreamSelect(
+																'audio',
+																'stream',
+															)}
 													/>
 												</Grid>
 												<Grid

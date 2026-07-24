@@ -226,7 +226,10 @@ function Resources(props) {
 						</ListSubheader>
 					}
 				>
-					<ListItem divider selected={system.cpu_used >= 75}>
+						<ListItem
+							divider
+							sx={system.cpu_used >= 75 ? { bgcolor: 'error.main' } : undefined}
+						>
 						<ListItemText
 							primary={
 								<Typography variant="body3">
@@ -240,7 +243,10 @@ function Resources(props) {
 							}
 						/>
 					</ListItem>
-					<ListItem divider selected={system.mem_used >= 75}>
+						<ListItem
+							divider
+							sx={system.mem_used >= 75 ? { bgcolor: 'error.main' } : undefined}
+						>
 						<ListItemText
 							primary={
 								<Typography variant="body3">

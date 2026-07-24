@@ -9,7 +9,7 @@ try {
 	new Auth0Client({
 		domain: 'example.eu.auth0.com',
 		clientId: 'some_client_id',
-		audience: 'https://example.com/',
+		authorizationParams: { audience: 'https://example.com/' },
 		cacheLocation: 'memory',
 	});
 
@@ -79,9 +79,8 @@ const init = () => {
 		client = new Auth0Client({
 			domain: config.domain,
 			clientId: config.client_id,
-			audience: config.audience,
+		authorizationParams: { audience: config.audience },
 			cacheLocation: 'localstorage',
-			advancedOptions: { defaultScope: 'openid' },
 		});
 	} catch (e) {
 		return false;

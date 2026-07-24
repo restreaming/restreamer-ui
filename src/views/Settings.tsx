@@ -44,6 +44,7 @@ import useInterval from '../hooks/useInterval';
 const PREFIX = 'Settings';
 
 const classes = {
+	root: `${PREFIX}-root`,
 	inlineEnv: `${PREFIX}-inlineEnv`,
 };
 
@@ -738,7 +739,7 @@ export default function Settings(props) {
 		service: { errors: false, messages: [] },
 	});
 	const [$logdata, setLogdata] = React.useState('');
-	const logTimer = React.useRef();
+	const logTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 	const [$reloadKey, setReloadKey] = React.useState('');
 	const [$dialogs, setDialogs] = React.useState({
 		restart: false,
