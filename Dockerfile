@@ -1,23 +1,23 @@
-ARG NODE_IMAGE=node:21-alpine3.20
-ARG CADDY_IMAGE=caddy:2.8.4-alpine
-
-FROM $NODE_IMAGE AS builder
+FROM node:24-slim AS builder
 
 COPY . /ui
 
 WORKDIR /ui
 
-RUN cd /ui && \
-	pnpm install && \
-	pnpm build
+RUN npm i -g pnpm@latest
+RUN pnpm install && pnpm run build
 
-FROM $CADDY_IMAGE
+FROM node:24-slim AS runner
 
-COPY --from=builder /ui/dist /ui/dist
-COPY --from=builder /ui/Caddyfile /ui/Caddyfile
+ENV NODE_ENV=production
+ENV HOSTNAME=0.0.0.0
+ENV PORT=3000
 
 WORKDIR /ui
 
+COPY --from=builder /ui ./ui
+RUN npm i -g pnpm@latest
+
 EXPOSE 3000
 
-CMD [ "caddy", "run", "--config", "/ui/Caddyfile" ]
+CMD [ "pnpm", "start" ]

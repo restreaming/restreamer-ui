@@ -1,11 +1,14 @@
-ARG CADDY_IMAGE=caddy:2.7.5-alpine
-FROM $CADDY_IMAGE
+FROM node:24-slim
 
-COPY dist /ui/dist
-COPY Caddyfile /ui/Caddyfile
+ENV NODE_ENV=production
+ENV HOSTNAME=0.0.0.0
+ENV PORT=3000
 
 WORKDIR /ui
 
+COPY .next/ ./
+RUN npm i -g pnpm@latest
+
 EXPOSE 3000
 
-CMD [ "caddy", "run", "--config", "/ui/Caddyfile" ]
+CMD [ "pnpm", "start" ]
