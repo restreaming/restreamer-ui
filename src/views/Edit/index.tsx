@@ -492,6 +492,10 @@ export default function Edit(props) {
 						<Tabs
 							orientation="vertical"
 							variant="scrollable"
+							sx={{
+								width: { xs: 112, sm: 260 },
+								flexShrink: 0,
+							}}
 							value={$tab}
 							onChange={handleChangeTab}
 						>

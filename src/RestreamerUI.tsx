@@ -27,11 +27,17 @@ import SemverValid from 'semver/functions/valid';
 const PREFIX = 'RestreamerUI';
 
 const classes = {
+	root: `${PREFIX}-root`,
 	MainHeader: `${PREFIX}-MainHeader`,
 	MainContent: `${PREFIX}-MainContent`,
 };
 
 const StyledI18n = styled(I18n)(({ theme }) => ({
+	[`& .${classes.root}`]: {
+		minHeight: '100vh',
+		display: 'flex',
+		flexDirection: 'column',
+	},
 	[`& .${classes.MainHeader}`]: {
 		height: '132px',
 	},
@@ -45,6 +51,7 @@ const StyledI18n = styled(I18n)(({ theme }) => ({
 		'& .MainContent-item': {
 			maxWidth: '980px',
 		},
+		flexGrow: 1,
 	},
 }));
 
@@ -547,8 +554,11 @@ export default function RestreamerUI(props) {
 		<StyledI18n>
 			<NotifyProvider value={{ Dispatch: notify }}>
 				<Grid
+					className={classes.root}
 					container
 					sx={{
+						minHeight: 'calc(100vh - 60px)',
+						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'stretch',
 						justifyContent: 'flex-start',
@@ -568,7 +578,7 @@ export default function RestreamerUI(props) {
 							onLogout={handleLogout}
 						/>
 					</Grid>
-					<Grid className={classes.MainContent}>
+					<Grid className={classes.MainContent} sx={{ flexGrow: 1 }}>
 						<Grid
 							container
 							className="MainContent-container"

@@ -32,7 +32,8 @@ const classes = {
 const StyledGrid = styled(Grid)(({ theme }) => ({
 	[`&.${classes.footer}`]: {
 		zIndex: '2',
-		position: 'fixed',
+		position: 'relative',
+		flexShrink: 0,
 		bottom: 0,
 		width: '100%',
 		height: 60,
