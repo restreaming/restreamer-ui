@@ -14,9 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Checkbox from "../../../misc/Checkbox";
-import Select from "../../../misc/Select";
-import Password from "../../../misc/Password";
+import Checkbox from "../../../components/misc/Checkbox";
+import Select from "../../../components/misc/Select";
+import Password from "../../../components/misc/Password";
 
 const id = "dash";
 const name = "DASH";

@@ -4,10 +4,10 @@ import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import LicenseControl from "../../../misc/controls/License";
+import LicenseControl from "../../../components/misc/controls/License";
 
-import Paper from "../../../misc/Paper";
-import PaperHeader from "../../../misc/PaperHeader";
+import Paper from "../../../components/misc/Paper";
+import PaperHeader from "../../../components/misc/PaperHeader";
 
 export default function License(props: Any) {
   return (

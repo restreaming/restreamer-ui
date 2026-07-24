@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 import Logo from "./logos/wettercom.png";
 
 const id = "wettercom";

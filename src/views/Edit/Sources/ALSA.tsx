@@ -8,9 +8,9 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Audio from "../../../misc/coders/settings/Audio";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import SelectCustom from "../../../misc/SelectCustom";
+import Audio from "../../../components/misc/coders/settings/Audio";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import SelectCustom from "../../../components/misc/SelectCustom";
 
 const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {

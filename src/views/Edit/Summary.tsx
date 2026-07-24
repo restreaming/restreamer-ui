@@ -6,9 +6,9 @@ import { t } from "@lingui/core/macro";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
-import * as Coders from "../../misc/coders/Encoders";
-import * as Filters from "../../misc/filters";
-import BoxText from "../../misc/BoxText";
+import * as Coders from "../../components/misc/coders/Encoders";
+import * as Filters from "../../components/misc/filters";
+import BoxText from "../../components/misc/BoxText";
 import Sources from "./Sources";
 
 export default function Summary(props: Any) {

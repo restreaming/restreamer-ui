@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/vitest";
 import { ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider } from "@mui/material";
 import { vi } from "vitest";
-import theme from "../theme";
+import theme from "../components/theme";
 import I18n from "../I18n";
 
 vi.mock("next/navigation", () => ({

@@ -11,15 +11,15 @@ import Typography from "@mui/material/Typography";
 import WarningIcon from "@mui/icons-material/Warning";
 
 import * as M from "../../utils/metadata";
-import BoxText from "../../misc/BoxText";
-import EncodingSelect from "../../misc/EncodingSelect";
-import PaperFooter from "../../misc/PaperFooter";
-import ProbeModal from "../../misc/modals/Probe";
-import HintModal from "../../misc/modals/Hint";
+import BoxText from "../../components/misc/BoxText";
+import EncodingSelect from "../../components/misc/EncodingSelect";
+import PaperFooter from "../../components/misc/PaperFooter";
+import ProbeModal from "../../components/misc/modals/Probe";
+import HintModal from "../../components/misc/modals/Hint";
 import SourceSelect from "./SourceSelect";
 import StreamSelect from "./StreamSelect";
 
-import FilterSelect from "../../misc/FilterSelect";
+import FilterSelect from "../../components/misc/FilterSelect";
 
 export default function Profile(props: Any) {
   const [$sources, setSources] = React.useState<DynamicObject>({

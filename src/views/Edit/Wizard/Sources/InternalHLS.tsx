@@ -6,8 +6,8 @@ import Icon from "@mui/icons-material/KeyboardTab";
 import Typography from "@mui/material/Typography";
 
 import * as S from "../../Sources/Network";
-import BoxTextarea from "../../../../misc/BoxTextarea";
-import Textarea from "../../../../misc/Textarea";
+import BoxTextarea from "../../../../components/misc/BoxTextarea";
+import Textarea from "../../../../components/misc/Textarea";
 
 const initSettings = (initialSettings: Any, config: Any) => {
   const settings: DynamicObject = {

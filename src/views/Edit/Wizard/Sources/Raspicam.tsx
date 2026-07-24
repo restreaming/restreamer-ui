@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import * as S from "../../Sources/Raspicam";
-import Select from "../../../../misc/Select";
+import Select from "../../../../components/misc/Select";
 
 function initSettings(initialSettings: Any, knownDevices: Any) {
   const settings: DynamicObject = {

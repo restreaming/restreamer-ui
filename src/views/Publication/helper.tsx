@@ -1,4 +1,4 @@
-import * as Coders from "../../misc/coders/Encoders";
+import * as Coders from "../../components/misc/coders/Encoders";
 import * as M from "../../utils/metadata";
 
 /**

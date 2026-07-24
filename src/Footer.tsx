@@ -16,9 +16,9 @@ import Typography from "@mui/material/Typography";
 import WarningIcon from "@mui/icons-material/Warning";
 
 import useInterval from "./hooks/useInterval";
-import Duration from "./misc/Duration";
-import Logo from "./misc/Logo";
-import Number from "./misc/Number";
+import Duration from "./components/misc/Duration";
+import Logo from "./components/misc/Logo";
+import Number from "./components/misc/Number";
 
 const PREFIX = "Footer";
 

@@ -3,8 +3,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import Paper from "../../../misc/Paper";
-import PaperHeader from "../../../misc/PaperHeader";
+import Paper from "../../../components/misc/Paper";
+import PaperHeader from "../../../components/misc/PaperHeader";
 
 export default function Probe(props: Any) {
   return (

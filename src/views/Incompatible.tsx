@@ -1,8 +1,8 @@
 import { Trans } from "@lingui/react/macro";
 
-import Paper from "../misc/Paper";
-import PaperHeader from "../misc/PaperHeader";
-import PaperContent from "../misc/PaperContent";
+import Paper from "../components/misc/Paper";
+import PaperHeader from "../components/misc/PaperHeader";
+import PaperContent from "../components/misc/PaperContent";
 
 export default function Incompatible(props: Any) {
   const text =

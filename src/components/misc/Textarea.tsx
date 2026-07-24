@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Stack from "@mui/material/Stack";
 
-import NotifyContext from "../contexts/Notify";
+import NotifyContext from "../../contexts/Notify";
 import Palette from "../theme/base/palette";
 import TextareaModal from "./modals/Textarea";
 

@@ -12,9 +12,9 @@ import Typography from "@mui/material/Typography";
 import useInterval from "../../hooks/useInterval";
 import Egress from "./Egress";
 import H from "../../utils/help";
-import Number from "../../misc/Number";
-import Paper from "../../misc/Paper";
-import PaperHeader from "../../misc/PaperHeader";
+import Number from "../../components/misc/Number";
+import Paper from "../../components/misc/Paper";
+import PaperHeader from "../../components/misc/PaperHeader";
 import Services from "../Publication/Services";
 
 const PREFIX = "Publication";

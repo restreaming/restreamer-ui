@@ -7,9 +7,9 @@ import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
-import Checkbox from "../../../misc/Checkbox";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import Select from "../../../misc/Select";
+import Checkbox from "../../../components/misc/Checkbox";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import Select from "../../../components/misc/Select";
 
 const id = "youtube";
 const name = "YouTube Live";

@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Select from "../../../misc/Select";
+import Select from "../../../components/misc/Select";
 
 const id = "rtmp";
 const name = "RTMP";

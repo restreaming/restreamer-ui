@@ -4,7 +4,7 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "instagram";
 const name = "Instagram";

@@ -2,7 +2,7 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
-import Select from "../../../misc/Select";
+import Select from "../../../components/misc/Select";
 import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/azure.svg";

@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import "@fontsource/dosis";
 import "@fontsource/roboto";
 
-import theme from "../theme";
+import theme from "../components/theme";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (

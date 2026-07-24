@@ -4,8 +4,8 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 
-import Checkbox from "../../../misc/Checkbox";
-import FormInlineButton from "../../../misc/FormInlineButton";
+import Checkbox from "../../../components/misc/Checkbox";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "facebook";
 const name = "Facebook Live";

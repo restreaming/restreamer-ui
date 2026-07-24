@@ -5,8 +5,8 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/restream.svg";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import Select from "../../../misc/Select";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import Select from "../../../components/misc/Select";
 
 const id = "restream";
 const name = "Restream";

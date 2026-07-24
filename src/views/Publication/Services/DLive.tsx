@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/dlive.svg";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "dlive";
 const name = "dlive";

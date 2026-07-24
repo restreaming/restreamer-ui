@@ -7,10 +7,10 @@ import Icon from "@mui/icons-material/Apple";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import Typography from "@mui/material/Typography";
 
-import Checkbox from "../../../misc/Checkbox";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import SelectCustom from "../../../misc/SelectCustom";
-import Video from "../../../misc/coders/settings/Video";
+import Checkbox from "../../../components/misc/Checkbox";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import SelectCustom from "../../../components/misc/SelectCustom";
+import Video from "../../../components/misc/coders/settings/Video";
 
 const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {

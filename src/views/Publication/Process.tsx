@@ -2,9 +2,9 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import ActionButton from "../../misc/ActionButton";
-import BoxText from "../../misc/BoxText";
-import Duration from "../../misc/Duration";
+import ActionButton from "../../components/misc/ActionButton";
+import BoxText from "../../components/misc/BoxText";
+import Duration from "../../components/misc/Duration";
 
 function init(progress: Any) {
   const initProgress = {

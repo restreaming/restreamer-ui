@@ -9,10 +9,10 @@ import Icon from "@mui/icons-material/Cached";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Dialog from "../../../misc/modals/Dialog";
-import Filesize from "../../../misc/Filesize";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import UploadButton from "../../../misc/UploadButton";
+import Dialog from "../../../components/misc/modals/Dialog";
+import Filesize from "../../../components/misc/Filesize";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import UploadButton from "../../../components/misc/UploadButton";
 
 const imageTypes = [
   { mimetype: "image/*", extension: "image", maxSize: 2 * 1024 * 1024 },

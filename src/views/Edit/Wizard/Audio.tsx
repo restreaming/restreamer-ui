@@ -12,11 +12,11 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import WarningIcon from "@mui/icons-material/Warning";
 
-import BoxText from "../../../misc/BoxText";
+import BoxText from "../../../components/misc/BoxText";
 
-import Paper from "../../../misc/Paper";
-import PaperHeader from "../../../misc/PaperHeader";
-import Select from "../../../misc/Select";
+import Paper from "../../../components/misc/Paper";
+import PaperHeader from "../../../components/misc/PaperHeader";
+import Select from "../../../components/misc/Select";
 
 export default function Audio(props: Any) {
   const { i18n } = useLingui();

@@ -22,24 +22,23 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 import * as M from "../utils/metadata";
-import playerSiteThumb from "../assets/images/playersite.png";
-import Checkbox from "../misc/Checkbox";
-import ColorPicker from "../misc/ColorPicker";
-import Dialog from "../misc/modals/Dialog";
-import Filesize from "../misc/Filesize";
-import FormInlineButton from "../misc/FormInlineButton";
+import Checkbox from "../components/misc/Checkbox";
+import ColorPicker from "../components/misc/ColorPicker";
+import Dialog from "../components/misc/modals/Dialog";
+import Filesize from "../components/misc/Filesize";
+import FormInlineButton from "../components/misc/FormInlineButton";
 import H from "../utils/help";
-import MultiSelect from "../misc/MultiSelect";
-import MultiSelectOption from "../misc/MultiSelectOption";
+import MultiSelect from "../components/misc/MultiSelect";
+import MultiSelectOption from "../components/misc/MultiSelectOption";
 import NotifyContext from "../contexts/Notify";
-import Paper from "../misc/Paper";
-import PaperHeader from "../misc/PaperHeader";
-import PaperFooter from "../misc/PaperFooter";
-import PaperThumb from "../misc/PaperThumb";
-import Select from "../misc/Select";
-import TabPanel from "../misc/TabPanel";
-import TabsVerticalGrid from "../misc/TabsVerticalGrid";
-import UploadButton from "../misc/UploadButton";
+import Paper from "../components/misc/Paper";
+import PaperHeader from "../components/misc/PaperHeader";
+import PaperFooter from "../components/misc/PaperFooter";
+import PaperThumb from "../components/misc/PaperThumb";
+import Select from "../components/misc/Select";
+import TabPanel from "../components/misc/TabPanel";
+import TabsVerticalGrid from "../components/misc/TabsVerticalGrid";
+import UploadButton from "../components/misc/UploadButton";
 
 const PREFIX = "Playersite";
 
@@ -428,7 +427,10 @@ export default function Playersite(props: Any) {
             <TabPanel value={$tab} index="general">
               <Grid container spacing={2}>
                 <Grid size={12}>
-                  <PaperThumb image={playerSiteThumb} title="Playersite" />
+                  <PaperThumb
+                    image="/images/playersite.png"
+                    title="Playersite"
+                  />
                 </Grid>
                 <Grid size={12}>
                   <Typography variant="h1">

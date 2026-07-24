@@ -9,9 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
-import Select from "../../../misc/Select";
-import Video from "../../../misc/coders/settings/Video";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import Select from "../../../components/misc/Select";
+import Video from "../../../components/misc/coders/settings/Video";
 
 const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {

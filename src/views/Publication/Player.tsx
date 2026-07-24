@@ -14,20 +14,20 @@ import Tab from "@mui/material/Tab";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Checkbox from "../../misc/Checkbox";
-import Dialog from "../../misc/modals/Dialog";
-import Filesize from "../../misc/Filesize";
+import Checkbox from "../../components/misc/Checkbox";
+import Dialog from "../../components/misc/modals/Dialog";
+import Filesize from "../../components/misc/Filesize";
 import H from "../../utils/help";
 import NotifyContext from "../../contexts/Notify";
-import Paper from "../../misc/Paper";
-import PaperHeader from "../../misc/PaperHeader";
-import PaperFooter from "../../misc/PaperFooter";
-import Player from "../../misc/Player";
-import Select from "../../misc/Select";
-import UploadButton from "../../misc/UploadButton";
-import TabPanel from "../../misc/TabPanel";
-import TabsHorizontal from "../../misc/TabsHorizontal";
-import TextFieldCopy from "../../misc/TextFieldCopy";
+import Paper from "../../components/misc/Paper";
+import PaperHeader from "../../components/misc/PaperHeader";
+import PaperFooter from "../../components/misc/PaperFooter";
+import Player from "../../components/misc/Player";
+import Select from "../../components/misc/Select";
+import UploadButton from "../../components/misc/UploadButton";
+import TabPanel from "../../components/misc/TabPanel";
+import TabsHorizontal from "../../components/misc/TabsHorizontal";
+import TextFieldCopy from "../../components/misc/TextFieldCopy";
 
 const PREFIX = "Player";
 

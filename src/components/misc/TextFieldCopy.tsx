@@ -6,10 +6,10 @@ import FileCopyIcon from "@mui/icons-material/FileCopy";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
 import InputLabel from "@mui/material/InputLabel";
-import NotifyContext from "../contexts/Notify";
+import NotifyContext from "../../contexts/Notify";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
-import CopyToClipboard from "../utils/clipboard";
+import CopyToClipboard from "../../utils/clipboard";
 
 export default function Component(props: Any) {
   const { i18n } = useLingui();

@@ -4,8 +4,8 @@ import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/peertube.svg";
 
-import Checkbox from "../../../misc/Checkbox";
-import FormInlineButton from "../../../misc/FormInlineButton";
+import Checkbox from "../../../components/misc/Checkbox";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "peertube";
 const name = "PeerTube";

@@ -23,20 +23,20 @@ import Typography from "@mui/material/Typography";
 
 import * as helper from "./helper";
 import * as M from "../../utils/metadata";
-import EncodingSelect from "../../misc/EncodingSelect";
-import FilterSelect from "../../misc/FilterSelect";
+import EncodingSelect from "../../components/misc/EncodingSelect";
+import FilterSelect from "../../components/misc/FilterSelect";
 import H from "../../utils/help";
-import LimitsControl from "../../misc/controls/Limits";
+import LimitsControl from "../../components/misc/controls/Limits";
 import NotifyContext from "../../contexts/Notify";
-import Paper from "../../misc/Paper";
-import PaperHeader from "../../misc/PaperHeader";
-import PaperFooter from "../../misc/PaperFooter";
-import ProcessControl from "../../misc/controls/Process";
-import SourceControl from "../../misc/controls/Source";
+import Paper from "../../components/misc/Paper";
+import PaperHeader from "../../components/misc/PaperHeader";
+import PaperFooter from "../../components/misc/PaperFooter";
+import ProcessControl from "../../components/misc/controls/Process";
+import SourceControl from "../../components/misc/controls/Source";
 import Services from "./Services";
 import TabContent from "./TabContent";
-import TabPanel from "../../misc/TabPanel";
-import TabsVerticalGrid from "../../misc/TabsVerticalGrid";
+import TabPanel from "../../components/misc/TabPanel";
+import TabsVerticalGrid from "../../components/misc/TabsVerticalGrid";
 
 const PREFIX = "Add";
 

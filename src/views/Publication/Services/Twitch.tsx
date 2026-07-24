@@ -5,8 +5,8 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
-import Select from "../../../misc/Select";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import Select from "../../../components/misc/Select";
 
 const id = "twitch";
 const name = "Twitch";

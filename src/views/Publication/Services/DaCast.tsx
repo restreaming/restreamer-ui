@@ -4,9 +4,9 @@ import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
-import Checkbox from "../../../misc/Checkbox";
+import Checkbox from "../../../components/misc/Checkbox";
 import Logo from "./logos/dacast.svg";
-import Select from "../../../misc/Select";
+import Select from "../../../components/misc/Select";
 
 const id = "dacast";
 const name = "DaCast";

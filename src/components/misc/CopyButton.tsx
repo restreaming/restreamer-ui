@@ -5,8 +5,8 @@ import { t } from "@lingui/core/macro";
 import Button from "@mui/material/Button";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 
-import CopyToClipboard from "../utils/clipboard";
-import NotifyContext from "../contexts/Notify";
+import CopyToClipboard from "../../utils/clipboard";
+import NotifyContext from "../../contexts/Notify";
 
 export default function CopyButton(props: Any) {
   const notify = useContext(NotifyContext);

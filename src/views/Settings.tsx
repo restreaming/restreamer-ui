@@ -20,25 +20,24 @@ import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import WarningIcon from "@mui/icons-material/Warning";
 
-import settingsImage from "../assets/images/settings.png";
-import BoxText from "../misc/BoxText";
-import BoxTextarea from "../misc/BoxTextarea";
-import Checkbox from "../misc/Checkbox";
-import Dialog from "../misc/modals/Dialog";
-import Env from "../misc/Env";
+import BoxText from "../components/misc/BoxText";
+import BoxTextarea from "../components/misc/BoxTextarea";
+import Checkbox from "../components/misc/Checkbox";
+import Dialog from "../components/misc/modals/Dialog";
+import Env from "../components/misc/Env";
 import H from "../utils/help";
 import NotifyContext from "../contexts/Notify";
-import Paper from "../misc/Paper";
-import PaperHeader from "../misc/PaperHeader";
-import PaperContent from "../misc/PaperContent";
-import PaperFooter from "../misc/PaperFooter";
-import PaperThumb from "../misc/PaperThumb";
-import Password from "../misc/Password";
-import Select from "../misc/Select";
-import TabPanel from "../misc/TabPanel";
-import TabsVerticalGrid from "../misc/TabsVerticalGrid";
-import Textarea from "../misc/Textarea";
-import TextField from "../misc/TextField";
+import Paper from "../components/misc/Paper";
+import PaperHeader from "../components/misc/PaperHeader";
+import PaperContent from "../components/misc/PaperContent";
+import PaperFooter from "../components/misc/PaperFooter";
+import PaperThumb from "../components/misc/PaperThumb";
+import Password from "../components/misc/Password";
+import Select from "../components/misc/Select";
+import TabPanel from "../components/misc/TabPanel";
+import TabsVerticalGrid from "../components/misc/TabsVerticalGrid";
+import Textarea from "../components/misc/Textarea";
+import TextField from "../components/misc/TextField";
 import useInterval from "../hooks/useInterval";
 
 const PREFIX = "Settings";
@@ -1452,7 +1451,7 @@ export default function Settings(props: Any) {
                 <Grid size={12}>
                   <Grid size={12}>
                     <PaperThumb
-                      image={settingsImage}
+                      image="/images/settings.png"
                       title="Welcome to Restreamer v2"
                       height="200px"
                     />

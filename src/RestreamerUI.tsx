@@ -13,7 +13,7 @@ import Snackbar from "@mui/material/Snackbar";
 import { NotifyProvider } from "./contexts/Notify";
 import * as auth0 from "./utils/auth0";
 import useInterval from "./hooks/useInterval";
-import ChannelList from "./misc/ChannelList";
+import ChannelList from "./components/misc/ChannelList";
 import Footer from "./Footer";
 import I18n from "./I18n";
 import Header from "./Header";
@@ -22,7 +22,7 @@ import Restreamer from "./utils/restreamer";
 import AppRoute from "./AppRoute";
 import Views from "./views";
 import { UI as Version } from "./version";
-import Changelog from "./misc/Changelog";
+import Changelog from "./components/misc/Changelog";
 
 import SemverGt from "semver/functions/gt";
 import SemverValid from "semver/functions/valid";

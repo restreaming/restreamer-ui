@@ -12,7 +12,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import Typography from "@mui/material/Typography";
 
 import * as S from "../../Sources/V4L";
-import Select from "../../../../misc/Select";
+import Select from "../../../../components/misc/Select";
 
 function initSettings(initialSettings: Any, knownDevices: Any) {
   const settings: DynamicObject = {

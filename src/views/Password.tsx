@@ -8,12 +8,12 @@ import Grid from "@mui/material/Grid";
 import LinearProgress from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 
-import Paper from "../misc/Paper";
-import Password from "../misc/Password";
-import PaperHeader from "../misc/PaperHeader";
-import PaperContent from "../misc/PaperContent";
-import PaperFooter from "../misc/PaperFooter";
-import TextField from "../misc/TextField";
+import Paper from "../components/misc/Paper";
+import Password from "../components/misc/Password";
+import PaperHeader from "../components/misc/PaperHeader";
+import PaperContent from "../components/misc/PaperContent";
+import PaperFooter from "../components/misc/PaperFooter";
+import TextField from "../components/misc/TextField";
 
 const generatePassword = (length: Any) => {
   const characters =

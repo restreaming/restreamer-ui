@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/akamai.svg";
 
-import Checkbox from "../../../misc/Checkbox";
+import Checkbox from "../../../components/misc/Checkbox";
 
 const id = "akamai";
 const name = "Akamai";

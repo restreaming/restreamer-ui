@@ -12,9 +12,9 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import Typography from "@mui/material/Typography";
 
 import * as S from "../../Sources/Network";
-import BoxTextarea from "../../../../misc/BoxTextarea";
-import Select from "../../../../misc/Select";
-import Textarea from "../../../../misc/Textarea";
+import BoxTextarea from "../../../../components/misc/BoxTextarea";
+import Select from "../../../../components/misc/Select";
+import Textarea from "../../../../components/misc/Textarea";
 
 const initSettings = (initialSettings: Any, config: Any) => {
   const settings: DynamicObject = {

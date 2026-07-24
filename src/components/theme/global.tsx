@@ -1,5 +1,4 @@
 import base from "./base";
-import universe from "../assets/images/universe-4609408.jpg";
 
 export default {
   html: {
@@ -8,7 +7,7 @@ export default {
     fontSize: "16px/1.5",
   },
   body: {
-    background: `${base.palette.background.button_disabled} url(${universe}) no-repeat fixed left top`,
+    background: `${base.palette.background.button_disabled} url(/images/universe-4609408.jpg) no-repeat fixed left top`,
     backgroundSize: "cover",
     backgroundBlendMode: "soft-light",
     color: base.palette.text.primary,

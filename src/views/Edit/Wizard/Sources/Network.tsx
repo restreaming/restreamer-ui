@@ -7,8 +7,8 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import * as S from "../../Sources/Network";
-import Checkbox from "../../../../misc/Checkbox";
-import Password from "../../../../misc/Password";
+import Checkbox from "../../../../components/misc/Checkbox";
+import Password from "../../../../components/misc/Password";
 
 const initSettings = (initialSettings: Any, config: Any) => {
   const settings: DynamicObject = {

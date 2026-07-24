@@ -14,10 +14,10 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Select from "../../../misc/Select";
-import MultiSelect from "../../../misc/MultiSelect";
-import MultiSelectOption from "../../../misc/MultiSelectOption";
-import Password from "../../../misc/Password";
+import Select from "../../../components/misc/Select";
+import MultiSelect from "../../../components/misc/MultiSelect";
+import MultiSelectOption from "../../../components/misc/MultiSelectOption";
+import Password from "../../../components/misc/Password";
 
 const id = "rtsp";
 const name = "RTSP";

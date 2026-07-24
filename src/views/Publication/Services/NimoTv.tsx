@@ -4,9 +4,9 @@ import Link from "@mui/material/Link";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 import Logo from "./logos/nimo-tv.svg";
-import Select from "../../../misc/Select";
+import Select from "../../../components/misc/Select";
 
 const id = "nimotv";
 const name = "Nimo TV";

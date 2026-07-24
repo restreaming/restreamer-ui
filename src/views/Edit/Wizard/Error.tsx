@@ -4,9 +4,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import WarningIcon from "@mui/icons-material/Warning";
 
-import BoxText from "../../../misc/BoxText";
-import Paper from "../../../misc/Paper";
-import PaperHeader from "../../../misc/PaperHeader";
+import BoxText from "../../../components/misc/BoxText";
+import Paper from "../../../components/misc/Paper";
+import PaperHeader from "../../../components/misc/PaperHeader";
 
 export default function Error(props: Any) {
   return (

@@ -5,7 +5,7 @@ import ExtensionIcon from "@mui/icons-material/Extension";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 
-import Checkbox from "../../../misc/Checkbox";
+import Checkbox from "../../../components/misc/Checkbox";
 
 // id is a unique identifier for this service.
 const id = "dummy";

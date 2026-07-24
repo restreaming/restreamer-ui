@@ -4,8 +4,8 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 
-import Select from "../../../misc/Select";
-import SelectCustom from "../../../misc/SelectCustom";
+import Select from "../../../components/misc/Select";
+import SelectCustom from "../../../components/misc/SelectCustom";
 
 const id = "framebuffer";
 const name = "Framebuffer";

@@ -4,9 +4,9 @@ import { Trans } from "@lingui/react/macro";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import Duration from "../../misc/Duration";
-import Number from "../../misc/Number";
-import Palette from "../../theme/base/palette";
+import Duration from "../../components/misc/Duration";
+import Number from "../../components/misc/Number";
+import Palette from "../../components/theme/base/palette";
 
 export default function Progress(props: Any) {
   const uptime = props.progress.time;

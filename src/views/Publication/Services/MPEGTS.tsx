@@ -12,10 +12,10 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Checkbox from "../../../misc/Checkbox";
-import Select from "../../../misc/Select";
-import MultiSelect from "../../../misc/MultiSelect";
-import MultiSelectOption from "../../../misc/MultiSelectOption";
+import Checkbox from "../../../components/misc/Checkbox";
+import Select from "../../../components/misc/Select";
+import MultiSelect from "../../../components/misc/MultiSelect";
+import MultiSelectOption from "../../../components/misc/MultiSelectOption";
 
 const id = "mpegts";
 const name = "MPEG-TS";

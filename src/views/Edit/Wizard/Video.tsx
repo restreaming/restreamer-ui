@@ -6,10 +6,10 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import WarningIcon from "@mui/icons-material/Warning";
 
-import BoxText from "../../../misc/BoxText";
+import BoxText from "../../../components/misc/BoxText";
 
-import Paper from "../../../misc/Paper";
-import PaperHeader from "../../../misc/PaperHeader";
+import Paper from "../../../components/misc/Paper";
+import PaperHeader from "../../../components/misc/PaperHeader";
 
 export default function Video(props: Any) {
   return (

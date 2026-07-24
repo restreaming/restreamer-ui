@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/picarto-tv.svg";
-import Select from "../../../misc/Select";
+import Select from "../../../components/misc/Select";
 
 const id = "picartotv";
 const name = "Picarto TV";

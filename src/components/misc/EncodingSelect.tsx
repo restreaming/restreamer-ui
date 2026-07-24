@@ -11,7 +11,7 @@ import Link from "@mui/material/Link";
 import * as Encoders from "./coders/Encoders";
 import * as Decoders from "./coders/Decoders";
 import Select from "./Select";
-import H from "../utils/help";
+import H from "../../utils/help";
 
 export default function EncodingSelect(props: Any) {
   const { i18n } = useLingui();

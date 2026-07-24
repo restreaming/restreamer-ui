@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/trovo.svg";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "trovo";
 const name = "Trovo";

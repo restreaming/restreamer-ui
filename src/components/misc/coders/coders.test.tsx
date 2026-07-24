@@ -1,4 +1,4 @@
-import { render, act } from "../../utils/testing";
+import { render, act } from "../../../utils/testing";
 import "@testing-library/jest-dom/vitest";
 import { test } from "vitest";
 

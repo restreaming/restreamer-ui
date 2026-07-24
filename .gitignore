@@ -32,3 +32,4 @@ tsconfig.tsbuildinfo
 next-env.d.ts
 dist
 .env
+data/*.db

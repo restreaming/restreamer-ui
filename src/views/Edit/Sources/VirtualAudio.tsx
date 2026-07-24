@@ -9,9 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Audio from "../../../misc/coders/settings/Audio";
-import FormInlineButton from "../../../misc/FormInlineButton";
-import Select from "../../../misc/Select";
+import Audio from "../../../components/misc/coders/settings/Audio";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import Select from "../../../components/misc/Select";
 
 const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {

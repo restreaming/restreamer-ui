@@ -10,8 +10,8 @@ import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 
-import * as Decoders from "../../../misc/coders/Decoders";
-import * as Encoders from "../../../misc/coders/Encoders";
+import * as Decoders from "../../../components/misc/coders/Decoders";
+import * as Encoders from "../../../components/misc/coders/Encoders";
 import * as M from "../../../utils/metadata";
 import FullSources from "../Sources";
 import H from "../../../utils/help";

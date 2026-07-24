@@ -11,7 +11,7 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import Checkbox from "../../../misc/Checkbox";
+import Checkbox from "../../../components/misc/Checkbox";
 
 const id = "udp";
 const name = "UDP";

@@ -8,9 +8,9 @@ import Grid from "@mui/material/Grid";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import Typography from "@mui/material/Typography";
 
-import FormInlineButton from "../../../misc/FormInlineButton";
-import SelectCustom from "../../../misc/SelectCustom";
-import Video from "../../../misc/coders/settings/Video";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
+import SelectCustom from "../../../components/misc/SelectCustom";
+import Video from "../../../components/misc/coders/settings/Video";
 
 const initSettings = (initialSettings: Any) => {
   if (!initialSettings) {

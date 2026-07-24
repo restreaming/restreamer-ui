@@ -25,11 +25,10 @@ import WebIcon from "@mui/icons-material/Web";
 
 import * as Storage from "./utils/storage";
 import * as Version from "./version";
-import welcomeImage from "./assets/images/welcome.png";
-import LanguageSelect from "./misc/LanguageSelect";
-import Logo from "./misc/Logo/rsLogo";
-import ModalContent from "./misc/ModalContent";
-import PaperThumb from "./misc/PaperThumb";
+import LanguageSelect from "./components/misc/LanguageSelect";
+import Logo from "./components/misc/Logo/rsLogo";
+import ModalContent from "./components/misc/ModalContent";
+import PaperThumb from "./components/misc/PaperThumb";
 
 const PREFIX = "Header";
 
@@ -171,7 +170,7 @@ function AboutModal(props: DynamicObject) {
         <StyledGrid container spacing={1}>
           <Grid className={classes.aboutImage} size={12}>
             <PaperThumb
-              image={welcomeImage}
+              image="/images/welcome.png"
               title="Welcome to Restreamer v2"
               height="200px"
             />

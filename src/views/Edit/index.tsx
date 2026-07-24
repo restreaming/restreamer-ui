@@ -18,26 +18,25 @@ import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 
 import * as M from "../../utils/metadata";
-import sourceThumb from "../../assets/images/livesource.png";
-import Dialog from "../../misc/modals/Dialog";
+import Dialog from "../../components/misc/modals/Dialog";
 import H from "../../utils/help";
-import HLSControl from "../../misc/controls/HLS";
-import LicenseControl from "../../misc/controls/License";
-import LimitsControl from "../../misc/controls/Limits";
-import MetadataControl from "../../misc/controls/Metadata";
+import HLSControl from "../../components/misc/controls/HLS";
+import LicenseControl from "../../components/misc/controls/License";
+import LimitsControl from "../../components/misc/controls/Limits";
+import MetadataControl from "../../components/misc/controls/Metadata";
 import NotifyContext from "../../contexts/Notify";
-import Paper from "../../misc/Paper";
-import PaperHeader from "../../misc/PaperHeader";
-import PaperFooter from "../../misc/PaperFooter";
-import PaperThumb from "../../misc/PaperThumb";
-import ProcessControl from "../../misc/controls/Process";
+import Paper from "../../components/misc/Paper";
+import PaperHeader from "../../components/misc/PaperHeader";
+import PaperFooter from "../../components/misc/PaperFooter";
+import PaperThumb from "../../components/misc/PaperThumb";
+import ProcessControl from "../../components/misc/controls/Process";
 import Profile from "./Profile";
 import ProfileSummary from "./ProfileSummary";
-import RTMPControl from "../../misc/controls/RTMP";
-import SnapshotControl from "../../misc/controls/Snapshot";
-import SRTControl from "../../misc/controls/SRT";
-import TabPanel from "../../misc/TabPanel";
-import TabsVerticalGrid from "../../misc/TabsVerticalGrid";
+import RTMPControl from "../../components/misc/controls/RTMP";
+import SnapshotControl from "../../components/misc/controls/Snapshot";
+import SRTControl from "../../components/misc/controls/SRT";
+import TabPanel from "../../components/misc/TabPanel";
+import TabsVerticalGrid from "../../components/misc/TabsVerticalGrid";
 
 const PREFIX = "index";
 
@@ -538,7 +537,7 @@ export default function Edit(props: Any) {
             <TabPanel value={$tab} index="general" className="panel">
               <Grid container spacing={2}>
                 <Grid size={12}>
-                  <PaperThumb image={sourceThumb} title="General" />
+                  <PaperThumb image="/images/livesource.png" title="General" />
                 </Grid>
                 <Grid size={12}>
                   <Typography variant="h2">

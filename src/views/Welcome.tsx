@@ -6,9 +6,8 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
-import welcomeImage from "../assets/images/welcome.png";
-import Paper from "../misc/Paper";
-import PaperThumb from "../misc/PaperThumb";
+import Paper from "../components/misc/Paper";
+import PaperThumb from "../components/misc/PaperThumb";
 
 export default function Welcome() {
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function Welcome() {
       <Grid container spacing={2} sx={{ justifyContent: "center" }}>
         <Grid size={12}>
           <PaperThumb
-            image={welcomeImage}
+            image="/images/welcome.png"
             title="Welcome to Restreamer v2"
             height="200px"
           />

@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 
 import Logo from "./logos/rumble.svg";
-import FormInlineButton from "../../../misc/FormInlineButton";
+import FormInlineButton from "../../../components/misc/FormInlineButton";
 
 const id = "rumble";
 const name = "Rumble";

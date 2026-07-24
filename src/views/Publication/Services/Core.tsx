@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import Logo from "./logos/datarhei.svg";
-import BoxText from "../../../misc/BoxText";
+import BoxText from "../../../components/misc/BoxText";
 
 const id = "datarheicore";
 const name = "datarhei Core";

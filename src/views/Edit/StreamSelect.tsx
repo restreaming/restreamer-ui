@@ -4,7 +4,7 @@ import { t } from "@lingui/core/macro";
 import Grid from "@mui/material/Grid";
 import MenuItem from "@mui/material/MenuItem";
 
-import Select from "../../misc/Select";
+import Select from "../../components/misc/Select";
 
 export default function StreamSelect(props: Any) {
   const { i18n } = useLingui();

@@ -243,8 +243,8 @@ data = {
 import SemverGt from "semver/functions/gt";
 import SemverCompare from "semver/functions/compare";
 
-import * as Coders from "../misc/coders/Encoders";
-import * as Filters from "../misc/filters";
+import * as Coders from "../components/misc/coders/Encoders";
+import * as Filters from "../components/misc/filters";
 import * as version from "../version";
 
 const defaultMetadata = {
