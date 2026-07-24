@@ -26,3 +26,4 @@ messages.mo
 .eslintcache
 
 tsconfig.tsbuildinfo
+.playwright-mcp/
