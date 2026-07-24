@@ -36,6 +36,7 @@ declare module '@mui/material/styles' {
 
 	interface TypographyVariantsOptions {
 		body3?: React.CSSProperties;
+		subheading?: React.CSSProperties;
 		pagetitle?: React.CSSProperties;
 	}
 }
@@ -43,6 +44,7 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
 	interface TypographyPropsVariantOverrides {
 		body3: true;
+		subheading: true;
 		pagetitle: true;
 	}
 }

@@ -314,11 +314,11 @@ export default function RestreamerUI(props) {
 		loginPassword,
 	) => {
 		const data = {
-		api: {
-			auth: {
-				enable: true,
-				username: '',
-				password: '',
+			api: {
+				auth: {
+					enable: true,
+					username: '',
+					password: '',
 				},
 			},
 			version: 3,
@@ -548,8 +548,11 @@ export default function RestreamerUI(props) {
 			<NotifyProvider value={{ Dispatch: notify }}>
 				<Grid
 					container
-					sx={{ flexDirection: 'column' }}
-					sx={{ alignItems: 'stretch', justifyContent: 'flex-start' }}
+					sx={{
+						flexDirection: 'column',
+						alignItems: 'stretch',
+						justifyContent: 'flex-start',
+					}}
 					spacing={0}
 				>
 					<Grid className={classes.MainHeader}>

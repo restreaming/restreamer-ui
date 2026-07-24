@@ -84,7 +84,7 @@ export default function Component(props) {
 								<FormControl variant={props.variant} fullWidth>
 									<InputLabel>{props.label}</InputLabel>
 									<Select
-								value={props.customKey}
+										value={props.customKey}
 										onChange={handleChange}
 										disabled={props.disabled}
 										label={props.label}

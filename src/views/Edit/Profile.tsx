@@ -601,10 +601,10 @@ export default function Profile(props) {
 												type="video"
 												streams={$sources.video.streams}
 												selected={$profile.video.stream}
-															onChange={handleStreamSelect(
-																'video',
-																'stream',
-															)}
+												onChange={handleStreamSelect(
+													'video',
+													'stream',
+												)}
 											/>
 										</Grid>
 										<Grid
@@ -843,10 +843,10 @@ export default function Profile(props) {
 															$profile.audio
 																.stream
 														}
-																onChange={handleStreamSelect(
-																'audio',
-																'stream',
-															)}
+														onChange={handleStreamSelect(
+															'audio',
+															'stream',
+														)}
 													/>
 												</Grid>
 												<Grid

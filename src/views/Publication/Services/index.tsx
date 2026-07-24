@@ -40,12 +40,12 @@ import * as Wettercom from './Wettercom';
 import * as Youtube from './Youtube';
 
 class Registry {
-	services: Map<any, any>;
+	services: Map<string, DynamicObject>;
 	constructor() {
 		this.services = new Map();
 	}
 
-	Register(service) {
+	Register(service: DynamicObject) {
 		if (service.id.match(/[^0-9a-z]/)) {
 			console.warn(
 				`the service.id "${service.id}" is invalid. only [0-9a-z] is allowed.`,
@@ -56,7 +56,7 @@ class Registry {
 		this.services.set(service.id, service);
 	}
 
-	Get(id) {
+	Get(id: string): DynamicObject | null {
 		const service = this.services.get(id);
 		if (service) {
 			return service;
@@ -65,11 +65,11 @@ class Registry {
 		return null;
 	}
 
-	IDs() {
+	IDs(): string[] {
 		return Array.from(this.services.keys());
 	}
 
-	List() {
+	List(): DynamicObject[] {
 		return Array.from(this.services.values());
 	}
 }

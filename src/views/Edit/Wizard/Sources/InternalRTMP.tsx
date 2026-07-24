@@ -111,7 +111,7 @@ function Source(props) {
 			</MenuItem>,
 		);
 
-		const RTMP = S.func.getRTMP(config, settings.push.name);
+		const RTMP = S.func.getRTMP(config);
 
 		form = (
 			<React.Fragment>

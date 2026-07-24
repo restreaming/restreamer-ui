@@ -229,7 +229,7 @@ export default function Login(props) {
 
 	return (
 		<Paper xs={11} sm={10} md={6}>
-			<Grid container spacing={3} padding={{ xs: 1, sm: 5 }}>
+			<Grid container spacing={3} sx={{ padding: { xs: 1, sm: 5 } }}>
 				{$loginTarget !== 'none' && (
 					<Grid sx={{ textAlign: 'center' }} size={12}>
 						{$auths.length > 1 && (
@@ -348,7 +348,7 @@ export default function Login(props) {
 							</Grid>
 							<Grid size={12}>
 								<Button
-									variant="service"
+									variant="contained"
 									color="primary"
 									fullWidth
 									size="large"

@@ -660,9 +660,11 @@ export default function Edit(props) {
 											</Grid>
 										</Grid>
 										<Grid
-											display={{
-												xs: 'block',
-												md: 'none',
+											sx={{
+												display: {
+													xs: 'block',
+													md: 'none',
+												},
 											}}
 											size={12}
 										>

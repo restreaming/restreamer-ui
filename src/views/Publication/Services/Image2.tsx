@@ -161,7 +161,6 @@ function Service(props) {
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
-						elevation={0}
 						expandIcon={<ArrowDropDownIcon />}
 					>
 						<Typography>

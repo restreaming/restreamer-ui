@@ -1,5 +1,3 @@
- 
-
 export default {
 	styleOverrides: {
 		root: {

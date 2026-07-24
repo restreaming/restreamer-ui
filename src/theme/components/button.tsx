@@ -1,4 +1,3 @@
- 
 import base from '../base';
 
 const root = {

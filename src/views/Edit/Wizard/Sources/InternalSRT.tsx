@@ -111,7 +111,7 @@ function Source(props) {
 			</MenuItem>,
 		);
 
-		const SRT = S.func.getSRT(config, settings.push.name);
+		const SRT = S.func.getSRT(config);
 
 		form = (
 			<React.Fragment>

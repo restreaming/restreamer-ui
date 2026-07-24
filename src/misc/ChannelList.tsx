@@ -134,7 +134,7 @@ function ChannelButton(props, largeChannelList = false) {
 					<Image
 						sx={{
 							width: props.width,
-								height: Math.floor((props.width / 16) * 9),
+							height: Math.floor((props.width / 16) * 9),
 						}}
 					>
 						<ImageAlt>

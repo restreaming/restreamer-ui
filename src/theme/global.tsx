@@ -1,4 +1,3 @@
- 
 import base from './base';
 import universe from '../assets/images/universe-4609408.jpg';
 

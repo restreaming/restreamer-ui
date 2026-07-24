@@ -15,7 +15,6 @@ interface PaperProps {
 }
 
 const Component = React.forwardRef<HTMLDivElement, PaperProps>((props, ref) => {
-
 	const paperSx =
 		props.className === 'paperM'
 			? {

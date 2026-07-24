@@ -79,7 +79,7 @@ const init = () => {
 		client = new Auth0Client({
 			domain: config.domain,
 			clientId: config.client_id,
-		authorizationParams: { audience: config.audience },
+			authorizationParams: { audience: config.audience },
 			cacheLocation: 'localstorage',
 		});
 	} catch (e) {

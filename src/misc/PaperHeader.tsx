@@ -10,11 +10,7 @@ import Typography from '@mui/material/Typography';
 
 const Component = function (props) {
 	return (
-		<Grid
-			container
-			spacing={props.spacing}
-			sx={{ padding: props.padding }}
-		>
+		<Grid container spacing={props.spacing} sx={{ padding: props.padding }}>
 			<Grid
 				sx={{
 					marginBottom: '.3em',

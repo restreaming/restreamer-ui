@@ -98,7 +98,9 @@ export default function Main(props) {
 			log: [],
 		},
 	});
-	const processLogTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+	const processLogTimer = React.useRef<
+		ReturnType<typeof setInterval> | undefined
+	>(undefined);
 	const [$processDebug, setProcessDebug] = React.useState({
 		open: false,
 		data: '',
@@ -369,7 +371,6 @@ export default function Main(props) {
 												'disconnecting') && (
 											<Grid
 												container
-												direction="column"
 												className={classes.playerL3}
 												spacing={1}
 												sx={{
@@ -387,7 +388,6 @@ export default function Main(props) {
 										{$state.state === 'connecting' && (
 											<Grid
 												container
-												direction="column"
 												className={classes.playerL3}
 												spacing={1}
 												sx={{
@@ -410,7 +410,6 @@ export default function Main(props) {
 										{$state.state === 'error' && (
 											<Grid
 												container
-												direction="column"
 												className={classes.playerL3}
 												spacing={1}
 												sx={{
@@ -506,7 +505,7 @@ export default function Main(props) {
 									}}
 									spacing={2}
 								>
-									<Typography variant="body">
+									<Typography variant="body1">
 										<Trans>Content URL</Trans>
 									</Typography>
 									<Stack

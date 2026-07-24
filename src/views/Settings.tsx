@@ -739,7 +739,9 @@ export default function Settings(props) {
 		service: { errors: false, messages: [] },
 	});
 	const [$logdata, setLogdata] = React.useState('');
-	const logTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+	const logTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(
+		undefined,
+	);
 	const [$reloadKey, setReloadKey] = React.useState('');
 	const [$dialogs, setDialogs] = React.useState({
 		restart: false,
@@ -1430,7 +1432,7 @@ export default function Settings(props) {
 											<Typography
 												variant="inherit"
 												color="inherit"
-												width="100%"
+												sx={{ width: '100%' }}
 											>
 												<Link
 													color="inherit"

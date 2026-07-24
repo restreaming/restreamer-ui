@@ -82,7 +82,9 @@ export default function Edit(props) {
 	const { channelid: _channelid } = useParams();
 	const { i18n } = useLingui();
 	const address = props.restreamer.Address();
-	const timeout = React.useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+	const timeout = React.useRef<ReturnType<typeof setTimeout> | undefined>(
+		undefined,
+	);
 	const notify = React.useContext(NotifyContext);
 	const [$player] = React.useState('videojs-public');
 	const [$ready, setReady] = React.useState(false);
@@ -366,7 +368,7 @@ export default function Edit(props) {
 
 		try {
 			const u = new URL(url);
-			u.searchParams.set('_rscache', Math.random());
+			u.searchParams.set('_rscache', String(Math.random()));
 			return u.href;
 		} catch (e) {
 			return url + '?' + Math.random();
@@ -411,7 +413,6 @@ export default function Edit(props) {
 								{$state !== 'connected' ? (
 									<Grid
 										container
-										direction="column"
 										className={classes.playerL3}
 										sx={{
 											justifyContent: 'center',

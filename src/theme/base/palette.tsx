@@ -1,4 +1,3 @@
- 
 export default {
 	common: {
 		// MuiButton, ChannelList.js, index.js, Player.js

@@ -1,4 +1,3 @@
- 
 import palette from './palette';
 
 import '@fontsource/dosis/300.css';

@@ -190,7 +190,7 @@ const createInputs = (settings, config, skills) => {
 			if (name === 'none') {
 				name = config.channelid;
 			}
-				input.address = getLocalHLS(config, name);
+			input.address = getLocalHLS(config, name);
 		} else if (settings.push.type === 'rtmp') {
 			if (name === config.channelid) {
 				name += '.stream';
@@ -581,10 +581,7 @@ function AdvancedSettings(props) {
 	return (
 		<Grid size={12}>
 			<Accordion className="accordion">
-				<AccordionSummary
-					elevation={0}
-					expandIcon={<ArrowDropDownIcon />}
-				>
+				<AccordionSummary expandIcon={<ArrowDropDownIcon />}>
 					<Typography>
 						<Trans>Advanced settings</Trans>
 					</Typography>

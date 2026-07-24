@@ -166,7 +166,7 @@ function Service(props) {
 				continue;
 			}
 			if (typeof settings.options[key] === 'boolean') {
-				options.push('-' + key, Number(settings.options[key]));
+				options.push('-' + key, String(Number(settings.options[key])));
 			} else {
 				options.push('-' + key, String(settings.options[key]));
 			}
@@ -249,7 +249,6 @@ function Service(props) {
 				<Accordion className="accordion">
 					<AccordionSummary
 						className="accordion-summary"
-						elevation={0}
 						expandIcon={<ArrowDropDownIcon />}
 					>
 						<Typography>

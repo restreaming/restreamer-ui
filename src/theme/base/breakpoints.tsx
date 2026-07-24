@@ -1,4 +1,3 @@
- 
 export default {
 	unit: 'px',
 	values: {

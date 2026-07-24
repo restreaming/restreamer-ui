@@ -172,7 +172,16 @@ export default function Egress(props) {
 								checked={checked}
 								disabled={props.order !== $order}
 								onChange={handleSwitch}
-								color={color as 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'}
+								color={
+									color as
+										| 'default'
+										| 'primary'
+										| 'secondary'
+										| 'error'
+										| 'info'
+										| 'success'
+										| 'warning'
+								}
 								size="small"
 								className="egress-right-switch"
 							/>

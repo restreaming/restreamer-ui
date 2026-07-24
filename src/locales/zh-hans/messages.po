@@ -13,3330 +13,3373 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/misc/EncodingSelect.js
-#~ msgid "<0>Compatibility list</0>"
-#~ msgstr "<0>兼容性列表</0>"
+#: src/misc/EncodingSelect.tsx
+msgid "<0>Compatibility list</0>"
+msgstr "<0>兼容性列表</0>"
 
-#: src/views/Edit/Profile.js
-#~ msgid "<0>Show probe details</0>"
-#~ msgstr "<0>显示媒体信息头详情</0>"
+#: src/views/Edit/Profile.tsx
+msgid "<0>Show probe details</0>"
+msgstr "<0>显示媒体信息头详情</0>"
 
-#: src/views/Publication/Services/Core.js
-#~ msgid "1. Switch to the interface of the target Restreamer."
-#~ msgstr "1. 切换到目标 Restreamer 的界面。"
+#: src/views/Publication/Services/Core.tsx
+msgid "1. Switch to the interface of the target Restreamer."
+msgstr "1. 切换到目标 Restreamer 的界面。"
 
-#: src/views/Publication/Services/Core.js
-#~ msgid "2. Create a new channel and select RTMP or SRT server."
-#~ msgstr "2. 创建一个新的频道并选择 RTMP 或 SRT 服务。"
+#: src/views/Publication/Services/Core.tsx
+msgid "2. Create a new channel and select RTMP or SRT server."
+msgstr "2. 创建一个新的频道并选择 RTMP 或 SRT 服务。"
 
-#: src/views/Publication/Services/Core.js
-#~ msgid "3. Copy the URL and paste it in the \"Target address\" field."
-#~ msgstr "3. 复制 URL 并粘贴在 \"目标地址\" 字段。"
+#: src/views/Publication/Services/Core.tsx
+msgid "3. Copy the URL and paste it in the \"Target address\" field."
+msgstr "3. 复制 URL 并粘贴在 \"目标地址\" 字段。"
 
-#: src/misc/controls/HLS.js
-#~ msgid "6 (+ guaranteed to start with a Key frame)"
-#~ msgstr "6 (+ 保证以关键帧开始)"
+#: src/misc/controls/HLS.tsx
+msgid "6 (+ guaranteed to start with a Key frame)"
+msgstr "6 (+ 保证以关键帧开始)"
 
-#: src/misc/controls/HLS.js
-#~ msgid "7 (+ fragmented MP4 format)"
-#~ msgstr "7 (+ fragmented MP4 格式)"
+#: src/misc/controls/HLS.tsx
+msgid "7 (+ fragmented MP4 format)"
+msgstr "7 (+ fragmented MP4 格式)"
 
-#: src/misc/ChannelList.js
-#: src/views/Edit/index.js
-#: src/views/Edit/Profile.js
-#: src/views/Edit/Wizard/Abort.js
-#: src/views/Publication/Edit.js
-#: src/views/Settings.js
-#~ msgid "Abort"
-#~ msgstr "取消"
+#: src/misc/ChannelList.tsx
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Profile.tsx
+#: src/views/Edit/Wizard/Abort.tsx
+#: src/views/Publication/Edit.tsx
+#: src/views/Settings.tsx
+msgid "Abort"
+msgstr "取消"
 
-#: src/Header.js
-#~ msgid "About"
-#~ msgstr "关于"
+#: src/Header.tsx
+msgid "About"
+msgstr "关于"
 
-#: src/misc/ChannelList.js
-#~ msgid "Add"
-#~ msgstr "添加"
+#: src/misc/ChannelList.tsx
+msgid "Add"
+msgstr "添加"
 
-#: src/misc/modals/Hint.js
-#~ msgid "Add Audio"
-#~ msgstr ""
+#: src/misc/modals/Hint.tsx
+msgid "Add Audio"
+msgstr ""
 
-#: src/views/Playersite.js
-#~ msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
-#~ msgstr "将外部小部件和样式添加到站点。您可以在帮助页面上找到一些示例。"
+#: src/views/Playersite.tsx
+msgid "Add external widgets and styles to the publication site. You can find some examples on the help page."
+msgstr "将外部小部件和样式添加到站点。您可以在帮助页面上找到一些示例。"
 
-#: src/misc/ChannelList.js
-#~ msgid "Add new channel"
-#~ msgstr "添加新频道"
+#: src/misc/ChannelList.tsx
+msgid "Add new channel"
+msgstr "添加新频道"
 
-#: src/views/Publication/Add.js
-#~ msgid "Add Publication"
-#~ msgstr "添加串流输出"
+#: src/views/Publication/Add.tsx
+msgid "Add Publication"
+msgstr "添加串流输出"
 
 #: src/misc/modals/Hint.js
 #~ msgid "Add Stream"
 #~ msgstr ""
 
-#: src/views/Publication/Add.js
-#~ msgid "Add: {0}"
-#~ msgstr "添加：{0}"
-
-#: src/views/Playersite.js
-#~ msgid "Additional channels"
-#~ msgstr ""
-
-#: src/views/Playersite.js
-#~ msgid "Additional channels to display on the playersite."
-#~ msgstr ""
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#: src/views/Publication/Services/Azure.js
-#: src/views/Publication/Services/Brightcove.js
-#: src/views/Publication/Services/Core.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/Linkedin.js
-#: src/views/Publication/Services/MPEGTS.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Publication/Services/UDP.js
-#: src/views/Publication/Services/WOWZA.js
-#: src/views/Settings.js
-#~ msgid "Address"
-#~ msgstr "地址"
-
-#: src/views/Playersite.js
-#~ msgid "Address for the background image."
-#~ msgstr "背景图片的地址。"
-
-#: src/views/Settings.js
-#~ msgid "Address to listen on for HTTP requests."
-#~ msgstr "HTTP请求监听的地址。"
-
-#: src/views/Settings.js
-#~ msgid "Address to listen on for HTTPS requests."
-#~ msgstr "HTTPS请求监听地址。"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "Address:"
-#~ msgstr "地址"
-
-#: src/views/Playersite.js
-#~ msgid "Adjust publication site colors and background as you like."
-#~ msgstr "根据喜好调整发布站点的颜色和背景。"
-
-#: src/views/Login.js
-#~ msgid "Advanced monitoring"
-#~ msgstr "高级监控"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/MPEGTS.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Publication/Services/UDP.js
-#~ msgid "Advanced settings"
-#~ msgstr "高级设置"
-
-#: src/views/Edit/Wizard/Source.js
-#~ msgid "Advanced setup"
-#~ msgstr "高级设置"
-
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "AirPlay"
-#~ msgstr "AirPlay"
-
-#: src/views/Login.js
-#~ msgid "Alerting by email"
-#~ msgstr "邮件通知"
-
-#: src/views/Publication/Add.js
-#~ msgid "All"
-#~ msgstr "全部"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "All frames"
-#~ msgstr "所有帧"
-
-#: src/views/Settings.js
-#~ msgid "All important system settings."
-#~ msgstr "所有重要的系统设置。"
-
-#: src/views/Settings.js
-#~ msgid "Allow all referrer"
-#~ msgstr "允许所有来源"
-
-#: src/views/Settings.js
-#~ msgid "Allow counting how many viewers the stream has."
-#~ msgstr "允许统计媒体流播放量。"
-
-#: src/views/Edit/Sources/ALSA.js
-#~ msgid "ALSA"
-#~ msgstr "ALSA"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Amplitude"
-#~ msgstr "幅度"
-
-#: src/misc/Env.js
-#~ msgid "An environment variable sets this value."
-#~ msgstr "设置该值的环境变量。"
-
-#: src/views/Settings.js
-#~ msgid "API endpoint not found. Settings not saved."
-#~ msgstr "未找到 API endpoint。设置没有保存。"
-
-#: src/views/Settings.js
-#~ msgid "App"
-#~ msgstr "App"
-
-#: src/Footer.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/WOWZA.js
-#~ msgid "Application"
-#~ msgstr "Application"
-
-#: src/views/Edit/Wizard/Abort.js
-#~ msgid "Are you sure you want to abort the wizard?"
-#~ msgstr "确定要终止向导吗？"
-
-#: src/views/Publication/Add.js
-#~ msgid "Audio"
-#~ msgstr "音频"
-
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "Audio device"
-#~ msgstr "音频设备"
-
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#~ msgid "Audio Device"
-#~ msgstr "音频设备"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "Audio from device"
-#~ msgstr "来自设备的音频"
-
-#: src/views/Edit/Profile.js
-#: src/views/Edit/ProfileSummary.js
-#: src/views/Publication/Edit.js
-#~ msgid "Audio settings"
-#~ msgstr "音频设置"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "Audio setup"
-#~ msgstr "音频设置"
-
-#: src/views/Login.js
-#~ msgid "Auth0"
-#~ msgstr "Auth0"
-
-#: src/views/Login.js
-#~ msgid "Auth0 is currently not available because this interface is loaded from an insecure origin."
-#~ msgstr "Auth0 当前不可用，因为此接口是从不安全的来源加载的。"
-
-#: src/views/Login.js
-#~ msgid "Auth0 Tenant"
-#~ msgstr "Auth0 Tenant"
-
-#: src/misc/controls/Metadata.js
-#~ msgid "Author"
-#~ msgstr "作者"
-
-#: src/views/Settings.js
-#~ msgid "Authorization"
-#~ msgstr "权限"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Auto"
-#~ msgstr "自动"
-
-#: src/misc/controls/HLS.js
-#~ msgid "Automatic cleanup of all media data"
-#~ msgstr "自动清理所有媒体数据"
-
-#: src/views/Publication/Player.js
-#~ msgid "Autoplay"
-#~ msgstr "自动播放"
-
-#: src/views/Playersite.js
-#~ msgid "Available"
-#~ msgstr "可用的"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "AVFoundation"
-#~ msgstr "AVFoundation"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "avoid_negative_ts"
-#~ msgstr "avoid_negative_ts"
-
-#: src/views/Edit/Profile.js
-#: src/views/Edit/Wizard/Abort.js
-#: src/views/Edit/Wizard/Audio.js
-#: src/views/Edit/Wizard/License.js
-#: src/views/Edit/Wizard/Metadata.js
-#: src/views/Edit/Wizard/Video.js
-#: src/views/Edit/Wizard/VideoProfile.js
-#: src/views/Publication/Add.js
-#~ msgid "Back"
-#~ msgstr "返回"
-
-#: src/views/Playersite.js
-#~ msgid "Background colors"
-#~ msgstr "背景颜色"
-
-#: src/views/Playersite.js
-#~ msgid "Background image"
-#~ msgstr "背景图"
-
-#: src/views/Publication/Services/DaCast.js
-#~ msgid "Backup server"
-#~ msgstr "备用线路"
-
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "Backup stream"
-#~ msgstr "备份媒体流"
-
-#: src/views/Publication/Services/Facebook.js
-#~ msgid "Backup stream key"
-#~ msgstr "备用线路的 key"
-
-#: src/views/Publication/Services/Akamai.js
-#~ msgid "Backup URL"
-#~ msgstr "备份地址"
-
-#: src/Footer.js
-#~ msgid "Bandwidth"
-#~ msgstr "带宽"
-
-#: src/views/Settings.js
-#~ msgid "Bandwidth control"
-#~ msgstr "带宽限制"
-
-#: src/misc/modals/Process.js
-#~ msgid "Banner"
-#~ msgstr "横幅"
-
-#: src/views/Login.js
-#: src/views/Settings.js
-#~ msgid "Basic"
-#~ msgstr "常规"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Beep factor"
-#~ msgstr "蜂鸣系数"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/coders/settings/Video.js
-#~ msgid "Bitrate"
-#~ msgstr "比特率"
-
-#: src/views/Settings.js
-#~ msgid "Block cache types"
-#~ msgstr "禁止缓存的文件类型"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "blue"
-#~ msgstr "蓝色"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Bottom field"
-#~ msgstr "底部区域"
-
-#: src/views/Edit/index.js
-#: src/views/Edit/Wizard/Metadata.js
-#~ msgid "Briefly describe what the audience will see during the live stream."
-#~ msgstr "简要描述观众将在直播中看到的内容。"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "brown"
-#~ msgstr "棕色"
-
-#: src/views/Publication/Player.js
-#~ msgid "Button color"
-#~ msgstr "按钮颜色"
-
-#: src/misc/filters/video/Scale.js
-#~ msgid "By height"
-#~ msgstr "按高度"
-
-#: src/misc/filters/video/Scale.js
-#~ msgid "By width"
-#~ msgstr "按宽度"
-
-#: src/views/Settings.js
-#~ msgid "Cache for files on /data."
-#~ msgstr "缓存 /data 路径下的文件。"
-
-#: src/views/Settings.js
-#~ msgid "Cache time (Seconds)"
-#~ msgstr "缓存时间（秒）"
-
-#: src/views/Settings.js
-#~ msgid "Cache types"
-#~ msgstr "缓存类型"
-
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "Capture buffer"
-#~ msgstr "捕获缓冲区"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "Capture clicks"
-#~ msgstr "捕获点击"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "Capture cursor"
-#~ msgstr "捕获指针"
-
-#: src/views/Edit/index.js
-#~ msgid "Channel \"{0}\" saved"
-#~ msgstr "已保存频道 \"{0}\""
-
-#: src/views/Edit/Sources/ALSA.js
-#~ msgid "Channels"
-#~ msgstr "频道"
-
-#: src/views/Settings.js
-#~ msgid "Check for updates"
-#~ msgstr "检查更新"
-
-#: src/views/Publication/Add.js
-#~ msgid "Check the requirements"
-#~ msgstr "检查"
-
-#: src/views/Edit/StreamSelect.js
-#~ msgid "Choose a video stream"
-#~ msgstr "选择一个视频流"
-
-#: src/views/Edit/StreamSelect.js
-#~ msgid "Choose an audio stream"
-#~ msgstr "选择一个音频流"
-
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/Framebuffer.js
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Sources/V4L.js
-#~ msgid "Choose an input device ..."
-#~ msgstr "选择一个输入设备 ..."
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "Choose an input stream ..."
-#~ msgstr "选择输入流 ..."
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Choose between CFR and VFR (Auto)"
-#~ msgstr "在 CFR 和 VFR 中选择（自动）"
-
-#: src/misc/EncodingSelect.js
-#~ msgid "Choose codec ..."
-#~ msgstr "选择编码器 ..."
-
-#: src/views/Login.js
-#~ msgid "Choose tenant ..."
-#~ msgstr "选择 tenant ..."
-
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Chromecast"
-#~ msgstr "Chromecast"
-
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#~ msgid "Chunk"
-#~ msgstr "块"
-
-#: src/misc/Changelog.js
-#: src/misc/ModalContent.js
-#: src/misc/modals/Hint.js
-#: src/views/Edit/index.js
-#: src/views/Playersite.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#: src/views/Publication/Player.js
-#: src/views/Settings.js
-#~ msgid "Close"
-#~ msgstr "关闭"
-
-#: src/views/Playersite.js
-#~ msgid "Code injection"
-#~ msgstr "代码注入"
-
-#: src/misc/EncodingSelect.js
-#: src/misc/modals/Hint.js
-#~ msgid "Codec"
-#~ msgstr "编码器"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Color"
-#~ msgstr "颜色"
-
-#: src/misc/modals/Process.js
-#~ msgid "Command"
-#~ msgstr "指挥"
-
-#: src/views/Settings.js
-#~ msgid "Config"
-#~ msgstr "配置"
-
-#: src/views/Password.js
-#~ msgid "Confirm password"
-#~ msgstr "确认密码"
-
-#: src/misc/ActionButton.js
-#~ msgid "Connect"
-#~ msgstr "连接"
-
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#~ msgid "Connected device"
-#~ msgstr "已连接的设备"
-
-#: src/views/Publication/Process.js
-#~ msgid "Connected since <0/>"
-#~ msgstr "连接建立于"
-
-#: src/misc/ActionButton.js
-#: src/views/Main/index.js
-#: src/views/Publication/Process.js
-#~ msgid "Connecting ..."
-#~ msgstr "连接中 ..."
-
-#: src/views/Initializing.js
-#~ msgid "Connecting to Restreamer Core ..."
-#~ msgstr "连接到 Restreamer Core ..."
-
-#: src/views/Invalid.js
-#~ msgid "Connecting to Restreamer Core failed probably because of mixed content."
-#~ msgstr "连接到 Restreamer Core 失败，原因可能是 mixed content。"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Constant frame rate (CFR)"
-#~ msgstr "固定帧率（CFR）"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Constant Quantizer Mode (-1 to 255)."
-#~ msgstr "常数量化器模式（-1 至 255）。"
-
-#: src/misc/controls/Metadata.js
-#: src/views/Playersite.js
-#~ msgid "Content"
-#~ msgstr "内容"
-
-#: src/views/Main/index.js
-#~ msgid "Content URL"
-#~ msgstr "内容 URL"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "copyts"
-#~ msgstr "copyts"
-
-#: src/Footer.js
-#~ msgid "Cores"
-#~ msgstr "Cores"
-
-#: src/misc/Progress.js
-#~ msgid "CPU"
-#~ msgstr "中央处理器"
-
-#: src/misc/controls/Limits.js
-#~ msgid "CPU Limit (percent)"
-#~ msgstr "CPU 上限（百分比）"
-
-#: src/misc/controls/Limits.js
-#~ msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
-#~ msgstr "CPU 使用限制，单位为百分比（0-100%），0 表示无限制。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "Creative Commons"
-#~ msgstr "创作许可"
-
-#: src/misc/coders/Encoders/audio/opus.js
-#: src/misc/coders/settings/Audio.js
-#: src/misc/coders/settings/Video.js
-#: src/misc/filters/audio/Resample.js
-#: src/misc/filters/audio/Volume.js
-#: src/misc/filters/video/Framerate.js
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Sources/V4L.js
-#~ msgid "Custom ..."
-#~ msgstr "自定义 ..."
-
-#: src/views/Edit/Sources/ALSA.js
-#~ msgid "Custom audio device"
-#~ msgstr "自定义音频设备"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "Custom audio index"
-#~ msgstr "自定义音频索引"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/coders/settings/Video.js
-#~ msgid "Custom bitrate (kbit/s)"
-#~ msgstr "自定义比特率（kbit/s）"
-
-#: src/views/Playersite.js
-#~ msgid "Custom code injection"
-#~ msgstr "自定义代码注入"
-
-#: src/misc/coders/Encoders/audio/opus.js
-#~ msgid "Custom delay"
-#~ msgstr "自定义延迟"
-
-#: src/views/Edit/Sources/Framebuffer.js
-#~ msgid "Custom device"
-#~ msgstr "自定义设备"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Custom format"
-#~ msgstr "自定义格式"
-
-#: src/misc/coders/settings/Video.js
-#: src/misc/filters/video/Framerate.js
-#~ msgid "Custom framerate"
-#~ msgstr "自定义帧率"
-
-#: src/views/Settings.js
-#~ msgid "Custom JSON config for datarhei Core."
-#~ msgstr "自定义 datarhei Core 的 JSON 配置。"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Custom keyframe interval"
-#~ msgstr "自定义关键帧间隔"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "Custom layout"
-#~ msgstr "自定义 layout"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "Custom sampling (Hz)"
-#~ msgstr "自定义采样率（Hz）"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Custom scale"
-#~ msgstr "自定义缩放"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Custom size"
-#~ msgstr "自定义尺寸"
-
-#: src/views/Edit/Sources/V4L.js
-#~ msgid "Custom video device"
-#~ msgstr "自定义视频设备"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#~ msgid "Custom video index"
-#~ msgstr "自定义视频索引"
-
-#: src/misc/CopyButton.js
-#: src/misc/Textarea.js
-#: src/misc/TextFieldCopy.js
-#~ msgid "Data copied to clipboard"
-#~ msgstr "已复制到剪贴板"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Death color"
-#~ msgstr "Death color"
-
-#: src/misc/filters/audio/Volume.js
-#~ msgid "Decibels (dB)"
-#~ msgstr "分贝（dB）"
-
-#: src/misc/EncodingSelect.js
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Decoder"
-#~ msgstr "解码器"
-
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#: src/views/Playersite.js
-#~ msgid "Default"
-#~ msgstr "默认"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Default {0}"
-#~ msgstr "默认 {0}"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Default {0} ({1} seconds)"
-#~ msgstr "默认 {0} （{1} 秒）"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Deinterlace (bwdif)"
-#~ msgstr "去隔行（bwdif）"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Deinterlace deint"
-#~ msgstr "去隔行 deint"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Deinterlace mode"
-#~ msgstr "去隔行模式"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Deinterlace parity"
-#~ msgstr "去隔行校验"
-
-#: src/misc/coders/Encoders/audio/opus.js
-#~ msgid "Delay"
-#~ msgstr "延迟"
-
-#: src/views/Edit/Sources/ALSA.js
-#~ msgid "Delay (ms)"
-#~ msgstr "延迟（ms）"
-
-#: src/views/Edit/index.js
-#: src/views/Playersite.js
-#: src/views/Publication/Edit.js
-#~ msgid "Delete"
-#~ msgstr "删除"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
-#~ msgstr "删除串流输出服务无法撤消。串流输出立即停止。"
-
-#: src/views/Publication/Services/Twitter.js
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "Delivering mode"
-#~ msgstr "递送模式"
-
-#: src/misc/controls/Metadata.js
-#~ msgid "Description"
-#~ msgstr "描述"
-
-#: src/views/Playersite.js
-#~ msgid "Design"
-#~ msgstr "设计"
-
-#: src/views/Edit/Sources/Framebuffer.js
-#: src/views/Edit/Wizard/Audio.js
-#: src/views/Publication/Services/Framebuffer.js
-#~ msgid "Device"
-#~ msgstr "设备"
-
-#: src/misc/ActionButton.js
-#~ msgid "Disconnect"
-#~ msgstr "断开连接"
-
-#: src/views/Edit/index.js
-#~ msgid "Disconnect & Continue"
-#~ msgstr "断连 & 继续"
-
-#: src/misc/ActionButton.js
-#: src/views/Publication/Process.js
-#~ msgid "Disconnecting ..."
-#~ msgstr "正在断开连接 ..."
-
-#: src/misc/controls/HLS.js
-#: src/views/Settings.js
-#~ msgid "Disk"
-#~ msgstr "硬盘"
-
-#: src/views/Settings.js
-#~ msgid "Disk cache"
-#~ msgstr "硬盘缓存"
-
-#: src/Footer.js
-#~ msgid "Disk storage"
-#~ msgstr "硬盘存储"
-
-#: src/views/Settings.js
-#~ msgid "Do you really want to restart the application now?"
-#~ msgstr "确定要立刻重启应用吗？"
-
-#: src/views/Edit/index.js
-#~ msgid "Do you want to delete \"{0}\"?"
-#~ msgstr "确定要删除 \"{0}\" 吗？"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Do you want to delete {title}?"
-#~ msgstr "确定要删除 {title} 吗？"
-
-#: src/views/Edit/index.js
-#~ msgid "Do you want to disconnect \"{0}\"?"
-#~ msgstr "确定要断开 \"{0}\" 的连接吗？"
-
-#: src/Header.js
-#~ msgid "Docs"
-#~ msgstr "文档"
-
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/MPEGTS.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Publication/Services/UDP.js
-#~ msgid "Documentation"
-#~ msgstr "文档"
-
-#: src/misc/Progress.js
-#~ msgid "Dup. frames"
-#~ msgstr "重复帧"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Each field"
-#~ msgstr "每个区域"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Each frames"
-#~ msgstr "每一帧"
-
-#: src/views/Edit/index.js
-#~ msgid "Edit"
-#~ msgstr "编辑"
-
-#: src/views/Edit/index.js
-#~ msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
-#~ msgstr "编辑直播流的音频和视频源。添加描述，并设置您想要的内容许可。"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Edit: {title}"
-#~ msgstr "编辑：{title}"
-
-#: src/views/Publication/Player.js
-#~ msgid "EDIT: Player"
-#~ msgstr "编辑：播放器"
-
-#: src/views/Playersite.js
-#~ msgid "EDIT: Publication Website"
-#~ msgstr "编辑：发布的站点"
-
-#: src/views/Settings.js
-#~ msgid "Email"
-#~ msgstr "邮箱"
-
-#: src/views/Publication/Player.js
-#~ msgid "Embed"
-#~ msgstr "内嵌"
-
-#: src/misc/controls/RTMP.js
-#: src/misc/controls/SRT.js
-#~ msgid "Enable"
-#~ msgstr "启用"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Enable a periodic beep every second with this value times the carrier frequency"
-#~ msgstr "启用以此值乘以载波频率的每秒周期蜂鸣"
-
-#: src/views/Publication/Services/Dummy.js
-#: src/views/Publication/Services/Facebook.js
-#~ msgid "Enable backup stream"
-#~ msgstr "允许备份媒体流"
-
-#: src/views/Publication/Player.js
-#~ msgid "Enable nerd statistics"
-#~ msgstr "允许数据统计"
-
-#: src/misc/controls/RTMP.js
-#: src/misc/controls/SRT.js
-#~ msgid "Enable now"
-#~ msgstr "现在启用"
-
-#: src/views/Publication/Services/Dummy.js
-#: src/views/Publication/Services/Facebook.js
-#~ msgid "Enable primary stream"
-#~ msgstr "启用主媒体流"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#~ msgid "Enable RTMP server ..."
-#~ msgstr "启用 RTMP 服务 ..."
-
-#: src/views/Publication/Services/PeerTube.js
-#~ msgid "Enable RTMPS transfer"
-#~ msgstr "启用 RTMPS 传输"
-
-#: src/misc/controls/Snapshot.js
-#~ msgid "Enable snapshots"
-#~ msgstr "允许快照"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "Enable SRT server ..."
-#~ msgstr "启用 SRT 服务器 ..."
-
-#: src/views/Settings.js
-#~ msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
-#~ msgstr "强烈建议启用身份验证。否则，任何人都可以访问和控制该实例。"
-
-#: src/views/Settings.js
-#~ msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
-#~ msgstr "强烈建议启用基本身份验证。否则，任何人都可以向 /memfs 中写入数据。"
-
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Encoder"
-#~ msgstr "编码器"
-
-#: src/views/Edit/Summary.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Encoding"
-#~ msgstr "编码"
-
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/SRT.js
-#~ msgid "Encryption"
-#~ msgstr "加密"
-
-#: src/misc/ChannelList.js
-#~ msgid "Enter a name for the new channel."
-#~ msgstr "输入新频道的名字。"
-
-#: src/views/Password.js
-#~ msgid "Enter password"
-#~ msgstr "输入密码"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "Enter the address of your network source:"
-#~ msgstr "输入网络源地址："
-
-#: src/views/Password.js
-#~ msgid "Enter username"
-#~ msgstr "输入用户名"
-
-#: src/misc/coders/Encoders/video/h264_videotoolbox.js
-#~ msgid "Entropy coder"
-#~ msgstr "加密编码器"
-
-#: src/views/Edit/Wizard/Error.js
-#: src/views/Incompatible.js
-#: src/views/Invalid.js
-#: src/views/Publication/Process.js
-#: src/views/Settings.js
-#~ msgid "Error"
-#~ msgstr "错误"
-
-#: src/misc/CopyButton.js
-#: src/misc/Textarea.js
-#: src/misc/TextFieldCopy.js
-#~ msgid "Error while copying data to clipboard"
-#~ msgstr "复制到剪贴板时出现错误"
-
-#: src/views/Main/index.js
-#: src/views/Publication/Process.js
-#~ msgid "Error: {0}"
-#~ msgstr "错误：{0}"
-
-#: src/views/Playersite.js
-#~ msgid "Expands the area above the channel list (live chat)."
-#~ msgstr "扩展频道列表上方的区域（实时聊天）。"
-
-#: src/views/Playersite.js
-#~ msgid "Expands the area under the channel description (comment boxes)."
-#~ msgstr "扩展频道描述下的区域（评论）。"
-
-#: src/views/Settings.js
-#~ msgid "Expert mode"
-#~ msgstr "专家模式"
-
-#: src/misc/controls/HLS.js
-#~ msgid "EXT-X-VERSION"
-#~ msgstr "EXT-X-VERSION"
-
-#: src/views/Playersite.js
-#~ msgid "Extend channel list"
-#~ msgstr "扩展频道列表"
-
-#: src/views/Playersite.js
-#~ msgid "Extend content"
-#~ msgstr "扩展内容"
-
-#: src/views/Playersite.js
-#~ msgid "Extend footer"
-#~ msgstr "扩展底栏"
-
-#: src/views/Playersite.js
-#~ msgid "Extend header"
-#~ msgstr "扩展顶栏"
-
-#: src/views/Publication/Add.js
-#~ msgid "Failed to create publication service ({0})"
-#~ msgstr "创建串流输出服务失败（{0}）"
-
-#: src/views/Playersite.js
-#~ msgid "Failed to create publication website files."
-#~ msgstr "创建发布站点文件失败。"
-
-#: src/views/Edit/Profile.js
-#~ msgid "Failed to probe the source. Please check the <0>probe details</0>."
-#~ msgstr "探测媒体信息头失败。请检查 <0>媒体头详情</0>。"
-
-#: src/utils/restreamer.js
-#~ msgid "Failed to refresh token: {0}"
-#~ msgstr "刷新 token 失败：{0}"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to save ingest metadata"
-#~ msgstr "保存摄取元数据失败"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to stop process"
-#~ msgstr "终止进程失败"
-
-#: src/views/Playersite.js
-#~ msgid "Failed to store player size setting."
-#~ msgstr "保存播放器尺寸设置失败。"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Failed to store publication service ({0})"
-#~ msgstr "保存串流输出服务失败（{0}）"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to update ingest process ({0})"
-#~ msgstr "更新摄取进程失败（{0}）"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to update ingest snapshot process ({0})"
-#~ msgstr "无法更新摄取快照进程 ({0})"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to update the player"
-#~ msgstr "更新播放器失败"
-
-#: src/views/Edit/index.js
-#~ msgid "Failed to update the playersite"
-#~ msgstr "无法上传播放器页"
-
-#: src/views/Edit/Wizard/Audio.js
-#: src/views/Edit/Wizard/Video.js
-#~ msgid "Failed to verify the source. Please check the address."
-#~ msgstr "验证媒体源失败。请检查地址。"
-
-#: src/views/Settings.js
-#~ msgid "FFmpeg"
-#~ msgstr "FFmpeg"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#~ msgid "File path"
-#~ msgstr "文件路径"
-
-#: src/views/Edit/Summary.js
-#~ msgid "Filter"
-#~ msgstr "过滤器"
-
-#: src/views/Edit/Profile.js
-#~ msgid "Finish"
-#~ msgstr "完成"
-
-#: src/misc/filters/video/Scale.js
-#~ msgid "Fix size"
-#~ msgstr "固定大小"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Flags"
-#~ msgstr "选项"
-
-#: src/views/Playersite.js
-#~ msgid "For Javascripts."
-#~ msgstr "For Javascripts."
-
-#: src/views/Playersite.js
-#~ msgid "For Stylesheets."
-#~ msgstr "For Stylesheets."
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Force input framerate"
-#~ msgstr "强制输入帧率"
-
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "Force key frames"
-#~ msgstr "强制帧率"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Format"
-#~ msgstr "格式"
-
-#: src/misc/Progress.js
-#: src/views/Main/Progress.js
-#~ msgid "FPS"
-#~ msgstr "帧率"
-
-#: src/misc/Progress.js
-#~ msgid "Frame drops"
-#~ msgstr "丢弃帧"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Frame is passed through (Passthrough)"
-#~ msgstr "帧直通（Passthrough）"
-
-#: src/views/Edit/Sources/Framebuffer.js
-#~ msgid "Framebuffer"
-#~ msgstr "帧缓冲"
-
-#: src/misc/coders/settings/Video.js
-#: src/misc/filters/video/Framerate.js
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Framerate"
-#~ msgstr "帧率"
-
-#: src/misc/filters/video/Framerate.js
-#~ msgid "Framerate conversion (frame interpolation)"
-#~ msgstr "帧频转换（帧插值）"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Framerate mode"
-#~ msgstr "帧率模式"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Frequency (Hz)"
-#~ msgstr "频率（Hz）"
-
-#: src/views/Edit/index.js
-#: src/views/Edit/Sources/Network.js
-#: src/views/Playersite.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Settings.js
-#~ msgid "General"
-#~ msgstr "常规"
-
-#: src/views/Publication/Services/DLive.js
-#: src/views/Publication/Services/Facebook.js
-#: src/views/Publication/Services/Instagram.js
-#: src/views/Publication/Services/Kick.js
-#: src/views/Publication/Services/MediaNetwork.js
-#: src/views/Publication/Services/NimoTv.js
-#: src/views/Publication/Services/PeerTube.js
-#: src/views/Publication/Services/Restream.js
-#: src/views/Publication/Services/Rumble.js
-#: src/views/Publication/Services/Trovo.js
-#: src/views/Publication/Services/Twitch.js
-#: src/views/Publication/Services/Twitter.js
-#: src/views/Publication/Services/Wettercom.js
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "GET"
-#~ msgstr "GET"
-
-#: src/views/Publication/Player.js
-#~ msgid "Google Analytics ID"
-#~ msgstr "Google Analytics ID"
-
-#: src/views/Publication/Player.js
-#~ msgid "Google Analytics Tracker Name"
-#~ msgstr "Google Analytics Tracker Name"
-
-#: src/views/Edit/Sources/V4L.js
-#: src/views/Edit/Wizard/Sources/V4L.js
-#~ msgid "Hardware device"
-#~ msgstr "硬件设备"
-
-#: src/views/Playersite.js
-#~ msgid "Header"
-#~ msgstr "顶栏"
-
-#: src/views/Playersite.js
-#~ msgid "Headline"
-#~ msgstr "提要"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Height"
-#~ msgstr "高度"
-
-#: src/views/Main/index.js
-#~ msgid "HLS"
-#~ msgstr "HLS"
-
-#: src/views/Edit/index.js
-#~ msgid "HLS output"
-#~ msgstr "HLS 输出"
-
-#: src/views/Edit/Wizard/Sources/InternalHLS.js
-#~ msgid "HLS server"
-#~ msgstr "HLS 服务器"
-
-#: src/views/Settings.js
-#~ msgid "HLS statistic for the In-memory storage"
-#~ msgstr "内存存储器的HLS统计"
-
-#: src/misc/filters/video/HFlip.js
-#~ msgid "Horizontal Flip"
-#~ msgstr "水平翻转"
-
-#: src/views/Login.js
-#~ msgid "Hosted Restreamer interface"
-#~ msgstr "托管的 Restreamer 接口"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "HTTP and HTTPS"
-#~ msgstr "HTTP 和 HTTPS"
-
-#: src/views/Settings.js
-#~ msgid "HTTP port"
-#~ msgstr "HTTP 端口"
-
-#: src/views/Settings.js
-#~ msgid "HTTPS (SSL/TLS)"
-#~ msgstr "HTTPS (SSL/TLS)"
-
-#: src/views/Settings.js
-#~ msgid "HTTPS port"
-#~ msgstr "HTTPS 端口"
-
-#: src/views/Settings.js
-#~ msgid "Human readable name on the service."
-#~ msgstr "服务的易读名称。"
-
-#: src/views/Settings.js
-#~ msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
-#~ msgstr "如果更改了端口，Restreamer Core 可能已经重新启动，但它现在可以在不同的端口上使用。"
-
-#: src/views/Settings.js
-#~ msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
-#~ msgstr "如果启用了 Let's Encrypt TLS，则可能需要一些时间来获取证书。确保可以通过端口 80 从互联网访问 Restreamer Core。请检查 Restreamer Core 的控制台日志。"
-
-#: src/views/Publication/Player.js
-#~ msgid "iframe code"
-#~ msgstr "iframe 代码"
-
-#: src/views/Settings.js
-#~ msgid "Ignore IP ranges"
-#~ msgstr "忽略 IP 范围"
-
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Image URL"
-#~ msgstr "图片 URL"
-
-#: src/views/Playersite.js
-#~ msgid "Imprint"
-#~ msgstr "水印"
-
-#: src/views/Playersite.js
-#~ msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
-#~ msgstr "除了播放器之外，Restreamer 还提供了一个完整的展示页面，您可以使用它轻松快速地展示您的直播。"
-
-#: src/views/Edit/Profile.js
-#~ msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
-#~ msgstr ""
-
-#: src/misc/controls/HLS.js
-#: src/views/Settings.js
-#~ msgid "In-memory"
-#~ msgstr "In-memory"
-
-#: src/Footer.js
-#~ msgid "In-memory storage"
-#~ msgstr "In-memory 存储"
-
-#: src/views/Publication/Add.js
-#~ msgid "Incompatible"
-#~ msgstr "不兼容"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Pan.js
-#: src/misc/filters/audio/Resample.js
-#: src/misc/filters/audio/Volume.js
-#~ msgid "Inherit"
-#~ msgstr "继承"
-
-#: src/views/Playersite.js
-#~ msgid "Inject 1"
-#~ msgstr "注入 1"
-
-#: src/views/Playersite.js
-#~ msgid "Inject 2"
-#~ msgstr "注入 2"
-
-#: src/views/Playersite.js
-#~ msgid "Inject 3"
-#~ msgstr "注入 3"
-
-#: src/views/Playersite.js
-#~ msgid "Inject 4"
-#~ msgstr "注入 4"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "Input stream"
-#~ msgstr "输入流"
+#. placeholder {0}: service.name
+#: src/views/Publication/Add.tsx
+msgid "Add: {0}"
+msgstr "添加：{0}"
+
+#: src/views/Playersite.tsx
+msgid "Additional channels"
+msgstr ""
+
+#: src/views/Playersite.tsx
+msgid "Additional channels to display on the playersite."
+msgstr ""
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+#: src/views/Publication/Services/Azure.tsx
+#: src/views/Publication/Services/Brightcove.tsx
+#: src/views/Publication/Services/Core.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/Linkedin.tsx
+#: src/views/Publication/Services/MPEGTS.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Publication/Services/UDP.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+#: src/views/Settings.tsx
+msgid "Address"
+msgstr "地址"
+
+#: src/views/Playersite.tsx
+msgid "Address for the background image."
+msgstr "背景图片的地址。"
+
+#: src/views/Settings.tsx
+msgid "Address to listen on for HTTP requests."
+msgstr "HTTP请求监听的地址。"
+
+#: src/views/Settings.tsx
+msgid "Address to listen on for HTTPS requests."
+msgstr "HTTPS请求监听地址。"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "Address:"
+msgstr "地址"
+
+#: src/views/Playersite.tsx
+msgid "Adjust publication site colors and background as you like."
+msgstr "根据喜好调整发布站点的颜色和背景。"
+
+#: src/views/Login.tsx
+msgid "Advanced monitoring"
+msgstr "高级监控"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/MPEGTS.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Publication/Services/UDP.tsx
+msgid "Advanced settings"
+msgstr "高级设置"
+
+#: src/views/Edit/Wizard/Source.tsx
+msgid "Advanced setup"
+msgstr "高级设置"
+
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "AirPlay"
+msgstr "AirPlay"
+
+#: src/views/Login.tsx
+msgid "Alerting by email"
+msgstr "邮件通知"
+
+#: src/views/Publication/Add.tsx
+msgid "All"
+msgstr "全部"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "All frames"
+msgstr "所有帧"
+
+#: src/views/Settings.tsx
+msgid "All important system settings."
+msgstr "所有重要的系统设置。"
+
+#: src/views/Settings.tsx
+msgid "Allow all referrer"
+msgstr "允许所有来源"
+
+#: src/views/Settings.tsx
+msgid "Allow counting how many viewers the stream has."
+msgstr "允许统计媒体流播放量。"
+
+#: src/views/Edit/Sources/ALSA.tsx
+msgid "ALSA"
+msgstr "ALSA"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Amplitude"
+msgstr "幅度"
+
+#: src/misc/Env.tsx
+msgid "An environment variable sets this value."
+msgstr "设置该值的环境变量。"
+
+#: src/views/Settings.tsx
+msgid "API endpoint not found. Settings not saved."
+msgstr "未找到 API endpoint。设置没有保存。"
+
+#: src/views/Settings.tsx
+msgid "App"
+msgstr "App"
+
+#: src/Footer.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+msgid "Application"
+msgstr "Application"
+
+#: src/views/Edit/Wizard/Abort.tsx
+msgid "Are you sure you want to abort the wizard?"
+msgstr "确定要终止向导吗？"
+
+#: src/views/Publication/Add.tsx
+msgid "Audio"
+msgstr "音频"
+
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "Audio device"
+msgstr "音频设备"
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+msgid "Audio Device"
+msgstr "音频设备"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "Audio from device"
+msgstr "来自设备的音频"
+
+#: src/views/Edit/Profile.tsx
+#: src/views/Edit/ProfileSummary.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Audio settings"
+msgstr "音频设置"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "Audio setup"
+msgstr "音频设置"
+
+#: src/views/Login.tsx
+msgid "Auth0"
+msgstr "Auth0"
+
+#: src/views/Login.tsx
+msgid "Auth0 is currently not available because this interface is loaded from an insecure origin."
+msgstr "Auth0 当前不可用，因为此接口是从不安全的来源加载的。"
+
+#: src/views/Login.tsx
+msgid "Auth0 Tenant"
+msgstr "Auth0 Tenant"
+
+#: src/misc/controls/Metadata.tsx
+msgid "Author"
+msgstr "作者"
+
+#: src/views/Settings.tsx
+msgid "Authorization"
+msgstr "权限"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Auto"
+msgstr "自动"
+
+#: src/misc/controls/HLS.tsx
+msgid "Automatic cleanup of all media data"
+msgstr "自动清理所有媒体数据"
+
+#: src/views/Publication/Player.tsx
+msgid "Autoplay"
+msgstr "自动播放"
+
+#: src/views/Playersite.tsx
+msgid "Available"
+msgstr "可用的"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "AVFoundation"
+msgstr "AVFoundation"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "avoid_negative_ts"
+msgstr "avoid_negative_ts"
+
+#: src/views/Edit/Profile.tsx
+#: src/views/Edit/Wizard/Abort.tsx
+#: src/views/Edit/Wizard/Audio.tsx
+#: src/views/Edit/Wizard/License.tsx
+#: src/views/Edit/Wizard/Metadata.tsx
+#: src/views/Edit/Wizard/Video.tsx
+#: src/views/Edit/Wizard/VideoProfile.tsx
+#: src/views/Publication/Add.tsx
+msgid "Back"
+msgstr "返回"
+
+#: src/views/Playersite.tsx
+msgid "Background colors"
+msgstr "背景颜色"
+
+#: src/views/Playersite.tsx
+msgid "Background image"
+msgstr "背景图"
+
+#: src/views/Publication/Services/DaCast.tsx
+msgid "Backup server"
+msgstr "备用线路"
+
+#: src/views/Publication/Services/Youtube.tsx
+msgid "Backup stream"
+msgstr "备份媒体流"
+
+#: src/views/Publication/Services/Facebook.tsx
+msgid "Backup stream key"
+msgstr "备用线路的 key"
+
+#: src/views/Publication/Services/Akamai.tsx
+msgid "Backup URL"
+msgstr "备份地址"
+
+#: src/Footer.tsx
+msgid "Bandwidth"
+msgstr "带宽"
+
+#: src/views/Settings.tsx
+msgid "Bandwidth control"
+msgstr "带宽限制"
+
+#: src/misc/modals/Process.tsx
+msgid "Banner"
+msgstr "横幅"
+
+#: src/views/Login.tsx
+#: src/views/Settings.tsx
+msgid "Basic"
+msgstr "常规"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Beep factor"
+msgstr "蜂鸣系数"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/coders/settings/Video.tsx
+msgid "Bitrate"
+msgstr "比特率"
+
+#: src/views/Settings.tsx
+msgid "Block cache types"
+msgstr "禁止缓存的文件类型"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "blue"
+msgstr "蓝色"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Bottom field"
+msgstr "底部区域"
+
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Wizard/Metadata.tsx
+msgid "Briefly describe what the audience will see during the live stream."
+msgstr "简要描述观众将在直播中看到的内容。"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "brown"
+msgstr "棕色"
+
+#: src/views/Publication/Player.tsx
+msgid "Button color"
+msgstr "按钮颜色"
+
+#: src/misc/filters/video/Scale.tsx
+msgid "By height"
+msgstr "按高度"
+
+#: src/misc/filters/video/Scale.tsx
+msgid "By width"
+msgstr "按宽度"
+
+#: src/views/Settings.tsx
+msgid "Cache for files on /data."
+msgstr "缓存 /data 路径下的文件。"
+
+#: src/views/Settings.tsx
+msgid "Cache time (Seconds)"
+msgstr "缓存时间（秒）"
+
+#: src/views/Settings.tsx
+msgid "Cache types"
+msgstr "缓存类型"
+
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "Capture buffer"
+msgstr "捕获缓冲区"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "Capture clicks"
+msgstr "捕获点击"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "Capture cursor"
+msgstr "捕获指针"
+
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx
+msgid "Channel \"{0}\" saved"
+msgstr "已保存频道 \"{0}\""
+
+#: src/views/Edit/Sources/ALSA.tsx
+msgid "Channels"
+msgstr "频道"
+
+#: src/views/Settings.tsx
+msgid "Check for updates"
+msgstr "检查更新"
+
+#: src/views/Publication/Add.tsx
+msgid "Check the requirements"
+msgstr "检查"
+
+#: src/views/Edit/StreamSelect.tsx
+msgid "Choose a video stream"
+msgstr "选择一个视频流"
+
+#: src/views/Edit/StreamSelect.tsx
+msgid "Choose an audio stream"
+msgstr "选择一个音频流"
+
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/Framebuffer.tsx
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Sources/V4L.tsx
+msgid "Choose an input device ..."
+msgstr "选择一个输入设备 ..."
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "Choose an input stream ..."
+msgstr "选择输入流 ..."
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Choose between CFR and VFR (Auto)"
+msgstr "在 CFR 和 VFR 中选择（自动）"
+
+#: src/misc/EncodingSelect.tsx
+msgid "Choose codec ..."
+msgstr "选择编码器 ..."
+
+#: src/views/Login.tsx
+msgid "Choose tenant ..."
+msgstr "选择 tenant ..."
+
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Chromecast"
+msgstr "Chromecast"
+
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+msgid "Chunk"
+msgstr "块"
+
+#: src/misc/Changelog.tsx
+#: src/misc/ModalContent.tsx
+#: src/misc/modals/Hint.tsx
+#: src/views/Edit/index.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+#: src/views/Publication/Player.tsx
+#: src/views/Settings.tsx
+msgid "Close"
+msgstr "关闭"
+
+#: src/views/Playersite.tsx
+msgid "Code injection"
+msgstr "代码注入"
+
+#: src/misc/EncodingSelect.tsx
+#: src/misc/modals/Hint.tsx
+msgid "Codec"
+msgstr "编码器"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Color"
+msgstr "颜色"
+
+#: src/misc/modals/Process.tsx
+msgid "Command"
+msgstr "指挥"
+
+#: src/views/Settings.tsx
+msgid "Config"
+msgstr "配置"
+
+#: src/views/Password.tsx
+msgid "Confirm password"
+msgstr "确认密码"
+
+#: src/misc/ActionButton.tsx
+msgid "Connect"
+msgstr "连接"
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+msgid "Connected device"
+msgstr "已连接的设备"
+
+#: src/views/Publication/Process.tsx
+msgid "Connected since <0/>"
+msgstr "连接建立于"
+
+#: src/misc/ActionButton.tsx
+#: src/views/Main/index.tsx
+#: src/views/Publication/Process.tsx
+msgid "Connecting ..."
+msgstr "连接中 ..."
+
+#: src/views/Initializing.tsx
+msgid "Connecting to Restreamer Core ..."
+msgstr "连接到 Restreamer Core ..."
+
+#: src/views/Invalid.tsx
+msgid "Connecting to Restreamer Core failed probably because of mixed content."
+msgstr "连接到 Restreamer Core 失败，原因可能是 mixed content。"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Constant frame rate (CFR)"
+msgstr "固定帧率（CFR）"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Constant Quantizer Mode (-1 to 255)."
+msgstr "常数量化器模式（-1 至 255）。"
+
+#: src/misc/controls/Metadata.tsx
+#: src/views/Playersite.tsx
+msgid "Content"
+msgstr "内容"
+
+#: src/views/Main/index.tsx
+msgid "Content URL"
+msgstr "内容 URL"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "copyts"
+msgstr "copyts"
+
+#: src/Footer.tsx
+msgid "Cores"
+msgstr "Cores"
+
+#: src/misc/Progress.tsx
+msgid "CPU"
+msgstr "中央处理器"
+
+#: src/misc/controls/Limits.tsx
+msgid "CPU Limit (percent)"
+msgstr "CPU 上限（百分比）"
+
+#: src/misc/controls/Limits.tsx
+msgid "CPU usage limit in percent (0-100%), 0 for unlimited."
+msgstr "CPU 使用限制，单位为百分比（0-100%），0 表示无限制。"
+
+#: src/misc/controls/License/index.tsx
+msgid "Creative Commons"
+msgstr "创作许可"
+
+#: src/misc/coders/Encoders/audio/opus.tsx
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/coders/settings/Video.tsx
+#: src/misc/filters/audio/Resample.tsx
+#: src/misc/filters/audio/Volume.tsx
+#: src/misc/filters/video/Framerate.tsx
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Sources/V4L.tsx
+msgid "Custom ..."
+msgstr "自定义 ..."
+
+#: src/views/Edit/Sources/ALSA.tsx
+msgid "Custom audio device"
+msgstr "自定义音频设备"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "Custom audio index"
+msgstr "自定义音频索引"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/coders/settings/Video.tsx
+msgid "Custom bitrate (kbit/s)"
+msgstr "自定义比特率（kbit/s）"
+
+#: src/views/Playersite.tsx
+msgid "Custom code injection"
+msgstr "自定义代码注入"
+
+#: src/misc/coders/Encoders/audio/opus.tsx
+msgid "Custom delay"
+msgstr "自定义延迟"
+
+#: src/views/Edit/Sources/Framebuffer.tsx
+msgid "Custom device"
+msgstr "自定义设备"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Custom format"
+msgstr "自定义格式"
+
+#: src/misc/coders/settings/Video.tsx
+#: src/misc/filters/video/Framerate.tsx
+msgid "Custom framerate"
+msgstr "自定义帧率"
+
+#: src/views/Settings.tsx
+msgid "Custom JSON config for datarhei Core."
+msgstr "自定义 datarhei Core 的 JSON 配置。"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Custom keyframe interval"
+msgstr "自定义关键帧间隔"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "Custom layout"
+msgstr "自定义 layout"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "Custom sampling (Hz)"
+msgstr "自定义采样率（Hz）"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Custom scale"
+msgstr "自定义缩放"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Custom size"
+msgstr "自定义尺寸"
+
+#: src/views/Edit/Sources/V4L.tsx
+msgid "Custom video device"
+msgstr "自定义视频设备"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+msgid "Custom video index"
+msgstr "自定义视频索引"
+
+#: src/misc/CopyButton.tsx
+#: src/misc/Textarea.tsx
+#: src/misc/TextFieldCopy.tsx
+msgid "Data copied to clipboard"
+msgstr "已复制到剪贴板"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Death color"
+msgstr "Death color"
+
+#: src/misc/filters/audio/Volume.tsx
+msgid "Decibels (dB)"
+msgstr "分贝（dB）"
+
+#: src/misc/EncodingSelect.tsx
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Decoder"
+msgstr "解码器"
+
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+#: src/views/Playersite.tsx
+msgid "Default"
+msgstr "默认"
+
+#. placeholder {0}: 2500
+#: src/views/Edit/Sources/Network.tsx
+msgid "Default {0}"
+msgstr "默认 {0}"
+
+#. placeholder {0}: 5000000
+#. placeholder {1}: 5
+#: src/views/Edit/Sources/Network.tsx
+msgid "Default {0} ({1} seconds)"
+msgstr "默认 {0} （{1} 秒）"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Deinterlace (bwdif)"
+msgstr "去隔行（bwdif）"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Deinterlace deint"
+msgstr "去隔行 deint"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Deinterlace mode"
+msgstr "去隔行模式"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Deinterlace parity"
+msgstr "去隔行校验"
+
+#: src/misc/coders/Encoders/audio/opus.tsx
+msgid "Delay"
+msgstr "延迟"
+
+#: src/views/Edit/Sources/ALSA.tsx
+msgid "Delay (ms)"
+msgstr "延迟（ms）"
+
+#: src/views/Edit/index.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Delete"
+msgstr "删除"
+
+#: src/views/Publication/Edit.tsx
+msgid "Deleting a publication service cannot be reversed. The publication stops immediately."
+msgstr "删除串流输出服务无法撤消。串流输出立即停止。"
+
+#: src/views/Publication/Services/Twitter.tsx
+#: src/views/Publication/Services/Youtube.tsx
+msgid "Delivering mode"
+msgstr "递送模式"
+
+#: src/misc/controls/Metadata.tsx
+msgid "Description"
+msgstr "描述"
+
+#: src/views/Playersite.tsx
+msgid "Design"
+msgstr "设计"
+
+#: src/views/Edit/Sources/Framebuffer.tsx
+#: src/views/Edit/Wizard/Audio.tsx
+#: src/views/Publication/Services/Framebuffer.tsx
+msgid "Device"
+msgstr "设备"
+
+#: src/misc/ActionButton.tsx
+msgid "Disconnect"
+msgstr "断开连接"
+
+#: src/views/Edit/index.tsx
+msgid "Disconnect & Continue"
+msgstr "断连 & 继续"
+
+#: src/misc/ActionButton.tsx
+#: src/views/Publication/Process.tsx
+msgid "Disconnecting ..."
+msgstr "正在断开连接 ..."
+
+#: src/misc/controls/HLS.tsx
+#: src/views/Settings.tsx
+msgid "Disk"
+msgstr "硬盘"
+
+#: src/views/Settings.tsx
+msgid "Disk cache"
+msgstr "硬盘缓存"
+
+#: src/Footer.tsx
+msgid "Disk storage"
+msgstr "硬盘存储"
+
+#: src/views/Settings.tsx
+msgid "Do you really want to restart the application now?"
+msgstr "确定要立刻重启应用吗？"
+
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx
+msgid "Do you want to delete \"{0}\"?"
+msgstr "确定要删除 \"{0}\" 吗？"
+
+#: src/views/Publication/Edit.tsx
+msgid "Do you want to delete {title}?"
+msgstr "确定要删除 {title} 吗？"
+
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx
+msgid "Do you want to disconnect \"{0}\"?"
+msgstr "确定要断开 \"{0}\" 的连接吗？"
+
+#: src/Header.tsx
+msgid "Docs"
+msgstr "文档"
+
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/MPEGTS.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Publication/Services/UDP.tsx
+msgid "Documentation"
+msgstr "文档"
+
+#: src/misc/Progress.tsx
+msgid "Dup. frames"
+msgstr "重复帧"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Each field"
+msgstr "每个区域"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Each frames"
+msgstr "每一帧"
+
+#: src/views/Edit/index.tsx
+msgid "Edit"
+msgstr "编辑"
+
+#: src/views/Edit/index.tsx
+msgid "Edit the audio and video sources for the live stream. Add a description, and set your desired content license."
+msgstr "编辑直播流的音频和视频源。添加描述，并设置您想要的内容许可。"
+
+#: src/views/Publication/Edit.tsx
+msgid "Edit: {title}"
+msgstr "编辑：{title}"
+
+#: src/views/Publication/Player.tsx
+msgid "EDIT: Player"
+msgstr "编辑：播放器"
+
+#: src/views/Playersite.tsx
+msgid "EDIT: Publication Website"
+msgstr "编辑：发布的站点"
+
+#: src/views/Settings.tsx
+msgid "Email"
+msgstr "邮箱"
+
+#: src/views/Publication/Player.tsx
+msgid "Embed"
+msgstr "内嵌"
+
+#: src/misc/controls/RTMP.tsx
+#: src/misc/controls/SRT.tsx
+msgid "Enable"
+msgstr "启用"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Enable a periodic beep every second with this value times the carrier frequency"
+msgstr "启用以此值乘以载波频率的每秒周期蜂鸣"
+
+#: src/views/Publication/Services/Dummy.tsx
+#: src/views/Publication/Services/Facebook.tsx
+msgid "Enable backup stream"
+msgstr "允许备份媒体流"
+
+#: src/views/Publication/Player.tsx
+msgid "Enable nerd statistics"
+msgstr "允许数据统计"
+
+#: src/misc/controls/RTMP.tsx
+#: src/misc/controls/SRT.tsx
+msgid "Enable now"
+msgstr "现在启用"
+
+#: src/views/Publication/Services/Dummy.tsx
+#: src/views/Publication/Services/Facebook.tsx
+msgid "Enable primary stream"
+msgstr "启用主媒体流"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+msgid "Enable RTMP server ..."
+msgstr "启用 RTMP 服务 ..."
+
+#: src/views/Publication/Services/PeerTube.tsx
+msgid "Enable RTMPS transfer"
+msgstr "启用 RTMPS 传输"
+
+#: src/misc/controls/Snapshot.tsx
+msgid "Enable snapshots"
+msgstr "允许快照"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "Enable SRT server ..."
+msgstr "启用 SRT 服务器 ..."
+
+#: src/views/Settings.tsx
+msgid "Enabling authorization is strongly advised. Otherwise, anybody can access this instance."
+msgstr "强烈建议启用身份验证。否则，任何人都可以访问和控制该实例。"
+
+#: src/views/Settings.tsx
+msgid "Enabling basic auth is strongly advised. Otherwise, anybody could write data to /memfs."
+msgstr "强烈建议启用基本身份验证。否则，任何人都可以向 /memfs 中写入数据。"
+
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Encoder"
+msgstr "编码器"
+
+#: src/views/Edit/Summary.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Encoding"
+msgstr "编码"
+
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/SRT.tsx
+msgid "Encryption"
+msgstr "加密"
+
+#: src/misc/ChannelList.tsx
+msgid "Enter a name for the new channel."
+msgstr "输入新频道的名字。"
+
+#: src/views/Password.tsx
+msgid "Enter password"
+msgstr "输入密码"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "Enter the address of your network source:"
+msgstr "输入网络源地址："
+
+#: src/views/Password.tsx
+msgid "Enter username"
+msgstr "输入用户名"
+
+#: src/misc/coders/Encoders/video/h264_videotoolbox.tsx
+msgid "Entropy coder"
+msgstr "加密编码器"
+
+#: src/views/Edit/Wizard/Error.tsx
+#: src/views/Incompatible.tsx
+#: src/views/Invalid.tsx
+#: src/views/Publication/Process.tsx
+#: src/views/Settings.tsx
+msgid "Error"
+msgstr "错误"
+
+#: src/misc/CopyButton.tsx
+#: src/misc/Textarea.tsx
+#: src/misc/TextFieldCopy.tsx
+msgid "Error while copying data to clipboard"
+msgstr "复制到剪贴板时出现错误"
+
+#. placeholder {0}: anonymize( $state.progress .error, ) || 'unknown'
+#. placeholder {0}: progress.error
+#: src/views/Main/index.tsx
+#: src/views/Publication/Process.tsx
+msgid "Error: {0}"
+msgstr "错误：{0}"
+
+#: src/views/Playersite.tsx
+msgid "Expands the area above the channel list (live chat)."
+msgstr "扩展频道列表上方的区域（实时聊天）。"
+
+#: src/views/Playersite.tsx
+msgid "Expands the area under the channel description (comment boxes)."
+msgstr "扩展频道描述下的区域（评论）。"
+
+#: src/views/Settings.tsx
+msgid "Expert mode"
+msgstr "专家模式"
+
+#: src/misc/controls/HLS.tsx
+msgid "EXT-X-VERSION"
+msgstr "EXT-X-VERSION"
+
+#: src/views/Playersite.tsx
+msgid "Extend channel list"
+msgstr "扩展频道列表"
+
+#: src/views/Playersite.tsx
+msgid "Extend content"
+msgstr "扩展内容"
+
+#: src/views/Playersite.tsx
+msgid "Extend footer"
+msgstr "扩展底栏"
+
+#: src/views/Playersite.tsx
+msgid "Extend header"
+msgstr "扩展顶栏"
+
+#. placeholder {0}: err.message
+#: src/views/Publication/Add.tsx
+msgid "Failed to create publication service ({0})"
+msgstr "创建串流输出服务失败（{0}）"
+
+#: src/views/Playersite.tsx
+msgid "Failed to create publication website files."
+msgstr "创建发布站点文件失败。"
+
+#: src/views/Edit/Profile.tsx
+msgid "Failed to probe the source. Please check the <0>probe details</0>."
+msgstr "探测媒体信息头失败。请检查 <0>媒体头详情</0>。"
+
+#. placeholder {0}: err.message
+#: src/utils/restreamer.tsx
+msgid "Failed to refresh token: {0}"
+msgstr "刷新 token 失败：{0}"
+
+#: src/views/Edit/index.tsx
+msgid "Failed to save ingest metadata"
+msgstr "保存摄取元数据失败"
+
+#: src/views/Edit/index.tsx
+msgid "Failed to stop process"
+msgstr "终止进程失败"
+
+#: src/views/Playersite.tsx
+msgid "Failed to store player size setting."
+msgstr "保存播放器尺寸设置失败。"
+
+#. placeholder {0}: err.message
+#: src/views/Publication/Edit.tsx
+msgid "Failed to store publication service ({0})"
+msgstr "保存串流输出服务失败（{0}）"
+
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx
+msgid "Failed to update ingest process ({0})"
+msgstr "更新摄取进程失败（{0}）"
+
+#. placeholder {0}: err.message
+#: src/views/Edit/index.tsx
+msgid "Failed to update ingest snapshot process ({0})"
+msgstr "无法更新摄取快照进程 ({0})"
+
+#: src/views/Edit/index.tsx
+msgid "Failed to update the player"
+msgstr "更新播放器失败"
+
+#: src/views/Edit/index.tsx
+msgid "Failed to update the playersite"
+msgstr "无法上传播放器页"
+
+#: src/views/Edit/Wizard/Audio.tsx
+#: src/views/Edit/Wizard/Video.tsx
+msgid "Failed to verify the source. Please check the address."
+msgstr "验证媒体源失败。请检查地址。"
+
+#: src/views/Settings.tsx
+msgid "FFmpeg"
+msgstr "FFmpeg"
+
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+msgid "File path"
+msgstr "文件路径"
+
+#: src/views/Edit/Summary.tsx
+msgid "Filter"
+msgstr "过滤器"
+
+#: src/views/Edit/Profile.tsx
+msgid "Finish"
+msgstr "完成"
+
+#: src/misc/filters/video/Scale.tsx
+msgid "Fix size"
+msgstr "固定大小"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Flags"
+msgstr "选项"
+
+#: src/views/Playersite.tsx
+msgid "For Javascripts."
+msgstr "For Javascripts."
+
+#: src/views/Playersite.tsx
+msgid "For Stylesheets."
+msgstr "For Stylesheets."
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Force input framerate"
+msgstr "强制输入帧率"
+
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "Force key frames"
+msgstr "强制帧率"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Format"
+msgstr "格式"
+
+#: src/misc/Progress.tsx
+#: src/views/Main/Progress.tsx
+msgid "FPS"
+msgstr "帧率"
+
+#: src/misc/Progress.tsx
+msgid "Frame drops"
+msgstr "丢弃帧"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Frame is passed through (Passthrough)"
+msgstr "帧直通（Passthrough）"
+
+#: src/views/Edit/Sources/Framebuffer.tsx
+msgid "Framebuffer"
+msgstr "帧缓冲"
+
+#: src/misc/coders/settings/Video.tsx
+#: src/misc/filters/video/Framerate.tsx
+#: src/views/Edit/Sources/Network.tsx
+msgid "Framerate"
+msgstr "帧率"
+
+#: src/misc/filters/video/Framerate.tsx
+msgid "Framerate conversion (frame interpolation)"
+msgstr "帧频转换（帧插值）"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Framerate mode"
+msgstr "帧率模式"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Frequency (Hz)"
+msgstr "频率（Hz）"
+
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Settings.tsx
+msgid "General"
+msgstr "常规"
+
+#: src/views/Publication/Services/DLive.tsx
+#: src/views/Publication/Services/Facebook.tsx
+#: src/views/Publication/Services/Instagram.tsx
+#: src/views/Publication/Services/Kick.tsx
+#: src/views/Publication/Services/MediaNetwork.tsx
+#: src/views/Publication/Services/NimoTv.tsx
+#: src/views/Publication/Services/PeerTube.tsx
+#: src/views/Publication/Services/Restream.tsx
+#: src/views/Publication/Services/Rumble.tsx
+#: src/views/Publication/Services/Trovo.tsx
+#: src/views/Publication/Services/Twitch.tsx
+#: src/views/Publication/Services/Twitter.tsx
+#: src/views/Publication/Services/Wettercom.tsx
+#: src/views/Publication/Services/Youtube.tsx
+msgid "GET"
+msgstr "GET"
+
+#: src/views/Publication/Player.tsx
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
+
+#: src/views/Publication/Player.tsx
+msgid "Google Analytics Tracker Name"
+msgstr "Google Analytics Tracker Name"
+
+#: src/views/Edit/Sources/V4L.tsx
+#: src/views/Edit/Wizard/Sources/V4L.tsx
+msgid "Hardware device"
+msgstr "硬件设备"
+
+#: src/views/Playersite.tsx
+msgid "Header"
+msgstr "顶栏"
+
+#: src/views/Playersite.tsx
+msgid "Headline"
+msgstr "提要"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Height"
+msgstr "高度"
+
+#: src/views/Main/index.tsx
+msgid "HLS"
+msgstr "HLS"
+
+#: src/views/Edit/index.tsx
+msgid "HLS output"
+msgstr "HLS 输出"
+
+#: src/views/Edit/Wizard/Sources/InternalHLS.tsx
+msgid "HLS server"
+msgstr "HLS 服务器"
+
+#: src/views/Settings.tsx
+msgid "HLS statistic for the In-memory storage"
+msgstr "内存存储器的HLS统计"
+
+#: src/misc/filters/video/HFlip.tsx
+msgid "Horizontal Flip"
+msgstr "水平翻转"
+
+#: src/views/Login.tsx
+msgid "Hosted Restreamer interface"
+msgstr "托管的 Restreamer 接口"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "HTTP and HTTPS"
+msgstr "HTTP 和 HTTPS"
+
+#: src/views/Settings.tsx
+msgid "HTTP port"
+msgstr "HTTP 端口"
+
+#: src/views/Settings.tsx
+msgid "HTTPS (SSL/TLS)"
+msgstr "HTTPS (SSL/TLS)"
+
+#: src/views/Settings.tsx
+msgid "HTTPS port"
+msgstr "HTTPS 端口"
+
+#: src/views/Settings.tsx
+msgid "Human readable name on the service."
+msgstr "服务的易读名称。"
+
+#: src/views/Settings.tsx
+msgid "If you changed the ports, it might be that Restreamer Core restarted already, but it is now available on a different port."
+msgstr "如果更改了端口，Restreamer Core 可能已经重新启动，但它现在可以在不同的端口上使用。"
+
+#: src/views/Settings.tsx
+msgid "If you enabled Let's Encrypt TLS it might take some time to acquire the certificates. Make sure that Restreamer Core is reachable via port 80 from the internet. Please check the console log of Restreamer Core."
+msgstr "如果启用了 Let's Encrypt TLS，则可能需要一些时间来获取证书。确保可以通过端口 80 从互联网访问 Restreamer Core。请检查 Restreamer Core 的控制台日志。"
+
+#: src/views/Publication/Player.tsx
+msgid "iframe code"
+msgstr "iframe 代码"
+
+#: src/views/Settings.tsx
+msgid "Ignore IP ranges"
+msgstr "忽略 IP 范围"
+
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Image URL"
+msgstr "图片 URL"
+
+#: src/views/Playersite.tsx
+msgid "Imprint"
+msgstr "水印"
+
+#: src/views/Playersite.tsx
+msgid "In addition to the player, the Restreamer offers a complete landingpage, which you can use to present your live stream easily and quickly."
+msgstr "除了播放器之外，Restreamer 还提供了一个完整的展示页面，您可以使用它轻松快速地展示您的直播。"
+
+#: src/views/Edit/Profile.tsx
+msgid "In order to proceed anyways, you can provide <0>hints</0> about the available streams."
+msgstr ""
+
+#: src/misc/controls/HLS.tsx
+#: src/views/Settings.tsx
+msgid "In-memory"
+msgstr "In-memory"
+
+#: src/Footer.tsx
+msgid "In-memory storage"
+msgstr "In-memory 存储"
+
+#: src/views/Publication/Add.tsx
+msgid "Incompatible"
+msgstr "不兼容"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Pan.tsx
+#: src/misc/filters/audio/Resample.tsx
+#: src/misc/filters/audio/Volume.tsx
+msgid "Inherit"
+msgstr "继承"
+
+#: src/views/Playersite.tsx
+msgid "Inject 1"
+msgstr "注入 1"
+
+#: src/views/Playersite.tsx
+msgid "Inject 2"
+msgstr "注入 2"
+
+#: src/views/Playersite.tsx
+msgid "Inject 3"
+msgstr "注入 3"
+
+#: src/views/Playersite.tsx
+msgid "Inject 4"
+msgstr "注入 4"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "Input stream"
+msgstr "输入流"
 
 #: src/views/Publication/Services/Instagram.js
 #~ msgid "Instafeed.me"
 #~ msgstr "instafeed.me"
 
-#: src/views/Publication/Services/PeerTube.js
-#~ msgid "Instance domain"
-#~ msgstr "实例域名"
+#: src/views/Publication/Services/PeerTube.tsx
+msgid "Instance domain"
+msgstr "实例域名"
 
-#: src/misc/controls/Snapshot.js
-#~ msgid "Interval (seconds)"
-#~ msgstr "间隔（秒）"
+#: src/misc/controls/Snapshot.tsx
+msgid "Interval (seconds)"
+msgstr "间隔（秒）"
 
-#: src/Header.js
-#~ msgid "Issue alert"
-#~ msgstr "问题警告"
+#: src/Header.tsx
+msgid "Issue alert"
+msgstr "问题警告"
 
-#: src/misc/Progress.js
-#: src/views/Main/Progress.js
-#: src/views/Main/Publication.js
-#~ msgid "kbit/s"
-#~ msgstr "kbit/s"
+#: src/misc/Progress.tsx
+#: src/views/Main/Progress.tsx
+#: src/views/Main/Publication.tsx
+msgid "kbit/s"
+msgstr "kbit/s"
 
-#: src/misc/coders/settings/Video.js
-#~ msgid "Keyframe interval (seconds)"
-#~ msgstr "关键帧间隔（秒）"
+#: src/misc/coders/settings/Video.tsx
+msgid "Keyframe interval (seconds)"
+msgstr "关键帧间隔（秒）"
 
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "Layout"
-#~ msgstr "布局"
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "Layout"
+msgstr "布局"
 
-#: src/views/Settings.js
-#~ msgid "Let's Encrypt certification"
-#~ msgstr "Let's Encrypt 证书"
+#: src/views/Settings.tsx
+msgid "Let's Encrypt certification"
+msgstr "Let's Encrypt 证书"
 
-#: src/views/Settings.js
-#~ msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
-#~ msgstr "Let's Encrypt 需要一个或多个公共域名和可访问的 TCP 端口 80。"
+#: src/views/Settings.tsx
+msgid "Let's Encrypt requires one or more public domain names and an accessible port 80/TCP."
+msgstr "Let's Encrypt 需要一个或多个公共域名和可访问的 TCP 端口 80。"
 
-#: src/misc/coders/Encoders/video/h264_nvenc.js
-#~ msgid "Level"
-#~ msgstr "Level"
+#: src/misc/coders/Encoders/video/h264_nvenc.tsx
+msgid "Level"
+msgstr "Level"
 
-#: src/views/Settings.js
-#~ msgid "Level of system protocol."
-#~ msgstr "系统协议的等级。"
+#: src/views/Settings.tsx
+msgid "Level of system protocol."
+msgstr "系统协议的等级。"
 
-#: src/views/Edit/index.js
-#: src/views/Edit/Wizard/License.js
-#~ msgid "License"
-#~ msgstr "许可证"
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Wizard/License.tsx
+msgid "License"
+msgstr "许可证"
 
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Life color"
-#~ msgstr "Life color"
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Life color"
+msgstr "Life color"
 
-#: src/views/Edit/index.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Limits"
-#~ msgstr "限制"
+#: src/views/Edit/index.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Limits"
+msgstr "限制"
 
-#: src/views/Playersite.js
-#~ msgid "Linecolor"
-#~ msgstr "线颜色"
+#: src/views/Playersite.tsx
+msgid "Linecolor"
+msgstr "线颜色"
 
-#: src/views/Publication/Services/NimoTv.js
-#~ msgid "Lines"
-#~ msgstr "线路"
+#: src/views/Publication/Services/NimoTv.tsx
+msgid "Lines"
+msgstr "线路"
 
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Link"
-#~ msgstr "链接"
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Link"
+msgstr "链接"
 
-#: src/views/Playersite.js
-#~ msgid "Link, mouseover"
-#~ msgstr "链接，鼠标悬停时"
+#: src/views/Playersite.tsx
+msgid "Link, mouseover"
+msgstr "链接，鼠标悬停时"
 
-#: src/views/Settings.js
-#~ msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
-#~ msgstr "不缓存的文件扩展名（例如 \".m3u8\"），每行一个。如果没有请留空。"
+#: src/views/Settings.tsx
+msgid "List of file extensions not to cache (e.g. \".m3u8\"), one per line. Leave empty for none."
+msgstr "不缓存的文件扩展名（例如 \".m3u8\"），每行一个。如果没有请留空。"
 
-#: src/views/Settings.js
-#~ msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
-#~ msgstr "要缓存文件的扩展名列表（例如 \".html\"），每行一个。留空以缓存所有类型的文件。"
+#: src/views/Settings.tsx
+msgid "List of file extensions to cache (e.g. \".html\"), one per line. Leave empty to cache all file types."
+msgstr "要缓存文件的扩展名列表（例如 \".html\"），每行一个。留空以缓存所有类型的文件。"
 
-#: src/views/Settings.js
-#~ msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
-#~ msgstr "以 CIDR 表示法表示的 IP 范围列表，例如 127.0.0.1/32，统计信息不会记录 - 每行一个 IP 范围。留空以记录所有会话。"
+#: src/views/Settings.tsx
+msgid "List of IP ranges in CIDR notation, e.g., 127.0.0.1/32, that the statistics will not record—one IP range per line. Leave empty to record all sessions."
+msgstr "以 CIDR 表示法表示的 IP 范围列表，例如 127.0.0.1/32，统计信息不会记录 - 每行一个 IP 范围。留空以记录所有会话。"
 
-#: src/misc/controls/HLS.js
-#~ msgid "List size (segments)"
-#~ msgstr "列表大小（segments）"
+#: src/misc/controls/HLS.tsx
+msgid "List size (segments)"
+msgstr "列表大小（segments）"
 
-#: src/views/Publication/Services/DLive.js
-#~ msgid "Live-Streaming to dlive Live RTMP Service."
-#~ msgstr "将直播流传输到 dlive Live RTMP 服务。"
+#: src/views/Publication/Services/DLive.tsx
+msgid "Live-Streaming to dlive Live RTMP Service."
+msgstr "将直播流传输到 dlive Live RTMP 服务。"
 
-#: src/views/Publication/Services/Facebook.js
-#~ msgid "Live-Streaming to Facebook Live RTMP service"
-#~ msgstr "直播串流到 Facebook Live RTMP 服务"
+#: src/views/Publication/Services/Facebook.tsx
+msgid "Live-Streaming to Facebook Live RTMP service"
+msgstr "直播串流到 Facebook Live RTMP 服务"
 
-#: src/views/Publication/Services/Instagram.js
-#~ msgid "Live-Streaming to Instagram Live RTMP Service."
-#~ msgstr ""
+#: src/views/Publication/Services/Instagram.tsx
+msgid "Live-Streaming to Instagram Live RTMP Service."
+msgstr ""
 
 #: src/views/Publication/Services/Instagram.js
 #~ msgid "Live-Streaming to Instagram Live RTMP Service. The stream key requires a service such as <0>Instafeed.me</0> or <1>Yellow Duck</1>."
 #~ msgstr "串流到 Instagram 直播 RTMP 服务。流密钥需要诸如 <0>Instafeed.me</0> 或 <1>Yellow Duck</1> 之类的服务。"
 
-#: src/views/Publication/Services/MediaNetwork.js
-#~ msgid "Live-Streaming to Media Network RTMP Service."
-#~ msgstr "将直播流传输到 Media Network RTMP 服务。"
-
-#: src/views/Publication/Services/PeerTube.js
-#~ msgid "Live-Streaming to PeerTube v3+ RTMP/S Service."
-#~ msgstr "将直播流传输到 PeerTube V3+ RTMP/S 服务。"
-
-#: src/views/Publication/Services/Trovo.js
-#~ msgid "Live-Streaming to Trovo Live RTMP Service."
-#~ msgstr "将直播流传输到 Trove Live RTMP 服务。"
-
-#: src/views/Publication/Services/Twitch.js
-#~ msgid "Live-Streaming to Twitch Live RTMP Service."
-#~ msgstr "串流到 Twitch Live RTMP 服务。"
-
-#: src/views/Publication/Services/Vimeo.js
-#~ msgid "Live-Streaming to Vimeo Live RTMP Service"
-#~ msgstr "串流到 Vimeo Live RTMP 服务"
-
-#: src/views/Publication/Services/Livespotting.js
-#~ msgid "Livesource ID"
-#~ msgstr "Livesource ID"
-
-#: src/views/Settings.js
-#~ msgid "Log level"
-#~ msgstr "日志等级"
-
-#: src/misc/modals/Process.js
-#: src/views/Settings.js
-#~ msgid "Logging"
-#~ msgstr "日志"
-
-#: src/views/Login.js
-#: src/views/Publication/Services/Akamai.js
-#~ msgid "Login"
-#~ msgstr "登录"
-
-#: src/utils/restreamer.js
-#~ msgid "Login failed: {0}"
-#~ msgstr "登录失败：{0}"
-
-#: src/utils/restreamer.js
-#~ msgid "Login failed: Couldn't load API details"
-#~ msgstr "登录失败：无法加载 API 详情"
-
-#: src/views/Settings.js
-#~ msgid "Login/JWT authorization"
-#~ msgstr "登录/JWT 认证"
-
-#: src/views/Publication/Player.js
-#~ msgid "Logo"
-#~ msgstr "图标"
-
-#: src/Header.js
-#~ msgid "Logout"
-#~ msgstr "退出登录"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#~ msgid "Loop"
-#~ msgstr "循环"
-
-#: src/misc/filters/audio/Loudnorm.js
-#~ msgid "Loudness Normalization"
-#~ msgstr "响度归一化"
-
-#: src/misc/controls/Process.js
-#~ msgid "Low latency (Buffer)"
-#~ msgstr "低延迟（缓冲）"
-
-#: src/views/Main/index.js
-#: src/views/Playersite.js
-#~ msgid "Main channel"
-#~ msgstr "主频道"
-
-#: src/views/Publication/Player.js
-#~ msgid "Main channel not found"
-#~ msgstr "未找到主频道"
-
-#: src/views/Edit/Wizard/index.js
-#~ msgid "Main channel saved"
-#~ msgstr "已保存主频道"
-
-#: src/views/Playersite.js
-#~ msgid "Main page channel (index.html)."
-#~ msgstr "主页频道（index.html）。"
-
-#: src/views/Edit/index.js
-#~ msgid "Main Source"
-#~ msgstr "主媒体流"
-
-#: src/views/Publication/TabContent.js
-#~ msgid "Maintainer:"
-#~ msgstr "管理者："
-
-#: src/misc/controls/RTMP.js
-#~ msgid "Make the channel available as an RTMP stream (experimental)."
-#~ msgstr "使频道可用作 RTMP 流（实验）。"
-
-#: src/misc/controls/SRT.js
-#~ msgid "Make the channel available as an SRT stream (experimental)."
-#~ msgstr "使频道可用作 SRT 流（实验）。"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Marked frames"
-#~ msgstr "标记的帧"
-
-#: src/misc/controls/HLS.js
-#~ msgid "Master playlist (increases browser/client compatibility)"
-#~ msgstr "Master playlist（增加浏览器/客户端兼容性）"
-
-#: src/views/Settings.js
-#~ msgid "Maximum allowed cache size, 0 for unlimited."
-#~ msgstr "允许的最大缓存大小，0 表示无限制。"
-
-#: src/views/Settings.js
-#~ msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
-#~ msgstr "/memfs 允许占用的最大内存字节数，0 表示无限制。"
-
-#: src/views/Settings.js
-#~ msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
-#~ msgstr "允许占用硬盘的最大字节数。0 表示无限制。"
-
-#: src/views/Settings.js
-#~ msgid "Maximum bandwidth Mbit/s"
-#~ msgstr "最大带宽 Mbit/s"
-
-#: src/misc/coders/Encoders/audio/opus.js
-#~ msgid "Maximum delay in milliseconds."
-#~ msgstr "最大延迟毫秒数。"
-
-#: src/views/Settings.js
-#~ msgid "Maximum file size (Megabytes)"
-#~ msgstr "最大文件大小（MB）"
-
-#: src/views/Settings.js
-#~ msgid "Maximum file size to put in cache."
-#~ msgstr "缓存中的最大文件大小。"
-
-#: src/views/Settings.js
-#~ msgid "Maximum log histroy"
-#~ msgstr "日志历史上限"
-
-#: src/views/Settings.js
-#~ msgid "Maximum log lines"
-#~ msgstr "日志最大行数"
-
-#: src/views/Settings.js
-#~ msgid "Maximum size (Megabytes)"
-#~ msgstr "最大大小（MB）"
-
-#: src/views/Settings.js
-#~ msgid "Maximum viewer idle time (Seconds)"
-#~ msgstr "最大观众空闲时间（秒）"
-
-#: src/views/Settings.js
-#~ msgid "Maximum viewers"
-#~ msgstr "最大观众数"
-
-#: src/Footer.js
-#~ msgid "MB"
-#~ msgstr "MB"
-
-#: src/Footer.js
-#: src/misc/Progress.js
-#~ msgid "Memory"
-#~ msgstr "内存"
-
-#: src/misc/controls/Limits.js
-#~ msgid "Memory Limit (megabytes)"
-#~ msgstr "内存限制（兆字节）"
-
-#: src/misc/controls/Limits.js
-#~ msgid "Memory usage limit in megabytes, 0 for unlimited."
-#~ msgstr "内存使用限制（兆字节），0 表示无限制。"
-
-#: src/views/Edit/index.js
-#~ msgid "Meta information"
-#~ msgstr "元数据"
-
-#: src/views/Edit/index.js
-#: src/views/Edit/Wizard/Metadata.js
-#~ msgid "Metadata"
-#~ msgstr "元数据"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Mininum {0}, default {1}"
-#~ msgstr "最小 {0}，默认 {1}"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Mold"
-#~ msgstr "Mold"
-
-#: src/views/Publication/Services/Facebook.js
-#: src/views/Publication/Services/Twitch.js
-#: src/views/Publication/Services/Vimeo.js
-#~ msgid "More about licenses here"
-#~ msgstr "关于许可证的更多信息"
-
-#: src/views/Settings.js
-#~ msgid "More about the service"
-#~ msgstr "关于服务的更多信息"
-
-#: src/views/Publication/Services/Twitter.js
-#~ msgid "More about Twitter's copyright <0>here</0>."
-#~ msgstr "更多关于 Twitter 版权信息，请点击<0>这里</0>。"
-
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "More about YouTube's copyright <0>here</0>."
-#~ msgstr "关于 YouTube 的版权，请点击<0>这里</0>。"
-
-#: src/views/Settings.js
-#~ msgid "Must be larger than maximum file size in cache."
-#~ msgstr "必须大于缓存中的最大文件大小。"
-
-#: src/views/Settings.js
-#~ msgid "Must be smaller than maximum cache size."
-#~ msgstr "必须小于最大缓存大小。"
-
-#: src/views/Publication/Player.js
-#~ msgid "Mute"
-#~ msgstr "静音"
-
-#: src/misc/filters/audio/Pan.js
-#~ msgid "Mute a channel."
-#~ msgstr "静音声道。"
-
-#: src/misc/filters/audio/Pan.js
-#~ msgid "Mute left"
-#~ msgstr "静音左声道"
-
-#: src/misc/filters/audio/Pan.js
-#~ msgid "Mute right"
-#~ msgstr "静音右声道"
-
-#: src/misc/ChannelList.js
-#: src/misc/controls/Metadata.js
-#: src/views/Playersite.js
-#: src/views/Settings.js
-#~ msgid "Name"
-#~ msgstr "名称"
-
-#: src/views/Playersite.js
-#~ msgid "Name for the template. If the name already exists, it will be overwritten."
-#~ msgstr "模板名称。如果名称已存在，则覆盖已有模板。"
-
-#: src/views/Settings.js
-#~ msgid "Network"
-#~ msgstr "网络"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "Network source"
-#~ msgstr "网络源"
-
-#: src/views/Edit/Wizard/Audio.js
-#: src/views/Edit/Wizard/Metadata.js
-#: src/views/Edit/Wizard/Video.js
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Next"
-#~ msgstr "下一步"
-
-#: src/views/Edit/Profile.js
-#~ msgid "Next: Audio"
-#~ msgstr "下一步：音频"
-
-#: src/views/Welcome.js
-#~ msgid "Next: Video setup"
-#~ msgstr "下一步：视频设置"
-
-#: src/views/Edit/Wizard/Abort.js
-#~ msgid "No"
-#~ msgstr "否"
-
-#: src/views/Edit/Sources/NoAudio.js
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "No audio"
-#~ msgstr "无音频"
-
-#: src/views/Edit/StreamSelect.js
-#~ msgid "No audio stream available"
-#~ msgstr "没有可用的音频流"
-
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#: src/views/Edit/Wizard/Sources/V4L.js
-#~ msgid "No input device available"
-#~ msgstr "没有可用的输入设备"
-
-#: src/views/Edit/Wizard/Video.js
-#~ msgid "No live stream was detected. Please check the software that sends the stream."
-#~ msgstr "未检测到直播流。请检查发送直播流的软件。"
-
-#: src/views/Edit/Summary.js
-#~ msgid "No source selected"
-#~ msgstr "未选择媒体源"
-
-#: src/views/Edit/SourceSelect.js
-#~ msgid "No sources available"
-#~ msgstr "没有可用的媒体源"
-
-#: src/misc/EncodingSelect.js
-#~ msgid "No suitable encoder found."
-#~ msgstr "未找到合适的编码器。"
-
-#: src/misc/FilterSelect.js
-#~ msgid "No suitable filter found."
-#~ msgstr "没有合适的过滤器。"
-
-#: src/views/Main/index.js
-#: src/views/Publication/Player.js
-#~ msgid "No video"
-#~ msgstr "没有视频"
-
-#: src/views/Edit/StreamSelect.js
-#~ msgid "No video stream available"
-#~ msgstr "没有可用的视频流"
-
-#: src/views/Settings.js
-#~ msgid "Node ID"
-#~ msgstr "Node ID"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Noise"
-#~ msgstr "噪音"
-
-#: src/misc/filters/video/Scale.js
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Summary.js
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#~ msgid "None"
-#~ msgstr "无"
-
-#: src/views/Playersite.js
-#~ msgid "Notes"
-#~ msgstr "说明"
-
-#: src/views/Settings.js
-#~ msgid "Number of log lines to keep."
-#~ msgstr "保存日志的行数。"
-
-#: src/views/Settings.js
-#~ msgid "Number of logs to keep for each process."
-#~ msgstr "每个进程保存日志的行数。"
-
-#: src/misc/controls/Limits.js
-#~ msgid "Number of seconds the limits are allowed to be exceeded."
-#~ msgstr "允许超过限制的秒数。"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Number of tiles columns to encode with."
-#~ msgstr "要编码的瓷砖列数。"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Number of tiles encode with."
-#~ msgstr "编码瓦片数。"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Number of tiles rows to encode with."
-#~ msgstr "要编码的瓦片行数。"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "OK"
-#~ msgstr "确定"
-
-#: src/views/Settings.js
-#~ msgid "One referrer per line, e.g. http://www.example.com"
-#~ msgstr "每行一个来源，例如 http://www.example.com"
-
-#: src/views/Playersite.js
-#~ msgid "Open"
-#~ msgstr "打开"
-
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "Output buffer"
-#~ msgstr "输出缓冲区"
-
-#: src/misc/filters/audio/Pan.js
-#~ msgid "Pan"
-#~ msgstr "平移"
-
-#: src/views/Publication/Services/Core.js
-#: src/views/Settings.js
-#~ msgid "Passphrase"
-#~ msgstr "密码"
-
-#: src/views/Settings.js
-#~ msgid "Passphrase for SRT encryption."
-#~ msgstr "SRT 加密的密码。"
-
-#: src/views/Settings.js
-#~ msgid "Passphrase must be between 10 and 79 characters long"
-#~ msgstr "密码长度必须介于 10 和 79 之间"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
-#~ msgstr "仅在必要时才应禁用直通（复制）。每种编码都需要额外的 CPU/GPU 资源。"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#: src/views/Login.js
-#: src/views/Publication/Services/Akamai.js
-#: src/views/Publication/Services/DaCast.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/WOWZA.js
-#: src/views/Settings.js
-#~ msgid "Password"
-#~ msgstr "密码"
-
-#: src/views/Settings.js
-#~ msgid "Password for authorization."
-#~ msgstr "用于身份验证密码。"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "Password for the device."
-#~ msgstr "设备密码。"
-
-#: src/views/Settings.js
-#~ msgid "Persist viewer statistics"
-#~ msgstr "保存观众统计数据"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "pink"
-#~ msgstr "粉色"
-
-#: src/views/Publication/Services/Framebuffer.js
-#~ msgid "Pixel format"
-#~ msgstr "像素格式"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Pixel Format"
-#~ msgstr ""
-
-#: src/views/Login.js
-#~ msgid "Plan: <0>Starter</0>"
-#~ msgstr "计划：<0>起步</0>"
-
-#: src/views/Publication/Add.js
-#~ msgid "Platforms"
-#~ msgstr "直播平台"
-
-#: src/views/Publication/Player.js
-#: src/views/Settings.js
-#~ msgid "Playback"
-#~ msgstr "回放"
-
-#: src/views/Main/Egress.js
-#~ msgid "Player"
-#~ msgstr "播放器"
-
-#: src/views/Publication/Player.js
-#~ msgid "Player settings saved"
-#~ msgstr "已保存播放器设置"
-
-#: src/views/Publication/Player.js
-#~ msgid "Player URL"
-#~ msgstr "播放器 URL"
-
-#: src/Header.js
-#: src/views/Playersite.js
-#~ msgid "Playersite"
-#~ msgstr "播放页"
-
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#~ msgid "Playlist"
-#~ msgstr "播放列表"
-
-#: src/misc/controls/HLS.js
-#~ msgid "Playlist version (M3U8). Version 3 has the best browser/client compatibility."
-#~ msgstr "Playlist 版本（M3U8）。版本 3 有最好的浏览器/客户端兼容性。"
-
-#: src/views/Main/index.js
-#~ msgid "Please check the <0>process log</0>"
-#~ msgstr "请检查 <0>进程日志</0>"
-
-#: src/views/Publication/Services/Akamai.js
-#: src/views/Publication/Services/Azure.js
-#: src/views/Publication/Services/Brightcove.js
-#: src/views/Publication/Services/CDN77.js
-#: src/views/Publication/Services/Core.js
-#: src/views/Publication/Services/DaCast.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/Linkedin.js
-#: src/views/Publication/Services/Livepush.js
-#: src/views/Publication/Services/Livespotting.js
-#: src/views/Publication/Services/MPEGTS.js
-#: src/views/Publication/Services/NimoTv.js
-#: src/views/Publication/Services/PicartoTv.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/Restream.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Publication/Services/UDP.js
-#: src/views/Publication/Services/WOWZA.js
-#~ msgid "Please contact the operator of the service and check what happens."
-#~ msgstr "请联系服务管理员并检查情况。"
-
-#: src/views/Settings.js
-#~ msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
-#~ msgstr "请输入您的电子邮件地址以表示同意 Let's Encrypt CA 的服务条款，并在出现问题时收到通知。"
-
-#: src/views/Publication/Services/Dailymotion.js
-#: src/views/Publication/Services/Kick.js
-#: src/views/Publication/Services/Owncast.js
-#: src/views/Publication/Services/Rumble.js
-#: src/views/Publication/Services/Telegram.js
-#: src/views/Publication/Services/Wettercom.js
-#~ msgid "Please get in touch with the operator of the service and check what happens."
-#~ msgstr "请与该服务的运营商联系并检查发生了什么。"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Please select a file to upload."
-#~ msgstr "请选择要上传的文件。"
-
-#: src/views/Publication/Add.js
-#~ msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
-#~ msgstr "请尽可能使用 \"直通（复制）\"。编码需要额外的 CPU/GPU 资源。"
-
-#: src/views/Edit/Wizard/Probe.js
-#~ msgid "Please wait. Probe stream data ..."
-#~ msgstr "请等待。正在读取媒体流数据 ..."
-
-#: src/views/Edit/Wizard/Saving.js
-#~ msgid "Please wait. Setting up the stream ..."
-#~ msgstr "请等待。正在设置媒体流 ..."
-
-#: src/views/Settings.js
-#~ msgid "Port"
-#~ msgstr "端口"
-
-#: src/views/Publication/Player.js
-#~ msgid "Position"
-#~ msgstr "位置"
-
-#: src/views/Publication/Player.js
-#~ msgid "Poster"
-#~ msgstr "海报"
-
-#: src/views/Publication/Player.js
-#~ msgid "Poster image URL"
-#~ msgstr "海报图片 URL"
-
-#: src/misc/coders/Encoders/video/h264_libx264.js
-#: src/misc/coders/Encoders/video/h264_nvenc.js
-#: src/misc/coders/Encoders/video/hevc_libx265.js
-#~ msgid "Preset"
-#~ msgstr "预设"
-
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "Primary stream"
-#~ msgstr "主媒体流"
-
-#: src/views/Publication/Services/Facebook.js
-#~ msgid "Primary stream key"
-#~ msgstr "主线路 key"
-
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Sources/Framebuffer.js
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Sources/V4L.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Edit/Sources/VirtualAudio.js
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Probe"
-#~ msgstr "检测媒体流信息"
-
-#: src/views/Edit/index.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Process"
-#~ msgstr "串流进程"
-
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Process control"
-#~ msgstr "进程控制"
-
-#: src/views/Main/index.js
-#: src/views/Publication/Edit.js
-#~ msgid "Process details"
-#~ msgstr "进程详情"
-
-#: src/views/Main/index.js
-#: src/views/Publication/Edit.js
-#~ msgid "Process report"
-#~ msgstr "进程报告"
-
-#: src/views/Edit/index.js
-#~ msgid "Processing & Control"
-#~ msgstr "串流进程和控制"
-
-#: src/misc/coders/Encoders/video/h264_nvenc.js
-#: src/misc/coders/Encoders/video/h264_vaapi.js
-#: src/misc/coders/Encoders/video/hevc_vaapi.js
-#: src/misc/coders/Encoders/video/hevc_videotoolbox.js
-#: src/misc/coders/Encoders/video/vp9_vaapi.js
-#: src/misc/coders/settings/Video.js
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Profile"
-#~ msgstr "Profile"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Publication/Services/Akamai.js
-#: src/views/Publication/Services/Azure.js
-#: src/views/Publication/Services/Brightcove.js
-#: src/views/Publication/Services/CDN77.js
-#: src/views/Publication/Services/Core.js
-#: src/views/Publication/Services/DaCast.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Icecast.js
-#: src/views/Publication/Services/Image2.js
-#: src/views/Publication/Services/Linkedin.js
-#: src/views/Publication/Services/MPEGTS.js
-#: src/views/Publication/Services/Owncast.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/RTMP.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/SRT.js
-#: src/views/Publication/Services/Telegram.js
-#: src/views/Publication/Services/UDP.js
-#: src/views/Publication/Services/WOWZA.js
-#~ msgid "Protocol"
-#~ msgstr "协议"
-
-#: src/views/Publication/Add.js
-#~ msgid "Protocols"
-#~ msgstr "串流协议"
-
-#: src/views/Settings.js
-#~ msgid "Public domain/s"
-#~ msgstr "公有域名"
-
-#: src/views/Publication/Edit.js
-#~ msgid "Publication service not found"
-#~ msgstr "找不到串流输出服务"
-
-#: src/views/Playersite.js
-#~ msgid "Publication website settings saved"
-#~ msgstr "已保存发布页设置"
-
-#: src/views/Main/Publication.js
-#~ msgid "Publications"
-#~ msgstr "串流输出"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Pull Mode"
-#~ msgstr "拉取模式"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Pull or recieve the data:"
-#~ msgstr "拉取或接收数据："
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "QP"
-#~ msgstr "QP"
-
-#: src/misc/coders/Encoders/video/h264_vaapi.js
-#: src/misc/coders/Encoders/video/hevc_vaapi.js
-#: src/misc/coders/Encoders/video/vp9_vaapi.js
-#: src/misc/Progress.js
-#~ msgid "Quality"
-#~ msgstr "质量"
-
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Wizard/Sources/Raspicam.js
-#~ msgid "Raspberry Pi camera"
-#~ msgstr "树莓派相机"
-
-#: src/misc/coders/Encoders/video/h264_nvenc.js
-#: src/misc/coders/Encoders/video/h264_vaapi.js
-#: src/misc/coders/Encoders/video/hevc_vaapi.js
-#: src/misc/coders/Encoders/video/vp9_vaapi.js
-#~ msgid "Rate control"
-#~ msgstr "帧率控制"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Ratio"
-#~ msgstr "比率"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "rav1e Parameters"
-#~ msgstr "rav1e 参数"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Read input at native speed"
-#~ msgstr "以原始速率读取输入"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Receive Mode"
-#~ msgstr "接收模式"
-
-#: src/misc/ActionButton.js
-#: src/misc/controls/Process.js
-#~ msgid "Reconnect"
-#~ msgstr "重连"
-
-#: src/misc/controls/Process.js
-#~ msgid "Reconnect delay (seconds)"
-#~ msgstr "重连延时（秒）"
-
-#: src/views/Main/index.js
-#: src/views/Publication/Process.js
-#~ msgid "Reconnecting in {0}s"
-#~ msgstr "在 {0} 秒后重连"
-
-#: src/views/Settings.js
-#~ msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
-#~ msgstr "在最后 {RETRIES} 秒内重连 Restreamer Core 失败。"
-
-#: src/views/Password.js
-#~ msgid "Reconnecting to Restreamer Core failed."
-#~ msgstr "重连 Restreamer Core 失败。"
-
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Sources/V4L.js
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#: src/views/Edit/Wizard/Sources/V4L.js
-#~ msgid "Refresh"
-#~ msgstr "刷新"
-
-#: src/views/Publication/Services/Livepush.js
-#: src/views/Publication/Services/PicartoTv.js
-#: src/views/Publication/Services/Restream.js
-#: src/views/Publication/Services/Twitch.js
-#: src/views/Publication/Services/Twitter.js
-#~ msgid "Region"
-#~ msgstr "区域"
-
-#: src/views/Password.js
-#~ msgid "Register user"
-#~ msgstr "注册用户"
-
-#: src/views/Password.js
-#: src/views/Settings.js
-#~ msgid "Reload"
-#~ msgstr "重新加载"
-
-#: src/misc/modals/Hint.js
-#~ msgid "Remove Audio"
-#~ msgstr ""
+#: src/views/Publication/Services/MediaNetwork.tsx
+msgid "Live-Streaming to Media Network RTMP Service."
+msgstr "将直播流传输到 Media Network RTMP 服务。"
+
+#: src/views/Publication/Services/PeerTube.tsx
+msgid "Live-Streaming to PeerTube v3+ RTMP/S Service."
+msgstr "将直播流传输到 PeerTube V3+ RTMP/S 服务。"
+
+#: src/views/Publication/Services/Trovo.tsx
+msgid "Live-Streaming to Trovo Live RTMP Service."
+msgstr "将直播流传输到 Trove Live RTMP 服务。"
+
+#: src/views/Publication/Services/Twitch.tsx
+msgid "Live-Streaming to Twitch Live RTMP Service."
+msgstr "串流到 Twitch Live RTMP 服务。"
+
+#: src/views/Publication/Services/Vimeo.tsx
+msgid "Live-Streaming to Vimeo Live RTMP Service"
+msgstr "串流到 Vimeo Live RTMP 服务"
+
+#: src/views/Publication/Services/Livespotting.tsx
+msgid "Livesource ID"
+msgstr "Livesource ID"
+
+#: src/views/Settings.tsx
+msgid "Log level"
+msgstr "日志等级"
+
+#: src/misc/modals/Process.tsx
+#: src/views/Settings.tsx
+msgid "Logging"
+msgstr "日志"
+
+#: src/views/Login.tsx
+#: src/views/Publication/Services/Akamai.tsx
+msgid "Login"
+msgstr "登录"
+
+#. placeholder {0}: err.message
+#: src/utils/restreamer.tsx
+msgid "Login failed: {0}"
+msgstr "登录失败：{0}"
+
+#: src/utils/restreamer.tsx
+msgid "Login failed: Couldn't load API details"
+msgstr "登录失败：无法加载 API 详情"
+
+#: src/views/Settings.tsx
+msgid "Login/JWT authorization"
+msgstr "登录/JWT 认证"
+
+#: src/views/Publication/Player.tsx
+msgid "Logo"
+msgstr "图标"
+
+#: src/Header.tsx
+msgid "Logout"
+msgstr "退出登录"
+
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+msgid "Loop"
+msgstr "循环"
+
+#: src/misc/filters/audio/Loudnorm.tsx
+msgid "Loudness Normalization"
+msgstr "响度归一化"
+
+#: src/misc/controls/Process.tsx
+msgid "Low latency (Buffer)"
+msgstr "低延迟（缓冲）"
+
+#: src/views/Main/index.tsx
+#: src/views/Playersite.tsx
+msgid "Main channel"
+msgstr "主频道"
+
+#: src/views/Publication/Player.tsx
+msgid "Main channel not found"
+msgstr "未找到主频道"
+
+#: src/views/Edit/Wizard/index.tsx
+msgid "Main channel saved"
+msgstr "已保存主频道"
+
+#: src/views/Playersite.tsx
+msgid "Main page channel (index.html)."
+msgstr "主页频道（index.html）。"
+
+#: src/views/Edit/index.tsx
+msgid "Main Source"
+msgstr "主媒体流"
+
+#: src/views/Publication/TabContent.tsx
+msgid "Maintainer:"
+msgstr "管理者："
+
+#: src/misc/controls/RTMP.tsx
+msgid "Make the channel available as an RTMP stream (experimental)."
+msgstr "使频道可用作 RTMP 流（实验）。"
+
+#: src/misc/controls/SRT.tsx
+msgid "Make the channel available as an SRT stream (experimental)."
+msgstr "使频道可用作 SRT 流（实验）。"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Marked frames"
+msgstr "标记的帧"
+
+#: src/misc/controls/HLS.tsx
+msgid "Master playlist (increases browser/client compatibility)"
+msgstr "Master playlist（增加浏览器/客户端兼容性）"
+
+#: src/views/Settings.tsx
+msgid "Maximum allowed cache size, 0 for unlimited."
+msgstr "允许的最大缓存大小，0 表示无限制。"
+
+#: src/views/Settings.tsx
+msgid "Maximum allowed megabytes of RAM for /memfs, 0 for unlimited."
+msgstr "/memfs 允许占用的最大内存字节数，0 表示无限制。"
+
+#: src/views/Settings.tsx
+msgid "Maximum allowed megabytes to consume from hard disk. 0 for unlimited."
+msgstr "允许占用硬盘的最大字节数。0 表示无限制。"
+
+#: src/views/Settings.tsx
+msgid "Maximum bandwidth Mbit/s"
+msgstr "最大带宽 Mbit/s"
+
+#: src/misc/coders/Encoders/audio/opus.tsx
+msgid "Maximum delay in milliseconds."
+msgstr "最大延迟毫秒数。"
+
+#: src/views/Settings.tsx
+msgid "Maximum file size (Megabytes)"
+msgstr "最大文件大小（MB）"
+
+#: src/views/Settings.tsx
+msgid "Maximum file size to put in cache."
+msgstr "缓存中的最大文件大小。"
+
+#: src/views/Settings.tsx
+msgid "Maximum log histroy"
+msgstr "日志历史上限"
+
+#: src/views/Settings.tsx
+msgid "Maximum log lines"
+msgstr "日志最大行数"
+
+#: src/views/Settings.tsx
+msgid "Maximum size (Megabytes)"
+msgstr "最大大小（MB）"
+
+#: src/views/Settings.tsx
+msgid "Maximum viewer idle time (Seconds)"
+msgstr "最大观众空闲时间（秒）"
+
+#: src/views/Settings.tsx
+msgid "Maximum viewers"
+msgstr "最大观众数"
+
+#: src/Footer.tsx
+msgid "MB"
+msgstr "MB"
+
+#: src/Footer.tsx
+#: src/misc/Progress.tsx
+msgid "Memory"
+msgstr "内存"
+
+#: src/misc/controls/Limits.tsx
+msgid "Memory Limit (megabytes)"
+msgstr "内存限制（兆字节）"
+
+#: src/misc/controls/Limits.tsx
+msgid "Memory usage limit in megabytes, 0 for unlimited."
+msgstr "内存使用限制（兆字节），0 表示无限制。"
+
+#: src/views/Edit/index.tsx
+msgid "Meta information"
+msgstr "元数据"
+
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Wizard/Metadata.tsx
+msgid "Metadata"
+msgstr "元数据"
+
+#. placeholder {0}: 32
+#. placeholder {1}: 5000000
+#: src/views/Edit/Sources/Network.tsx
+msgid "Mininum {0}, default {1}"
+msgstr "最小 {0}，默认 {1}"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Mold"
+msgstr "Mold"
+
+#: src/views/Publication/Services/Facebook.tsx
+#: src/views/Publication/Services/Twitch.tsx
+#: src/views/Publication/Services/Vimeo.tsx
+msgid "More about licenses here"
+msgstr "关于许可证的更多信息"
+
+#: src/views/Settings.tsx
+msgid "More about the service"
+msgstr "关于服务的更多信息"
+
+#: src/views/Publication/Services/Twitter.tsx
+msgid "More about Twitter's copyright <0>here</0>."
+msgstr "更多关于 Twitter 版权信息，请点击<0>这里</0>。"
+
+#: src/views/Publication/Services/Youtube.tsx
+msgid "More about YouTube's copyright <0>here</0>."
+msgstr "关于 YouTube 的版权，请点击<0>这里</0>。"
+
+#: src/views/Settings.tsx
+msgid "Must be larger than maximum file size in cache."
+msgstr "必须大于缓存中的最大文件大小。"
+
+#: src/views/Settings.tsx
+msgid "Must be smaller than maximum cache size."
+msgstr "必须小于最大缓存大小。"
+
+#: src/views/Publication/Player.tsx
+msgid "Mute"
+msgstr "静音"
+
+#: src/misc/filters/audio/Pan.tsx
+msgid "Mute a channel."
+msgstr "静音声道。"
+
+#: src/misc/filters/audio/Pan.tsx
+msgid "Mute left"
+msgstr "静音左声道"
+
+#: src/misc/filters/audio/Pan.tsx
+msgid "Mute right"
+msgstr "静音右声道"
+
+#: src/misc/ChannelList.tsx
+#: src/misc/controls/Metadata.tsx
+#: src/views/Playersite.tsx
+#: src/views/Settings.tsx
+msgid "Name"
+msgstr "名称"
+
+#: src/views/Playersite.tsx
+msgid "Name for the template. If the name already exists, it will be overwritten."
+msgstr "模板名称。如果名称已存在，则覆盖已有模板。"
+
+#: src/views/Settings.tsx
+msgid "Network"
+msgstr "网络"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "Network source"
+msgstr "网络源"
+
+#: src/views/Edit/Wizard/Audio.tsx
+#: src/views/Edit/Wizard/Metadata.tsx
+#: src/views/Edit/Wizard/Video.tsx
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Next"
+msgstr "下一步"
+
+#: src/views/Edit/Profile.tsx
+msgid "Next: Audio"
+msgstr "下一步：音频"
+
+#: src/views/Welcome.tsx
+msgid "Next: Video setup"
+msgstr "下一步：视频设置"
+
+#: src/views/Edit/Wizard/Abort.tsx
+msgid "No"
+msgstr "否"
+
+#: src/views/Edit/Sources/NoAudio.tsx
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "No audio"
+msgstr "无音频"
+
+#: src/views/Edit/StreamSelect.tsx
+msgid "No audio stream available"
+msgstr "没有可用的音频流"
+
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+#: src/views/Edit/Wizard/Sources/V4L.tsx
+msgid "No input device available"
+msgstr "没有可用的输入设备"
+
+#: src/views/Edit/Wizard/Video.tsx
+msgid "No live stream was detected. Please check the software that sends the stream."
+msgstr "未检测到直播流。请检查发送直播流的软件。"
+
+#: src/views/Edit/Summary.tsx
+msgid "No source selected"
+msgstr "未选择媒体源"
+
+#: src/views/Edit/SourceSelect.tsx
+msgid "No sources available"
+msgstr "没有可用的媒体源"
+
+#: src/misc/EncodingSelect.tsx
+msgid "No suitable encoder found."
+msgstr "未找到合适的编码器。"
+
+#: src/misc/FilterSelect.tsx
+msgid "No suitable filter found."
+msgstr "没有合适的过滤器。"
+
+#: src/views/Main/index.tsx
+#: src/views/Publication/Player.tsx
+msgid "No video"
+msgstr "没有视频"
+
+#: src/views/Edit/StreamSelect.tsx
+msgid "No video stream available"
+msgstr "没有可用的视频流"
+
+#: src/views/Settings.tsx
+msgid "Node ID"
+msgstr "Node ID"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Noise"
+msgstr "噪音"
+
+#: src/misc/filters/video/Scale.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Summary.tsx
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+msgid "None"
+msgstr "无"
+
+#: src/views/Playersite.tsx
+msgid "Notes"
+msgstr "说明"
+
+#: src/views/Settings.tsx
+msgid "Number of log lines to keep."
+msgstr "保存日志的行数。"
+
+#: src/views/Settings.tsx
+msgid "Number of logs to keep for each process."
+msgstr "每个进程保存日志的行数。"
+
+#: src/misc/controls/Limits.tsx
+msgid "Number of seconds the limits are allowed to be exceeded."
+msgstr "允许超过限制的秒数。"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Number of tiles columns to encode with."
+msgstr "要编码的瓷砖列数。"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Number of tiles encode with."
+msgstr "编码瓦片数。"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Number of tiles rows to encode with."
+msgstr "要编码的瓦片行数。"
+
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "OK"
+msgstr "确定"
+
+#: src/views/Settings.tsx
+msgid "One referrer per line, e.g. http://www.example.com"
+msgstr "每行一个来源，例如 http://www.example.com"
+
+#: src/views/Playersite.tsx
+msgid "Open"
+msgstr "打开"
+
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "Output buffer"
+msgstr "输出缓冲区"
+
+#: src/misc/filters/audio/Pan.tsx
+msgid "Pan"
+msgstr "平移"
+
+#: src/views/Publication/Services/Core.tsx
+#: src/views/Settings.tsx
+msgid "Passphrase"
+msgstr "密码"
+
+#: src/views/Settings.tsx
+msgid "Passphrase for SRT encryption."
+msgstr "SRT 加密的密码。"
+
+#: src/views/Settings.tsx
+msgid "Passphrase must be between 10 and 79 characters long"
+msgstr "密码长度必须介于 10 和 79 之间"
+
+#: src/views/Publication/Edit.tsx
+msgid "Passthrough (copy) should only be disabled if necessary. Each encoding requires additional CPU/GPU resources."
+msgstr "仅在必要时才应禁用直通（复制）。每种编码都需要额外的 CPU/GPU 资源。"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+#: src/views/Login.tsx
+#: src/views/Publication/Services/Akamai.tsx
+#: src/views/Publication/Services/DaCast.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+#: src/views/Settings.tsx
+msgid "Password"
+msgstr "密码"
+
+#: src/views/Settings.tsx
+msgid "Password for authorization."
+msgstr "用于身份验证密码。"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "Password for the device."
+msgstr "设备密码。"
+
+#: src/views/Settings.tsx
+msgid "Persist viewer statistics"
+msgstr "保存观众统计数据"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "pink"
+msgstr "粉色"
+
+#: src/views/Publication/Services/Framebuffer.tsx
+msgid "Pixel format"
+msgstr "像素格式"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Pixel Format"
+msgstr ""
+
+#: src/views/Login.tsx
+msgid "Plan: <0>Starter</0>"
+msgstr "计划：<0>起步</0>"
+
+#: src/views/Publication/Add.tsx
+msgid "Platforms"
+msgstr "直播平台"
+
+#: src/views/Publication/Player.tsx
+#: src/views/Settings.tsx
+msgid "Playback"
+msgstr "回放"
+
+#: src/views/Main/Egress.tsx
+msgid "Player"
+msgstr "播放器"
+
+#: src/views/Publication/Player.tsx
+msgid "Player settings saved"
+msgstr "已保存播放器设置"
+
+#: src/views/Publication/Player.tsx
+msgid "Player URL"
+msgstr "播放器 URL"
+
+#: src/Header.tsx
+#: src/views/Playersite.tsx
+msgid "Playersite"
+msgstr "播放页"
+
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+msgid "Playlist"
+msgstr "播放列表"
+
+#: src/misc/controls/HLS.tsx
+msgid "Playlist version (M3U8). Version 3 has the best browser/client compatibility."
+msgstr "Playlist 版本（M3U8）。版本 3 有最好的浏览器/客户端兼容性。"
+
+#: src/views/Main/index.tsx
+msgid "Please check the <0>process log</0>"
+msgstr "请检查 <0>进程日志</0>"
+
+#: src/views/Publication/Services/Akamai.tsx
+#: src/views/Publication/Services/Azure.tsx
+#: src/views/Publication/Services/Brightcove.tsx
+#: src/views/Publication/Services/CDN77.tsx
+#: src/views/Publication/Services/Core.tsx
+#: src/views/Publication/Services/DaCast.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/Linkedin.tsx
+#: src/views/Publication/Services/Livepush.tsx
+#: src/views/Publication/Services/Livespotting.tsx
+#: src/views/Publication/Services/MPEGTS.tsx
+#: src/views/Publication/Services/NimoTv.tsx
+#: src/views/Publication/Services/PicartoTv.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/Restream.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Publication/Services/UDP.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+msgid "Please contact the operator of the service and check what happens."
+msgstr "请联系服务管理员并检查情况。"
+
+#: src/views/Settings.tsx
+msgid "Please enter your email address to signify agreement with the Let's Encrypt CA's terms of service and to be notified in case of issues."
+msgstr "请输入您的电子邮件地址以表示同意 Let's Encrypt CA 的服务条款，并在出现问题时收到通知。"
+
+#: src/views/Publication/Services/Dailymotion.tsx
+#: src/views/Publication/Services/Kick.tsx
+#: src/views/Publication/Services/Owncast.tsx
+#: src/views/Publication/Services/Rumble.tsx
+#: src/views/Publication/Services/Telegram.tsx
+#: src/views/Publication/Services/Wettercom.tsx
+msgid "Please get in touch with the operator of the service and check what happens."
+msgstr "请与该服务的运营商联系并检查发生了什么。"
+
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Please select a file to upload."
+msgstr "请选择要上传的文件。"
+
+#: src/views/Publication/Add.tsx
+msgid "Please use \"Passthrough (copy)\" if possible. Encoding requires additional CPU/GPU resources."
+msgstr "请尽可能使用 \"直通（复制）\"。编码需要额外的 CPU/GPU 资源。"
+
+#: src/views/Edit/Wizard/Probe.tsx
+msgid "Please wait. Probe stream data ..."
+msgstr "请等待。正在读取媒体流数据 ..."
+
+#: src/views/Edit/Wizard/Saving.tsx
+msgid "Please wait. Setting up the stream ..."
+msgstr "请等待。正在设置媒体流 ..."
+
+#: src/views/Settings.tsx
+msgid "Port"
+msgstr "端口"
+
+#: src/views/Publication/Player.tsx
+msgid "Position"
+msgstr "位置"
+
+#: src/views/Publication/Player.tsx
+msgid "Poster"
+msgstr "海报"
+
+#: src/views/Publication/Player.tsx
+msgid "Poster image URL"
+msgstr "海报图片 URL"
+
+#: src/misc/coders/Encoders/video/h264_libx264.tsx
+#: src/misc/coders/Encoders/video/h264_nvenc.tsx
+#: src/misc/coders/Encoders/video/hevc_libx265.tsx
+msgid "Preset"
+msgstr "预设"
+
+#: src/views/Publication/Services/Youtube.tsx
+msgid "Primary stream"
+msgstr "主媒体流"
+
+#: src/views/Publication/Services/Facebook.tsx
+msgid "Primary stream key"
+msgstr "主线路 key"
+
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Sources/Framebuffer.tsx
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Sources/V4L.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Edit/Sources/VirtualAudio.tsx
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Probe"
+msgstr "检测媒体流信息"
+
+#: src/views/Edit/index.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Process"
+msgstr "串流进程"
+
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Process control"
+msgstr "进程控制"
+
+#: src/views/Main/index.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Process details"
+msgstr "进程详情"
+
+#: src/views/Main/index.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Process report"
+msgstr "进程报告"
+
+#: src/views/Edit/index.tsx
+msgid "Processing & Control"
+msgstr "串流进程和控制"
+
+#: src/misc/coders/Encoders/video/h264_nvenc.tsx
+#: src/misc/coders/Encoders/video/h264_vaapi.tsx
+#: src/misc/coders/Encoders/video/hevc_vaapi.tsx
+#: src/misc/coders/Encoders/video/hevc_videotoolbox.tsx
+#: src/misc/coders/Encoders/video/vp9_vaapi.tsx
+#: src/misc/coders/settings/Video.tsx
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Profile"
+msgstr "Profile"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Publication/Services/Akamai.tsx
+#: src/views/Publication/Services/Azure.tsx
+#: src/views/Publication/Services/Brightcove.tsx
+#: src/views/Publication/Services/CDN77.tsx
+#: src/views/Publication/Services/Core.tsx
+#: src/views/Publication/Services/DaCast.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Icecast.tsx
+#: src/views/Publication/Services/Image2.tsx
+#: src/views/Publication/Services/Linkedin.tsx
+#: src/views/Publication/Services/MPEGTS.tsx
+#: src/views/Publication/Services/Owncast.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/RTMP.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/SRT.tsx
+#: src/views/Publication/Services/Telegram.tsx
+#: src/views/Publication/Services/UDP.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+msgid "Protocol"
+msgstr "协议"
+
+#: src/views/Publication/Add.tsx
+msgid "Protocols"
+msgstr "串流协议"
+
+#: src/views/Settings.tsx
+msgid "Public domain/s"
+msgstr "公有域名"
+
+#: src/views/Publication/Edit.tsx
+msgid "Publication service not found"
+msgstr "找不到串流输出服务"
+
+#: src/views/Playersite.tsx
+msgid "Publication website settings saved"
+msgstr "已保存发布页设置"
+
+#: src/views/Main/Publication.tsx
+msgid "Publications"
+msgstr "串流输出"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Pull Mode"
+msgstr "拉取模式"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Pull or recieve the data:"
+msgstr "拉取或接收数据："
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "QP"
+msgstr "QP"
+
+#: src/misc/coders/Encoders/video/h264_vaapi.tsx
+#: src/misc/coders/Encoders/video/hevc_vaapi.tsx
+#: src/misc/coders/Encoders/video/vp9_vaapi.tsx
+#: src/misc/Progress.tsx
+msgid "Quality"
+msgstr "质量"
+
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx
+msgid "Raspberry Pi camera"
+msgstr "树莓派相机"
+
+#: src/misc/coders/Encoders/video/h264_nvenc.tsx
+#: src/misc/coders/Encoders/video/h264_vaapi.tsx
+#: src/misc/coders/Encoders/video/hevc_vaapi.tsx
+#: src/misc/coders/Encoders/video/vp9_vaapi.tsx
+msgid "Rate control"
+msgstr "帧率控制"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Ratio"
+msgstr "比率"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "rav1e Parameters"
+msgstr "rav1e 参数"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Read input at native speed"
+msgstr "以原始速率读取输入"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Receive Mode"
+msgstr "接收模式"
+
+#: src/misc/ActionButton.tsx
+#: src/misc/controls/Process.tsx
+msgid "Reconnect"
+msgstr "重连"
+
+#: src/misc/controls/Process.tsx
+msgid "Reconnect delay (seconds)"
+msgstr "重连延时（秒）"
+
+#. placeholder {0}: $state .progress .reconnect
+#. placeholder {0}: progress.reconnect
+#: src/views/Main/index.tsx
+#: src/views/Publication/Process.tsx
+msgid "Reconnecting in {0}s"
+msgstr "在 {0} 秒后重连"
+
+#: src/views/Settings.tsx
+msgid "Reconnecting to Restreamer Core failed for the last {RETRIES} seconds."
+msgstr "在最后 {RETRIES} 秒内重连 Restreamer Core 失败。"
+
+#: src/views/Password.tsx
+msgid "Reconnecting to Restreamer Core failed."
+msgstr "重连 Restreamer Core 失败。"
+
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Sources/V4L.tsx
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+#: src/views/Edit/Wizard/Sources/V4L.tsx
+msgid "Refresh"
+msgstr "刷新"
+
+#: src/views/Publication/Services/Livepush.tsx
+#: src/views/Publication/Services/PicartoTv.tsx
+#: src/views/Publication/Services/Restream.tsx
+#: src/views/Publication/Services/Twitch.tsx
+#: src/views/Publication/Services/Twitter.tsx
+msgid "Region"
+msgstr "区域"
+
+#: src/views/Password.tsx
+msgid "Register user"
+msgstr "注册用户"
+
+#: src/views/Password.tsx
+#: src/views/Settings.tsx
+msgid "Reload"
+msgstr "重新加载"
+
+#: src/misc/modals/Hint.tsx
+msgid "Remove Audio"
+msgstr ""
 
 #: src/misc/modals/Hint.js
 #~ msgid "Remove Stream"
 #~ msgstr ""
 
-#: src/views/Settings.js
-#~ msgid "Remove the oldest entries if the /memfs is full"
-#~ msgstr "如果 /memfs 已满则移除最早的内容"
-
-#: src/views/Settings.js
-#~ msgid "Requires activation"
-#~ msgstr "需要激活"
-
-#: src/views/Publication/Player.js
-#~ msgid "Reset logo"
-#~ msgstr "重置图标"
-
-#: src/views/Publication/Player.js
-#~ msgid "Reset poster"
-#~ msgstr "重置海报"
-
-#: src/views/Settings.js
-#~ msgid "Restart"
-#~ msgstr "重启"
-
-#: src/views/Settings.js
-#~ msgid "Restart required"
-#~ msgstr "需要重启"
-
-#: src/views/Password.js
-#: src/views/Settings.js
-#~ msgid "Restarting"
-#~ msgstr "正在重启"
-
-#: src/views/Password.js
-#: src/views/Settings.js
-#~ msgid "Restarting Restreamer Core ..."
-#~ msgstr "重在重启 Restreamer Core ..."
-
-#: src/views/Settings.js
-#~ msgid "Restarting the application failed."
-#~ msgstr "重启应用失败。"
-
-#: src/views/Publication/Services/Core.js
-#~ msgid "Restreamer instructions"
-#~ msgstr "Restreamer 指南"
-
-#: src/views/Settings.js
-#~ msgid "Restreamer Service"
-#~ msgstr "Restreamer 服务"
-
-#: src/views/Main/index.js
-#~ msgid "Retrieving stream data ..."
-#~ msgstr "正在获取媒体流数据 ..."
-
-#: src/views/Edit/Wizard/Error.js
-#: src/views/Invalid.js
-#: src/views/Settings.js
-#~ msgid "Retry"
-#~ msgstr "重试"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "RGB test pattern"
-#~ msgstr "RGB 测试模式"
-
-#: src/misc/filters/video/Transpose.js
-#~ msgid "Rotate"
-#~ msgstr "旋转"
-
-#: src/views/Main/index.js
-#: src/views/Settings.js
-#~ msgid "RTMP"
-#~ msgstr "RTMP"
-
-#: src/views/Settings.js
-#~ msgid "RTMP app for publishing."
-#~ msgstr "串流输出的 RTMP app。"
-
-#: src/views/Edit/index.js
-#~ msgid "RTMP output"
-#~ msgstr "RTMP 输出"
-
-#: src/views/Settings.js
-#~ msgid "RTMP Port"
-#~ msgstr "RTMP 端口"
-
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Settings.js
-#~ msgid "RTMP server"
-#~ msgstr "RTMP 服务器"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#~ msgid "RTMP server is not enabled"
-#~ msgstr "未启用 RTMP 服务器"
-
-#: src/views/Settings.js
-#~ msgid "RTMP server listen address."
-#~ msgstr "RTMP 服务器监听地址。"
-
-#: src/views/Settings.js
-#~ msgid "RTMP token for publishing and playing. The token is the value of the URL query parameter 'token.'"
-#~ msgstr "用于发布和播放的 RTMP token。该 token 将作为 URL 参数 'token' 使用。"
-
-#: src/views/Settings.js
-#~ msgid "RTMPS Port"
-#~ msgstr "RTMPS 端口"
-
-#: src/views/Settings.js
-#~ msgid "RTMPS server"
-#~ msgstr "RTMPS 服务器"
-
-#: src/views/Settings.js
-#~ msgid "RTMPS server listen address."
-#~ msgstr "RTMP 服务器监听地址。"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "RTSP"
-#~ msgstr "RTSP"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Rule"
-#~ msgstr "规则"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "Sampling"
-#~ msgstr "采样"
-
-#: src/misc/modals/Hint.js
-#: src/views/Edit/index.js
-#: src/views/Edit/Wizard/License.js
-#: src/views/Playersite.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#: src/views/Publication/Player.js
-#: src/views/Settings.js
-#~ msgid "Save"
-#~ msgstr "保存"
-
-#: src/misc/filters/video/Scale.js
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Scale"
-#~ msgstr "缩放"
-
-#: src/misc/filters/video/Scale.js
-#~ msgid "Scale size"
-#~ msgstr "缩放尺寸"
-
-#: src/views/Settings.js
-#~ msgid "Seconds to keep files in cache."
-#~ msgstr "文件在缓存中保存的时间。"
-
-#: src/misc/controls/Process.js
-#~ msgid "Seconds until a process is restarted."
-#~ msgstr "进程重启等待的时间。"
-
-#: src/misc/controls/Process.js
-#~ msgid "Seconds until a staled process is terminated."
-#~ msgstr "前进程终止等待时间。"
-
-#: src/misc/controls/Snapshot.js
-#~ msgid "Seconds until the snapshot/thumbnail of the video source is updated."
-#~ msgstr "视频流缩略图更新等待时间。"
-
-#: src/views/Settings.js
-#~ msgid "Security"
-#~ msgstr "安全性"
-
-#: src/views/Publication/Services/Livespotting.js
-#~ msgid "Security token"
-#~ msgstr "Security token"
-
-#: src/views/Publication/Player.js
-#~ msgid "Seekbar color"
-#~ msgstr "进度条颜色"
-
-#: src/misc/controls/HLS.js
-#~ msgid "Segment length (seconds)"
-#~ msgstr "Segment 长度（秒）"
-
-#: src/misc/controls/HLS.js
-#~ msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
-#~ msgstr "该值所示时间过后，片段将在下一个关键帧被剪切。推荐值是2。"
-
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#~ msgid "Segmentation"
-#~ msgstr "分片"
-
-#: src/views/Edit/Sources/ALSA.js
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Sources/Framebuffer.js
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Sources/V4L.js
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#: src/views/Edit/Wizard/Sources/Raspicam.js
-#: src/views/Edit/Wizard/Sources/V4L.js
-#~ msgid "Select a device:"
-#~ msgstr "选择一个设备："
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Select audio source:"
-#~ msgstr "选择音频源："
-
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Select RTMP or SRT (if enabled) for less latency."
-#~ msgstr "选择 RTMP 或 SRT （如果可用）以减少延迟。"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Select source ..."
-#~ msgstr "选择媒体源 ..."
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Select video source:"
-#~ msgstr "选择视频源："
-
-#: src/views/Edit/Wizard/Source.js
-#~ msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
-#~ msgstr "选择从<0>网络源</0>（例如网络摄像头）还是<1>内部RTMP服务器</1>（例如， OBS 串流到 Restreamer）拉取媒体流。"
-
-#: src/misc/EncodingSelect.js
-#~ msgid "Select your encoding setting:"
-#~ msgstr "选择编码设置："
-
-#: src/misc/FilterSelect.js
-#~ msgid "Select your filter settings (optional):"
-#~ msgstr "选择过滤器设置（可选）："
-
-#: src/views/Playersite.js
-#~ msgid "Selected"
-#~ msgstr "选中的"
-
-#: src/views/Playersite.js
-#~ msgid "Selected channel"
-#~ msgstr "选中的频道"
-
-#: src/views/Playersite.js
-#~ msgid "Selection"
-#~ msgstr "选项"
-
-#: src/views/Settings.js
-#~ msgid "Send anonymous metrics (helps us for future development)"
-#~ msgstr "发送匿名数据（用于未来的开发）"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalRTMP.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "Send stream to address ..."
-#~ msgstr "将数据流发送至地址..."
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalHLS.js
-#~ msgid "Send stream to this address:"
-#~ msgstr "将媒体流发送到该地址："
-
-#: src/views/Publication/Services/Framebuffer.js
-#~ msgid "Send video to Framebuffer"
-#~ msgstr "发送视频到帧缓冲"
-
-#: src/views/Publication/Services/DaCast.js
-#~ msgid "Server"
-#~ msgstr "服务器"
-
-#: src/views/Publication/Services/Kick.js
-#: src/views/Publication/Services/Owncast.js
-#: src/views/Publication/Services/Rumble.js
-#: src/views/Publication/Services/Telegram.js
-#~ msgid "Server URL"
-#~ msgstr "服务器 URL"
-
-#: src/Header.js
-#: src/views/Login.js
-#: src/views/Settings.js
-#~ msgid "Service"
-#~ msgstr "服务"
-
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Service name"
-#~ msgstr "服务名称"
-
-#: src/views/Settings.js
-#~ msgid "Service token for monitoring."
-#~ msgstr "用于监视的服务 token。"
-
-#: src/Footer.js
-#~ msgid "Sessions"
-#~ msgstr "会话"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
-#~ msgstr "使用以 :分隔的 key=value 参数列表设置 rav1e 配置。"
-
-#: src/views/Settings.js
-#~ msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
-#~ msgstr "为传出 HLS 数据传输设置带宽限制，以 Mbit/s 为单位。所有服务，例如 RTMP 和传出流程，都包含在计算中。如果超出带宽，HLS 查看器会收到 HTTP 状态代码 509（超出带宽限制）。 0 表示无限制。"
-
-#: src/views/Settings.js
-#~ msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
-#~ msgstr "设置 HLS 会话的查看者限制。如果超出限制，HLS 查看器会收到 HTTP 状态代码 509（超出带宽限制）。 0 表示无限制。"
-
-#: src/views/Settings.js
-#~ msgid "Setting for connection to the service."
-#~ msgstr "连接性设置。"
-
-#: src/views/Settings.js
-#~ msgid "Settings"
-#~ msgstr "设置"
-
-#: src/views/Settings.js
-#~ msgid "Settings (expert mode)"
-#~ msgstr "设置（专家模式）"
+#: src/views/Settings.tsx
+msgid "Remove the oldest entries if the /memfs is full"
+msgstr "如果 /memfs 已满则移除最早的内容"
+
+#: src/views/Settings.tsx
+msgid "Requires activation"
+msgstr "需要激活"
+
+#: src/views/Publication/Player.tsx
+msgid "Reset logo"
+msgstr "重置图标"
+
+#: src/views/Publication/Player.tsx
+msgid "Reset poster"
+msgstr "重置海报"
+
+#: src/views/Settings.tsx
+msgid "Restart"
+msgstr "重启"
+
+#: src/views/Settings.tsx
+msgid "Restart required"
+msgstr "需要重启"
+
+#: src/views/Password.tsx
+#: src/views/Settings.tsx
+msgid "Restarting"
+msgstr "正在重启"
+
+#: src/views/Password.tsx
+#: src/views/Settings.tsx
+msgid "Restarting Restreamer Core ..."
+msgstr "重在重启 Restreamer Core ..."
+
+#: src/views/Settings.tsx
+msgid "Restarting the application failed."
+msgstr "重启应用失败。"
+
+#: src/views/Publication/Services/Core.tsx
+msgid "Restreamer instructions"
+msgstr "Restreamer 指南"
+
+#: src/views/Settings.tsx
+msgid "Restreamer Service"
+msgstr "Restreamer 服务"
+
+#: src/views/Main/index.tsx
+msgid "Retrieving stream data ..."
+msgstr "正在获取媒体流数据 ..."
+
+#: src/views/Edit/Wizard/Error.tsx
+#: src/views/Invalid.tsx
+#: src/views/Settings.tsx
+msgid "Retry"
+msgstr "重试"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "RGB test pattern"
+msgstr "RGB 测试模式"
+
+#: src/misc/filters/video/Transpose.tsx
+msgid "Rotate"
+msgstr "旋转"
+
+#: src/views/Main/index.tsx
+#: src/views/Settings.tsx
+msgid "RTMP"
+msgstr "RTMP"
+
+#: src/views/Settings.tsx
+msgid "RTMP app for publishing."
+msgstr "串流输出的 RTMP app。"
+
+#: src/views/Edit/index.tsx
+msgid "RTMP output"
+msgstr "RTMP 输出"
+
+#: src/views/Settings.tsx
+msgid "RTMP Port"
+msgstr "RTMP 端口"
+
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Settings.tsx
+msgid "RTMP server"
+msgstr "RTMP 服务器"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+msgid "RTMP server is not enabled"
+msgstr "未启用 RTMP 服务器"
+
+#: src/views/Settings.tsx
+msgid "RTMP server listen address."
+msgstr "RTMP 服务器监听地址。"
+
+#: src/views/Settings.tsx
+msgid "RTMP token for publishing and playing. The token is the value of the URL query parameter 'token.'"
+msgstr "用于发布和播放的 RTMP token。该 token 将作为 URL 参数 'token' 使用。"
+
+#: src/views/Settings.tsx
+msgid "RTMPS Port"
+msgstr "RTMPS 端口"
+
+#: src/views/Settings.tsx
+msgid "RTMPS server"
+msgstr "RTMPS 服务器"
+
+#: src/views/Settings.tsx
+msgid "RTMPS server listen address."
+msgstr "RTMP 服务器监听地址。"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "RTSP"
+msgstr "RTSP"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Rule"
+msgstr "规则"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "Sampling"
+msgstr "采样"
+
+#: src/misc/modals/Hint.tsx
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Wizard/License.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+#: src/views/Publication/Player.tsx
+#: src/views/Settings.tsx
+msgid "Save"
+msgstr "保存"
+
+#: src/misc/filters/video/Scale.tsx
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Scale"
+msgstr "缩放"
+
+#: src/misc/filters/video/Scale.tsx
+msgid "Scale size"
+msgstr "缩放尺寸"
+
+#: src/views/Settings.tsx
+msgid "Seconds to keep files in cache."
+msgstr "文件在缓存中保存的时间。"
+
+#: src/misc/controls/Process.tsx
+msgid "Seconds until a process is restarted."
+msgstr "进程重启等待的时间。"
+
+#: src/misc/controls/Process.tsx
+msgid "Seconds until a staled process is terminated."
+msgstr "前进程终止等待时间。"
+
+#: src/misc/controls/Snapshot.tsx
+msgid "Seconds until the snapshot/thumbnail of the video source is updated."
+msgstr "视频流缩略图更新等待时间。"
+
+#: src/views/Settings.tsx
+msgid "Security"
+msgstr "安全性"
+
+#: src/views/Publication/Services/Livespotting.tsx
+msgid "Security token"
+msgstr "Security token"
+
+#: src/views/Publication/Player.tsx
+msgid "Seekbar color"
+msgstr "进度条颜色"
+
+#: src/misc/controls/HLS.tsx
+msgid "Segment length (seconds)"
+msgstr "Segment 长度（秒）"
+
+#: src/misc/controls/HLS.tsx
+msgid "Segment will be cut on the following keyframe after this time has passed. 2 is recommended."
+msgstr "该值所示时间过后，片段将在下一个关键帧被剪切。推荐值是2。"
+
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+msgid "Segmentation"
+msgstr "分片"
+
+#: src/views/Edit/Sources/ALSA.tsx
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Sources/Framebuffer.tsx
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Sources/V4L.tsx
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx
+#: src/views/Edit/Wizard/Sources/V4L.tsx
+msgid "Select a device:"
+msgstr "选择一个设备："
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Select audio source:"
+msgstr "选择音频源："
+
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Select RTMP or SRT (if enabled) for less latency."
+msgstr "选择 RTMP 或 SRT （如果可用）以减少延迟。"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Select source ..."
+msgstr "选择媒体源 ..."
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Select video source:"
+msgstr "选择视频源："
+
+#: src/views/Edit/Wizard/Source.tsx
+msgid "Select whether you pull the stream from a <0>network source</0> (such as a network camera) or the <1>internal RTMP server</1> (e.g., OBS streams to the Restreamer)."
+msgstr "选择从<0>网络源</0>（例如网络摄像头）还是<1>内部RTMP服务器</1>（例如， OBS 串流到 Restreamer）拉取媒体流。"
+
+#: src/misc/EncodingSelect.tsx
+msgid "Select your encoding setting:"
+msgstr "选择编码设置："
+
+#: src/misc/FilterSelect.tsx
+msgid "Select your filter settings (optional):"
+msgstr "选择过滤器设置（可选）："
+
+#: src/views/Playersite.tsx
+msgid "Selected"
+msgstr "选中的"
+
+#: src/views/Playersite.tsx
+msgid "Selected channel"
+msgstr "选中的频道"
+
+#: src/views/Playersite.tsx
+msgid "Selection"
+msgstr "选项"
+
+#: src/views/Settings.tsx
+msgid "Send anonymous metrics (helps us for future development)"
+msgstr "发送匿名数据（用于未来的开发）"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalRTMP.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "Send stream to address ..."
+msgstr "将数据流发送至地址..."
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalHLS.tsx
+msgid "Send stream to this address:"
+msgstr "将媒体流发送到该地址："
+
+#: src/views/Publication/Services/Framebuffer.tsx
+msgid "Send video to Framebuffer"
+msgstr "发送视频到帧缓冲"
+
+#: src/views/Publication/Services/DaCast.tsx
+msgid "Server"
+msgstr "服务器"
+
+#: src/views/Publication/Services/Kick.tsx
+#: src/views/Publication/Services/Owncast.tsx
+#: src/views/Publication/Services/Rumble.tsx
+#: src/views/Publication/Services/Telegram.tsx
+msgid "Server URL"
+msgstr "服务器 URL"
+
+#: src/Header.tsx
+#: src/views/Login.tsx
+#: src/views/Settings.tsx
+msgid "Service"
+msgstr "服务"
+
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Service name"
+msgstr "服务名称"
+
+#: src/views/Settings.tsx
+msgid "Service token for monitoring."
+msgstr "用于监视的服务 token。"
+
+#: src/Footer.tsx
+msgid "Sessions"
+msgstr "会话"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Set the rav1e configuration using a :-separated list of key=value parameters."
+msgstr "使用以 :分隔的 key=value 参数列表设置 rav1e 配置。"
+
+#: src/views/Settings.tsx
+msgid "Sets a bandwidth limit in Mbit per second for outgoing HLS data transfer. All services, such as RTMP and outgoing processes, are included in the calculation. If the bandwidth is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
+msgstr "为传出 HLS 数据传输设置带宽限制，以 Mbit/s 为单位。所有服务，例如 RTMP 和传出流程，都包含在计算中。如果超出带宽，HLS 查看器会收到 HTTP 状态代码 509（超出带宽限制）。 0 表示无限制。"
+
+#: src/views/Settings.tsx
+msgid "Sets a viewer limit for HLS sessions. If the limit is exceeded, HLS viewers receive the HTTP status code 509 (Bandwidth Limit Exceeded). 0 is unlimited."
+msgstr "设置 HLS 会话的查看者限制。如果超出限制，HLS 查看器会收到 HTTP 状态代码 509（超出带宽限制）。 0 表示无限制。"
+
+#: src/views/Settings.tsx
+msgid "Setting for connection to the service."
+msgstr "连接性设置。"
+
+#: src/views/Settings.tsx
+msgid "Settings"
+msgstr "设置"
+
+#: src/views/Settings.tsx
+msgid "Settings (expert mode)"
+msgstr "设置（专家模式）"
 
 #: src/views/Settings.js
 #~ msgid "Settings for /data path. The access is protected by"
 #~ msgstr "/data 路径相关设置。访问保护方式为"
 
-#: src/views/Settings.js
-#~ msgid "Settings for /memfs path."
-#~ msgstr "/memfs 路径相关设置。"
-
-#: src/views/Settings.js
-#~ msgid "Settings saved. All changes will be applied after restarting the application."
-#~ msgstr "已保存设置。所有更改将在重启后应用。"
-
-#: src/views/Playersite.js
-#~ msgid "Share button"
-#~ msgstr "分享按钮"
-
-#: src/views/Playersite.js
-#~ msgid "Shows a reference to the project."
-#~ msgstr "显示对项目的引用。"
-
-#: src/views/Login.js
-#~ msgid "Sign up (free)"
-#~ msgstr "注册（免费）"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Silence"
-#~ msgstr "静音"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "Silence Audio"
-#~ msgstr "静音音频"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "Sine"
-#~ msgstr "波形"
-
-#: src/views/Playersite.js
-#~ msgid "Sitename"
-#~ msgstr "站点名称"
-
-#: src/misc/coders/settings/Video.js
-#~ msgid "Size"
-#~ msgstr "大小"
-
-#: src/views/Edit/index.js
-#: src/views/Main/index.js
-#~ msgid "Snapshot"
-#~ msgstr "截图"
-
-#: src/views/Login.js
-#~ msgid "Social-login (OAuth2, 2FA)"
-#~ msgstr "通过社交媒体登录（OAuth2, 2FA）"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "Socket timeout (microseconds)"
-#~ msgstr "Socket 超时（毫秒）"
-
-#: src/views/Publication/Add.js
-#~ msgid "Software"
-#~ msgstr "软件"
-
-#: src/misc/controls/Source.js
-#: src/views/Edit/Sources/VirtualAudio.js
-#: src/views/Edit/Sources/VirtualVideo.js
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Source"
-#~ msgstr "媒体源"
-
-#: src/views/Publication/Add.js
-#: src/views/Publication/Edit.js
-#~ msgid "Source & Encoding"
-#~ msgstr "媒体源 & 编码"
-
-#: src/misc/Progress.js
-#~ msgid "Speed"
-#~ msgstr "速度"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Speed Preset"
-#~ msgstr "速度预设"
-
-#: src/views/Main/index.js
-#: src/views/Settings.js
-#~ msgid "SRT"
-#~ msgstr "SRT"
-
-#: src/views/Edit/index.js
-#~ msgid "SRT output"
-#~ msgstr "SRT 输出"
-
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#: src/views/Settings.js
-#~ msgid "SRT server"
-#~ msgstr "SRT 服务器"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/InternalSRT.js
-#~ msgid "SRT server is not enabled"
-#~ msgstr "SRT 服务器不可用"
-
-#: src/views/Settings.js
-#~ msgid "SRT server listen address."
-#~ msgstr "SRT 服务器监听地址。"
-
-#: src/views/Settings.js
-#~ msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
-#~ msgstr "SRT 用于发布和播放的 token。该 token 是 streamed 参数 'token' 的值。"
-
-#: src/misc/controls/Process.js
-#~ msgid "Stale timeout (seconds)"
-#~ msgstr "Stale 超时（秒）"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "start_at_zero"
-#~ msgstr "start_at_zero"
-
-#: src/views/Settings.js
-#~ msgid "Statistics"
-#~ msgstr "统计"
-
-#: src/misc/controls/HLS.js
-#: src/views/Settings.js
-#~ msgid "Storage"
-#~ msgstr "存储"
-
-#: src/views/Settings.js
-#~ msgid "Stores the viewer statistics to the disk."
-#~ msgstr "将观众统计数据保存到硬盘。"
-
-#: src/views/Edit/StreamSelect.js
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "Stream"
-#~ msgstr "媒体流"
-
-#: src/views/Publication/Services/Wettercom.js
-#~ msgid "Stream ID"
-#~ msgstr ""
-
-#: src/views/Publication/Services/CDN77.js
-#: src/views/Publication/Services/DaCast.js
-#: src/views/Publication/Services/Dailymotion.js
-#: src/views/Publication/Services/DLive.js
-#: src/views/Publication/Services/Dummy.js
-#: src/views/Publication/Services/Instagram.js
-#: src/views/Publication/Services/Kick.js
-#: src/views/Publication/Services/Livepush.js
-#: src/views/Publication/Services/MediaNetwork.js
-#: src/views/Publication/Services/NimoTv.js
-#: src/views/Publication/Services/Owncast.js
-#: src/views/Publication/Services/PeerTube.js
-#: src/views/Publication/Services/PicartoTv.js
-#: src/views/Publication/Services/Restream.js
-#: src/views/Publication/Services/Rumble.js
-#: src/views/Publication/Services/Telegram.js
-#: src/views/Publication/Services/Trovo.js
-#: src/views/Publication/Services/Twitch.js
-#: src/views/Publication/Services/Twitter.js
-#: src/views/Publication/Services/Vimeo.js
-#: src/views/Publication/Services/Wettercom.js
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "Stream key"
-#~ msgstr "Stream key"
-
-#: src/views/Publication/Services/RTMP.js
-#~ msgid "Stream Key"
-#~ msgstr "流钥匙"
-
-#: src/views/Publication/Services/Brightcove.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/WOWZA.js
-#~ msgid "Stream name"
-#~ msgstr "Stream name"
-
-#: src/views/Publication/Services/Akamai.js
-#~ msgid "Stream names"
-#~ msgstr "Stream names"
-
-#: src/misc/controls/Source.js
-#~ msgid "Stream source for publication service (experimental)."
-#~ msgstr "发布服务的媒体源（实验性）。"
-
-#: src/views/Publication/Services/Akamai.js
-#: src/views/Publication/Services/CDN77.js
-#: src/views/Publication/Services/Dailymotion.js
-#~ msgid "Stream URL"
-#~ msgstr "媒体流 URL"
-
-#: src/views/Playersite.js
-#~ msgid "Support datarhei Restreamer"
-#~ msgstr "赞助 datarhei Restreamer"
-
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
-#~ msgstr "支持 HTTP (HLS, DASH), RT, RTSP, RTMP, SRT 以及其他。"
-
-#: src/Footer.js
-#: src/Header.js
-#: src/views/Settings.js
-#~ msgid "System"
-#~ msgstr "系统"
-
-#: src/views/Publication/Services/Core.js
-#~ msgid "Target address"
-#~ msgstr "目标地址"
-
-#: src/views/Playersite.js
-#~ msgid "Template"
-#~ msgstr "模板"
-
-#: src/views/Playersite.js
-#~ msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
-#~ msgstr "用于创建发布站点的模板。删除按钮从系统中删除选择。"
-
-#: src/views/Playersite.js
-#~ msgid "Terms"
-#~ msgstr "条款"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Test pattern"
-#~ msgstr "测试模式"
-
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Test pattern (extended)"
-#~ msgstr "测试模式（扩展）"
-
-#: src/views/Playersite.js
-#~ msgid "Text colors"
-#~ msgstr "文本颜色"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
-#~ msgstr "生成音频流的幅度（0.0 - 1.0）"
-
-#: src/views/Settings.js
-#~ msgid "The application is using an older version of the settings."
-#~ msgstr "该应用使用旧版本的设置。"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "The available FFmpeg binary doesn't support any of the required protocols."
-#~ msgstr "可用的 FFmpeg 不支持任何一种要求的协议。"
-
-#: src/misc/coders/settings/Audio.js
-#~ msgid "The bitrate of the audio stream."
-#~ msgstr "音频流的比特率。"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "The carrier frequency"
-#~ msgstr "载波频率"
-
-#: src/views/Edit/index.js
-#~ msgid "The channel \"{0}\" could not be deleted"
-#~ msgstr "无法删除频道 \"{0}\""
-
-#: src/views/Edit/index.js
-#~ msgid "The channel \"{0}\" has been deleted"
-#~ msgstr "已删除频道 \"{0}\""
-
-#: src/views/Edit/index.js
-#~ msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
-#~ msgstr "此频道删除后无法恢复。该频道的所有串流输出将被删除。"
-
-#: src/views/Edit/index.js
-#: src/views/Edit/Wizard/index.js
-#: src/views/Publication/Edit.js
-#~ msgid "The input profile is not complete. Please define a video and audio source."
-#~ msgstr "输入设置不完整。请设置视频源和音频源。"
-
-#: src/views/Publication/Add.js
-#~ msgid "The input profile is not complete. Please define a video and/or audio source."
-#~ msgstr "输入配置文件不完整。请定义视频和/或音频源。"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "The layout of the audio stream."
-#~ msgstr "音频流的布局。"
-
-#: src/misc/controls/HLS.js
-#~ msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
-#~ msgstr "最大的 playlist segments 数量。0 表示包含所有 segment。推荐值为 6。"
-
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "The noise color"
-#~ msgstr "噪音颜色"
-
-#: src/misc/controls/License/index.js
-#~ msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
-#~ msgstr "在法律允许的范围内，根据版权法，包括所有相关和邻接权利在内，将作品与此契约相关联的人放弃了他或她在全球范围内对作品的所有权利，从而将作品投入公共领域。您可以复制、修改、分发和执行作品，甚至可以用于商业目的，所有这些都无需征得许可。"
-
-#: src/views/Settings.js
-#~ msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
-#~ msgstr "运行 Restreamer 主机的公网域名。用逗号分隔多个域名。"
-
-#: src/views/Publication/Edit.js
-#~ msgid "The publication service \"{0}\" could not be deleted"
-#~ msgstr "无法删除串流输出服务 \"{0}\""
-
-#: src/views/Publication/Add.js
-#~ msgid "The publication service \"{0}\" has been created"
-#~ msgstr "已创建串流输出服务 \"{0}\""
-
-#: src/views/Publication/Edit.js
-#~ msgid "The publication service \"{0}\" has been deleted"
-#~ msgstr "已删除串流输出服务 \"{0}\""
-
-#: src/views/Publication/Add.js
-#~ msgid "The publication service has been created"
-#~ msgstr "已创建串流输出服务"
-
-#: src/misc/controls/RTMP.js
-#~ msgid "The RTMP output requires the RTMP Server."
-#~ msgstr "RTMP 输出需要 RTMP 服务器。"
-
-#: src/misc/coders/settings/Audio.js
-#: src/misc/filters/audio/Resample.js
-#~ msgid "The sample rate of the audio stream."
-#~ msgstr "音频流采样率。"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "The selected file is too big (<0/>). Only <1/> are allowed."
-#~ msgstr "所选文件太大 (<0/>)。只允许 <1/>。"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
-#~ msgstr "不允许使用所选文件类型（{0}）。允许的文件类型为 {1}"
-
-#: src/views/Publication/Edit.js
-#~ msgid "The settings for \"{0}\" have been saved"
-#~ msgstr "已保存 \"{0}\" 的设置"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "The source doesn't provide any audio streams."
-#~ msgstr "媒体源没有提供音频流。"
-
-#: src/views/Edit/Profile.js
-#~ msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
-#~ msgstr "媒体源没有提供音频流。请检查 <0>媒体头详情</0>。"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "The source doesn't provide any compatible audio streams."
-#~ msgstr "媒体源没有提供兼容的音频流。"
-
-#: src/views/Edit/Wizard/Video.js
-#~ msgid "The source doesn't provide any compatible video streams. Please check the <0>requirements</0>."
-#~ msgstr "媒体源没有提供兼容的音频流。请检查 <0>媒体头详情</0>。"
-
-#: src/views/Edit/Profile.js
-#~ msgid "The source doesn't provide any video streams. Please check the <0>probe details</0>."
-#~ msgstr "媒体源没有提供视频流。请检查 <0>媒体头详情</0>。"
-
-#: src/views/Edit/Wizard/Video.js
-#~ msgid "The source doesn't provide any video streams. Please check the device."
-#~ msgstr "媒体源没有提供视频流。请检查设备。"
-
-#: src/misc/controls/SRT.js
-#~ msgid "The SRT output requires the SRT Server."
-#~ msgstr "SRT 输出需要 SRT 服务器。"
-
-#: src/views/Edit/Wizard/Audio.js
-#~ msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
-#~ msgstr "该视频源没有提供任何兼容的音频流。推荐<0>静音音频</0>。YouTube、Facebook 等服务要求有音频通道。"
-
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "The video source is compatible. Select the desired resolution:"
-#~ msgstr "视频源不兼容。选择期望的解决方案："
-
-#: src/views/Settings.js
-#~ msgid "There are updates available. Here you get more information."
-#~ msgstr "有可用的更新。这里获取更多信息。"
-
-#: src/views/Settings.js
-#~ msgid "There was a problem storing the settings. Settings not saved."
-#~ msgstr "保存设置时出现错误。设置未保存。"
-
-#: src/views/Invalid.js
-#~ msgid "There was an error connecting to Restreamer Core at {0}."
-#~ msgstr "在 {0} 连接到 Restreamer Core 时出现错误。"
-
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "There was an error during upload: {0}"
-#~ msgstr "上传时出现错误：{0}"
-
-#: src/views/Edit/Wizard/Error.js
-#~ msgid "There was an error setting up the stream."
-#~ msgstr "媒体流设置过程中出现了错误。"
-
-#: src/views/Settings.js
-#~ msgid "There were some errors in the settings. Settings not saved."
-#~ msgstr "设置中有错误。设置未保存。"
-
-#: src/views/Login.js
-#~ msgid "There's no login method available."
-#~ msgstr "没有可用的登录方式。"
-
-#: src/views/Publication/Services/Dummy.js
-#~ msgid "This is a dummy service that explains to you the concepts of service."
-#~ msgstr "这是一个虚拟服务，向您解释服务的概念。"
-
-#: src/views/Password.js
-#~ msgid "This is not necessarily an error. However, it may take a bit longer for Restreamer Core to restart.."
-#~ msgstr "这不一定是错误。但是，Restreamer Core 重启可能需要更长的时间。"
-
-#: src/views/Publication/Services/Dummy.js
-#~ msgid "This is to mention the copyright regulations for the target of this service."
-#~ msgstr "这是针对本服务对象的版权规定。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
-#~ msgstr "该许可允许再利用者以任何媒体或格式仅以未经改编的形式复制和分发材料，并且前提是要注明创作者的身份。该许可证允许用于商业用途。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
-#~ msgstr "此许可允许再利用者以任何媒体或格式以未经改编的形式复制和分发材料，仅用于非商业目的，并且仅在注明创作者姓名的情况下。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
-#~ msgstr "此许可允许重用者以任何媒体或格式分发、重新混合、改编和构建材料，仅用于非商业目的，并且仅在注明创作者身份的情况下。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
-#~ msgstr "此许可允许重用者以任何媒体或格式分发、重新混合、改编和构建材料，仅用于非商业目的，并且仅在注明创作者身份的情况下。如果您重新混合、改编或构建这些材料，您必须根据相同的条款许可修改后的材料。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
-#~ msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混合、改编和构建材料，只要注明创作者的署名即可。该许可证允许用于商业用途。"
-
-#: src/misc/controls/License/index.js
-#~ msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
-#~ msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混合、改编和构建材料，只要注明创作者的署名即可。该许可证允许用于商业用途。如果您重新混合、改编或构建这些材料，您必须根据相同的条款许可修改后的材料。"
-
-#: src/views/Edit/Sources/Network.js
-#~ msgid "This protocol is unknown or not supported by the available FFmpeg binary."
-#~ msgstr "该协议未知或不被当前可用的 FFmpeg 支持。"
-
-#: src/views/Edit/index.js
-#~ msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
-#~ msgstr "此源在使用中无法编辑。要继续，您必须断开信号源。"
-
-#: src/views/Incompatible.js
-#~ msgid "This version of the UI doesn't support the available FFmpeg binary ({0}). The UI requires {1}. Please use a supported FFmpeg binary."
-#~ msgstr "该版本的 UI 不支持可用的 FFmpeg 二进制文件（{0}）。UI 需要 {1}。请使用支持的 FFmpeg 二进制文件。"
-
-#: src/views/Incompatible.js
-#~ msgid "This version of the UI doesn't support the connected Core ({0}). The UI requires {1}. Please use a compatible version of the UI."
-#~ msgstr "该版本的 UI 不支持已连接的 Core（{0}）。UI 需要 {1}。请使用支持的 Core 版本。"
-
-#: src/views/Incompatible.js
-#~ msgid "This version of the UI is compatible."
-#~ msgstr "该版本的 UI 是兼容的。"
-
-#: src/misc/controls/Limits.js
-#~ msgid "Threshold (seconds)"
-#~ msgstr "阈值（秒）"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Tile Columns"
-#~ msgstr "瓷砖立柱"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Tile Rows"
-#~ msgstr "瓷砖行"
-
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "Tiles"
-#~ msgstr "瓷砖"
-
-#: src/views/Settings.js
-#~ msgid "Time until an inactive viewer connection is treated as closed."
-#~ msgstr "超出该时间的不活动查看器连接将被视为已关闭。"
-
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
-#~ msgstr "为了稳定系统，将关键帧间隔的 HLS 段长度增加 2-3 *（处理和控制）。"
-
-#: src/views/Settings.js
-#~ msgid "Token"
-#~ msgstr "Token"
-
-#: src/misc/filters/video/Bwdif.js
-#~ msgid "Top field"
-#~ msgstr "顶部区域"
-
-#: src/views/Publication/Services/Telegram.js
-#~ msgid "Transmit a Livestream to a Telegram Channel."
-#~ msgstr "将直播流传输到 Telegram 频道。"
-
-#: src/views/Publication/Services/Image2.js
-#~ msgid "Transmit snapshots of the main source to an HTTP/S Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源的快照传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Icecast.js
-#~ msgid "Transmit the audio channel of the main source to an Icecast Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源源的快照传输到 Icecast 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/HLS.js
-#~ msgid "Transmit the main source as HTTP-Live-Streaming (HLS) to an HTTP/S Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源作为 HTTP 直播流（HLS）传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/DASH.js
-#~ msgid "Transmit the main source as MPEG-DASH to an HTTP/S Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源作为 MPEG-DAS 传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Brightcove.js
-#~ msgid "Transmit the main source to a Brightcove Live Service. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 Brightcove Live 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/CDN77.js
-#~ msgid "Transmit the main source to an CDN77 RTMP Service. More about the setup <0>here</0>."
-#~ msgstr "将主媒体源传输到 CDN77 RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/DaCast.js
-#~ msgid "Transmit the main source to an DaCast RTMP Service. More about the setup <0>here</0>."
-#~ msgstr "将主媒体源传输到 DaCast RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Core.js
-#~ msgid "Transmit the main source to an datarhei Core Ressource. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 datarhei Core 资源。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Livespotting.js
-#~ msgid "Transmit the main source to an livespotting.com Ressource. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 livespotting.com 资源。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/MPEGTS.js
-#~ msgid "Transmit the main source to an MPEG-TS Service. More details about the settings can be found here <0>here</0>."
-#~ msgstr "将主媒体源传输到 MPEG-TS 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Red5.js
-#~ msgid "Transmit the main source to an Red5/Pro Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 Red5/Pro 服务器。有关该设置的更多信息，请查看<0>这里</0>。"
-
-#: src/views/Publication/Services/RTMP.js
-#~ msgid "Transmit the main source to an RTMP(e|s|t|te|ts) Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 RTMP(e|s|t|te|ts) 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/RTSP.js
-#~ msgid "Transmit the main source to an RTSP Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 RTSP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/SRT.js
-#~ msgid "Transmit the main source to an SRT Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 SRT 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/UDP.js
-#~ msgid "Transmit the main source to an UDP Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 UDP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/WOWZA.js
-#~ msgid "Transmit the main source to an WOWZA Server. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 WOWZA 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Akamai.js
-#~ msgid "Transmit the main source to the Akamai (MSL) Media Services Live. More details about the MSL Encoder settings can be found on <0>here</0>."
-#~ msgstr "将主媒体源传输到 Akamai (MSL) Media Service Live。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Livepush.js
-#~ msgid "Transmit the main source to the Livepush RTMP Service. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主源传输到 Livepush RTMP 服务。有关设置的更多详情，请参阅<0>此处</0>。"
-
-#: src/views/Publication/Services/NimoTv.js
-#~ msgid "Transmit the main source to the Nimo TV RTMP Service. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主信号源传输到 Nimo TV RTMP 服务。有关设置的更多详情，请参阅<0>此处</0>。"
-
-#: src/views/Publication/Services/PicartoTv.js
-#~ msgid "Transmit the main source to the Picarto TV RTMP Service. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主信号源传输到 Picarto TV RTMP 服务。有关设置的更多详情，请参阅<0></0>。"
-
-#: src/views/Publication/Services/Restream.js
-#~ msgid "Transmit the main source to the Restream RTMP Service. More details about the settings can be found <0>here</0>."
-#~ msgstr "将主媒体源传输到 Restream RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
-
-#: src/views/Publication/Services/Azure.js
-#~ msgid "Transmit to a Azure Media Services. More details can be found <0>here</0>."
-#~ msgstr "传输到 Azure Media Services。<0>这里</0>查看更多信息。"
-
-#: src/views/Publication/Services/Linkedin.js
-#~ msgid "Transmit to LinkedIn. More details can be found <0>here</0>."
-#~ msgstr "串流到 LinkedIn。<0>这里</0>查看更多详情。"
-
-#: src/views/Publication/Services/Dailymotion.js
-#~ msgid "Transmit your Livestream to an Dailymotion RTMP service. <0>Here </0>you can find more details about the settings."
-#~ msgstr "将 Livestream 传输到 Dailymotion RTMP 服务。<0>在这里</0>，你可以找到有关设置的更多详情。"
-
-#: src/views/Publication/Services/Kick.js
-#~ msgid "Transmit your Livestream to an Kick.com RTMP service. <0>Here </0>you can find more details about the settings."
-#~ msgstr "将您的 Livestream 传输到 Kick.com RTMP 服务。<0>在此</0>，您可以找到有关设置的更多详情。"
-
-#: src/views/Publication/Services/Owncast.js
-#~ msgid "Transmit your Livestream to an Owncast server. <0>Here </0>you can find more details about the settings."
-#~ msgstr "将直播流传输到 Owncast 服务器。<0>这里</0>查看该设置的更多信息。"
-
-#: src/views/Publication/Services/Rumble.js
-#~ msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
-#~ msgstr "将您的 Livestream 传输到 Rumble RTMP 服务。<0>在此</0>，您可以找到有关设置的更多详情。"
+#: src/views/Settings.tsx
+msgid "Settings for /data path. The access is protected by "
+msgstr ""
+
+#: src/views/Settings.tsx
+msgid "Settings for /memfs path."
+msgstr "/memfs 路径相关设置。"
+
+#: src/views/Settings.tsx
+msgid "Settings saved. All changes will be applied after restarting the application."
+msgstr "已保存设置。所有更改将在重启后应用。"
+
+#: src/views/Playersite.tsx
+msgid "Share button"
+msgstr "分享按钮"
+
+#: src/views/Playersite.tsx
+msgid "Shows a reference to the project."
+msgstr "显示对项目的引用。"
+
+#: src/views/Login.tsx
+msgid "Sign up (free)"
+msgstr "注册（免费）"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Silence"
+msgstr "静音"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "Silence Audio"
+msgstr "静音音频"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "Sine"
+msgstr "波形"
+
+#: src/views/Playersite.tsx
+msgid "Sitename"
+msgstr "站点名称"
+
+#: src/misc/coders/settings/Video.tsx
+msgid "Size"
+msgstr "大小"
+
+#: src/views/Edit/index.tsx
+#: src/views/Main/index.tsx
+msgid "Snapshot"
+msgstr "截图"
+
+#: src/views/Login.tsx
+msgid "Social-login (OAuth2, 2FA)"
+msgstr "通过社交媒体登录（OAuth2, 2FA）"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "Socket timeout (microseconds)"
+msgstr "Socket 超时（毫秒）"
+
+#: src/views/Publication/Add.tsx
+msgid "Software"
+msgstr "软件"
+
+#: src/misc/controls/Source.tsx
+#: src/views/Edit/Sources/VirtualAudio.tsx
+#: src/views/Edit/Sources/VirtualVideo.tsx
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Source"
+msgstr "媒体源"
+
+#: src/views/Publication/Add.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Source & Encoding"
+msgstr "媒体源 & 编码"
+
+#: src/misc/Progress.tsx
+msgid "Speed"
+msgstr "速度"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Speed Preset"
+msgstr "速度预设"
+
+#: src/views/Main/index.tsx
+#: src/views/Settings.tsx
+msgid "SRT"
+msgstr "SRT"
+
+#: src/views/Edit/index.tsx
+msgid "SRT output"
+msgstr "SRT 输出"
+
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+#: src/views/Settings.tsx
+msgid "SRT server"
+msgstr "SRT 服务器"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/InternalSRT.tsx
+msgid "SRT server is not enabled"
+msgstr "SRT 服务器不可用"
+
+#: src/views/Settings.tsx
+msgid "SRT server listen address."
+msgstr "SRT 服务器监听地址。"
+
+#: src/views/Settings.tsx
+msgid "SRT token for publishing and playing. The token is the value of the streamid parameter 'token.'"
+msgstr "SRT 用于发布和播放的 token。该 token 是 streamed 参数 'token' 的值。"
+
+#: src/misc/controls/Process.tsx
+msgid "Stale timeout (seconds)"
+msgstr "Stale 超时（秒）"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "start_at_zero"
+msgstr "start_at_zero"
+
+#: src/views/Settings.tsx
+msgid "Statistics"
+msgstr "统计"
+
+#: src/misc/controls/HLS.tsx
+#: src/views/Settings.tsx
+msgid "Storage"
+msgstr "存储"
+
+#: src/views/Settings.tsx
+msgid "Stores the viewer statistics to the disk."
+msgstr "将观众统计数据保存到硬盘。"
+
+#: src/views/Edit/StreamSelect.tsx
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "Stream"
+msgstr "媒体流"
+
+#: src/views/Publication/Services/Wettercom.tsx
+msgid "Stream ID"
+msgstr ""
+
+#: src/views/Publication/Services/CDN77.tsx
+#: src/views/Publication/Services/DaCast.tsx
+#: src/views/Publication/Services/Dailymotion.tsx
+#: src/views/Publication/Services/DLive.tsx
+#: src/views/Publication/Services/Dummy.tsx
+#: src/views/Publication/Services/Instagram.tsx
+#: src/views/Publication/Services/Kick.tsx
+#: src/views/Publication/Services/Livepush.tsx
+#: src/views/Publication/Services/MediaNetwork.tsx
+#: src/views/Publication/Services/NimoTv.tsx
+#: src/views/Publication/Services/Owncast.tsx
+#: src/views/Publication/Services/PeerTube.tsx
+#: src/views/Publication/Services/PicartoTv.tsx
+#: src/views/Publication/Services/Restream.tsx
+#: src/views/Publication/Services/Rumble.tsx
+#: src/views/Publication/Services/Telegram.tsx
+#: src/views/Publication/Services/Trovo.tsx
+#: src/views/Publication/Services/Twitch.tsx
+#: src/views/Publication/Services/Twitter.tsx
+#: src/views/Publication/Services/Vimeo.tsx
+#: src/views/Publication/Services/Wettercom.tsx
+#: src/views/Publication/Services/Youtube.tsx
+msgid "Stream key"
+msgstr "Stream key"
+
+#: src/views/Publication/Services/RTMP.tsx
+msgid "Stream Key"
+msgstr "流钥匙"
+
+#: src/views/Publication/Services/Brightcove.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+msgid "Stream name"
+msgstr "Stream name"
+
+#: src/views/Publication/Services/Akamai.tsx
+msgid "Stream names"
+msgstr "Stream names"
+
+#: src/misc/controls/Source.tsx
+msgid "Stream source for publication service (experimental)."
+msgstr "发布服务的媒体源（实验性）。"
+
+#: src/views/Publication/Services/Akamai.tsx
+#: src/views/Publication/Services/CDN77.tsx
+#: src/views/Publication/Services/Dailymotion.tsx
+msgid "Stream URL"
+msgstr "媒体流 URL"
+
+#: src/views/Playersite.tsx
+msgid "Support datarhei Restreamer"
+msgstr "赞助 datarhei Restreamer"
+
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "Supports HTTP (HLS, DASH), RTP, RTSP, RTMP, SRT and more."
+msgstr "支持 HTTP (HLS, DASH), RT, RTSP, RTMP, SRT 以及其他。"
+
+#: src/Footer.tsx
+#: src/Header.tsx
+#: src/views/Settings.tsx
+msgid "System"
+msgstr "系统"
+
+#: src/views/Publication/Services/Core.tsx
+msgid "Target address"
+msgstr "目标地址"
+
+#: src/views/Playersite.tsx
+msgid "Template"
+msgstr "模板"
+
+#: src/views/Playersite.tsx
+msgid "Template to be used for creating the publication website. The delete button removes the selection from the system."
+msgstr "用于创建发布站点的模板。删除按钮从系统中删除选择。"
+
+#: src/views/Playersite.tsx
+msgid "Terms"
+msgstr "条款"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Test pattern"
+msgstr "测试模式"
+
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Test pattern (extended)"
+msgstr "测试模式（扩展）"
+
+#: src/views/Playersite.tsx
+msgid "Text colors"
+msgstr "文本颜色"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "The amplitude (0.0 - 1.0) of the generated audio stream"
+msgstr "生成音频流的幅度（0.0 - 1.0）"
+
+#: src/views/Settings.tsx
+msgid "The application is using an older version of the settings."
+msgstr "该应用使用旧版本的设置。"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "The available FFmpeg binary doesn't support any of the required protocols."
+msgstr "可用的 FFmpeg 不支持任何一种要求的协议。"
+
+#: src/misc/coders/settings/Audio.tsx
+msgid "The bitrate of the audio stream."
+msgstr "音频流的比特率。"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "The carrier frequency"
+msgstr "载波频率"
+
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx
+msgid "The channel \"{0}\" could not be deleted"
+msgstr "无法删除频道 \"{0}\""
+
+#. placeholder {0}: $data.meta.name
+#: src/views/Edit/index.tsx
+msgid "The channel \"{0}\" has been deleted"
+msgstr "已删除频道 \"{0}\""
+
+#: src/views/Edit/index.tsx
+msgid "The deletion of this channel can not be recovered. All publications of this channel will be removed."
+msgstr "此频道删除后无法恢复。该频道的所有串流输出将被删除。"
+
+#: src/views/Edit/index.tsx
+#: src/views/Edit/Wizard/index.tsx
+#: src/views/Publication/Edit.tsx
+msgid "The input profile is not complete. Please define a video and audio source."
+msgstr "输入设置不完整。请设置视频源和音频源。"
+
+#: src/views/Publication/Add.tsx
+msgid "The input profile is not complete. Please define a video and/or audio source."
+msgstr "输入配置文件不完整。请定义视频和/或音频源。"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "The layout of the audio stream."
+msgstr "音频流的布局。"
+
+#: src/misc/controls/HLS.tsx
+msgid "The maximum number of playlist segments. 0 will contain all the segments. 6 is recommended."
+msgstr "最大的 playlist segments 数量。0 表示包含所有 segment。推荐值为 6。"
+
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "The noise color"
+msgstr "噪音颜色"
+
+#: src/misc/controls/License/index.tsx
+msgid "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
+msgstr "在法律允许的范围内，根据版权法，包括所有相关和邻接权利在内，将作品与此契约相关联的人放弃了他或她在全球范围内对作品的所有权利，从而将作品投入公共领域。您可以复制、修改、分发和执行作品，甚至可以用于商业目的，所有这些都无需征得许可。"
+
+#: src/views/Settings.tsx
+msgid "The public reachable domain name of the host this Restreamer is running on. Separate multiple domain names by a comma."
+msgstr "运行 Restreamer 主机的公网域名。用逗号分隔多个域名。"
+
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx
+msgid "The publication service \"{0}\" could not be deleted"
+msgstr "无法删除串流输出服务 \"{0}\""
+
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Add.tsx
+msgid "The publication service \"{0}\" has been created"
+msgstr "已创建串流输出服务 \"{0}\""
+
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx
+msgid "The publication service \"{0}\" has been deleted"
+msgstr "已删除串流输出服务 \"{0}\""
+
+#: src/views/Publication/Add.tsx
+msgid "The publication service has been created"
+msgstr "已创建串流输出服务"
+
+#: src/misc/controls/RTMP.tsx
+msgid "The RTMP output requires the RTMP Server."
+msgstr "RTMP 输出需要 RTMP 服务器。"
+
+#: src/misc/coders/settings/Audio.tsx
+#: src/misc/filters/audio/Resample.tsx
+msgid "The sample rate of the audio stream."
+msgstr "音频流采样率。"
+
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "The selected file is too big (<0/>). Only <1/> are allowed."
+msgstr "所选文件太大 (<0/>)。只允许 <1/>。"
+
+#. placeholder {0}: err.actual
+#. placeholder {1}: err.allowed.join(', ')
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "The selected file type ({0}) is not allowed. Allowed file types are {1}"
+msgstr "不允许使用所选文件类型（{0}）。允许的文件类型为 {1}"
+
+#. placeholder {0}: $settings.name
+#: src/views/Publication/Edit.tsx
+msgid "The settings for \"{0}\" have been saved"
+msgstr "已保存 \"{0}\" 的设置"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "The source doesn't provide any audio streams."
+msgstr "媒体源没有提供音频流。"
+
+#: src/views/Edit/Profile.tsx
+msgid "The source doesn't provide any audio streams. Please check the <0>probe details</0>."
+msgstr "媒体源没有提供音频流。请检查 <0>媒体头详情</0>。"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "The source doesn't provide any compatible audio streams."
+msgstr "媒体源没有提供兼容的音频流。"
+
+#: src/views/Edit/Wizard/Video.tsx
+msgid "The source doesn't provide any compatible video streams. Please check the <0>requirements</0>."
+msgstr "媒体源没有提供兼容的音频流。请检查 <0>媒体头详情</0>。"
+
+#: src/views/Edit/Profile.tsx
+msgid "The source doesn't provide any video streams. Please check the <0>probe details</0>."
+msgstr "媒体源没有提供视频流。请检查 <0>媒体头详情</0>。"
+
+#: src/views/Edit/Wizard/Video.tsx
+msgid "The source doesn't provide any video streams. Please check the device."
+msgstr "媒体源没有提供视频流。请检查设备。"
+
+#: src/misc/controls/SRT.tsx
+msgid "The SRT output requires the SRT Server."
+msgstr "SRT 输出需要 SRT 服务器。"
+
+#: src/views/Edit/Wizard/Audio.tsx
+msgid "The video source doesn't provide any compatible audio stream. <0>Silence audio</0> is recommended. Services e.g. YouTube, Facebook & Co. require an audio channel."
+msgstr "该视频源没有提供任何兼容的音频流。推荐<0>静音音频</0>。YouTube、Facebook 等服务要求有音频通道。"
+
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "The video source is compatible. Select the desired resolution:"
+msgstr "视频源不兼容。选择期望的解决方案："
+
+#: src/views/Settings.tsx
+msgid "There are updates available. Here you get more information."
+msgstr "有可用的更新。这里获取更多信息。"
+
+#: src/views/Settings.tsx
+msgid "There was a problem storing the settings. Settings not saved."
+msgstr "保存设置时出现错误。设置未保存。"
+
+#. placeholder {0}: props.address
+#: src/views/Invalid.tsx
+msgid "There was an error connecting to Restreamer Core at {0}."
+msgstr "在 {0} 连接到 Restreamer Core 时出现错误。"
+
+#. placeholder {0}: err.message
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "There was an error during upload: {0}"
+msgstr "上传时出现错误：{0}"
+
+#: src/views/Edit/Wizard/Error.tsx
+msgid "There was an error setting up the stream."
+msgstr "媒体流设置过程中出现了错误。"
+
+#: src/views/Settings.tsx
+msgid "There were some errors in the settings. Settings not saved."
+msgstr "设置中有错误。设置未保存。"
+
+#: src/views/Login.tsx
+msgid "There's no login method available."
+msgstr "没有可用的登录方式。"
+
+#: src/views/Publication/Services/Dummy.tsx
+msgid "This is a dummy service that explains to you the concepts of service."
+msgstr "这是一个虚拟服务，向您解释服务的概念。"
+
+#: src/views/Password.tsx
+msgid "This is not necessarily an error. However, it may take a bit longer for Restreamer Core to restart.."
+msgstr "这不一定是错误。但是，Restreamer Core 重启可能需要更长的时间。"
+
+#: src/views/Publication/Services/Dummy.tsx
+msgid "This is to mention the copyright regulations for the target of this service."
+msgstr "这是针对本服务对象的版权规定。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, and only so long as attribution is given to the creator. The license allows for commercial use."
+msgstr "该许可允许再利用者以任何媒体或格式仅以未经改编的形式复制和分发材料，并且前提是要注明创作者的身份。该许可证允许用于商业用途。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to copy and distribute the material in any medium or format in unadapted form only, for noncommercial purposes only, and only so long as attribution is given to the creator."
+msgstr "此许可允许再利用者以任何媒体或格式以未经改编的形式复制和分发材料，仅用于非商业目的，并且仅在注明创作者姓名的情况下。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator."
+msgstr "此许可允许重用者以任何媒体或格式分发、重新混合、改编和构建材料，仅用于非商业目的，并且仅在注明创作者身份的情况下。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
+msgstr "此许可允许重用者以任何媒体或格式分发、重新混合、改编和构建材料，仅用于非商业目的，并且仅在注明创作者身份的情况下。如果您重新混合、改编或构建这些材料，您必须根据相同的条款许可修改后的材料。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use."
+msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混合、改编和构建材料，只要注明创作者的署名即可。该许可证允许用于商业用途。"
+
+#: src/misc/controls/License/index.tsx
+msgid "This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use. If you remix, adapt, or build upon the material, you must license the modified material under identical terms."
+msgstr "该许可证允许再利用者以任何媒体或格式分发、重新混合、改编和构建材料，只要注明创作者的署名即可。该许可证允许用于商业用途。如果您重新混合、改编或构建这些材料，您必须根据相同的条款许可修改后的材料。"
+
+#: src/views/Edit/Sources/Network.tsx
+msgid "This protocol is unknown or not supported by the available FFmpeg binary."
+msgstr "该协议未知或不被当前可用的 FFmpeg 支持。"
+
+#: src/views/Edit/index.tsx
+msgid "This source cannot be edited while it is in use. To continue, you have to disconnect the source."
+msgstr "此源在使用中无法编辑。要继续，您必须断开信号源。"
+
+#. placeholder {0}: props.have
+#. placeholder {1}: props.want
+#: src/views/Incompatible.tsx
+msgid "This version of the UI doesn't support the available FFmpeg binary ({0}). The UI requires {1}. Please use a supported FFmpeg binary."
+msgstr "该版本的 UI 不支持可用的 FFmpeg 二进制文件（{0}）。UI 需要 {1}。请使用支持的 FFmpeg 二进制文件。"
+
+#. placeholder {0}: props.have
+#. placeholder {1}: props.want
+#: src/views/Incompatible.tsx
+msgid "This version of the UI doesn't support the connected Core ({0}). The UI requires {1}. Please use a compatible version of the UI."
+msgstr "该版本的 UI 不支持已连接的 Core（{0}）。UI 需要 {1}。请使用支持的 Core 版本。"
+
+#: src/views/Incompatible.tsx
+msgid "This version of the UI is compatible."
+msgstr "该版本的 UI 是兼容的。"
+
+#: src/misc/controls/Limits.tsx
+msgid "Threshold (seconds)"
+msgstr "阈值（秒）"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Tile Columns"
+msgstr "瓷砖立柱"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Tile Rows"
+msgstr "瓷砖行"
+
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "Tiles"
+msgstr "瓷砖"
+
+#: src/views/Settings.tsx
+msgid "Time until an inactive viewer connection is treated as closed."
+msgstr "超出该时间的不活动查看器连接将被视为已关闭。"
+
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "To stabilize the system, increase the HLS segment length for the keyframe interval by 2-3 * (Processing and Control)."
+msgstr "为了稳定系统，将关键帧间隔的 HLS 段长度增加 2-3 *（处理和控制）。"
+
+#: src/views/Settings.tsx
+msgid "Token"
+msgstr "Token"
+
+#: src/misc/filters/video/Bwdif.tsx
+msgid "Top field"
+msgstr "顶部区域"
+
+#: src/views/Publication/Services/Telegram.tsx
+msgid "Transmit a Livestream to a Telegram Channel."
+msgstr "将直播流传输到 Telegram 频道。"
+
+#: src/views/Publication/Services/Image2.tsx
+msgid "Transmit snapshots of the main source to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源的快照传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Icecast.tsx
+msgid "Transmit the audio channel of the main source to an Icecast Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源源的快照传输到 Icecast 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/HLS.tsx
+msgid "Transmit the main source as HTTP-Live-Streaming (HLS) to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源作为 HTTP 直播流（HLS）传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/DASH.tsx
+msgid "Transmit the main source as MPEG-DASH to an HTTP/S Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源作为 MPEG-DAS 传输到 HTTP/S 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Brightcove.tsx
+msgid "Transmit the main source to a Brightcove Live Service. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 Brightcove Live 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/CDN77.tsx
+msgid "Transmit the main source to an CDN77 RTMP Service. More about the setup <0>here</0>."
+msgstr "将主媒体源传输到 CDN77 RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/DaCast.tsx
+msgid "Transmit the main source to an DaCast RTMP Service. More about the setup <0>here</0>."
+msgstr "将主媒体源传输到 DaCast RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Core.tsx
+msgid "Transmit the main source to an datarhei Core Ressource. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 datarhei Core 资源。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Livespotting.tsx
+msgid "Transmit the main source to an livespotting.com Ressource. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 livespotting.com 资源。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/MPEGTS.tsx
+msgid "Transmit the main source to an MPEG-TS Service. More details about the settings can be found here <0>here</0>."
+msgstr "将主媒体源传输到 MPEG-TS 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Red5.tsx
+msgid "Transmit the main source to an Red5/Pro Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 Red5/Pro 服务器。有关该设置的更多信息，请查看<0>这里</0>。"
+
+#: src/views/Publication/Services/RTMP.tsx
+msgid "Transmit the main source to an RTMP(e|s|t|te|ts) Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 RTMP(e|s|t|te|ts) 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/RTSP.tsx
+msgid "Transmit the main source to an RTSP Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 RTSP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/SRT.tsx
+msgid "Transmit the main source to an SRT Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 SRT 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/UDP.tsx
+msgid "Transmit the main source to an UDP Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 UDP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/WOWZA.tsx
+msgid "Transmit the main source to an WOWZA Server. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 WOWZA 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Akamai.tsx
+msgid "Transmit the main source to the Akamai (MSL) Media Services Live. More details about the MSL Encoder settings can be found on <0>here</0>."
+msgstr "将主媒体源传输到 Akamai (MSL) Media Service Live。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Livepush.tsx
+msgid "Transmit the main source to the Livepush RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "将主源传输到 Livepush RTMP 服务。有关设置的更多详情，请参阅<0>此处</0>。"
+
+#: src/views/Publication/Services/NimoTv.tsx
+msgid "Transmit the main source to the Nimo TV RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "将主信号源传输到 Nimo TV RTMP 服务。有关设置的更多详情，请参阅<0>此处</0>。"
+
+#: src/views/Publication/Services/PicartoTv.tsx
+msgid "Transmit the main source to the Picarto TV RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "将主信号源传输到 Picarto TV RTMP 服务。有关设置的更多详情，请参阅<0></0>。"
+
+#: src/views/Publication/Services/Restream.tsx
+msgid "Transmit the main source to the Restream RTMP Service. More details about the settings can be found <0>here</0>."
+msgstr "将主媒体源传输到 Restream RTMP 服务器。有关设置的更多详细信息，请访问<0>这里</0>。"
+
+#: src/views/Publication/Services/Azure.tsx
+msgid "Transmit to a Azure Media Services. More details can be found <0>here</0>."
+msgstr "传输到 Azure Media Services。<0>这里</0>查看更多信息。"
+
+#: src/views/Publication/Services/Linkedin.tsx
+msgid "Transmit to LinkedIn. More details can be found <0>here</0>."
+msgstr "串流到 LinkedIn。<0>这里</0>查看更多详情。"
+
+#: src/views/Publication/Services/Dailymotion.tsx
+msgid "Transmit your Livestream to an Dailymotion RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "将 Livestream 传输到 Dailymotion RTMP 服务。<0>在这里</0>，你可以找到有关设置的更多详情。"
+
+#: src/views/Publication/Services/Kick.tsx
+msgid "Transmit your Livestream to an Kick.com RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "将您的 Livestream 传输到 Kick.com RTMP 服务。<0>在此</0>，您可以找到有关设置的更多详情。"
+
+#: src/views/Publication/Services/Owncast.tsx
+msgid "Transmit your Livestream to an Owncast server. <0>Here </0>you can find more details about the settings."
+msgstr "将直播流传输到 Owncast 服务器。<0>这里</0>查看该设置的更多信息。"
+
+#: src/views/Publication/Services/Rumble.tsx
+msgid "Transmit your Livestream to an Rumble RTMP service. <0>Here </0>you can find more details about the settings."
+msgstr "将您的 Livestream 传输到 Rumble RTMP 服务。<0>在此</0>，您可以找到有关设置的更多详情。"
 
 #: src/views/Publication/Services/Wettercom.js
 #~ msgid "Transmit your Livestream to wetter.com. Contact the publisher  <0>here </0>."
 #~ msgstr ""
 
-#: src/views/Publication/Services/Youtube.js
-#~ msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
-#~ msgstr "将主媒体作为一个 RTMP 流与在 YouTube Studio 中生成的秘钥传输。有关在 YouTube 的 Creator Academy 中设置直播流的更多详细信息，请访问<0>这里</0>。"
+#: src/views/Publication/Services/Wettercom.tsx
+msgid "Transmit your Livestream to wetter.com. Contact the publisher <0>here </0>."
+msgstr ""
 
-#: src/views/Publication/Services/Twitter.js
-#~ msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
-#~ msgstr "将媒体流与在 Twitter Producer 中生成的秘钥传输。有关在 Twitter 的 Producer 中设置直播流的更多详细信息，请访问<0>这里</0>。"
+#: src/views/Publication/Services/Youtube.tsx
+msgid "Transmits your video as an RTMP stream with the required key generated in YouTube Studio. You can find more information on setting up a live stream at YouTube's <0>Creator Academy</0>."
+msgstr "将主媒体作为一个 RTMP 流与在 YouTube Studio 中生成的秘钥传输。有关在 YouTube 的 Creator Academy 中设置直播流的更多详细信息，请访问<0>这里</0>。"
 
-#: src/misc/coders/Encoders/video/h264_libx264.js
-#: src/misc/coders/Encoders/video/hevc_libx265.js
-#~ msgid "Tune"
-#~ msgstr "Tune"
+#: src/views/Publication/Services/Twitter.tsx
+msgid "Transmits your video stream with the required key, which was generated in Twitter Producer. You can find more information on seting up a live stream at Twitter's <0>Producer</0>."
+msgstr "将媒体流与在 Twitter Producer 中生成的秘钥传输。有关在 Twitter 的 Producer 中设置直播流的更多详细信息，请访问<0>这里</0>。"
+
+#: src/misc/coders/Encoders/video/h264_libx264.tsx
+#: src/misc/coders/Encoders/video/hevc_libx265.tsx
+msgid "Tune"
+msgstr "Tune"
 
 #: src/misc/modals/Hint.js
 #~ msgid "Type"
 #~ msgstr ""
 
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "UDP transport"
-#~ msgstr "UDP 传输"
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "UDP transport"
+msgstr "UDP 传输"
 
-#: src/views/Settings.js
-#~ msgid "Unable to load the config."
-#~ msgstr "无法加载配置。"
+#: src/views/Settings.tsx
+msgid "Unable to load the config."
+msgstr "无法加载配置。"
 
-#: src/views/Settings.js
-#~ msgid "Unique ident on the service."
-#~ msgstr "服务的唯一标识。"
+#: src/views/Settings.tsx
+msgid "Unique ident on the service."
+msgstr "服务的唯一标识。"
 
-#: src/views/Main/Egress.js
-#~ msgid "Unknown"
-#~ msgstr "未知的"
+#: src/views/Main/Egress.tsx
+msgid "Unknown"
+msgstr "未知的"
 
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Unknown upload error"
-#~ msgstr "未知上传错误"
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Unknown upload error"
+msgstr "未知上传错误"
 
-#: src/views/Playersite.js
-#~ msgid "Unselected"
-#~ msgstr "未选中"
+#: src/views/Playersite.tsx
+msgid "Unselected"
+msgstr "未选中"
 
-#: src/misc/Changelog.js
-#~ msgid "Update details (Changelog)"
-#~ msgstr "更新详情（Changelog）"
+#: src/misc/Changelog.tsx
+msgid "Update details (Changelog)"
+msgstr "更新详情（Changelog）"
 
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#: src/views/Publication/Player.js
-#~ msgid "Upload"
-#~ msgstr "上传"
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+#: src/views/Publication/Player.tsx
+msgid "Upload"
+msgstr "上传"
 
-#: src/views/Edit/Sources/AudioLoop.js
-#~ msgid "Upload an audio file ({0}) in order to loop it."
-#~ msgstr "上传音频文件 ({0}) 以循环播放。"
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
+#: src/views/Edit/Sources/AudioLoop.tsx
+msgid "Upload an audio file ({0}) in order to loop it."
+msgstr "上传音频文件 ({0}) 以循环播放。"
 
-#: src/views/Edit/Sources/VideoLoop.js
-#~ msgid "Upload an image or video file ({0}) in order to loop it."
-#~ msgstr "上传图片或视频文件 ({0}) 以循环播放。"
+#. placeholder {0}: imageTypes.map((t) => t.mimetype).join(', ')
+#: src/views/Edit/Sources/VideoLoop.tsx
+msgid "Upload an image or video file ({0}) in order to loop it."
+msgstr "上传图片或视频文件 ({0}) 以循环播放。"
 
-#: src/views/Edit/Sources/AudioLoop.js
-#: src/views/Edit/Sources/VideoLoop.js
-#: src/views/Playersite.js
-#~ msgid "Uploading the file failed"
-#~ msgstr "上传文件失败"
+#: src/views/Edit/Sources/AudioLoop.tsx
+#: src/views/Edit/Sources/VideoLoop.tsx
+#: src/views/Playersite.tsx
+msgid "Uploading the file failed"
+msgstr "上传文件失败"
 
-#: src/views/Publication/Player.js
-#~ msgid "Uploading the logo failed"
-#~ msgstr "图标上传失败"
+#: src/views/Publication/Player.tsx
+msgid "Uploading the logo failed"
+msgstr "图标上传失败"
 
-#: src/views/Publication/Player.js
-#~ msgid "Uploading the poster failed"
-#~ msgstr "上传海报失败"
+#: src/views/Publication/Player.tsx
+msgid "Uploading the poster failed"
+msgstr "上传海报失败"
 
-#: src/Footer.js
-#: src/misc/Progress.js
-#: src/views/Main/Progress.js
-#~ msgid "Uptime"
-#~ msgstr "在线时长"
+#: src/Footer.tsx
+#: src/misc/Progress.tsx
+#: src/views/Main/Progress.tsx
+msgid "Uptime"
+msgstr "在线时长"
 
-#: src/views/Login.js
-#~ msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
-#~ msgstr "为你的 Restreamer Core 启用 Auth0。<0>查看更多详情</0>。"
+#: src/views/Login.tsx
+msgid "Use Auth0 for your running Restreamer Core. More <0>details</0>."
+msgstr "为你的 Restreamer Core 启用 Auth0。<0>查看更多详情</0>。"
 
-#: src/views/Edit/index.js
-#~ msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
-#~ msgstr "使用向导 (<0/>) 快速设置，或者直接在自定义模式中编辑 (<1/>) 源。"
+#: src/views/Edit/index.tsx
+msgid "Use the wizard (<0/>) for a quick and easy setup, or edit (<1/>) the sources directly in custom mode."
+msgstr "使用向导 (<0/>) 快速设置，或者直接在自定义模式中编辑 (<1/>) 源。"
 
-#: src/views/Edit/Wizard/License.js
-#~ msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
-#~ msgstr "使用您的版权并选择正确的图像许可。无论是对所有人免费还是受到高度限制。简要讨论其他人可以用您的形象做什么。"
+#: src/views/Edit/Wizard/License.tsx
+msgid "Use your copyright and choose the correct image license. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
+msgstr "使用您的版权并选择正确的图像许可。无论是对所有人免费还是受到高度限制。简要讨论其他人可以用您的形象做什么。"
 
-#: src/views/Edit/index.js
-#~ msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
-#~ msgstr "使用您的版权并选择正确的图像许可。无论是对所有人免费还是受到高度限制。简要讨论其他人可以用您的形象做什么。"
+#: src/views/Edit/index.tsx
+msgid "Use your copyright and choose the right image licence. Whether free for all or highly restricted. Briefly discuss what others are allowed to do with your image."
+msgstr "使用您的版权并选择正确的图像许可。无论是对所有人免费还是受到高度限制。简要讨论其他人可以用您的形象做什么。"
 
-#: src/views/Edit/Sources/Network.js
-#~ msgid "use_wallclock_as_timestamps"
-#~ msgstr "use_wallclock_as_timestamps"
+#: src/views/Edit/Sources/Network.tsx
+msgid "use_wallclock_as_timestamps"
+msgstr "use_wallclock_as_timestamps"
 
-#: src/views/Password.js
-#~ msgid "User registration"
-#~ msgstr "用户注册"
+#: src/views/Password.tsx
+msgid "User registration"
+msgstr "用户注册"
 
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#: src/views/Login.js
-#: src/views/Publication/Services/DaCast.js
-#: src/views/Publication/Services/DASH.js
-#: src/views/Publication/Services/HLS.js
-#: src/views/Publication/Services/Red5.js
-#: src/views/Publication/Services/RTSP.js
-#: src/views/Publication/Services/WOWZA.js
-#: src/views/Settings.js
-#~ msgid "Username"
-#~ msgstr "用户名"
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+#: src/views/Login.tsx
+#: src/views/Publication/Services/DaCast.tsx
+#: src/views/Publication/Services/DASH.tsx
+#: src/views/Publication/Services/HLS.tsx
+#: src/views/Publication/Services/Red5.tsx
+#: src/views/Publication/Services/RTSP.tsx
+#: src/views/Publication/Services/WOWZA.tsx
+#: src/views/Settings.tsx
+msgid "Username"
+msgstr "用户名"
 
-#: src/views/Settings.js
-#~ msgid "Username for authorization."
-#~ msgstr "用于身份认证的用户名。"
+#: src/views/Settings.tsx
+msgid "Username for authorization."
+msgstr "用于身份认证的用户名。"
 
-#: src/views/Edit/Sources/Network.js
-#: src/views/Edit/Wizard/Sources/Network.js
-#~ msgid "Username for the device."
-#~ msgstr "设备用户名。"
+#: src/views/Edit/Sources/Network.tsx
+#: src/views/Edit/Wizard/Sources/Network.tsx
+msgid "Username for the device."
+msgstr "设备用户名。"
 
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "V4L2_M2M is experimental."
-#~ msgstr "V4L2_M2M 是实验性的。"
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "V4L2_M2M is experimental."
+msgstr "V4L2_M2M 是实验性的。"
 
-#: src/misc/coders/settings/Video.js
-#~ msgid "Variable frame rate (VFR)"
-#~ msgstr "可变帧率（VFR）"
+#: src/misc/coders/settings/Video.tsx
+msgid "Variable frame rate (VFR)"
+msgstr "可变帧率（VFR）"
 
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "velvet"
-#~ msgstr "天鹅绒"
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "velvet"
+msgstr "天鹅绒"
 
-#: src/misc/filters/video/VFlip.js
-#~ msgid "Vertical Flip"
-#~ msgstr "垂直翻转"
+#: src/misc/filters/video/VFlip.tsx
+msgid "Vertical Flip"
+msgstr "垂直翻转"
 
-#: src/views/Publication/Add.js
-#~ msgid "Video"
-#~ msgstr "视频"
+#: src/views/Publication/Add.tsx
+msgid "Video"
+msgstr "视频"
 
-#: src/views/Edit/Sources/AVFoundation.js
-#: src/views/Edit/Sources/Raspicam.js
-#: src/views/Edit/Sources/V4L.js
-#: src/views/Edit/Wizard/Sources/AVFoundation.js
-#: src/views/Edit/Wizard/Sources/Raspicam.js
-#: src/views/Edit/Wizard/Sources/V4L.js
-#~ msgid "Video device"
-#~ msgstr "视频设备"
+#: src/views/Edit/Sources/AVFoundation.tsx
+#: src/views/Edit/Sources/Raspicam.tsx
+#: src/views/Edit/Sources/V4L.tsx
+#: src/views/Edit/Wizard/Sources/AVFoundation.tsx
+#: src/views/Edit/Wizard/Sources/Raspicam.tsx
+#: src/views/Edit/Wizard/Sources/V4L.tsx
+msgid "Video device"
+msgstr "视频设备"
 
-#: src/views/Edit/Profile.js
-#: src/views/Edit/ProfileSummary.js
-#: src/views/Publication/Edit.js
-#~ msgid "Video settings"
-#~ msgstr "视频设置"
+#: src/views/Edit/Profile.tsx
+#: src/views/Edit/ProfileSummary.tsx
+#: src/views/Publication/Edit.tsx
+msgid "Video settings"
+msgstr "视频设置"
 
-#: src/views/Edit/Wizard/Source.js
-#: src/views/Edit/Wizard/Video.js
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Video setup"
-#~ msgstr "视频设置"
+#: src/views/Edit/Wizard/Source.tsx
+#: src/views/Edit/Wizard/Video.tsx
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Video setup"
+msgstr "视频设置"
 
-#: src/views/Edit/Sources/VideoAudio.js
-#~ msgid "Video source"
-#~ msgstr "视频源"
+#: src/views/Edit/Sources/VideoAudio.tsx
+msgid "Video source"
+msgstr "视频源"
 
-#: src/Footer.js
-#: src/views/Main/Publication.js
-#~ msgid "Viewer"
-#~ msgstr "观看者"
+#: src/Footer.tsx
+#: src/views/Main/Publication.tsx
+msgid "Viewer"
+msgstr "观看者"
 
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "violet"
-#~ msgstr "紫罗兰"
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "violet"
+msgstr "紫罗兰"
 
-#: src/views/Edit/Sources/VirtualAudio.js
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "Virtual source"
-#~ msgstr "虚拟源"
+#: src/views/Edit/Sources/VirtualAudio.tsx
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "Virtual source"
+msgstr "虚拟源"
 
-#: src/misc/filters/audio/Volume.js
-#~ msgid "Volume"
-#~ msgstr "音量"
+#: src/misc/filters/audio/Volume.tsx
+msgid "Volume"
+msgstr "音量"
 
-#: src/views/Publication/Services/Livespotting.js
-#~ msgid "VPU ID"
-#~ msgstr "VPU ID"
+#: src/views/Publication/Services/Livespotting.tsx
+msgid "VPU ID"
+msgstr "VPU ID"
 
-#: src/misc/coders/Encoders/video/h264_v4l2m2m.js
-#~ msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
-#~ msgstr "对于 Raspberry PI (3/4)，推荐使用 32 位操作系统的 OpenMAX IL。"
+#: src/misc/coders/Encoders/video/h264_v4l2m2m.tsx
+msgid "We recommend OpenMAX IL for Raspberry PI (3/4) with a 32-bit operating system."
+msgstr "对于 Raspberry PI (3/4)，推荐使用 32 位操作系统的 OpenMAX IL。"
 
-#: src/views/Welcome.js
-#~ msgid "Welcome to Restreamer v2, the solution for fast and easy video publishing. Free for private and commercial use. Further help in the <0>docs</0>."
-#~ msgstr "欢迎使用 Restreamer v2，这是一种快速简便的视频发布解决方案。免费供私人和商业使用。 如需进一步的帮助，请查看 <0>文档</0>。"
+#: src/views/Welcome.tsx
+msgid "Welcome to Restreamer v2, the solution for fast and easy video publishing. Free for private and commercial use. Further help in the <0>docs</0>."
+msgstr "欢迎使用 Restreamer v2，这是一种快速简便的视频发布解决方案。免费供私人和商业使用。 如需进一步的帮助，请查看 <0>文档</0>。"
 
-#: src/misc/coders/Encoders/video/av1_librav1e.js
-#~ msgid "What speed preset to use."
-#~ msgstr "使用什么速度预置。"
+#: src/misc/coders/Encoders/video/av1_librav1e.tsx
+msgid "What speed preset to use."
+msgstr "使用什么速度预置。"
 
-#: src/misc/controls/HLS.js
-#~ msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
-#~ msgstr "存储 HLM playlist 和 segments 的位置。推荐 In-Memory。"
+#: src/misc/controls/HLS.tsx
+msgid "Where to store the HLS playlist and segments. In-Memory is recommended."
+msgstr "存储 HLM playlist 和 segments 的位置。推荐 In-Memory。"
 
-#: src/views/Edit/Sources/VirtualAudio.js
-#~ msgid "white"
-#~ msgstr "白色"
+#: src/views/Edit/Sources/VirtualAudio.tsx
+msgid "white"
+msgstr "白色"
 
-#: src/misc/coders/settings/Video.js
-#~ msgid "Width"
-#~ msgstr "宽度"
+#: src/misc/coders/settings/Video.tsx
+msgid "Width"
+msgstr "宽度"
 
-#: src/views/Settings.js
-#~ msgid "Write protection"
-#~ msgstr "写保护"
+#: src/views/Settings.tsx
+msgid "Write protection"
+msgstr "写保护"
 
 #: src/views/Publication/Services/Instagram.js
 #~ msgid "Yellow Duck"
 #~ msgstr "Yellow Duck"
 
-#: src/views/Edit/Wizard/Abort.js
-#~ msgid "Yes"
-#~ msgstr "是"
+#: src/views/Edit/Wizard/Abort.tsx
+msgid "Yes"
+msgstr "是"
 
-#: src/views/Edit/Wizard/Abort.js
-#~ msgid "You can't abort the wizard because at least one input must be defined."
-#~ msgstr "现在不能中止向导，因为至少必须定义一个输入。"
+#: src/views/Edit/Wizard/Abort.tsx
+msgid "You can't abort the wizard because at least one input must be defined."
+msgstr "现在不能中止向导，因为至少必须定义一个输入。"
 
-#: src/views/Settings.js
-#~ msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
-#~ msgstr "配置已更改。请重启应用以使更改生效。要立刻重启吗？"
+#: src/views/Settings.tsx
+msgid "You have changed the configuration. In order for the changes to take effect, you have to restart the application. Do you want to restart now?"
+msgstr "配置已更改。请重启应用以使更改生效。要立刻重启吗？"
 
-#: src/views/Main/index.js
-#: src/views/Publication/Process.js
-#~ msgid "You have to reconnect manually"
-#~ msgstr "需要手动重连"
+#: src/views/Main/index.tsx
+#: src/views/Publication/Process.tsx
+msgid "You have to reconnect manually"
+msgstr "需要手动重连"
 
-#: src/views/Publication/Edit.js
-#~ msgid "You have unsaved changes. Please save them before you can control the service again."
-#~ msgstr "有未保存的更改。请保存以再次管理服务。"
+#: src/views/Publication/Edit.tsx
+msgid "You have unsaved changes. Please save them before you can control the service again."
+msgstr "有未保存的更改。请保存以再次管理服务。"
 
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Your stream needs to be encoded, but there's no suitable encoder available."
-#~ msgstr "源需要被编码，但没有合适的编码器可用。"
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Your stream needs to be encoded, but there's no suitable encoder available."
+msgstr "源需要被编码，但没有合适的编码器可用。"
 
-#: src/views/Edit/Wizard/VideoProfile.js
-#~ msgid "Your stream needs to be encoded. Choose the desired encoder:"
-#~ msgstr "媒体流需要被编码。请选择编码器："
+#: src/views/Edit/Wizard/VideoProfile.tsx
+msgid "Your stream needs to be encoded. Choose the desired encoder:"
+msgstr "媒体流需要被编码。请选择编码器："
 
-#: src/views/Edit/Sources/VirtualVideo.js
-#~ msgid "YUV test pattern"
-#~ msgstr "YUV 测试模式"
+#: src/views/Edit/Sources/VirtualVideo.tsx
+msgid "YUV test pattern"
+msgstr "YUV 测试模式"

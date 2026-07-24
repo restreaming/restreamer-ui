@@ -75,7 +75,9 @@ export default function Edit(props) {
 		M.getDefaultEgressMetadata(),
 	);
 	const [$sources, setSources] = React.useState<DynamicObject[]>([]);
-	const [$localSources, setLocalSources] = React.useState<DynamicObject[]>([]);
+	const [$localSources, setLocalSources] = React.useState<DynamicObject[]>(
+		[],
+	);
 	const [$tab, setTab] = React.useState('general');
 	const [$progress, setProgress] = React.useState({});
 	const [$processDetails, setProcessDetails] = React.useState({
@@ -85,7 +87,9 @@ export default function Edit(props) {
 			log: [],
 		},
 	});
-	const processLogTimer = React.useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+	const processLogTimer = React.useRef<
+		ReturnType<typeof setInterval> | undefined
+	>(undefined);
 	const [$processDebug, setProcessDebug] = React.useState({
 		open: false,
 		data: '',
@@ -503,7 +507,7 @@ export default function Edit(props) {
 						</React.Fragment>
 					}
 					onAbort={handleAbort}
-					onHelp={handleHelp()}
+					onHelp={handleHelp('')}
 				/>
 				<Grid container spacing={1}>
 					<TabsVerticalGrid>

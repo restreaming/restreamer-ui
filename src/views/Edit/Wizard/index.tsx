@@ -39,7 +39,7 @@ export default function Wizard(props) {
 		video: M.initSource('video', null),
 		audio: M.initSource('audio', null),
 	});
-	const [$profile, setProfile] = React.useState(M.initProfile());
+	const [$profile, setProfile] = React.useState(M.initProfile({}));
 	const [$skills, setSkills] = React.useState<DynamicObject>({});
 	const [$config, setConfig] = React.useState<DynamicObject>({});
 	const [$step, setStep] = React.useState('TYPE');

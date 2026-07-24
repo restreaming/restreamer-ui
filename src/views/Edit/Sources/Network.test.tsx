@@ -69,7 +69,7 @@ const $config = {
 };
 
 test('source:network pull', async () => {
-	let $settings = {
+	let $settings: DynamicObject = {
 		mode: 'pull',
 	};
 	const handleChange = (settings) => {
@@ -664,7 +664,7 @@ test('source:network push SRT', async () => {
 	expect(getByText('Probe')).toBeInTheDocument();
 });
 
-const pushmatrix = {
+const pushmatrix: DynamicObject = {
 	settings: {
 		mode: 'push',
 		push: {

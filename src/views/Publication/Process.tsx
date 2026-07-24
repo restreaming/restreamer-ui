@@ -113,8 +113,3 @@ export default function Process(props) {
 		</Grid>
 	);
 }
-
-Progress.defaultProps = {
-	progress: {},
-	onAction: function (action) {},
-};

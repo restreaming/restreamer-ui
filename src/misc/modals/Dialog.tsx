@@ -22,91 +22,95 @@ interface DialogProps {
 	children?: ReactNode;
 }
 
-const Component = React.forwardRef<HTMLDivElement, DialogProps>((props, ref) => {
-	const paperStyle: CSSProperties = {};
+const Component = React.forwardRef<HTMLDivElement, DialogProps>(
+	(props, ref) => {
+		const paperStyle: CSSProperties = {};
 
-	if (props.maxWidth > 0) {
-		paperStyle.maxWidth = props.maxWidth + 'px';
-	}
+		if (props.maxWidth > 0) {
+			paperStyle.maxWidth = props.maxWidth + 'px';
+		}
 
-	return (
-		<Modal
-			open={props.open}
-			onClose={props.onClose}
-			className="modal"
-			disableScrollLock
-		>
-			<Paper
-				sx={{
-					p: '1em 1.5em 1.3em 1.5em',
-					width: '95%',
-					maxWidth: 540,
-					maxHeight: '95%',
-					overflow: 'scroll',
-					bgcolor: 'background.modal',
-					color: 'text.primary',
-				}}
-				elevation={0}
-				ref={ref}
-				tabIndex={-1}
-				style={paperStyle}
+		return (
+			<Modal
+				open={props.open}
+				onClose={props.onClose}
+				className="modal"
+				disableScrollLock
 			>
-				<Grid container spacing={0}>
-					<Grid
-						sx={{
-							marginBottom: '.7em',
-							'& button': {
-								float: 'right',
-								marginLeft: '.5em',
-							},
-						}}
-						size={12}
-					>
-						<Typography variant="button">{props.title}</Typography>
-						{typeof props.onClose === 'function' && (
-							<IconButton
-								color="inherit"
-								size="small"
-								onClick={props.onClose}
-							>
-								<CloseIcon fontSize="small" />
-							</IconButton>
-						)}
-						{typeof props.onHelp === 'function' && (
-							<IconButton
-								color="inherit"
-								size="small"
-								onClick={props.onHelp}
-							>
-								<HelpIcon fontSize="small" />
-							</IconButton>
-						)}
+				<Paper
+					sx={{
+						p: '1em 1.5em 1.3em 1.5em',
+						width: '95%',
+						maxWidth: 540,
+						maxHeight: '95%',
+						overflow: 'scroll',
+						bgcolor: 'background.modal',
+						color: 'text.primary',
+					}}
+					elevation={0}
+					ref={ref}
+					tabIndex={-1}
+					style={paperStyle}
+				>
+					<Grid container spacing={0}>
+						<Grid
+							sx={{
+								marginBottom: '.7em',
+								'& button': {
+									float: 'right',
+									marginLeft: '.5em',
+								},
+							}}
+							size={12}
+						>
+							<Typography variant="button">
+								{props.title}
+							</Typography>
+							{typeof props.onClose === 'function' && (
+								<IconButton
+									color="inherit"
+									size="small"
+									onClick={props.onClose}
+								>
+									<CloseIcon fontSize="small" />
+								</IconButton>
+							)}
+							{typeof props.onHelp === 'function' && (
+								<IconButton
+									color="inherit"
+									size="small"
+									onClick={props.onHelp}
+								>
+									<HelpIcon fontSize="small" />
+								</IconButton>
+							)}
+						</Grid>
 					</Grid>
-				</Grid>
-				<Grid size={12}>{props.children}</Grid>
-				<Grid container spacing={0}>
-					<Grid
-						sx={{
-							marginTop: '1.2em',
-							minHeight: '38px',
-							'& button': {
-								marginRight: '.5em',
-							},
-							'& div button': {
-								float: 'right',
-								marginRight: '0',
-								marginLeft: '.5em',
-							},
-						}}
-						size={12}
-					>
-						<div>{props.buttonsRight}</div>
-						{props.buttonsLeft}
+					<Grid size={12}>{props.children}</Grid>
+					<Grid container spacing={0}>
+						<Grid
+							sx={{
+								marginTop: '1.2em',
+								minHeight: '38px',
+								'& button': {
+									marginRight: '.5em',
+								},
+								'& div button': {
+									float: 'right',
+									marginRight: '0',
+									marginLeft: '.5em',
+								},
+							}}
+							size={12}
+						>
+							<div>{props.buttonsRight}</div>
+							{props.buttonsLeft}
+						</Grid>
 					</Grid>
-				</Grid>
-			</Paper>
-		</Modal>
-	);
-});
+				</Paper>
+			</Modal>
+		);
+	},
+);
 
 export default Component;

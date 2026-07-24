@@ -146,7 +146,7 @@ const Component = function (props) {
 												allowCopy
 											/>
 										</Grid>
-										<Grid marginTop={2} size={12}>
+										<Grid sx={{ marginTop: 2 }} size={12}>
 											<Divider />
 										</Grid>
 										<Grid
@@ -174,7 +174,7 @@ const Component = function (props) {
 												allowCopy
 											/>
 										</Grid>
-										<Grid marginTop={2} size={12}>
+										<Grid sx={{ marginTop: 2 }} size={12}>
 											<Divider />
 										</Grid>
 										<Grid
